@@ -1,0 +1,29 @@
+{
+  "unversionedId": "并发编程/ConcurrencySafe/thread_safe",
+  "id": "并发编程/ConcurrencySafe/thread_safe",
+  "title": "线程安全",
+  "description": "概述",
+  "source": "@site/docs/并发编程/ConcurrencySafe/2.1并发安全-线程安全.mdx",
+  "sourceDirName": "并发编程/ConcurrencySafe",
+  "slug": "/并发编程/ConcurrencySafe/thread_safe",
+  "permalink": "/docs/并发编程/ConcurrencySafe/thread_safe",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/ConcurrencySafe/2.1并发安全-线程安全.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "thread_safe",
+    "title": "线程安全"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "currency_about",
+    "permalink": "/docs/currency"
+  },
+  "next": {
+    "title": "JMM",
+    "permalink": "/docs/并发编程/ConcurrencySafe/jmm"
+  }
+}

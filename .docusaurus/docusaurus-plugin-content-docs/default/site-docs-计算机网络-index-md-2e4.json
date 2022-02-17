@@ -1,0 +1,21 @@
+{
+  "unversionedId": "计算机网络/networrk-basic-intro",
+  "id": "计算机网络/networrk-basic-intro",
+  "title": "技术视频栏目简介",
+  "description": "",
+  "source": "@site/docs/计算机网络/index.md",
+  "sourceDirName": "计算机网络",
+  "slug": "/networrk-basic",
+  "permalink": "/docs/networrk-basic",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/计算机网络/index.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "networrk-basic-intro",
+    "title": "技术视频栏目简介",
+    "slug": "/networrk-basic"
+  }
+}

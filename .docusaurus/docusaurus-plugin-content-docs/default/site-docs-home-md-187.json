@@ -1,0 +1,19 @@
+{
+  "unversionedId": "Home",
+  "id": "Home",
+  "title": "Home",
+  "description": "Welcome",
+  "source": "@site/docs/Home.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/Home.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "slug": "/"
+  }
+}

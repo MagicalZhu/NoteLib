@@ -1,0 +1,29 @@
+{
+  "unversionedId": "concurrency/safe/jmm",
+  "id": "concurrency/safe/jmm",
+  "title": "JMM",
+  "description": "性能问题",
+  "source": "@site/docs/concurrency/safe/2.2并发安全-JMM.mdx",
+  "sourceDirName": "concurrency/safe",
+  "slug": "/concurrency/safe/jmm",
+  "permalink": "/docs/concurrency/safe/jmm",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/concurrency/safe/2.2并发安全-JMM.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "jmm",
+    "title": "JMM"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "线程安全",
+    "permalink": "/docs/concurrency/safe/thread_safe"
+  },
+  "next": {
+    "title": "volatile与锁",
+    "permalink": "/docs/concurrency/safe/volatile"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "unversionedId": "并发编程/ConcurrencySafe/jmm",
+  "id": "并发编程/ConcurrencySafe/jmm",
+  "title": "JMM",
+  "description": "性能问题",
+  "source": "@site/docs/并发编程/ConcurrencySafe/2.2并发安全-JMM.md",
+  "sourceDirName": "并发编程/ConcurrencySafe",
+  "slug": "/并发编程/ConcurrencySafe/jmm",
+  "permalink": "/docs/并发编程/ConcurrencySafe/jmm",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/ConcurrencySafe/2.2并发安全-JMM.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "jmm",
+    "title": "JMM"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "线程安全",
+    "permalink": "/docs/并发编程/ConcurrencySafe/thread_safe"
+  },
+  "next": {
+    "title": "volatile与锁",
+    "permalink": "/docs/并发编程/ConcurrencySafe/volatile"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "unversionedId": "concurrency/juc_basic",
+  "id": "concurrency/juc_basic",
+  "title": "juc基础",
+  "description": "JUC基础知识概述",
+  "source": "@site/docs/concurrency/1.1JUC基础.md",
+  "sourceDirName": "concurrency",
+  "slug": "/concurrency/juc_basic",
+  "permalink": "/docs/concurrency/juc_basic",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/concurrency/1.1JUC基础.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "juc_basic",
+    "title": "juc基础"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "currency_about",
+    "permalink": "/docs/currency"
+  },
+  "next": {
+    "title": "线程安全",
+    "permalink": "/docs/concurrency/safe/thread_safe"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "unversionedId": "并发编程/safe/volatile",
+  "id": "并发编程/safe/volatile",
+  "title": "volatile与锁",
+  "description": "概述",
+  "source": "@site/docs/并发编程/safe/2.3并发安全-volatile与锁.md",
+  "sourceDirName": "并发编程/safe",
+  "slug": "/并发编程/safe/volatile",
+  "permalink": "/docs/并发编程/safe/volatile",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/safe/2.3并发安全-volatile与锁.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "volatile",
+    "title": "volatile与锁"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "JMM",
+    "permalink": "/docs/并发编程/safe/jmm"
+  },
+  "next": {
+    "title": "死锁与其他活跃锁",
+    "permalink": "/docs/并发编程/safe/dead_lock"
+  }
+}

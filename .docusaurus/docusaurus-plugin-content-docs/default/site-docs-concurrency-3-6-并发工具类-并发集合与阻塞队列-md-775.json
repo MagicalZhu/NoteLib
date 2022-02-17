@@ -1,0 +1,21 @@
+{
+  "unversionedId": "concurrency/3.6并发工具类-并发集合与阻塞队列",
+  "id": "concurrency/3.6并发工具类-并发集合与阻塞队列",
+  "title": "并发容器",
+  "description": "概览",
+  "source": "@site/docs/concurrency/3.6并发工具类-并发集合与阻塞队列.md",
+  "sourceDirName": "concurrency",
+  "slug": "/concurrency/3.6并发工具类-并发集合与阻塞队列",
+  "permalink": "/docs/concurrency/3.6并发工具类-并发集合与阻塞队列",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/concurrency/3.6并发工具类-并发集合与阻塞队列.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "autoGroup-3": "并发工具",
+    "title": "并发容器",
+    "sort": 36
+  }
+}

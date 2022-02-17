@@ -1,0 +1,29 @@
+{
+  "unversionedId": "concurrency/safe/volatile",
+  "id": "concurrency/safe/volatile",
+  "title": "volatile与锁",
+  "description": "概述",
+  "source": "@site/docs/concurrency/safe/2.3并发安全-volatile与锁.md",
+  "sourceDirName": "concurrency/safe",
+  "slug": "/concurrency/safe/volatile",
+  "permalink": "/docs/concurrency/safe/volatile",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/concurrency/safe/2.3并发安全-volatile与锁.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "volatile",
+    "title": "volatile与锁"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "JMM",
+    "permalink": "/docs/concurrency/safe/jmm"
+  },
+  "next": {
+    "title": "死锁与其他活跃锁",
+    "permalink": "/docs/concurrency/safe/dead_lock"
+  }
+}

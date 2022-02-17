@@ -1,0 +1,26 @@
+{
+  "unversionedId": "并发编程/currency_about",
+  "id": "并发编程/currency_about",
+  "title": "并发笔记概述",
+  "description": "并发首页",
+  "source": "@site/docs/并发编程/about.md",
+  "sourceDirName": "并发编程",
+  "slug": "/currency",
+  "permalink": "/docs/currency",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/about.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "currency_about",
+    "slug": "/currency",
+    "title": "并发笔记概述"
+  },
+  "sidebar": "basicSiderBar",
+  "next": {
+    "title": "线程安全",
+    "permalink": "/docs/并发编程/并发安全/thread_safe"
+  }
+}

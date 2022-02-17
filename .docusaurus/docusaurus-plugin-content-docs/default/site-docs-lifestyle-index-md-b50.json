@@ -1,0 +1,17 @@
+{
+  "unversionedId": "lifestyle/index",
+  "id": "lifestyle/index",
+  "title": "index",
+  "description": "123",
+  "source": "@site/docs/lifestyle/index.md",
+  "sourceDirName": "lifestyle",
+  "slug": "/lifestyle/",
+  "permalink": "/docs/lifestyle/",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/lifestyle/index.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {}
+}

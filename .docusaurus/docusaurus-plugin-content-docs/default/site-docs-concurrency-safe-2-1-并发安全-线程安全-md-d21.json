@@ -1,0 +1,29 @@
+{
+  "unversionedId": "concurrency/safe/thread_safe",
+  "id": "concurrency/safe/thread_safe",
+  "title": "线程安全",
+  "description": "概述",
+  "source": "@site/docs/concurrency/safe/2.1并发安全-线程安全.md",
+  "sourceDirName": "concurrency/safe",
+  "slug": "/concurrency/safe/thread_safe",
+  "permalink": "/docs/concurrency/safe/thread_safe",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/concurrency/safe/2.1并发安全-线程安全.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "thread_safe",
+    "title": "线程安全"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "currency_about",
+    "permalink": "/docs/currency"
+  },
+  "next": {
+    "title": "JMM",
+    "permalink": "/docs/concurrency/safe/jmm"
+  }
+}

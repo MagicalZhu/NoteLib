@@ -1,0 +1,21 @@
+{
+  "unversionedId": "introduction",
+  "id": "introduction",
+  "title": "introduction",
+  "description": "Let's discover Docusaurus in less than 5 minutes.",
+  "source": "@site/docs/introduction.md",
+  "sourceDirName": ".",
+  "slug": "/introduction",
+  "permalink": "/docs/introduction",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/introduction.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "introduction",
+    "title": "introduction"
+  },
+  "sidebar": "docs"
+}

@@ -1,0 +1,17 @@
+{
+  "unversionedId": "并发编程/About",
+  "id": "并发编程/About",
+  "title": "About",
+  "description": "",
+  "source": "@site/docs/并发编程/About.md",
+  "sourceDirName": "并发编程",
+  "slug": "/并发编程/About",
+  "permalink": "/docs/并发编程/About",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/About.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {}
+}
