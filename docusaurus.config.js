@@ -16,8 +16,8 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/fav.ico',
-  organizationName: 'facebook', 
-  projectName: '花裤衩',
+  organizationName: 'MagicalZhu', 
+  projectName: 'XDocs',
   presets: [
     [
       "@docusaurus/preset-classic",
