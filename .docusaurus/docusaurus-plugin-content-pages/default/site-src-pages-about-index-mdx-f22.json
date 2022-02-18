@@ -1,0 +1,7 @@
+{
+  "type": "mdx",
+  "permalink": "/about/",
+  "source": "@site/src/pages/about/index.mdx",
+  "description": "This is a page generated from markdown to illustrate the Markdown page feature.",
+  "frontMatter": {}
+}

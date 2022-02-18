@@ -21,6 +21,6 @@
   "sidebar": "basicSiderBar",
   "next": {
     "title": "线程安全",
-    "permalink": "/docs/并发编程/并发安全/thread_safe"
+    "permalink": "/docs/并发编程/并发安全/线程安全"
   }
 }

@@ -16,39 +16,31 @@
       },
       {
         "type": "category",
-        "label": "并发编程",
+        "label": "并发安全",
         "items": [
           {
-            "type": "category",
-            "label": "并发安全",
-            "items": [
-              {
-                "type": "link",
-                "label": "线程安全",
-                "href": "/docs/并发编程/并发安全/thread_safe",
-                "docId": "并发编程/并发安全/thread_safe"
-              },
-              {
-                "type": "link",
-                "label": "JMM",
-                "href": "/docs/并发编程/并发安全/jmm",
-                "docId": "并发编程/并发安全/jmm"
-              },
-              {
-                "type": "link",
-                "label": "volatile与锁",
-                "href": "/docs/并发编程/并发安全/volatile",
-                "docId": "并发编程/并发安全/volatile"
-              },
-              {
-                "type": "link",
-                "label": "死锁与其他活跃锁",
-                "href": "/docs/并发编程/并发安全/dead_lock",
-                "docId": "并发编程/并发安全/dead_lock"
-              }
-            ],
-            "collapsed": true,
-            "collapsible": true
+            "type": "link",
+            "label": "线程安全",
+            "href": "/docs/并发编程/并发安全/线程安全",
+            "docId": "并发编程/并发安全/线程安全"
+          },
+          {
+            "type": "link",
+            "label": "JMM",
+            "href": "/docs/并发编程/并发安全/jmm",
+            "docId": "并发编程/并发安全/jmm"
+          },
+          {
+            "type": "link",
+            "label": "volatile与锁",
+            "href": "/docs/并发编程/并发安全/volatile",
+            "docId": "并发编程/并发安全/volatile"
+          },
+          {
+            "type": "link",
+            "label": "死锁与其他活跃锁",
+            "href": "/docs/并发编程/并发安全/dead_lock",
+            "docId": "并发编程/并发安全/dead_lock"
           }
         ],
         "collapsed": true,
@@ -57,6 +49,12 @@
     ]
   },
   "docs": {
+    "并发编程/并发安全/线程安全": {
+      "id": "并发编程/并发安全/线程安全",
+      "title": "线程安全",
+      "description": "概述",
+      "sidebar": "basicSiderBar"
+    },
     "并发编程/并发安全/dead_lock": {
       "id": "并发编程/并发安全/dead_lock",
       "title": "死锁与其他活跃锁",
@@ -67,12 +65,6 @@
       "id": "并发编程/并发安全/jmm",
       "title": "JMM",
       "description": "性能问题",
-      "sidebar": "basicSiderBar"
-    },
-    "并发编程/并发安全/thread_safe": {
-      "id": "并发编程/并发安全/thread_safe",
-      "title": "线程安全",
-      "description": "概述",
       "sidebar": "basicSiderBar"
     },
     "并发编程/并发安全/volatile": {
@@ -92,45 +84,10 @@
       "title": "技术视频栏目简介",
       "description": ""
     },
-    "tutorial-basics/congratulations": {
-      "id": "tutorial-basics/congratulations",
-      "title": "Congratulations!",
-      "description": "You have just learned the basics of Docusaurus and made some changes to the initial template."
-    },
-    "tutorial-basics/create-a-blog-post": {
-      "id": "tutorial-basics/create-a-blog-post",
-      "title": "Create a Blog Post",
-      "description": "Docusaurus creates a page for each blog post, but also a blog index page, a tag system, an RSS feed..."
-    },
-    "tutorial-basics/create-a-document": {
-      "id": "tutorial-basics/create-a-document",
-      "title": "Create a Document",
-      "description": "Documents are groups of pages connected through:"
-    },
-    "tutorial-basics/create-a-page": {
-      "id": "tutorial-basics/create-a-page",
-      "title": "Create a Page",
-      "description": "Add Markdown or React files to src/pages to create a standalone page:"
-    },
-    "tutorial-basics/deploy-your-site": {
-      "id": "tutorial-basics/deploy-your-site",
-      "title": "Deploy your site",
-      "description": "Docusaurus is a static-site-generator (also called Jamstack)."
-    },
-    "tutorial-basics/markdown-features": {
-      "id": "tutorial-basics/markdown-features",
-      "title": "Markdown Features",
-      "description": "Docusaurus supports Markdown and a few additional features."
-    },
-    "tutorial-extras/manage-docs-versions": {
-      "id": "tutorial-extras/manage-docs-versions",
-      "title": "Manage Docs Versions",
-      "description": "Docusaurus can manage multiple versions of your docs."
-    },
-    "tutorial-extras/translate-your-site": {
-      "id": "tutorial-extras/translate-your-site",
-      "title": "Translate your site",
-      "description": "Let's translate docs/intro.md to French."
+    "about": {
+      "id": "about",
+      "title": "个人简介",
+      "description": "文档概述"
     }
   }
 }

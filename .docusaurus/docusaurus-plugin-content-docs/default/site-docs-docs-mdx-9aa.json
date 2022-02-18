@@ -1,0 +1,20 @@
+{
+  "unversionedId": "docs",
+  "id": "docs",
+  "title": "Documentation",
+  "description": "文档概述",
+  "source": "@site/docs/docs.mdx",
+  "sourceDirName": ".",
+  "slug": "/docs",
+  "permalink": "/docs/docs",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/docs.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "docs",
+    "title": "Documentation"
+  }
+}

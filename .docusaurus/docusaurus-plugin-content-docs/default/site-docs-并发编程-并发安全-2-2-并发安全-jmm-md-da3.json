@@ -20,7 +20,7 @@
   "sidebar": "basicSiderBar",
   "previous": {
     "title": "线程安全",
-    "permalink": "/docs/并发编程/并发安全/thread_safe"
+    "permalink": "/docs/并发编程/并发安全/线程安全"
   },
   "next": {
     "title": "volatile与锁",

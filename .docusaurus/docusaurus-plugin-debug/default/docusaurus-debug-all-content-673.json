@@ -14,10 +14,39 @@
           "versionClassName": "docs-version-current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/yoey/Desktop/react-docs/sidebars.js",
-          "contentPath": "/Users/yoey/Desktop/react-docs/docs",
-          "contentPathLocalized": "/Users/yoey/Desktop/react-docs/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/yoey/Desktop/XDocs/sidebars.js",
+          "contentPath": "/Users/yoey/Desktop/XDocs/docs",
+          "contentPathLocalized": "/Users/yoey/Desktop/XDocs/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
+            {
+              "unversionedId": "并发编程/并发安全/线程安全",
+              "id": "并发编程/并发安全/线程安全",
+              "title": "线程安全",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发安全/2.1并发安全-线程安全.mdx",
+              "sourceDirName": "并发编程/并发安全",
+              "slug": "/并发编程/并发安全/线程安全",
+              "permalink": "/docs/并发编程/并发安全/线程安全",
+              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/并发安全/2.1并发安全-线程安全.mdx",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "线程安全",
+                "title": "线程安全"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "并发笔记概述",
+                "permalink": "/docs/currency"
+              },
+              "next": {
+                "title": "JMM",
+                "permalink": "/docs/并发编程/并发安全/jmm"
+              }
+            },
             {
               "unversionedId": "并发编程/并发安全/dead_lock",
               "id": "并发编程/并发安全/dead_lock",
@@ -65,40 +94,11 @@
               "sidebar": "basicSiderBar",
               "previous": {
                 "title": "线程安全",
-                "permalink": "/docs/并发编程/并发安全/thread_safe"
+                "permalink": "/docs/并发编程/并发安全/线程安全"
               },
               "next": {
                 "title": "volatile与锁",
                 "permalink": "/docs/并发编程/并发安全/volatile"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发安全/thread_safe",
-              "id": "并发编程/并发安全/thread_safe",
-              "title": "线程安全",
-              "description": "概述",
-              "source": "@site/docs/并发编程/并发安全/2.1并发安全-线程安全.mdx",
-              "sourceDirName": "并发编程/并发安全",
-              "slug": "/并发编程/并发安全/thread_safe",
-              "permalink": "/docs/并发编程/并发安全/thread_safe",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/并发安全/2.1并发安全-线程安全.mdx",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "frontMatter": {
-                "id": "thread_safe",
-                "title": "线程安全"
-              },
-              "sidebar": "basicSiderBar",
-              "previous": {
-                "title": "并发笔记概述",
-                "permalink": "/docs/currency"
-              },
-              "next": {
-                "title": "JMM",
-                "permalink": "/docs/并发编程/并发安全/jmm"
               }
             },
             {
@@ -153,7 +153,7 @@
               "sidebar": "basicSiderBar",
               "next": {
                 "title": "线程安全",
-                "permalink": "/docs/并发编程/并发安全/thread_safe"
+                "permalink": "/docs/并发编程/并发安全/线程安全"
               }
             },
             {
@@ -178,163 +178,24 @@
               }
             },
             {
-              "unversionedId": "tutorial-basics/congratulations",
-              "id": "tutorial-basics/congratulations",
-              "title": "Congratulations!",
-              "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
-              "source": "@site/docs/tutorial-basics/congratulations.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/congratulations",
-              "permalink": "/docs/tutorial-basics/congratulations",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-basics/congratulations.md",
+              "unversionedId": "about",
+              "id": "about",
+              "title": "个人简介",
+              "description": "文档概述",
+              "source": "@site/docs/about.mdx",
+              "sourceDirName": ".",
+              "slug": "/about",
+              "permalink": "/docs/about",
+              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/about.mdx",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 6,
               "frontMatter": {
-                "sidebar_position": 6
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/create-a-blog-post",
-              "id": "tutorial-basics/create-a-blog-post",
-              "title": "Create a Blog Post",
-              "description": "Docusaurus creates a page for each blog post, but also a blog index page, a tag system, an RSS feed...",
-              "source": "@site/docs/tutorial-basics/create-a-blog-post.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/create-a-blog-post",
-              "permalink": "/docs/tutorial-basics/create-a-blog-post",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-basics/create-a-blog-post.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 3,
-              "frontMatter": {
-                "sidebar_position": 3
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/create-a-document",
-              "id": "tutorial-basics/create-a-document",
-              "title": "Create a Document",
-              "description": "Documents are groups of pages connected through:",
-              "source": "@site/docs/tutorial-basics/create-a-document.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/create-a-document",
-              "permalink": "/docs/tutorial-basics/create-a-document",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-basics/create-a-document.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/create-a-page",
-              "id": "tutorial-basics/create-a-page",
-              "title": "Create a Page",
-              "description": "Add Markdown or React files to src/pages to create a standalone page:",
-              "source": "@site/docs/tutorial-basics/create-a-page.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/create-a-page",
-              "permalink": "/docs/tutorial-basics/create-a-page",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-basics/create-a-page.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/deploy-your-site",
-              "id": "tutorial-basics/deploy-your-site",
-              "title": "Deploy your site",
-              "description": "Docusaurus is a static-site-generator (also called Jamstack).",
-              "source": "@site/docs/tutorial-basics/deploy-your-site.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/deploy-your-site",
-              "permalink": "/docs/tutorial-basics/deploy-your-site",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-basics/deploy-your-site.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 5,
-              "frontMatter": {
-                "sidebar_position": 5
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/markdown-features",
-              "id": "tutorial-basics/markdown-features",
-              "title": "Markdown Features",
-              "description": "Docusaurus supports Markdown and a few additional features.",
-              "source": "@site/docs/tutorial-basics/markdown-features.mdx",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/markdown-features",
-              "permalink": "/docs/tutorial-basics/markdown-features",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-basics/markdown-features.mdx",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 4,
-              "frontMatter": {
-                "sidebar_position": 4
-              }
-            },
-            {
-              "unversionedId": "tutorial-extras/manage-docs-versions",
-              "id": "tutorial-extras/manage-docs-versions",
-              "title": "Manage Docs Versions",
-              "description": "Docusaurus can manage multiple versions of your docs.",
-              "source": "@site/docs/tutorial-extras/manage-docs-versions.md",
-              "sourceDirName": "tutorial-extras",
-              "slug": "/tutorial-extras/manage-docs-versions",
-              "permalink": "/docs/tutorial-extras/manage-docs-versions",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-extras/manage-docs-versions.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              }
-            },
-            {
-              "unversionedId": "tutorial-extras/translate-your-site",
-              "id": "tutorial-extras/translate-your-site",
-              "title": "Translate your site",
-              "description": "Let's translate docs/intro.md to French.",
-              "source": "@site/docs/tutorial-extras/translate-your-site.md",
-              "sourceDirName": "tutorial-extras",
-              "slug": "/tutorial-extras/translate-your-site",
-              "permalink": "/docs/tutorial-extras/translate-your-site",
-              "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/tutorial-extras/translate-your-site.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
+                "id": "about",
+                "title": "个人简介",
+                "slug": "/about"
               }
             }
           ],
@@ -347,31 +208,23 @@
               },
               {
                 "type": "category",
-                "label": "并发编程",
+                "label": "并发安全",
                 "items": [
                   {
-                    "type": "category",
-                    "label": "并发安全",
-                    "items": [
-                      {
-                        "type": "doc",
-                        "id": "并发编程/并发安全/thread_safe"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "并发编程/并发安全/jmm"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "并发编程/并发安全/volatile"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "并发编程/并发安全/dead_lock"
-                      }
-                    ],
-                    "collapsed": true,
-                    "collapsible": true
+                    "type": "doc",
+                    "id": "并发编程/并发安全/线程安全"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发安全/jmm"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发安全/volatile"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发安全/dead_lock"
                   }
                 ],
                 "collapsed": true,
@@ -410,6 +263,13 @@
         "frontMatter": {
           "title": "Markdown page example"
         }
+      },
+      {
+        "type": "mdx",
+        "permalink": "/about/",
+        "source": "@site/src/pages/about/index.mdx",
+        "description": "This is a page generated from markdown to illustrate the Markdown page feature.",
+        "frontMatter": {}
       }
     ]
   },

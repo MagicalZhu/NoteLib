@@ -102,18 +102,14 @@ const createAuto = (dir) => {
 
 
 // @ts-check
-// 创建并发编程的分类
-const ConcurrencyCode =  new Category('并发编程')
-  .setSubCategory(
-    new Category('并发安全')
-    .setNoLabelItem('并发编程/并发安全', [
-      'thread_safe',
-      'jmm',
-      'volatile',
-      'dead_lock',
-    ])
-  )
-
+// 创建并发安全的分类
+const ConcurrencyCode =  new Category('并发安全')
+  .setNoLabelItem('并发编程/并发安全', [
+    '线程安全',
+    'jmm',
+    'volatile',
+    'dead_lock',
+  ])
   
   
 const basicSiderBar = [

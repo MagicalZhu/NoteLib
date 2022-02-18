@@ -10,7 +10,7 @@ const customConfig = require("./configCustom")
  */
 const config = {
   title: '花裤衩',
-  tagline: 'Document',
+  tagline: 'To see the world as it is and to love it',
   url: 'https://huakucha.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',

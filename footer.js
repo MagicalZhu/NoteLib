@@ -1,5 +1,4 @@
 const footer = {
-  style: 'dark',
   links: [
     {
       title: 'Docs',
@@ -41,7 +40,6 @@ const footer = {
       ],
     },
   ],
-  copyright: `Copyright © 2022 ~ ${new Date().getFullYear()} . Built with Docusaurus.`
+  copyright: `Copyright © ${new Date().getFullYear()} huakucha. Built By Docusaurus.`
 }
-
 module.exports = footer

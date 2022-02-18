@@ -1,0 +1,21 @@
+{
+  "unversionedId": "about",
+  "id": "about",
+  "title": "个人简介",
+  "description": "文档概述",
+  "source": "@site/docs/about.mdx",
+  "sourceDirName": ".",
+  "slug": "/about",
+  "permalink": "/docs/about",
+  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/about.mdx",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "about",
+    "title": "个人简介",
+    "slug": "/about"
+  }
+}

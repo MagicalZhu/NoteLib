@@ -5,14 +5,14 @@ Modify the docusaurus.config.js file at your site's root instead.
 */
 export default {
   "title": "花裤衩",
-  "tagline": "Document",
+  "tagline": "To see the world as it is and to love it",
   "url": "https://huakucha.com",
   "baseUrl": "/",
   "onBrokenLinks": "warn",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "img/fav.ico",
-  "organizationName": "facebook",
-  "projectName": "花裤衩",
+  "organizationName": "MagicalZhu",
+  "projectName": "XDocs",
   "presets": [
     [
       "@docusaurus/preset-classic",
@@ -20,13 +20,13 @@ export default {
         "debug": true,
         "docs": {
           "path": "docs",
-          "sidebarPath": "/Users/yoey/Desktop/react-docs/sidebars.js",
+          "sidebarPath": "/Users/yoey/Desktop/XDocs/sidebars.js",
           "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master",
           "showLastUpdateTime": true,
           "showLastUpdateAuthor": true
         },
         "theme": {
-          "customCss": "/Users/yoey/Desktop/react-docs/src/css/custom.css"
+          "customCss": "/Users/yoey/Desktop/XDocs/src/css/custom.css"
         }
       }
     ]
@@ -85,7 +85,7 @@ export default {
           "position": "right"
         },
         {
-          "href": "https://github.com/facebook/docusaurus",
+          "href": "https://github.com/MagicalZhu",
           "position": "right",
           "className": "header-github-link",
           "aria-label": "GitHub repository"
@@ -93,7 +93,6 @@ export default {
       ]
     },
     "footer": {
-      "style": "dark",
       "links": [
         {
           "title": "Docs",
@@ -135,7 +134,8 @@ export default {
           ]
         }
       ],
-      "copyright": "Copyright © 2022 ~ 2022 . Built with Docusaurus."
+      "copyright": "Copyright © 2022 huakucha. Built By Docusaurus.",
+      "style": "light"
     },
     "prism": {
       "theme": {

@@ -42,7 +42,7 @@ const nav = {
     },
     // 社交账号
     {
-      href: 'https://github.com/facebook/docusaurus',
+      href: 'https://github.com/MagicalZhu',
       position: 'right',
       className: 'header-github-link','aria-label': 'GitHub repository',
     }

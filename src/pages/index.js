@@ -2,37 +2,45 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import { Avatar, Space } from '@arco-design/web-react';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const avastar = useBaseUrl(siteConfig.themeConfig.navbar.logo.src)
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs">
-            
-          </Link>
+    <div class="container" className={clsx(styles.heroBanner), "margin-top--xl"}>
+      <div class="avatar avatar--vertical">
+        <img class="avatar__photo avatar__photo--xl" src={avastar}/>
+        <h1 class="hero__title">{siteConfig.title}</h1>
+        <div class="avatar__intro">
+          <p class="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles.buttons}>
+            <Link className="button button--secondary button--lg" to="/docs/about">
+              开始 →
+            </Link>
+          </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 
+
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
-  console.log(siteConfig);
+  console.log(JSON.stringify(siteConfig));
   return (
     <Layout title={`${siteConfig.title}`}>
-      <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <HomepageHeader />
       </main>
+        {/* <HomepageFeatures /> */}
     </Layout>
   );
 }
