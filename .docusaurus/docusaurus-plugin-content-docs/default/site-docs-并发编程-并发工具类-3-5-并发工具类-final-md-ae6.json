@@ -1,0 +1,21 @@
+{
+  "unversionedId": "并发编程/并发工具类/3.5并发工具类-final",
+  "id": "并发编程/并发工具类/3.5并发工具类-final",
+  "title": "final",
+  "description": "final不变性",
+  "source": "@site/docs/并发编程/并发工具类/3.5并发工具类-final.md",
+  "sourceDirName": "并发编程/并发工具类",
+  "slug": "/并发编程/并发工具类/3.5并发工具类-final",
+  "permalink": "/docs/并发编程/并发工具类/3.5并发工具类-final",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发工具类/3.5并发工具类-final.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "autoGroup-3": "并发工具",
+    "title": "final",
+    "sort": 35
+  }
+}

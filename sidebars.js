@@ -110,6 +110,18 @@ const ConcurrencyCode =  new Category('并发安全')
     'volatile',
     'dead_lock',
   ])
+  .setNoLabelItem('并发编程/并发控制', [
+    '线程池',
+    'ThreadLocal',
+    'Lock锁',
+    'Atomic&CAS',
+    'final',
+    '并发集合与阻塞队列',
+    '线程协作',
+    'AQS',
+    'FutureTask',
+    '缓存实战'
+  ])
   
   
 const basicSiderBar = [

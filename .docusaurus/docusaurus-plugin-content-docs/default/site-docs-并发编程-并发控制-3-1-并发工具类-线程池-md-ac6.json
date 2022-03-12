@@ -1,0 +1,29 @@
+{
+  "unversionedId": "并发编程/并发控制/线程池",
+  "id": "并发编程/并发控制/线程池",
+  "title": "线程池",
+  "description": "并发工具类",
+  "source": "@site/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
+  "sourceDirName": "并发编程/并发控制",
+  "slug": "/并发编程/并发控制/线程池",
+  "permalink": "/docs/并发编程/并发控制/线程池",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "线程池",
+    "title": "线程池"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "死锁与其他活跃锁",
+    "permalink": "/docs/并发编程/并发安全/dead_lock"
+  },
+  "next": {
+    "title": "ThreadLocal",
+    "permalink": "/docs/并发编程/并发控制/ThreadLocal"
+  }
+}

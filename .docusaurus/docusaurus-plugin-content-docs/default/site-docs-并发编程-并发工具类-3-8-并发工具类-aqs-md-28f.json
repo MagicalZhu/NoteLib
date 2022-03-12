@@ -1,0 +1,21 @@
+{
+  "unversionedId": "并发编程/并发工具类/3.8并发工具类-AQS",
+  "id": "并发编程/并发工具类/3.8并发工具类-AQS",
+  "title": "AQS(队列同步器)",
+  "description": "概述",
+  "source": "@site/docs/并发编程/并发工具类/3.8并发工具类-AQS.md",
+  "sourceDirName": "并发编程/并发工具类",
+  "slug": "/并发编程/并发工具类/3.8并发工具类-AQS",
+  "permalink": "/docs/并发编程/并发工具类/3.8并发工具类-AQS",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发工具类/3.8并发工具类-AQS.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "autoGroup-3": "并发工具",
+    "title": "AQS(队列同步器)",
+    "sort": 38
+  }
+}

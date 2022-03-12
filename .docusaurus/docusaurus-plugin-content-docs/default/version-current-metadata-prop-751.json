@@ -41,6 +41,66 @@
             "label": "死锁与其他活跃锁",
             "href": "/docs/并发编程/并发安全/dead_lock",
             "docId": "并发编程/并发安全/dead_lock"
+          },
+          {
+            "type": "link",
+            "label": "线程池",
+            "href": "/docs/并发编程/并发控制/线程池",
+            "docId": "并发编程/并发控制/线程池"
+          },
+          {
+            "type": "link",
+            "label": "ThreadLocal",
+            "href": "/docs/并发编程/并发控制/ThreadLocal",
+            "docId": "并发编程/并发控制/ThreadLocal"
+          },
+          {
+            "type": "link",
+            "label": "Lock锁",
+            "href": "/docs/并发编程/并发控制/Lock锁",
+            "docId": "并发编程/并发控制/Lock锁"
+          },
+          {
+            "type": "link",
+            "label": "原子变量类&CAS",
+            "href": "/docs/并发编程/并发控制/Atomic&CAS",
+            "docId": "并发编程/并发控制/Atomic&CAS"
+          },
+          {
+            "type": "link",
+            "label": "final",
+            "href": "/docs/并发编程/并发控制/final",
+            "docId": "并发编程/并发控制/final"
+          },
+          {
+            "type": "link",
+            "label": "并发容器",
+            "href": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+            "docId": "并发编程/并发控制/并发集合与阻塞队列"
+          },
+          {
+            "type": "link",
+            "label": "线程协作",
+            "href": "/docs/并发编程/并发控制/线程协作",
+            "docId": "并发编程/并发控制/线程协作"
+          },
+          {
+            "type": "link",
+            "label": "AQS(队列同步器)",
+            "href": "/docs/并发编程/并发控制/AQS",
+            "docId": "并发编程/并发控制/AQS"
+          },
+          {
+            "type": "link",
+            "label": "FutureTask",
+            "href": "/docs/并发编程/并发控制/FutureTask",
+            "docId": "并发编程/并发控制/FutureTask"
+          },
+          {
+            "type": "link",
+            "label": "自定义缓存",
+            "href": "/docs/并发编程/并发控制/缓存实战",
+            "docId": "并发编程/并发控制/缓存实战"
           }
         ],
         "collapsed": true,
@@ -70,6 +130,66 @@
     "并发编程/并发安全/volatile": {
       "id": "并发编程/并发安全/volatile",
       "title": "volatile与锁",
+      "description": "概述",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/并发集合与阻塞队列": {
+      "id": "并发编程/并发控制/并发集合与阻塞队列",
+      "title": "并发容器",
+      "description": "概览",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/缓存实战": {
+      "id": "并发编程/并发控制/缓存实战",
+      "title": "自定义缓存",
+      "description": "利用并发工具类实现一个简单的缓存",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/线程池": {
+      "id": "并发编程/并发控制/线程池",
+      "title": "线程池",
+      "description": "并发工具类",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/线程协作": {
+      "id": "并发编程/并发控制/线程协作",
+      "title": "线程协作",
+      "description": "概述",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/AQS": {
+      "id": "并发编程/并发控制/AQS",
+      "title": "AQS(队列同步器)",
+      "description": "概述",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/Atomic&CAS": {
+      "id": "并发编程/并发控制/Atomic&CAS",
+      "title": "原子变量类&CAS",
+      "description": "非阻塞同步机制与锁",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/final": {
+      "id": "并发编程/并发控制/final",
+      "title": "final",
+      "description": "final不变性",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/FutureTask": {
+      "id": "并发编程/并发控制/FutureTask",
+      "title": "FutureTask",
+      "description": "Future概述",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/Lock锁": {
+      "id": "并发编程/并发控制/Lock锁",
+      "title": "Lock锁",
+      "description": "锁分类",
+      "sidebar": "basicSiderBar"
+    },
+    "并发编程/并发控制/ThreadLocal": {
+      "id": "并发编程/并发控制/ThreadLocal",
+      "title": "ThreadLocal",
       "description": "概述",
       "sidebar": "basicSiderBar"
     },

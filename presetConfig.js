@@ -1,3 +1,4 @@
+const parse = require('remark-parse');
 const classicConfig = {
   /**
   * @type {import('@docusaurus/preset-classic').Options} 
@@ -10,7 +11,8 @@ const classicConfig = {
     sidebarPath: require.resolve("./sidebars.js"),
     editUrl: "https://github.com/MagicalZhu/XDocs/tree/main",
     showLastUpdateTime: true,
-    showLastUpdateAuthor: true
+    showLastUpdateAuthor: true,
+    remarkPlugins: [parse],
   },
   // 以下参数将被直接传递给 @docusaurus/theme-classic。
   theme: {

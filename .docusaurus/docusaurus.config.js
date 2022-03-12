@@ -23,7 +23,10 @@ export default {
           "sidebarPath": "/Users/yoey/Desktop/XDocs/sidebars.js",
           "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main",
           "showLastUpdateTime": true,
-          "showLastUpdateAuthor": true
+          "showLastUpdateAuthor": true,
+          "remarkPlugins": [
+            null
+          ]
         },
         "theme": {
           "customCss": "/Users/yoey/Desktop/XDocs/src/css/custom.css"

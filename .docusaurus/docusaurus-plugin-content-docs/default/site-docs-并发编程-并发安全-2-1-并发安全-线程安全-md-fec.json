@@ -1,0 +1,29 @@
+{
+  "unversionedId": "并发编程/并发安全/线程安全",
+  "id": "并发编程/并发安全/线程安全",
+  "title": "线程安全",
+  "description": "概述",
+  "source": "@site/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
+  "sourceDirName": "并发编程/并发安全",
+  "slug": "/并发编程/并发安全/线程安全",
+  "permalink": "/docs/并发编程/并发安全/线程安全",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "线程安全",
+    "title": "线程安全"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "并发笔记概述",
+    "permalink": "/docs/currency"
+  },
+  "next": {
+    "title": "JMM",
+    "permalink": "/docs/并发编程/并发安全/jmm"
+  }
+}

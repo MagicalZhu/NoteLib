@@ -1,0 +1,21 @@
+{
+  "unversionedId": "并发编程/并发工具类/4.1并发实战-缓存",
+  "id": "并发编程/并发工具类/4.1并发实战-缓存",
+  "title": "自定义缓存",
+  "description": "利用并发工具类实现一个简单的缓存",
+  "source": "@site/docs/并发编程/并发工具类/4.1并发实战-缓存.md",
+  "sourceDirName": "并发编程/并发工具类",
+  "slug": "/并发编程/并发工具类/4.1并发实战-缓存",
+  "permalink": "/docs/并发编程/并发工具类/4.1并发实战-缓存",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发工具类/4.1并发实战-缓存.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "autoGroup-4": "并发实战",
+    "title": "自定义缓存",
+    "sort": 41
+  }
+}

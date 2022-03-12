@@ -60,11 +60,11 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','ea2'),
+    component: ComponentCreator('/docs','5ef'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
-        component: ComponentCreator('/docs/并发编程/并发安全/线程安全','a04'),
+        component: ComponentCreator('/docs/并发编程/并发安全/线程安全','669'),
         exact: true,
         'sidebar': "basicSiderBar"
       },
@@ -83,6 +83,66 @@ export default [
       {
         path: '/docs/并发编程/并发安全/volatile',
         component: ComponentCreator('/docs/并发编程/并发安全/volatile','f05'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/并发集合与阻塞队列',
+        component: ComponentCreator('/docs/并发编程/并发控制/并发集合与阻塞队列','bf7'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/缓存实战',
+        component: ComponentCreator('/docs/并发编程/并发控制/缓存实战','81e'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/线程池',
+        component: ComponentCreator('/docs/并发编程/并发控制/线程池','06b'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/线程协作',
+        component: ComponentCreator('/docs/并发编程/并发控制/线程协作','909'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/AQS',
+        component: ComponentCreator('/docs/并发编程/并发控制/AQS','206'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/Atomic&CAS',
+        component: ComponentCreator('/docs/并发编程/并发控制/Atomic&CAS','0e0'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/final',
+        component: ComponentCreator('/docs/并发编程/并发控制/final','ee4'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/FutureTask',
+        component: ComponentCreator('/docs/并发编程/并发控制/FutureTask','fac'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/Lock锁',
+        component: ComponentCreator('/docs/并发编程/并发控制/Lock锁','8cf'),
+        exact: true,
+        'sidebar': "basicSiderBar"
+      },
+      {
+        path: '/docs/并发编程/并发控制/ThreadLocal',
+        component: ComponentCreator('/docs/并发编程/并发控制/ThreadLocal','9de'),
         exact: true,
         'sidebar': "basicSiderBar"
       },

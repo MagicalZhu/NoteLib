@@ -23,11 +23,11 @@
               "id": "并发编程/并发安全/线程安全",
               "title": "线程安全",
               "description": "概述",
-              "source": "@site/docs/并发编程/并发安全/2.1并发安全-线程安全.mdx",
+              "source": "@site/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
               "sourceDirName": "并发编程/并发安全",
               "slug": "/并发编程/并发安全/线程安全",
               "permalink": "/docs/并发编程/并发安全/线程安全",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.mdx",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
@@ -70,6 +70,10 @@
               "previous": {
                 "title": "volatile与锁",
                 "permalink": "/docs/并发编程/并发安全/volatile"
+              },
+              "next": {
+                "title": "线程池",
+                "permalink": "/docs/并发编程/并发控制/线程池"
               }
             },
             {
@@ -128,6 +132,292 @@
               "next": {
                 "title": "死锁与其他活跃锁",
                 "permalink": "/docs/并发编程/并发安全/dead_lock"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/并发集合与阻塞队列",
+              "id": "并发编程/并发控制/并发集合与阻塞队列",
+              "title": "并发容器",
+              "description": "概览",
+              "source": "@site/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/并发集合与阻塞队列",
+              "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "并发集合与阻塞队列",
+                "title": "并发容器"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "final",
+                "permalink": "/docs/并发编程/并发控制/final"
+              },
+              "next": {
+                "title": "线程协作",
+                "permalink": "/docs/并发编程/并发控制/线程协作"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/缓存实战",
+              "id": "并发编程/并发控制/缓存实战",
+              "title": "自定义缓存",
+              "description": "利用并发工具类实现一个简单的缓存",
+              "source": "@site/docs/并发编程/并发控制/4.1并发实战-缓存.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/缓存实战",
+              "permalink": "/docs/并发编程/并发控制/缓存实战",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/4.1并发实战-缓存.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "缓存实战",
+                "title": "自定义缓存"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "FutureTask",
+                "permalink": "/docs/并发编程/并发控制/FutureTask"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/线程池",
+              "id": "并发编程/并发控制/线程池",
+              "title": "线程池",
+              "description": "并发工具类",
+              "source": "@site/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/线程池",
+              "permalink": "/docs/并发编程/并发控制/线程池",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "线程池",
+                "title": "线程池"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "死锁与其他活跃锁",
+                "permalink": "/docs/并发编程/并发安全/dead_lock"
+              },
+              "next": {
+                "title": "ThreadLocal",
+                "permalink": "/docs/并发编程/并发控制/ThreadLocal"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/线程协作",
+              "id": "并发编程/并发控制/线程协作",
+              "title": "线程协作",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/线程协作",
+              "permalink": "/docs/并发编程/并发控制/线程协作",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "线程协作",
+                "title": "线程协作"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "并发容器",
+                "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
+              },
+              "next": {
+                "title": "AQS(队列同步器)",
+                "permalink": "/docs/并发编程/并发控制/AQS"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/AQS",
+              "id": "并发编程/并发控制/AQS",
+              "title": "AQS(队列同步器)",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/AQS",
+              "permalink": "/docs/并发编程/并发控制/AQS",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "AQS",
+                "title": "AQS(队列同步器)"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "线程协作",
+                "permalink": "/docs/并发编程/并发控制/线程协作"
+              },
+              "next": {
+                "title": "FutureTask",
+                "permalink": "/docs/并发编程/并发控制/FutureTask"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/Atomic&CAS",
+              "id": "并发编程/并发控制/Atomic&CAS",
+              "title": "原子变量类&CAS",
+              "description": "非阻塞同步机制与锁",
+              "source": "@site/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/Atomic&CAS",
+              "permalink": "/docs/并发编程/并发控制/Atomic&CAS",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "Atomic&CAS",
+                "title": "原子变量类&CAS"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "Lock锁",
+                "permalink": "/docs/并发编程/并发控制/Lock锁"
+              },
+              "next": {
+                "title": "final",
+                "permalink": "/docs/并发编程/并发控制/final"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/final",
+              "id": "并发编程/并发控制/final",
+              "title": "final",
+              "description": "final不变性",
+              "source": "@site/docs/并发编程/并发控制/3.5并发工具类-final.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/final",
+              "permalink": "/docs/并发编程/并发控制/final",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "final",
+                "title": "final"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "原子变量类&CAS",
+                "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
+              },
+              "next": {
+                "title": "并发容器",
+                "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/FutureTask",
+              "id": "并发编程/并发控制/FutureTask",
+              "title": "FutureTask",
+              "description": "Future概述",
+              "source": "@site/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/FutureTask",
+              "permalink": "/docs/并发编程/并发控制/FutureTask",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "FutureTask",
+                "title": "FutureTask"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "AQS(队列同步器)",
+                "permalink": "/docs/并发编程/并发控制/AQS"
+              },
+              "next": {
+                "title": "自定义缓存",
+                "permalink": "/docs/并发编程/并发控制/缓存实战"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/Lock锁",
+              "id": "并发编程/并发控制/Lock锁",
+              "title": "Lock锁",
+              "description": "锁分类",
+              "source": "@site/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/Lock锁",
+              "permalink": "/docs/并发编程/并发控制/Lock锁",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "Lock锁",
+                "title": "Lock锁"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "ThreadLocal",
+                "permalink": "/docs/并发编程/并发控制/ThreadLocal"
+              },
+              "next": {
+                "title": "原子变量类&CAS",
+                "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/ThreadLocal",
+              "id": "并发编程/并发控制/ThreadLocal",
+              "title": "ThreadLocal",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/ThreadLocal",
+              "permalink": "/docs/并发编程/并发控制/ThreadLocal",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "id": "ThreadLocal",
+                "title": "ThreadLocal"
+              },
+              "sidebar": "basicSiderBar",
+              "previous": {
+                "title": "线程池",
+                "permalink": "/docs/并发编程/并发控制/线程池"
+              },
+              "next": {
+                "title": "Lock锁",
+                "permalink": "/docs/并发编程/并发控制/Lock锁"
               }
             },
             {
@@ -225,6 +515,46 @@
                   {
                     "type": "doc",
                     "id": "并发编程/并发安全/dead_lock"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/线程池"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/ThreadLocal"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/Lock锁"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/Atomic&CAS"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/final"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/并发集合与阻塞队列"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/线程协作"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/AQS"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/FutureTask"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "并发编程/并发控制/缓存实战"
                   }
                 ],
                 "collapsed": true,

@@ -31,6 +31,56 @@
               "sidebar": "basicSiderBar"
             },
             {
+              "id": "并发编程/并发控制/并发集合与阻塞队列",
+              "path": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/缓存实战",
+              "path": "/docs/并发编程/并发控制/缓存实战",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/线程池",
+              "path": "/docs/并发编程/并发控制/线程池",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/线程协作",
+              "path": "/docs/并发编程/并发控制/线程协作",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/AQS",
+              "path": "/docs/并发编程/并发控制/AQS",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/Atomic&CAS",
+              "path": "/docs/并发编程/并发控制/Atomic&CAS",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/final",
+              "path": "/docs/并发编程/并发控制/final",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/FutureTask",
+              "path": "/docs/并发编程/并发控制/FutureTask",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/Lock锁",
+              "path": "/docs/并发编程/并发控制/Lock锁",
+              "sidebar": "basicSiderBar"
+            },
+            {
+              "id": "并发编程/并发控制/ThreadLocal",
+              "path": "/docs/并发编程/并发控制/ThreadLocal",
+              "sidebar": "basicSiderBar"
+            },
+            {
               "id": "并发编程/currency_about",
               "path": "/docs/currency",
               "sidebar": "basicSiderBar"

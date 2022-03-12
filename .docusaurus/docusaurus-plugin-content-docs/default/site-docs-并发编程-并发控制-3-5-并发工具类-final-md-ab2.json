@@ -1,0 +1,29 @@
+{
+  "unversionedId": "并发编程/并发控制/final",
+  "id": "并发编程/并发控制/final",
+  "title": "final",
+  "description": "final不变性",
+  "source": "@site/docs/并发编程/并发控制/3.5并发工具类-final.md",
+  "sourceDirName": "并发编程/并发控制",
+  "slug": "/并发编程/并发控制/final",
+  "permalink": "/docs/并发编程/并发控制/final",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "final",
+    "title": "final"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "原子变量类&CAS",
+    "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
+  },
+  "next": {
+    "title": "并发容器",
+    "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
+  }
+}

@@ -21,5 +21,9 @@
   "previous": {
     "title": "volatile与锁",
     "permalink": "/docs/并发编程/并发安全/volatile"
+  },
+  "next": {
+    "title": "线程池",
+    "permalink": "/docs/并发编程/并发控制/线程池"
   }
 }

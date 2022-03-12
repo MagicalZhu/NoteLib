@@ -1,10 +1,24 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 import React from 'react';
-import Tag from '@theme-original/Tag';
-
-export default function TagWrapper(props) {
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import styles from './styles.module.css';
+export default function Tag(props) {
+  const {permalink, name, count} = props;
   return (
-    <>
-      <Tag {...props} />
-    </>
+    <Link
+      href={permalink}
+      className={clsx(styles.tag, {
+        [styles.tagRegular]: !count,
+        [styles.tagWithCount]: count,
+      })}>
+      {name}
+      {count && <span>{count}</span>}
+    </Link>
   );
 }

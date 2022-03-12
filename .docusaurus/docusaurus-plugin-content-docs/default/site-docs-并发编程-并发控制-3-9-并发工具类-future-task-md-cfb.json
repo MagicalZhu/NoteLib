@@ -1,0 +1,29 @@
+{
+  "unversionedId": "并发编程/并发控制/FutureTask",
+  "id": "并发编程/并发控制/FutureTask",
+  "title": "FutureTask",
+  "description": "Future概述",
+  "source": "@site/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
+  "sourceDirName": "并发编程/并发控制",
+  "slug": "/并发编程/并发控制/FutureTask",
+  "permalink": "/docs/并发编程/并发控制/FutureTask",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {
+    "id": "FutureTask",
+    "title": "FutureTask"
+  },
+  "sidebar": "basicSiderBar",
+  "previous": {
+    "title": "AQS(队列同步器)",
+    "permalink": "/docs/并发编程/并发控制/AQS"
+  },
+  "next": {
+    "title": "自定义缓存",
+    "permalink": "/docs/并发编程/并发控制/缓存实战"
+  }
+}
