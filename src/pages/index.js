@@ -13,14 +13,14 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const avastar = useBaseUrl(siteConfig.themeConfig.navbar.logo.src)
   return (
-    <div class="container" className={clsx(styles.heroBanner), "margin-top--xl"}>
+    <div class="container" className={clsx(styles.heroBanner), "margin-top--xl", "margin-bottom--xl"}>
       <div class="avatar avatar--vertical">
         <img class="avatar__photo avatar__photo--xl" src={avastar}/>
         <h1 class="hero__title">{siteConfig.title}</h1>
         <div class="avatar__intro">
           <p class="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
-            <Link className="button button--secondary button--lg" to="/docs/about">
+            <Link className="button button--primary button--lg" to="/docs/about">
               开始 →
             </Link>
           </div>

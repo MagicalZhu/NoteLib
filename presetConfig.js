@@ -8,7 +8,7 @@ const classicConfig = {
   docs: {
     path: 'docs',
     sidebarPath: require.resolve("./sidebars.js"),
-    editUrl: "https://github.com/zxuqian/zxuqian.cn/tree/master",
+    editUrl: "https://github.com/MagicalZhu/XDocs/tree/main",
     showLastUpdateTime: true,
     showLastUpdateAuthor: true
   },

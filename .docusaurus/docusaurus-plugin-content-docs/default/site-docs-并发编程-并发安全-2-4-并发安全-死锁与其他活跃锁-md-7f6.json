@@ -7,7 +7,7 @@
   "sourceDirName": "并发编程/并发安全",
   "slug": "/并发编程/并发安全/dead_lock",
   "permalink": "/docs/并发编程/并发安全/dead_lock",
-  "editUrl": "https://github.com/zxuqian/zxuqian.cn/tree/master/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
   "tags": [],
   "version": "current",
   "lastUpdatedBy": "Author",

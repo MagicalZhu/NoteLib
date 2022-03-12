@@ -165,7 +165,7 @@ title: juc基础
 
   
 
-  ::: tip 线程状态的变迁
+  :::tip 线程状态的变迁
 
   线程创建之后，处于`NEW` 的状态，然后调用start()方法开始运行。当线程执行wait()方法后,线程会进入`WAITING`状态。进入等待状态的线程需要通过其他线程的通知才能够返回到运行状态，而`TIME_WAITING` 状态相当于在等待的基础上加上了超时限制，也就是超时时间到达后就会返回到可运行状态。
 
@@ -451,7 +451,7 @@ title: juc基础
 
   > run方法中带有sleep、wait等方法时，使用interrupt方法中断时会抛出异常并清除线程的中断状态,所以不需要也无法中断状态（除非再手动的设置中断状态）
 
-  ::: danger 注意
+  :::danger 注意
 
   1. 对sleep()方法进行中断，除了会抛出一个中断异常，还会清除中断状态 -> 所以通过再次调用interrupt方法重新设置中断状态
   2. 如果将sleep的异常处理放在是通过try-catch，由于sleep方法会清除中断状态，所以线程的run方法并不知道内部异常了 -> try-catch不应该放在while 内部
@@ -705,7 +705,7 @@ public class TicketSell {
 
 ### Lock接口概述
 
-::: danger 为什么要有Lock?
+:::danger 为什么要有Lock?
 
 - 如果一个代码块被 `synchronized` 修饰了，当一个线程获取了对应的锁，并执行该代码块时，其他线程便只能一直等待，等待获取锁的线程释放锁，而获取锁的线程释放锁只会有两种情况
   - 获取锁的线程执行完了该代码块，然后线程释放锁
@@ -829,7 +829,7 @@ public class LockDemo {
 
 ##### 等待通知机制
 
-:::warning 等待通知机制概述
+:::caution 等待通知机制概述
 
 1. **什么是等待/通知机制?**
    - 线程A调用了对象Obj的 wait() 方法进入等待状态，而另一个线程B调用了对象Obj的notify()/notifyAll()方法，线程A收到通知后再从对象Obj的wait()方法返回，然后执行后续的操作 -> <font color='red'>每个对象都有一个内部锁，并且这个内部锁有一个内部条件!</font>
@@ -1247,7 +1247,7 @@ public class CustomLockDemo {
   - <font color='red'>sleep方法不释放锁，包括 synchronized 和 lock</font>
   - <font color='red'>sleep方法可以被中断，会抛出中断异常并且清除中断状态</font>
 
-::: warning wait 和 sleep 的区别?
+:::caution wait 和 sleep 的区别?
 
 - 区别1
   - sleep 是Thread 的静态方法
@@ -1904,7 +1904,7 @@ public class Phone {
 >
 > 对于同步方法块，锁是 Synchonized 括号里配置的对象
 
-::: warning
+:::caution
 
 1. 一个对象里面如果有多个 synchronized 方法，某一个时刻内，只要一个线程去调用其中的 一个 synchronized 方法了， 其它的线程都只能等待
    - 即某一个时刻内，只能有唯一一个线程去访问这些 synchronized 方法
@@ -1922,7 +1922,7 @@ public class Phone {
 
 ### 公平锁和非公平锁
 
-::: tip 公平锁与非公平锁
+:::tip 公平锁与非公平锁
 
 公平锁: 多个线程按照申请锁的顺序去获得锁，线程会直接进入等待队列去排队，只有等待队列里的第一个线程可以获取到锁
 
@@ -2197,7 +2197,7 @@ public class RetranDemo2 {
 
 ### 死锁
 
-::: warning
+:::caution
 
 - 死锁: <font color='red'>两个或更多线程阻塞着等待其它处于死锁状态的线程释放所持有的锁。死锁通常发生在多个线程同时但以不同的顺序请求同一组锁的时候</font>
 
@@ -2340,7 +2340,7 @@ JUC 中提供了三种常用的辅助类，通过这些辅助类可以很好的�
 
 ### CountDownLatch
 
-::: warning
+:::caution
 
 - CountDownLatch 类可以设置一个计数器，然后通过 countDown() 方法来进行 减 1 的操作，使用 await 方法等待计数器不大于 0，然后继续执行 await 方法 之后的语句
   - CountDownLatch 主要有两个方法，当一个或者多个线程调用await() 方法时，这些线程会阻塞
@@ -2414,7 +2414,7 @@ public class CountDownLatchDemo {
 
 ### CyclicBarrier - 同步栅栏
 
-::: warning
+:::caution
 
 - <font color='red'>允许一组线程互相等待，直到所有线程都到达公共栅栏点 (同步点)，屏障才会打开，所有被屏障拦截的线程才会继续执行 </font> 
   - 屏障打开后会通过notify通知的方式唤醒等待的线程继续后续的处理
@@ -2529,7 +2529,7 @@ public class CalDataDemo implements Runnable {
 
 ### Semaphore - 控制并发线程数
 
-::: warning
+:::caution
 
 - <font color='red'>Semaphore 的构造方法中传入的第一个参数是最大信号量(可以看成最大线程池)，每个信号量初始化为一个最多只能分发一个许可证</font> 
   - 使用 acquire() 方法获得许可证，release() 方法释放许可
@@ -2649,7 +2649,7 @@ public class SemaphoreDemo {
   - 容易造成锁饥饿，一直读没有写操作
   - 读操作的时候，无法进行写操作。只有读完成之后才可以进行写操作。在写操作中是可以读的
 
-::: warning
+:::caution
 
 - 在线程持有读锁的情况下，该线程不能取得写锁(因为获取写锁的时候，如果发现当前的读锁被占用，就马上获取失败，不管读锁是不是被当前线程持有)
   - <font color='red'>因为 当线程获取读锁的时候，可能有其他线程同时也在持有读锁，因此不能把 获取读锁的线程“升级”为写锁</font>  
@@ -3381,7 +3381,7 @@ public static void three() {
 
 ### 线程池底层工作原理
 
-::: danger 线程池底层工作原理
+:::danger 线程池底层工作原理
 
 1. 在创建了线程池后，线程池中的线程数为零
 2. 当调用execute()方法添加一个请求任务时，线程池会做出如下判断
@@ -3415,7 +3415,7 @@ public static void three() {
 - `handler` 
   - 等待队列满后的拒绝策略
 
-::: danger
+:::danger
 
 - 线程池中，有三个重要的参数决定影响了拒绝策略 -> <font color='red'>当提交的任务数 > workQueue.size() + maximumPoolSize ，就会触发线程池的拒绝策略</font> 
   - corePoolSize: 核心线程数，也即最小的线程数
@@ -3513,7 +3513,7 @@ public class ThreadPoolDemo2 {
     - ForkJoinTask 需要通过 ForkJoinPool 来执行
 
 
-::: warning fork/join 框架的实现原理
+:::caution fork/join 框架的实现原理
 
 ForkJoinPool 由 ForkJoinTask 数组和 ForkJoinWorkerThread 数组组成， ForkJoinTask 数组负责将存放以及将程序提交给 ForkJoinPool，而 ForkJoinWorkerThread 负责执行这些任务。
 

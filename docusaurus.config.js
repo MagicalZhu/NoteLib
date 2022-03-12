@@ -20,7 +20,7 @@ const config = {
   projectName: 'XDocs',
   presets: [
     [
-      "@docusaurus/preset-classic",
+      'classic',
       presetConfig
     ],
   ],

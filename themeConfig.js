@@ -10,16 +10,9 @@ const themeConfig = {
   colorMode: {
     defaultMode: 'light',
     disableSwitch: false,
-    respectPrefersColorScheme: false,
-    switchConfig: {
-      darkIconStyle: {
-        marginLeft: '2px',
-      },
-      lightIconStyle: {
-        marginLeft: '1px',
-      },
-    },
+    respectPrefersColorScheme: true,
   },
+  hideableSidebar:true,
   image: 'img/fav.png',
   announcementBar: {
     id: 'support_us',

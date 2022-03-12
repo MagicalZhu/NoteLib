@@ -16,7 +16,7 @@ const nav = {
     src: 'img/logo.svg',
   },
   // 自动隐藏的粘性导航条
-  hideOnScroll: false,
+  // hideOnScroll: true,
   // 导航条的样式
   // style: 'primary',
 
@@ -35,10 +35,6 @@ const nav = {
           to: 'docs/networrk-basic',
         }
       ]
-    },
-    {
-      type: Type.search,
-      position: 'right',
     },
     // 社交账号
     {
