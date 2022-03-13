@@ -130,8 +130,13 @@ const basicSiderBar = [
   ConcurrencyCode
 ]
 
+const sourceSiderBar = [
+  createDoc('source/devSource', '简介'),
+]
+
 const sidebars = {
-  basicSiderBar
+  basicSiderBar,
+  sourceSiderBar
 }
 
 module.exports = sidebars;

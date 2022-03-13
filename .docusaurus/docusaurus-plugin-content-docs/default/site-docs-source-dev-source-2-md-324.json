@@ -1,0 +1,18 @@
+{
+  "unversionedId": "source/devSource2",
+  "id": "source/devSource2",
+  "title": "个人简介",
+  "description": "devSource文档概述",
+  "source": "@site/docs/source/devSource2.md",
+  "sourceDirName": "source",
+  "slug": "/source/devSource2",
+  "permalink": "/docs/source/devSource2",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/devSource2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "devSource2",
+    "title": "个人简介",
+    "slug": "/source/devSource2"
+  }
+}

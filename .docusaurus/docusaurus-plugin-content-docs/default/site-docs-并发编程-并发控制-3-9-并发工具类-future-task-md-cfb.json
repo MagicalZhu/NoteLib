@@ -10,9 +10,6 @@
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Author",
-  "lastUpdatedAt": 1539502055,
-  "formattedLastUpdatedAt": "10/14/2018",
   "frontMatter": {
     "id": "FutureTask",
     "title": "FutureTask"

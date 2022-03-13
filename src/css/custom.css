@@ -66,14 +66,26 @@ mark {
 }
 
 code {
-  background-color: var(--ifm-code-background);
-  padding: 4px 4px 4px 4px;
+  color: var(--ifm-color-primary);
+  padding: 2px 2px 2px 2px;
   margin: 4px 4px 4px 4px;
-  border: none;
+  border: 0.1rem solid rgba(159, 159, 159, 0.1);
   vertical-align: middle;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 14px;
-   font-weight: inherit;
+  font-family: 'Monaco';
+  font-weight: 600;
+}
+
+blockquote {
+	color:rgb(102, 102, 102);
+	border-left: 5px solid rgb(169, 202, 255);
+}
+blockquote::before {
+	display: block;
+	height: 2rem;
+	width: 2px;
+	content: "🌈";
 }
 
 
@@ -99,10 +111,6 @@ header + p::after {
   padding: 0 var(--ifm-pre-padding);
 }
 
-video {
-  width: 100%;
-  margin: 2rem 0;
-}
 
 /* Headers */
 
@@ -126,12 +134,6 @@ h2 {
 
 h3 {
   font-size: 1.2rem !important;
-}
-
-/* Code Blocks */
-
-code {
-  color: var(--ifm-color-emphasis-900);
 }
 
 html[data-theme='dark'] .prism-code,
@@ -170,11 +172,6 @@ svg[class^='iconLanguage'] {
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
 }
-
-.main {
-  padding: 12px;
-} 
-
 
 
 
@@ -246,13 +243,17 @@ html[data-theme="dark"] .medium-zoom-overlay {
   margin-left: 1rem;
 }
 
+
+/* Icon List */
 .header-github-link:hover,
+.header-share-link:hover,
 .header-discord-link:hover,
 .header-nanos-link:hover {
   opacity: 0.6;
 }
 
 .header-github-link:before,
+.header-share-link:before,
 .header-discord-link:before,
 .header-nanos-link:before {
   content: '';
@@ -261,21 +262,29 @@ html[data-theme="dark"] .medium-zoom-overlay {
   height: 30px;
 }
 
-
+/* Github */
 .header-github-link:before {
   background: no-repeat center/24px url("/img/social/github-black.svg");
 }
-
 html[data-theme='dark'] .header-github-link:before {
   background: no-repeat center/24px url("/img/social/github-white.svg");
 }
 
+
+/* Discord */
 .header-discord-link:before {
   background: no-repeat center 60%/28px url("/img/social/discord-color.svg");
 }
-
 html[data-theme='dark'] .header-discord-link:before {
   background: no-repeat center 60%/28px url("/img/social/discord-white.svg");
+}
+
+/* share */
+.header-share-link:before {
+  background: no-repeat center/24px url("/img/social/share-light.svg");
+}
+html[data-theme='dark'] .header-share-link:before {
+  background: no-repeat center/24px url("/img/social/share-dark.svg");
 }
 
 /* Scripting Components */

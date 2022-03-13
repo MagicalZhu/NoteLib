@@ -1,0 +1,18 @@
+{
+  "unversionedId": "Spring/spring",
+  "id": "Spring/spring",
+  "title": "Spring",
+  "description": "Spring技术文档概述",
+  "source": "@site/docs/Spring/about.mdx",
+  "sourceDirName": "Spring",
+  "slug": "/spring",
+  "permalink": "/docs/spring",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "spring",
+    "title": "Spring",
+    "slug": "/spring"
+  }
+}

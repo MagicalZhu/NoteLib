@@ -19,7 +19,7 @@ export default function EditThisPage({editUrl}) {
       <Translate
         id="theme.common.editThisPage"
         description="The link label to edit the current page">
-        Edit this page
+        编辑此页
       </Translate>
     </a>
   );

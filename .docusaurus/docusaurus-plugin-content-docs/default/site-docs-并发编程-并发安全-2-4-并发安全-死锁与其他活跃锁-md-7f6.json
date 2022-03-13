@@ -10,9 +10,6 @@
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
   "tags": [],
   "version": "current",
-  "lastUpdatedBy": "Author",
-  "lastUpdatedAt": 1539502055,
-  "formattedLastUpdatedAt": "10/14/2018",
   "frontMatter": {
     "id": "dead_lock",
     "title": "死锁与其他活跃锁"

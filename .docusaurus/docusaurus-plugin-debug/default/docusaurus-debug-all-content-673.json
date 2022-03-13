@@ -30,9 +30,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "线程安全",
                 "title": "线程安全"
@@ -59,9 +56,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "dead_lock",
                 "title": "死锁与其他活跃锁"
@@ -88,9 +82,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.2并发安全-JMM.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "jmm",
                 "title": "JMM"
@@ -117,9 +108,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "volatile",
                 "title": "volatile与锁"
@@ -146,9 +134,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "并发集合与阻塞队列",
                 "title": "并发容器"
@@ -175,9 +160,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/4.1并发实战-缓存.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "缓存实战",
                 "title": "自定义缓存"
@@ -200,9 +182,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "线程池",
                 "title": "线程池"
@@ -229,9 +208,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "线程协作",
                 "title": "线程协作"
@@ -258,9 +234,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "AQS",
                 "title": "AQS(队列同步器)"
@@ -287,9 +260,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "Atomic&CAS",
                 "title": "原子变量类&CAS"
@@ -316,9 +286,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "final",
                 "title": "final"
@@ -345,9 +312,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "FutureTask",
                 "title": "FutureTask"
@@ -374,9 +338,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "Lock锁",
                 "title": "Lock锁"
@@ -403,9 +364,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "ThreadLocal",
                 "title": "ThreadLocal"
@@ -432,9 +390,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/about.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "currency_about",
                 "slug": "/currency",
@@ -458,9 +413,6 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/index.md",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "networrk-basic-intro",
                 "title": "技术视频栏目简介",
@@ -479,13 +431,47 @@
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/about.mdx",
               "tags": [],
               "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "10/14/2018",
               "frontMatter": {
                 "id": "about",
                 "title": "个人简介",
                 "slug": "/about"
+              }
+            },
+            {
+              "unversionedId": "source/devSource",
+              "id": "source/devSource",
+              "title": "资源分享",
+              "description": "分享一些简单好用的资源",
+              "source": "@site/docs/source/about.md",
+              "sourceDirName": "source",
+              "slug": "/source/devSource",
+              "permalink": "/docs/source/devSource",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/about.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "devSource",
+                "title": "资源分享",
+                "slug": "/source/devSource"
+              },
+              "sidebar": "sourceSiderBar"
+            },
+            {
+              "unversionedId": "Spring/spring",
+              "id": "Spring/spring",
+              "title": "Spring",
+              "description": "Spring技术文档概述",
+              "source": "@site/docs/Spring/about.mdx",
+              "sourceDirName": "Spring",
+              "slug": "/spring",
+              "permalink": "/docs/spring",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "spring",
+                "title": "Spring",
+                "slug": "/spring"
               }
             }
           ],
@@ -559,6 +545,13 @@
                 ],
                 "collapsed": true,
                 "collapsible": true
+              }
+            ],
+            "sourceSiderBar": [
+              {
+                "type": "doc",
+                "id": "source/devSource",
+                "label": "简介"
               }
             ]
           },

@@ -16,7 +16,7 @@ function LastUpdatedAtDate({lastUpdatedAt, formattedLastUpdatedAt}) {
       values={{
         date: (
           <b>
-            <time dateTime={new Date(lastUpdatedAt * 1000).toISOString()}>
+            <time dateTime={new Date(lastUpdatedAt * 1000).toLocaleString()}>
               {formattedLastUpdatedAt}
             </time>
           </b>

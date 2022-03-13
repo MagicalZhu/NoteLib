@@ -1,0 +1,18 @@
+{
+  "unversionedId": "source/devSource",
+  "id": "source/devSource",
+  "title": "资源分享",
+  "description": "devSource文档概述",
+  "source": "@site/docs/source/devSource.md",
+  "sourceDirName": "source",
+  "slug": "/source/devSource",
+  "permalink": "/docs/source/devSource",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/devSource.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "devSource",
+    "title": "资源分享",
+    "slug": "/source/devSource"
+  }
+}

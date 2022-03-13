@@ -1,9 +1,16 @@
-const useBaseUrl = require('@docusaurus/useBaseUrl');
+import React from 'react';
 
-
-const ImgShow = ({ src, style, className }) => (
-  <img src={useBaseUrl(src)} style={style} className={className} />
-);
+const FontExt = ({children, color}) => {
+  let renderValue = children
+  return (
+    <span
+    style={{
+      color: color
+    }}>
+    {renderValue}
+    </span> 
+  )
+}
 
 const Highlight = ({children, color}) => (
   <span
@@ -17,5 +24,5 @@ const Highlight = ({children, color}) => (
   </span>
 );
 
-exports.ImgShow = ImgShow;
-exports.Highlight = Highlight;
+
+export {FontExt}

@@ -106,6 +106,14 @@
         "collapsed": true,
         "collapsible": true
       }
+    ],
+    "sourceSiderBar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/source/devSource",
+        "docId": "source/devSource"
+      }
     ]
   },
   "docs": {
@@ -208,6 +216,17 @@
       "id": "about",
       "title": "个人简介",
       "description": "文档概述"
+    },
+    "source/devSource": {
+      "id": "source/devSource",
+      "title": "资源分享",
+      "description": "分享一些简单好用的资源",
+      "sidebar": "sourceSiderBar"
+    },
+    "Spring/spring": {
+      "id": "Spring/spring",
+      "title": "Spring",
+      "description": "Spring技术文档概述"
     }
   }
 }

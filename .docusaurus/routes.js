@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','5ef'),
+    component: ComponentCreator('/docs','a9c'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -160,6 +160,17 @@ export default [
       {
         path: '/docs/networrk-basic',
         component: ComponentCreator('/docs/networrk-basic','aa1'),
+        exact: true
+      },
+      {
+        path: '/docs/source/devSource',
+        component: ComponentCreator('/docs/source/devSource','db1'),
+        exact: true,
+        'sidebar': "sourceSiderBar"
+      },
+      {
+        path: '/docs/spring',
+        component: ComponentCreator('/docs/spring','97d'),
         exact: true
       }
     ]

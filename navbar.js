@@ -36,6 +36,21 @@ const nav = {
         }
       ]
     },
+    {
+      label: "框架与中间件",
+      position: "left",
+      items: [
+        {
+          label: "Spring",
+          to: 'docs/spring',
+        }
+      ]
+    },
+    {
+      position: "right",
+      href: '/docs/source/devSource',
+      className: 'header-share-link','aria-label': 'GitHub repository',
+    },
     // 社交账号
     {
       href: 'https://github.com/MagicalZhu',

@@ -22,11 +22,9 @@ export default {
           "path": "docs",
           "sidebarPath": "/Users/yoey/Desktop/XDocs/sidebars.js",
           "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main",
-          "showLastUpdateTime": true,
-          "showLastUpdateAuthor": true,
-          "remarkPlugins": [
-            null
-          ]
+          "showLastUpdateTime": false,
+          "showLastUpdateAuthor": false,
+          "remarkPlugins": []
         },
         "theme": {
           "customCss": "/Users/yoey/Desktop/XDocs/src/css/custom.css"
@@ -72,6 +70,22 @@ export default {
               "to": "docs/networrk-basic"
             }
           ]
+        },
+        {
+          "label": "框架与中间件",
+          "position": "left",
+          "items": [
+            {
+              "label": "Spring",
+              "to": "docs/spring"
+            }
+          ]
+        },
+        {
+          "position": "right",
+          "href": "/docs/source/devSource",
+          "className": "header-share-link",
+          "aria-label": "GitHub repository"
         },
         {
           "href": "https://github.com/MagicalZhu",

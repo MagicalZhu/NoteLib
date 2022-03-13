@@ -92,12 +92,27 @@
             {
               "id": "about",
               "path": "/docs/about"
+            },
+            {
+              "id": "source/devSource",
+              "path": "/docs/source/devSource",
+              "sidebar": "sourceSiderBar"
+            },
+            {
+              "id": "Spring/spring",
+              "path": "/docs/spring"
             }
           ],
           "sidebars": {
             "basicSiderBar": {
               "link": {
                 "path": "/docs/currency",
+                "label": "简介"
+              }
+            },
+            "sourceSiderBar": {
+              "link": {
+                "path": "/docs/source/devSource",
                 "label": "简介"
               }
             }
