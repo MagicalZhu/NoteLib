@@ -131,7 +131,7 @@ const basicSiderBar = [
 ]
 
 const sourceSiderBar = [
-  createDoc('source/devSource', '简介'),
+  createDoc('source/devSource', '资源分享'),
 ]
 
 const sidebars = {

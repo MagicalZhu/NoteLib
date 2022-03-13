@@ -110,7 +110,7 @@
     "sourceSiderBar": [
       {
         "type": "link",
-        "label": "简介",
+        "label": "资源分享",
         "href": "/docs/source/devSource",
         "docId": "source/devSource"
       }
