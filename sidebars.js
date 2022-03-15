@@ -123,20 +123,37 @@ const ConcurrencyCode =  new Category('并发安全')
     '缓存实战'
   ])
   
-  
-const basicSiderBar = [
+// 并发编程相关  
+const basicSideBar = [
   createDoc('并发编程/currency_about', '简介'),
   // createDoc('concurrency/juc_basic', 'juc基础'),
   ConcurrencyCode
 ]
 
-const sourceSiderBar = [
-  createDoc('source/devSource', '资源分享'),
+// 资源分享相关
+const sourceSideBar = [
+  createDoc('source/devSource', '资源分享')
 ]
 
+
+// Spring相关
+const springCode = new Category('Spring编程思想')
+  .setNoLabelItem('Spring/Spring编程思想', [
+    'IOC容器',
+    'Bean',
+    '依赖查找',
+    '依赖注入'
+  ])
+const springSideBar = [
+  createDoc('Spring/spring', '简介'),
+  springCode
+]
+
+
 const sidebars = {
-  basicSiderBar,
-  sourceSiderBar
+  basicSideBar,
+  sourceSideBar,
+  springSideBar
 }
 
 module.exports = sidebars;
