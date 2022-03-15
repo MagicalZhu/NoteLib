@@ -14,5 +14,10 @@
     "id": "spring",
     "title": "Spring",
     "slug": "/spring"
+  },
+  "sidebar": "springSideBar",
+  "next": {
+    "title": "IOC容器",
+    "permalink": "/docs/Spring/Spring编程思想/IOC容器"
   }
 }

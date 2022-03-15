@@ -14,7 +14,7 @@
     "id": "FutureTask",
     "title": "FutureTask"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "AQS(队列同步器)",
     "permalink": "/docs/并发编程/并发控制/AQS"

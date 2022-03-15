@@ -1,0 +1,18 @@
+{
+  "unversionedId": "SpringCloud/微服务技术栈",
+  "id": "SpringCloud/微服务技术栈",
+  "title": "微服务技术栈",
+  "description": "1.2 微服务落地技术栈",
+  "source": "@site/docs/SpringCloud/0.微服务入门概述.md",
+  "sourceDirName": "SpringCloud",
+  "slug": "/SpringCloud/微服务技术栈",
+  "permalink": "/docs/SpringCloud/微服务技术栈",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/0.微服务入门概述.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "id": "微服务技术栈",
+    "title": "微服务技术栈"
+  }
+}

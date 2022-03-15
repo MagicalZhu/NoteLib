@@ -43,6 +43,10 @@ const nav = {
         {
           label: "Spring",
           to: 'docs/spring',
+        },
+        {
+          label: "SpringCloud",
+          to: 'docs/springCloud',
         }
       ]
     },

@@ -60,91 +60,91 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','a9c'),
+    component: ComponentCreator('/docs','01d'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
-        component: ComponentCreator('/docs/并发编程/并发安全/线程安全','669'),
+        component: ComponentCreator('/docs/并发编程/并发安全/线程安全','ab9'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发安全/dead_lock',
-        component: ComponentCreator('/docs/并发编程/并发安全/dead_lock','1c1'),
+        component: ComponentCreator('/docs/并发编程/并发安全/dead_lock','345'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发安全/jmm',
-        component: ComponentCreator('/docs/并发编程/并发安全/jmm','efb'),
+        component: ComponentCreator('/docs/并发编程/并发安全/jmm','857'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发安全/volatile',
-        component: ComponentCreator('/docs/并发编程/并发安全/volatile','f05'),
+        component: ComponentCreator('/docs/并发编程/并发安全/volatile','f25'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/并发集合与阻塞队列',
-        component: ComponentCreator('/docs/并发编程/并发控制/并发集合与阻塞队列','bf7'),
+        component: ComponentCreator('/docs/并发编程/并发控制/并发集合与阻塞队列','d29'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/缓存实战',
-        component: ComponentCreator('/docs/并发编程/并发控制/缓存实战','81e'),
+        component: ComponentCreator('/docs/并发编程/并发控制/缓存实战','03d'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/线程池',
-        component: ComponentCreator('/docs/并发编程/并发控制/线程池','06b'),
+        component: ComponentCreator('/docs/并发编程/并发控制/线程池','525'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/线程协作',
-        component: ComponentCreator('/docs/并发编程/并发控制/线程协作','909'),
+        component: ComponentCreator('/docs/并发编程/并发控制/线程协作','e5f'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/AQS',
-        component: ComponentCreator('/docs/并发编程/并发控制/AQS','206'),
+        component: ComponentCreator('/docs/并发编程/并发控制/AQS','cd0'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/Atomic&CAS',
-        component: ComponentCreator('/docs/并发编程/并发控制/Atomic&CAS','0e0'),
+        component: ComponentCreator('/docs/并发编程/并发控制/Atomic&CAS','290'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/final',
-        component: ComponentCreator('/docs/并发编程/并发控制/final','ee4'),
+        component: ComponentCreator('/docs/并发编程/并发控制/final','e45'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/FutureTask',
-        component: ComponentCreator('/docs/并发编程/并发控制/FutureTask','fac'),
+        component: ComponentCreator('/docs/并发编程/并发控制/FutureTask','7ee'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/Lock锁',
-        component: ComponentCreator('/docs/并发编程/并发控制/Lock锁','8cf'),
+        component: ComponentCreator('/docs/并发编程/并发控制/Lock锁','06e'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/ThreadLocal',
-        component: ComponentCreator('/docs/并发编程/并发控制/ThreadLocal','9de'),
+        component: ComponentCreator('/docs/并发编程/并发控制/ThreadLocal','70a'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/about',
@@ -153,9 +153,9 @@ export default [
       },
       {
         path: '/docs/currency',
-        component: ComponentCreator('/docs/currency','564'),
+        component: ComponentCreator('/docs/currency','102'),
         exact: true,
-        'sidebar': "basicSiderBar"
+        'sidebar': "basicSideBar"
       },
       {
         path: '/docs/networrk-basic',
@@ -164,14 +164,105 @@ export default [
       },
       {
         path: '/docs/source/devSource',
-        component: ComponentCreator('/docs/source/devSource','db1'),
+        component: ComponentCreator('/docs/source/devSource','d6c'),
         exact: true,
-        'sidebar': "sourceSiderBar"
+        'sidebar': "sourceSideBar"
       },
       {
         path: '/docs/spring',
-        component: ComponentCreator('/docs/spring','97d'),
-        exact: true
+        component: ComponentCreator('/docs/spring','a62'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/Spring/Spring编程思想/依赖查找',
+        component: ComponentCreator('/docs/Spring/Spring编程思想/依赖查找','4ac'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/Spring/Spring编程思想/依赖注入',
+        component: ComponentCreator('/docs/Spring/Spring编程思想/依赖注入','d01'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/Spring/Spring编程思想/Bean',
+        component: ComponentCreator('/docs/Spring/Spring编程思想/Bean','fd0'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/Spring/Spring编程思想/IOC容器',
+        component: ComponentCreator('/docs/Spring/Spring编程思想/IOC容器','a79'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/springCloud',
+        component: ComponentCreator('/docs/springCloud','aef'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/微服务技术栈',
+        component: ComponentCreator('/docs/SpringCloud/微服务技术栈','764'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/Bus',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Bus','92e'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/Config',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Config','fad'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/Eureka&Consul',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Eureka&Consul','1cb'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/GateWay',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/GateWay','c64'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/Hystrix',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Hystrix','288'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/OpenFeign',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/OpenFeign','c59'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/Ribbon',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Ribbon','a3d'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/Sleuth',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Sleuth','d1c'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/Stream',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Stream','3be'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
       }
     ]
   },

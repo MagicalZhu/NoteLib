@@ -14,7 +14,7 @@
     "id": "线程池",
     "title": "线程池"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "死锁与其他活跃锁",
     "permalink": "/docs/并发编程/并发安全/dead_lock"

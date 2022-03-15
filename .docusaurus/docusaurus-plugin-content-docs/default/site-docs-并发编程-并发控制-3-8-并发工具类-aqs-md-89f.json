@@ -14,7 +14,7 @@
     "id": "AQS",
     "title": "AQS(队列同步器)"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "线程协作",
     "permalink": "/docs/并发编程/并发控制/线程协作"

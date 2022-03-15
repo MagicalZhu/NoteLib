@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Spring/Spring编程思想/IOC容器",
+  "id": "Spring/Spring编程思想/IOC容器",
+  "title": "IOC容器",
+  "description": "1. IOC 的主要实现",
+  "source": "@site/docs/Spring/Spring编程思想/1.1IOC.md",
+  "sourceDirName": "Spring/Spring编程思想",
+  "slug": "/Spring/Spring编程思想/IOC容器",
+  "permalink": "/docs/Spring/Spring编程思想/IOC容器",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.1IOC.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "IOC容器",
+    "title": "IOC容器"
+  },
+  "sidebar": "springSideBar",
+  "previous": {
+    "title": "Spring",
+    "permalink": "/docs/spring"
+  },
+  "next": {
+    "title": "Bean",
+    "permalink": "/docs/Spring/Spring编程思想/Bean"
+  }
+}

@@ -14,7 +14,7 @@
     "id": "线程安全",
     "title": "线程安全"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "并发笔记概述",
     "permalink": "/docs/currency"

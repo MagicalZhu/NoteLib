@@ -1,0 +1,26 @@
+{
+  "unversionedId": "SpringCloud/Netflix/OpenFeign",
+  "id": "SpringCloud/Netflix/OpenFeign",
+  "title": "服务接口调用-OpenFeign",
+  "description": "1.1 OpenFeign 概述",
+  "source": "@site/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
+  "sourceDirName": "SpringCloud/Netflix",
+  "slug": "/SpringCloud/Netflix/OpenFeign",
+  "permalink": "/docs/SpringCloud/Netflix/OpenFeign",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "OpenFeign",
+    "title": "服务接口调用-OpenFeign"
+  },
+  "sidebar": "springCloudSideBar",
+  "previous": {
+    "title": "服务调用-Ribbon",
+    "permalink": "/docs/SpringCloud/Netflix/Ribbon"
+  },
+  "next": {
+    "title": "服务熔断-Hystrix",
+    "permalink": "/docs/SpringCloud/Netflix/Hystrix"
+  }
+}

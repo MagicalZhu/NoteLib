@@ -14,7 +14,7 @@
     "id": "Lock锁",
     "title": "Lock锁"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "ThreadLocal",
     "permalink": "/docs/并发编程/并发控制/ThreadLocal"

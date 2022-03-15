@@ -14,7 +14,7 @@
     "id": "线程协作",
     "title": "线程协作"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "并发容器",
     "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"

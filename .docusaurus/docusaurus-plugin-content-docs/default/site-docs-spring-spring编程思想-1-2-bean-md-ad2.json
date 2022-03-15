@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Spring/Spring编程思想/Bean",
+  "id": "Spring/Spring编程思想/Bean",
+  "title": "Bean",
+  "description": "1. Spring Bean",
+  "source": "@site/docs/Spring/Spring编程思想/1.2Bean.md",
+  "sourceDirName": "Spring/Spring编程思想",
+  "slug": "/Spring/Spring编程思想/Bean",
+  "permalink": "/docs/Spring/Spring编程思想/Bean",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.2Bean.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "Bean",
+    "title": "Bean"
+  },
+  "sidebar": "springSideBar",
+  "previous": {
+    "title": "IOC容器",
+    "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+  },
+  "next": {
+    "title": "依赖查找",
+    "permalink": "/docs/Spring/Spring编程思想/依赖查找"
+  }
+}

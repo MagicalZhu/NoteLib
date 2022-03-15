@@ -1,0 +1,23 @@
+{
+  "unversionedId": "SpringCloud/springCloud",
+  "id": "SpringCloud/springCloud",
+  "title": "springCloud",
+  "description": "SpringCloud技术文档概述",
+  "source": "@site/docs/SpringCloud/about.mdx",
+  "sourceDirName": "SpringCloud",
+  "slug": "/springCloud",
+  "permalink": "/docs/springCloud",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "springCloud",
+    "title": "springCloud",
+    "slug": "/springCloud"
+  },
+  "sidebar": "springCloudSideBar",
+  "next": {
+    "title": "微服务技术栈",
+    "permalink": "/docs/SpringCloud/微服务技术栈"
+  }
+}

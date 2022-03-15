@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Spring/Spring编程思想/依赖查找",
+  "id": "Spring/Spring编程思想/依赖查找",
+  "title": "依赖查找",
+  "description": "1.依赖查找的历史（传统java）",
+  "source": "@site/docs/Spring/Spring编程思想/1.3依赖查找.md",
+  "sourceDirName": "Spring/Spring编程思想",
+  "slug": "/Spring/Spring编程思想/依赖查找",
+  "permalink": "/docs/Spring/Spring编程思想/依赖查找",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.3依赖查找.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "依赖查找",
+    "title": "依赖查找"
+  },
+  "sidebar": "springSideBar",
+  "previous": {
+    "title": "Bean",
+    "permalink": "/docs/Spring/Spring编程思想/Bean"
+  },
+  "next": {
+    "title": "依赖注入",
+    "permalink": "/docs/Spring/Spring编程思想/依赖注入"
+  }
+}

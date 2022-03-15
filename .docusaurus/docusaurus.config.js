@@ -78,6 +78,10 @@ export default {
             {
               "label": "Spring",
               "to": "docs/spring"
+            },
+            {
+              "label": "SpringCloud",
+              "to": "docs/springCloud"
             }
           ]
         },

@@ -14,7 +14,7 @@
     "id": "volatile",
     "title": "volatile与锁"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "JMM",
     "permalink": "/docs/并发编程/并发安全/jmm"

@@ -65,18 +65,18 @@ class Category {
     return this
   }
   /**
-   * @description 添加文档
+   * @description 添加文档(route eg: Category.label + '/' + prefix + '/' + itemId)
    * @param {Array} itemIds 
    * @returns 
    */
-  setItem( prefix,itemIds) {
+  setCategoryRouteItem(prefix,itemIds) {
     itemIds.forEach((item) => {
       this.items.push(`${this.label}/${prefix}/${item}`)
     })
     return this
   }
   /**
-   * @description 添加文档
+   * @description 添加文档(route eg: prefix + '/' + itemId)
    * @param {Array} itemIds 
    * @returns 
    */
@@ -86,8 +86,10 @@ class Category {
     })
     return this
   }
-  setSubCategory(category) {
-    this.items.push(category)
+  createSubCaregory(categoryName, prefix, itemIds) {
+    const subCategory = new Category(categoryName)
+    subCategory.setNoLabelItem(prefix, itemIds)
+    this.items.push(subCategory)
     return this
   }
 }
@@ -103,38 +105,37 @@ const createAuto = (dir) => {
 
 // @ts-check
 // 创建并发安全的分类
-const ConcurrencyCode =  new Category('并发安全')
-  .setNoLabelItem('并发编程/并发安全', [
-    '线程安全',
-    'jmm',
-    'volatile',
-    'dead_lock',
-  ])
-  .setNoLabelItem('并发编程/并发控制', [
-    '线程池',
-    'ThreadLocal',
-    'Lock锁',
-    'Atomic&CAS',
-    'final',
-    '并发集合与阻塞队列',
-    '线程协作',
-    'AQS',
-    'FutureTask',
-    '缓存实战'
-  ])
+const ConcurrencySafe =  new Category('并发基础')
+    .createSubCaregory('并发安全', '并发编程/并发安全', [
+      '线程安全',
+      'jmm',
+      'volatile',
+      'dead_lock',
+    ])
+    .createSubCaregory('并发控制', '并发编程/并发控制', [
+      '线程池',
+      'ThreadLocal',
+      'Lock锁',
+      'Atomic&CAS',
+      'final',
+      '并发集合与阻塞队列',
+      '线程协作',
+      'AQS',
+      'FutureTask',
+      '缓存实战'
+    ])
   
 // 并发编程相关  
 const basicSideBar = [
   createDoc('并发编程/currency_about', '简介'),
   // createDoc('concurrency/juc_basic', 'juc基础'),
-  ConcurrencyCode
+  ConcurrencySafe,
 ]
 
 // 资源分享相关
 const sourceSideBar = [
   createDoc('source/devSource', '资源分享')
 ]
-
 
 // Spring相关
 const springCode = new Category('Spring编程思想')
@@ -149,11 +150,32 @@ const springSideBar = [
   springCode
 ]
 
+// SpringCloud
+const springCloudCode = new Category('微服务基础')
+  .setNoLabelItem('SpringCloud', [
+    '微服务技术栈',
+  ])
+  .createSubCaregory('SpringCloud-Netflix', 'SpringCloud/Netflix', [
+    'Eureka&Consul',
+    'Ribbon',
+    'OpenFeign',
+    'Hystrix',
+    'GateWay',
+    'Config',
+    'Bus',
+    'Stream',
+    'Sleuth'
+  ])
+const springCloudSideBar = [
+  createDoc('SpringCloud/springCloud', '简介'),
+  springCloudCode
+]
 
 const sidebars = {
   basicSideBar,
   sourceSideBar,
-  springSideBar
+  springSideBar,
+  springCloudSideBar
 }
 
 module.exports = sidebars;

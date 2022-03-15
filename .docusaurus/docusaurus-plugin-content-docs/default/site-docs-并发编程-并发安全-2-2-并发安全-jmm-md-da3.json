@@ -14,7 +14,7 @@
     "id": "jmm",
     "title": "JMM"
   },
-  "sidebar": "basicSiderBar",
+  "sidebar": "basicSideBar",
   "previous": {
     "title": "线程安全",
     "permalink": "/docs/并发编程/并发安全/线程安全"

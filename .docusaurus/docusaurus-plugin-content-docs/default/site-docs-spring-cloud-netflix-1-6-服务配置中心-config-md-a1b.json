@@ -1,0 +1,26 @@
+{
+  "unversionedId": "SpringCloud/Netflix/Config",
+  "id": "SpringCloud/Netflix/Config",
+  "title": "服务配置中心-Config",
+  "description": "1.1 SpringCloud Config 概述",
+  "source": "@site/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
+  "sourceDirName": "SpringCloud/Netflix",
+  "slug": "/SpringCloud/Netflix/Config",
+  "permalink": "/docs/SpringCloud/Netflix/Config",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "Config",
+    "title": "服务配置中心-Config"
+  },
+  "sidebar": "springCloudSideBar",
+  "previous": {
+    "title": "服务网关-GateWay",
+    "permalink": "/docs/SpringCloud/Netflix/GateWay"
+  },
+  "next": {
+    "title": "消息总线-Bus",
+    "permalink": "/docs/SpringCloud/Netflix/Bus"
+  }
+}

@@ -7,7 +7,7 @@
   "className": "docs-version-current",
   "isLast": true,
   "docsSidebars": {
-    "basicSiderBar": [
+    "basicSideBar": [
       {
         "type": "link",
         "label": "简介",
@@ -16,103 +16,243 @@
       },
       {
         "type": "category",
-        "label": "并发安全",
+        "label": "并发基础",
         "items": [
           {
-            "type": "link",
-            "label": "线程安全",
-            "href": "/docs/并发编程/并发安全/线程安全",
-            "docId": "并发编程/并发安全/线程安全"
+            "type": "category",
+            "label": "并发安全",
+            "items": [
+              {
+                "type": "link",
+                "label": "线程安全",
+                "href": "/docs/并发编程/并发安全/线程安全",
+                "docId": "并发编程/并发安全/线程安全"
+              },
+              {
+                "type": "link",
+                "label": "JMM",
+                "href": "/docs/并发编程/并发安全/jmm",
+                "docId": "并发编程/并发安全/jmm"
+              },
+              {
+                "type": "link",
+                "label": "volatile与锁",
+                "href": "/docs/并发编程/并发安全/volatile",
+                "docId": "并发编程/并发安全/volatile"
+              },
+              {
+                "type": "link",
+                "label": "死锁与其他活跃锁",
+                "href": "/docs/并发编程/并发安全/dead_lock",
+                "docId": "并发编程/并发安全/dead_lock"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true
           },
           {
-            "type": "link",
-            "label": "JMM",
-            "href": "/docs/并发编程/并发安全/jmm",
-            "docId": "并发编程/并发安全/jmm"
-          },
-          {
-            "type": "link",
-            "label": "volatile与锁",
-            "href": "/docs/并发编程/并发安全/volatile",
-            "docId": "并发编程/并发安全/volatile"
-          },
-          {
-            "type": "link",
-            "label": "死锁与其他活跃锁",
-            "href": "/docs/并发编程/并发安全/dead_lock",
-            "docId": "并发编程/并发安全/dead_lock"
-          },
-          {
-            "type": "link",
-            "label": "线程池",
-            "href": "/docs/并发编程/并发控制/线程池",
-            "docId": "并发编程/并发控制/线程池"
-          },
-          {
-            "type": "link",
-            "label": "ThreadLocal",
-            "href": "/docs/并发编程/并发控制/ThreadLocal",
-            "docId": "并发编程/并发控制/ThreadLocal"
-          },
-          {
-            "type": "link",
-            "label": "Lock锁",
-            "href": "/docs/并发编程/并发控制/Lock锁",
-            "docId": "并发编程/并发控制/Lock锁"
-          },
-          {
-            "type": "link",
-            "label": "原子变量类&CAS",
-            "href": "/docs/并发编程/并发控制/Atomic&CAS",
-            "docId": "并发编程/并发控制/Atomic&CAS"
-          },
-          {
-            "type": "link",
-            "label": "final",
-            "href": "/docs/并发编程/并发控制/final",
-            "docId": "并发编程/并发控制/final"
-          },
-          {
-            "type": "link",
-            "label": "并发容器",
-            "href": "/docs/并发编程/并发控制/并发集合与阻塞队列",
-            "docId": "并发编程/并发控制/并发集合与阻塞队列"
-          },
-          {
-            "type": "link",
-            "label": "线程协作",
-            "href": "/docs/并发编程/并发控制/线程协作",
-            "docId": "并发编程/并发控制/线程协作"
-          },
-          {
-            "type": "link",
-            "label": "AQS(队列同步器)",
-            "href": "/docs/并发编程/并发控制/AQS",
-            "docId": "并发编程/并发控制/AQS"
-          },
-          {
-            "type": "link",
-            "label": "FutureTask",
-            "href": "/docs/并发编程/并发控制/FutureTask",
-            "docId": "并发编程/并发控制/FutureTask"
-          },
-          {
-            "type": "link",
-            "label": "自定义缓存",
-            "href": "/docs/并发编程/并发控制/缓存实战",
-            "docId": "并发编程/并发控制/缓存实战"
+            "type": "category",
+            "label": "并发控制",
+            "items": [
+              {
+                "type": "link",
+                "label": "线程池",
+                "href": "/docs/并发编程/并发控制/线程池",
+                "docId": "并发编程/并发控制/线程池"
+              },
+              {
+                "type": "link",
+                "label": "ThreadLocal",
+                "href": "/docs/并发编程/并发控制/ThreadLocal",
+                "docId": "并发编程/并发控制/ThreadLocal"
+              },
+              {
+                "type": "link",
+                "label": "Lock锁",
+                "href": "/docs/并发编程/并发控制/Lock锁",
+                "docId": "并发编程/并发控制/Lock锁"
+              },
+              {
+                "type": "link",
+                "label": "原子变量类&CAS",
+                "href": "/docs/并发编程/并发控制/Atomic&CAS",
+                "docId": "并发编程/并发控制/Atomic&CAS"
+              },
+              {
+                "type": "link",
+                "label": "final",
+                "href": "/docs/并发编程/并发控制/final",
+                "docId": "并发编程/并发控制/final"
+              },
+              {
+                "type": "link",
+                "label": "并发容器",
+                "href": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+                "docId": "并发编程/并发控制/并发集合与阻塞队列"
+              },
+              {
+                "type": "link",
+                "label": "线程协作",
+                "href": "/docs/并发编程/并发控制/线程协作",
+                "docId": "并发编程/并发控制/线程协作"
+              },
+              {
+                "type": "link",
+                "label": "AQS(队列同步器)",
+                "href": "/docs/并发编程/并发控制/AQS",
+                "docId": "并发编程/并发控制/AQS"
+              },
+              {
+                "type": "link",
+                "label": "FutureTask",
+                "href": "/docs/并发编程/并发控制/FutureTask",
+                "docId": "并发编程/并发控制/FutureTask"
+              },
+              {
+                "type": "link",
+                "label": "自定义缓存",
+                "href": "/docs/并发编程/并发控制/缓存实战",
+                "docId": "并发编程/并发控制/缓存实战"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true
           }
         ],
         "collapsed": true,
         "collapsible": true
       }
     ],
-    "sourceSiderBar": [
+    "sourceSideBar": [
       {
         "type": "link",
         "label": "资源分享",
         "href": "/docs/source/devSource",
         "docId": "source/devSource"
+      }
+    ],
+    "springSideBar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/spring",
+        "docId": "Spring/spring"
+      },
+      {
+        "type": "category",
+        "label": "Spring编程思想",
+        "items": [
+          {
+            "type": "link",
+            "label": "IOC容器",
+            "href": "/docs/Spring/Spring编程思想/IOC容器",
+            "docId": "Spring/Spring编程思想/IOC容器"
+          },
+          {
+            "type": "link",
+            "label": "Bean",
+            "href": "/docs/Spring/Spring编程思想/Bean",
+            "docId": "Spring/Spring编程思想/Bean"
+          },
+          {
+            "type": "link",
+            "label": "依赖查找",
+            "href": "/docs/Spring/Spring编程思想/依赖查找",
+            "docId": "Spring/Spring编程思想/依赖查找"
+          },
+          {
+            "type": "link",
+            "label": "依赖注入",
+            "href": "/docs/Spring/Spring编程思想/依赖注入",
+            "docId": "Spring/Spring编程思想/依赖注入"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true
+      }
+    ],
+    "springCloudSideBar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/springCloud",
+        "docId": "SpringCloud/springCloud"
+      },
+      {
+        "type": "category",
+        "label": "微服务基础",
+        "items": [
+          {
+            "type": "link",
+            "label": "微服务技术栈",
+            "href": "/docs/SpringCloud/微服务技术栈",
+            "docId": "SpringCloud/微服务技术栈"
+          },
+          {
+            "type": "category",
+            "label": "SpringCloud-Netflix",
+            "items": [
+              {
+                "type": "link",
+                "label": "服务注册-Eureka&Consul",
+                "href": "/docs/SpringCloud/Netflix/Eureka&Consul",
+                "docId": "SpringCloud/Netflix/Eureka&Consul"
+              },
+              {
+                "type": "link",
+                "label": "服务调用-Ribbon",
+                "href": "/docs/SpringCloud/Netflix/Ribbon",
+                "docId": "SpringCloud/Netflix/Ribbon"
+              },
+              {
+                "type": "link",
+                "label": "服务接口调用-OpenFeign",
+                "href": "/docs/SpringCloud/Netflix/OpenFeign",
+                "docId": "SpringCloud/Netflix/OpenFeign"
+              },
+              {
+                "type": "link",
+                "label": "服务熔断-Hystrix",
+                "href": "/docs/SpringCloud/Netflix/Hystrix",
+                "docId": "SpringCloud/Netflix/Hystrix"
+              },
+              {
+                "type": "link",
+                "label": "服务网关-GateWay",
+                "href": "/docs/SpringCloud/Netflix/GateWay",
+                "docId": "SpringCloud/Netflix/GateWay"
+              },
+              {
+                "type": "link",
+                "label": "服务配置中心-Config",
+                "href": "/docs/SpringCloud/Netflix/Config",
+                "docId": "SpringCloud/Netflix/Config"
+              },
+              {
+                "type": "link",
+                "label": "消息总线-Bus",
+                "href": "/docs/SpringCloud/Netflix/Bus",
+                "docId": "SpringCloud/Netflix/Bus"
+              },
+              {
+                "type": "link",
+                "label": "消息驱动-Stream",
+                "href": "/docs/SpringCloud/Netflix/Stream",
+                "docId": "SpringCloud/Netflix/Stream"
+              },
+              {
+                "type": "link",
+                "label": "链路追踪-Sleuth",
+                "href": "/docs/SpringCloud/Netflix/Sleuth",
+                "docId": "SpringCloud/Netflix/Sleuth"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true
       }
     ]
   },
@@ -121,91 +261,91 @@
       "id": "并发编程/并发安全/线程安全",
       "title": "线程安全",
       "description": "概述",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发安全/dead_lock": {
       "id": "并发编程/并发安全/dead_lock",
       "title": "死锁与其他活跃锁",
       "description": "概述",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发安全/jmm": {
       "id": "并发编程/并发安全/jmm",
       "title": "JMM",
       "description": "性能问题",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发安全/volatile": {
       "id": "并发编程/并发安全/volatile",
       "title": "volatile与锁",
       "description": "概述",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/并发集合与阻塞队列": {
       "id": "并发编程/并发控制/并发集合与阻塞队列",
       "title": "并发容器",
       "description": "概览",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/缓存实战": {
       "id": "并发编程/并发控制/缓存实战",
       "title": "自定义缓存",
       "description": "利用并发工具类实现一个简单的缓存",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/线程池": {
       "id": "并发编程/并发控制/线程池",
       "title": "线程池",
       "description": "并发工具类",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/线程协作": {
       "id": "并发编程/并发控制/线程协作",
       "title": "线程协作",
       "description": "概述",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/AQS": {
       "id": "并发编程/并发控制/AQS",
       "title": "AQS(队列同步器)",
       "description": "概述",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/Atomic&CAS": {
       "id": "并发编程/并发控制/Atomic&CAS",
       "title": "原子变量类&CAS",
       "description": "非阻塞同步机制与锁",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/final": {
       "id": "并发编程/并发控制/final",
       "title": "final",
       "description": "final不变性",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/FutureTask": {
       "id": "并发编程/并发控制/FutureTask",
       "title": "FutureTask",
       "description": "Future概述",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/Lock锁": {
       "id": "并发编程/并发控制/Lock锁",
       "title": "Lock锁",
       "description": "锁分类",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/并发控制/ThreadLocal": {
       "id": "并发编程/并发控制/ThreadLocal",
       "title": "ThreadLocal",
       "description": "概述",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "并发编程/currency_about": {
       "id": "并发编程/currency_about",
       "title": "并发笔记概述",
       "description": "并发首页",
-      "sidebar": "basicSiderBar"
+      "sidebar": "basicSideBar"
     },
     "计算机网络/networrk-basic-intro": {
       "id": "计算机网络/networrk-basic-intro",
@@ -221,12 +361,103 @@
       "id": "source/devSource",
       "title": "资源分享",
       "description": "分享一些简单好用的资源",
-      "sidebar": "sourceSiderBar"
+      "sidebar": "sourceSideBar"
     },
     "Spring/spring": {
       "id": "Spring/spring",
       "title": "Spring",
-      "description": "Spring技术文档概述"
+      "description": "Spring技术文档概述",
+      "sidebar": "springSideBar"
+    },
+    "Spring/Spring编程思想/依赖查找": {
+      "id": "Spring/Spring编程思想/依赖查找",
+      "title": "依赖查找",
+      "description": "1.依赖查找的历史（传统java）",
+      "sidebar": "springSideBar"
+    },
+    "Spring/Spring编程思想/依赖注入": {
+      "id": "Spring/Spring编程思想/依赖注入",
+      "title": "依赖注入",
+      "description": "1. 依赖注入的模式与类型",
+      "sidebar": "springSideBar"
+    },
+    "Spring/Spring编程思想/Bean": {
+      "id": "Spring/Spring编程思想/Bean",
+      "title": "Bean",
+      "description": "1. Spring Bean",
+      "sidebar": "springSideBar"
+    },
+    "Spring/Spring编程思想/IOC容器": {
+      "id": "Spring/Spring编程思想/IOC容器",
+      "title": "IOC容器",
+      "description": "1. IOC 的主要实现",
+      "sidebar": "springSideBar"
+    },
+    "SpringCloud/微服务技术栈": {
+      "id": "SpringCloud/微服务技术栈",
+      "title": "微服务技术栈",
+      "description": "1.2 微服务落地技术栈",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/Bus": {
+      "id": "SpringCloud/Netflix/Bus",
+      "title": "消息总线-Bus",
+      "description": "1.1 消息总线概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/Config": {
+      "id": "SpringCloud/Netflix/Config",
+      "title": "服务配置中心-Config",
+      "description": "1.1 SpringCloud Config 概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/Eureka&Consul": {
+      "id": "SpringCloud/Netflix/Eureka&Consul",
+      "title": "服务注册-Eureka&Consul",
+      "description": "1.1 Eureka 概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/GateWay": {
+      "id": "SpringCloud/Netflix/GateWay",
+      "title": "服务网关-GateWay",
+      "description": "1.1 GateWay 概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/Hystrix": {
+      "id": "SpringCloud/Netflix/Hystrix",
+      "title": "服务熔断-Hystrix",
+      "description": "1.1 分布式系统面临的问题",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/OpenFeign": {
+      "id": "SpringCloud/Netflix/OpenFeign",
+      "title": "服务接口调用-OpenFeign",
+      "description": "1.1 OpenFeign 概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/Ribbon": {
+      "id": "SpringCloud/Netflix/Ribbon",
+      "title": "服务调用-Ribbon",
+      "description": "1.1 Ribbon 概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/Sleuth": {
+      "id": "SpringCloud/Netflix/Sleuth",
+      "title": "链路追踪-Sleuth",
+      "description": "1.1 Sleuth 概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/Stream": {
+      "id": "SpringCloud/Netflix/Stream",
+      "title": "消息驱动-Stream",
+      "description": "1.1 消息驱动概述",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/springCloud": {
+      "id": "SpringCloud/springCloud",
+      "title": "springCloud",
+      "description": "SpringCloud技术文档概述",
+      "sidebar": "springCloudSideBar"
     }
   }
 }

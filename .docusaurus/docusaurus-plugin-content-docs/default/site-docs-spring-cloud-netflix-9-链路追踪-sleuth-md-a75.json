@@ -1,0 +1,15 @@
+{
+  "unversionedId": "SpringCloud/Netflix/链路追踪- Sleuth",
+  "id": "SpringCloud/Netflix/链路追踪- Sleuth",
+  "title": "链路追踪- Sleuth",
+  "description": "[TOC]",
+  "source": "@site/docs/SpringCloud/Netflix/9.链路追踪- Sleuth.md",
+  "sourceDirName": "SpringCloud/Netflix",
+  "slug": "/SpringCloud/Netflix/链路追踪- Sleuth",
+  "permalink": "/docs/SpringCloud/Netflix/链路追踪- Sleuth",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/9.链路追踪- Sleuth.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {}
+}

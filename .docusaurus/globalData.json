@@ -13,77 +13,77 @@
             {
               "id": "并发编程/并发安全/线程安全",
               "path": "/docs/并发编程/并发安全/线程安全",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发安全/dead_lock",
               "path": "/docs/并发编程/并发安全/dead_lock",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发安全/jmm",
               "path": "/docs/并发编程/并发安全/jmm",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发安全/volatile",
               "path": "/docs/并发编程/并发安全/volatile",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/并发集合与阻塞队列",
               "path": "/docs/并发编程/并发控制/并发集合与阻塞队列",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/缓存实战",
               "path": "/docs/并发编程/并发控制/缓存实战",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/线程池",
               "path": "/docs/并发编程/并发控制/线程池",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/线程协作",
               "path": "/docs/并发编程/并发控制/线程协作",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/AQS",
               "path": "/docs/并发编程/并发控制/AQS",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/Atomic&CAS",
               "path": "/docs/并发编程/并发控制/Atomic&CAS",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/final",
               "path": "/docs/并发编程/并发控制/final",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/FutureTask",
               "path": "/docs/并发编程/并发控制/FutureTask",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/Lock锁",
               "path": "/docs/并发编程/并发控制/Lock锁",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/并发控制/ThreadLocal",
               "path": "/docs/并发编程/并发控制/ThreadLocal",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "并发编程/currency_about",
               "path": "/docs/currency",
-              "sidebar": "basicSiderBar"
+              "sidebar": "basicSideBar"
             },
             {
               "id": "计算机网络/networrk-basic-intro",
@@ -96,24 +96,112 @@
             {
               "id": "source/devSource",
               "path": "/docs/source/devSource",
-              "sidebar": "sourceSiderBar"
+              "sidebar": "sourceSideBar"
             },
             {
               "id": "Spring/spring",
-              "path": "/docs/spring"
+              "path": "/docs/spring",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "Spring/Spring编程思想/依赖查找",
+              "path": "/docs/Spring/Spring编程思想/依赖查找",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "Spring/Spring编程思想/依赖注入",
+              "path": "/docs/Spring/Spring编程思想/依赖注入",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "Spring/Spring编程思想/Bean",
+              "path": "/docs/Spring/Spring编程思想/Bean",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "Spring/Spring编程思想/IOC容器",
+              "path": "/docs/Spring/Spring编程思想/IOC容器",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "SpringCloud/微服务技术栈",
+              "path": "/docs/SpringCloud/微服务技术栈",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/Bus",
+              "path": "/docs/SpringCloud/Netflix/Bus",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/Config",
+              "path": "/docs/SpringCloud/Netflix/Config",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/Eureka&Consul",
+              "path": "/docs/SpringCloud/Netflix/Eureka&Consul",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/GateWay",
+              "path": "/docs/SpringCloud/Netflix/GateWay",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/Hystrix",
+              "path": "/docs/SpringCloud/Netflix/Hystrix",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/OpenFeign",
+              "path": "/docs/SpringCloud/Netflix/OpenFeign",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/Ribbon",
+              "path": "/docs/SpringCloud/Netflix/Ribbon",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/Sleuth",
+              "path": "/docs/SpringCloud/Netflix/Sleuth",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/Stream",
+              "path": "/docs/SpringCloud/Netflix/Stream",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/springCloud",
+              "path": "/docs/springCloud",
+              "sidebar": "springCloudSideBar"
             }
           ],
           "sidebars": {
-            "basicSiderBar": {
+            "basicSideBar": {
               "link": {
                 "path": "/docs/currency",
                 "label": "简介"
               }
             },
-            "sourceSiderBar": {
+            "sourceSideBar": {
               "link": {
                 "path": "/docs/source/devSource",
                 "label": "资源分享"
+              }
+            },
+            "springSideBar": {
+              "link": {
+                "path": "/docs/spring",
+                "label": "简介"
+              }
+            },
+            "springCloudSideBar": {
+              "link": {
+                "path": "/docs/springCloud",
+                "label": "简介"
               }
             }
           }

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "SpringCloud/微服务技术栈",
+  "id": "SpringCloud/微服务技术栈",
+  "title": "微服务技术栈",
+  "description": "1.2 微服务落地技术栈",
+  "source": "@site/docs/SpringCloud/微服务技术栈.md",
+  "sourceDirName": "SpringCloud",
+  "slug": "/SpringCloud/微服务技术栈",
+  "permalink": "/docs/SpringCloud/微服务技术栈",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/微服务技术栈.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "微服务技术栈",
+    "title": "微服务技术栈"
+  },
+  "sidebar": "springCloudSideBar",
+  "previous": {
+    "title": "springCloud",
+    "permalink": "/docs/springCloud"
+  },
+  "next": {
+    "title": "服务注册-Eureka&Consul",
+    "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
+  }
+}

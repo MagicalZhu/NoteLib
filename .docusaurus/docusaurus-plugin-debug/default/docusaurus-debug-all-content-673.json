@@ -34,7 +34,7 @@
                 "id": "线程安全",
                 "title": "线程安全"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "并发笔记概述",
                 "permalink": "/docs/currency"
@@ -60,7 +60,7 @@
                 "id": "dead_lock",
                 "title": "死锁与其他活跃锁"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "volatile与锁",
                 "permalink": "/docs/并发编程/并发安全/volatile"
@@ -86,7 +86,7 @@
                 "id": "jmm",
                 "title": "JMM"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "线程安全",
                 "permalink": "/docs/并发编程/并发安全/线程安全"
@@ -112,7 +112,7 @@
                 "id": "volatile",
                 "title": "volatile与锁"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "JMM",
                 "permalink": "/docs/并发编程/并发安全/jmm"
@@ -138,7 +138,7 @@
                 "id": "并发集合与阻塞队列",
                 "title": "并发容器"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "final",
                 "permalink": "/docs/并发编程/并发控制/final"
@@ -164,7 +164,7 @@
                 "id": "缓存实战",
                 "title": "自定义缓存"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "FutureTask",
                 "permalink": "/docs/并发编程/并发控制/FutureTask"
@@ -186,7 +186,7 @@
                 "id": "线程池",
                 "title": "线程池"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "死锁与其他活跃锁",
                 "permalink": "/docs/并发编程/并发安全/dead_lock"
@@ -212,7 +212,7 @@
                 "id": "线程协作",
                 "title": "线程协作"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "并发容器",
                 "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
@@ -238,7 +238,7 @@
                 "id": "AQS",
                 "title": "AQS(队列同步器)"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "线程协作",
                 "permalink": "/docs/并发编程/并发控制/线程协作"
@@ -264,7 +264,7 @@
                 "id": "Atomic&CAS",
                 "title": "原子变量类&CAS"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "Lock锁",
                 "permalink": "/docs/并发编程/并发控制/Lock锁"
@@ -290,7 +290,7 @@
                 "id": "final",
                 "title": "final"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "原子变量类&CAS",
                 "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
@@ -316,7 +316,7 @@
                 "id": "FutureTask",
                 "title": "FutureTask"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "AQS(队列同步器)",
                 "permalink": "/docs/并发编程/并发控制/AQS"
@@ -342,7 +342,7 @@
                 "id": "Lock锁",
                 "title": "Lock锁"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "ThreadLocal",
                 "permalink": "/docs/并发编程/并发控制/ThreadLocal"
@@ -368,7 +368,7 @@
                 "id": "ThreadLocal",
                 "title": "ThreadLocal"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "previous": {
                 "title": "线程池",
                 "permalink": "/docs/并发编程/并发控制/线程池"
@@ -395,7 +395,7 @@
                 "slug": "/currency",
                 "title": "并发笔记概述"
               },
-              "sidebar": "basicSiderBar",
+              "sidebar": "basicSideBar",
               "next": {
                 "title": "线程安全",
                 "permalink": "/docs/并发编程/并发安全/线程安全"
@@ -454,7 +454,7 @@
                 "title": "资源分享",
                 "slug": "/source/devSource"
               },
-              "sidebar": "sourceSiderBar"
+              "sidebar": "sourceSideBar"
             },
             {
               "unversionedId": "Spring/spring",
@@ -472,11 +472,395 @@
                 "id": "spring",
                 "title": "Spring",
                 "slug": "/spring"
+              },
+              "sidebar": "springSideBar",
+              "next": {
+                "title": "IOC容器",
+                "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+              }
+            },
+            {
+              "unversionedId": "Spring/Spring编程思想/依赖查找",
+              "id": "Spring/Spring编程思想/依赖查找",
+              "title": "依赖查找",
+              "description": "1.依赖查找的历史（传统java）",
+              "source": "@site/docs/Spring/Spring编程思想/1.3依赖查找.md",
+              "sourceDirName": "Spring/Spring编程思想",
+              "slug": "/Spring/Spring编程思想/依赖查找",
+              "permalink": "/docs/Spring/Spring编程思想/依赖查找",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.3依赖查找.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "依赖查找",
+                "title": "依赖查找"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Bean",
+                "permalink": "/docs/Spring/Spring编程思想/Bean"
+              },
+              "next": {
+                "title": "依赖注入",
+                "permalink": "/docs/Spring/Spring编程思想/依赖注入"
+              }
+            },
+            {
+              "unversionedId": "Spring/Spring编程思想/依赖注入",
+              "id": "Spring/Spring编程思想/依赖注入",
+              "title": "依赖注入",
+              "description": "1. 依赖注入的模式与类型",
+              "source": "@site/docs/Spring/Spring编程思想/1.4依赖注入.md",
+              "sourceDirName": "Spring/Spring编程思想",
+              "slug": "/Spring/Spring编程思想/依赖注入",
+              "permalink": "/docs/Spring/Spring编程思想/依赖注入",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.4依赖注入.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "依赖注入",
+                "title": "依赖注入"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "依赖查找",
+                "permalink": "/docs/Spring/Spring编程思想/依赖查找"
+              }
+            },
+            {
+              "unversionedId": "Spring/Spring编程思想/Bean",
+              "id": "Spring/Spring编程思想/Bean",
+              "title": "Bean",
+              "description": "1. Spring Bean",
+              "source": "@site/docs/Spring/Spring编程思想/1.2Bean.md",
+              "sourceDirName": "Spring/Spring编程思想",
+              "slug": "/Spring/Spring编程思想/Bean",
+              "permalink": "/docs/Spring/Spring编程思想/Bean",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.2Bean.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Bean",
+                "title": "Bean"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "IOC容器",
+                "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+              },
+              "next": {
+                "title": "依赖查找",
+                "permalink": "/docs/Spring/Spring编程思想/依赖查找"
+              }
+            },
+            {
+              "unversionedId": "Spring/Spring编程思想/IOC容器",
+              "id": "Spring/Spring编程思想/IOC容器",
+              "title": "IOC容器",
+              "description": "1. IOC 的主要实现",
+              "source": "@site/docs/Spring/Spring编程思想/1.1IOC.md",
+              "sourceDirName": "Spring/Spring编程思想",
+              "slug": "/Spring/Spring编程思想/IOC容器",
+              "permalink": "/docs/Spring/Spring编程思想/IOC容器",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.1IOC.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "IOC容器",
+                "title": "IOC容器"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Spring",
+                "permalink": "/docs/spring"
+              },
+              "next": {
+                "title": "Bean",
+                "permalink": "/docs/Spring/Spring编程思想/Bean"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/微服务技术栈",
+              "id": "SpringCloud/微服务技术栈",
+              "title": "微服务技术栈",
+              "description": "1.2 微服务落地技术栈",
+              "source": "@site/docs/SpringCloud/微服务技术栈.md",
+              "sourceDirName": "SpringCloud",
+              "slug": "/SpringCloud/微服务技术栈",
+              "permalink": "/docs/SpringCloud/微服务技术栈",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/微服务技术栈.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "微服务技术栈",
+                "title": "微服务技术栈"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "springCloud",
+                "permalink": "/docs/springCloud"
+              },
+              "next": {
+                "title": "服务注册-Eureka&Consul",
+                "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/Bus",
+              "id": "SpringCloud/Netflix/Bus",
+              "title": "消息总线-Bus",
+              "description": "1.1 消息总线概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.7消息总线-Bus.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/Bus",
+              "permalink": "/docs/SpringCloud/Netflix/Bus",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.7消息总线-Bus.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Bus",
+                "title": "消息总线-Bus"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "服务配置中心-Config",
+                "permalink": "/docs/SpringCloud/Netflix/Config"
+              },
+              "next": {
+                "title": "消息驱动-Stream",
+                "permalink": "/docs/SpringCloud/Netflix/Stream"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/Config",
+              "id": "SpringCloud/Netflix/Config",
+              "title": "服务配置中心-Config",
+              "description": "1.1 SpringCloud Config 概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/Config",
+              "permalink": "/docs/SpringCloud/Netflix/Config",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Config",
+                "title": "服务配置中心-Config"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "服务网关-GateWay",
+                "permalink": "/docs/SpringCloud/Netflix/GateWay"
+              },
+              "next": {
+                "title": "消息总线-Bus",
+                "permalink": "/docs/SpringCloud/Netflix/Bus"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/Eureka&Consul",
+              "id": "SpringCloud/Netflix/Eureka&Consul",
+              "title": "服务注册-Eureka&Consul",
+              "description": "1.1 Eureka 概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/Eureka&Consul",
+              "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Eureka&Consul",
+                "title": "服务注册-Eureka&Consul"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "微服务技术栈",
+                "permalink": "/docs/SpringCloud/微服务技术栈"
+              },
+              "next": {
+                "title": "服务调用-Ribbon",
+                "permalink": "/docs/SpringCloud/Netflix/Ribbon"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/GateWay",
+              "id": "SpringCloud/Netflix/GateWay",
+              "title": "服务网关-GateWay",
+              "description": "1.1 GateWay 概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.5服务网关-GateWay.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/GateWay",
+              "permalink": "/docs/SpringCloud/Netflix/GateWay",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.5服务网关-GateWay.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "GateWay",
+                "title": "服务网关-GateWay"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "服务熔断-Hystrix",
+                "permalink": "/docs/SpringCloud/Netflix/Hystrix"
+              },
+              "next": {
+                "title": "服务配置中心-Config",
+                "permalink": "/docs/SpringCloud/Netflix/Config"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/Hystrix",
+              "id": "SpringCloud/Netflix/Hystrix",
+              "title": "服务熔断-Hystrix",
+              "description": "1.1 分布式系统面临的问题",
+              "source": "@site/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/Hystrix",
+              "permalink": "/docs/SpringCloud/Netflix/Hystrix",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Hystrix",
+                "title": "服务熔断-Hystrix"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "服务接口调用-OpenFeign",
+                "permalink": "/docs/SpringCloud/Netflix/OpenFeign"
+              },
+              "next": {
+                "title": "服务网关-GateWay",
+                "permalink": "/docs/SpringCloud/Netflix/GateWay"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/OpenFeign",
+              "id": "SpringCloud/Netflix/OpenFeign",
+              "title": "服务接口调用-OpenFeign",
+              "description": "1.1 OpenFeign 概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/OpenFeign",
+              "permalink": "/docs/SpringCloud/Netflix/OpenFeign",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "OpenFeign",
+                "title": "服务接口调用-OpenFeign"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "服务调用-Ribbon",
+                "permalink": "/docs/SpringCloud/Netflix/Ribbon"
+              },
+              "next": {
+                "title": "服务熔断-Hystrix",
+                "permalink": "/docs/SpringCloud/Netflix/Hystrix"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/Ribbon",
+              "id": "SpringCloud/Netflix/Ribbon",
+              "title": "服务调用-Ribbon",
+              "description": "1.1 Ribbon 概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.2服务调用-Ribbon.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/Ribbon",
+              "permalink": "/docs/SpringCloud/Netflix/Ribbon",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.2服务调用-Ribbon.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Ribbon",
+                "title": "服务调用-Ribbon"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "服务注册-Eureka&Consul",
+                "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
+              },
+              "next": {
+                "title": "服务接口调用-OpenFeign",
+                "permalink": "/docs/SpringCloud/Netflix/OpenFeign"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/Sleuth",
+              "id": "SpringCloud/Netflix/Sleuth",
+              "title": "链路追踪-Sleuth",
+              "description": "1.1 Sleuth 概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/Sleuth",
+              "permalink": "/docs/SpringCloud/Netflix/Sleuth",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Sleuth",
+                "title": "链路追踪-Sleuth"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "消息驱动-Stream",
+                "permalink": "/docs/SpringCloud/Netflix/Stream"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Netflix/Stream",
+              "id": "SpringCloud/Netflix/Stream",
+              "title": "消息驱动-Stream",
+              "description": "1.1 消息驱动概述",
+              "source": "@site/docs/SpringCloud/Netflix/1.8消息驱动-Stream.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/Stream",
+              "permalink": "/docs/SpringCloud/Netflix/Stream",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.8消息驱动-Stream.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Stream",
+                "title": "消息驱动-Stream"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "消息总线-Bus",
+                "permalink": "/docs/SpringCloud/Netflix/Bus"
+              },
+              "next": {
+                "title": "链路追踪-Sleuth",
+                "permalink": "/docs/SpringCloud/Netflix/Sleuth"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/springCloud",
+              "id": "SpringCloud/springCloud",
+              "title": "springCloud",
+              "description": "SpringCloud技术文档概述",
+              "source": "@site/docs/SpringCloud/about.mdx",
+              "sourceDirName": "SpringCloud",
+              "slug": "/springCloud",
+              "permalink": "/docs/springCloud",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "springCloud",
+                "title": "springCloud",
+                "slug": "/springCloud"
+              },
+              "sidebar": "springCloudSideBar",
+              "next": {
+                "title": "微服务技术栈",
+                "permalink": "/docs/SpringCloud/微服务技术栈"
               }
             }
           ],
           "sidebars": {
-            "basicSiderBar": [
+            "basicSideBar": [
               {
                 "type": "doc",
                 "id": "并发编程/currency_about",
@@ -484,74 +868,184 @@
               },
               {
                 "type": "category",
-                "label": "并发安全",
+                "label": "并发基础",
                 "items": [
                   {
-                    "type": "doc",
-                    "id": "并发编程/并发安全/线程安全"
+                    "type": "category",
+                    "label": "并发安全",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发安全/线程安全"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发安全/jmm"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发安全/volatile"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发安全/dead_lock"
+                      }
+                    ],
+                    "collapsed": true,
+                    "collapsible": true
                   },
                   {
-                    "type": "doc",
-                    "id": "并发编程/并发安全/jmm"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发安全/volatile"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发安全/dead_lock"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/线程池"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/ThreadLocal"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/Lock锁"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/Atomic&CAS"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/final"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/并发集合与阻塞队列"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/线程协作"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/AQS"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/FutureTask"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "并发编程/并发控制/缓存实战"
+                    "type": "category",
+                    "label": "并发控制",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/线程池"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/ThreadLocal"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/Lock锁"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/Atomic&CAS"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/final"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/并发集合与阻塞队列"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/线程协作"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/AQS"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/FutureTask"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "并发编程/并发控制/缓存实战"
+                      }
+                    ],
+                    "collapsed": true,
+                    "collapsible": true
                   }
                 ],
                 "collapsed": true,
                 "collapsible": true
               }
             ],
-            "sourceSiderBar": [
+            "sourceSideBar": [
               {
                 "type": "doc",
                 "id": "source/devSource",
                 "label": "资源分享"
+              }
+            ],
+            "springSideBar": [
+              {
+                "type": "doc",
+                "id": "Spring/spring",
+                "label": "简介"
+              },
+              {
+                "type": "category",
+                "label": "Spring编程思想",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "Spring/Spring编程思想/IOC容器"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Spring/Spring编程思想/Bean"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Spring/Spring编程思想/依赖查找"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Spring/Spring编程思想/依赖注入"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              }
+            ],
+            "springCloudSideBar": [
+              {
+                "type": "doc",
+                "id": "SpringCloud/springCloud",
+                "label": "简介"
+              },
+              {
+                "type": "category",
+                "label": "微服务基础",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "SpringCloud/微服务技术栈"
+                  },
+                  {
+                    "type": "category",
+                    "label": "SpringCloud-Netflix",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/Eureka&Consul"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/Ribbon"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/OpenFeign"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/Hystrix"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/GateWay"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/Config"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/Bus"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/Stream"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Netflix/Sleuth"
+                      }
+                    ],
+                    "collapsed": true,
+                    "collapsible": true
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
               }
             ]
           },

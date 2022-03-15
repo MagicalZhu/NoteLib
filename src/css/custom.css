@@ -46,6 +46,9 @@ html[data-theme='dark']  .alert {
 .admonition {
   margin-bottom: 2em;
 }
+.admonition h5 {
+  text-transform: none;
+}
 
 .container {
   margin: 0 auto;
@@ -66,15 +69,17 @@ mark {
 }
 
 code {
-  color: var(--ifm-color-primary);
-  padding: 2px 2px 2px 2px;
-  margin: 4px 4px 4px 4px;
-  border: 0.1rem solid rgba(159, 159, 159, 0.1);
-  vertical-align: middle;
-  border-radius: 5px;
-  font-size: 14px;
-  font-family: 'Monaco';
-  font-weight: 600;
+  color: var(--ifm-code-color);
+  margin: 0 1px;
+  background: #f2f4f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: .9em;
+  border: 1px solid #eee;
+}
+.markdown {
+  color: #314659;
+  line-height: 2;
 }
 
 blockquote {
@@ -223,6 +228,9 @@ blockquote {
 
 .menu__link {
   user-select: none;
+}
+.menu__link--active:not(.menu__link--sublist) {
+  background: rgb(20 28 232 / 8%);
 }
 
 

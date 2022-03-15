@@ -1,0 +1,26 @@
+{
+  "unversionedId": "SpringCloud/Netflix/Hystrix",
+  "id": "SpringCloud/Netflix/Hystrix",
+  "title": "服务熔断-Hystrix",
+  "description": "1.1 分布式系统面临的问题",
+  "source": "@site/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
+  "sourceDirName": "SpringCloud/Netflix",
+  "slug": "/SpringCloud/Netflix/Hystrix",
+  "permalink": "/docs/SpringCloud/Netflix/Hystrix",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "Hystrix",
+    "title": "服务熔断-Hystrix"
+  },
+  "sidebar": "springCloudSideBar",
+  "previous": {
+    "title": "服务接口调用-OpenFeign",
+    "permalink": "/docs/SpringCloud/Netflix/OpenFeign"
+  },
+  "next": {
+    "title": "服务网关-GateWay",
+    "permalink": "/docs/SpringCloud/Netflix/GateWay"
+  }
+}
