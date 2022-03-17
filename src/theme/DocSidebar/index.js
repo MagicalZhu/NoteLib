@@ -14,6 +14,7 @@ import {
   useScrollPosition,
   useWindowSize,
 } from '@docusaurus/theme-common';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Logo from '@theme/Logo';
 import IconArrow from '@theme/IconArrow';
 import {translate} from '@docusaurus/Translate';

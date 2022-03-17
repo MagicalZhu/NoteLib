@@ -485,6 +485,10 @@ export default {
         "markdown"
       ]
     },
+    "tableOfContents": {
+      "minHeadingLevel": 2,
+      "maxHeadingLevel": 5
+    },
     "algolia": {
       "appId": "4FYW54E03N",
       "apiKey": "12498725c526581616283e03d29d7456",
@@ -497,11 +501,7 @@ export default {
       "versionPersistence": "localStorage"
     },
     "metadata": [],
-    "autoCollapseSidebarCategories": false,
-    "tableOfContents": {
-      "minHeadingLevel": 2,
-      "maxHeadingLevel": 3
-    }
+    "autoCollapseSidebarCategories": false
   },
   "staticDirectories": [
     "static"
