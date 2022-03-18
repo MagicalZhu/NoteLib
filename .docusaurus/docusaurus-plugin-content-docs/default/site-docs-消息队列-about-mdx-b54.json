@@ -1,0 +1,18 @@
+{
+  "unversionedId": "消息队列/messageQueue",
+  "id": "消息队列/messageQueue",
+  "title": "消息队列概述",
+  "description": "消息队列文档概述",
+  "source": "@site/docs/消息队列/about.mdx",
+  "sourceDirName": "消息队列",
+  "slug": "/messageQueue",
+  "permalink": "/docs/messageQueue",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/消息队列/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "messageQueue",
+    "title": "消息队列概述",
+    "slug": "/messageQueue"
+  }
+}

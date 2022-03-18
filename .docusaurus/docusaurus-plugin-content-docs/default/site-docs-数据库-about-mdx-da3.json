@@ -1,0 +1,18 @@
+{
+  "unversionedId": "数据库/database",
+  "id": "数据库/database",
+  "title": "数据库概述",
+  "description": "数据库文档概述",
+  "source": "@site/docs/数据库/about.mdx",
+  "sourceDirName": "数据库",
+  "slug": "/database",
+  "permalink": "/docs/database",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据库/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "database",
+    "title": "数据库概述",
+    "slug": "/database"
+  }
+}

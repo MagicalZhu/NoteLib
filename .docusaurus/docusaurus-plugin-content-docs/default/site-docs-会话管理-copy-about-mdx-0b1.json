@@ -1,0 +1,18 @@
+{
+  "unversionedId": "会话管理 copy/session",
+  "id": "会话管理 copy/session",
+  "title": "会话管理概述",
+  "description": "会话管理文档概述",
+  "source": "@site/docs/会话管理 copy/about.mdx",
+  "sourceDirName": "会话管理 copy",
+  "slug": "/session",
+  "permalink": "/docs/session",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/会话管理 copy/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "session",
+    "title": "会话管理概述",
+    "slug": "/session"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "unversionedId": "定时任务/job",
+  "id": "定时任务/job",
+  "title": "定时任务概述",
+  "description": "定时任务文档概述",
+  "source": "@site/docs/定时任务/about.mdx",
+  "sourceDirName": "定时任务",
+  "slug": "/job",
+  "permalink": "/docs/job",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/定时任务/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "job",
+    "title": "定时任务概述",
+    "slug": "/job"
+  }
+}

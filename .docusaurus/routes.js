@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','01d'),
+    component: ComponentCreator('/docs','37b'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -152,14 +152,49 @@ export default [
         exact: true
       },
       {
+        path: '/docs/basicMiddleware',
+        component: ComponentCreator('/docs/basicMiddleware','fa0'),
+        exact: true
+      },
+      {
+        path: '/docs/basicTech',
+        component: ComponentCreator('/docs/basicTech','6b7'),
+        exact: true
+      },
+      {
+        path: '/docs/cache',
+        component: ComponentCreator('/docs/cache','0b3'),
+        exact: true
+      },
+      {
         path: '/docs/currency',
         component: ComponentCreator('/docs/currency','102'),
         exact: true,
         'sidebar': "basicSideBar"
       },
       {
+        path: '/docs/database',
+        component: ComponentCreator('/docs/database','d19'),
+        exact: true
+      },
+      {
+        path: '/docs/job',
+        component: ComponentCreator('/docs/job','cd2'),
+        exact: true
+      },
+      {
+        path: '/docs/messageQueue',
+        component: ComponentCreator('/docs/messageQueue','e64'),
+        exact: true
+      },
+      {
         path: '/docs/networrk-basic',
         component: ComponentCreator('/docs/networrk-basic','aa1'),
+        exact: true
+      },
+      {
+        path: '/docs/searchEngine',
+        component: ComponentCreator('/docs/searchEngine','3c2'),
         exact: true
       },
       {

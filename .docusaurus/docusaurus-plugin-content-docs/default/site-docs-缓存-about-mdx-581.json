@@ -1,0 +1,18 @@
+{
+  "unversionedId": "缓存/cache",
+  "id": "缓存/cache",
+  "title": "缓存概述",
+  "description": "缓存文档概述",
+  "source": "@site/docs/缓存/about.mdx",
+  "sourceDirName": "缓存",
+  "slug": "/cache",
+  "permalink": "/docs/cache",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/缓存/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "cache",
+    "title": "缓存概述",
+    "slug": "/cache"
+  }
+}

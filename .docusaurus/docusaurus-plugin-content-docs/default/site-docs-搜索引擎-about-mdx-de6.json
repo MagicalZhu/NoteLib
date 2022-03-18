@@ -1,0 +1,18 @@
+{
+  "unversionedId": "搜索引擎/searchEngine",
+  "id": "搜索引擎/searchEngine",
+  "title": "搜索引擎概述",
+  "description": "搜索引擎文档概述",
+  "source": "@site/docs/搜索引擎/about.mdx",
+  "sourceDirName": "搜索引擎",
+  "slug": "/searchEngine",
+  "permalink": "/docs/searchEngine",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/搜索引擎/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "searchEngine",
+    "title": "搜索引擎概述",
+    "slug": "/searchEngine"
+  }
+}

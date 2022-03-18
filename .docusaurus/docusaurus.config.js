@@ -33,7 +33,8 @@ export default {
     ]
   ],
   "customFields": {
-    "home": "/"
+    "home": "/",
+    "sidebarHiddenWhenLoad": true
   },
   "themeConfig": {
     "colorMode": {
@@ -72,7 +73,7 @@ export default {
           ]
         },
         {
-          "label": "框架与中间件",
+          "label": "基础框架",
           "position": "left",
           "items": [
             {
@@ -82,6 +83,40 @@ export default {
             {
               "label": "SpringCloud",
               "to": "docs/springCloud"
+            }
+          ]
+        },
+        {
+          "label": "分布式系统",
+          "position": "left",
+          "items": [
+            {
+              "label": "分布式基础技术",
+              "to": "docs/basicTech"
+            },
+            {
+              "label": "基础中间件",
+              "to": "docs/basicMiddleware"
+            },
+            {
+              "label": "定时任务",
+              "to": "docs/job"
+            },
+            {
+              "label": "缓存",
+              "to": "docs/cache"
+            },
+            {
+              "label": "搜索引擎",
+              "to": "docs/searchEngine"
+            },
+            {
+              "label": "消息队列",
+              "to": "docs/messageQueue"
+            },
+            {
+              "label": "数据库",
+              "to": "docs/database"
             }
           ]
         },

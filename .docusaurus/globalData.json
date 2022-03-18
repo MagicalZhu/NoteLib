@@ -86,8 +86,36 @@
               "sidebar": "basicSideBar"
             },
             {
+              "id": "定时任务/job",
+              "path": "/docs/job"
+            },
+            {
+              "id": "分布式基础技术/basicTech",
+              "path": "/docs/basicTech"
+            },
+            {
+              "id": "缓存/cache",
+              "path": "/docs/cache"
+            },
+            {
+              "id": "基础中间件/basicMiddleware",
+              "path": "/docs/basicMiddleware"
+            },
+            {
               "id": "计算机网络/networrk-basic-intro",
               "path": "/docs/networrk-basic"
+            },
+            {
+              "id": "数据库/database",
+              "path": "/docs/database"
+            },
+            {
+              "id": "搜索引擎/searchEngine",
+              "path": "/docs/searchEngine"
+            },
+            {
+              "id": "消息队列/messageQueue",
+              "path": "/docs/messageQueue"
             },
             {
               "id": "about",

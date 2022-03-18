@@ -1,0 +1,18 @@
+{
+  "unversionedId": "基础中间件/basicMiddleware",
+  "id": "基础中间件/basicMiddleware",
+  "title": "基础中间件",
+  "description": "基础中间件文档概述",
+  "source": "@site/docs/基础中间件/about.mdx",
+  "sourceDirName": "基础中间件",
+  "slug": "/basicMiddleware",
+  "permalink": "/docs/basicMiddleware",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/基础中间件/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "basicMiddleware",
+    "title": "基础中间件",
+    "slug": "/basicMiddleware"
+  }
+}

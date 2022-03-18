@@ -1,0 +1,18 @@
+{
+  "unversionedId": "分布式基础技术/basicTech",
+  "id": "分布式基础技术/basicTech",
+  "title": "分布式基础技术概述",
+  "description": "分布式基础技术文档概述",
+  "source": "@site/docs/分布式基础技术/about.mdx",
+  "sourceDirName": "分布式基础技术",
+  "slug": "/basicTech",
+  "permalink": "/docs/basicTech",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式基础技术/about.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "basicTech",
+    "title": "分布式基础技术概述",
+    "slug": "/basicTech"
+  }
+}

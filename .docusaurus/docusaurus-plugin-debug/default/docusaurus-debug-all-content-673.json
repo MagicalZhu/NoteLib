@@ -402,6 +402,78 @@
               }
             },
             {
+              "unversionedId": "定时任务/job",
+              "id": "定时任务/job",
+              "title": "定时任务概述",
+              "description": "定时任务文档概述",
+              "source": "@site/docs/定时任务/about.mdx",
+              "sourceDirName": "定时任务",
+              "slug": "/job",
+              "permalink": "/docs/job",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/定时任务/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "job",
+                "title": "定时任务概述",
+                "slug": "/job"
+              }
+            },
+            {
+              "unversionedId": "分布式基础技术/basicTech",
+              "id": "分布式基础技术/basicTech",
+              "title": "分布式基础技术概述",
+              "description": "分布式基础技术文档概述",
+              "source": "@site/docs/分布式基础技术/about.mdx",
+              "sourceDirName": "分布式基础技术",
+              "slug": "/basicTech",
+              "permalink": "/docs/basicTech",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式基础技术/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "basicTech",
+                "title": "分布式基础技术概述",
+                "slug": "/basicTech"
+              }
+            },
+            {
+              "unversionedId": "缓存/cache",
+              "id": "缓存/cache",
+              "title": "缓存概述",
+              "description": "缓存文档概述",
+              "source": "@site/docs/缓存/about.mdx",
+              "sourceDirName": "缓存",
+              "slug": "/cache",
+              "permalink": "/docs/cache",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/缓存/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "cache",
+                "title": "缓存概述",
+                "slug": "/cache"
+              }
+            },
+            {
+              "unversionedId": "基础中间件/basicMiddleware",
+              "id": "基础中间件/basicMiddleware",
+              "title": "基础中间件",
+              "description": "基础中间件文档概述",
+              "source": "@site/docs/基础中间件/about.mdx",
+              "sourceDirName": "基础中间件",
+              "slug": "/basicMiddleware",
+              "permalink": "/docs/basicMiddleware",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/基础中间件/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "basicMiddleware",
+                "title": "基础中间件",
+                "slug": "/basicMiddleware"
+              }
+            },
+            {
               "unversionedId": "计算机网络/networrk-basic-intro",
               "id": "计算机网络/networrk-basic-intro",
               "title": "技术视频栏目简介",
@@ -417,6 +489,60 @@
                 "id": "networrk-basic-intro",
                 "title": "技术视频栏目简介",
                 "slug": "/networrk-basic"
+              }
+            },
+            {
+              "unversionedId": "数据库/database",
+              "id": "数据库/database",
+              "title": "数据库概述",
+              "description": "数据库文档概述",
+              "source": "@site/docs/数据库/about.mdx",
+              "sourceDirName": "数据库",
+              "slug": "/database",
+              "permalink": "/docs/database",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据库/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "database",
+                "title": "数据库概述",
+                "slug": "/database"
+              }
+            },
+            {
+              "unversionedId": "搜索引擎/searchEngine",
+              "id": "搜索引擎/searchEngine",
+              "title": "搜索引擎概述",
+              "description": "搜索引擎文档概述",
+              "source": "@site/docs/搜索引擎/about.mdx",
+              "sourceDirName": "搜索引擎",
+              "slug": "/searchEngine",
+              "permalink": "/docs/searchEngine",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/搜索引擎/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "searchEngine",
+                "title": "搜索引擎概述",
+                "slug": "/searchEngine"
+              }
+            },
+            {
+              "unversionedId": "消息队列/messageQueue",
+              "id": "消息队列/messageQueue",
+              "title": "消息队列概述",
+              "description": "消息队列文档概述",
+              "source": "@site/docs/消息队列/about.mdx",
+              "sourceDirName": "消息队列",
+              "slug": "/messageQueue",
+              "permalink": "/docs/messageQueue",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/消息队列/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "messageQueue",
+                "title": "消息队列概述",
+                "slug": "/messageQueue"
               }
             },
             {
