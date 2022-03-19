@@ -2,7 +2,7 @@
   "unversionedId": "SpringCloud/Netflix/Sleuth",
   "id": "SpringCloud/Netflix/Sleuth",
   "title": "链路追踪-Sleuth",
-  "description": "1.1 Sleuth 概述",
+  "description": "1.链路追踪",
   "source": "@site/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/Sleuth",
@@ -18,5 +18,9 @@
   "previous": {
     "title": "消息驱动-Stream",
     "permalink": "/docs/SpringCloud/Netflix/Stream"
+  },
+  "next": {
+    "title": "服务注册与配置中心-Nacos",
+    "permalink": "/docs/SpringCloud/Alibaba/Nacos"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "计算机网络/HTTP/http-protocol",
+  "id": "计算机网络/HTTP/http-protocol",
+  "title": "HTTP协议",
+  "description": "网络基础",
+  "source": "@site/docs/计算机网络/HTTP/HTTP协议.md",
+  "sourceDirName": "计算机网络/HTTP",
+  "slug": "/计算机网络/HTTP/http-protocol",
+  "permalink": "/docs/计算机网络/HTTP/http-protocol",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "http-protocol",
+    "title": "HTTP协议"
+  },
+  "sidebar": "netWorkSidebar",
+  "previous": {
+    "title": "计算机网络概述",
+    "permalink": "/docs/networrk-basic"
+  }
+}

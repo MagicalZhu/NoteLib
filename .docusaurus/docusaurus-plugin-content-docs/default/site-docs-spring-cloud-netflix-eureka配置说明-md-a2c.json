@@ -1,0 +1,17 @@
+{
+  "unversionedId": "SpringCloud/Netflix/eureka_config",
+  "id": "SpringCloud/Netflix/eureka_config",
+  "title": "Eureka 配置参考",
+  "description": "1 Eureka.instance 配置",
+  "source": "@site/docs/SpringCloud/Netflix/Eureka配置说明.md",
+  "sourceDirName": "SpringCloud/Netflix",
+  "slug": "/SpringCloud/Netflix/eureka_config",
+  "permalink": "/docs/SpringCloud/Netflix/eureka_config",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/Eureka配置说明.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "eureka_config",
+    "title": "Eureka 配置参考"
+  }
+}

@@ -2,7 +2,7 @@
   "unversionedId": "SpringCloud/Netflix/Hystrix",
   "id": "SpringCloud/Netflix/Hystrix",
   "title": "服务熔断-Hystrix",
-  "description": "1.1 分布式系统面临的问题",
+  "description": "1.Hystrix 概述",
   "source": "@site/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/Hystrix",

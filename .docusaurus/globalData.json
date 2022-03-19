@@ -102,8 +102,14 @@
               "path": "/docs/basicMiddleware"
             },
             {
-              "id": "计算机网络/networrk-basic-intro",
-              "path": "/docs/networrk-basic"
+              "id": "计算机网络/HTTP/http-protocol",
+              "path": "/docs/计算机网络/HTTP/http-protocol",
+              "sidebar": "netWorkSidebar"
+            },
+            {
+              "id": "计算机网络/networrk-basic",
+              "path": "/docs/networrk-basic",
+              "sidebar": "netWorkSidebar"
             },
             {
               "id": "数据库/database",
@@ -157,6 +163,16 @@
               "sidebar": "springCloudSideBar"
             },
             {
+              "id": "SpringCloud/Alibaba/Nacos",
+              "path": "/docs/SpringCloud/Alibaba/Nacos",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Alibaba/Sentinel",
+              "path": "/docs/SpringCloud/Alibaba/Sentinel",
+              "sidebar": "springCloudSideBar"
+            },
+            {
               "id": "SpringCloud/Netflix/Bus",
               "path": "/docs/SpringCloud/Netflix/Bus",
               "sidebar": "springCloudSideBar"
@@ -165,6 +181,10 @@
               "id": "SpringCloud/Netflix/Config",
               "path": "/docs/SpringCloud/Netflix/Config",
               "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "SpringCloud/Netflix/eureka_config",
+              "path": "/docs/SpringCloud/Netflix/eureka_config"
             },
             {
               "id": "SpringCloud/Netflix/Eureka&Consul",
@@ -229,6 +249,12 @@
             "springCloudSideBar": {
               "link": {
                 "path": "/docs/springCloud",
+                "label": "简介"
+              }
+            },
+            "netWorkSidebar": {
+              "link": {
+                "path": "/docs/networrk-basic",
                 "label": "简介"
               }
             }

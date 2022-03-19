@@ -2,7 +2,7 @@
   "unversionedId": "SpringCloud/Netflix/Eureka&Consul",
   "id": "SpringCloud/Netflix/Eureka&Consul",
   "title": "服务注册-Eureka&Consul",
-  "description": "1.1 Eureka 概述",
+  "description": "1. Eureka 简述",
   "source": "@site/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/Eureka&Consul",

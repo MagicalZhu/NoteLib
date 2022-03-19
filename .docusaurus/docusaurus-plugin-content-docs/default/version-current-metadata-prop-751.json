@@ -249,10 +249,44 @@
             ],
             "collapsed": true,
             "collapsible": true
+          },
+          {
+            "type": "category",
+            "label": "SpringCloud-Alibaba",
+            "items": [
+              {
+                "type": "link",
+                "label": "服务注册与配置中心-Nacos",
+                "href": "/docs/SpringCloud/Alibaba/Nacos",
+                "docId": "SpringCloud/Alibaba/Nacos"
+              },
+              {
+                "type": "link",
+                "label": "服务容错-Sentinel",
+                "href": "/docs/SpringCloud/Alibaba/Sentinel",
+                "docId": "SpringCloud/Alibaba/Sentinel"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true
           }
         ],
         "collapsed": true,
         "collapsible": true
+      }
+    ],
+    "netWorkSidebar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/networrk-basic",
+        "docId": "计算机网络/networrk-basic"
+      },
+      {
+        "type": "link",
+        "label": "HTTP协议",
+        "href": "/docs/计算机网络/HTTP/http-protocol",
+        "docId": "计算机网络/HTTP/http-protocol"
       }
     ]
   },
@@ -367,10 +401,17 @@
       "title": "基础中间件",
       "description": "基础中间件文档概述"
     },
-    "计算机网络/networrk-basic-intro": {
-      "id": "计算机网络/networrk-basic-intro",
-      "title": "技术视频栏目简介",
-      "description": ""
+    "计算机网络/HTTP/http-protocol": {
+      "id": "计算机网络/HTTP/http-protocol",
+      "title": "HTTP协议",
+      "description": "网络基础",
+      "sidebar": "netWorkSidebar"
+    },
+    "计算机网络/networrk-basic": {
+      "id": "计算机网络/networrk-basic",
+      "title": "计算机网络概述",
+      "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
+      "sidebar": "netWorkSidebar"
     },
     "数据库/database": {
       "id": "数据库/database",
@@ -434,58 +475,75 @@
       "description": "1.2 微服务落地技术栈",
       "sidebar": "springCloudSideBar"
     },
+    "SpringCloud/Alibaba/Nacos": {
+      "id": "SpringCloud/Alibaba/Nacos",
+      "title": "服务注册与配置中心-Nacos",
+      "description": "1. Nacos",
+      "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Alibaba/Sentinel": {
+      "id": "SpringCloud/Alibaba/Sentinel",
+      "title": "服务容错-Sentinel",
+      "description": "1. Sentinel",
+      "sidebar": "springCloudSideBar"
+    },
     "SpringCloud/Netflix/Bus": {
       "id": "SpringCloud/Netflix/Bus",
       "title": "消息总线-Bus",
-      "description": "1.1 消息总线概述",
+      "description": "1. SpringCloud Bus消息总线",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/Netflix/Config": {
       "id": "SpringCloud/Netflix/Config",
       "title": "服务配置中心-Config",
-      "description": "1.1 SpringCloud Config 概述",
+      "description": "1.SpringCloud Config",
       "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/Netflix/eureka_config": {
+      "id": "SpringCloud/Netflix/eureka_config",
+      "title": "Eureka 配置参考",
+      "description": "1 Eureka.instance 配置"
     },
     "SpringCloud/Netflix/Eureka&Consul": {
       "id": "SpringCloud/Netflix/Eureka&Consul",
       "title": "服务注册-Eureka&Consul",
-      "description": "1.1 Eureka 概述",
+      "description": "1. Eureka 简述",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/Netflix/GateWay": {
       "id": "SpringCloud/Netflix/GateWay",
       "title": "服务网关-GateWay",
-      "description": "1.1 GateWay 概述",
+      "description": "1.GateWay",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/Netflix/Hystrix": {
       "id": "SpringCloud/Netflix/Hystrix",
       "title": "服务熔断-Hystrix",
-      "description": "1.1 分布式系统面临的问题",
+      "description": "1.Hystrix 概述",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/Netflix/OpenFeign": {
       "id": "SpringCloud/Netflix/OpenFeign",
       "title": "服务接口调用-OpenFeign",
-      "description": "1.1 OpenFeign 概述",
+      "description": "1. OpenFeign",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/Netflix/Ribbon": {
       "id": "SpringCloud/Netflix/Ribbon",
       "title": "服务调用-Ribbon",
-      "description": "1.1 Ribbon 概述",
+      "description": "1.Ribbon",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/Netflix/Sleuth": {
       "id": "SpringCloud/Netflix/Sleuth",
       "title": "链路追踪-Sleuth",
-      "description": "1.1 Sleuth 概述",
+      "description": "1.链路追踪",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/Netflix/Stream": {
       "id": "SpringCloud/Netflix/Stream",
       "title": "消息驱动-Stream",
-      "description": "1.1 消息驱动概述",
+      "description": "1.消息驱动",
       "sidebar": "springCloudSideBar"
     },
     "SpringCloud/springCloud": {

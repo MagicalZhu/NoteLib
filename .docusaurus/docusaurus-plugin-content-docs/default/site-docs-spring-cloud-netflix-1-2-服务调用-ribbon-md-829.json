@@ -2,7 +2,7 @@
   "unversionedId": "SpringCloud/Netflix/Ribbon",
   "id": "SpringCloud/Netflix/Ribbon",
   "title": "服务调用-Ribbon",
-  "description": "1.1 Ribbon 概述",
+  "description": "1.Ribbon",
   "source": "@site/docs/SpringCloud/Netflix/1.2服务调用-Ribbon.md",
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/Ribbon",

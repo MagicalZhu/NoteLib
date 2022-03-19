@@ -1,3 +1,6 @@
+/**
+ * 说明: 文档的请求路径与文档的实际路径一致 => 文档父目录路径+文档ID
+ */
 // @ts-check
 const Type = {
   // 链接到文档
@@ -132,6 +135,19 @@ const basicSideBar = [
   ConcurrencySafe,
 ]
 
+// 计算机网络相关
+
+// const netWork= =  new Category('计算机网络')
+//     .createSubCaregory('HTTP', '计算机网络/HTTP', [
+//       '线程安全'
+//     ])
+
+const netWorkSidebar = [
+  createDoc('计算机网络/networrk-basic', '简介'),
+  createDoc('计算机网络/HTTP/http-protocol', 'HTTP协议')
+]
+
+
 // 资源分享相关
 const sourceSideBar = [
   createDoc('source/devSource', '资源分享')
@@ -166,6 +182,10 @@ const springCloudCode = new Category('微服务基础')
     'Stream',
     'Sleuth'
   ])
+  .createSubCaregory('SpringCloud-Alibaba', 'SpringCloud/Alibaba', [
+    'Nacos',
+    'Sentinel',
+  ])
 const springCloudSideBar = [
   createDoc('SpringCloud/springCloud', '简介'),
   springCloudCode
@@ -175,7 +195,8 @@ const sidebars = {
   basicSideBar,
   sourceSideBar,
   springSideBar,
-  springCloudSideBar
+  springCloudSideBar,
+  netWorkSidebar
 }
 
 module.exports = sidebars;

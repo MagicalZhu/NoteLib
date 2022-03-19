@@ -24,7 +24,9 @@ export default {
           "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main",
           "showLastUpdateTime": false,
           "showLastUpdateAuthor": false,
-          "remarkPlugins": []
+          "remarkPlugins": [
+            null
+          ]
         },
         "theme": {
           "customCss": "/Users/yoey/Desktop/XDocs/src/css/custom.css"
@@ -325,102 +327,127 @@ export default {
     "prism": {
       "theme": {
         "plain": {
-          "color": "#393A34",
-          "backgroundColor": "#f6f8fa"
+          "color": "#403f53",
+          "backgroundColor": "#FBFBFB"
         },
         "styles": [
           {
             "types": [
-              "comment",
-              "prolog",
-              "doctype",
-              "cdata"
+              "changed"
             ],
             "style": {
-              "color": "#999988",
+              "color": "rgb(162, 191, 252)",
               "fontStyle": "italic"
             }
           },
           {
             "types": [
-              "namespace"
+              "deleted"
             ],
             "style": {
-              "opacity": 0.7
+              "color": "rgba(239, 83, 80, 0.56)",
+              "fontStyle": "italic"
+            }
+          },
+          {
+            "types": [
+              "inserted",
+              "attr-name"
+            ],
+            "style": {
+              "color": "rgb(72, 118, 214)",
+              "fontStyle": "italic"
+            }
+          },
+          {
+            "types": [
+              "comment"
+            ],
+            "style": {
+              "color": "rgb(152, 159, 177)",
+              "fontStyle": "italic"
             }
           },
           {
             "types": [
               "string",
-              "attr-value"
-            ],
-            "style": {
-              "color": "#e3116c"
-            }
-          },
-          {
-            "types": [
-              "punctuation",
-              "operator"
-            ],
-            "style": {
-              "color": "#393A34"
-            }
-          },
-          {
-            "types": [
-              "entity",
-              "url",
-              "symbol",
-              "number",
-              "boolean",
-              "variable",
+              "builtin",
+              "char",
               "constant",
-              "property",
-              "regex",
-              "inserted"
+              "url"
             ],
             "style": {
-              "color": "#36acaa"
+              "color": "rgb(72, 118, 214)"
             }
           },
           {
             "types": [
-              "atrule",
-              "keyword",
-              "attr-name",
-              "selector"
+              "variable"
             ],
             "style": {
-              "color": "#00a4db"
+              "color": "rgb(201, 103, 101)"
+            }
+          },
+          {
+            "types": [
+              "number"
+            ],
+            "style": {
+              "color": "rgb(170, 9, 130)"
+            }
+          },
+          {
+            "types": [
+              "punctuation"
+            ],
+            "style": {
+              "color": "rgb(153, 76, 195)"
             }
           },
           {
             "types": [
               "function",
-              "deleted",
+              "selector",
+              "doctype"
+            ],
+            "style": {
+              "color": "rgb(153, 76, 195)",
+              "fontStyle": "italic"
+            }
+          },
+          {
+            "types": [
+              "class-name"
+            ],
+            "style": {
+              "color": "rgb(17, 17, 17)"
+            }
+          },
+          {
+            "types": [
               "tag"
             ],
             "style": {
-              "color": "#d73a49"
+              "color": "rgb(153, 76, 195)"
             }
           },
           {
             "types": [
-              "function-variable"
+              "operator",
+              "property",
+              "keyword",
+              "namespace"
             ],
             "style": {
-              "color": "#6f42c1"
+              "color": "rgb(12, 150, 155)"
             }
           },
           {
             "types": [
-              "tag",
-              "selector",
-              "keyword"
+              "boolean"
             ],
             "style": {
-              "color": "#00009f"
+              "color": "rgb(188, 84, 84)"
             }
           }
         ]
@@ -517,12 +544,13 @@ export default {
       "defaultLanguage": "java",
       "additionalLanguages": [
         "java",
-        "markdown"
+        "markdown",
+        "shell-session"
       ]
     },
     "tableOfContents": {
       "minHeadingLevel": 2,
-      "maxHeadingLevel": 5
+      "maxHeadingLevel": 6
     },
     "algolia": {
       "appId": "4FYW54E03N",
@@ -531,6 +559,16 @@ export default {
       "contextualSearch": true,
       "searchParameters": {},
       "searchPagePath": "search"
+    },
+    "imageZoom": {
+      "selector": ".markdown img",
+      "options": {
+        "margin": 24,
+        "background": "#BADA55",
+        "scrollOffset": 0,
+        "container": "#zoom-container",
+        "template": "#zoom-template"
+      }
     },
     "docs": {
       "versionPersistence": "localStorage"
@@ -542,6 +580,9 @@ export default {
     "static"
   ],
   "titleDelimiter": "🦖",
+  "plugins": [
+    "plugin-image-zoom"
+  ],
   "stylesheets": [
     {
       "rel": "preconnect",
@@ -563,7 +604,6 @@ export default {
     "localeConfigs": {}
   },
   "onDuplicateRoutes": "warn",
-  "plugins": [],
   "themes": [],
   "noIndex": false
 };

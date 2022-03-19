@@ -1,7 +1,6 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-// const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+// const lightCodeTheme = require('prism-react-renderer/themes/github');
+const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-// const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 const footerConfig = require('./footer')
 const navConfig = require('./navbar')
 
@@ -27,18 +26,28 @@ const themeConfig = {
     theme: lightCodeTheme,
     darkTheme: darkCodeTheme,
     defaultLanguage: 'java',
-    additionalLanguages: ['java', 'markdown'],
+    // additionalLanguages: ['java', 'markdown', 'shell-session'],
   },
   tableOfContents: {
     minHeadingLevel: 2,
-    maxHeadingLevel: 5,
+    maxHeadingLevel: 6,
   },
   algolia: {
     appId: '4FYW54E03N',
     apiKey: '12498725c526581616283e03d29d7456',
     indexName: 'huakucha',
     contextualSearch: true,
-  }
+  },
+  imageZoom: {
+    selector: '.markdown img',
+    options: {
+      margin: 24,
+      background: '#BADA55',
+      scrollOffset: 0,
+      container: '#zoom-container',
+      template: '#zoom-template',
+    },
+  },
 }
 
 module.exports = themeConfig

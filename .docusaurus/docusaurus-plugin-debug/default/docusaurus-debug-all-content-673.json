@@ -474,21 +474,48 @@
               }
             },
             {
-              "unversionedId": "计算机网络/networrk-basic-intro",
-              "id": "计算机网络/networrk-basic-intro",
-              "title": "技术视频栏目简介",
-              "description": "",
-              "source": "@site/docs/计算机网络/index.md",
-              "sourceDirName": "计算机网络",
-              "slug": "/networrk-basic",
-              "permalink": "/docs/networrk-basic",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/index.md",
+              "unversionedId": "计算机网络/HTTP/http-protocol",
+              "id": "计算机网络/HTTP/http-protocol",
+              "title": "HTTP协议",
+              "description": "网络基础",
+              "source": "@site/docs/计算机网络/HTTP/HTTP协议.md",
+              "sourceDirName": "计算机网络/HTTP",
+              "slug": "/计算机网络/HTTP/http-protocol",
+              "permalink": "/docs/计算机网络/HTTP/http-protocol",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "networrk-basic-intro",
-                "title": "技术视频栏目简介",
+                "id": "http-protocol",
+                "title": "HTTP协议"
+              },
+              "sidebar": "netWorkSidebar",
+              "previous": {
+                "title": "计算机网络概述",
+                "permalink": "/docs/networrk-basic"
+              }
+            },
+            {
+              "unversionedId": "计算机网络/networrk-basic",
+              "id": "计算机网络/networrk-basic",
+              "title": "计算机网络概述",
+              "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
+              "source": "@site/docs/计算机网络/about.md",
+              "sourceDirName": "计算机网络",
+              "slug": "/networrk-basic",
+              "permalink": "/docs/networrk-basic",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/about.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "networrk-basic",
+                "title": "计算机网络概述",
                 "slug": "/networrk-basic"
+              },
+              "sidebar": "netWorkSidebar",
+              "next": {
+                "title": "HTTP协议",
+                "permalink": "/docs/计算机网络/HTTP/http-protocol"
               }
             },
             {
@@ -732,10 +759,58 @@
               }
             },
             {
+              "unversionedId": "SpringCloud/Alibaba/Nacos",
+              "id": "SpringCloud/Alibaba/Nacos",
+              "title": "服务注册与配置中心-Nacos",
+              "description": "1. Nacos",
+              "source": "@site/docs/SpringCloud/Alibaba/服务注册与配置中心-Nacos.md",
+              "sourceDirName": "SpringCloud/Alibaba",
+              "slug": "/SpringCloud/Alibaba/Nacos",
+              "permalink": "/docs/SpringCloud/Alibaba/Nacos",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/服务注册与配置中心-Nacos.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Nacos",
+                "title": "服务注册与配置中心-Nacos"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "链路追踪-Sleuth",
+                "permalink": "/docs/SpringCloud/Netflix/Sleuth"
+              },
+              "next": {
+                "title": "服务容错-Sentinel",
+                "permalink": "/docs/SpringCloud/Alibaba/Sentinel"
+              }
+            },
+            {
+              "unversionedId": "SpringCloud/Alibaba/Sentinel",
+              "id": "SpringCloud/Alibaba/Sentinel",
+              "title": "服务容错-Sentinel",
+              "description": "1. Sentinel",
+              "source": "@site/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
+              "sourceDirName": "SpringCloud/Alibaba",
+              "slug": "/SpringCloud/Alibaba/Sentinel",
+              "permalink": "/docs/SpringCloud/Alibaba/Sentinel",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Sentinel",
+                "title": "服务容错-Sentinel"
+              },
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "服务注册与配置中心-Nacos",
+                "permalink": "/docs/SpringCloud/Alibaba/Nacos"
+              }
+            },
+            {
               "unversionedId": "SpringCloud/Netflix/Bus",
               "id": "SpringCloud/Netflix/Bus",
               "title": "消息总线-Bus",
-              "description": "1.1 消息总线概述",
+              "description": "1. SpringCloud Bus消息总线",
               "source": "@site/docs/SpringCloud/Netflix/1.7消息总线-Bus.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Bus",
@@ -761,7 +836,7 @@
               "unversionedId": "SpringCloud/Netflix/Config",
               "id": "SpringCloud/Netflix/Config",
               "title": "服务配置中心-Config",
-              "description": "1.1 SpringCloud Config 概述",
+              "description": "1.SpringCloud Config",
               "source": "@site/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Config",
@@ -784,10 +859,27 @@
               }
             },
             {
+              "unversionedId": "SpringCloud/Netflix/eureka_config",
+              "id": "SpringCloud/Netflix/eureka_config",
+              "title": "Eureka 配置参考",
+              "description": "1 Eureka.instance 配置",
+              "source": "@site/docs/SpringCloud/Netflix/Eureka配置说明.md",
+              "sourceDirName": "SpringCloud/Netflix",
+              "slug": "/SpringCloud/Netflix/eureka_config",
+              "permalink": "/docs/SpringCloud/Netflix/eureka_config",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/Eureka配置说明.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "eureka_config",
+                "title": "Eureka 配置参考"
+              }
+            },
+            {
               "unversionedId": "SpringCloud/Netflix/Eureka&Consul",
               "id": "SpringCloud/Netflix/Eureka&Consul",
               "title": "服务注册-Eureka&Consul",
-              "description": "1.1 Eureka 概述",
+              "description": "1. Eureka 简述",
               "source": "@site/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Eureka&Consul",
@@ -813,7 +905,7 @@
               "unversionedId": "SpringCloud/Netflix/GateWay",
               "id": "SpringCloud/Netflix/GateWay",
               "title": "服务网关-GateWay",
-              "description": "1.1 GateWay 概述",
+              "description": "1.GateWay",
               "source": "@site/docs/SpringCloud/Netflix/1.5服务网关-GateWay.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/GateWay",
@@ -839,7 +931,7 @@
               "unversionedId": "SpringCloud/Netflix/Hystrix",
               "id": "SpringCloud/Netflix/Hystrix",
               "title": "服务熔断-Hystrix",
-              "description": "1.1 分布式系统面临的问题",
+              "description": "1.Hystrix 概述",
               "source": "@site/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Hystrix",
@@ -865,7 +957,7 @@
               "unversionedId": "SpringCloud/Netflix/OpenFeign",
               "id": "SpringCloud/Netflix/OpenFeign",
               "title": "服务接口调用-OpenFeign",
-              "description": "1.1 OpenFeign 概述",
+              "description": "1. OpenFeign",
               "source": "@site/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/OpenFeign",
@@ -891,7 +983,7 @@
               "unversionedId": "SpringCloud/Netflix/Ribbon",
               "id": "SpringCloud/Netflix/Ribbon",
               "title": "服务调用-Ribbon",
-              "description": "1.1 Ribbon 概述",
+              "description": "1.Ribbon",
               "source": "@site/docs/SpringCloud/Netflix/1.2服务调用-Ribbon.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Ribbon",
@@ -917,7 +1009,7 @@
               "unversionedId": "SpringCloud/Netflix/Sleuth",
               "id": "SpringCloud/Netflix/Sleuth",
               "title": "链路追踪-Sleuth",
-              "description": "1.1 Sleuth 概述",
+              "description": "1.链路追踪",
               "source": "@site/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Sleuth",
@@ -933,13 +1025,17 @@
               "previous": {
                 "title": "消息驱动-Stream",
                 "permalink": "/docs/SpringCloud/Netflix/Stream"
+              },
+              "next": {
+                "title": "服务注册与配置中心-Nacos",
+                "permalink": "/docs/SpringCloud/Alibaba/Nacos"
               }
             },
             {
               "unversionedId": "SpringCloud/Netflix/Stream",
               "id": "SpringCloud/Netflix/Stream",
               "title": "消息驱动-Stream",
-              "description": "1.1 消息驱动概述",
+              "description": "1.消息驱动",
               "source": "@site/docs/SpringCloud/Netflix/1.8消息驱动-Stream.md",
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Stream",
@@ -1168,10 +1264,38 @@
                     ],
                     "collapsed": true,
                     "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "SpringCloud-Alibaba",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Alibaba/Nacos"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "SpringCloud/Alibaba/Sentinel"
+                      }
+                    ],
+                    "collapsed": true,
+                    "collapsible": true
                   }
                 ],
                 "collapsed": true,
                 "collapsible": true
+              }
+            ],
+            "netWorkSidebar": [
+              {
+                "type": "doc",
+                "id": "计算机网络/networrk-basic",
+                "label": "简介"
+              },
+              {
+                "type": "doc",
+                "id": "计算机网络/HTTP/http-protocol",
+                "label": "HTTP协议"
               }
             ]
           },
@@ -1224,6 +1348,9 @@
     "default": null
   },
   "docusaurus-theme-search-algolia": {
+    "default": null
+  },
+  "docusaurus-plugin-image-zoom": {
     "default": null
   }
 }

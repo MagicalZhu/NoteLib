@@ -1,0 +1,15 @@
+{
+  "unversionedId": "SpringCloud/Alibaba/服务容错- Sentinel",
+  "id": "SpringCloud/Alibaba/服务容错- Sentinel",
+  "title": "服务容错- Sentinel",
+  "description": "[TOC]",
+  "source": "@site/docs/SpringCloud/Alibaba/11.服务容错- Sentinel.md",
+  "sourceDirName": "SpringCloud/Alibaba",
+  "slug": "/SpringCloud/Alibaba/服务容错- Sentinel",
+  "permalink": "/docs/SpringCloud/Alibaba/服务容错- Sentinel",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/11.服务容错- Sentinel.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {}
+}

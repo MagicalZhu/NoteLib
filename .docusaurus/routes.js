@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','37b'),
+    component: ComponentCreator('/docs','0b0'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -147,6 +147,12 @@ export default [
         'sidebar': "basicSideBar"
       },
       {
+        path: '/docs/计算机网络/HTTP/http-protocol',
+        component: ComponentCreator('/docs/计算机网络/HTTP/http-protocol','394'),
+        exact: true,
+        'sidebar': "netWorkSidebar"
+      },
+      {
         path: '/docs/about',
         component: ComponentCreator('/docs/about','0b0'),
         exact: true
@@ -189,8 +195,9 @@ export default [
       },
       {
         path: '/docs/networrk-basic',
-        component: ComponentCreator('/docs/networrk-basic','aa1'),
-        exact: true
+        component: ComponentCreator('/docs/networrk-basic','b98'),
+        exact: true,
+        'sidebar': "netWorkSidebar"
       },
       {
         path: '/docs/searchEngine',
@@ -246,6 +253,18 @@ export default [
         'sidebar': "springCloudSideBar"
       },
       {
+        path: '/docs/SpringCloud/Alibaba/Nacos',
+        component: ComponentCreator('/docs/SpringCloud/Alibaba/Nacos','448'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Alibaba/Sentinel',
+        component: ComponentCreator('/docs/SpringCloud/Alibaba/Sentinel','da2'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
         path: '/docs/SpringCloud/Netflix/Bus',
         component: ComponentCreator('/docs/SpringCloud/Netflix/Bus','92e'),
         exact: true,
@@ -256,6 +275,11 @@ export default [
         component: ComponentCreator('/docs/SpringCloud/Netflix/Config','fad'),
         exact: true,
         'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/SpringCloud/Netflix/eureka_config',
+        component: ComponentCreator('/docs/SpringCloud/Netflix/eureka_config','cad'),
+        exact: true
       },
       {
         path: '/docs/SpringCloud/Netflix/Eureka&Consul',

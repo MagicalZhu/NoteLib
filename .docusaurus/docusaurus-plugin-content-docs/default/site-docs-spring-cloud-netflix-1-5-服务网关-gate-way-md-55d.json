@@ -2,7 +2,7 @@
   "unversionedId": "SpringCloud/Netflix/GateWay",
   "id": "SpringCloud/Netflix/GateWay",
   "title": "服务网关-GateWay",
-  "description": "1.1 GateWay 概述",
+  "description": "1.GateWay",
   "source": "@site/docs/SpringCloud/Netflix/1.5服务网关-GateWay.md",
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/GateWay",

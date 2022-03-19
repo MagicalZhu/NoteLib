@@ -12,7 +12,7 @@ const classicConfig = {
     editUrl: "https://github.com/MagicalZhu/XDocs/tree/main",
     showLastUpdateTime: false,
     showLastUpdateAuthor: false,
-    remarkPlugins: [],
+    remarkPlugins: [require('mdx-mermaid')],
   },
   // 以下参数将被直接传递给 @docusaurus/theme-classic。
   theme: {

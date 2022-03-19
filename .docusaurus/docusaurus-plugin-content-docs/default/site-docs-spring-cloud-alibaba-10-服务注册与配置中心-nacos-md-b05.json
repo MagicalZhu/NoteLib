@@ -1,0 +1,15 @@
+{
+  "unversionedId": "SpringCloud/Alibaba/服务注册与配置中心-Nacos",
+  "id": "SpringCloud/Alibaba/服务注册与配置中心-Nacos",
+  "title": "服务注册与配置中心-Nacos",
+  "description": "[TOC]",
+  "source": "@site/docs/SpringCloud/Alibaba/10.服务注册与配置中心-Nacos.md",
+  "sourceDirName": "SpringCloud/Alibaba",
+  "slug": "/SpringCloud/Alibaba/服务注册与配置中心-Nacos",
+  "permalink": "/docs/SpringCloud/Alibaba/服务注册与配置中心-Nacos",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/10.服务注册与配置中心-Nacos.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {}
+}

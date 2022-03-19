@@ -1,4 +1,5 @@
 const plugin = [
-  '@docusaurus/plugin-debug'
+  // '@docusaurus/plugin-debug',
+  'plugin-image-zoom'
 ]
 module.exports = plugin

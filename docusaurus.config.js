@@ -28,7 +28,7 @@ const config = {
   themeConfig: themeConfigs,
   staticDirectories: ['static'],
   titleDelimiter: '🦖',
-  // plugins: pluginConfigs,
+  plugins: pluginConfigs,
   stylesheets: [
     {
       rel: "preconnect",

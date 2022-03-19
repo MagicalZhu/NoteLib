@@ -1,0 +1,22 @@
+{
+  "unversionedId": "SpringCloud/Alibaba/Sentinel",
+  "id": "SpringCloud/Alibaba/Sentinel",
+  "title": "服务容错-Sentinel",
+  "description": "1. Sentinel",
+  "source": "@site/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
+  "sourceDirName": "SpringCloud/Alibaba",
+  "slug": "/SpringCloud/Alibaba/Sentinel",
+  "permalink": "/docs/SpringCloud/Alibaba/Sentinel",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "Sentinel",
+    "title": "服务容错-Sentinel"
+  },
+  "sidebar": "springCloudSideBar",
+  "previous": {
+    "title": "服务注册与配置中心-Nacos",
+    "permalink": "/docs/SpringCloud/Alibaba/Nacos"
+  }
+}

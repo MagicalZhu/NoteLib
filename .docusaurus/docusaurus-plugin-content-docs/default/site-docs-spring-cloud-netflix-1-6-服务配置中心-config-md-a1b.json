@@ -2,7 +2,7 @@
   "unversionedId": "SpringCloud/Netflix/Config",
   "id": "SpringCloud/Netflix/Config",
   "title": "服务配置中心-Config",
-  "description": "1.1 SpringCloud Config 概述",
+  "description": "1.SpringCloud Config",
   "source": "@site/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/Config",
