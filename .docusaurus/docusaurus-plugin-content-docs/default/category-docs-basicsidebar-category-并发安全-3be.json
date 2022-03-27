@@ -1,0 +1,15 @@
+{
+  "title": "并发安全",
+  "slug": "/category/并发安全",
+  "permalink": "/docs/category/并发安全",
+  "navigation": {
+    "previous": {
+      "title": "并发基础",
+      "permalink": "/docs/category/并发基础"
+    },
+    "next": {
+      "title": "线程安全",
+      "permalink": "/docs/并发编程/并发安全/线程安全"
+    }
+  }
+}

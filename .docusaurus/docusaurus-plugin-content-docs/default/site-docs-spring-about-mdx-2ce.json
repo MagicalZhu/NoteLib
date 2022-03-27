@@ -17,7 +17,7 @@
   },
   "sidebar": "springSideBar",
   "next": {
-    "title": "IOC容器",
-    "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+    "title": "Spring编程思想",
+    "permalink": "/docs/category/spring编程思想"
   }
 }

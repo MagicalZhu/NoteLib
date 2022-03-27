@@ -36,8 +36,8 @@
               },
               "sidebar": "basicSideBar",
               "previous": {
-                "title": "并发笔记概述",
-                "permalink": "/docs/currency"
+                "title": "并发安全",
+                "permalink": "/docs/category/并发安全"
               },
               "next": {
                 "title": "JMM",
@@ -66,8 +66,8 @@
                 "permalink": "/docs/并发编程/并发安全/volatile"
               },
               "next": {
-                "title": "线程池",
-                "permalink": "/docs/并发编程/并发控制/线程池"
+                "title": "并发控制",
+                "permalink": "/docs/category/并发控制"
               }
             },
             {
@@ -188,8 +188,8 @@
               },
               "sidebar": "basicSideBar",
               "previous": {
-                "title": "死锁与其他活跃锁",
-                "permalink": "/docs/并发编程/并发安全/dead_lock"
+                "title": "并发控制",
+                "permalink": "/docs/category/并发控制"
               },
               "next": {
                 "title": "ThreadLocal",
@@ -397,8 +397,8 @@
               },
               "sidebar": "basicSideBar",
               "next": {
-                "title": "线程安全",
-                "permalink": "/docs/并发编程/并发安全/线程安全"
+                "title": "并发基础",
+                "permalink": "/docs/category/并发基础"
               }
             },
             {
@@ -591,6 +591,77 @@
               }
             },
             {
+              "unversionedId": "Mysql/基础/MySQL函数与聚合",
+              "id": "Mysql/基础/MySQL函数与聚合",
+              "title": "MySQL函数与聚合",
+              "description": "函数",
+              "source": "@site/docs/Mysql/基础/MySQL函数与聚合.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL函数与聚合",
+              "permalink": "/docs/Mysql/基础/MySQL函数与聚合",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL函数与聚合.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MySQL函数与聚合",
+                "title": "MySQL函数与聚合"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL基础查询",
+                "permalink": "/docs/Mysql/基础/MySQL基础查询"
+              }
+            },
+            {
+              "unversionedId": "Mysql/基础/MySQL基础查询",
+              "id": "Mysql/基础/MySQL基础查询",
+              "title": "MySQL基础查询",
+              "description": "表的关联关系",
+              "source": "@site/docs/Mysql/基础/MySQL基础.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL基础查询",
+              "permalink": "/docs/Mysql/基础/MySQL基础查询",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL基础.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MySQL基础查询",
+                "title": "MySQL基础查询"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL入门",
+                "permalink": "/docs/category/mysql入门"
+              },
+              "next": {
+                "title": "MySQL函数与聚合",
+                "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
+              }
+            },
+            {
+              "unversionedId": "Mysql/mysql",
+              "id": "Mysql/mysql",
+              "title": "MySQL笔记概述",
+              "description": "MySQL笔记概述",
+              "source": "@site/docs/Mysql/about.md",
+              "sourceDirName": "Mysql",
+              "slug": "/mysql",
+              "permalink": "/docs/mysql",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/about.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "mysql",
+                "slug": "/mysql",
+                "title": "MySQL笔记概述"
+              },
+              "sidebar": "mysqlSideBar",
+              "next": {
+                "title": "MySQL入门",
+                "permalink": "/docs/category/mysql入门"
+              }
+            },
+            {
               "unversionedId": "source/devSource",
               "id": "source/devSource",
               "title": "资源分享",
@@ -628,8 +699,8 @@
               },
               "sidebar": "springSideBar",
               "next": {
-                "title": "IOC容器",
-                "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+                "title": "Spring编程思想",
+                "permalink": "/docs/category/spring编程思想"
               }
             },
             {
@@ -724,8 +795,8 @@
               },
               "sidebar": "springSideBar",
               "previous": {
-                "title": "Spring",
-                "permalink": "/docs/spring"
+                "title": "Spring编程思想",
+                "permalink": "/docs/category/spring编程思想"
               },
               "next": {
                 "title": "Bean",
@@ -750,12 +821,12 @@
               },
               "sidebar": "springCloudSideBar",
               "previous": {
-                "title": "springCloud",
-                "permalink": "/docs/springCloud"
+                "title": "微服务基础",
+                "permalink": "/docs/category/微服务基础"
               },
               "next": {
-                "title": "服务注册-Eureka&Consul",
-                "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
+                "title": "SpringCloud-Netflix",
+                "permalink": "/docs/category/springcloud-netflix"
               }
             },
             {
@@ -776,8 +847,8 @@
               },
               "sidebar": "springCloudSideBar",
               "previous": {
-                "title": "链路追踪-Sleuth",
-                "permalink": "/docs/SpringCloud/Netflix/Sleuth"
+                "title": "SpringCloud-Alibaba",
+                "permalink": "/docs/category/springcloud-alibaba"
               },
               "next": {
                 "title": "服务容错-Sentinel",
@@ -893,8 +964,8 @@
               },
               "sidebar": "springCloudSideBar",
               "previous": {
-                "title": "微服务技术栈",
-                "permalink": "/docs/SpringCloud/微服务技术栈"
+                "title": "SpringCloud-Netflix",
+                "permalink": "/docs/category/springcloud-netflix"
               },
               "next": {
                 "title": "服务调用-Ribbon",
@@ -1027,8 +1098,8 @@
                 "permalink": "/docs/SpringCloud/Netflix/Stream"
               },
               "next": {
-                "title": "服务注册与配置中心-Nacos",
-                "permalink": "/docs/SpringCloud/Alibaba/Nacos"
+                "title": "SpringCloud-Alibaba",
+                "permalink": "/docs/category/springcloud-alibaba"
               }
             },
             {
@@ -1076,8 +1147,8 @@
               },
               "sidebar": "springCloudSideBar",
               "next": {
-                "title": "微服务技术栈",
-                "permalink": "/docs/SpringCloud/微服务技术栈"
+                "title": "微服务基础",
+                "permalink": "/docs/category/微服务基础"
               }
             }
           ],
@@ -1114,6 +1185,11 @@
                       }
                     ],
                     "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/并发安全",
+                      "permalink": "/docs/category/并发安全"
+                    },
                     "collapsible": true
                   },
                   {
@@ -1162,10 +1238,20 @@
                       }
                     ],
                     "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/并发控制",
+                      "permalink": "/docs/category/并发控制"
+                    },
                     "collapsible": true
                   }
                 ],
                 "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/并发基础",
+                  "permalink": "/docs/category/并发基础"
+                },
                 "collapsible": true
               }
             ],
@@ -1204,6 +1290,11 @@
                   }
                 ],
                 "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/spring编程思想",
+                  "permalink": "/docs/category/spring编程思想"
+                },
                 "collapsible": true
               }
             ],
@@ -1263,6 +1354,11 @@
                       }
                     ],
                     "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/springcloud-netflix",
+                      "permalink": "/docs/category/springcloud-netflix"
+                    },
                     "collapsible": true
                   },
                   {
@@ -1279,10 +1375,20 @@
                       }
                     ],
                     "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/springcloud-alibaba",
+                      "permalink": "/docs/category/springcloud-alibaba"
+                    },
                     "collapsible": true
                   }
                 ],
                 "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/微服务基础",
+                  "permalink": "/docs/category/微服务基础"
+                },
                 "collapsible": true
               }
             ],
@@ -1297,10 +1403,151 @@
                 "id": "计算机网络/HTTP/http-protocol",
                 "label": "HTTP协议"
               }
+            ],
+            "mysqlSideBar": [
+              {
+                "type": "doc",
+                "id": "Mysql/mysql",
+                "label": "简介"
+              },
+              {
+                "type": "category",
+                "label": "MySQL入门",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "Mysql/基础/MySQL基础查询"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Mysql/基础/MySQL函数与聚合"
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/mysql入门",
+                  "permalink": "/docs/category/mysql入门"
+                },
+                "collapsible": true
+              }
             ]
           },
           "mainDocId": "并发编程/currency_about",
-          "categoryGeneratedIndices": []
+          "categoryGeneratedIndices": [
+            {
+              "title": "并发基础",
+              "slug": "/category/并发基础",
+              "permalink": "/docs/category/并发基础",
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "并发笔记概述",
+                "permalink": "/docs/currency"
+              },
+              "next": {
+                "title": "并发安全",
+                "permalink": "/docs/category/并发安全"
+              }
+            },
+            {
+              "title": "并发安全",
+              "slug": "/category/并发安全",
+              "permalink": "/docs/category/并发安全",
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "并发基础",
+                "permalink": "/docs/category/并发基础"
+              },
+              "next": {
+                "title": "线程安全",
+                "permalink": "/docs/并发编程/并发安全/线程安全"
+              }
+            },
+            {
+              "title": "并发控制",
+              "slug": "/category/并发控制",
+              "permalink": "/docs/category/并发控制",
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "死锁与其他活跃锁",
+                "permalink": "/docs/并发编程/并发安全/dead_lock"
+              },
+              "next": {
+                "title": "线程池",
+                "permalink": "/docs/并发编程/并发控制/线程池"
+              }
+            },
+            {
+              "title": "Spring编程思想",
+              "slug": "/category/spring编程思想",
+              "permalink": "/docs/category/spring编程思想",
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Spring",
+                "permalink": "/docs/spring"
+              },
+              "next": {
+                "title": "IOC容器",
+                "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+              }
+            },
+            {
+              "title": "微服务基础",
+              "slug": "/category/微服务基础",
+              "permalink": "/docs/category/微服务基础",
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "springCloud",
+                "permalink": "/docs/springCloud"
+              },
+              "next": {
+                "title": "微服务技术栈",
+                "permalink": "/docs/SpringCloud/微服务技术栈"
+              }
+            },
+            {
+              "title": "SpringCloud-Netflix",
+              "slug": "/category/springcloud-netflix",
+              "permalink": "/docs/category/springcloud-netflix",
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "微服务技术栈",
+                "permalink": "/docs/SpringCloud/微服务技术栈"
+              },
+              "next": {
+                "title": "服务注册-Eureka&Consul",
+                "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
+              }
+            },
+            {
+              "title": "SpringCloud-Alibaba",
+              "slug": "/category/springcloud-alibaba",
+              "permalink": "/docs/category/springcloud-alibaba",
+              "sidebar": "springCloudSideBar",
+              "previous": {
+                "title": "链路追踪-Sleuth",
+                "permalink": "/docs/SpringCloud/Netflix/Sleuth"
+              },
+              "next": {
+                "title": "服务注册与配置中心-Nacos",
+                "permalink": "/docs/SpringCloud/Alibaba/Nacos"
+              }
+            },
+            {
+              "title": "MySQL入门",
+              "slug": "/category/mysql入门",
+              "permalink": "/docs/category/mysql入门",
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL笔记概述",
+                "permalink": "/docs/mysql"
+              },
+              "next": {
+                "title": "MySQL基础查询",
+                "permalink": "/docs/Mysql/基础/MySQL基础查询"
+              }
+            }
+          ]
         }
       ]
     }

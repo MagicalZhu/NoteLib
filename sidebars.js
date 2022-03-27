@@ -54,6 +54,9 @@ class Category {
     this.label = label
     this.items = items || []
     this.collapsed = true
+    this. link = {
+      type: 'generated-index',
+    }
   }
   setClassName(className) {
     this.className = className
@@ -135,6 +138,18 @@ const basicSideBar = [
   ConcurrencySafe,
 ]
 
+// Mysql
+const mysqlPart =  new Category('MySQL入门')
+    .setNoLabelItem('Mysql/基础', [
+      'MySQL基础查询',
+      'MySQL函数与聚合'
+    ])
+
+const mysqlSideBar = [
+  createDoc('Mysql/mysql', '简介'),
+  mysqlPart
+]
+
 // 计算机网络相关
 
 // const netWork= =  new Category('计算机网络')
@@ -196,7 +211,8 @@ const sidebars = {
   sourceSideBar,
   springSideBar,
   springCloudSideBar,
-  netWorkSidebar
+  netWorkSidebar,
+  mysqlSideBar
 }
 
 module.exports = sidebars;

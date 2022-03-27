@@ -128,6 +128,21 @@
               "path": "/docs/about"
             },
             {
+              "id": "Mysql/基础/MySQL函数与聚合",
+              "path": "/docs/Mysql/基础/MySQL函数与聚合",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/基础/MySQL基础查询",
+              "path": "/docs/Mysql/基础/MySQL基础查询",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/mysql",
+              "path": "/docs/mysql",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "source/devSource",
               "path": "/docs/source/devSource",
               "sidebar": "sourceSideBar"
@@ -225,6 +240,46 @@
               "id": "SpringCloud/springCloud",
               "path": "/docs/springCloud",
               "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "/category/并发基础",
+              "path": "/docs/category/并发基础",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "/category/并发安全",
+              "path": "/docs/category/并发安全",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "/category/并发控制",
+              "path": "/docs/category/并发控制",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "/category/spring编程思想",
+              "path": "/docs/category/spring编程思想",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "/category/微服务基础",
+              "path": "/docs/category/微服务基础",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "/category/springcloud-netflix",
+              "path": "/docs/category/springcloud-netflix",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "/category/springcloud-alibaba",
+              "path": "/docs/category/springcloud-alibaba",
+              "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "/category/mysql入门",
+              "path": "/docs/category/mysql入门",
+              "sidebar": "mysqlSideBar"
             }
           ],
           "sidebars": {
@@ -255,6 +310,12 @@
             "netWorkSidebar": {
               "link": {
                 "path": "/docs/networrk-basic",
+                "label": "简介"
+              }
+            },
+            "mysqlSideBar": {
+              "link": {
+                "path": "/docs/mysql",
                 "label": "简介"
               }
             }

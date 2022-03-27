@@ -16,11 +16,11 @@
   },
   "sidebar": "springCloudSideBar",
   "previous": {
-    "title": "springCloud",
-    "permalink": "/docs/springCloud"
+    "title": "微服务基础",
+    "permalink": "/docs/category/微服务基础"
   },
   "next": {
-    "title": "服务注册-Eureka&Consul",
-    "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
+    "title": "SpringCloud-Netflix",
+    "permalink": "/docs/category/springcloud-netflix"
   }
 }

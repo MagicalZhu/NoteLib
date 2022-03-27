@@ -1,0 +1,15 @@
+{
+  "title": "Spring编程思想",
+  "slug": "/category/spring编程思想",
+  "permalink": "/docs/category/spring编程思想",
+  "navigation": {
+    "previous": {
+      "title": "Spring",
+      "permalink": "/docs/spring"
+    },
+    "next": {
+      "title": "IOC容器",
+      "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+    }
+  }
+}

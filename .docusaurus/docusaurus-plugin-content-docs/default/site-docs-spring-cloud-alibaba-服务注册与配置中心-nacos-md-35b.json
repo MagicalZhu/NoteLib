@@ -16,8 +16,8 @@
   },
   "sidebar": "springCloudSideBar",
   "previous": {
-    "title": "链路追踪-Sleuth",
-    "permalink": "/docs/SpringCloud/Netflix/Sleuth"
+    "title": "SpringCloud-Alibaba",
+    "permalink": "/docs/category/springcloud-alibaba"
   },
   "next": {
     "title": "服务容错-Sentinel",

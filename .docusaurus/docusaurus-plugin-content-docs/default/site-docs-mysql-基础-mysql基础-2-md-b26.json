@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/基础/mysql基础2",
+  "id": "Mysql/基础/mysql基础2",
+  "title": "mysql基础2",
+  "description": "mysql数据库文档333",
+  "source": "@site/docs/Mysql/基础/mysql基础2.md",
+  "sourceDirName": "Mysql/基础",
+  "slug": "/Mysql/基础/mysql基础2",
+  "permalink": "/docs/Mysql/基础/mysql基础2",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/mysql基础2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "mysql基础2",
+    "title": "mysql基础2"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "mysql基础",
+    "permalink": "/docs/Mysql/基础/mysql基础"
+  }
+}

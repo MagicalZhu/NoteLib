@@ -26,7 +26,7 @@ const themeConfig = {
     theme: lightCodeTheme,
     darkTheme: darkCodeTheme,
     defaultLanguage: 'java',
-    // additionalLanguages: ['java', 'markdown', 'shell-session'],
+    additionalLanguages: ['java','sql', 'ini'],
   },
   tableOfContents: {
     minHeadingLevel: 2,

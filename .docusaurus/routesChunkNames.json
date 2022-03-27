@@ -36,7 +36,7 @@
   "/search-79a": {
     "component": "component---theme-search-page-1-a-4-d6f"
   },
-  "/docs-0b0": {
+  "/docs-774": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -116,6 +116,38 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-cache-581-6a7"
   },
+  "/docs/category/并发安全-95c": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-并发安全d-61-f24"
+  },
+  "/docs/category/并发基础-064": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-并发基础-2-ca-9ef"
+  },
+  "/docs/category/并发控制-13b": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-并发控制-1-cf-255"
+  },
+  "/docs/category/微服务基础-40f": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-微服务基础bdd-b7b"
+  },
+  "/docs/category/mysql入门-095": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-mysql入门-010-003"
+  },
+  "/docs/category/spring编程思想-ab2": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring编程思想b-16-910"
+  },
+  "/docs/category/springcloud-alibaba-8d2": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-springcloud-alibabadeb-84c"
+  },
+  "/docs/category/springcloud-netflix-1f8": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-springcloud-netflix-05-a-69a"
+  },
   "/docs/currency-102": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-currencyc-85-c79"
@@ -131,6 +163,18 @@
   "/docs/messageQueue-e64": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-message-queueb-54-5ee"
+  },
+  "/docs/mysql-a05": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysqlc-28-5b2"
+  },
+  "/docs/Mysql/基础/MySQL函数与聚合-91e": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-基础-my-sq-l函数与聚合f-20-27a"
+  },
+  "/docs/Mysql/基础/MySQL基础查询-949": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-基础-my-sq-l基础查询-2-b-4-bce"
   },
   "/docs/networrk-basic-b98": {
     "component": "component---theme-doc-item-178-a40",

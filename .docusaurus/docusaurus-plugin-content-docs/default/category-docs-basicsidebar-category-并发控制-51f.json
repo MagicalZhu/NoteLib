@@ -1,0 +1,15 @@
+{
+  "title": "并发控制",
+  "slug": "/category/并发控制",
+  "permalink": "/docs/category/并发控制",
+  "navigation": {
+    "previous": {
+      "title": "死锁与其他活跃锁",
+      "permalink": "/docs/并发编程/并发安全/dead_lock"
+    },
+    "next": {
+      "title": "线程池",
+      "permalink": "/docs/并发编程/并发控制/线程池"
+    }
+  }
+}

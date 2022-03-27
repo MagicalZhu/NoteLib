@@ -1,0 +1,15 @@
+{
+  "title": "SpringCloud-Alibaba",
+  "slug": "/category/springcloud-alibaba",
+  "permalink": "/docs/category/springcloud-alibaba",
+  "navigation": {
+    "previous": {
+      "title": "链路追踪-Sleuth",
+      "permalink": "/docs/SpringCloud/Netflix/Sleuth"
+    },
+    "next": {
+      "title": "服务注册与配置中心-Nacos",
+      "permalink": "/docs/SpringCloud/Alibaba/Nacos"
+    }
+  }
+}

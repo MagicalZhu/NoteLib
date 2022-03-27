@@ -16,8 +16,8 @@
   },
   "sidebar": "springCloudSideBar",
   "previous": {
-    "title": "微服务技术栈",
-    "permalink": "/docs/SpringCloud/微服务技术栈"
+    "title": "SpringCloud-Netflix",
+    "permalink": "/docs/category/springcloud-netflix"
   },
   "next": {
     "title": "服务调用-Ribbon",

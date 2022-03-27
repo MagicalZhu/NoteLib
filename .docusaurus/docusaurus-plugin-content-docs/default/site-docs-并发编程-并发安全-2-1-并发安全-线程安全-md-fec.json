@@ -16,8 +16,8 @@
   },
   "sidebar": "basicSideBar",
   "previous": {
-    "title": "并发笔记概述",
-    "permalink": "/docs/currency"
+    "title": "并发安全",
+    "permalink": "/docs/category/并发安全"
   },
   "next": {
     "title": "JMM",

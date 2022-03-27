@@ -20,7 +20,7 @@
     "permalink": "/docs/并发编程/并发安全/volatile"
   },
   "next": {
-    "title": "线程池",
-    "permalink": "/docs/并发编程/并发控制/线程池"
+    "title": "并发控制",
+    "permalink": "/docs/category/并发控制"
   }
 }

@@ -71,6 +71,10 @@ export default {
             {
               "label": "计算机网络",
               "to": "docs/networrk-basic"
+            },
+            {
+              "label": "MySQL",
+              "to": "docs/mysql"
             }
           ]
         },
@@ -544,8 +548,8 @@ export default {
       "defaultLanguage": "java",
       "additionalLanguages": [
         "java",
-        "markdown",
-        "shell-session"
+        "sql",
+        "ini"
       ]
     },
     "tableOfContents": {

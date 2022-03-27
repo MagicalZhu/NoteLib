@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','0b0'),
+    component: ComponentCreator('/docs','774'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -173,6 +173,54 @@ export default [
         exact: true
       },
       {
+        path: '/docs/category/并发安全',
+        component: ComponentCreator('/docs/category/并发安全','95c'),
+        exact: true,
+        'sidebar': "basicSideBar"
+      },
+      {
+        path: '/docs/category/并发基础',
+        component: ComponentCreator('/docs/category/并发基础','064'),
+        exact: true,
+        'sidebar': "basicSideBar"
+      },
+      {
+        path: '/docs/category/并发控制',
+        component: ComponentCreator('/docs/category/并发控制','13b'),
+        exact: true,
+        'sidebar': "basicSideBar"
+      },
+      {
+        path: '/docs/category/微服务基础',
+        component: ComponentCreator('/docs/category/微服务基础','40f'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/category/mysql入门',
+        component: ComponentCreator('/docs/category/mysql入门','095'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/category/spring编程思想',
+        component: ComponentCreator('/docs/category/spring编程思想','ab2'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/category/springcloud-alibaba',
+        component: ComponentCreator('/docs/category/springcloud-alibaba','8d2'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/category/springcloud-netflix',
+        component: ComponentCreator('/docs/category/springcloud-netflix','1f8'),
+        exact: true,
+        'sidebar': "springCloudSideBar"
+      },
+      {
         path: '/docs/currency',
         component: ComponentCreator('/docs/currency','102'),
         exact: true,
@@ -192,6 +240,24 @@ export default [
         path: '/docs/messageQueue',
         component: ComponentCreator('/docs/messageQueue','e64'),
         exact: true
+      },
+      {
+        path: '/docs/mysql',
+        component: ComponentCreator('/docs/mysql','a05'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/基础/MySQL函数与聚合',
+        component: ComponentCreator('/docs/Mysql/基础/MySQL函数与聚合','91e'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/基础/MySQL基础查询',
+        component: ComponentCreator('/docs/Mysql/基础/MySQL基础查询','949'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
       },
       {
         path: '/docs/networrk-basic',

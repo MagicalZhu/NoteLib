@@ -1,0 +1,15 @@
+{
+  "title": "SpringCloud-Netflix",
+  "slug": "/category/springcloud-netflix",
+  "permalink": "/docs/category/springcloud-netflix",
+  "navigation": {
+    "previous": {
+      "title": "微服务技术栈",
+      "permalink": "/docs/SpringCloud/微服务技术栈"
+    },
+    "next": {
+      "title": "服务注册-Eureka&Consul",
+      "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
+    }
+  }
+}

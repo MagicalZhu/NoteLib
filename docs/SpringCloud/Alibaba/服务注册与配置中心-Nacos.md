@@ -408,16 +408,16 @@ spring:
 
 
 
-## 4.2 Nacos 元数据（Meta-Data）
+## 5. Nacos 元数据（Meta-Data）
 
 - <font color='red'>什么是 元数据 ?</font>
 
   - Nacos数据（如配置和服务）描述信息
     - 如服务版本、权重、容灾策略、负载均衡策略、鉴权配置、各种自定义标签 (label)
   - 从作用范围来看，分为
-    - <font color='red'>服务级别的元数据</font>
-    - <font color='red'>`集群的元数据 `</font>
-    - <font color='red'>`实例的元数据 `</font>
+    - `服务级别的元数据`
+    - `集群的元数据 `
+    - `实例的元数据 `
 - <font color='red'>元数据的作用</font>
 
   - 提供微服务的描述信息
@@ -432,9 +432,9 @@ spring:
 
 
 
-## 5. Nacos 集群 与持久化
+## 6. Nacos 集群 与持久化
 
-### 5.2 Nacos 持久化
+### 6.1 Nacos 持久化
 
 - <mark>Nacos默认使用derby 嵌入式数据库</mark>
 - <font color='red'>如何将数据库切换到Mysql？</font>
@@ -458,13 +458,13 @@ db.password=123
 
   
 
-### 5.2 Nacos 的集群架构模式
+### 6.2 Nacos 的集群架构模式
 
 ![](../image/10.%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83-%20Nacos/image-20201215154214394.png)
 
 
 
-#### 5.2.1 Nginx+Nacos+Mysql 构建持久化的Nacos集群
+#### 6.2.1 Nginx+Nacos+Mysql 构建持久化的Nacos集群
 
 - <font color='red'>操作步骤？</font>
 

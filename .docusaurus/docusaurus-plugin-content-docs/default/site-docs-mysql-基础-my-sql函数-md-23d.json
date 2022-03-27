@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/基础/MySQL函数与聚合",
+  "id": "Mysql/基础/MySQL函数与聚合",
+  "title": "MySQL函数与聚合",
+  "description": "函数",
+  "source": "@site/docs/Mysql/基础/MySQL函数.md",
+  "sourceDirName": "Mysql/基础",
+  "slug": "/Mysql/基础/MySQL函数与聚合",
+  "permalink": "/docs/Mysql/基础/MySQL函数与聚合",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL函数.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL函数与聚合",
+    "title": "MySQL函数与聚合"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL基础查询",
+    "permalink": "/docs/Mysql/基础/MySQL基础查询"
+  }
+}

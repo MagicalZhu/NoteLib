@@ -16,8 +16,8 @@
   },
   "sidebar": "springSideBar",
   "previous": {
-    "title": "Spring",
-    "permalink": "/docs/spring"
+    "title": "Spring编程思想",
+    "permalink": "/docs/category/spring编程思想"
   },
   "next": {
     "title": "Bean",

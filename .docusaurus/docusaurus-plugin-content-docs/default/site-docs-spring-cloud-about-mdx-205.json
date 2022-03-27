@@ -17,7 +17,7 @@
   },
   "sidebar": "springCloudSideBar",
   "next": {
-    "title": "微服务技术栈",
-    "permalink": "/docs/SpringCloud/微服务技术栈"
+    "title": "微服务基础",
+    "permalink": "/docs/category/微服务基础"
   }
 }

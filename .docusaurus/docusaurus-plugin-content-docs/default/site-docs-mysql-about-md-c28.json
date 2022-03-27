@@ -1,0 +1,23 @@
+{
+  "unversionedId": "Mysql/mysql",
+  "id": "Mysql/mysql",
+  "title": "MySQL笔记概述",
+  "description": "MySQL笔记概述",
+  "source": "@site/docs/Mysql/about.md",
+  "sourceDirName": "Mysql",
+  "slug": "/mysql",
+  "permalink": "/docs/mysql",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/about.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "mysql",
+    "slug": "/mysql",
+    "title": "MySQL笔记概述"
+  },
+  "sidebar": "mysqlSideBar",
+  "next": {
+    "title": "MySQL入门",
+    "permalink": "/docs/category/mysql入门"
+  }
+}

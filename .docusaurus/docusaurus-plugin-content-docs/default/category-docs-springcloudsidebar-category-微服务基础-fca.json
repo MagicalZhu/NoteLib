@@ -1,0 +1,15 @@
+{
+  "title": "微服务基础",
+  "slug": "/category/微服务基础",
+  "permalink": "/docs/category/微服务基础",
+  "navigation": {
+    "previous": {
+      "title": "springCloud",
+      "permalink": "/docs/springCloud"
+    },
+    "next": {
+      "title": "微服务技术栈",
+      "permalink": "/docs/SpringCloud/微服务技术栈"
+    }
+  }
+}

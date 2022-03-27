@@ -33,6 +33,10 @@ const nav = {
         {
           label: "计算机网络",
           to: 'docs/networrk-basic',
+        },
+        {
+          label: "MySQL",
+          to: 'docs/mysql',
         }
       ]
     },
