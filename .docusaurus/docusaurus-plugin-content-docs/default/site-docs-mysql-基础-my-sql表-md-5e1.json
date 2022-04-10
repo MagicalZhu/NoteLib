@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/基础/MySQL表",
+  "id": "Mysql/基础/MySQL表",
+  "title": "MySQL表",
+  "description": "数据库管理",
+  "source": "@site/docs/Mysql/基础/MySQL表.md",
+  "sourceDirName": "Mysql/基础",
+  "slug": "/Mysql/基础/MySQL表",
+  "permalink": "/docs/Mysql/基础/MySQL表",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL表.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL表",
+    "title": "MySQL表"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL子查询",
+    "permalink": "/docs/Mysql/基础/MySQL子查询"
+  }
+}

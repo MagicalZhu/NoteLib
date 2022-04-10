@@ -18,5 +18,9 @@
   "previous": {
     "title": "MySQL基础查询",
     "permalink": "/docs/Mysql/基础/MySQL基础查询"
+  },
+  "next": {
+    "title": "MySQL子查询",
+    "permalink": "/docs/Mysql/基础/MySQL子查询"
   }
 }

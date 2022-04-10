@@ -44,7 +44,7 @@ const footer = {
         { label: 'Day.js', href: 'https://dayjs.gitee.io/docs/zh-CN/installation/installation'},
         { label: 'Tailwindcss', href: 'https://www.tailwindcss.cn/docs'},
         { label: 'Sortablejs', href: 'http://www.sortablejs.com/index.html'},
-        { label: 'Axios', href: 'http://www.axios-js.com/'},
+        { label: 'Axios', href: 'https://www.axios-http.cn/docs/intro'},
         { label: 'Dplayer', href: 'http://dplayer.js.org/zh/'},
         { label: 'Sequelize', href: 'https://www.sequelize.com.cn/core-concepts/getting-started'},
       ],

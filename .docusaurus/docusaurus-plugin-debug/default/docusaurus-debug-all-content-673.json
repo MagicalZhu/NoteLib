@@ -591,6 +591,28 @@
               }
             },
             {
+              "unversionedId": "Mysql/高级特性/MySQL高级特性",
+              "id": "Mysql/高级特性/MySQL高级特性",
+              "title": "MySQL高级特性",
+              "description": "",
+              "source": "@site/docs/Mysql/高级特性/MySQL高级特性.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/MySQL高级特性",
+              "permalink": "/docs/Mysql/高级特性/MySQL高级特性",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL高级特性.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MySQL高级特性",
+                "title": "MySQL高级特性"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "高级特性",
+                "permalink": "/docs/category/高级特性"
+              }
+            },
+            {
               "unversionedId": "Mysql/基础/MySQL函数与聚合",
               "id": "Mysql/基础/MySQL函数与聚合",
               "title": "MySQL函数与聚合",
@@ -610,6 +632,10 @@
               "previous": {
                 "title": "MySQL基础查询",
                 "permalink": "/docs/Mysql/基础/MySQL基础查询"
+              },
+              "next": {
+                "title": "MySQL子查询",
+                "permalink": "/docs/Mysql/基础/MySQL子查询"
               }
             },
             {
@@ -630,12 +656,64 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "MySQL入门",
-                "permalink": "/docs/category/mysql入门"
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识"
               },
               "next": {
                 "title": "MySQL函数与聚合",
                 "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
+              }
+            },
+            {
+              "unversionedId": "Mysql/基础/MySQL库对象",
+              "id": "Mysql/基础/MySQL库对象",
+              "title": "MySQL库对象",
+              "description": "数据库对象",
+              "source": "@site/docs/Mysql/基础/MySQL库对象.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL库对象",
+              "permalink": "/docs/Mysql/基础/MySQL库对象",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL库对象.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MySQL库对象",
+                "title": "MySQL库对象"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL子查询",
+                "permalink": "/docs/Mysql/基础/MySQL子查询"
+              },
+              "next": {
+                "title": "高级特性",
+                "permalink": "/docs/category/高级特性"
+              }
+            },
+            {
+              "unversionedId": "Mysql/基础/MySQL子查询",
+              "id": "Mysql/基础/MySQL子查询",
+              "title": "MySQL子查询",
+              "description": "子查询是指一个查询语句嵌套在另一个查询语句的内部的查询,这个特性从 MySQL4.1 开始引入,也叫做内查询",
+              "source": "@site/docs/Mysql/基础/MySQL子查询.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL子查询",
+              "permalink": "/docs/Mysql/基础/MySQL子查询",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL子查询.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MySQL子查询",
+                "title": "MySQL子查询"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL函数与聚合",
+                "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
+              },
+              "next": {
+                "title": "MySQL库对象",
+                "permalink": "/docs/Mysql/基础/MySQL库对象"
               }
             },
             {
@@ -657,8 +735,8 @@
               },
               "sidebar": "mysqlSideBar",
               "next": {
-                "title": "MySQL入门",
-                "permalink": "/docs/category/mysql入门"
+                "title": "MySQL基础与高级",
+                "permalink": "/docs/category/mysql基础与高级"
               }
             },
             {
@@ -1412,22 +1490,60 @@
               },
               {
                 "type": "category",
-                "label": "MySQL入门",
+                "label": "MySQL基础与高级",
                 "items": [
                   {
-                    "type": "doc",
-                    "id": "Mysql/基础/MySQL基础查询"
+                    "type": "category",
+                    "label": "基础知识",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "Mysql/基础/MySQL基础查询"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/基础/MySQL函数与聚合"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/基础/MySQL子查询"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/基础/MySQL库对象"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/基础知识",
+                      "permalink": "/docs/category/基础知识"
+                    },
+                    "collapsible": true
                   },
                   {
-                    "type": "doc",
-                    "id": "Mysql/基础/MySQL函数与聚合"
+                    "type": "category",
+                    "label": "高级特性",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/MySQL高级特性"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/高级特性",
+                      "permalink": "/docs/category/高级特性"
+                    },
+                    "collapsible": true
                   }
                 ],
                 "collapsed": true,
                 "link": {
                   "type": "generated-index",
-                  "slug": "/category/mysql入门",
-                  "permalink": "/docs/category/mysql入门"
+                  "slug": "/category/mysql基础与高级",
+                  "permalink": "/docs/category/mysql基础与高级"
                 },
                 "collapsible": true
               }
@@ -1534,17 +1650,45 @@
               }
             },
             {
-              "title": "MySQL入门",
-              "slug": "/category/mysql入门",
-              "permalink": "/docs/category/mysql入门",
+              "title": "MySQL基础与高级",
+              "slug": "/category/mysql基础与高级",
+              "permalink": "/docs/category/mysql基础与高级",
               "sidebar": "mysqlSideBar",
               "previous": {
                 "title": "MySQL笔记概述",
                 "permalink": "/docs/mysql"
               },
               "next": {
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识"
+              }
+            },
+            {
+              "title": "基础知识",
+              "slug": "/category/基础知识",
+              "permalink": "/docs/category/基础知识",
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL基础与高级",
+                "permalink": "/docs/category/mysql基础与高级"
+              },
+              "next": {
                 "title": "MySQL基础查询",
                 "permalink": "/docs/Mysql/基础/MySQL基础查询"
+              }
+            },
+            {
+              "title": "高级特性",
+              "slug": "/category/高级特性",
+              "permalink": "/docs/category/高级特性",
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL库对象",
+                "permalink": "/docs/Mysql/基础/MySQL库对象"
+              },
+              "next": {
+                "title": "MySQL高级特性",
+                "permalink": "/docs/Mysql/高级特性/MySQL高级特性"
               }
             }
           ]

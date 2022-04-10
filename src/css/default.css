@@ -1,3 +1,5 @@
+/* Website font */
+@import url('poppins.css');
 :root {
   --ifm-color-scheme: light;
   --ifm-container-width: 75%;

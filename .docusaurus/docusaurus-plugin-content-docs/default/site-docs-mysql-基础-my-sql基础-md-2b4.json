@@ -16,8 +16,8 @@
   },
   "sidebar": "mysqlSideBar",
   "previous": {
-    "title": "MySQL入门",
-    "permalink": "/docs/category/mysql入门"
+    "title": "基础知识",
+    "permalink": "/docs/category/基础知识"
   },
   "next": {
     "title": "MySQL函数与聚合",

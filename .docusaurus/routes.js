@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','774'),
+    component: ComponentCreator('/docs','e21'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -191,14 +191,26 @@ export default [
         'sidebar': "basicSideBar"
       },
       {
+        path: '/docs/category/高级特性',
+        component: ComponentCreator('/docs/category/高级特性','9cd'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/category/基础知识',
+        component: ComponentCreator('/docs/category/基础知识','2ef'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
         path: '/docs/category/微服务基础',
         component: ComponentCreator('/docs/category/微服务基础','40f'),
         exact: true,
         'sidebar': "springCloudSideBar"
       },
       {
-        path: '/docs/category/mysql入门',
-        component: ComponentCreator('/docs/category/mysql入门','095'),
+        path: '/docs/category/mysql基础与高级',
+        component: ComponentCreator('/docs/category/mysql基础与高级','700'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },
@@ -248,6 +260,12 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
+        path: '/docs/Mysql/高级特性/MySQL高级特性',
+        component: ComponentCreator('/docs/Mysql/高级特性/MySQL高级特性','4a4'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
         path: '/docs/Mysql/基础/MySQL函数与聚合',
         component: ComponentCreator('/docs/Mysql/基础/MySQL函数与聚合','91e'),
         exact: true,
@@ -256,6 +274,18 @@ export default [
       {
         path: '/docs/Mysql/基础/MySQL基础查询',
         component: ComponentCreator('/docs/Mysql/基础/MySQL基础查询','949'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/基础/MySQL库对象',
+        component: ComponentCreator('/docs/Mysql/基础/MySQL库对象','400'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/基础/MySQL子查询',
+        component: ComponentCreator('/docs/Mysql/基础/MySQL子查询','63b'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

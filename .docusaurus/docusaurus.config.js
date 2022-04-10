@@ -201,7 +201,7 @@ export default {
             },
             {
               "label": "Axios",
-              "href": "http://www.axios-js.com/"
+              "href": "https://www.axios-http.cn/docs/intro"
             },
             {
               "label": "Dplayer",

@@ -128,6 +128,11 @@
               "path": "/docs/about"
             },
             {
+              "id": "Mysql/高级特性/MySQL高级特性",
+              "path": "/docs/Mysql/高级特性/MySQL高级特性",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/基础/MySQL函数与聚合",
               "path": "/docs/Mysql/基础/MySQL函数与聚合",
               "sidebar": "mysqlSideBar"
@@ -135,6 +140,16 @@
             {
               "id": "Mysql/基础/MySQL基础查询",
               "path": "/docs/Mysql/基础/MySQL基础查询",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/基础/MySQL库对象",
+              "path": "/docs/Mysql/基础/MySQL库对象",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/基础/MySQL子查询",
+              "path": "/docs/Mysql/基础/MySQL子查询",
               "sidebar": "mysqlSideBar"
             },
             {
@@ -277,8 +292,18 @@
               "sidebar": "springCloudSideBar"
             },
             {
-              "id": "/category/mysql入门",
-              "path": "/docs/category/mysql入门",
+              "id": "/category/mysql基础与高级",
+              "path": "/docs/category/mysql基础与高级",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "/category/基础知识",
+              "path": "/docs/category/基础知识",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "/category/高级特性",
+              "path": "/docs/category/高级特性",
               "sidebar": "mysqlSideBar"
             }
           ],

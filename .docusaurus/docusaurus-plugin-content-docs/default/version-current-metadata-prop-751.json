@@ -305,24 +305,60 @@
       },
       {
         "type": "category",
-        "label": "MySQL入门",
+        "label": "MySQL基础与高级",
         "items": [
           {
-            "type": "link",
-            "label": "MySQL基础查询",
-            "href": "/docs/Mysql/基础/MySQL基础查询",
-            "docId": "Mysql/基础/MySQL基础查询"
+            "type": "category",
+            "label": "基础知识",
+            "items": [
+              {
+                "type": "link",
+                "label": "MySQL基础查询",
+                "href": "/docs/Mysql/基础/MySQL基础查询",
+                "docId": "Mysql/基础/MySQL基础查询"
+              },
+              {
+                "type": "link",
+                "label": "MySQL函数与聚合",
+                "href": "/docs/Mysql/基础/MySQL函数与聚合",
+                "docId": "Mysql/基础/MySQL函数与聚合"
+              },
+              {
+                "type": "link",
+                "label": "MySQL子查询",
+                "href": "/docs/Mysql/基础/MySQL子查询",
+                "docId": "Mysql/基础/MySQL子查询"
+              },
+              {
+                "type": "link",
+                "label": "MySQL库对象",
+                "href": "/docs/Mysql/基础/MySQL库对象",
+                "docId": "Mysql/基础/MySQL库对象"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/基础知识"
           },
           {
-            "type": "link",
-            "label": "MySQL函数与聚合",
-            "href": "/docs/Mysql/基础/MySQL函数与聚合",
-            "docId": "Mysql/基础/MySQL函数与聚合"
+            "type": "category",
+            "label": "高级特性",
+            "items": [
+              {
+                "type": "link",
+                "label": "MySQL高级特性",
+                "href": "/docs/Mysql/高级特性/MySQL高级特性",
+                "docId": "Mysql/高级特性/MySQL高级特性"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/高级特性"
           }
         ],
         "collapsed": true,
         "collapsible": true,
-        "href": "/docs/category/mysql入门"
+        "href": "/docs/category/mysql基础与高级"
       }
     ]
   },
@@ -469,6 +505,12 @@
       "title": "个人简介",
       "description": "文档概述"
     },
+    "Mysql/高级特性/MySQL高级特性": {
+      "id": "Mysql/高级特性/MySQL高级特性",
+      "title": "MySQL高级特性",
+      "description": "",
+      "sidebar": "mysqlSideBar"
+    },
     "Mysql/基础/MySQL函数与聚合": {
       "id": "Mysql/基础/MySQL函数与聚合",
       "title": "MySQL函数与聚合",
@@ -479,6 +521,18 @@
       "id": "Mysql/基础/MySQL基础查询",
       "title": "MySQL基础查询",
       "description": "表的关联关系",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/基础/MySQL库对象": {
+      "id": "Mysql/基础/MySQL库对象",
+      "title": "MySQL库对象",
+      "description": "数据库对象",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/基础/MySQL子查询": {
+      "id": "Mysql/基础/MySQL子查询",
+      "title": "MySQL子查询",
+      "description": "子查询是指一个查询语句嵌套在另一个查询语句的内部的查询,这个特性从 MySQL4.1 开始引入,也叫做内查询",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/mysql": {

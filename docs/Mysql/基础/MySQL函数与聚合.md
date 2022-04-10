@@ -356,9 +356,278 @@ FROM DUAL;
   FROM table
   [WHERE 判断条件]
   [GROUP BY 分组字段]
+  [HAVING  分组条件]
   [ORDER BY 排序字段]
   ```
 
 - **注意**
 
-  - 聚合函数不能嵌套调用。比如不能出现类似“AVG(SUM(字段名称))”形式的调用.
+  - 聚合函数不能嵌套调用。比如不能出现类似“AVG(SUM(字段名称))”形式的调用
+
+### AVG、SUM
+
+- 可以对`数值型数据`使用AVG 和 SUM 函数
+- `AVG` : 返回一组数据的平均数
+- `SUM` : 返回一组数据的总和
+
+:::info AVG与SUM的使用
+
+**求员工工资的平均数与总和**
+
+```sql
+Select AVG(emp.salary) "工资平均数",SUM(emp.salary) "工资总和"  from  employees emp
+```
+
+![image-20220331191950663](./image/MySQL函数与聚合/image-20220331191950663.png)
+
+:::
+
+
+
+### MAX、MIN
+
+- 可以对`任意数据类型`的数据使用 MIN 和 MAX 函数
+- `MIN` : 返回一组数据的最小值
+- `MAX` : 返回一组数据的最大值
+
+:::info
+
+```sql
+select min(emp.first_name)  "firstName最小值" , max(emp.salary) "最高工资" from employees  emp 
+```
+
+![image-20220331192953122](./image/MySQL函数与聚合/image-20220331192953122.png)
+
+:::
+
+
+
+### COUNT
+
+> 1. **count(*)，count(1)，count(列名) 用哪一个？**
+>    - 对于`MyISAM 引擎`的表是没有区别的，因为这种引擎内部有一计数器在维护着行数
+>    - 对于使用`Innodb引擎`的表用 count(*),count(1)要去数一遍行数，复杂度是O(n)，但好于具体的 count(列名)
+>
+> 2. **能不能使用count(列名)替换count(*)?**
+>
+>    - <font color='red'>不要使用count(列名) 代替count(*)  </font>
+>    
+>      - count(*)是 SQL92 定义的标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关
+>    - <font color='red'>说明:count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行</font>
+
+- `COUNT(*)`
+  - 返回表中记录总数,适用于 `任意数据类型`
+- `COUNT(expr)`
+  - 返回 expr不为空的记录总数
+
+:::info count(*)、count(1)、count(字段名)
+
+```sql
+select count(commission_pct) "排除列数据为空的",count(1) "总数据量",count(*) "总数据量" from  employees 
+```
+
+![image-20220331194744945](./image/MySQL函数与聚合/image-20220331194744945.png)
+
+:::
+
+
+
+## GROUP BY
+
+### 基本使用
+
+- 用于将数据按指定的字段进行分组,通过GROUP BY 可以将数据按指定的字段分为若干组,<mark>由于表中存在指定字段数据相同的情况，所以一组可能包含多条数据</mark>
+
+- <mark>注意</mark> 
+
+  - **分组前会依据该字段进行排序**
+  - **一个组中如果包含多条数据，默认最后显示第一条的数据内容,如果select字段中包含聚合函数，会查询出满足聚合函数的结果**
+
+- **基本规则**
+
+  - `在Select 列表中所有未包含在组函数中的列都应该包含在 GROUP BY子句中`
+
+    ```sql
+    SELECT department_id, AVG(salary) 
+    FROM employees
+    GROUP BY department_id ;
+    ```
+
+  - `包含在 GROUP BY 子句中的列不必包含在SELECT 列表中`
+
+    ```sql
+    SELECT AVG(salary) 
+    FROM employees
+    GROUP BY department_id ;
+    ```
+
+- 也可以在 **GROUP BY** 后面加上多个列名，对多个列进行分组
+
+### WITH ROLLUP
+
+- 在所有查询出的分组记录之后增加一条记录，该记录通过`对查询出的所有记录的进行聚合函数计算`得到
+  - 这里查询出来的所有数据指的是 <mark>分组后所有组里面的所有数据</mark>
+- 当使用ROLLUP时，不能同时使用ORDER BY子句进行结果排序，<font color='red'>即ROLLUP和ORDER BY是互相排斥 的</font>
+
+:::info 使用 WITH ROLLUP
+
+```sql
+-- 对部门ID进行分组， AVG(salary) 对每一组的salary进行取平均值
+-- 最后的 WITH ROLLUP 会插入一条数据，数据来源于分组前的且满足Where条件的一组数据
+SELECT department_id, AVG(salary) FROM employees
+WHERE department_id > 80
+GROUP BY department_id WITH ROLLUP
+```
+
+![image-20220331202647497](./image/MySQL函数与聚合/image-20220331202647497.png)
+
+::: 
+
+
+
+## HAVING
+
+### 基本使用(过滤分组)
+
+- **使用原则**
+  - `HAVING 必须和 GROUP BY一起使用` (行已经被GROUP BY分组)
+  - `使用了聚合函数`
+  - `满足HAVING子句中的条件的分组会被展示`(执行完GROUP BY 之后,再对数据进行HAVING 过滤)
+- **非法使用聚合函数?**
+  - <font color='red'>不能在 WHERE 子句中使用聚合函数</font>
+
+:::info 使用GROUP BY 与HAVING
+
+**案例: 查出每个部门中员工工资大于 1000的**
+
+```sql
+-- 对employees表按照部门进行分组后的数据重新进行过滤
+select emp.department_id,emp.salary 
+from employees emp
+group by emp.department_id
+having emp.salary>10000
+```
+
+
+
+![image-20220403095556435](./image/MySQL函数与聚合/image-20220403095556435.png)
+
+![image-20220403095704810](./image/MySQL函数与聚合/image-20220403095704810.png)
+
+:::
+
+### WHERE与HAVING
+
+> where 和 having 都可以对查询结果进行过滤,但是两者的区别很大
+
+:::tip having 与 where 使用的区别
+
+1. **WHERE 可以直接使用表中的字段作为过滤条件,但是不能对分组之后的数据使用计算函数进行过滤;HAVING必须和GROUP BY 一起使用,并且可以对分组之后的数据使用计算函数进行过滤**
+   - 这个说明在需要对数据进行分组统计的时候, having 可以完成 where 不能完成的任务
+   - 因为在查询语法结构中, where 在 group by 之前预先执行，所以无法对查询结果进行过滤，而 having 是在group by 之后的，所以可以对分组结果进行过滤。当然如果既有 where 也有 group by 的话,不满足where 条件的是不会出现在分组结果中的
+2. **如果需要通过连接从关联表中获取需要的数据，WHERE 是先筛选后连接，而 HAVING 是先连接 后筛选**
+   - 这个说明`在关联查询中，WHERE 比 HAVING 更高效`
+   - WHERE 可以先筛选，用筛选后的较小数据集和关联表进行连接，这样占用的资源比较少，执行效率也比较高
+   - HAVING 则需要先把结果集准备好，也就是用未被筛选的数据集进行关联，然后对这个大的数据集进行筛选，这样占用的资源就比较多，执行效率也较低
+
+:::
+
+**开发建议**: Where 和 having 不是互相排斥的，可以在一个查询里面同时使用 where 和 having。包含分组统计函数的条件用 having，普通条件用 Where。这样，我们就既利用了 where 条件的高效快速，又发挥了 having 可以使用包含分组统计函数的查询条件的优点。当数据量特别大的时候，运行效率会有很大的差别。
+
+
+
+## SELECT执行过程
+
+### 查询的结构
+
+```sql
+#方式1:
+SELECT ...
+FROM ...
+WHERE 多表的连接条件 AND 不包含组函数的过滤条件 
+GROUP BY ...  
+HAVING 包含组函数的过滤条件 
+ORDER BY ... ASC/DESC 
+LIMIT ...
+
+#方式2:
+SELECT ...
+FROM ... JOIN ... ON 多表的连接条件 JOIN ... ON ...
+WHERE 不包含组函数的过滤条件 AND/OR 不包含组函数的过滤条件 
+GROUP BY ...  
+HAVING 包含组函数的过滤条件 
+ORDER BY ... ASC/DESC 
+LIMIT ....
+
+/*
+	其中:
+	(1) from:从哪些表中筛选 
+	(2) on:关联多表查询时，去除笛卡尔积 
+	(3) where:从表中筛选的条件 
+	(4) group by:分组依据 
+	(5) having:在统计结果中再次筛选 
+	(6) order by:排序 
+	(7) limit:分页
+*/
+```
+
+
+
+### SELECT 执行顺序
+
+1. 关键字顺序
+   - `SELECT -> FROM -> WHERE -> GROUP BY -> HAVING -> ORDER BY -> LIMIT`
+
+2. SELECT 语句的执行顺序
+   - `FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> DISTINCT -> ORDER BY -> LIMIT`
+
+下面的查询SQL语句关键字顺序与执行顺序如下:
+
+```sql
+SELECT DISTINCT player_id, player_name, count(*) as num # 顺序 5 
+FROM player JOIN team ON player.team_id = team.team_id # 顺序 1 
+WHERE height > 1.80 # 顺序 2
+GROUP BY player.team_id # 顺序 3
+HAVING num > 2 # 顺序 4 
+ORDER BY num DESC # 顺序 6 
+LIMIT 2 # 顺序 7
+```
+
+:::caution 注意
+
+在 Select 语句执行这些步骤的时候，每个步骤都会产生一个`虚拟表` ，然后将这个虚拟表传入下一个步骤中作为输入
+
+需要注意的是，这些步骤隐含在 SQL 的执行过程中，对于我们来说是不可见的
+
+:::
+
+
+
+### SQL 执行原理
+
+1. Select 是先执行 From 这一步的。在这个阶段，如果是多张表联查，还会经历下面的几个步骤:
+
+   - 首先先通过 CROSS JOIN 求笛卡尔积，相当于得到虚拟表 `Vt1-1`
+
+   - 通过 ON 进行筛选，在虚拟表 `Vt1-1` 的基础上进行筛选，得到虚拟表 `Vt1-2`
+
+   - 添加外部行
+
+     - **如果我们使用的是左连接、右链接或者全连接，就会涉及到外部行**
+
+     - 也就是在虚拟表 `Vt1-2` 的基础上增加外部行，得到虚拟表 `Vt1-3`
+2. 此时拿到了From后的查询数据表的原始数据,也就是最终的虚拟表`Vt1`,然后在此基础上执行 `WHERE` 过滤，这一步中会对 `Vt1` 的结果进行过滤,得到虚拟表`Vt2`
+2. 然后进入 `GROOP BY`阶段,在这一阶段会对`Vt2`的数据进行分组，并且得到虚拟表`Vt3`
+2. 然后进入 `HAVING` 阶段，在这一阶段会对`Vt3`分组后的数据进行过滤，并且得到虚拟表`Vt4`
+5. 然后进入 `SELECT ` 阶段, 在这一阶段会查询出想要的字段，并且得到虚拟表`Vt5`
+   - 如果查询的字段使用的聚合函数，并且是对分组后的数据使用,那么会对每一组中的数据使用聚合得到结果
+6. 然后进入 `DISTINCT ` 阶段, 在这一阶段会过滤掉出重复的行，并且得到虚拟表`Vt6`
+7. 然后进入 `ORDER By ` 阶段, 在这一阶段按照指定的字段进行排序，得到虚拟表 `Vt7` 
+8. 最后进入 `LIMIT` 阶段，在这一阶段会取出执行行的记录，并且得到最终结果
+
+
+
+
+
+
+

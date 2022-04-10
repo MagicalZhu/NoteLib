@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Mysql/入门与高级/MySQL基础查询",
+  "id": "Mysql/入门与高级/MySQL基础查询",
+  "title": "MySQL基础查询",
+  "description": "表的关联关系",
+  "source": "@site/docs/Mysql/入门与高级/MySQL基础.md",
+  "sourceDirName": "Mysql/入门与高级",
+  "slug": "/Mysql/入门与高级/MySQL基础查询",
+  "permalink": "/docs/Mysql/入门与高级/MySQL基础查询",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/入门与高级/MySQL基础.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL基础查询",
+    "title": "MySQL基础查询"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL入门",
+    "permalink": "/docs/category/mysql入门"
+  },
+  "next": {
+    "title": "MySQL函数与聚合",
+    "permalink": "/docs/Mysql/入门与高级/MySQL函数与聚合"
+  }
+}

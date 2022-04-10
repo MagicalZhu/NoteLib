@@ -138,16 +138,22 @@ const basicSideBar = [
   ConcurrencySafe,
 ]
 
-// Mysql
-const mysqlPart =  new Category('MySQL入门')
-    .setNoLabelItem('Mysql/基础', [
+// Mysql入门
+const mysqlPart =  new Category('MySQL基础与高级')
+    .createSubCaregory('基础知识', 'Mysql/基础', [
       'MySQL基础查询',
-      'MySQL函数与聚合'
+      'MySQL函数与聚合',
+      'MySQL子查询',
+      'MySQL库对象'
     ])
+    .createSubCaregory('高级特性', 'Mysql/高级特性', [
+      'MySQL高级特性'
+    ])
+    
 
 const mysqlSideBar = [
   createDoc('Mysql/mysql', '简介'),
-  mysqlPart
+  mysqlPart,
 ]
 
 // 计算机网络相关

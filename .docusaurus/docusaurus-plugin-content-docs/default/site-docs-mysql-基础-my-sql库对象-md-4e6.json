@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Mysql/基础/MySQL库对象",
+  "id": "Mysql/基础/MySQL库对象",
+  "title": "MySQL库对象",
+  "description": "数据库对象",
+  "source": "@site/docs/Mysql/基础/MySQL库对象.md",
+  "sourceDirName": "Mysql/基础",
+  "slug": "/Mysql/基础/MySQL库对象",
+  "permalink": "/docs/Mysql/基础/MySQL库对象",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL库对象.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL库对象",
+    "title": "MySQL库对象"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL子查询",
+    "permalink": "/docs/Mysql/基础/MySQL子查询"
+  },
+  "next": {
+    "title": "高级特性",
+    "permalink": "/docs/category/高级特性"
+  }
+}

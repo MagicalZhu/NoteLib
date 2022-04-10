@@ -36,7 +36,7 @@
   "/search-79a": {
     "component": "component---theme-search-page-1-a-4-d6f"
   },
-  "/docs-774": {
+  "/docs-e21": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -128,13 +128,21 @@
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-并发控制-1-cf-255"
   },
+  "/docs/category/高级特性-9cd": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-高级特性-362-5f3"
+  },
+  "/docs/category/基础知识-2ef": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-基础知识-713-632"
+  },
   "/docs/category/微服务基础-40f": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-微服务基础bdd-b7b"
   },
-  "/docs/category/mysql入门-095": {
+  "/docs/category/mysql基础与高级-700": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-mysql入门-010-003"
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-mysql基础与高级-340-84b"
   },
   "/docs/category/spring编程思想-ab2": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
@@ -168,6 +176,10 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysqlc-28-5b2"
   },
+  "/docs/Mysql/高级特性/MySQL高级特性-4a4": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-my-sq-l高级特性-6-ee-d5b"
+  },
   "/docs/Mysql/基础/MySQL函数与聚合-91e": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-基础-my-sq-l函数与聚合f-20-27a"
@@ -175,6 +187,14 @@
   "/docs/Mysql/基础/MySQL基础查询-949": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-基础-my-sq-l基础查询-2-b-4-bce"
+  },
+  "/docs/Mysql/基础/MySQL库对象-400": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-基础-my-sq-l库对象-4-e-6-8c3"
+  },
+  "/docs/Mysql/基础/MySQL子查询-63b": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-基础-my-sq-l子查询-763-c80"
   },
   "/docs/networrk-basic-b98": {
     "component": "component---theme-doc-item-178-a40",

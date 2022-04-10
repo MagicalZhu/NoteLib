@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/入门与高级/MySQL库对象",
+  "id": "Mysql/入门与高级/MySQL库对象",
+  "title": "MySQL库对象",
+  "description": "数据库对象",
+  "source": "@site/docs/Mysql/入门与高级/MySQL库对象.md",
+  "sourceDirName": "Mysql/入门与高级",
+  "slug": "/Mysql/入门与高级/MySQL库对象",
+  "permalink": "/docs/Mysql/入门与高级/MySQL库对象",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/入门与高级/MySQL库对象.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL库对象",
+    "title": "MySQL库对象"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL子查询",
+    "permalink": "/docs/Mysql/入门与高级/MySQL子查询"
+  }
+}

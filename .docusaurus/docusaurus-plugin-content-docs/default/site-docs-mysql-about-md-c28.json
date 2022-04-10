@@ -17,7 +17,7 @@
   },
   "sidebar": "mysqlSideBar",
   "next": {
-    "title": "MySQL入门",
-    "permalink": "/docs/category/mysql入门"
+    "title": "MySQL基础与高级",
+    "permalink": "/docs/category/mysql基础与高级"
   }
 }

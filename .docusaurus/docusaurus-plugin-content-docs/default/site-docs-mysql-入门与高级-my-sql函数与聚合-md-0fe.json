@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Mysql/入门与高级/MySQL函数与聚合",
+  "id": "Mysql/入门与高级/MySQL函数与聚合",
+  "title": "MySQL函数与聚合",
+  "description": "函数",
+  "source": "@site/docs/Mysql/入门与高级/MySQL函数与聚合.md",
+  "sourceDirName": "Mysql/入门与高级",
+  "slug": "/Mysql/入门与高级/MySQL函数与聚合",
+  "permalink": "/docs/Mysql/入门与高级/MySQL函数与聚合",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/入门与高级/MySQL函数与聚合.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL函数与聚合",
+    "title": "MySQL函数与聚合"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL基础查询",
+    "permalink": "/docs/Mysql/入门与高级/MySQL基础查询"
+  },
+  "next": {
+    "title": "MySQL子查询",
+    "permalink": "/docs/Mysql/入门与高级/MySQL子查询"
+  }
+}

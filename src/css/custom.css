@@ -7,6 +7,7 @@
 
 @import url('default.css');
 
+
 html[data-theme="dark"] {
   --ifm-font-color-base: #bdbdbd;
   --ifm-color-content-secondary: #bdbdbd;
@@ -41,6 +42,7 @@ html[data-theme='dark']  .alert {
 
 .markdown {
   --ifm-h2-vertical-rhythm-top: 1.5;
+  letter-spacing: 1px
 }
 
 .admonition {
@@ -73,10 +75,10 @@ code {
   margin: 0 1px;
   background: #FDECEE;
   padding: 0.2em 0.4em;
-  border-radius: 3px;
+  border-radius: 8px;
   font-size: .9em;
   border: 1px solid #eee;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-family: poppins,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
 }
 html[data-theme='light'] .markdown {
   color: #253848;
@@ -180,6 +182,7 @@ svg[class^='iconLanguage'] {
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
+  font-family: Menlo, Monaco, Consolas, "Courier New";
 }
 
 

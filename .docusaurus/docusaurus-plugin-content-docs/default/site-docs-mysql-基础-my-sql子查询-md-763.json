@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Mysql/基础/MySQL子查询",
+  "id": "Mysql/基础/MySQL子查询",
+  "title": "MySQL子查询",
+  "description": "子查询是指一个查询语句嵌套在另一个查询语句的内部的查询,这个特性从 MySQL4.1 开始引入,也叫做内查询",
+  "source": "@site/docs/Mysql/基础/MySQL子查询.md",
+  "sourceDirName": "Mysql/基础",
+  "slug": "/Mysql/基础/MySQL子查询",
+  "permalink": "/docs/Mysql/基础/MySQL子查询",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL子查询.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL子查询",
+    "title": "MySQL子查询"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL函数与聚合",
+    "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
+  },
+  "next": {
+    "title": "MySQL库对象",
+    "permalink": "/docs/Mysql/基础/MySQL库对象"
+  }
+}

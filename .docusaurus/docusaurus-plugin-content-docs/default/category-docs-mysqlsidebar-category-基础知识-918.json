@@ -1,0 +1,15 @@
+{
+  "title": "基础知识",
+  "slug": "/category/基础知识",
+  "permalink": "/docs/category/基础知识",
+  "navigation": {
+    "previous": {
+      "title": "MySQL基础与高级",
+      "permalink": "/docs/category/mysql基础与高级"
+    },
+    "next": {
+      "title": "MySQL基础查询",
+      "permalink": "/docs/Mysql/基础/MySQL基础查询"
+    }
+  }
+}

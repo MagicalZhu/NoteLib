@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/基础/MySQL库表",
+  "id": "Mysql/基础/MySQL库表",
+  "title": "MySQL库表",
+  "description": "数据库对象",
+  "source": "@site/docs/Mysql/基础/MySQL库表.md",
+  "sourceDirName": "Mysql/基础",
+  "slug": "/Mysql/基础/MySQL库表",
+  "permalink": "/docs/Mysql/基础/MySQL库表",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL库表.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL库表",
+    "title": "MySQL库表"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL子查询",
+    "permalink": "/docs/Mysql/基础/MySQL子查询"
+  }
+}
