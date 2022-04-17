@@ -27,7 +27,7 @@ const config = {
   customFields: customConfig,
   themeConfig: themeConfigs,
   staticDirectories: ['static'],
-  titleDelimiter: '🦖',
+  titleDelimiter: '|',
   plugins: pluginConfigs,
   stylesheets: [
     {

@@ -36,7 +36,7 @@
   "/search-79a": {
     "component": "component---theme-search-page-1-a-4-d6f"
   },
-  "/docs-e21": {
+  "/docs-68f": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -128,6 +128,10 @@
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-并发控制-1-cf-255"
   },
+  "/docs/category/动漫分享-22d": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-动漫分享-95-d-302"
+  },
   "/docs/category/高级特性-9cd": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-高级特性-362-5f3"
@@ -176,9 +180,9 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysqlc-28-5b2"
   },
-  "/docs/Mysql/高级特性/MySQL高级特性-4a4": {
+  "/docs/Mysql/高级特性/MySQL架构-9aa": {
     "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-mysql-高级特性-my-sq-l高级特性-6-ee-d5b"
+    "content": "content---docs-mysql-高级特性-my-sq-l高级特性-159-5aa"
   },
   "/docs/Mysql/基础/MySQL函数与聚合-91e": {
     "component": "component---theme-doc-item-178-a40",
@@ -203,6 +207,10 @@
   "/docs/searchEngine-3c2": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-search-enginede-6-101"
+  },
+  "/docs/source/acg/acgShare_2022-c01": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-source-acg-acg-share-2022-d-56-294"
   },
   "/docs/source/devSource-d6c": {
     "component": "component---theme-doc-item-178-a40",

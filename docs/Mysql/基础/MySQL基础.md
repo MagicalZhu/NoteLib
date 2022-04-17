@@ -355,11 +355,10 @@ mysql> Select '1'=1,'1a'=1,'a'=1,1=NULL,'NULL'=NULL;
 - 使用 ORDER BY 子句排序
   - `DESC` ： 降序
   - `ASC`： 升序
-- ORDER BY 子句在SELECT语句的结尾
+- ORDER BY 子句在 SELECT 语句的结尾
 - <mark>注意</mark>
-
-  - 可以使用不在SELECT列表中的列排序
-  - 在对多列进行排序的时候，首先排序的第一列必须有相同的列值，才会对第二列进行排序。<font color='red'>但是如果第一列数据中所有值都是唯一的，将不再对第二列进行排序</font>
+  - 可以使用不在 SELECT 列表中的列排序
+  - 如果对多列进行排序，但是有多条数据的第一列是相同的,那么就会按第二列的排序规则再次排序，也叫做多次排序。<font color='red'>但是如第一列数据中所有值都是唯一的、不同的，那么将不再对第二列进行排序</font>
 
 
 ```sql
@@ -405,10 +404,21 @@ MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录
 
 - 多表查询，也称为关联查询，指两个或更多个表一起完成查询操作
 - `前提条件`: 这些一起查询的表之间是有关系的(一对一、一对多)，它们之间一定是有关联字段，这个 关联字段可能建立了外键，也可能没有建立外键。比如:员工表和部门表，这两个表依靠“部门编号”进行关联
+- **为什么需要多表查询？**
+  - 复杂的查询可能需要执行多次SQL语句才能实现,一次SQL请求需要一次网络请求,会导致效率很低
+
+:::caution 为什么将数据都存入一个单表呢，查询简单
+
+1. 会出现冗余,比如员工部门,可能多个员工都隶属于部门,如果将部门的所有信息都放在员工表中,那么员工表中就会出现大量的冗余字段
+2. 查询效率低。查询数据时需要将数据从硬盘通过IO加载到内存,假设单表10个字段一次能加载1万条数据到内存,但是100个字段可能每次只能加载1千条，需要进行10次IO才能将数据加载到内存中,但是涉及到IO的速度都很慢
+
+:::
+
+
 
 ### 笛卡尔积
 
-> 笛卡尔乘积是一个数学运算。假设我有两个集合 {X} 和{Y}，那么 {X} 和 {Y} 的笛卡尔积就是 {X} 和 {Y}的所有可能的组合，也就是第一个对象来自于 {X}，第二个对象来自于 {Y} 的所有可能。组合的个数即为两个集合中 元素个数 的乘积数。
+> `笛卡尔乘积`是一个数学运算。假设我有两个集合 {X} 和{Y}，那么 {X} 和 {Y} 的笛卡尔积就是 {X} 和 {Y}的所有可能的组合，也就是第一个对象来自于 {X}，第二个对象来自于 {Y} 的所有可能。组合的个数即为两个集合中 元素个数 的乘积数。
 
 在SQL92中，笛卡尔积也称为 `交叉连接` ，英文是 `CROSS JOIN` 。在 SQL99 中也是使用 CROSS JOIN表示交 叉连接。它的作用就是可以把任意表进行连接，即使这两张表不相关。
 
@@ -814,17 +824,17 @@ SELECT id,tname FROM t_usmale WHERE tGender='male';
 
 ## 总结
 
-表连接的约束条件可以有三种方式:**WHERE, ON, USING**
+表连接的约束条件可以有三种方式: **WHERE, ON, USING**
 
 - `WHERE` 
   - 适用于所有关联查询
 
 - `ON`
-  -  只能和JOIN一起使用，只能写关联条件。
-  - 虽然关联条件可以并到WHERE中和其他条件一起写，但分开写可读性更好
+  -  只能和 JOIN 一起使用，只能写关联条件。
+  - 虽然关联条件可以并到 WHERE 中和其他条件一起写，但分开写可读性更好
 
 - `USING`
-  - 只能和JOIN一起使用，而且要求 **两个** 关联字段在关联表中名称一致，而且只能表示关联字段值相等
+  - 只能和 JOIN 一起使用，而且要求 **两个** 关联字段在关联表中名称一致，而且只能表示关联字段值相等
 
 
 
@@ -835,9 +845,58 @@ SELECT id,tname FROM t_usmale WHERE tGender='male';
   - 在许多 DBMS 中，也都会有最大连接表的限制
 
 - 阿里开发规约:
-  - 【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致;多表关联查询时， 保证被关联的字段需要有索引
+  - 【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致;多表关联查询时,保证被关联的字段需要有索引
   - 即使双表 join 也要注意表索引、SQL 性能
 
 :::
 
- 
+
+
+## 练习
+
+**1. 选择所有有奖金的员工的 last_name , department_name , location_id , city** 
+
+```sql
+/**
+ * 选择所有有奖金的员工的 last_name , department_name , location_id , city
+ * 有一个员工没有部门，那么在locations表中也没有相对应的记录,但是他是有奖金的
+ * 			-> 所以需要使用左连接，并且两张关联的表都需要
+ */
+SELECT emp.last_name , dept.department_name , dept.location_id , loc.city
+FROM  employees AS emp 
+	LEFT JOIN departments AS dept ON emp.department_id = dept.department_id 
+	LEFT JOIN locations AS loc ON dept.location_id = loc.location_id 
+WHERE emp.commission_pct IS NOT NULL 
+
+```
+
+![image-20220410155714529](./image/MySQL基础/image-20220410155714529.png)
+
+
+
+**2.查询哪些部门没有员工**
+
+```sql
+
+/**
+ * 查询哪些部门没有员工
+ * 
+ */
+SELECT d.*
+FROM departments AS d 
+	LEFT JOIN employees AS e ON d.department_id =e.department_id 
+WHERE  e.department_id IS NULL 
+
+/*
+ *  子查询的方式
+ *  解析： e.department_id = d.department_id 的条件是说明这个部门有员工，NOT EXISTS就是把满足条件的从结果集剔除
+ */
+ SELECT department_id 
+ FROM  departments AS d 
+ WHERE  NOT EXISTS (
+   SELECT * 
+   FROM employees AS e 
+   WHERE e.department_id = d.department_id
+ )
+```
+

@@ -132,6 +132,21 @@
         "label": "资源分享",
         "href": "/docs/source/devSource",
         "docId": "source/devSource"
+      },
+      {
+        "type": "category",
+        "label": "动漫分享",
+        "items": [
+          {
+            "type": "link",
+            "label": "acg-2022",
+            "href": "/docs/source/acg/acgShare_2022",
+            "docId": "source/acg/acgShare_2022"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true,
+        "href": "/docs/category/动漫分享"
       }
     ],
     "springSideBar": [
@@ -346,9 +361,9 @@
             "items": [
               {
                 "type": "link",
-                "label": "MySQL高级特性",
-                "href": "/docs/Mysql/高级特性/MySQL高级特性",
-                "docId": "Mysql/高级特性/MySQL高级特性"
+                "label": "MySQL架构",
+                "href": "/docs/Mysql/高级特性/MySQL架构",
+                "docId": "Mysql/高级特性/MySQL架构"
               }
             ],
             "collapsed": true,
@@ -505,10 +520,10 @@
       "title": "个人简介",
       "description": "文档概述"
     },
-    "Mysql/高级特性/MySQL高级特性": {
-      "id": "Mysql/高级特性/MySQL高级特性",
-      "title": "MySQL高级特性",
-      "description": "",
+    "Mysql/高级特性/MySQL架构": {
+      "id": "Mysql/高级特性/MySQL架构",
+      "title": "MySQL架构",
+      "description": "Linux环境准备",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/基础/MySQL函数与聚合": {
@@ -540,6 +555,12 @@
       "title": "MySQL笔记概述",
       "description": "MySQL笔记概述",
       "sidebar": "mysqlSideBar"
+    },
+    "source/acg/acgShare_2022": {
+      "id": "source/acg/acgShare_2022",
+      "title": "acg-2022",
+      "description": "2022年动漫分享",
+      "sidebar": "sourceSideBar"
     },
     "source/devSource": {
       "id": "source/devSource",

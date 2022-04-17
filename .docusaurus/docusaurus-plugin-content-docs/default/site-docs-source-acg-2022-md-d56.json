@@ -1,0 +1,23 @@
+{
+  "unversionedId": "source/acg/acgShare_2022",
+  "id": "source/acg/acgShare_2022",
+  "title": "acg-2022",
+  "description": "2022年动漫分享",
+  "source": "@site/docs/source/acg/2022.md",
+  "sourceDirName": "source/acg",
+  "slug": "/source/acg/acgShare_2022",
+  "permalink": "/docs/source/acg/acgShare_2022",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/acg/2022.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "acgShare_2022",
+    "title": "acg-2022",
+    "slug": "/source/acg/acgShare_2022"
+  },
+  "sidebar": "sourceSideBar",
+  "previous": {
+    "title": "动漫分享",
+    "permalink": "/docs/category/动漫分享"
+  }
+}

@@ -342,7 +342,7 @@ FROM DUAL;
 
 ## 聚合函数
 
-- 聚合函数作用于一组数据，并对一组数据返回一个值。聚合函数有有以下的类型：
+- 聚合函数**作用于一组数据，并对一组数据返回一个值**。聚合函数有有以下的类型：
   - `AVG()`
   - `SUM()`
   - `MAX()`
@@ -367,8 +367,10 @@ FROM DUAL;
 ### AVG、SUM
 
 - 可以对`数值型数据`使用AVG 和 SUM 函数
-- `AVG` : 返回一组数据的平均数
-- `SUM` : 返回一组数据的总和
+  - `AVG` : 返回一组数据的平均数
+  - `SUM` : 返回一组数据的总和
+
+- <mark>注意： AVG和SUM 都不会对NULL的数值进行处理，如果需要处理，自己使用IFNULL函数</mark> 
 
 :::info AVG与SUM的使用
 
@@ -445,15 +447,21 @@ select count(commission_pct) "排除列数据为空的",count(1) "总数据量",
 
 - **基本规则**
 
-  - `在Select 列表中所有未包含在组函数中的列都应该包含在 GROUP BY子句中`
+  - `Select 列表中所有未包含在组函数中的字段列都应该包含在 GROUP BY子句中`
 
     ```sql
+    -- 正确的
     SELECT department_id, AVG(salary) 
+    FROM employees
+    GROUP BY department_id ;
+    
+    -- 错误的,查询字段除了聚合函数中的列，其他必须放在GROUP BY中
+    SELECT department_id,job_id, AVG(salary) 
     FROM employees
     GROUP BY department_id ;
     ```
 
-  - `包含在 GROUP BY 子句中的列不必包含在SELECT 列表中`
+  - `GROUP BY 子句中的字段列 不必包含在SELECT 列表中`
 
     ```sql
     SELECT AVG(salary) 
@@ -579,7 +587,7 @@ LIMIT ....
    - `SELECT -> FROM -> WHERE -> GROUP BY -> HAVING -> ORDER BY -> LIMIT`
 
 2. SELECT 语句的执行顺序
-   - `FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> DISTINCT -> ORDER BY -> LIMIT`
+   - `FROM -> ON -> (LEFT/RIGHT JOIN ) -> WHERE -> GROUP BY -> HAVING -> SELECT -> DISTINCT -> ORDER BY -> LIMIT`
 
 下面的查询SQL语句关键字顺序与执行顺序如下:
 
@@ -603,7 +611,7 @@ LIMIT 2 # 顺序 7
 
 
 
-### SQL 执行原理
+### SQL 执行顺序详细
 
 1. Select 是先执行 From 这一步的。在这个阶段，如果是多张表联查，还会经历下面的几个步骤:
 

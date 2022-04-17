@@ -591,20 +591,20 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/MySQL高级特性",
-              "id": "Mysql/高级特性/MySQL高级特性",
-              "title": "MySQL高级特性",
-              "description": "",
-              "source": "@site/docs/Mysql/高级特性/MySQL高级特性.md",
+              "unversionedId": "Mysql/高级特性/MySQL架构",
+              "id": "Mysql/高级特性/MySQL架构",
+              "title": "MySQL架构",
+              "description": "Linux环境准备",
+              "source": "@site/docs/Mysql/高级特性/MySQL架构.md",
               "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/MySQL高级特性",
-              "permalink": "/docs/Mysql/高级特性/MySQL高级特性",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL高级特性.md",
+              "slug": "/Mysql/高级特性/MySQL架构",
+              "permalink": "/docs/Mysql/高级特性/MySQL架构",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL架构.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "MySQL高级特性",
-                "title": "MySQL高级特性"
+                "id": "MySQL架构",
+                "title": "MySQL架构"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
@@ -740,6 +740,29 @@
               }
             },
             {
+              "unversionedId": "source/acg/acgShare_2022",
+              "id": "source/acg/acgShare_2022",
+              "title": "acg-2022",
+              "description": "2022年动漫分享",
+              "source": "@site/docs/source/acg/2022.md",
+              "sourceDirName": "source/acg",
+              "slug": "/source/acg/acgShare_2022",
+              "permalink": "/docs/source/acg/acgShare_2022",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/acg/2022.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "acgShare_2022",
+                "title": "acg-2022",
+                "slug": "/source/acg/acgShare_2022"
+              },
+              "sidebar": "sourceSideBar",
+              "previous": {
+                "title": "动漫分享",
+                "permalink": "/docs/category/动漫分享"
+              }
+            },
+            {
               "unversionedId": "source/devSource",
               "id": "source/devSource",
               "title": "资源分享",
@@ -756,7 +779,11 @@
                 "title": "资源分享",
                 "slug": "/source/devSource"
               },
-              "sidebar": "sourceSideBar"
+              "sidebar": "sourceSideBar",
+              "next": {
+                "title": "动漫分享",
+                "permalink": "/docs/category/动漫分享"
+              }
             },
             {
               "unversionedId": "Spring/spring",
@@ -1338,6 +1365,23 @@
                 "type": "doc",
                 "id": "source/devSource",
                 "label": "资源分享"
+              },
+              {
+                "type": "category",
+                "label": "动漫分享",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "source/acg/acgShare_2022"
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/动漫分享",
+                  "permalink": "/docs/category/动漫分享"
+                },
+                "collapsible": true
               }
             ],
             "springSideBar": [
@@ -1527,7 +1571,7 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/MySQL高级特性"
+                        "id": "Mysql/高级特性/MySQL架构"
                       }
                     ],
                     "collapsed": true,
@@ -1591,6 +1635,20 @@
               "next": {
                 "title": "线程池",
                 "permalink": "/docs/并发编程/并发控制/线程池"
+              }
+            },
+            {
+              "title": "动漫分享",
+              "slug": "/category/动漫分享",
+              "permalink": "/docs/category/动漫分享",
+              "sidebar": "sourceSideBar",
+              "previous": {
+                "title": "资源分享",
+                "permalink": "/docs/source/devSource"
+              },
+              "next": {
+                "title": "acg-2022",
+                "permalink": "/docs/source/acg/acgShare_2022"
               }
             },
             {
@@ -1687,8 +1745,8 @@
                 "permalink": "/docs/Mysql/基础/MySQL库对象"
               },
               "next": {
-                "title": "MySQL高级特性",
-                "permalink": "/docs/Mysql/高级特性/MySQL高级特性"
+                "title": "MySQL架构",
+                "permalink": "/docs/Mysql/高级特性/MySQL架构"
               }
             }
           ]

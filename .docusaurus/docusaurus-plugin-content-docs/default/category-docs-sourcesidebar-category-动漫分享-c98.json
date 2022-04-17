@@ -1,0 +1,15 @@
+{
+  "title": "动漫分享",
+  "slug": "/category/动漫分享",
+  "permalink": "/docs/category/动漫分享",
+  "navigation": {
+    "previous": {
+      "title": "资源分享",
+      "permalink": "/docs/source/devSource"
+    },
+    "next": {
+      "title": "acg-2022",
+      "permalink": "/docs/source/acg/acgShare_2022"
+    }
+  }
+}

@@ -583,7 +583,7 @@ export default {
   "staticDirectories": [
     "static"
   ],
-  "titleDelimiter": "🦖",
+  "titleDelimiter": "|",
   "plugins": [
     "plugin-image-zoom"
   ],

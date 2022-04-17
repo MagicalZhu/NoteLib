@@ -128,8 +128,8 @@
               "path": "/docs/about"
             },
             {
-              "id": "Mysql/高级特性/MySQL高级特性",
-              "path": "/docs/Mysql/高级特性/MySQL高级特性",
+              "id": "Mysql/高级特性/MySQL架构",
+              "path": "/docs/Mysql/高级特性/MySQL架构",
               "sidebar": "mysqlSideBar"
             },
             {
@@ -156,6 +156,11 @@
               "id": "Mysql/mysql",
               "path": "/docs/mysql",
               "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "source/acg/acgShare_2022",
+              "path": "/docs/source/acg/acgShare_2022",
+              "sidebar": "sourceSideBar"
             },
             {
               "id": "source/devSource",
@@ -270,6 +275,11 @@
               "id": "/category/并发控制",
               "path": "/docs/category/并发控制",
               "sidebar": "basicSideBar"
+            },
+            {
+              "id": "/category/动漫分享",
+              "path": "/docs/category/动漫分享",
+              "sidebar": "sourceSideBar"
             },
             {
               "id": "/category/spring编程思想",

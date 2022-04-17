@@ -147,7 +147,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
       'MySQL库对象'
     ])
     .createSubCaregory('高级特性', 'Mysql/高级特性', [
-      'MySQL高级特性'
+      'MySQL架构'
     ])
     
 
@@ -170,8 +170,14 @@ const netWorkSidebar = [
 
 
 // 资源分享相关
+
+const acgPart =  new Category('动漫分享')
+    .setNoLabelItem('source/acg',[
+      'acgShare_2022',
+    ])
 const sourceSideBar = [
-  createDoc('source/devSource', '资源分享')
+  createDoc('source/devSource', '资源分享'),
+  acgPart
 ]
 
 // Spring相关

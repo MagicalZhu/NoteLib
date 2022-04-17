@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','e21'),
+    component: ComponentCreator('/docs','68f'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -191,6 +191,12 @@ export default [
         'sidebar': "basicSideBar"
       },
       {
+        path: '/docs/category/动漫分享',
+        component: ComponentCreator('/docs/category/动漫分享','22d'),
+        exact: true,
+        'sidebar': "sourceSideBar"
+      },
+      {
         path: '/docs/category/高级特性',
         component: ComponentCreator('/docs/category/高级特性','9cd'),
         exact: true,
@@ -260,8 +266,8 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
-        path: '/docs/Mysql/高级特性/MySQL高级特性',
-        component: ComponentCreator('/docs/Mysql/高级特性/MySQL高级特性','4a4'),
+        path: '/docs/Mysql/高级特性/MySQL架构',
+        component: ComponentCreator('/docs/Mysql/高级特性/MySQL架构','9aa'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },
@@ -299,6 +305,12 @@ export default [
         path: '/docs/searchEngine',
         component: ComponentCreator('/docs/searchEngine','3c2'),
         exact: true
+      },
+      {
+        path: '/docs/source/acg/acgShare_2022',
+        component: ComponentCreator('/docs/source/acg/acgShare_2022','c01'),
+        exact: true,
+        'sidebar': "sourceSideBar"
       },
       {
         path: '/docs/source/devSource',

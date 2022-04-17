@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/高级特性/MySQL架构",
+  "id": "Mysql/高级特性/MySQL架构",
+  "title": "MySQL架构",
+  "description": "Linux环境准备",
+  "source": "@site/docs/Mysql/高级特性/MySQL架构.md",
+  "sourceDirName": "Mysql/高级特性",
+  "slug": "/Mysql/高级特性/MySQL架构",
+  "permalink": "/docs/Mysql/高级特性/MySQL架构",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL架构.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL架构",
+    "title": "MySQL架构"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "高级特性",
+    "permalink": "/docs/category/高级特性"
+  }
+}
