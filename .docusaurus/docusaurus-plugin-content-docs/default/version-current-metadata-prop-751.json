@@ -361,9 +361,27 @@
             "items": [
               {
                 "type": "link",
-                "label": "MySQL架构",
-                "href": "/docs/Mysql/高级特性/MySQL架构",
-                "docId": "Mysql/高级特性/MySQL架构"
+                "label": "MySQL结构",
+                "href": "/docs/Mysql/高级特性/MySQL结构",
+                "docId": "Mysql/高级特性/MySQL结构"
+              },
+              {
+                "type": "link",
+                "label": "用户权限管理",
+                "href": "/docs/Mysql/高级特性/用户权限管理",
+                "docId": "Mysql/高级特性/用户权限管理"
+              },
+              {
+                "type": "link",
+                "label": "MySQL逻辑架构",
+                "href": "/docs/Mysql/高级特性/MySQL逻辑架构",
+                "docId": "Mysql/高级特性/MySQL逻辑架构"
+              },
+              {
+                "type": "link",
+                "label": "索引",
+                "href": "/docs/Mysql/高级特性/索引",
+                "docId": "Mysql/高级特性/索引"
               }
             ],
             "collapsed": true,
@@ -374,6 +392,38 @@
         "collapsed": true,
         "collapsible": true,
         "href": "/docs/category/mysql基础与高级"
+      }
+    ],
+    "vueSideBar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/front/Vue",
+        "docId": "前端/Vue/vueDesc"
+      },
+      {
+        "type": "category",
+        "label": "Vue学习笔记",
+        "items": [
+          {
+            "type": "category",
+            "label": "Vue基础",
+            "items": [
+              {
+                "type": "link",
+                "label": "Vue基础特性",
+                "href": "/docs/前端/Vue/基础特性",
+                "docId": "前端/Vue/基础特性"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/vue基础"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true,
+        "href": "/docs/category/vue学习笔记"
       }
     ]
   },
@@ -500,6 +550,18 @@
       "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
       "sidebar": "netWorkSidebar"
     },
+    "前端/Vue/基础特性": {
+      "id": "前端/Vue/基础特性",
+      "title": "Vue基础特性",
+      "description": "应用&组件实例",
+      "sidebar": "vueSideBar"
+    },
+    "前端/Vue/vueDesc": {
+      "id": "前端/Vue/vueDesc",
+      "title": "vue学习笔记",
+      "description": "vue学习笔记",
+      "sidebar": "vueSideBar"
+    },
     "数据库/database": {
       "id": "数据库/database",
       "title": "数据库概述",
@@ -520,10 +582,28 @@
       "title": "个人简介",
       "description": "文档概述"
     },
-    "Mysql/高级特性/MySQL架构": {
-      "id": "Mysql/高级特性/MySQL架构",
-      "title": "MySQL架构",
+    "Mysql/高级特性/索引": {
+      "id": "Mysql/高级特性/索引",
+      "title": "索引",
+      "description": "",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/用户权限管理": {
+      "id": "Mysql/高级特性/用户权限管理",
+      "title": "用户权限管理",
+      "description": "用户管理",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/MySQL结构": {
+      "id": "Mysql/高级特性/MySQL结构",
+      "title": "MySQL结构",
       "description": "Linux环境准备",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/MySQL逻辑架构": {
+      "id": "Mysql/高级特性/MySQL逻辑架构",
+      "title": "MySQL逻辑架构",
+      "description": "逻辑架构",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/基础/MySQL函数与聚合": {

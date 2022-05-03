@@ -127,6 +127,16 @@ export default {
           ]
         },
         {
+          "label": "前端技术",
+          "position": "left",
+          "items": [
+            {
+              "label": "Vue",
+              "to": "docs/front/Vue"
+            }
+          ]
+        },
+        {
           "position": "right",
           "href": "/docs/source/devSource",
           "className": "header-share-link",

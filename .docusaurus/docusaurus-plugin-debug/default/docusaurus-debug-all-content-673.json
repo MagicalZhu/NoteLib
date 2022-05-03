@@ -519,6 +519,51 @@
               }
             },
             {
+              "unversionedId": "前端/Vue/基础特性",
+              "id": "前端/Vue/基础特性",
+              "title": "Vue基础特性",
+              "description": "应用&组件实例",
+              "source": "@site/docs/前端/Vue/基础特性.md",
+              "sourceDirName": "前端/Vue",
+              "slug": "/前端/Vue/基础特性",
+              "permalink": "/docs/前端/Vue/基础特性",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/基础特性.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "基础特性",
+                "title": "Vue基础特性"
+              },
+              "sidebar": "vueSideBar",
+              "previous": {
+                "title": "Vue基础",
+                "permalink": "/docs/category/vue基础"
+              }
+            },
+            {
+              "unversionedId": "前端/Vue/vueDesc",
+              "id": "前端/Vue/vueDesc",
+              "title": "vue学习笔记",
+              "description": "vue学习笔记",
+              "source": "@site/docs/前端/Vue/about.md",
+              "sourceDirName": "前端/Vue",
+              "slug": "/front/Vue",
+              "permalink": "/docs/front/Vue",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/about.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "vueDesc",
+                "slug": "/front/Vue",
+                "title": "vue学习笔记"
+              },
+              "sidebar": "vueSideBar",
+              "next": {
+                "title": "Vue学习笔记",
+                "permalink": "/docs/category/vue学习笔记"
+              }
+            },
+            {
               "unversionedId": "数据库/database",
               "id": "数据库/database",
               "title": "数据库概述",
@@ -591,25 +636,103 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/MySQL架构",
-              "id": "Mysql/高级特性/MySQL架构",
-              "title": "MySQL架构",
+              "unversionedId": "Mysql/高级特性/索引",
+              "id": "Mysql/高级特性/索引",
+              "title": "索引",
+              "description": "",
+              "source": "@site/docs/Mysql/高级特性/索引.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/索引",
+              "permalink": "/docs/Mysql/高级特性/索引",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "索引",
+                "title": "索引"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL逻辑架构",
+                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/用户权限管理",
+              "id": "Mysql/高级特性/用户权限管理",
+              "title": "用户权限管理",
+              "description": "用户管理",
+              "source": "@site/docs/Mysql/高级特性/用户权限管理.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/用户权限管理",
+              "permalink": "/docs/Mysql/高级特性/用户权限管理",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/用户权限管理.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "用户权限管理",
+                "title": "用户权限管理"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL结构",
+                "permalink": "/docs/Mysql/高级特性/MySQL结构"
+              },
+              "next": {
+                "title": "MySQL逻辑架构",
+                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/MySQL结构",
+              "id": "Mysql/高级特性/MySQL结构",
+              "title": "MySQL结构",
               "description": "Linux环境准备",
               "source": "@site/docs/Mysql/高级特性/MySQL架构.md",
               "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/MySQL架构",
-              "permalink": "/docs/Mysql/高级特性/MySQL架构",
+              "slug": "/Mysql/高级特性/MySQL结构",
+              "permalink": "/docs/Mysql/高级特性/MySQL结构",
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL架构.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "MySQL架构",
-                "title": "MySQL架构"
+                "id": "MySQL结构",
+                "title": "MySQL结构"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
                 "title": "高级特性",
                 "permalink": "/docs/category/高级特性"
+              },
+              "next": {
+                "title": "用户权限管理",
+                "permalink": "/docs/Mysql/高级特性/用户权限管理"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/MySQL逻辑架构",
+              "id": "Mysql/高级特性/MySQL逻辑架构",
+              "title": "MySQL逻辑架构",
+              "description": "逻辑架构",
+              "source": "@site/docs/Mysql/高级特性/MySQL逻辑架构.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/MySQL逻辑架构",
+              "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL逻辑架构.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MySQL逻辑架构",
+                "title": "MySQL逻辑架构"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "用户权限管理",
+                "permalink": "/docs/Mysql/高级特性/用户权限管理"
+              },
+              "next": {
+                "title": "索引",
+                "permalink": "/docs/Mysql/高级特性/索引"
               }
             },
             {
@@ -1571,7 +1694,19 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/MySQL架构"
+                        "id": "Mysql/高级特性/MySQL结构"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/用户权限管理"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/MySQL逻辑架构"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/索引"
                       }
                     ],
                     "collapsed": true,
@@ -1588,6 +1723,43 @@
                   "type": "generated-index",
                   "slug": "/category/mysql基础与高级",
                   "permalink": "/docs/category/mysql基础与高级"
+                },
+                "collapsible": true
+              }
+            ],
+            "vueSideBar": [
+              {
+                "type": "doc",
+                "id": "前端/Vue/vueDesc",
+                "label": "简介"
+              },
+              {
+                "type": "category",
+                "label": "Vue学习笔记",
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "Vue基础",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "前端/Vue/基础特性"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/vue基础",
+                      "permalink": "/docs/category/vue基础"
+                    },
+                    "collapsible": true
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/vue学习笔记",
+                  "permalink": "/docs/category/vue学习笔记"
                 },
                 "collapsible": true
               }
@@ -1745,8 +1917,36 @@
                 "permalink": "/docs/Mysql/基础/MySQL库对象"
               },
               "next": {
-                "title": "MySQL架构",
-                "permalink": "/docs/Mysql/高级特性/MySQL架构"
+                "title": "MySQL结构",
+                "permalink": "/docs/Mysql/高级特性/MySQL结构"
+              }
+            },
+            {
+              "title": "Vue学习笔记",
+              "slug": "/category/vue学习笔记",
+              "permalink": "/docs/category/vue学习笔记",
+              "sidebar": "vueSideBar",
+              "previous": {
+                "title": "vue学习笔记",
+                "permalink": "/docs/front/Vue"
+              },
+              "next": {
+                "title": "Vue基础",
+                "permalink": "/docs/category/vue基础"
+              }
+            },
+            {
+              "title": "Vue基础",
+              "slug": "/category/vue基础",
+              "permalink": "/docs/category/vue基础",
+              "sidebar": "vueSideBar",
+              "previous": {
+                "title": "Vue学习笔记",
+                "permalink": "/docs/category/vue学习笔记"
+              },
+              "next": {
+                "title": "Vue基础特性",
+                "permalink": "/docs/前端/Vue/基础特性"
               }
             }
           ]

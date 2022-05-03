@@ -1,0 +1,22 @@
+{
+  "unversionedId": "前端/Vue/基础特性",
+  "id": "前端/Vue/基础特性",
+  "title": "Vue基础特性",
+  "description": "应用&组件实例",
+  "source": "@site/docs/前端/Vue/基础特性.md",
+  "sourceDirName": "前端/Vue",
+  "slug": "/前端/Vue/基础特性",
+  "permalink": "/docs/前端/Vue/基础特性",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/基础特性.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "基础特性",
+    "title": "Vue基础特性"
+  },
+  "sidebar": "vueSideBar",
+  "previous": {
+    "title": "Vue基础",
+    "permalink": "/docs/category/vue基础"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/高级特性/索引",
+  "id": "Mysql/高级特性/索引",
+  "title": "索引",
+  "description": "",
+  "source": "@site/docs/Mysql/高级特性/索引.md",
+  "sourceDirName": "Mysql/高级特性",
+  "slug": "/Mysql/高级特性/索引",
+  "permalink": "/docs/Mysql/高级特性/索引",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "索引",
+    "title": "索引"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL逻辑架构",
+    "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+  }
+}

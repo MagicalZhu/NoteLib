@@ -99,6 +99,10 @@ blockquote::before {
 	content: "🌈";
 }
 
+.markdown > pre, .markdown > ul, .markdown > p {
+  margin-bottom:5px;
+}
+
 
 /* Header Description */
 header + p {

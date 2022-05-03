@@ -36,7 +36,7 @@
   "/search-79a": {
     "component": "component---theme-search-page-1-a-4-d6f"
   },
-  "/docs-68f": {
+  "/docs-b30": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -100,6 +100,10 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-计算机网络-http-http-protocol-2-e-7-c3d"
   },
+  "/docs/前端/Vue/基础特性-581": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-前端-vue-基础特性a-0-d-bf1"
+  },
   "/docs/about-0b0": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-about-360-72c"
@@ -160,6 +164,14 @@
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-springcloud-netflix-05-a-69a"
   },
+  "/docs/category/vue基础-68c": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-vue基础ab-5-514"
+  },
+  "/docs/category/vue学习笔记-b30": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-vue学习笔记d-1-b-fe6"
+  },
   "/docs/currency-102": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-currencyc-85-c79"
@@ -167,6 +179,10 @@
   "/docs/database-d19": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-databaseda-3-3ec"
+  },
+  "/docs/front/Vue-a4d": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-front-vueca-9-6ae"
   },
   "/docs/job-cd2": {
     "component": "component---theme-doc-item-178-a40",
@@ -180,9 +196,21 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysqlc-28-5b2"
   },
-  "/docs/Mysql/高级特性/MySQL架构-9aa": {
+  "/docs/Mysql/高级特性/索引-f13": {
     "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-mysql-高级特性-my-sq-l高级特性-159-5aa"
+    "content": "content---docs-mysql-高级特性-索引-2-a-4-365"
+  },
+  "/docs/Mysql/高级特性/用户权限管理-5a2": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-用户权限管理-70-c-f9c"
+  },
+  "/docs/Mysql/高级特性/MySQL结构-03a": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-my-sq-l结构-159-aab"
+  },
+  "/docs/Mysql/高级特性/MySQL逻辑架构-161": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-my-sq-l逻辑架构-263-a48"
   },
   "/docs/Mysql/基础/MySQL函数与聚合-91e": {
     "component": "component---theme-doc-item-178-a40",

@@ -1,0 +1,23 @@
+{
+  "unversionedId": "前端/Vue/vueDesc",
+  "id": "前端/Vue/vueDesc",
+  "title": "vue学习笔记",
+  "description": "vue学习笔记",
+  "source": "@site/docs/前端/Vue/about.md",
+  "sourceDirName": "前端/Vue",
+  "slug": "/front/Vue",
+  "permalink": "/docs/front/Vue",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/about.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "vueDesc",
+    "slug": "/front/Vue",
+    "title": "vue学习笔记"
+  },
+  "sidebar": "vueSideBar",
+  "next": {
+    "title": "Vue学习笔记",
+    "permalink": "/docs/category/vue学习笔记"
+  }
+}

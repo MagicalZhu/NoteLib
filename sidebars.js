@@ -147,7 +147,10 @@ const mysqlPart =  new Category('MySQL基础与高级')
       'MySQL库对象'
     ])
     .createSubCaregory('高级特性', 'Mysql/高级特性', [
-      'MySQL架构'
+      'MySQL结构',
+      '用户权限管理',
+      'MySQL逻辑架构',
+      '索引'
     ])
     
 
@@ -218,13 +221,28 @@ const springCloudSideBar = [
   springCloudCode
 ]
 
+// Vue的学习笔记
+
+const vuePart =  new Category('Vue学习笔记')
+    .createSubCaregory('Vue基础', '前端/Vue', [
+      '基础特性',
+    ])
+
+const vueSideBar = [
+  createDoc('前端/Vue/vueDesc', '简介'),
+  vuePart,
+]
+
+
+
 const sidebars = {
   basicSideBar,
   sourceSideBar,
   springSideBar,
   springCloudSideBar,
   netWorkSidebar,
-  mysqlSideBar
+  mysqlSideBar,
+  vueSideBar
 }
 
 module.exports = sidebars;

@@ -1,0 +1,18 @@
+{
+  "unversionedId": "前端/front",
+  "id": "前端/front",
+  "title": "前端技术笔记",
+  "description": "前端技术笔记",
+  "source": "@site/docs/前端/about.md",
+  "sourceDirName": "前端",
+  "slug": "/front",
+  "permalink": "/docs/front",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/about.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "front",
+    "slug": "/front",
+    "title": "前端技术笔记"
+  }
+}

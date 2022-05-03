@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Mysql/高级特性/用户权限管理",
+  "id": "Mysql/高级特性/用户权限管理",
+  "title": "用户权限管理",
+  "description": "用户管理",
+  "source": "@site/docs/Mysql/高级特性/用户权限管理.md",
+  "sourceDirName": "Mysql/高级特性",
+  "slug": "/Mysql/高级特性/用户权限管理",
+  "permalink": "/docs/Mysql/高级特性/用户权限管理",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/用户权限管理.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "用户权限管理",
+    "title": "用户权限管理"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "MySQL结构",
+    "permalink": "/docs/Mysql/高级特性/MySQL结构"
+  },
+  "next": {
+    "title": "MySQL逻辑架构",
+    "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+  }
+}

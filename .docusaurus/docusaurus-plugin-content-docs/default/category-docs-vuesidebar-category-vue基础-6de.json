@@ -1,0 +1,15 @@
+{
+  "title": "Vue基础",
+  "slug": "/category/vue基础",
+  "permalink": "/docs/category/vue基础",
+  "navigation": {
+    "previous": {
+      "title": "Vue学习笔记",
+      "permalink": "/docs/category/vue学习笔记"
+    },
+    "next": {
+      "title": "Vue基础特性",
+      "permalink": "/docs/前端/Vue/基础特性"
+    }
+  }
+}

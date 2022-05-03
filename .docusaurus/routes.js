@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','68f'),
+    component: ComponentCreator('/docs','b30'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -153,6 +153,12 @@ export default [
         'sidebar': "netWorkSidebar"
       },
       {
+        path: '/docs/前端/Vue/基础特性',
+        component: ComponentCreator('/docs/前端/Vue/基础特性','581'),
+        exact: true,
+        'sidebar': "vueSideBar"
+      },
+      {
         path: '/docs/about',
         component: ComponentCreator('/docs/about','0b0'),
         exact: true
@@ -239,6 +245,18 @@ export default [
         'sidebar': "springCloudSideBar"
       },
       {
+        path: '/docs/category/vue基础',
+        component: ComponentCreator('/docs/category/vue基础','68c'),
+        exact: true,
+        'sidebar': "vueSideBar"
+      },
+      {
+        path: '/docs/category/vue学习笔记',
+        component: ComponentCreator('/docs/category/vue学习笔记','b30'),
+        exact: true,
+        'sidebar': "vueSideBar"
+      },
+      {
         path: '/docs/currency',
         component: ComponentCreator('/docs/currency','102'),
         exact: true,
@@ -248,6 +266,12 @@ export default [
         path: '/docs/database',
         component: ComponentCreator('/docs/database','d19'),
         exact: true
+      },
+      {
+        path: '/docs/front/Vue',
+        component: ComponentCreator('/docs/front/Vue','a4d'),
+        exact: true,
+        'sidebar': "vueSideBar"
       },
       {
         path: '/docs/job',
@@ -266,8 +290,26 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
-        path: '/docs/Mysql/高级特性/MySQL架构',
-        component: ComponentCreator('/docs/Mysql/高级特性/MySQL架构','9aa'),
+        path: '/docs/Mysql/高级特性/索引',
+        component: ComponentCreator('/docs/Mysql/高级特性/索引','f13'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/用户权限管理',
+        component: ComponentCreator('/docs/Mysql/高级特性/用户权限管理','5a2'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/MySQL结构',
+        component: ComponentCreator('/docs/Mysql/高级特性/MySQL结构','03a'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/MySQL逻辑架构',
+        component: ComponentCreator('/docs/Mysql/高级特性/MySQL逻辑架构','161'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },
