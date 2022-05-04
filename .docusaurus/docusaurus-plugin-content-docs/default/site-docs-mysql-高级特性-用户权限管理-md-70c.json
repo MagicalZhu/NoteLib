@@ -16,8 +16,8 @@
   },
   "sidebar": "mysqlSideBar",
   "previous": {
-    "title": "MySQL结构",
-    "permalink": "/docs/Mysql/高级特性/MySQL结构"
+    "title": "MySQL 部署",
+    "permalink": "/docs/Mysql/高级特性/MySQL 部署"
   },
   "next": {
     "title": "MySQL逻辑架构",

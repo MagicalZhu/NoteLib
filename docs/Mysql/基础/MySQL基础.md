@@ -278,7 +278,7 @@ SQL语言在功能上主要分为如下3大类:
    -- 非数值用+相加，转换失败
    Select 'A' + 'B'；   -- 返回0
    
-   -- 非数值用+相加，转换成功
+   -- 数值用+相加，转换成功
    Select '1' + '2'；   -- 返回3
    ```
 
@@ -357,6 +357,7 @@ mysql> Select '1'=1,'1a'=1,'a'=1,1=NULL,'NULL'=NULL;
   - `ASC`： 升序
 - ORDER BY 子句在 SELECT 语句的结尾
 - <mark>注意</mark>
+
   - 可以使用不在 SELECT 列表中的列排序
   - 如果对多列进行排序，但是有多条数据的第一列是相同的,那么就会按第二列的排序规则再次排序，也叫做多次排序。<font color='red'>但是如第一列数据中所有值都是唯一的、不同的，那么将不再对第二列进行排序</font>
 
@@ -459,7 +460,8 @@ WHERE emp.department_id = dep.department_id;
   
     ```sql
     SELECT 
-    	employees.last_name, departments.department_name,employees.department_id FROM employees, departments
+    	employees.last_name, departments.department_name,employees.department_id 
+    FROM employees, departments
     WHERE employees.department_id = departments.department_id;
     ```
   

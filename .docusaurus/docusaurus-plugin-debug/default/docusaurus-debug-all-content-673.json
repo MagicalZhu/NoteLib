@@ -675,8 +675,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "MySQL结构",
-                "permalink": "/docs/Mysql/高级特性/MySQL结构"
+                "title": "MySQL 部署",
+                "permalink": "/docs/Mysql/高级特性/MySQL 部署"
               },
               "next": {
                 "title": "MySQL逻辑架构",
@@ -684,20 +684,20 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/MySQL结构",
-              "id": "Mysql/高级特性/MySQL结构",
-              "title": "MySQL结构",
+              "unversionedId": "Mysql/高级特性/MySQL 部署",
+              "id": "Mysql/高级特性/MySQL 部署",
+              "title": "MySQL 部署",
               "description": "Linux环境准备",
-              "source": "@site/docs/Mysql/高级特性/MySQL架构.md",
+              "source": "@site/docs/Mysql/高级特性/MySQL 部署.md",
               "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/MySQL结构",
-              "permalink": "/docs/Mysql/高级特性/MySQL结构",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL架构.md",
+              "slug": "/Mysql/高级特性/MySQL 部署",
+              "permalink": "/docs/Mysql/高级特性/MySQL 部署",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL 部署.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "MySQL结构",
-                "title": "MySQL结构"
+                "id": "MySQL 部署",
+                "title": "MySQL 部署"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
@@ -1694,7 +1694,7 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/MySQL结构"
+                        "id": "Mysql/高级特性/MySQL 部署"
                       },
                       {
                         "type": "doc",
@@ -1917,8 +1917,8 @@
                 "permalink": "/docs/Mysql/基础/MySQL库对象"
               },
               "next": {
-                "title": "MySQL结构",
-                "permalink": "/docs/Mysql/高级特性/MySQL结构"
+                "title": "MySQL 部署",
+                "permalink": "/docs/Mysql/高级特性/MySQL 部署"
               }
             },
             {

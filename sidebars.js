@@ -147,7 +147,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
       'MySQL库对象'
     ])
     .createSubCaregory('高级特性', 'Mysql/高级特性', [
-      'MySQL结构',
+      'MySQL 部署',
       '用户权限管理',
       'MySQL逻辑架构',
       '索引'

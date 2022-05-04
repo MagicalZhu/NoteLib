@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','b30'),
+    component: ComponentCreator('/docs','6cb'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -302,8 +302,8 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
-        path: '/docs/Mysql/高级特性/MySQL结构',
-        component: ComponentCreator('/docs/Mysql/高级特性/MySQL结构','03a'),
+        path: '/docs/Mysql/高级特性/MySQL 部署',
+        component: ComponentCreator('/docs/Mysql/高级特性/MySQL 部署','04f'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

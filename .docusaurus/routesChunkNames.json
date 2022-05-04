@@ -36,7 +36,7 @@
   "/search-79a": {
     "component": "component---theme-search-page-1-a-4-d6f"
   },
-  "/docs-b30": {
+  "/docs-6cb": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -204,9 +204,9 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-用户权限管理-70-c-f9c"
   },
-  "/docs/Mysql/高级特性/MySQL结构-03a": {
+  "/docs/Mysql/高级特性/MySQL 部署-04f": {
     "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-mysql-高级特性-my-sq-l结构-159-aab"
+    "content": "content---docs-mysql-高级特性-my-sql-部署-1-db-2cf"
   },
   "/docs/Mysql/高级特性/MySQL逻辑架构-161": {
     "component": "component---theme-doc-item-178-a40",

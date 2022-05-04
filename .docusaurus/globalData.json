@@ -148,8 +148,8 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/MySQL结构",
-              "path": "/docs/Mysql/高级特性/MySQL结构",
+              "id": "Mysql/高级特性/MySQL 部署",
+              "path": "/docs/Mysql/高级特性/MySQL 部署",
               "sidebar": "mysqlSideBar"
             },
             {

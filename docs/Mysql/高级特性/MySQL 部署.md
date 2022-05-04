@@ -1,6 +1,6 @@
 ---
-id: MySQL结构
-title: MySQL结构
+id: MySQL 部署
+title: MySQL 部署
 ---
 
 ## Linux环境准备

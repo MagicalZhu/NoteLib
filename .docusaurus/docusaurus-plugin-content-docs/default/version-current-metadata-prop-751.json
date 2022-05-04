@@ -361,9 +361,9 @@
             "items": [
               {
                 "type": "link",
-                "label": "MySQL结构",
-                "href": "/docs/Mysql/高级特性/MySQL结构",
-                "docId": "Mysql/高级特性/MySQL结构"
+                "label": "MySQL 部署",
+                "href": "/docs/Mysql/高级特性/MySQL 部署",
+                "docId": "Mysql/高级特性/MySQL 部署"
               },
               {
                 "type": "link",
@@ -594,9 +594,9 @@
       "description": "用户管理",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/MySQL结构": {
-      "id": "Mysql/高级特性/MySQL结构",
-      "title": "MySQL结构",
+    "Mysql/高级特性/MySQL 部署": {
+      "id": "Mysql/高级特性/MySQL 部署",
+      "title": "MySQL 部署",
       "description": "Linux环境准备",
       "sidebar": "mysqlSideBar"
     },

@@ -180,6 +180,10 @@ svg[class^='iconLanguage'] {
   content: counter(line-number);
 }
 
+li::marker {
+  color: var( --ifm-link-color);
+}
+
 .prism-code .token-line {
   counter-increment: line-number;
   display: list-item;

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Mysql/高级特性/MySQL 部署",
+  "id": "Mysql/高级特性/MySQL 部署",
+  "title": "MySQL 部署",
+  "description": "Linux环境准备",
+  "source": "@site/docs/Mysql/高级特性/MySQL 部署.md",
+  "sourceDirName": "Mysql/高级特性",
+  "slug": "/Mysql/高级特性/MySQL 部署",
+  "permalink": "/docs/Mysql/高级特性/MySQL 部署",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL 部署.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "MySQL 部署",
+    "title": "MySQL 部署"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "高级特性",
+    "permalink": "/docs/category/高级特性"
+  },
+  "next": {
+    "title": "用户权限管理",
+    "permalink": "/docs/Mysql/高级特性/用户权限管理"
+  }
+}
