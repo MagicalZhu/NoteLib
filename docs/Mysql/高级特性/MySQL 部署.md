@@ -141,6 +141,14 @@ mysqld 这个可执行文件就代表着 MySQL 服务器程序，运行这个可
 >
 > 通过 `show variables like 'collation%';` 可以查看默认的比较规则
 
+#### 查看MySQL 支持的字符集
+
+> `show charset` : 查看 MySQL 支持的字符集
+
+![image-20220517212954659](./image/MySQL 部署/image-20220517212954659.png)
+
+
+
 #### 查看字符集
 
 :::info MySQL不同版本的默认字符集和排序规则
@@ -306,7 +314,7 @@ ALTER TABLE 表名 MODIFY 列名 字符串类型 [CHARACTER SET 字符集名称]
 
 :::caution 分析请求从发送到结果返回过程中字符集的变化
 
-> 首先设置*character_set_connection* 为 gbk
+> 首先设置 *character_set_connection* 为 gbk
 >
 > 假设客户端发出的请求是 select *  from t where s=‘我‘,并且客户端使用的是 utf-8 字符集
 
@@ -486,44 +494,39 @@ innodb_data_file_path=data1:512M;data2:512M:autoextend
 
 #存放表结构
 test.frm
-
 # 存储数据(MYData)
 test.MYD
-
 # 存储索引(MYIndex)
 test.MYI
-
 ```
-
-
 
 #### 总结
 
 > 举例: 数据库a ,表b 
 
-1. 如果表b采用 InnoDB ，data\a中会产生1个或者2个文件:
+1. 如果表b采用 InnoDB ，data/a中会产生1个或者2个文件:
 
    - b.frm :描述表结构文件，字段长度等
    - 如果采用 **系统表空间** 模式的，数据信息和索引信息都存储在 ibdata1 中
-   - 如果采用 **独立表空间** 存储模式，data\a中还会产生 b.ibd 文件(存储数据信息和索引信息) 此外:
+   - 如果采用 **独立表空间** 存储模式，data/a中还会产生 b.ibd 文件(存储数据信息和索引信息) 此外:
 
    - **此外**:
      - MySQL5.7 中会在data/a的目录下生成 db.opt 文件用于保存数据库的相关配置。比如:字符集、比较 规则。而MySQL8.0不再提供db.opt文件
      - `MySQL8.0中不再单独提供b.frm，而是合并在b.ibd文件中`
 
-2. 如果表b采用 MyISAM ，data\a中会产生3个文件:
+2. 如果表b采用 MyISAM ，data/a中会产生3个文件:
 
-   - 表结构文件
-     - MySQL5.7 中: b.frm :描述表结构文件，字段长度等
-     - MySQL8.0 中 b.xxx.sdi :描述表结构文件，字段长度等
+   - **表结构文件(.frm)**
+     - MySQL5.7 中 : b.frm :描述表结构文件，字段长度等
+     - MySQL8.0 中 : b.xxx.sdi :描述表结构文件，字段长度等
 
-   - b.MYD (MYData):数据信息文件，存储数据信息(如果采用独立表存储模式)
+   - **b.MYD (MYData)** :数据信息文件，存储数据信息(如果采用独立表存储模式)
 
-   - b.MYI (MYIndex):存放索引信息文件
+   - **b.MYI (MYIndex)** :存放索引信息文件
 
 :::info MySQL 8.0 下查看 ibd 文件内容
 
-- Oracle 提供了**ibd2sdi**命令解析 MySQL8.0 的 ibd 文件
+- Oracle 提供了 **`ibd2sdi`** 命令将 MySQL8.0 的 ibd 文件解析成 sdi 文件
   - 命令位于: `/usr/bin/ibd2sdi`
   - 命令格式: `ibd2sdi --dump-file=解析后的文件路径  要解析的表名.ibd`
 

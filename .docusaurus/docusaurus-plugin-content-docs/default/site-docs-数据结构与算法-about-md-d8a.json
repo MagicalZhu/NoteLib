@@ -1,0 +1,23 @@
+{
+  "unversionedId": "数据结构与算法/dataStructure",
+  "id": "数据结构与算法/dataStructure",
+  "title": "数据结构与算法",
+  "description": "数据结构与算法的学习笔记以及LeetCode刷题笔记",
+  "source": "@site/docs/数据结构与算法/about.md",
+  "sourceDirName": "数据结构与算法",
+  "slug": "/dataStructure",
+  "permalink": "/docs/dataStructure",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/about.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "dataStructure",
+    "title": "数据结构与算法",
+    "slug": "/dataStructure"
+  },
+  "sidebar": "dataStructureSidebar",
+  "next": {
+    "title": "数据结构与算法基础",
+    "permalink": "/docs/category/数据结构与算法基础"
+  }
+}

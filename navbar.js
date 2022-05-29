@@ -35,13 +35,17 @@ const nav = {
           to: 'docs/networrk-basic',
         },
         {
+          label: "数据结构与算法",
+          to: 'docs/dataStructure',
+        },
+        {
           label: "MySQL",
           to: 'docs/mysql',
         }
       ]
     },
     {
-      label: "基础框架",
+      label: "后端框架",
       position: "left",
       items: [
         {

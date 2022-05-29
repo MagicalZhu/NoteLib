@@ -564,6 +564,51 @@
               }
             },
             {
+              "unversionedId": "数据结构与算法/基础/前提基础知识",
+              "id": "数据结构与算法/基础/前提基础知识",
+              "title": "前提基础知识",
+              "description": "",
+              "source": "@site/docs/数据结构与算法/基础/基础知识.md",
+              "sourceDirName": "数据结构与算法/基础",
+              "slug": "/数据结构与算法/基础/前提基础知识",
+              "permalink": "/docs/数据结构与算法/基础/前提基础知识",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/基础/基础知识.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "前提基础知识",
+                "title": "前提基础知识"
+              },
+              "sidebar": "dataStructureSidebar",
+              "previous": {
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识-1"
+              }
+            },
+            {
+              "unversionedId": "数据结构与算法/dataStructure",
+              "id": "数据结构与算法/dataStructure",
+              "title": "数据结构与算法",
+              "description": "数据结构与算法的学习笔记以及LeetCode刷题笔记",
+              "source": "@site/docs/数据结构与算法/about.md",
+              "sourceDirName": "数据结构与算法",
+              "slug": "/dataStructure",
+              "permalink": "/docs/dataStructure",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/about.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "dataStructure",
+                "title": "数据结构与算法",
+                "slug": "/dataStructure"
+              },
+              "sidebar": "dataStructureSidebar",
+              "next": {
+                "title": "数据结构与算法基础",
+                "permalink": "/docs/category/数据结构与算法基础"
+              }
+            },
+            {
               "unversionedId": "数据库/database",
               "id": "数据库/database",
               "title": "数据库概述",
@@ -639,7 +684,7 @@
               "unversionedId": "Mysql/高级特性/索引",
               "id": "Mysql/高级特性/索引",
               "title": "索引",
-              "description": "",
+              "description": "为什么使用索引",
               "source": "@site/docs/Mysql/高级特性/索引.md",
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/索引",
@@ -1763,6 +1808,43 @@
                 },
                 "collapsible": true
               }
+            ],
+            "dataStructureSidebar": [
+              {
+                "type": "doc",
+                "id": "数据结构与算法/dataStructure",
+                "label": "简介"
+              },
+              {
+                "type": "category",
+                "label": "数据结构与算法基础",
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "基础知识",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "数据结构与算法/基础/前提基础知识"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/基础知识-1",
+                      "permalink": "/docs/category/基础知识-1"
+                    },
+                    "collapsible": true
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/数据结构与算法基础",
+                  "permalink": "/docs/category/数据结构与算法基础"
+                },
+                "collapsible": true
+              }
             ]
           },
           "mainDocId": "并发编程/currency_about",
@@ -1947,6 +2029,34 @@
               "next": {
                 "title": "Vue基础特性",
                 "permalink": "/docs/前端/Vue/基础特性"
+              }
+            },
+            {
+              "title": "数据结构与算法基础",
+              "slug": "/category/数据结构与算法基础",
+              "permalink": "/docs/category/数据结构与算法基础",
+              "sidebar": "dataStructureSidebar",
+              "previous": {
+                "title": "数据结构与算法",
+                "permalink": "/docs/dataStructure"
+              },
+              "next": {
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识-1"
+              }
+            },
+            {
+              "title": "基础知识",
+              "slug": "/category/基础知识-1",
+              "permalink": "/docs/category/基础知识-1",
+              "sidebar": "dataStructureSidebar",
+              "previous": {
+                "title": "数据结构与算法基础",
+                "permalink": "/docs/category/数据结构与算法基础"
+              },
+              "next": {
+                "title": "前提基础知识",
+                "permalink": "/docs/数据结构与算法/基础/前提基础知识"
               }
             }
           ]

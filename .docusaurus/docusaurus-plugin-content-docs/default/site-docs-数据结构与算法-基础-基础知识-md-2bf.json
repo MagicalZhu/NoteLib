@@ -1,0 +1,22 @@
+{
+  "unversionedId": "数据结构与算法/基础/前提基础知识",
+  "id": "数据结构与算法/基础/前提基础知识",
+  "title": "前提基础知识",
+  "description": "",
+  "source": "@site/docs/数据结构与算法/基础/基础知识.md",
+  "sourceDirName": "数据结构与算法/基础",
+  "slug": "/数据结构与算法/基础/前提基础知识",
+  "permalink": "/docs/数据结构与算法/基础/前提基础知识",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/基础/基础知识.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "前提基础知识",
+    "title": "前提基础知识"
+  },
+  "sidebar": "dataStructureSidebar",
+  "previous": {
+    "title": "基础知识",
+    "permalink": "/docs/category/基础知识-1"
+  }
+}

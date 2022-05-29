@@ -122,6 +122,16 @@
               "sidebar": "vueSideBar"
             },
             {
+              "id": "数据结构与算法/基础/前提基础知识",
+              "path": "/docs/数据结构与算法/基础/前提基础知识",
+              "sidebar": "dataStructureSidebar"
+            },
+            {
+              "id": "数据结构与算法/dataStructure",
+              "path": "/docs/dataStructure",
+              "sidebar": "dataStructureSidebar"
+            },
+            {
               "id": "数据库/database",
               "path": "/docs/database"
             },
@@ -350,6 +360,16 @@
               "id": "/category/vue基础",
               "path": "/docs/category/vue基础",
               "sidebar": "vueSideBar"
+            },
+            {
+              "id": "/category/数据结构与算法基础",
+              "path": "/docs/category/数据结构与算法基础",
+              "sidebar": "dataStructureSidebar"
+            },
+            {
+              "id": "/category/基础知识-1",
+              "path": "/docs/category/基础知识-1",
+              "sidebar": "dataStructureSidebar"
             }
           ],
           "sidebars": {
@@ -392,6 +412,12 @@
             "vueSideBar": {
               "link": {
                 "path": "/docs/front/Vue",
+                "label": "简介"
+              }
+            },
+            "dataStructureSidebar": {
+              "link": {
+                "path": "/docs/dataStructure",
                 "label": "简介"
               }
             }

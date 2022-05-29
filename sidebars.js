@@ -107,9 +107,6 @@ const createAuto = (dir) => {
   }
 }
 
-
-
-// @ts-check
 // 创建并发安全的分类
 const ConcurrencySafe =  new Category('并发基础')
     .createSubCaregory('并发安全', '并发编程/并发安全', [
@@ -160,20 +157,24 @@ const mysqlSideBar = [
 ]
 
 // 计算机网络相关
-
-// const netWork= =  new Category('计算机网络')
-//     .createSubCaregory('HTTP', '计算机网络/HTTP', [
-//       '线程安全'
-//     ])
-
 const netWorkSidebar = [
   createDoc('计算机网络/networrk-basic', '简介'),
   createDoc('计算机网络/HTTP/http-protocol', 'HTTP协议')
 ]
 
+const bVideoPart = new Category('数据结构与算法基础')
+    .createSubCaregory('基础知识', '数据结构与算法/基础',[
+      '前提基础知识'
+    ])
+
+// 数据结构与算法
+const dataStructureSidebar = [
+  createDoc('数据结构与算法/dataStructure', '简介'),
+  bVideoPart
+]
+
 
 // 资源分享相关
-
 const acgPart =  new Category('动漫分享')
     .setNoLabelItem('source/acg',[
       'acgShare_2022',
@@ -233,6 +234,7 @@ const vueSideBar = [
   vuePart,
 ]
 
+// TODO React
 
 
 const sidebars = {
@@ -242,7 +244,8 @@ const sidebars = {
   springCloudSideBar,
   netWorkSidebar,
   mysqlSideBar,
-  vueSideBar
+  vueSideBar,
+  dataStructureSidebar
 }
 
 module.exports = sidebars;

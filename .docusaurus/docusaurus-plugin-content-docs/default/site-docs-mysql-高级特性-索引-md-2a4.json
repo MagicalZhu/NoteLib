@@ -2,7 +2,7 @@
   "unversionedId": "Mysql/高级特性/索引",
   "id": "Mysql/高级特性/索引",
   "title": "索引",
-  "description": "",
+  "description": "为什么使用索引",
   "source": "@site/docs/Mysql/高级特性/索引.md",
   "sourceDirName": "Mysql/高级特性",
   "slug": "/Mysql/高级特性/索引",

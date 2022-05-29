@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','6cb'),
+    component: ComponentCreator('/docs','3cf'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -159,6 +159,12 @@ export default [
         'sidebar': "vueSideBar"
       },
       {
+        path: '/docs/数据结构与算法/基础/前提基础知识',
+        component: ComponentCreator('/docs/数据结构与算法/基础/前提基础知识','c96'),
+        exact: true,
+        'sidebar': "dataStructureSidebar"
+      },
+      {
         path: '/docs/about',
         component: ComponentCreator('/docs/about','0b0'),
         exact: true
@@ -215,6 +221,18 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
+        path: '/docs/category/基础知识-1',
+        component: ComponentCreator('/docs/category/基础知识-1','c75'),
+        exact: true,
+        'sidebar': "dataStructureSidebar"
+      },
+      {
+        path: '/docs/category/数据结构与算法基础',
+        component: ComponentCreator('/docs/category/数据结构与算法基础','a36'),
+        exact: true,
+        'sidebar': "dataStructureSidebar"
+      },
+      {
         path: '/docs/category/微服务基础',
         component: ComponentCreator('/docs/category/微服务基础','40f'),
         exact: true,
@@ -266,6 +284,12 @@ export default [
         path: '/docs/database',
         component: ComponentCreator('/docs/database','d19'),
         exact: true
+      },
+      {
+        path: '/docs/dataStructure',
+        component: ComponentCreator('/docs/dataStructure','f02'),
+        exact: true,
+        'sidebar': "dataStructureSidebar"
       },
       {
         path: '/docs/front/Vue',

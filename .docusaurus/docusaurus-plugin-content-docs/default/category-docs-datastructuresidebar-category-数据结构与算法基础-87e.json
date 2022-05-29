@@ -1,0 +1,15 @@
+{
+  "title": "数据结构与算法基础",
+  "slug": "/category/数据结构与算法基础",
+  "permalink": "/docs/category/数据结构与算法基础",
+  "navigation": {
+    "previous": {
+      "title": "数据结构与算法",
+      "permalink": "/docs/dataStructure"
+    },
+    "next": {
+      "title": "基础知识",
+      "permalink": "/docs/category/基础知识-1"
+    }
+  }
+}
