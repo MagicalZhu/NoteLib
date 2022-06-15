@@ -145,7 +145,7 @@ mysqld 这个可执行文件就代表着 MySQL 服务器程序，运行这个可
 
 > `show charset` : 查看 MySQL 支持的字符集
 
-![image-20220517212954659](./image/MySQL 部署/image-20220517212954659.png)
+![image-20220517212954659](./image/MySQL部署/image-20220517212954659-5000048.png)
 
 
 
@@ -212,10 +212,10 @@ mysqld 这个可执行文件就代表着 MySQL 服务器程序，运行这个可
     - 当前数据库的字符集
 
   - `character_set_client`
-    - 服务器解码请求时使用的字符集
+    - 服务器解码客户端请求时使用的字符集
 
   - `character_set_connection`
-    - 服务器处理请求时会把请求字符串从character_set_client转为 character_set_connection 
+    - 服务器处理客户端请求时会把请求字符串从character_set_client转为 character_set_connection 
 
   - `character_set_results`
     - 服务器向客户端返回数据时使用的字符集
@@ -422,7 +422,7 @@ MySQL 在安装完成之后,会有 4 个默认的数据库:
 
 #### 数据库在文件系统中的表示
 
-有个用户自定义的数据库*tmp*,并且有用户的数据表*t_emp*,在 */var/lib/mysql*中可以看到有对应的文件目录
+有个用户自定义的数据库*tmp*,并且有用户的数据表*t_emp*,在 *`/var/lib/mysql`*中可以看到有对应的文件目录
 
 **MySQL 8.0文件目录**
 
@@ -518,7 +518,7 @@ test.MYI
 
    - **表结构文件(.frm)**
      - MySQL5.7 中 : b.frm :描述表结构文件，字段长度等
-     - MySQL8.0 中 : b.xxx.sdi :描述表结构文件，字段长度等
+     - MySQL8.0 中 : b.xxx.sdi :描述表结构文件，字段长度等 (**SDI： 序列化字典信息**)
 
    - **b.MYD (MYData)** :数据信息文件，存储数据信息(如果采用独立表存储模式)
 
@@ -528,7 +528,7 @@ test.MYI
 
 - Oracle 提供了 **`ibd2sdi`** 命令将 MySQL8.0 的 ibd 文件解析成 sdi 文件
   - 命令位于: `/usr/bin/ibd2sdi`
-  - 命令格式: `ibd2sdi --dump-file=解析后的文件路径  要解析的表名.ibd`
+  - 命令格式: `ibd2sdi --dump-file=解析后的文件路径  要解析的表名.ibd文件的路径`
 
 ```bash
 # 使用示例
