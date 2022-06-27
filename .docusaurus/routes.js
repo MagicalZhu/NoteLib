@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','3cf'),
+    component: ComponentCreator('/docs','47b'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -322,6 +322,12 @@ export default [
       {
         path: '/docs/Mysql/高级特性/用户权限管理',
         component: ComponentCreator('/docs/Mysql/高级特性/用户权限管理','5a2'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/InnoDB存储结构',
+        component: ComponentCreator('/docs/Mysql/高级特性/InnoDB存储结构','6db'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

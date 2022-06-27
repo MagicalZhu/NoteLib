@@ -382,6 +382,12 @@
                 "label": "索引",
                 "href": "/docs/Mysql/高级特性/索引",
                 "docId": "Mysql/高级特性/索引"
+              },
+              {
+                "type": "link",
+                "label": "InnoDB存储结构",
+                "href": "/docs/Mysql/高级特性/InnoDB存储结构",
+                "docId": "Mysql/高级特性/InnoDB存储结构"
               }
             ],
             "collapsed": true,
@@ -636,6 +642,12 @@
       "id": "Mysql/高级特性/用户权限管理",
       "title": "用户权限管理",
       "description": "image-20220508142326805",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/InnoDB存储结构": {
+      "id": "Mysql/高级特性/InnoDB存储结构",
+      "title": "InnoDB存储结构",
+      "description": "存储结构-页",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/MySQL 部署": {

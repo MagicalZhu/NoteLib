@@ -700,6 +700,10 @@
               "previous": {
                 "title": "MySQL逻辑架构",
                 "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              },
+              "next": {
+                "title": "InnoDB存储结构",
+                "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
               }
             },
             {
@@ -726,6 +730,28 @@
               "next": {
                 "title": "MySQL逻辑架构",
                 "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/InnoDB存储结构",
+              "id": "Mysql/高级特性/InnoDB存储结构",
+              "title": "InnoDB存储结构",
+              "description": "存储结构-页",
+              "source": "@site/docs/Mysql/高级特性/InnoDB存储结构.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/InnoDB存储结构",
+              "permalink": "/docs/Mysql/高级特性/InnoDB存储结构",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB存储结构.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "InnoDB存储结构",
+                "title": "InnoDB存储结构"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "索引",
+                "permalink": "/docs/Mysql/高级特性/索引"
               }
             },
             {
@@ -1752,6 +1778,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/索引"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/InnoDB存储结构"
                       }
                     ],
                     "collapsed": true,

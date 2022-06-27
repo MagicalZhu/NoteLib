@@ -49,7 +49,7 @@ class Category {
    * @param {String} label 
    * @param {Object} items  sidebar items
    */
-  constructor(label, items) {
+  constructor(label, items = []) {
     this.type = Type.CAT
     this.label = label
     this.items = items || []
@@ -147,7 +147,8 @@ const mysqlPart =  new Category('MySQL基础与高级')
       'MySQL 部署',
       '用户权限管理',
       'MySQL逻辑架构',
-      '索引'
+      '索引',
+      'InnoDB存储结构'
     ])
     
 

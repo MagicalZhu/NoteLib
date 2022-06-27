@@ -158,6 +158,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/InnoDB存储结构",
+              "path": "/docs/Mysql/高级特性/InnoDB存储结构",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/MySQL 部署",
               "path": "/docs/Mysql/高级特性/MySQL 部署",
               "sidebar": "mysqlSideBar"
