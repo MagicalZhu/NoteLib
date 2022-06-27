@@ -1,0 +1,18 @@
+{
+  "unversionedId": "LeetCode 刷题笔记/leetCode",
+  "id": "LeetCode 刷题笔记/leetCode",
+  "title": "LeetCode刷题笔记",
+  "description": "LeetCode刷题笔记",
+  "source": "@site/docs/LeetCode 刷题笔记/about.md",
+  "sourceDirName": "LeetCode 刷题笔记",
+  "slug": "/leetCode",
+  "permalink": "/docs/leetCode",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/LeetCode 刷题笔记/about.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "leetCode",
+    "title": "LeetCode刷题笔记",
+    "slug": "/leetCode"
+  }
+}

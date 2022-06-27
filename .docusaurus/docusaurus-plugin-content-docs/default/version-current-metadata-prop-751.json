@@ -463,6 +463,20 @@
         "collapsible": true,
         "href": "/docs/category/数据结构与算法基础"
       }
+    ],
+    "leetCodeSidebar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/leetCode",
+        "docId": "LeetCode刷题笔记/leetCode"
+      },
+      {
+        "type": "link",
+        "label": "图解算法数据结构",
+        "href": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm",
+        "docId": "LeetCode刷题笔记/illustrationOfAlgorithm"
+      }
     ]
   },
   "docs": {
@@ -609,7 +623,7 @@
     "数据结构与算法/dataStructure": {
       "id": "数据结构与算法/dataStructure",
       "title": "数据结构与算法",
-      "description": "数据结构与算法的学习笔记以及LeetCode刷题笔记",
+      "description": "数据结构与算法的学习笔记",
       "sidebar": "dataStructureSidebar"
     },
     "数据库/database": {
@@ -631,6 +645,18 @@
       "id": "about",
       "title": "个人简介",
       "description": "文档概述"
+    },
+    "LeetCode刷题笔记/illustrationOfAlgorithm": {
+      "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
+      "title": "图解算法数据结构",
+      "description": "算法题内容来自于 图解算法数据结构",
+      "sidebar": "leetCodeSidebar"
+    },
+    "LeetCode刷题笔记/leetCode": {
+      "id": "LeetCode刷题笔记/leetCode",
+      "title": "LeetCode刷题笔记",
+      "description": "记录 LeetCode 刷题过程",
+      "sidebar": "leetCodeSidebar"
     },
     "Mysql/高级特性/索引": {
       "id": "Mysql/高级特性/索引",

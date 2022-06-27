@@ -2,7 +2,7 @@
   "unversionedId": "数据结构与算法/dataStructure",
   "id": "数据结构与算法/dataStructure",
   "title": "数据结构与算法",
-  "description": "数据结构与算法的学习笔记以及LeetCode刷题笔记",
+  "description": "数据结构与算法的学习笔记",
   "source": "@site/docs/数据结构与算法/about.md",
   "sourceDirName": "数据结构与算法",
   "slug": "/dataStructure",

@@ -163,6 +163,12 @@ const netWorkSidebar = [
   createDoc('计算机网络/HTTP/http-protocol', 'HTTP协议')
 ]
 
+//LeetCode 刷题
+const leetCodeSidebar = [
+  createDoc('LeetCode刷题笔记/leetCode', '简介'),
+  createDoc('LeetCode刷题笔记/illustrationOfAlgorithm', '图解算法数据结构')
+]
+
 const bVideoPart = new Category('数据结构与算法基础')
     .createSubCaregory('基础知识', '数据结构与算法/基础',[
       '前提基础知识'
@@ -246,7 +252,8 @@ const sidebars = {
   netWorkSidebar,
   mysqlSideBar,
   vueSideBar,
-  dataStructureSidebar
+  dataStructureSidebar,
+  leetCodeSidebar
 }
 
 module.exports = sidebars;

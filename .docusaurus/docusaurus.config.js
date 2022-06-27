@@ -77,6 +77,10 @@ export default {
               "to": "docs/dataStructure"
             },
             {
+              "label": "LeetCode",
+              "to": "docs/leetCode"
+            },
+            {
               "label": "MySQL",
               "to": "docs/mysql"
             }

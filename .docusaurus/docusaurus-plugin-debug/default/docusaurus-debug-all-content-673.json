@@ -589,7 +589,7 @@
               "unversionedId": "数据结构与算法/dataStructure",
               "id": "数据结构与算法/dataStructure",
               "title": "数据结构与算法",
-              "description": "数据结构与算法的学习笔记以及LeetCode刷题笔记",
+              "description": "数据结构与算法的学习笔记",
               "source": "@site/docs/数据结构与算法/about.md",
               "sourceDirName": "数据结构与算法",
               "slug": "/dataStructure",
@@ -678,6 +678,51 @@
                 "id": "about",
                 "title": "个人简介",
                 "slug": "/about"
+              }
+            },
+            {
+              "unversionedId": "LeetCode刷题笔记/illustrationOfAlgorithm",
+              "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
+              "title": "图解算法数据结构",
+              "description": "算法题内容来自于 图解算法数据结构",
+              "source": "@site/docs/LeetCode刷题笔记/图解算法数据结构.md",
+              "sourceDirName": "LeetCode刷题笔记",
+              "slug": "/LeetCode刷题笔记/illustrationOfAlgorithm",
+              "permalink": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/LeetCode刷题笔记/图解算法数据结构.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "illustrationOfAlgorithm",
+                "title": "图解算法数据结构"
+              },
+              "sidebar": "leetCodeSidebar",
+              "previous": {
+                "title": "LeetCode刷题笔记",
+                "permalink": "/docs/leetCode"
+              }
+            },
+            {
+              "unversionedId": "LeetCode刷题笔记/leetCode",
+              "id": "LeetCode刷题笔记/leetCode",
+              "title": "LeetCode刷题笔记",
+              "description": "记录 LeetCode 刷题过程",
+              "source": "@site/docs/LeetCode刷题笔记/about.md",
+              "sourceDirName": "LeetCode刷题笔记",
+              "slug": "/leetCode",
+              "permalink": "/docs/leetCode",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/LeetCode刷题笔记/about.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "leetCode",
+                "title": "LeetCode刷题笔记",
+                "slug": "/leetCode"
+              },
+              "sidebar": "leetCodeSidebar",
+              "next": {
+                "title": "图解算法数据结构",
+                "permalink": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm"
               }
             },
             {
@@ -1874,6 +1919,18 @@
                   "permalink": "/docs/category/数据结构与算法基础"
                 },
                 "collapsible": true
+              }
+            ],
+            "leetCodeSidebar": [
+              {
+                "type": "doc",
+                "id": "LeetCode刷题笔记/leetCode",
+                "label": "简介"
+              },
+              {
+                "type": "doc",
+                "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
+                "label": "图解算法数据结构"
               }
             ]
           },

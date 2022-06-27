@@ -148,6 +148,16 @@
               "path": "/docs/about"
             },
             {
+              "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
+              "path": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm",
+              "sidebar": "leetCodeSidebar"
+            },
+            {
+              "id": "LeetCode刷题笔记/leetCode",
+              "path": "/docs/leetCode",
+              "sidebar": "leetCodeSidebar"
+            },
+            {
               "id": "Mysql/高级特性/索引",
               "path": "/docs/Mysql/高级特性/索引",
               "sidebar": "mysqlSideBar"
@@ -423,6 +433,12 @@
             "dataStructureSidebar": {
               "link": {
                 "path": "/docs/dataStructure",
+                "label": "简介"
+              }
+            },
+            "leetCodeSidebar": {
+              "link": {
+                "path": "/docs/leetCode",
                 "label": "简介"
               }
             }

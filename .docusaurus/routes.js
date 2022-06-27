@@ -60,7 +60,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','47b'),
+    component: ComponentCreator('/docs','ff6'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -301,6 +301,18 @@ export default [
         path: '/docs/job',
         component: ComponentCreator('/docs/job','cd2'),
         exact: true
+      },
+      {
+        path: '/docs/leetCode',
+        component: ComponentCreator('/docs/leetCode','3cf'),
+        exact: true,
+        'sidebar': "leetCodeSidebar"
+      },
+      {
+        path: '/docs/LeetCode刷题笔记/illustrationOfAlgorithm',
+        component: ComponentCreator('/docs/LeetCode刷题笔记/illustrationOfAlgorithm','d37'),
+        exact: true,
+        'sidebar': "leetCodeSidebar"
       },
       {
         path: '/docs/messageQueue',
