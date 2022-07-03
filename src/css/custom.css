@@ -74,11 +74,11 @@ code {
   word-break: break-word;
   margin: 0 1px;
   background: #FDECEE;
-  padding: 0.2em 0.4em;
+ /* padding: 0.2em 0.4em;*/
   border-radius: 2px;
   font-size: .87em;
   border: 1px solid #eee;
-  font-family: Menlo,poppins, Monaco,Consolas,Courier New,monospace;
+  font-family: poppins, Monaco,Consolas,Courier New,monospace;
 }
 html[data-theme='light'] .markdown {
   color: #253848;
