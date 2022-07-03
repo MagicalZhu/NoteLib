@@ -5,7 +5,7 @@ Modify the docusaurus.config.js file at your site's root instead.
 */
 export default {
   "title": "花裤衩",
-  "tagline": "To see the world as it is and to love it",
+  "tagline": "你知道的越多,不知道的也就越多",
   "url": "https://huakucha.com",
   "baseUrl": "/",
   "onBrokenLinks": "warn",
