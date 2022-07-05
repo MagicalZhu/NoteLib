@@ -2170,16 +2170,6 @@
       },
       {
         "type": "mdx",
-        "permalink": "/markdown-page",
-        "source": "@site/src/pages/markdown-page.md",
-        "title": "Markdown page example",
-        "description": "You don't need React to write simple standalone pages.",
-        "frontMatter": {
-          "title": "Markdown page example"
-        }
-      },
-      {
-        "type": "mdx",
         "permalink": "/about/",
         "source": "@site/src/pages/about/index.mdx",
         "description": "This is a page generated from markdown to illustrate the Markdown page feature.",
