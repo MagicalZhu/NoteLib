@@ -65,6 +65,7 @@ div[class^=announcementBar_] {
     background-size: 56.57px 56.57px;
     font-weight: 550;
     height: 30px;
+    font-family: "黑体";
 }
 
 mark {
