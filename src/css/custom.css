@@ -60,6 +60,13 @@ html[data-theme='dark']  .alert {
   width: 100%;
 }
 
+div[class^=announcementBar_] {
+    background-image: linear-gradient(45deg,#94aaf7 25%,#c2cfff 0,#c2cfff 50%,#94aaf7 0,#94aaf7 75%,#c2cfff 0,#c2cfff);
+    background-size: 56.57px 56.57px;
+    font-weight: 550;
+    height: 30px;
+}
+
 mark {
   border-radius: 4px;
   color: #141001;
