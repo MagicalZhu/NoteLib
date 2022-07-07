@@ -199,7 +199,9 @@ li::marker {
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
-  font-family: Menlo, Monaco, Consolas, "Courier New";
+  font-family: monospace, Menlo, Monaco, Consolas, "Courier New";
+  font-style: normal;
+  font-weight: 500;
 }
 
 
