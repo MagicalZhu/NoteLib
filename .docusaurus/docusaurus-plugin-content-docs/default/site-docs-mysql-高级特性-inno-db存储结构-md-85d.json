@@ -18,5 +18,9 @@
   "previous": {
     "title": "索引",
     "permalink": "/docs/Mysql/高级特性/索引"
+  },
+  "next": {
+    "title": "设计索引",
+    "permalink": "/docs/Mysql/高级特性/设计索引"
   }
 }

@@ -1,8 +1,8 @@
 {
   "unversionedId": "about",
   "id": "about",
-  "title": "个人简介",
-  "description": "文档概述",
+  "title": "关于我",
+  "description": "👨‍💻一名会写点js、java的码农",
   "source": "@site/docs/about.mdx",
   "sourceDirName": ".",
   "slug": "/about",
@@ -12,7 +12,7 @@
   "version": "current",
   "frontMatter": {
     "id": "about",
-    "title": "个人简介",
+    "title": "关于我",
     "slug": "/about"
   }
 }

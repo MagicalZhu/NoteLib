@@ -10,7 +10,7 @@ const customConfig = require("./configCustom")
  */
 const config = {
   title: '花裤衩',
-  tagline: '你知道的越多,不知道的也就越多',
+  tagline: '知道的越多,不知道的也就越多',
   url: 'https://huakucha.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',

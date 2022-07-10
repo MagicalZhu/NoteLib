@@ -388,6 +388,12 @@
                 "label": "InnoDB存储结构",
                 "href": "/docs/Mysql/高级特性/InnoDB存储结构",
                 "docId": "Mysql/高级特性/InnoDB存储结构"
+              },
+              {
+                "type": "link",
+                "label": "设计索引",
+                "href": "/docs/Mysql/高级特性/设计索引",
+                "docId": "Mysql/高级特性/设计索引"
               }
             ],
             "collapsed": true,
@@ -643,8 +649,8 @@
     },
     "about": {
       "id": "about",
-      "title": "个人简介",
-      "description": "文档概述"
+      "title": "关于我",
+      "description": "👨‍💻一名会写点js、java的码农"
     },
     "LeetCode刷题笔记/illustrationOfAlgorithm": {
       "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
@@ -657,6 +663,12 @@
       "title": "LeetCode刷题笔记",
       "description": "记录 LeetCode 刷题过程",
       "sidebar": "leetCodeSidebar"
+    },
+    "Mysql/高级特性/设计索引": {
+      "id": "Mysql/高级特性/设计索引",
+      "title": "设计索引",
+      "description": "使用索引",
+      "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/索引": {
       "id": "Mysql/高级特性/索引",

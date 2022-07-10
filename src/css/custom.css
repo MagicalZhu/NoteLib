@@ -54,9 +54,8 @@ html[data-theme='dark']  .alert {
 
 .container {
   margin: 0 auto;
-  /*max-width: var(--ifm-container-width);*/
+  max-width: var(--ifm-container-width);
   padding: 0 var(--ifm-spacing-horizontal);
-  padding-left: 25px;
   width: 100%;
 }
 
@@ -199,7 +198,7 @@ li::marker {
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
-  font-family: monospace, Menlo, Monaco, Consolas, "Courier New";
+  font-family: monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
 }

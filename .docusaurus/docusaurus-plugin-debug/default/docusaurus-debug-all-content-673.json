@@ -665,8 +665,8 @@
             {
               "unversionedId": "about",
               "id": "about",
-              "title": "个人简介",
-              "description": "文档概述",
+              "title": "关于我",
+              "description": "👨‍💻一名会写点js、java的码农",
               "source": "@site/docs/about.mdx",
               "sourceDirName": ".",
               "slug": "/about",
@@ -676,7 +676,7 @@
               "version": "current",
               "frontMatter": {
                 "id": "about",
-                "title": "个人简介",
+                "title": "关于我",
                 "slug": "/about"
               }
             },
@@ -723,6 +723,28 @@
               "next": {
                 "title": "图解算法数据结构",
                 "permalink": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/设计索引",
+              "id": "Mysql/高级特性/设计索引",
+              "title": "设计索引",
+              "description": "使用索引",
+              "source": "@site/docs/Mysql/高级特性/设计索引.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/设计索引",
+              "permalink": "/docs/Mysql/高级特性/设计索引",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/设计索引.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "设计索引",
+                "title": "设计索引"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "InnoDB存储结构",
+                "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
               }
             },
             {
@@ -797,6 +819,10 @@
               "previous": {
                 "title": "索引",
                 "permalink": "/docs/Mysql/高级特性/索引"
+              },
+              "next": {
+                "title": "设计索引",
+                "permalink": "/docs/Mysql/高级特性/设计索引"
               }
             },
             {
@@ -1827,6 +1853,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/InnoDB存储结构"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/设计索引"
                       }
                     ],
                     "collapsed": true,

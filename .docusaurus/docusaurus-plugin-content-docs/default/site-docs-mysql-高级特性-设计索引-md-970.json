@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/高级特性/设计索引",
+  "id": "Mysql/高级特性/设计索引",
+  "title": "设计索引",
+  "description": "使用索引",
+  "source": "@site/docs/Mysql/高级特性/设计索引.md",
+  "sourceDirName": "Mysql/高级特性",
+  "slug": "/Mysql/高级特性/设计索引",
+  "permalink": "/docs/Mysql/高级特性/设计索引",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/设计索引.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "设计索引",
+    "title": "设计索引"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "InnoDB存储结构",
+    "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
+  }
+}
