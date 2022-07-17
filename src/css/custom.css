@@ -96,6 +96,20 @@ html[data-theme='dark'] .markdown {
   line-height: 2;
 }
 
+html[data-theme='light']  .docusaurus-highlight-code-line {
+  background-color: rgb(200 237 224);
+  max-width: fit-content;
+  border-radius: 4px;
+  padding-left: 15px;
+}
+
+html[data-theme='dark']  .docusaurus-highlight-code-line {
+  background-color: rgb(68 115 181 / 88%);
+  max-width: fit-content;
+  border-radius: 4px;
+  padding-left: 15px;
+}
+
 blockquote {
 	color:rgb(102, 102, 102);
 	border-left: 5px solid rgb(169, 202, 255);
@@ -198,7 +212,7 @@ li::marker {
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
-  font-family: monaco, Consolas, "Courier New";
+  font-family: Menlo,monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
 }
