@@ -679,7 +679,7 @@
     "Mysql/高级特性/用户权限管理": {
       "id": "Mysql/高级特性/用户权限管理",
       "title": "用户权限管理",
-      "description": "image-20220508142326805",
+      "description": "示意图",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/InnoDB存储结构": {

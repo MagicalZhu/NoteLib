@@ -41,7 +41,7 @@ function HomeBreadcrumbItem() {
   const homeHref = useBaseUrl('/');
   return (
     <BreadcrumbsItem>
-      <BreadcrumbsItemLink href={homeHref}>🏠</BreadcrumbsItemLink>
+      <BreadcrumbsItemLink href={homeHref}>🏡</BreadcrumbsItemLink>
     </BreadcrumbsItem>
   );
 }

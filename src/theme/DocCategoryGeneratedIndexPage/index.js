@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+import {useCurrentSidebarCategory,} from '@docusaurus/theme-common';
 import DocCardList from '@theme/DocCardList';
 import DocPaginator from '@theme/DocPaginator';
 import Seo from '@theme/Seo';

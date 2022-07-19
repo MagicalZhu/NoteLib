@@ -54,7 +54,7 @@ class Category {
     this.label = label
     this.items = items || []
     this.collapsed = true
-    this. link = {
+    this.link = {
       type: 'generated-index',
     }
   }
