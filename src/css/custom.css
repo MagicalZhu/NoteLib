@@ -40,10 +40,6 @@ html[data-theme="light"] .navbar {
     backdrop-filter: saturate(180%) blur(16px);
 }
 
-html[data-theme="light"] .navbar {
-    backdrop-filter: saturate(180%) blur(16px);
-}
-
 
 html[data-theme="dark"] .navbar {
     backdrop-filter: saturate(180%) blur(16px);
