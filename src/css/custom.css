@@ -101,10 +101,10 @@ html[data-theme='light'] .markdown {
 }
 
 html[data-theme='light'] .card{
-  background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
+  background-image: linear-gradient(to top right, #e1eaff, #f4e4f5);
 }
 html[data-theme='dark'] .card{
-  background-color: linear-gradient(to top right, #958383, #665baa);
+  background-image: linear-gradient(to top right, #958383, #665baa);
 }
 
 html[data-theme='dark'] .markdown {
