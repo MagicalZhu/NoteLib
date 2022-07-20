@@ -44,8 +44,28 @@ export default [
     exact: true
   },
   {
+    path: '/blog',
+    component: ComponentCreator('/blog','30d'),
+    exact: true
+  },
+  {
     path: '/blog/archive',
     component: ComponentCreator('/blog/archive','f4c'),
+    exact: true
+  },
+  {
+    path: '/blog/internal-navigation',
+    component: ComponentCreator('/blog/internal-navigation','bf2'),
+    exact: true
+  },
+  {
+    path: '/blog/tags',
+    component: ComponentCreator('/blog/tags','e13'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/分享',
+    component: ComponentCreator('/blog/tags/分享','ec7'),
     exact: true
   },
   {

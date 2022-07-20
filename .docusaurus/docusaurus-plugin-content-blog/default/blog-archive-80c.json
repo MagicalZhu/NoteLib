@@ -1,3 +1,47 @@
 {
-  "blogPosts": []
+  "blogPosts": [
+    {
+      "id": "internal-navigation",
+      "metadata": {
+        "permalink": "/blog/internal-navigation",
+        "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220720.md",
+        "source": "@site/blog/20220720.md",
+        "title": "网站导航",
+        "description": "常用的网址导航",
+        "date": "2022-07-20T00:00:00.000Z",
+        "formattedDate": "July 20, 2022",
+        "tags": [
+          {
+            "label": "分享",
+            "permalink": "/blog/tags/分享"
+          }
+        ],
+        "readingTime": 0,
+        "truncated": false,
+        "authors": [
+          {
+            "name": "花裤衩",
+            "title": "Co-creator of Docusaurus 1",
+            "url": "https://github.com/JoelMarcey",
+            "email": "18151271579@163.com",
+            "imageURL": "/img/logo.svg",
+            "key": "huakucha"
+          }
+        ],
+        "frontMatter": {
+          "title": "网站导航",
+          "description": "常用的网址导航",
+          "slug": "internal-navigation",
+          "authors": "huakucha",
+          "tags": [
+            "分享"
+          ],
+          "image": "https://i.imgur.com/mErPwqL.png",
+          "hide_table_of_contents": false,
+          "date": "2022-07-20T00:00:00.000Z"
+        }
+      },
+      "content": ""
+    }
+  ]
 }

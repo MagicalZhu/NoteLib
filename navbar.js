@@ -105,6 +105,7 @@ const nav = {
         }
       ]
     },
+    {to: 'blog', label: '博客', position: 'right'},
     {
       position: "right",
       href: '/docs/source/devSource',

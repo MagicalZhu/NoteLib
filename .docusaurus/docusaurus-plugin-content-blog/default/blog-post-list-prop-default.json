@@ -1,4 +1,9 @@
 {
   "title": "Recent posts",
-  "items": []
+  "items": [
+    {
+      "title": "网站导航",
+      "permalink": "/blog/internal-navigation"
+    }
+  ]
 }

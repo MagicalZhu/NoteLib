@@ -17,9 +17,22 @@ const classicConfig = {
   // 以下参数将被直接传递给 @docusaurus/theme-classic。
   theme: {
     customCss: require.resolve("./src/css/custom.css"),
-  }
+  },
   // 以下参数将被直接传递给 @docusaurus/plugin-content-blog （设置为 false 则表示禁用此插件）
-  // blog: {},
+  blog: {
+    path: 'blog',
+    editUrl: 'https://github.com/MagicalZhu/XDocs/tree/main',
+    postsPerPage: 5,
+    authorsMapPath: 'author.yml',
+    showReadingTime: true, // When set to false, the "x min read" won't be shown
+    readingTime: ({content, frontMatter, defaultReadingTime}) =>
+      defaultReadingTime({
+        content, 
+        options: {
+          wordsPerMinute: 300
+        }
+      })
+  },
   // 以下参数将被直接传递给 @docusaurus/plugin-content-pages （设置为 false 则表示禁用此插件）
   // pages: {},
   // 以下参数将被直接传递给 @docusaurus/plugin-content-sitemap （设置为 false 则表示禁用此插件）

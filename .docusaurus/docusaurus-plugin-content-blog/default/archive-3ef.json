@@ -1,0 +1,47 @@
+{
+  "blogPosts": [
+    {
+      "id": "welcome-docusaurus-v2",
+      "metadata": {
+        "permalink": "/welcome-docusaurus-v2",
+        "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220720.md",
+        "source": "@site/blog/20220720.md",
+        "title": "Welcome Docusaurus v2",
+        "description": "This is my first post on Docusaurus 2.",
+        "date": "2022-07-20T00:00:00.000Z",
+        "formattedDate": "July 20, 2022",
+        "tags": [
+          {
+            "label": "JavaScript",
+            "permalink": "/tags/java-script"
+          }
+        ],
+        "readingTime": 0.09,
+        "truncated": true,
+        "authors": [
+          {
+            "name": "花裤衩",
+            "title": "Co-creator of Docusaurus 1",
+            "url": "https://github.com/JoelMarcey",
+            "email": "jimarcey@gmail.com",
+            "imageURL": "https://github.com/JoelMarcey.png",
+            "key": "huakucha"
+          }
+        ],
+        "frontMatter": {
+          "title": "Welcome Docusaurus v2",
+          "description": "This is my first post on Docusaurus 2.",
+          "slug": "welcome-docusaurus-v2",
+          "authors": "huakucha",
+          "tags": [
+            "JavaScript"
+          ],
+          "image": "https://i.imgur.com/mErPwqL.png",
+          "hide_table_of_contents": false,
+          "date": "2022-07-20T00:00:00.000Z"
+        }
+      },
+      "content": "Welcome to this blog. This blog is created with [**Docusaurus 2**](https://docusaurus.io/).\n\n<!--truncate-->\n\nThis is my first post on Docusaurus 2.\n\nA whole bunch of exploration to follow."
+    }
+  ]
+}

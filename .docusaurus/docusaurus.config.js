@@ -30,6 +30,13 @@ export default {
         },
         "theme": {
           "customCss": "/Users/yoey/Desktop/XDocs/src/css/custom.css"
+        },
+        "blog": {
+          "path": "blog",
+          "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main",
+          "postsPerPage": 5,
+          "authorsMapPath": "author.yml",
+          "showReadingTime": true
         }
       }
     ]
@@ -143,6 +150,11 @@ export default {
               "to": "docs/front/Vue"
             }
           ]
+        },
+        {
+          "to": "blog",
+          "label": "博客",
+          "position": "left"
         },
         {
           "position": "right",
