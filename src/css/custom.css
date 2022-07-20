@@ -36,6 +36,22 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+html[data-theme="light"] .navbar {
+    backdrop-filter: saturate(180%) blur(16px);
+}
+
+html[data-theme="light"] .navbar {
+    backdrop-filter: saturate(180%) blur(16px);
+}
+
+
+html[data-theme="dark"] .navbar {
+    backdrop-filter: saturate(180%) blur(16px);
+}
+
+
+
+
 html[data-theme='dark'] .alert {
   border-color: #272727 #272727 #272727 var(--ifm-alert-border-color);
 }
