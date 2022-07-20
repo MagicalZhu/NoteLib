@@ -29,13 +29,6 @@
   --ifm-card-background-color: #2d2d2d; /* original, non-hovered color is #242526 */
 }
 
-html[data-theme="light"] .card{
-  background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
-}
-html[data-theme="dark"] .card{
-  background-color: linear-gradient(to top right, #958383, #665baa);
-}
-
 .cardContainer:not(.cardContainerLink) {
   cursor: not-allowed;
 }
