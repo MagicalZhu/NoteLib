@@ -45,8 +45,6 @@ html[data-theme="light"] .navbar {
 
 html[data-theme="dark"] .navbar {
     backdrop-filter: saturate(180%) blur(16px);
-    /*background: transparent;*/
-    background: hsla(0, 0%, 100%, 0.8);
 }
 
 
