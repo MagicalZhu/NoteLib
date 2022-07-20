@@ -7,7 +7,7 @@
 
 @import url('default.css');
 
---ifm-card-background-color: linear-gradient( to top right, #e1eaff, #f4e4f5 );
+
 html[data-theme="dark"] {
   --ifm-font-color-base: #bdbdbd;
   --ifm-color-content-secondary: #bdbdbd;
@@ -26,6 +26,10 @@ html[data-theme="dark"] {
   --ifm-blockquote-border-color: #353535;
   --ifm-color-info-dark: #5fa0ff;
   --ifm-color-success-dark: #36ad99;
+}
+
+html[data-theme="dark"] {
+  --ifm-card-background-color: linear-gradient( to top right, #e1eaff, #f4e4f5 );
 }
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
