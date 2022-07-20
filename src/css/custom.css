@@ -26,6 +26,7 @@ html[data-theme="dark"] {
   --ifm-blockquote-border-color: #353535;
   --ifm-color-info-dark: #5fa0ff;
   --ifm-color-success-dark: #36ad99;
+  --ifm-card-background-color: linear-gradient( to top right, #958383, #665baa );
 }
 
 html[data-theme="dark"] {
