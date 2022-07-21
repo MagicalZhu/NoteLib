@@ -159,7 +159,7 @@ export default {
         },
         {
           "label": "其他",
-          "position": "right",
+          "position": "left",
           "items": [
             {
               "to": "blog",

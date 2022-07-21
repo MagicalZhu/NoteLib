@@ -1,7 +1,7 @@
 const footer = {
   links: [
     {
-      title: '🔗前端链接',
+      title: '前端链接',
       items: [
         {
           label: 'Vue',
@@ -22,7 +22,7 @@ const footer = {
       ],
     },
     {
-      title: '🔗后端链接',
+      title: '后端链接',
       items: [
         { label: 'Spring', href: 'https://spring.io/'},
         { label: 'Docker', href: 'https://docs.docker.com/get-started/'},
@@ -39,7 +39,7 @@ const footer = {
       ],
     },
     {
-      title: '🔨文档构建',
+      title: '文档构建',
       items: [
         {
           label: 'Docusaurus',
