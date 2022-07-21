@@ -68,7 +68,7 @@ const webSites =  [
         {
           label: 'Mybatis',
           href: 'https://mybatis.org/mybatis-3/zh/index.html',
-          img: '/img/website/Mybatis.png'
+          img: '/img/website/mybatis.png'
         },
         {
           label: 'Redis',
