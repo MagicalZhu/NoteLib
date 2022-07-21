@@ -25,6 +25,10 @@
     "component": "component---theme-mdx-page-1-f-3-b90",
     "content": "content---about-f-22-13e"
   },
+  "/about/website-575": {
+    "component": "component---site-src-pages-about-website-tsx-0-b-7-a92",
+    "config": "config---about-website-5-e-9-e03"
+  },
   "/blog-30d": {
     "component": "component---theme-blog-list-pagea-6-a-7ba",
     "sidebar": "sidebar---blog-814-8ac",
@@ -42,7 +46,7 @@
   "/blog/internal-navigation-bf2": {
     "component": "component---theme-blog-post-pageccc-cab",
     "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-网站导航-5-f-3-c7b"
+    "content": "content---blog-internal-navigation-5-f-3-5ad"
   },
   "/blog/tags-e13": {
     "component": "component---theme-blog-tags-list-page-01-a-d0b",
@@ -381,6 +385,6 @@
   },
   "/-deb": {
     "component": "component---site-src-pages-index-jsc-4-f-f99",
-    "config": "config---5-e-9-4f3"
+    "config": "config---about-website-5-e-9-e03"
   }
 }

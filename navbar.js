@@ -107,7 +107,7 @@ const nav = {
     },
     {
       label: "其他",
-      position: "right",
+      position: "left",
       items: [
         { to: 'blog', label: '博客' },
         { to: '/about/website', label: '网址导航'},

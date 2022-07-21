@@ -44,6 +44,11 @@ export default [
     exact: true
   },
   {
+    path: '/about/website',
+    component: ComponentCreator('/about/website','575'),
+    exact: true
+  },
+  {
     path: '/blog',
     component: ComponentCreator('/blog','30d'),
     exact: true
