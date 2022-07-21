@@ -47,6 +47,9 @@ html[data-theme="dark"] .navbar {
     backdrop-filter: saturate(180%) blur(16px);
 }
 
+.navbar__logo img {
+    border-radius: 30px;
+}
 
 
 html[data-theme='dark'] .alert {
