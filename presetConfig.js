@@ -1,4 +1,3 @@
-
 const classicConfig = {
   /**
   * @type {import('@docusaurus/preset-classic').Options} 
@@ -30,11 +29,14 @@ const classicConfig = {
         content, 
         options: {
           wordsPerMinute: 300
-        }
-      })
+      }
+    })
   },
   // 以下参数将被直接传递给 @docusaurus/plugin-content-pages （设置为 false 则表示禁用此插件）
-  // pages: {},
+  pages: {
+    path: 'src/pages',
+    include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+  }
   // 以下参数将被直接传递给 @docusaurus/plugin-content-sitemap （设置为 false 则表示禁用此插件）
   // sitemap: {},
   // Will be passed to @docusaurus/plugin-google-gtag (only enabled when explicitly specified)
