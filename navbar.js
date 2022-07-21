@@ -105,7 +105,14 @@ const nav = {
         }
       ]
     },
-    {to: 'blog', label: '博客', position: 'right'},
+    {
+      label: "其他",
+      position: "right",
+      items: [
+        { to: 'blog', label: '博客' },
+        { to: '/about/website', label: '网址导航'},
+      ]
+    },
     {
       position: "right",
       href: '/docs/source/devSource',
