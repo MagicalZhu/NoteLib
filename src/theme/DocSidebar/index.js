@@ -59,6 +59,7 @@ function HideableSidebarButton({onClick}) {
   );
 }
 
+
 function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}) {
   const showAnnouncementBar = useShowAnnouncementBar();
   const {

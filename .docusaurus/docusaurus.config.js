@@ -189,7 +189,7 @@ export default {
     "footer": {
       "links": [
         {
-          "title": "🔗前端链接",
+          "title": "前端链接",
           "items": [
             {
               "label": "Vue",
@@ -210,7 +210,7 @@ export default {
           ]
         },
         {
-          "title": "🔗后端链接",
+          "title": "后端链接",
           "items": [
             {
               "label": "Spring",
@@ -248,7 +248,7 @@ export default {
           ]
         },
         {
-          "title": "🔨文档构建",
+          "title": "文档构建",
           "items": [
             {
               "label": "Docusaurus",
