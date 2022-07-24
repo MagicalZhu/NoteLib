@@ -67,6 +67,10 @@
   "/search-79a": {
     "component": "component---theme-search-page-1-a-4-d6f"
   },
+  "/website/-7eb": {
+    "component": "component---site-src-pages-website-index-tsxb-38-5b5",
+    "config": "config---about-website-5-e-9-e03"
+  },
   "/docs-aab": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"

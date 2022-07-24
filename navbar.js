@@ -110,7 +110,7 @@ const nav = {
       position: "left",
       items: [
         { to: '/blog/internal-navigation', label: '博客' },
-        { to: '/about/website', label: '网址导航'},
+        { to: '/website', label: '网址导航'},
       ]
     },
     {

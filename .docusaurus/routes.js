@@ -79,6 +79,11 @@ export default [
     exact: true
   },
   {
+    path: '/website/',
+    component: ComponentCreator('/website/','7eb'),
+    exact: true
+  },
+  {
     path: '/docs',
     component: ComponentCreator('/docs','aab'),
     routes: [

@@ -166,7 +166,7 @@ export default {
               "label": "博客"
             },
             {
-              "to": "/about/website",
+              "to": "/website",
               "label": "网址导航"
             }
           ]

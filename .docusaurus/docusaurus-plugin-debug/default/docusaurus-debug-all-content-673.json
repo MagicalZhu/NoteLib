@@ -2316,6 +2316,11 @@
         "source": "@site/src/pages/index.js"
       },
       {
+        "type": "jsx",
+        "permalink": "/website/",
+        "source": "@site/src/pages/website/index.tsx"
+      },
+      {
         "type": "mdx",
         "permalink": "/about/",
         "source": "@site/src/pages/about/index.mdx",
