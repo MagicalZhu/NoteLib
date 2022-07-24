@@ -149,7 +149,8 @@ const mysqlPart =  new Category('MySQL基础与高级')
       'MySQL逻辑架构',
       '索引',
       'InnoDB存储结构',
-      '设计索引'
+      '设计索引',
+      '性能优化'
     ])
     
 

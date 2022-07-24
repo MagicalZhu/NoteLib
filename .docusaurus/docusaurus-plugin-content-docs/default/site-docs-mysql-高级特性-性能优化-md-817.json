@@ -1,0 +1,22 @@
+{
+  "unversionedId": "Mysql/高级特性/性能优化",
+  "id": "Mysql/高级特性/性能优化",
+  "title": "性能优化",
+  "description": "",
+  "source": "@site/docs/Mysql/高级特性/性能优化.md",
+  "sourceDirName": "Mysql/高级特性",
+  "slug": "/Mysql/高级特性/性能优化",
+  "permalink": "/docs/Mysql/高级特性/性能优化",
+  "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能优化.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "性能优化",
+    "title": "性能优化"
+  },
+  "sidebar": "mysqlSideBar",
+  "previous": {
+    "title": "设计索引",
+    "permalink": "/docs/Mysql/高级特性/设计索引"
+  }
+}

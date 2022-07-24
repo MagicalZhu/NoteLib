@@ -394,6 +394,12 @@
                 "label": "设计索引",
                 "href": "/docs/Mysql/高级特性/设计索引",
                 "docId": "Mysql/高级特性/设计索引"
+              },
+              {
+                "type": "link",
+                "label": "性能优化",
+                "href": "/docs/Mysql/高级特性/性能优化",
+                "docId": "Mysql/高级特性/性能优化"
               }
             ],
             "collapsed": true,
@@ -674,6 +680,12 @@
       "id": "Mysql/高级特性/索引",
       "title": "索引",
       "description": "为什么使用索引",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/性能优化": {
+      "id": "Mysql/高级特性/性能优化",
+      "title": "性能优化",
+      "description": "",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/用户权限管理": {

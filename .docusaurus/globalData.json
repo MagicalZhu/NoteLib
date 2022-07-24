@@ -168,6 +168,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/性能优化",
+              "path": "/docs/Mysql/高级特性/性能优化",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/用户权限管理",
               "path": "/docs/Mysql/高级特性/用户权限管理",
               "sidebar": "mysqlSideBar"
