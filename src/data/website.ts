@@ -248,7 +248,7 @@ export const websiteData: WebsiteCategory[] = [
         "name": "Vue",
         "desc": "Vue",
         "logo": "/img/website/vue.svg",
-        "href": "https://v3.cn.vuejs.org/",
+        "href": "https://staging-cn.vuejs.org/",
         "tags": [""]
       },
       {
