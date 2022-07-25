@@ -494,7 +494,7 @@ export default {
     },
     "algolia": {
       "appId": "4FYW54E03N",
-      "apiKey": "d96a8fa80034d02b65ce66a9987b37c3",
+      "apiKey": "d5a81b60d2a122c88f05c6c71cac5f03",
       "indexName": "huakucha",
       "contextualSearch": true,
       "searchParameters": {},

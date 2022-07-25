@@ -31,9 +31,6 @@ html[data-theme="dark"] {
 html[data-theme="light"] {
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
 }
-html[data-theme="light"] .dropdown > .navbar__link:after {
-  background: url('../../static//img/chevron-down.svg');
-}
 
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
