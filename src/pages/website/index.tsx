@@ -61,18 +61,12 @@ export default function Websites() {
   return (
     <>
       <Layout>
-        <header className={styles.hero}>
-          <div className='container'>
-            <h1 className={styles.heroTitle}>{title}</h1>
-            <p className={styles.heroDesc}>{description}</p>
-          </div>
-        </header>
         <div className='container margin-top--md'>
           <div className='row'>
-            <aside className='col col--1'>
+            <aside className='col col--2'>
               <CategoryNav />
             </aside>
-            <main className='col col--11'>
+            <main className='col col--10'>
               <CategoryList />
             </main>
           </div>
