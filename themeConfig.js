@@ -34,7 +34,7 @@ const themeConfig = {
   },
   algolia: {
     appId: '4FYW54E03N',
-    apiKey: '559b00cc2cd6efa1e21067f8badac837',
+    apiKey: 'd5a81b60d2a122c88f05c6c71cac5f03',
     indexName: 'huakucha',
     contextualSearch: true,
   },
