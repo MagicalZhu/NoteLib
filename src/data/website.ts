@@ -304,6 +304,13 @@ export const websiteData: WebsiteCategory[] = [
         "logo": "/img/website/react-spring.ico",
         "href": "https://react-spring.dev",
         "tags": [""]
+      },
+      {
+        "name": "Cloudscape",
+        "desc": "通过简单的动画基元使您的组件栩栩如生",
+        "logo": "https://avatars.githubusercontent.com/u/107056549?s=200&v=4",
+        "href": "https://cloudscape.design/get-started/guides/introduction/",
+        "tags": [""]
       }
     ]
   },
