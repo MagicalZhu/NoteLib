@@ -131,7 +131,7 @@ const ConcurrencySafe =  new Category('并发基础')
 // 并发编程相关  
 const basicSideBar = [
   createDoc('并发编程/currency_about', '简介'),
-  // createDoc('concurrency/juc_basic', 'juc基础'),
+  createDoc('concurrency/juc_basic', 'juc基础'),
   ConcurrencySafe,
 ]
 
