@@ -1,7 +1,7 @@
 {
   "unversionedId": "并发编程/juc基础",
   "id": "并发编程/juc基础",
-  "title": "juc基础",
+  "title": "并发包基础",
   "description": "JUC基础知识概述",
   "source": "@site/docs/并发编程/1.1JUC基础.md",
   "sourceDirName": "并发编程",
@@ -12,7 +12,7 @@
   "version": "current",
   "frontMatter": {
     "id": "juc基础",
-    "title": "juc基础"
+    "title": "并发包基础"
   },
   "sidebar": "basicSideBar",
   "previous": {

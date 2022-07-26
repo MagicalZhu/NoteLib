@@ -16,7 +16,7 @@
       },
       {
         "type": "link",
-        "label": "juc基础",
+        "label": "并发包基础",
         "href": "/docs/并发编程/juc基础",
         "docId": "并发编程/juc基础"
       },
@@ -590,7 +590,7 @@
     },
     "并发编程/juc基础": {
       "id": "并发编程/juc基础",
-      "title": "juc基础",
+      "title": "并发包基础",
       "description": "JUC基础知识概述",
       "sidebar": "basicSideBar"
     },

@@ -4,7 +4,7 @@
   "permalink": "/docs/category/并发基础",
   "navigation": {
     "previous": {
-      "title": "juc基础",
+      "title": "并发包基础",
       "permalink": "/docs/并发编程/juc基础"
     },
     "next": {
