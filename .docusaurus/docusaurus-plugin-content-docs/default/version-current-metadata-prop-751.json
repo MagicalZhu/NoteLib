@@ -15,6 +15,12 @@
         "docId": "并发编程/currency_about"
       },
       {
+        "type": "link",
+        "label": "juc基础",
+        "href": "/docs/并发编程/juc基础",
+        "docId": "并发编程/juc基础"
+      },
+      {
         "type": "category",
         "label": "并发基础",
         "items": [
@@ -580,6 +586,12 @@
       "id": "并发编程/currency_about",
       "title": "并发笔记概述",
       "description": "并发首页",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/juc基础": {
+      "id": "并发编程/juc基础",
+      "title": "juc基础",
+      "description": "JUC基础知识概述",
       "sidebar": "basicSideBar"
     },
     "定时任务/job": {

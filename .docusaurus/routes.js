@@ -39,16 +39,6 @@ export default [
     exact: true
   },
   {
-    path: '/about/',
-    component: ComponentCreator('/about/','60e'),
-    exact: true
-  },
-  {
-    path: '/about/website',
-    component: ComponentCreator('/about/website','575'),
-    exact: true
-  },
-  {
     path: '/blog',
     component: ComponentCreator('/blog','30d'),
     exact: true
@@ -85,7 +75,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','aab'),
+    component: ComponentCreator('/docs','bdc'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -168,6 +158,12 @@ export default [
       {
         path: '/docs/并发编程/并发控制/ThreadLocal',
         component: ComponentCreator('/docs/并发编程/并发控制/ThreadLocal','70a'),
+        exact: true,
+        'sidebar': "basicSideBar"
+      },
+      {
+        path: '/docs/并发编程/juc基础',
+        component: ComponentCreator('/docs/并发编程/juc基础','0b3'),
         exact: true,
         'sidebar': "basicSideBar"
       },

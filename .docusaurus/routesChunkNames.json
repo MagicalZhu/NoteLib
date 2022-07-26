@@ -21,14 +21,6 @@
   "/__docusaurus/debug/routes-244": {
     "component": "component---theme-debug-routes-946-699"
   },
-  "/about/-60e": {
-    "component": "component---theme-mdx-page-1-f-3-b90",
-    "content": "content---about-f-22-13e"
-  },
-  "/about/website-575": {
-    "component": "component---site-src-pages-about-website-tsx-0-b-7-a92",
-    "config": "config---about-website-5-e-9-e03"
-  },
   "/blog-30d": {
     "component": "component---theme-blog-list-pagea-6-a-7ba",
     "sidebar": "sidebar---blog-814-8ac",
@@ -69,9 +61,9 @@
   },
   "/website/-7eb": {
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
-    "config": "config---about-website-5-e-9-e03"
+    "config": "config---website-5-e-9-af4"
   },
-  "/docs-aab": {
+  "/docs-bdc": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -130,6 +122,10 @@
   "/docs/并发编程/并发控制/ThreadLocal-70a": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-并发编程-并发控制-thread-local-732-112"
+  },
+  "/docs/并发编程/juc基础-0b3": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-并发编程-juc基础d-2-e-2dc"
   },
   "/docs/计算机网络/HTTP/http-protocol-394": {
     "component": "component---theme-doc-item-178-a40",
@@ -393,6 +389,6 @@
   },
   "/-deb": {
     "component": "component---site-src-pages-index-jsc-4-f-f99",
-    "config": "config---about-website-5-e-9-e03"
+    "config": "config---website-5-e-9-af4"
   }
 }

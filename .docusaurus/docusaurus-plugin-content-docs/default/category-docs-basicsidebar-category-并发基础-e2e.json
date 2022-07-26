@@ -4,8 +4,8 @@
   "permalink": "/docs/category/并发基础",
   "navigation": {
     "previous": {
-      "title": "并发笔记概述",
-      "permalink": "/docs/currency"
+      "title": "juc基础",
+      "permalink": "/docs/并发编程/juc基础"
     },
     "next": {
       "title": "并发安全",

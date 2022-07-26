@@ -86,6 +86,11 @@
               "sidebar": "basicSideBar"
             },
             {
+              "id": "并发编程/juc基础",
+              "path": "/docs/并发编程/juc基础",
+              "sidebar": "basicSideBar"
+            },
+            {
               "id": "定时任务/job",
               "path": "/docs/job"
             },
