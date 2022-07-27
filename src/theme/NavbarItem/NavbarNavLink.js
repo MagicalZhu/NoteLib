@@ -64,7 +64,7 @@ export default function NavbarNavLink({
         </span>
       ) : (
         label
-      )}
+        )}
     </Link>
   );
 }

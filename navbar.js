@@ -23,7 +23,7 @@ const nav = {
   // 设置导航条上的元素
   items: [
     {
-      label: "基础知识",
+      label: "🤖基础知识",
       position: "left",
       items: [
         {
@@ -49,7 +49,7 @@ const nav = {
       ]
     },
     {
-      label: "后端框架",
+      label: "👨‍💻后端框架",
       position: "left",
       items: [
         {
@@ -63,7 +63,7 @@ const nav = {
       ]
     },
     {
-      label: "分布式系统",
+      label: "🚀分布式系统",
       position: "left",
       items: [
         {
@@ -96,7 +96,7 @@ const nav = {
       ]
     },
     {
-      label: "前端技术",
+      label: "👩‍💻前端技术",
       position: "left",
       items: [
         {
@@ -106,7 +106,7 @@ const nav = {
       ]
     },
     {
-      label: "其他",
+      label: "👋其他",
       position: "left",
       items: [
         { to: '/blog/internal-navigation', label: '博客' },
