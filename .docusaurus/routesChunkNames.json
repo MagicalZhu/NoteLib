@@ -21,10 +21,13 @@
   "/__docusaurus/debug/routes-244": {
     "component": "component---theme-debug-routes-946-699"
   },
-  "/blog-30d": {
+  "/blog-69e": {
     "component": "component---theme-blog-list-pagea-6-a-7ba",
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blogf-1-f-466"
+      },
       {
         "content": "content---blog-87-e-167"
       }
@@ -34,6 +37,11 @@
   "/blog/archive-f4c": {
     "component": "component---theme-blog-archive-page-9-e-4-1d8",
     "archive": "archive---blog-archiveb-2-f-393"
+  },
+  "/blog/gotConcurrencyAli-5c7": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-got-concurrency-ali-060-080"
   },
   "/blog/internal-navigation-bf2": {
     "component": "component---theme-blog-post-pageccc-cab",
@@ -55,6 +63,39 @@
     ],
     "metadata": "metadata---blog-tags-分享-808-9cc",
     "listMetadata": "listMetadata---blog-tags-分享ff-1-d86"
+  },
+  "/blog/tags/高并发-ea6": {
+    "component": "component---theme-blog-tags-posts-page-687-b6c",
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-1-f-466"
+      }
+    ],
+    "metadata": "metadata---blog-tags-高并发fd-8-351",
+    "listMetadata": "listMetadata---blog-tags-高并发-350-c77"
+  },
+  "/blog/tags/学习-460": {
+    "component": "component---theme-blog-tags-posts-page-687-b6c",
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-1-f-466"
+      }
+    ],
+    "metadata": "metadata---blog-tags-学习-66-a-be6",
+    "listMetadata": "listMetadata---blog-tags-学习-41-a-c87"
+  },
+  "/blog/tags/alibaba-3fc": {
+    "component": "component---theme-blog-tags-posts-page-687-b6c",
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-1-f-466"
+      }
+    ],
+    "metadata": "metadata---blog-tags-alibaba-7-a-5-185",
+    "listMetadata": "listMetadata---blog-tags-alibaba-425-658"
   },
   "/search-79a": {
     "component": "component---theme-search-page-1-a-4-d6f"

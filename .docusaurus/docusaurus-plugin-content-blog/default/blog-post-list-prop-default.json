@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "如何获得高并发的经验?",
+      "permalink": "/blog/gotConcurrencyAli"
+    },
+    {
       "title": "网站导航",
       "permalink": "/blog/internal-navigation"
     }

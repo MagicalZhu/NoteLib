@@ -162,7 +162,7 @@ export default {
           "position": "left",
           "items": [
             {
-              "to": "/blog/internal-navigation",
+              "to": "/blog",
               "label": "博客"
             },
             {

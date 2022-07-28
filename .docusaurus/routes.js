@@ -40,12 +40,17 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog','30d'),
+    component: ComponentCreator('/blog','69e'),
     exact: true
   },
   {
     path: '/blog/archive',
     component: ComponentCreator('/blog/archive','f4c'),
+    exact: true
+  },
+  {
+    path: '/blog/gotConcurrencyAli',
+    component: ComponentCreator('/blog/gotConcurrencyAli','5c7'),
     exact: true
   },
   {
@@ -61,6 +66,21 @@ export default [
   {
     path: '/blog/tags/分享',
     component: ComponentCreator('/blog/tags/分享','ec7'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/高并发',
+    component: ComponentCreator('/blog/tags/高并发','ea6'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/学习',
+    component: ComponentCreator('/blog/tags/学习','460'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/alibaba',
+    component: ComponentCreator('/blog/tags/alibaba','3fc'),
     exact: true
   },
   {

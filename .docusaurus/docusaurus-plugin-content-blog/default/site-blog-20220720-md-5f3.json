@@ -35,5 +35,9 @@
     "image": "https://i.imgur.com/mErPwqL.png",
     "hide_table_of_contents": false,
     "date": "2022-07-20T00:00:00.000Z"
+  },
+  "prevItem": {
+    "title": "如何获得高并发的经验?",
+    "permalink": "/blog/gotConcurrencyAli"
   }
 }
