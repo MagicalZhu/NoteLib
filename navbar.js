@@ -109,7 +109,7 @@ const nav = {
       label: "👋其他",
       position: "left",
       items: [
-        { to: '/blog/internal-navigation', label: '博客' },
+        { to: '/blog', label: '博客' },
         { to: '/website', label: '网址导航'},
       ]
     },
