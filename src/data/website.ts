@@ -17,6 +17,41 @@ export const websiteData: WebsiteCategory[] = [
     "name": "博客站点",
     "websites": [
       {
+        "name": "Java程序员进阶之路",
+        "desc": "一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点",
+        "logo": "http://cdn.tobebetterjavaer.com/tobebetterjavaer/images/logo.png",
+        "href": "https://tobebetterjavaer.com/",
+        "tags": [""]
+      },
+      {
+        "name": "虫洞栈",
+        "desc": "包含: Java 基础，面经手册，Netty4.x，手写Spring，用Java实现JVM，重学Java设计模式，SpringBoot中间件开发，IDEA插件开发，DDD系统架构项目开发，字节码编程...",
+        "logo": "https://bugstack.cn/favicon.ico",
+        "href": "https://bugstack.cn/",
+        "tags": [""]
+      },
+      {
+        "name": "JavaGuide",
+        "desc": "「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识",
+        "logo": "	https://javaguide.cn/logo.svg",
+        "href": "https://javaguide.cn/",
+        "tags": [""]
+      },
+       {
+        "name": "LABULADONG 的算法网站",
+        "desc": "一个不错的算法与数据结构的学习网站",
+        "logo": "https://labuladong.github.io/algo/images/avatar.png",
+        "href": "https://labuladong.github.io/algo/",
+        "tags": [""]
+      },
+      {
+        "name": "设计模式",
+        "desc": "一个不错的算法与数据结构的学习网站",
+        "logo": "https://refactoringguru.cn/favicon.png",
+        "href": "https://refactoringguru.cn/design-patterns",
+        "tags": [""]
+      },
+      {
         "name": "Node.js技术栈",
         "desc": "“Nodejs技术栈” 是作者 @五月君 从事 Node.js 开发以来的学习历程，希望这些分享能帮助到正在学习、使用 Node.js 的朋友们",
         "logo": "/img/website/nodeTech.jpeg",
