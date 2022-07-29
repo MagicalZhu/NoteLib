@@ -3,6 +3,7 @@
 :root {
   --ifm-color-scheme: light;
   --ifm-container-width: 75%;
+  --ifm-container-width-xl: 85%;
   --ifm-paragraph-margin-bottom: 1px;
 
   /* Colors. */

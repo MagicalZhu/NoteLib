@@ -110,22 +110,24 @@ export default function BackToTopButton() {
     }
   });
   return (
-    <button
-      aria-label={translate({
-        id: 'theme.BackToTopButton.buttonAriaLabel',
-        message: 'Scroll back to top',
-        description: 'The ARIA label for the back to top button',
-      })}
-      className={clsx(
-        'clean-btn',
-        ThemeClassNames.common.backToTopButton,
-        styles.backToTopButton,
-        {
-          [styles.backToTopButtonShow]: show,
-        },
-      )}
-      type="button"
-      onClick={() => smoothScrollTop()}
-    />
+    <>
+      <button
+        aria-label={translate({
+          id: 'theme.BackToTopButton.buttonAriaLabel',
+          message: 'Scroll back to top',
+          description: 'The ARIA label for the back to top button',
+        })}
+        className={clsx(
+          'clean-btn',
+          ThemeClassNames.common.backToTopButton,
+          styles.backToTopButton,
+          {
+            [styles.backToTopButtonShow]: show,
+          },
+        )}
+        type="button"
+        onClick={() => smoothScrollTop()}
+      />
+    </>
   );
 }

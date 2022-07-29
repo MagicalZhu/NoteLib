@@ -122,8 +122,9 @@ function DocPageContent({
               {
                 [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
               },
-            )}>
-            <MDXProvider components={MDXComponents}>{children}</MDXProvider>
+              )}>
+            <MDXProvider components={MDXComponents}>{children}
+            </MDXProvider>
           </div>
         </main>
       </div>
