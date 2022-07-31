@@ -82,7 +82,7 @@ export const websiteData: WebsiteCategory[] = [
     ]
   },
   {
-    "name": "工具箱",
+    "name": "工具",
     "websites": [
       {
         "name": "程序员盒子",
@@ -100,9 +100,16 @@ export const websiteData: WebsiteCategory[] = [
       },
       {
         "name": "NGINX 配置",
-        "desc": "配置高性能、安全、稳定的NGINX服务器的最简单方法。",
+        "desc": "配置高性能、安全、稳定的NGINX服务器的最简单方法",
         "logo": "/img/website/nginxConfig.png",
         "href": "https://www.digitalocean.com/community/tools/nginx",
+        "tags": []
+      },
+      {
+        "name": "Hubot",
+        "desc": "开源聊天机器人，可以用来做一些自动化任务，如部署网站，翻译语言等等",
+        "logo": "https://hubot.github.com/assets/images/layout/hubot-avatar@2x.png",
+        "href": "https://hubot.github.com/docs/",
         "tags": []
       }
     ]
