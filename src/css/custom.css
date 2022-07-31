@@ -516,3 +516,8 @@ a.card-link:hover img {
 .authority-availability {
   user-select: none;
 }
+
+
+.dropdown > .navbar__link:after {
+  border-style: none;
+}
