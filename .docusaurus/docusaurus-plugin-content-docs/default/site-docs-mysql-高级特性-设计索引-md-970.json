@@ -21,7 +21,7 @@
     "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
   },
   "next": {
-    "title": "性能优化",
-    "permalink": "/docs/Mysql/高级特性/性能优化"
+    "title": "性能分析工具",
+    "permalink": "/docs/Mysql/高级特性/性能分析工具"
   }
 }

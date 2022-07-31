@@ -403,9 +403,9 @@
               },
               {
                 "type": "link",
-                "label": "性能优化",
-                "href": "/docs/Mysql/高级特性/性能优化",
-                "docId": "Mysql/高级特性/性能优化"
+                "label": "性能分析工具",
+                "href": "/docs/Mysql/高级特性/性能分析工具",
+                "docId": "Mysql/高级特性/性能分析工具"
               }
             ],
             "collapsed": true,
@@ -694,10 +694,10 @@
       "description": "为什么使用索引",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/性能优化": {
-      "id": "Mysql/高级特性/性能优化",
-      "title": "性能优化",
-      "description": "",
+    "Mysql/高级特性/性能分析工具": {
+      "id": "Mysql/高级特性/性能分析工具",
+      "title": "性能分析工具",
+      "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/用户权限管理": {

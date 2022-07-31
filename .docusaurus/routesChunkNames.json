@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-bdc": {
+  "/docs-0a5": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -300,9 +300,9 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-索引-2-a-4-365"
   },
-  "/docs/Mysql/高级特性/性能优化-3a0": {
+  "/docs/Mysql/高级特性/性能分析工具-bb7": {
     "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-mysql-高级特性-性能优化-817-d9b"
+    "content": "content---docs-mysql-高级特性-性能优化-6-c-5-ec2"
   },
   "/docs/Mysql/高级特性/用户权限管理-5a2": {
     "component": "component---theme-doc-item-178-a40",

@@ -774,8 +774,8 @@
                 "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
               },
               "next": {
-                "title": "性能优化",
-                "permalink": "/docs/Mysql/高级特性/性能优化"
+                "title": "性能分析工具",
+                "permalink": "/docs/Mysql/高级特性/性能分析工具"
               }
             },
             {
@@ -805,20 +805,20 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/性能优化",
-              "id": "Mysql/高级特性/性能优化",
-              "title": "性能优化",
-              "description": "",
-              "source": "@site/docs/Mysql/高级特性/性能优化.md",
+              "unversionedId": "Mysql/高级特性/性能分析工具",
+              "id": "Mysql/高级特性/性能分析工具",
+              "title": "性能分析工具",
+              "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式",
+              "source": "@site/docs/Mysql/高级特性/性能分析工具.md",
               "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/性能优化",
-              "permalink": "/docs/Mysql/高级特性/性能优化",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能优化.md",
+              "slug": "/Mysql/高级特性/性能分析工具",
+              "permalink": "/docs/Mysql/高级特性/性能分析工具",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能分析工具.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "性能优化",
-                "title": "性能优化"
+                "id": "性能分析工具",
+                "title": "性能分析工具"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
@@ -1918,7 +1918,7 @@
                       },
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/性能优化"
+                        "id": "Mysql/高级特性/性能分析工具"
                       }
                     ],
                     "collapsed": true,
