@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-0a5": {
+  "/docs-cdb": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -299,6 +299,10 @@
   "/docs/Mysql/高级特性/索引-f13": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-索引-2-a-4-365"
+  },
+  "/docs/Mysql/高级特性/索引与查询优化-bb0": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-索引与查询优化-943-b02"
   },
   "/docs/Mysql/高级特性/性能分析工具-bb7": {
     "component": "component---theme-doc-item-178-a40",

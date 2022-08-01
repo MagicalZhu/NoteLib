@@ -805,6 +805,28 @@
               }
             },
             {
+              "unversionedId": "Mysql/高级特性/索引与查询优化",
+              "id": "Mysql/高级特性/索引与查询优化",
+              "title": "索引与查询优化",
+              "description": "",
+              "source": "@site/docs/Mysql/高级特性/索引与查询优化.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/索引与查询优化",
+              "permalink": "/docs/Mysql/高级特性/索引与查询优化",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引与查询优化.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "索引与查询优化",
+                "title": "索引与查询优化"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "性能分析工具",
+                "permalink": "/docs/Mysql/高级特性/性能分析工具"
+              }
+            },
+            {
               "unversionedId": "Mysql/高级特性/性能分析工具",
               "id": "Mysql/高级特性/性能分析工具",
               "title": "性能分析工具",
@@ -824,6 +846,10 @@
               "previous": {
                 "title": "设计索引",
                 "permalink": "/docs/Mysql/高级特性/设计索引"
+              },
+              "next": {
+                "title": "索引与查询优化",
+                "permalink": "/docs/Mysql/高级特性/索引与查询优化"
               }
             },
             {
@@ -1919,6 +1945,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/性能分析工具"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/索引与查询优化"
                       }
                     ],
                     "collapsed": true,

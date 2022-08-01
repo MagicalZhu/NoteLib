@@ -173,6 +173,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/索引与查询优化",
+              "path": "/docs/Mysql/高级特性/索引与查询优化",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/性能分析工具",
               "path": "/docs/Mysql/高级特性/性能分析工具",
               "sidebar": "mysqlSideBar"
