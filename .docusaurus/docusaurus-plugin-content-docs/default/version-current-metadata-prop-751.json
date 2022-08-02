@@ -412,6 +412,12 @@
                 "label": "索引与查询优化",
                 "href": "/docs/Mysql/高级特性/索引与查询优化",
                 "docId": "Mysql/高级特性/索引与查询优化"
+              },
+              {
+                "type": "link",
+                "label": "数据库设计规范",
+                "href": "/docs/Mysql/高级特性/数据库设计规范",
+                "docId": "Mysql/高级特性/数据库设计规范"
               }
             ],
             "collapsed": true,
@@ -694,6 +700,12 @@
       "description": "使用索引",
       "sidebar": "mysqlSideBar"
     },
+    "Mysql/高级特性/数据库设计规范": {
+      "id": "Mysql/高级特性/数据库设计规范",
+      "title": "数据库设计规范",
+      "description": "",
+      "sidebar": "mysqlSideBar"
+    },
     "Mysql/高级特性/索引": {
       "id": "Mysql/高级特性/索引",
       "title": "索引",
@@ -703,7 +715,7 @@
     "Mysql/高级特性/索引与查询优化": {
       "id": "Mysql/高级特性/索引与查询优化",
       "title": "索引与查询优化",
-      "description": "",
+      "description": "都有哪些维度可以进行数据库调优?大体上说:",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/性能分析工具": {
