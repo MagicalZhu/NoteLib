@@ -418,6 +418,18 @@
                 "label": "数据库设计规范",
                 "href": "/docs/Mysql/高级特性/数据库设计规范",
                 "docId": "Mysql/高级特性/数据库设计规范"
+              },
+              {
+                "type": "link",
+                "label": "数据库其他调优策略",
+                "href": "/docs/Mysql/高级特性/数据库其他调优策略",
+                "docId": "Mysql/高级特性/数据库其他调优策略"
+              },
+              {
+                "type": "link",
+                "label": "事务",
+                "href": "/docs/Mysql/高级特性/事务",
+                "docId": "Mysql/高级特性/事务"
               }
             ],
             "collapsed": true,
@@ -700,10 +712,22 @@
       "description": "使用索引",
       "sidebar": "mysqlSideBar"
     },
+    "Mysql/高级特性/事务": {
+      "id": "Mysql/高级特性/事务",
+      "title": "事务",
+      "description": "",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/数据库其他调优策略": {
+      "id": "Mysql/高级特性/数据库其他调优策略",
+      "title": "数据库其他调优策略",
+      "description": "数据库调优的策略",
+      "sidebar": "mysqlSideBar"
+    },
     "Mysql/高级特性/数据库设计规范": {
       "id": "Mysql/高级特性/数据库设计规范",
       "title": "数据库设计规范",
-      "description": "",
+      "description": "为什么需要数据库设计",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/索引": {

@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','53a'),
+    component: ComponentCreator('/docs','211'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -369,6 +369,18 @@ export default [
       {
         path: '/docs/Mysql/高级特性/设计索引',
         component: ComponentCreator('/docs/Mysql/高级特性/设计索引','d16'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/事务',
+        component: ComponentCreator('/docs/Mysql/高级特性/事务','151'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/数据库其他调优策略',
+        component: ComponentCreator('/docs/Mysql/高级特性/数据库其他调优策略','ef6'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

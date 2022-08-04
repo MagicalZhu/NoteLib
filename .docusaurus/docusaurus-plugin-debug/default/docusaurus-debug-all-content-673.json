@@ -779,10 +779,58 @@
               }
             },
             {
+              "unversionedId": "Mysql/高级特性/事务",
+              "id": "Mysql/高级特性/事务",
+              "title": "事务",
+              "description": "",
+              "source": "@site/docs/Mysql/高级特性/事务.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/事务",
+              "permalink": "/docs/Mysql/高级特性/事务",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/事务.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "事务",
+                "title": "事务"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "数据库其他调优策略",
+                "permalink": "/docs/Mysql/高级特性/数据库其他调优策略"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/数据库其他调优策略",
+              "id": "Mysql/高级特性/数据库其他调优策略",
+              "title": "数据库其他调优策略",
+              "description": "数据库调优的策略",
+              "source": "@site/docs/Mysql/高级特性/数据库其他调优策略.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/数据库其他调优策略",
+              "permalink": "/docs/Mysql/高级特性/数据库其他调优策略",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/数据库其他调优策略.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "数据库其他调优策略",
+                "title": "数据库其他调优策略"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "数据库设计规范",
+                "permalink": "/docs/Mysql/高级特性/数据库设计规范"
+              },
+              "next": {
+                "title": "事务",
+                "permalink": "/docs/Mysql/高级特性/事务"
+              }
+            },
+            {
               "unversionedId": "Mysql/高级特性/数据库设计规范",
               "id": "Mysql/高级特性/数据库设计规范",
               "title": "数据库设计规范",
-              "description": "",
+              "description": "为什么需要数据库设计",
               "source": "@site/docs/Mysql/高级特性/数据库设计规范.md",
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/数据库设计规范",
@@ -798,6 +846,10 @@
               "previous": {
                 "title": "索引与查询优化",
                 "permalink": "/docs/Mysql/高级特性/索引与查询优化"
+              },
+              "next": {
+                "title": "数据库其他调优策略",
+                "permalink": "/docs/Mysql/高级特性/数据库其他调优策略"
               }
             },
             {
@@ -1979,6 +2031,14 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/数据库设计规范"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/数据库其他调优策略"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/事务"
                       }
                     ],
                     "collapsed": true,

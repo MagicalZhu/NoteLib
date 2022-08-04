@@ -168,6 +168,16 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/事务",
+              "path": "/docs/Mysql/高级特性/事务",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/数据库其他调优策略",
+              "path": "/docs/Mysql/高级特性/数据库其他调优策略",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/数据库设计规范",
               "path": "/docs/Mysql/高级特性/数据库设计规范",
               "sidebar": "mysqlSideBar"
