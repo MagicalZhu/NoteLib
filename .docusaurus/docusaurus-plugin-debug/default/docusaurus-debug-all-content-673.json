@@ -779,20 +779,20 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/事务",
-              "id": "Mysql/高级特性/事务",
-              "title": "事务",
-              "description": "",
-              "source": "@site/docs/Mysql/高级特性/事务.md",
+              "unversionedId": "Mysql/高级特性/事务基础",
+              "id": "Mysql/高级特性/事务基础",
+              "title": "事务基础",
+              "description": "数据库事务",
+              "source": "@site/docs/Mysql/高级特性/事务基础.md",
               "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/事务",
-              "permalink": "/docs/Mysql/高级特性/事务",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/事务.md",
+              "slug": "/Mysql/高级特性/事务基础",
+              "permalink": "/docs/Mysql/高级特性/事务基础",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/事务基础.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "事务",
-                "title": "事务"
+                "id": "事务基础",
+                "title": "事务基础"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
@@ -822,8 +822,8 @@
                 "permalink": "/docs/Mysql/高级特性/数据库设计规范"
               },
               "next": {
-                "title": "事务",
-                "permalink": "/docs/Mysql/高级特性/事务"
+                "title": "事务基础",
+                "permalink": "/docs/Mysql/高级特性/事务基础"
               }
             },
             {
@@ -2038,7 +2038,7 @@
                       },
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/事务"
+                        "id": "Mysql/高级特性/事务基础"
                       }
                     ],
                     "collapsed": true,

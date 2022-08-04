@@ -168,8 +168,8 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/事务",
-              "path": "/docs/Mysql/高级特性/事务",
+              "id": "Mysql/高级特性/事务基础",
+              "path": "/docs/Mysql/高级特性/事务基础",
               "sidebar": "mysqlSideBar"
             },
             {

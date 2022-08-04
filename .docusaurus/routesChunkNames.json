@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-211": {
+  "/docs-e0e": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -296,9 +296,9 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-设计索引-970-5e2"
   },
-  "/docs/Mysql/高级特性/事务-151": {
+  "/docs/Mysql/高级特性/事务基础-966": {
     "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-mysql-高级特性-事务-289-ec0"
+    "content": "content---docs-mysql-高级特性-事务基础b-56-d2e"
   },
   "/docs/Mysql/高级特性/数据库其他调优策略-ef6": {
     "component": "component---theme-doc-item-178-a40",

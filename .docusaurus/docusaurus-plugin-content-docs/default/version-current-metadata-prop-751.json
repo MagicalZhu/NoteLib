@@ -427,9 +427,9 @@
               },
               {
                 "type": "link",
-                "label": "事务",
-                "href": "/docs/Mysql/高级特性/事务",
-                "docId": "Mysql/高级特性/事务"
+                "label": "事务基础",
+                "href": "/docs/Mysql/高级特性/事务基础",
+                "docId": "Mysql/高级特性/事务基础"
               }
             ],
             "collapsed": true,
@@ -712,10 +712,10 @@
       "description": "使用索引",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/事务": {
-      "id": "Mysql/高级特性/事务",
-      "title": "事务",
-      "description": "",
+    "Mysql/高级特性/事务基础": {
+      "id": "Mysql/高级特性/事务基础",
+      "title": "事务基础",
+      "description": "数据库事务",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/数据库其他调优策略": {
