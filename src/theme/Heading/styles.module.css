@@ -19,14 +19,16 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
 }
 
 :global(.hash-link) {
-  opacity: 0;
-  padding-left: 0.5rem;
+  opacity: 1;
+  padding-right: 0.5rem;
   transition: opacity var(--ifm-transition-fast);
   user-select: none;
 }
 
 :global(.hash-link::before) {
   content: '#';
+  float: left;
+  padding-right: 10px;
 }
 
 :global(.hash-link:focus),

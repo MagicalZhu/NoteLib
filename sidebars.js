@@ -155,6 +155,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
       '数据库设计规范',
       '数据库其他调优策略',
       '事务基础',
+      '事务日志'
     ])
     
 

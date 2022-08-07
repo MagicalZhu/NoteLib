@@ -430,6 +430,12 @@
                 "label": "事务基础",
                 "href": "/docs/Mysql/高级特性/事务基础",
                 "docId": "Mysql/高级特性/事务基础"
+              },
+              {
+                "type": "link",
+                "label": "事务日志",
+                "href": "/docs/Mysql/高级特性/事务日志",
+                "docId": "Mysql/高级特性/事务日志"
               }
             ],
             "collapsed": true,
@@ -716,6 +722,12 @@
       "id": "Mysql/高级特性/事务基础",
       "title": "事务基础",
       "description": "数据库事务",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/事务日志": {
+      "id": "Mysql/高级特性/事务日志",
+      "title": "事务日志",
+      "description": "事务有4种特性: 原子性、一致性、隔离性和持久性。那么事务的四种特性到底是基于什么机制实现呢?",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/数据库其他调优策略": {
