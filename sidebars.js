@@ -170,6 +170,11 @@ const netWorkSidebar = [
   createDoc('计算机网络/HTTP/http-protocol', 'HTTP协议')
 ]
 
+// Linux相关  
+const linuxSideBar = [
+  createDoc('Linux/linuxCommand', 'Linux命令'),
+]
+
 //LeetCode 刷题
 const leetCodeSidebar = [
   createDoc('LeetCode刷题笔记/leetCode', '简介'),
@@ -253,6 +258,7 @@ const vueSideBar = [
 
 const sidebars = {
   basicSideBar,
+  linuxSideBar,
   sourceSideBar,
   springSideBar,
   springCloudSideBar,
