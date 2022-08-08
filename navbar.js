@@ -35,6 +35,10 @@ const nav = {
           to: 'docs/networrk-basic',
         },
         {
+          label: "Linux",
+          to: 'docs/linuxCommand',
+        },
+        {
           label: "数据结构与算法",
           to: 'docs/dataStructure',
         },
