@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','828'),
+    component: ComponentCreator('/docs','7f1'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -354,6 +354,12 @@ export default [
         component: ComponentCreator('/docs/LeetCode刷题笔记/illustrationOfAlgorithm','d37'),
         exact: true,
         'sidebar': "leetCodeSidebar"
+      },
+      {
+        path: '/docs/linuxCommand',
+        component: ComponentCreator('/docs/linuxCommand','ecb'),
+        exact: true,
+        'sidebar': "linuxSideBar"
       },
       {
         path: '/docs/messageQueue',

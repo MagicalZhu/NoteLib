@@ -163,6 +163,11 @@
               "sidebar": "leetCodeSidebar"
             },
             {
+              "id": "Linux/linuxCommand",
+              "path": "/docs/linuxCommand",
+              "sidebar": "linuxSideBar"
+            },
+            {
               "id": "Mysql/高级特性/设计索引",
               "path": "/docs/Mysql/高级特性/设计索引",
               "sidebar": "mysqlSideBar"
@@ -432,6 +437,12 @@
               "link": {
                 "path": "/docs/currency",
                 "label": "简介"
+              }
+            },
+            "linuxSideBar": {
+              "link": {
+                "path": "/docs/linuxCommand",
+                "label": "Linux命令"
               }
             },
             "sourceSideBar": {

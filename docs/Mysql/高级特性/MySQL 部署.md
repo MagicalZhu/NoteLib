@@ -85,6 +85,23 @@ mysqld 这个可执行文件就代表着 MySQL 服务器程序，运行这个可
 
 :::
 
+#### ### MySQL 服务器的启动
+
+> 在类Unix系统中,用来启动 MySQL服务器程序的有很多,且大部分都位于 MySQL 的 bin目录
+
+1. `mysqld`
+   - mysqld 可执行文件就是 MySQL 服务器程序,运行这个文件就可以直接启动一个 MySQL 服务器进程,**但是这个可执行文件不常用**
+2. `mysqld_safe`
+   - 是一个**启动shell脚**本,它会直接调用`mysqld`并且`持续的监控服务器的运行状态`
+   - 当服务器进程出现错误时,它还可以帮助重启服务器程序。同时它可以将服务器程序的出错信息和其他诊断信息输出到错误日志中
+3. `mysql.server`
+   - 也是一个**启动shell脚本**,它会`间接的调用 mgysqld_safe`
+   - 通过 <mark>mysql.server start</mark> 就可以启动服务器程序了
+4. `mysqld_multi`
+   - 通过`mysqld_multi` 可以管理多个服务器进程,也能报告它们的运行状态
+
+![image-20220808230402884](./image/MySQL部署/image-20220808230402884.png)
+
 ### MySQL登录
 
 1. **MySQL首次登录**

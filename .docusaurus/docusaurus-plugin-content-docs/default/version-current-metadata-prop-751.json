@@ -132,6 +132,14 @@
         "href": "/docs/category/并发基础"
       }
     ],
+    "linuxSideBar": [
+      {
+        "type": "link",
+        "label": "Linux命令",
+        "href": "/docs/linuxCommand",
+        "docId": "Linux/linuxCommand"
+      }
+    ],
     "sourceSideBar": [
       {
         "type": "link",
@@ -711,6 +719,12 @@
       "title": "LeetCode刷题笔记",
       "description": "记录 LeetCode 刷题过程",
       "sidebar": "leetCodeSidebar"
+    },
+    "Linux/linuxCommand": {
+      "id": "Linux/linuxCommand",
+      "title": "常用Linux命令",
+      "description": "收录了一些常用Linux命令",
+      "sidebar": "linuxSideBar"
     },
     "Mysql/高级特性/设计索引": {
       "id": "Mysql/高级特性/设计索引",

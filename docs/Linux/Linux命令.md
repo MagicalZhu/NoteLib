@@ -12,8 +12,8 @@ title: 常用Linux命令
 
 **使用实例**
 
-```sh
-# lsof -i:8000
+```bash
+➜ lsof -i:8000
 COMMAND   PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
 nodejs  26993 root   10u  IPv4 37999514      0t0  TCP *:8000 (LISTEN)
 ```

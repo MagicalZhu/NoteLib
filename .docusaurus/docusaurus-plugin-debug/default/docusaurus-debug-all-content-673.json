@@ -752,6 +752,25 @@
               }
             },
             {
+              "unversionedId": "Linux/linuxCommand",
+              "id": "Linux/linuxCommand",
+              "title": "常用Linux命令",
+              "description": "收录了一些常用Linux命令",
+              "source": "@site/docs/Linux/Linux命令.md",
+              "sourceDirName": "Linux",
+              "slug": "/linuxCommand",
+              "permalink": "/docs/linuxCommand",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Linux/Linux命令.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "linuxCommand",
+                "slug": "/linuxCommand",
+                "title": "常用Linux命令"
+              },
+              "sidebar": "linuxSideBar"
+            },
+            {
               "unversionedId": "Mysql/高级特性/设计索引",
               "id": "Mysql/高级特性/设计索引",
               "title": "设计索引",
@@ -1811,6 +1830,13 @@
                   "permalink": "/docs/category/并发基础"
                 },
                 "collapsible": true
+              }
+            ],
+            "linuxSideBar": [
+              {
+                "type": "doc",
+                "id": "Linux/linuxCommand",
+                "label": "Linux命令"
               }
             ],
             "sourceSideBar": [
