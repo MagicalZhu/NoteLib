@@ -87,7 +87,11 @@ mysqld 这个可执行文件就代表着 MySQL 服务器程序，运行这个可
 
 #### MySQL 服务器的启动
 
-> 在类Unix系统中,用来启动 MySQL服务器程序的有很多,且大部分都位于 MySQL 的 bin目录
+> 在类Unix系统(Macos)中,用来启动 MySQL服务器程序的有很多,且大部分都位于 MySQL 的 bin目录
+>
+> 但是在一些Linux系统上,可以通过systemd的方式启动或者关闭mysql服务,所以没有提供下面的一些启动脚本(mysqld_safe,mysql.server,...)
+
+
 
 1. `mysqld`
    - mysqld 可执行文件就是 MySQL 服务器程序,运行这个文件就可以直接启动一个 MySQL 服务器进程,**但是这个可执行文件不常用**
