@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-7f1": {
+  "/docs-9a1": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -332,9 +332,9 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-用户权限管理-70-c-f9c"
   },
-  "/docs/Mysql/高级特性/InnoDB存储结构-6db": {
+  "/docs/Mysql/高级特性/InnoDB数据页结构-0f3": {
     "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-mysql-高级特性-inno-d-b存储结构-85-d-d68"
+    "content": "content---docs-mysql-高级特性-inno-d-b数据页结构-810-c66"
   },
   "/docs/Mysql/高级特性/MySQL 部署-04f": {
     "component": "component---theme-doc-item-178-a40",

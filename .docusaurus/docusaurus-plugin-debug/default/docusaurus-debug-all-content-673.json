@@ -789,8 +789,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "InnoDB存储结构",
-                "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
+                "title": "InnoDB数据页结构",
+                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
               },
               "next": {
                 "title": "性能分析工具",
@@ -919,8 +919,8 @@
                 "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
               },
               "next": {
-                "title": "InnoDB存储结构",
-                "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
+                "title": "InnoDB数据页结构",
+                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
               }
             },
             {
@@ -1002,20 +1002,20 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/InnoDB存储结构",
-              "id": "Mysql/高级特性/InnoDB存储结构",
-              "title": "InnoDB存储结构",
-              "description": "存储结构-页",
-              "source": "@site/docs/Mysql/高级特性/InnoDB存储结构.md",
+              "unversionedId": "Mysql/高级特性/InnoDB数据页结构",
+              "id": "Mysql/高级特性/InnoDB数据页结构",
+              "title": "InnoDB数据页结构",
+              "description": "InnoDB的存储结构",
+              "source": "@site/docs/Mysql/高级特性/InnoDB数据页结构.md",
               "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/InnoDB存储结构",
-              "permalink": "/docs/Mysql/高级特性/InnoDB存储结构",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB存储结构.md",
+              "slug": "/Mysql/高级特性/InnoDB数据页结构",
+              "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB数据页结构.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "InnoDB存储结构",
-                "title": "InnoDB存储结构"
+                "id": "InnoDB数据页结构",
+                "title": "InnoDB数据页结构"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
@@ -2066,7 +2066,7 @@
                       },
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/InnoDB存储结构"
+                        "id": "Mysql/高级特性/InnoDB数据页结构"
                       },
                       {
                         "type": "doc",

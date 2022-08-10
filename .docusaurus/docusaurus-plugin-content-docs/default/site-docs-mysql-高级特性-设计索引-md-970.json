@@ -17,8 +17,8 @@
   },
   "sidebar": "mysqlSideBar",
   "previous": {
-    "title": "InnoDB存储结构",
-    "permalink": "/docs/Mysql/高级特性/InnoDB存储结构"
+    "title": "InnoDB数据页结构",
+    "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
   },
   "next": {
     "title": "性能分析工具",

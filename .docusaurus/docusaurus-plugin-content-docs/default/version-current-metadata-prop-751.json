@@ -399,9 +399,9 @@
               },
               {
                 "type": "link",
-                "label": "InnoDB存储结构",
-                "href": "/docs/Mysql/高级特性/InnoDB存储结构",
-                "docId": "Mysql/高级特性/InnoDB存储结构"
+                "label": "InnoDB数据页结构",
+                "href": "/docs/Mysql/高级特性/InnoDB数据页结构",
+                "docId": "Mysql/高级特性/InnoDB数据页结构"
               },
               {
                 "type": "link",
@@ -780,10 +780,10 @@
       "description": "示意图",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/InnoDB存储结构": {
-      "id": "Mysql/高级特性/InnoDB存储结构",
-      "title": "InnoDB存储结构",
-      "description": "存储结构-页",
+    "Mysql/高级特性/InnoDB数据页结构": {
+      "id": "Mysql/高级特性/InnoDB数据页结构",
+      "title": "InnoDB数据页结构",
+      "description": "InnoDB的存储结构",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/MySQL 部署": {

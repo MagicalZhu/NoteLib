@@ -213,8 +213,8 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/InnoDB存储结构",
-              "path": "/docs/Mysql/高级特性/InnoDB存储结构",
+              "id": "Mysql/高级特性/InnoDB数据页结构",
+              "path": "/docs/Mysql/高级特性/InnoDB数据页结构",
               "sidebar": "mysqlSideBar"
             },
             {
