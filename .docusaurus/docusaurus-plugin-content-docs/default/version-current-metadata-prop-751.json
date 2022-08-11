@@ -371,7 +371,7 @@
           },
           {
             "type": "category",
-            "label": "高级特性",
+            "label": "数据库管理",
             "items": [
               {
                 "type": "link",
@@ -384,13 +384,31 @@
                 "label": "用户权限管理",
                 "href": "/docs/Mysql/高级特性/用户权限管理",
                 "docId": "Mysql/高级特性/用户权限管理"
-              },
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/数据库管理"
+          },
+          {
+            "type": "category",
+            "label": "架构与引擎",
+            "items": [
               {
                 "type": "link",
                 "label": "MySQL逻辑架构",
                 "href": "/docs/Mysql/高级特性/MySQL逻辑架构",
                 "docId": "Mysql/高级特性/MySQL逻辑架构"
-              },
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/架构与引擎"
+          },
+          {
+            "type": "category",
+            "label": "存储结构与索引",
+            "items": [
               {
                 "type": "link",
                 "label": "索引",
@@ -405,10 +423,25 @@
               },
               {
                 "type": "link",
+                "label": "InnoDB表空间",
+                "href": "/docs/Mysql/高级特性/InnoDB表空间",
+                "docId": "Mysql/高级特性/InnoDB表空间"
+              },
+              {
+                "type": "link",
                 "label": "设计索引",
                 "href": "/docs/Mysql/高级特性/设计索引",
                 "docId": "Mysql/高级特性/设计索引"
-              },
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/存储结构与索引"
+          },
+          {
+            "type": "category",
+            "label": "性能优化",
+            "items": [
               {
                 "type": "link",
                 "label": "性能分析工具",
@@ -432,7 +465,16 @@
                 "label": "数据库其他调优策略",
                 "href": "/docs/Mysql/高级特性/数据库其他调优策略",
                 "docId": "Mysql/高级特性/数据库其他调优策略"
-              },
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/性能优化"
+          },
+          {
+            "type": "category",
+            "label": "事务与锁",
+            "items": [
               {
                 "type": "link",
                 "label": "事务基础",
@@ -448,7 +490,7 @@
             ],
             "collapsed": true,
             "collapsible": true,
-            "href": "/docs/category/高级特性"
+            "href": "/docs/category/事务与锁"
           }
         ],
         "collapsed": true,
@@ -778,6 +820,12 @@
       "id": "Mysql/高级特性/用户权限管理",
       "title": "用户权限管理",
       "description": "示意图",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/InnoDB表空间": {
+      "id": "Mysql/高级特性/InnoDB表空间",
+      "title": "InnoDB表空间",
+      "description": "表空间是一个抽象的概念,从管理上可以将表空间分为系统表空间、独立表空间、临时表空间等。",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/InnoDB数据页结构": {

@@ -4,12 +4,12 @@
   "permalink": "/docs/category/高级特性",
   "navigation": {
     "previous": {
-      "title": "MySQL库对象",
-      "permalink": "/docs/Mysql/基础/MySQL库对象"
+      "title": "MySQL逻辑架构",
+      "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
     },
     "next": {
-      "title": "MySQL 部署",
-      "permalink": "/docs/Mysql/高级特性/MySQL 部署"
+      "title": "索引",
+      "permalink": "/docs/Mysql/高级特性/索引"
     }
   }
 }

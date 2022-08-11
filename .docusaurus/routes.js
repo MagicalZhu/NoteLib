@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','9a1'),
+    component: ComponentCreator('/docs','6fd'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -244,16 +244,16 @@ export default [
         'sidebar': "basicSideBar"
       },
       {
+        path: '/docs/category/存储结构与索引',
+        component: ComponentCreator('/docs/category/存储结构与索引','db3'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
         path: '/docs/category/动漫分享',
         component: ComponentCreator('/docs/category/动漫分享','22d'),
         exact: true,
         'sidebar': "sourceSideBar"
-      },
-      {
-        path: '/docs/category/高级特性',
-        component: ComponentCreator('/docs/category/高级特性','9cd'),
-        exact: true,
-        'sidebar': "mysqlSideBar"
       },
       {
         path: '/docs/category/基础知识',
@@ -268,16 +268,40 @@ export default [
         'sidebar': "dataStructureSidebar"
       },
       {
+        path: '/docs/category/架构与引擎',
+        component: ComponentCreator('/docs/category/架构与引擎','0bb'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/category/事务与锁',
+        component: ComponentCreator('/docs/category/事务与锁','8ff'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
         path: '/docs/category/数据结构与算法基础',
         component: ComponentCreator('/docs/category/数据结构与算法基础','a36'),
         exact: true,
         'sidebar': "dataStructureSidebar"
       },
       {
+        path: '/docs/category/数据库管理',
+        component: ComponentCreator('/docs/category/数据库管理','4c5'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
         path: '/docs/category/微服务基础',
         component: ComponentCreator('/docs/category/微服务基础','40f'),
         exact: true,
         'sidebar': "springCloudSideBar"
+      },
+      {
+        path: '/docs/category/性能优化',
+        component: ComponentCreator('/docs/category/性能优化','3ba'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
       },
       {
         path: '/docs/category/mysql基础与高级',
@@ -423,6 +447,12 @@ export default [
       {
         path: '/docs/Mysql/高级特性/用户权限管理',
         component: ComponentCreator('/docs/Mysql/高级特性/用户权限管理','5a2'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/InnoDB表空间',
+        component: ComponentCreator('/docs/Mysql/高级特性/InnoDB表空间','bb9'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

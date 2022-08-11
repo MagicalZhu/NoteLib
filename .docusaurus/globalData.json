@@ -213,6 +213,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/InnoDB表空间",
+              "path": "/docs/Mysql/高级特性/InnoDB表空间",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/InnoDB数据页结构",
               "path": "/docs/Mysql/高级特性/InnoDB数据页结构",
               "sidebar": "mysqlSideBar"
@@ -407,8 +412,28 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "/category/高级特性",
-              "path": "/docs/category/高级特性",
+              "id": "/category/数据库管理",
+              "path": "/docs/category/数据库管理",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "/category/架构与引擎",
+              "path": "/docs/category/架构与引擎",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "/category/存储结构与索引",
+              "path": "/docs/category/存储结构与索引",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "/category/性能优化",
+              "path": "/docs/category/性能优化",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "/category/事务与锁",
+              "path": "/docs/category/事务与锁",
               "sidebar": "mysqlSideBar"
             },
             {

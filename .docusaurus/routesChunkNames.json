@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-9a1": {
+  "/docs-6fd": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -208,13 +208,13 @@
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-并发控制-1-cf-255"
   },
+  "/docs/category/存储结构与索引-db3": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-存储结构与索引-9-d-6-eb9"
+  },
   "/docs/category/动漫分享-22d": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-动漫分享-95-d-302"
-  },
-  "/docs/category/高级特性-9cd": {
-    "component": "component---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-高级特性-362-5f3"
   },
   "/docs/category/基础知识-2ef": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
@@ -224,13 +224,29 @@
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-基础知识-1-ee-5-5d3"
   },
+  "/docs/category/架构与引擎-0bb": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-架构与引擎-3-ce-4a6"
+  },
+  "/docs/category/事务与锁-8ff": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-事务与锁d-28-6a5"
+  },
   "/docs/category/数据结构与算法基础-a36": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-数据结构与算法基础b-3-f-ce4"
   },
+  "/docs/category/数据库管理-4c5": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-数据库管理-8-fe-27f"
+  },
   "/docs/category/微服务基础-40f": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-微服务基础bdd-b7b"
+  },
+  "/docs/category/性能优化-3ba": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-性能优化-989-5b1"
   },
   "/docs/category/mysql基础与高级-700": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
@@ -331,6 +347,10 @@
   "/docs/Mysql/高级特性/用户权限管理-5a2": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-用户权限管理-70-c-f9c"
+  },
+  "/docs/Mysql/高级特性/InnoDB表空间-bb9": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-inno-d-b表空间-34-b-49b"
   },
   "/docs/Mysql/高级特性/InnoDB数据页结构-0f3": {
     "component": "component---theme-doc-item-178-a40",

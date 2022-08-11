@@ -16,8 +16,8 @@
   },
   "sidebar": "mysqlSideBar",
   "previous": {
-    "title": "高级特性",
-    "permalink": "/docs/category/高级特性"
+    "title": "数据库管理",
+    "permalink": "/docs/category/数据库管理"
   },
   "next": {
     "title": "用户权限管理",

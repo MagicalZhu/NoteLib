@@ -789,12 +789,12 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "InnoDB数据页结构",
-                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
+                "title": "InnoDB表空间",
+                "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
               },
               "next": {
-                "title": "性能分析工具",
-                "permalink": "/docs/Mysql/高级特性/性能分析工具"
+                "title": "性能优化",
+                "permalink": "/docs/category/性能优化"
               }
             },
             {
@@ -815,8 +815,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "数据库其他调优策略",
-                "permalink": "/docs/Mysql/高级特性/数据库其他调优策略"
+                "title": "事务与锁",
+                "permalink": "/docs/category/事务与锁"
               },
               "next": {
                 "title": "事务日志",
@@ -867,8 +867,8 @@
                 "permalink": "/docs/Mysql/高级特性/数据库设计规范"
               },
               "next": {
-                "title": "事务基础",
-                "permalink": "/docs/Mysql/高级特性/事务基础"
+                "title": "事务与锁",
+                "permalink": "/docs/category/事务与锁"
               }
             },
             {
@@ -915,8 +915,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "MySQL逻辑架构",
-                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+                "title": "存储结构与索引",
+                "permalink": "/docs/category/存储结构与索引"
               },
               "next": {
                 "title": "InnoDB数据页结构",
@@ -967,8 +967,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "设计索引",
-                "permalink": "/docs/Mysql/高级特性/设计索引"
+                "title": "性能优化",
+                "permalink": "/docs/category/性能优化"
               },
               "next": {
                 "title": "索引与查询优化",
@@ -997,8 +997,34 @@
                 "permalink": "/docs/Mysql/高级特性/MySQL 部署"
               },
               "next": {
-                "title": "MySQL逻辑架构",
-                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+                "title": "架构与引擎",
+                "permalink": "/docs/category/架构与引擎"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/InnoDB表空间",
+              "id": "Mysql/高级特性/InnoDB表空间",
+              "title": "InnoDB表空间",
+              "description": "表空间是一个抽象的概念,从管理上可以将表空间分为系统表空间、独立表空间、临时表空间等。",
+              "source": "@site/docs/Mysql/高级特性/InnoDB表空间.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/InnoDB表空间",
+              "permalink": "/docs/Mysql/高级特性/InnoDB表空间",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB表空间.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "InnoDB表空间",
+                "titile": "InnoDB表空间"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "InnoDB数据页结构",
+                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
+              },
+              "next": {
+                "title": "设计索引",
+                "permalink": "/docs/Mysql/高级特性/设计索引"
               }
             },
             {
@@ -1023,8 +1049,8 @@
                 "permalink": "/docs/Mysql/高级特性/索引"
               },
               "next": {
-                "title": "设计索引",
-                "permalink": "/docs/Mysql/高级特性/设计索引"
+                "title": "InnoDB表空间",
+                "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
               }
             },
             {
@@ -1045,8 +1071,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "高级特性",
-                "permalink": "/docs/category/高级特性"
+                "title": "数据库管理",
+                "permalink": "/docs/category/数据库管理"
               },
               "next": {
                 "title": "用户权限管理",
@@ -1071,12 +1097,12 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "用户权限管理",
-                "permalink": "/docs/Mysql/高级特性/用户权限管理"
+                "title": "架构与引擎",
+                "permalink": "/docs/category/架构与引擎"
               },
               "next": {
-                "title": "索引",
-                "permalink": "/docs/Mysql/高级特性/索引"
+                "title": "存储结构与索引",
+                "permalink": "/docs/category/存储结构与索引"
               }
             },
             {
@@ -1153,8 +1179,8 @@
                 "permalink": "/docs/Mysql/基础/MySQL子查询"
               },
               "next": {
-                "title": "高级特性",
-                "permalink": "/docs/category/高级特性"
+                "title": "数据库管理",
+                "permalink": "/docs/category/数据库管理"
               }
             },
             {
@@ -2046,7 +2072,7 @@
                   },
                   {
                     "type": "category",
-                    "label": "高级特性",
+                    "label": "数据库管理",
                     "items": [
                       {
                         "type": "doc",
@@ -2055,11 +2081,37 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/用户权限管理"
-                      },
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/数据库管理",
+                      "permalink": "/docs/category/数据库管理"
+                    },
+                    "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "架构与引擎",
+                    "items": [
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/MySQL逻辑架构"
-                      },
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/架构与引擎",
+                      "permalink": "/docs/category/架构与引擎"
+                    },
+                    "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "存储结构与索引",
+                    "items": [
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/索引"
@@ -2070,8 +2122,25 @@
                       },
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/设计索引"
+                        "id": "Mysql/高级特性/InnoDB表空间"
                       },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/设计索引"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/存储结构与索引",
+                      "permalink": "/docs/category/存储结构与索引"
+                    },
+                    "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "性能优化",
+                    "items": [
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/性能分析工具"
@@ -2087,7 +2156,20 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/数据库其他调优策略"
-                      },
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/性能优化",
+                      "permalink": "/docs/category/性能优化"
+                    },
+                    "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "事务与锁",
+                    "items": [
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/事务基础"
@@ -2100,8 +2182,8 @@
                     "collapsed": true,
                     "link": {
                       "type": "generated-index",
-                      "slug": "/category/高级特性",
-                      "permalink": "/docs/category/高级特性"
+                      "slug": "/category/事务与锁",
+                      "permalink": "/docs/category/事务与锁"
                     },
                     "collapsible": true
                   }
@@ -2345,9 +2427,9 @@
               }
             },
             {
-              "title": "高级特性",
-              "slug": "/category/高级特性",
-              "permalink": "/docs/category/高级特性",
+              "title": "数据库管理",
+              "slug": "/category/数据库管理",
+              "permalink": "/docs/category/数据库管理",
               "sidebar": "mysqlSideBar",
               "previous": {
                 "title": "MySQL库对象",
@@ -2356,6 +2438,62 @@
               "next": {
                 "title": "MySQL 部署",
                 "permalink": "/docs/Mysql/高级特性/MySQL 部署"
+              }
+            },
+            {
+              "title": "架构与引擎",
+              "slug": "/category/架构与引擎",
+              "permalink": "/docs/category/架构与引擎",
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "用户权限管理",
+                "permalink": "/docs/Mysql/高级特性/用户权限管理"
+              },
+              "next": {
+                "title": "MySQL逻辑架构",
+                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              }
+            },
+            {
+              "title": "存储结构与索引",
+              "slug": "/category/存储结构与索引",
+              "permalink": "/docs/category/存储结构与索引",
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL逻辑架构",
+                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              },
+              "next": {
+                "title": "索引",
+                "permalink": "/docs/Mysql/高级特性/索引"
+              }
+            },
+            {
+              "title": "性能优化",
+              "slug": "/category/性能优化",
+              "permalink": "/docs/category/性能优化",
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "设计索引",
+                "permalink": "/docs/Mysql/高级特性/设计索引"
+              },
+              "next": {
+                "title": "性能分析工具",
+                "permalink": "/docs/Mysql/高级特性/性能分析工具"
+              }
+            },
+            {
+              "title": "事务与锁",
+              "slug": "/category/事务与锁",
+              "permalink": "/docs/category/事务与锁",
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "数据库其他调优策略",
+                "permalink": "/docs/Mysql/高级特性/数据库其他调优策略"
+              },
+              "next": {
+                "title": "事务基础",
+                "permalink": "/docs/Mysql/高级特性/事务基础"
               }
             },
             {

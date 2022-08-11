@@ -37,7 +37,7 @@ export const websiteData: WebsiteCategory[] = [
         "href": "https://javaguide.cn/",
         "tags": [""]
       },
-       {
+      {
         "name": "LABULADONG 的算法网站",
         "desc": "一个不错的算法与数据结构的学习网站",
         "logo": "https://labuladong.github.io/algo/images/avatar.png",

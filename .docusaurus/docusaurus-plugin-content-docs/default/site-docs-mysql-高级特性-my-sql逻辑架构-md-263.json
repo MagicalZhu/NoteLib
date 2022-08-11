@@ -16,11 +16,11 @@
   },
   "sidebar": "mysqlSideBar",
   "previous": {
-    "title": "用户权限管理",
-    "permalink": "/docs/Mysql/高级特性/用户权限管理"
+    "title": "架构与引擎",
+    "permalink": "/docs/category/架构与引擎"
   },
   "next": {
-    "title": "索引",
-    "permalink": "/docs/Mysql/高级特性/索引"
+    "title": "存储结构与索引",
+    "permalink": "/docs/category/存储结构与索引"
   }
 }

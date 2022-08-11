@@ -20,7 +20,7 @@
     "permalink": "/docs/Mysql/高级特性/MySQL 部署"
   },
   "next": {
-    "title": "MySQL逻辑架构",
-    "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+    "title": "架构与引擎",
+    "permalink": "/docs/category/架构与引擎"
   }
 }
