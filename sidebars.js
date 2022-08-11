@@ -148,6 +148,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
       '用户权限管理',
       'MySQL逻辑架构',
       '索引',
+      'InnoDB表空间',
       'InnoDB数据页结构',
       '设计索引',
       '性能分析工具',
