@@ -82,6 +82,32 @@ export const websiteData: WebsiteCategory[] = [
     ]
   },
   {
+    "name": "开源书籍推荐",
+    "websites": [
+      {
+        "name": "凤凰架构",
+        "desc": "周志明大佬的架构书籍,讨论如何构建一套可靠的大型分布式系统。",
+        "logo": "https://icyfenix.cn/images/logo-color.png",
+        "href": "https://icyfenix.cn/",
+        "tags": [""]
+      },
+     {
+        "name": "《分布式系统模式》中文版",
+        "desc": "《分布式系统模式》是 Unmesh Joshi 编写的一系列关于分布式系统实现的文章。这个系列的文章采用模式的格式，介绍了像 Kafka、Zookeeper 这种分布式系统在实现过程采用的通用模式，是学习分布式系统实现的基础。",
+        "logo": "https://github.githubassets.com/favicons/favicon.svg",
+        "href": "https://github.com/fenixsoft/awesome-fenix",
+        "tags": [""]
+      },
+       {
+        "name": "《设计数据密集型应用》中文版",
+        "desc": "《Designing Data-Intensive Application》DDIA 中文翻译。",
+        "logo": "https://github.githubassets.com/favicons/favicon.svg",
+        "href": "https://vonng.github.io/ddia/#/",
+        "tags": [""]
+      }
+    ]
+  },
+  {
     "name": "工具",
     "websites": [
       {
