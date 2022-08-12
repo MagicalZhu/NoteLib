@@ -15,7 +15,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/fav.ico',
+  favicon: 'img/favicon.ico',
   organizationName: 'MagicalZhu', 
   projectName: 'XDocs',
   presets: [
