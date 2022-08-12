@@ -38,6 +38,13 @@ export const websiteData: WebsiteCategory[] = [
         "tags": [""]
       },
       {
+        "name": "MartinFowler",
+        "desc": "MartinFowler的个人网站,就是那个提出微服务架构,敏捷开发的...",
+        "logo": "https://martinfowler.com/logo-sq.png",
+        "href": "https://martinfowler.com/",
+        "tags": [""]
+      },
+      {
         "name": "LABULADONG 的算法网站",
         "desc": "一个不错的算法与数据结构的学习网站",
         "logo": "https://labuladong.github.io/algo/images/avatar.png",
