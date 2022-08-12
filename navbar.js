@@ -71,6 +71,10 @@ const nav = {
       position: "left",
       items: [
         {
+          label: "理论与算法",
+          to: 'docs/distribute',
+        },
+        {
           label: "分布式基础技术",
           to: 'docs/basicTech',
         },
