@@ -107,10 +107,10 @@ code {
   color: var(--ifm-code-color);
   word-break: break-word;
   margin: 0 1px;
-  background: #FDECEE;
+  background: var(--ifm-code-background);
   /* padding: 0.2em 0.4em;*/
-  border-radius: 2px;
-  font-size: .87em;
+  border-radius: 4px;
+  font-size: 0.9em;
   border: 1px solid #eee;
   font-family: poppins, Monaco, Consolas, Courier New, monospace;
 }
