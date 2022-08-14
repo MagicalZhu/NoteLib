@@ -99,6 +99,10 @@
               "path": "/docs/basicTech"
             },
             {
+              "id": "分布式理论/distribute",
+              "path": "/docs/distribute"
+            },
+            {
               "id": "缓存/cache",
               "path": "/docs/cache"
             },
@@ -178,11 +182,6 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/事务日志",
-              "path": "/docs/Mysql/高级特性/事务日志",
-              "sidebar": "mysqlSideBar"
-            },
-            {
               "id": "Mysql/高级特性/数据库其他调优策略",
               "path": "/docs/Mysql/高级特性/数据库其他调优策略",
               "sidebar": "mysqlSideBar"
@@ -195,6 +194,11 @@
             {
               "id": "Mysql/高级特性/索引",
               "path": "/docs/Mysql/高级特性/索引",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/索引的应用",
+              "path": "/docs/Mysql/高级特性/索引的应用",
               "sidebar": "mysqlSideBar"
             },
             {
@@ -230,6 +234,16 @@
             {
               "id": "Mysql/高级特性/MySQL逻辑架构",
               "path": "/docs/Mysql/高级特性/MySQL逻辑架构",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/Redo日志",
+              "path": "/docs/Mysql/高级特性/Redo日志",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/Undo日志",
+              "path": "/docs/Mysql/高级特性/Undo日志",
               "sidebar": "mysqlSideBar"
             },
             {

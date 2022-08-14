@@ -417,6 +417,12 @@
               },
               {
                 "type": "link",
+                "label": "索引的应用",
+                "href": "/docs/Mysql/高级特性/索引的应用",
+                "docId": "Mysql/高级特性/索引的应用"
+              },
+              {
+                "type": "link",
                 "label": "InnoDB数据页结构",
                 "href": "/docs/Mysql/高级特性/InnoDB数据页结构",
                 "docId": "Mysql/高级特性/InnoDB数据页结构"
@@ -483,9 +489,15 @@
               },
               {
                 "type": "link",
-                "label": "事务日志",
-                "href": "/docs/Mysql/高级特性/事务日志",
-                "docId": "Mysql/高级特性/事务日志"
+                "label": "Redo日志",
+                "href": "/docs/Mysql/高级特性/Redo日志",
+                "docId": "Mysql/高级特性/Redo日志"
+              },
+              {
+                "type": "link",
+                "label": "Undo日志",
+                "href": "/docs/Mysql/高级特性/Undo日志",
+                "docId": "Mysql/高级特性/Undo日志"
               }
             ],
             "collapsed": true,
@@ -684,6 +696,11 @@
       "title": "分布式基础技术概述",
       "description": "分布式基础技术文档概述"
     },
+    "分布式理论/distribute": {
+      "id": "分布式理论/distribute",
+      "title": "分布式理论&算法&协议",
+      "description": "一些分布式的理论、算法、协议"
+    },
     "缓存/cache": {
       "id": "缓存/cache",
       "title": "缓存概述",
@@ -780,12 +797,6 @@
       "description": "数据库事务",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/事务日志": {
-      "id": "Mysql/高级特性/事务日志",
-      "title": "事务日志",
-      "description": "事务有4种特性: 原子性、一致性、隔离性和持久性。那么事务的四种特性到底是基于什么机制实现呢?",
-      "sidebar": "mysqlSideBar"
-    },
     "Mysql/高级特性/数据库其他调优策略": {
       "id": "Mysql/高级特性/数据库其他调优策略",
       "title": "数据库其他调优策略",
@@ -802,6 +813,12 @@
       "id": "Mysql/高级特性/索引",
       "title": "索引",
       "description": "为什么使用索引",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/索引的应用": {
+      "id": "Mysql/高级特性/索引的应用",
+      "title": "索引的应用",
+      "description": "对于 InnoDB 存储引擎的 B+Tree 索引,我们已经知道:",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/索引与查询优化": {
@@ -844,6 +861,18 @@
       "id": "Mysql/高级特性/MySQL逻辑架构",
       "title": "MySQL逻辑架构",
       "description": "逻辑架构",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/Redo日志": {
+      "id": "Mysql/高级特性/Redo日志",
+      "title": "Redo日志",
+      "description": "事务有4种特性: 原子性、一致性、隔离性和持久性。那么事务的四种特性到底是基于什么机制实现呢?",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/Undo日志": {
+      "id": "Mysql/高级特性/Undo日志",
+      "title": "Undo日志",
+      "description": "redo 日志记录的事务的行为,可以很好的对页进行“重做”, 但是事务除了能提交,还可以回滚,这个时候就需要undo",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/基础/MySQL函数与聚合": {

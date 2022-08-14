@@ -464,6 +464,24 @@
               }
             },
             {
+              "unversionedId": "分布式理论/distribute",
+              "id": "分布式理论/distribute",
+              "title": "分布式理论&算法&协议",
+              "description": "一些分布式的理论、算法、协议",
+              "source": "@site/docs/分布式理论/about.md",
+              "sourceDirName": "分布式理论",
+              "slug": "/distribute",
+              "permalink": "/docs/distribute",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式理论/about.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "distribute",
+                "title": "分布式理论&算法&协议",
+                "slug": "/distribute"
+              }
+            },
+            {
               "unversionedId": "缓存/cache",
               "id": "缓存/cache",
               "title": "缓存概述",
@@ -819,30 +837,8 @@
                 "permalink": "/docs/category/事务与锁"
               },
               "next": {
-                "title": "事务日志",
-                "permalink": "/docs/Mysql/高级特性/事务日志"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/事务日志",
-              "id": "Mysql/高级特性/事务日志",
-              "title": "事务日志",
-              "description": "事务有4种特性: 原子性、一致性、隔离性和持久性。那么事务的四种特性到底是基于什么机制实现呢?",
-              "source": "@site/docs/Mysql/高级特性/事务日志.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/事务日志",
-              "permalink": "/docs/Mysql/高级特性/事务日志",
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/事务日志.md",
-              "tags": [],
-              "version": "current",
-              "frontMatter": {
-                "id": "事务日志",
-                "title": "事务日志"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "事务基础",
-                "permalink": "/docs/Mysql/高级特性/事务基础"
+                "title": "Redo日志",
+                "permalink": "/docs/Mysql/高级特性/Redo日志"
               }
             },
             {
@@ -917,6 +913,32 @@
               "previous": {
                 "title": "存储结构与索引",
                 "permalink": "/docs/category/存储结构与索引"
+              },
+              "next": {
+                "title": "索引的应用",
+                "permalink": "/docs/Mysql/高级特性/索引的应用"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/索引的应用",
+              "id": "Mysql/高级特性/索引的应用",
+              "title": "索引的应用",
+              "description": "对于 InnoDB 存储引擎的 B+Tree 索引,我们已经知道:",
+              "source": "@site/docs/Mysql/高级特性/索引的应用.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/索引的应用",
+              "permalink": "/docs/Mysql/高级特性/索引的应用",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引的应用.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "索引的应用",
+                "title": "索引的应用"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "索引",
+                "permalink": "/docs/Mysql/高级特性/索引"
               },
               "next": {
                 "title": "InnoDB数据页结构",
@@ -1045,8 +1067,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "索引",
-                "permalink": "/docs/Mysql/高级特性/索引"
+                "title": "索引的应用",
+                "permalink": "/docs/Mysql/高级特性/索引的应用"
               },
               "next": {
                 "title": "InnoDB表空间",
@@ -1103,6 +1125,54 @@
               "next": {
                 "title": "存储结构与索引",
                 "permalink": "/docs/category/存储结构与索引"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/Redo日志",
+              "id": "Mysql/高级特性/Redo日志",
+              "title": "Redo日志",
+              "description": "事务有4种特性: 原子性、一致性、隔离性和持久性。那么事务的四种特性到底是基于什么机制实现呢?",
+              "source": "@site/docs/Mysql/高级特性/Redo日志.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/Redo日志",
+              "permalink": "/docs/Mysql/高级特性/Redo日志",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/Redo日志.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Redo日志",
+                "title": "Redo日志"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "事务基础",
+                "permalink": "/docs/Mysql/高级特性/事务基础"
+              },
+              "next": {
+                "title": "Undo日志",
+                "permalink": "/docs/Mysql/高级特性/Undo日志"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/Undo日志",
+              "id": "Mysql/高级特性/Undo日志",
+              "title": "Undo日志",
+              "description": "redo 日志记录的事务的行为,可以很好的对页进行“重做”, 但是事务除了能提交,还可以回滚,这个时候就需要undo",
+              "source": "@site/docs/Mysql/高级特性/Undo日志.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/Undo日志",
+              "permalink": "/docs/Mysql/高级特性/Undo日志",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/Undo日志.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "Undo日志",
+                "title": "Undo日志"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "Redo日志",
+                "permalink": "/docs/Mysql/高级特性/Redo日志"
               }
             },
             {
@@ -2118,6 +2188,10 @@
                       },
                       {
                         "type": "doc",
+                        "id": "Mysql/高级特性/索引的应用"
+                      },
+                      {
+                        "type": "doc",
                         "id": "Mysql/高级特性/InnoDB数据页结构"
                       },
                       {
@@ -2176,7 +2250,11 @@
                       },
                       {
                         "type": "doc",
-                        "id": "Mysql/高级特性/事务日志"
+                        "id": "Mysql/高级特性/Redo日志"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/Undo日志"
                       }
                     ],
                     "collapsed": true,

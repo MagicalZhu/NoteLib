@@ -20,7 +20,7 @@
     "permalink": "/docs/category/存储结构与索引"
   },
   "next": {
-    "title": "InnoDB数据页结构",
-    "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
+    "title": "索引的应用",
+    "permalink": "/docs/Mysql/高级特性/索引的应用"
   }
 }

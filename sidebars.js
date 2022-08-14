@@ -56,6 +56,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
     ])
     .createSubCaregory('存储结构与索引','Mysql/高级特性', [
       '索引',
+      '索引的应用',
       'InnoDB数据页结构',
       'InnoDB表空间',
       '设计索引',
@@ -68,7 +69,8 @@ const mysqlPart =  new Category('MySQL基础与高级')
     ])
     .createSubCaregory('事务与锁', 'Mysql/高级特性', [
       '事务基础',
-      '事务日志'
+      'Redo日志',
+      'Undo日志'
     ])
     
 

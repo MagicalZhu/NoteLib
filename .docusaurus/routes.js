@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','6fd'),
+    component: ComponentCreator('/docs','575'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -357,6 +357,11 @@ export default [
         'sidebar': "dataStructureSidebar"
       },
       {
+        path: '/docs/distribute',
+        component: ComponentCreator('/docs/distribute','873'),
+        exact: true
+      },
+      {
         path: '/docs/front/Vue',
         component: ComponentCreator('/docs/front/Vue','a4d'),
         exact: true,
@@ -409,12 +414,6 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
-        path: '/docs/Mysql/高级特性/事务日志',
-        component: ComponentCreator('/docs/Mysql/高级特性/事务日志','d31'),
-        exact: true,
-        'sidebar': "mysqlSideBar"
-      },
-      {
         path: '/docs/Mysql/高级特性/数据库其他调优策略',
         component: ComponentCreator('/docs/Mysql/高级特性/数据库其他调优策略','ef6'),
         exact: true,
@@ -429,6 +428,12 @@ export default [
       {
         path: '/docs/Mysql/高级特性/索引',
         component: ComponentCreator('/docs/Mysql/高级特性/索引','f13'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/索引的应用',
+        component: ComponentCreator('/docs/Mysql/高级特性/索引的应用','933'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },
@@ -471,6 +476,18 @@ export default [
       {
         path: '/docs/Mysql/高级特性/MySQL逻辑架构',
         component: ComponentCreator('/docs/Mysql/高级特性/MySQL逻辑架构','161'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/Redo日志',
+        component: ComponentCreator('/docs/Mysql/高级特性/Redo日志','6f3'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/Undo日志',
+        component: ComponentCreator('/docs/Mysql/高级特性/Undo日志','863'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

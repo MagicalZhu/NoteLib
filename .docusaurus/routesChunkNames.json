@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-6fd": {
+  "/docs-575": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -284,6 +284,10 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-data-structured-8-a-5ce"
   },
+  "/docs/distribute-873": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-distributeb-46-3c2"
+  },
   "/docs/front/Vue-a4d": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-front-vueca-9-6ae"
@@ -320,10 +324,6 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-事务基础b-56-d2e"
   },
-  "/docs/Mysql/高级特性/事务日志-d31": {
-    "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-mysql-高级特性-事务日志-1-c-8-553"
-  },
   "/docs/Mysql/高级特性/数据库其他调优策略-ef6": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-数据库其他调优策略-1-d-7-77f"
@@ -335,6 +335,10 @@
   "/docs/Mysql/高级特性/索引-f13": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-索引-2-a-4-365"
+  },
+  "/docs/Mysql/高级特性/索引的应用-933": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-索引的应用-7-f-5-239"
   },
   "/docs/Mysql/高级特性/索引与查询优化-bb0": {
     "component": "component---theme-doc-item-178-a40",
@@ -363,6 +367,14 @@
   "/docs/Mysql/高级特性/MySQL逻辑架构-161": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-my-sq-l逻辑架构-263-a48"
+  },
+  "/docs/Mysql/高级特性/Redo日志-6f3": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-事务日志b-78-a4c"
+  },
+  "/docs/Mysql/高级特性/Undo日志-863": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-undo日志-0-e-6-a43"
   },
   "/docs/Mysql/基础/MySQL函数与聚合-91e": {
     "component": "component---theme-doc-item-178-a40",

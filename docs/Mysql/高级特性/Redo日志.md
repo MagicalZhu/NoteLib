@@ -1,6 +1,6 @@
 ---
-id: 事务日志
-title: 事务日志
+id: Redo日志
+title: Redo日志
 ---
 
 > 事务有4种特性: **原子性、一致性、隔离性和持久性**。那么事务的四种特性到底是基于什么机制实现呢?
@@ -19,20 +19,20 @@ title: 事务日志
 - redo_log 是存储引擎(InnoDB)生成的日志,记录的是`物理级别`上的页的`修改操作`,比如页号xxx、偏移量 xxx写入了xxx 数据,**主要为了保证数据的可靠性 **
 - undo_log 是存储引擎(InnoDB)生成的日志,记录的是`逻辑操作`日志,比如对某一行数据进行了 insert 语句操作,**undo_log 就记录一条与之相反的delete 语句操作,主要用于`事务的回滚`**
 
+![image-20220814151437517](./image/事务日志/image-20220814151437517.png)
+
 <br/>
 
 **一些博客推荐**
 
 1. [WAL机制及脏页刷新](https://segmentfault.com/a/1190000020835301)
 
-## Redo日志
+## 为什么需要Redo
 
-- InnoDB 存储引擎是`以页为单位`来管理存储空间的
-- 在真正访问页面之前,需要把`磁盘上`的页缓存的内存里的缓冲区(BufferPool)中才可以访问
-  - **所有的变更都必须`先更新缓冲池`中的数据,然后缓冲池中的脏页会以一定的频率被刷入磁盘(`checkpoint 机制`)**
-  - 通过缓冲池来优化 CPU 和磁盘之间的鸿沟,来保证整体的性能不会下降的太快
-
-### 为什么需要Redo
+> - InnoDB 存储引擎是`以页为单位`来管理存储空间的
+> - 在真正访问页面之前,需要把`磁盘上`的页缓存的内存里的缓冲区(BufferPool)中才可以访问
+>   - **所有的变更都必须`先更新缓冲池`中的数据,然后缓冲池中的脏页会以一定的频率被刷入磁盘(`checkpoint 机制`)**
+>   - 通过缓冲池来优化 CPU 和磁盘之间的鸿沟,来保证整体的性能不会下降的太快
 
 - **可能出现的问题:**
 
@@ -54,10 +54,10 @@ title: 事务日志
 - **预写式日志: WAL (Write Ahead Log)**
 
   - InnoDB 存储引擎的事务使用了`WAL 技术`
-  - 这个技术就是`当前事务提交时,先写Redo日志,再更新磁盘页,只有当 Redo 日志写入成功后,才算事务提交成功!`
+  - 简单来说就是`当前事务提交时,先写Redo日志,再更新磁盘页,只有当 Redo 日志写入成功后,才算事务提交成功!`
   - **当服务器宕机且数据没有更新到磁盘的时候,可以通过 redo log 恢复,以此来保证数据的一致性**
 
-### Redo Log 好处与特点
+## Redo Log 好处与特点
 
 - **Redo Log优点**
 
@@ -82,19 +82,18 @@ title: 事务日志
 
 
 
-### Redo Log的组成
+## Redo Log的组成
 
 Redo Log可以简单分为以下两个部分:
 
 1. `重做日志缓冲 (redo log buffer)`
 2. `重做日志文件 (redo log file) `
 
-#### 重做日志缓冲
+### 重做日志缓冲
 
 - **保存在内存中，是易失的**
-- 在服务器启动时就会想操作系统申请一大片叫做`redo log buffer`的`连续内存`空间,这个空间被划分为若干个连续的`redo log block`
-  - 一个 redo log block 占用`512 字节`大小
-- **参数设置**
+- 在服务器启动时就会想操作系统申请一大片叫做`redo log buffer`的`连续内存`空间,这个空间被划分为若干个连续的`redo log block`, 一个 redo log block 占用`512 字节`大小
+- **相关的参数设置**
   - `innodb_log_buffer_size`
     - 默认为`16M`
     - 最大值为`4096M`,最小为`1M`
@@ -103,7 +102,7 @@ Redo Log可以简单分为以下两个部分:
 
 
 
-#### 重做日志文件
+### 重做日志文件
 
 - 保存在磁盘上,是持久化的
 
@@ -113,13 +112,13 @@ Redo Log可以简单分为以下两个部分:
 
 
 
-### redo的流程
+## redo的流程
 
 以一个更新事务为例,redo log 流转过程如下图所示:
 
 1. **先将原始数据从磁盘中读入内存中来，修改数据的内存拷贝**
-2. **生成一条重做日志并写入redo log buffer，记录的是数据被修改后的值**
-3. **当事务commit时，将redo log buffer中的内容刷新到 redo log file。对 redo log file采用追加写的方式**
+2. **生成一条redo log 并写入redo log buffer，记录的是数据被修改后的值**
+3. **当事务commit时，将redo log buffer中的内容刷新到 redo log file,对 redo log file采用 append 追加写的方式**
 4. **定期将内存中修改的数据刷新到磁盘中**
 
 ![image-20220805233404921](./image/事务日志/image-20220805233404921.png)
@@ -132,7 +131,7 @@ WAL(Write-Ahead-Log)是在内存中数据页刷新到本地磁盘文件前,需�
 
 :::
 
-### 事务提交时的刷盘(fsync)策略
+## 事务提交时的刷盘(fsync)策略
 
 > redo log file 的的写入不是直接写入的,InnoDB 引擎会在写redo log的时候,先写入 redo log buffer,之后以`一定的频率`刷入到真正的 redo log file 中,这个**一定的频率就是刷盘策略**
 
@@ -141,7 +140,7 @@ WAL(Write-Ahead-Log)是在内存中数据页刷新到本地磁盘文件前,需�
   - **控制 commit提交事务时，如何将 redo log buffer 中的日志刷新到 redo log file 中**, 有**3种策略** 
     - `0`
       - **表示每次事务提交时不进行刷盘操作, 而是让后台线程master thread每隔1s进行一次重做日志的同步**
-      - 即master thread 处理每隔 1s 将日志从 redo log buffer写入 page Cache,然后再从 page cache 同步写入磁盘
+      - 即 master thread 处理每隔 1s 将日志从 redo log buffer写入 page Cache,然后再从 page cache 同步写入磁盘
     - `1`
       - **表示每次事务提交时都将进行同步,刷盘操作 (默认值)**
     - `2`
@@ -174,24 +173,37 @@ WAL(Write-Ahead-Log)是在内存中数据页刷新到本地磁盘文件前,需�
 
 ![image-20220807105631159](./image/事务日志/image-20220807105631159.png)
 
-### 写入 redo log buffer过程
+## 写入 redo log buffer过程
 
-#### Mini-Transaction
+### Mini-Transaction
 
-MySQL 把**对底层页面(不止数据页)的一次原子访问的过程称之为`Mini-Transaction`,简称 MTR**。比如向某个索引对应的 B+Tree 中插入一条记录的过程就是一个`Mini-Transaction`。**一个mtr中可以包含`一组` redo日志,在进行崩溃恢复时,这一组 redo日志作为一个不可分割的整体**
+MySQL 把**对底层页面(不止数据页、还有事务页等)的一次原子访问的过程称之为`Mini-Transaction`,简称 MTR**。比如向某个索引对应的 B+Tree 中插入一条记录的过程就是一个`Mini-Transaction`。**一个 MTR 中可以包含`一堆` redo日志,在进行崩溃恢复时,这一堆 redo日志作为一个不可分割的整体**
 
-**一个事务可以包含若干条语句，每一条语句其实是由若干个 mtr 组成，每一个 mtr 又可以包含若干条redo日志。**如图:
+**也就是一个事务可以包含若干条 SQL 语句, 并且每一条 SQL 语句其实是由若干个 MTR 组成，每一个 MTR 又可以包含若干条 redo日志。**如图:
 
 ![image-20220807142815254](./image/事务日志/image-20220807142815254.png)
 
-#### redo日志 写入log buffer
+### refo log block
+
+- 为了更好的管理 redo 日志,InnoDB 将生成的 redo 日志都放在了`大小为 512 字节的页中`, 为了和表空间中的页进行区分,我们把它称之为`block`, 实际上 **block 和 页是类似的概念**
+
+- 一个 redo log block 由下面三部分组成:
+  1. `日志头(redo log header)`
+     - 占用 `12` 个字节
+  2. `日志体(redo log body)`
+     - 占用 `496` 个字节
+  3. `日志尾(redo log trailer)`
+     - 占用 `4` 个字节
+
+![image-20220814135553389](./image/事务日志/image-20220814135553389.png)
+
+### redo日志 写入log buffer
 
 - 向log buffer中写入 redo日志的过程是**顺序的**,也就是**先往前面的 block 中写,当该block 的空闲空间用完之后再往下一个 block 中写**
 
 - 有个问题: 想往 log buffer中写入 redo 日志时,应该写在哪个 block 的哪个偏移量处?(写在哪)
   - **MySQL 有一个全局变量`buf_free`,指明了后续写入的 redo 日志应该写在 log buffer的哪个位置**
-- 一个 mtr执行过程中可能会产生若干条 redo 日志,`这些 redo 日志是不可分割的组`
-  - **并不是每生成一条 redo 日志就将其插入到 log buffer中,而是将每个 MTR 运行过程中的日志暂存到一个地方,然后在该 MTR 结束的时候,再将过程中产生的一组 redo 日志全部复制到 log buffer中**
+- 一个 mtr执行过程中可能会产生若干条 redo 日志,`这些 redo 日志是不可分割的组`, **并不是每生成一条 redo 日志就将其插入到 log buffer中,而是将每个 MTR 运行过程中的日志暂存到一个地方,然后在该 MTR 结束的时候,再将过程中产生的一组 redo 日志全部复制到 log buffer中**
 
 ![image-20220807144659626](./image/事务日志/image-20220807144659626.png)
 
@@ -218,3 +230,76 @@ MySQL 把**对底层页面(不止数据页)的一次原子访问的过程称之�
 ![image-20220807162249348](./image/事务日志/image-20220807162249348.png)
 
 :::
+
+## redo log file
+
+### redo log刷盘的时机
+
+我们前面说过,redo 日志首先会写入 redo log buffer,然后再刷入磁盘中,那么刷入磁盘的时机有哪些呢?
+1. **log buffer空间不足的时候**
+   - log buffer 的空间大小是有限的(当然也可以设置[相关参数](事务日志#重做日志缓冲)),如果不停地向这个缓冲区种写入数据,很快会将它塞满。所以在**log buffer 中的 redo 日志量占据了 buffer 空间的 `50%`左右后,就会将日志刷入磁盘中**
+2. **事务提交的时候**
+   - 事务提交的时候会将 redo 日志写入 redo log buffer,然后依据不同的[刷盘策略](事务日志#事务提交时的刷盘fsync策略) 再将redo buffer 的日志刷入磁盘
+3. **将某个脏页刷入磁盘前,会首先保证该脏页对应的 redo 日志刷新到了磁盘**
+4. **后台线程 master thread, 大约每隔 1s 会将 buffer 中的日志刷入磁盘**
+5. **做 checkpoint 的时候**
+6. **正常关闭服务的时候**
+
+### 相关参数设置
+
+MySQL 的数据目录下有 **ib_logfile0、ib_logfile1**两个文件, log buffer 中的日志默认情况下是刷新到这里的,如果对默认的日志文件不满意需要修改,可以通过下面几个参数进行设置:
+
+1. `innodb_log_group_home_dir`
+   - **用于指定 redo 日志文件所在的目录**
+   - **默认是 ./**, 即当前的数据目录: /var/lib/mysql
+2. `innodb_log_files_in_group`
+   - **用于指定redo log file的个数**, 命名方式如:ib_logfile0，iblogfile…
+   - **默认2个, 最大100个**
+3. `innodb_log_file_size`
+   - **用于指定每个 redo 日志文件的大小, 默认值为 `48M`, 最大值为`512G` **
+   - <mark>最大值指的是整个 redo log 系列文件之和, 即 <strong>innodb_log_files_in_group  *  innodb_log_file_size</strong></mark>
+4. `innodb_flush_log_at_trx_commit`
+   - **控制 redo log 刷新到磁盘的策略，默认为1**
+
+### redo 日志文件组
+
+redo 日志文件可以是由多个的, 也就是一个 redo 日志文件组。所以将日志写入日志文件组的时候,是从 ib_logfile0 开始写,写完之后再写 ib_logfile1,然后以此类推。
+
+<mark>当发现最后一个日志文件 ib_logfileN 写完了,就会再从 ib_logfile0 开始写。</mark>那么会导致后面的日志将前面的日志覆盖么?InnoDB 采用 **checkpoint** 的方式保证不会出现这个问题
+
+![image-20220814141916093](./image/事务日志/image-20220814141916093.png)
+
+
+
+## Checkpoint 技术
+
+### 概述
+
+> **redo 日志文件组的总大小是有限的**, 所以需要循环的使用 redo 日志文件组中的文件,那么会导致最后写入的日志与最开始写入的日志“追尾”
+
+引入的`Checkpoint` 技术就是用于解决下面的问题:
+
+1. **缩短数据库的恢复时间 (redo日志过大)**
+   - 数据库发生宕机的时候, 数据库不需要所有的 redo 日志,因为 Checkpoint 之前的页都已经刷入磁盘了,<mark>只需要对 Checkpoint 之后的 redo 日志进行回复就行了</mark>
+   - **即redo 日志只是为了在系统崩溃之后恢复脏页才引入的,如果对应的脏页已经刷入磁盘,那么即使系统崩溃也用不到 redo 日志去恢复该页面了**
+2. **缓冲池不够用时,将脏页刷新到磁盘**
+   - 当缓冲池不够用的时候,会依据`LRU 算法`得到最近最少使用的页,如果这个页是脏页,就会**强制执行 Checkpoint,将脏页刷入磁盘**
+3. **redo 日志不够用时,刷新脏页**
+   - redo 日志可以被重用的部分是指**这些 redo 日志已经不再需要, 即使数据库宕机后恢复也不需要了,因此可以将这部分的 redo 日志覆盖**
+     - **如果此时 redo 日志还需要使用,那么就强制执行 Checkpoint,将缓冲池中的页刷新到当前 redo 日志的位置**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

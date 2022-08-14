@@ -10,7 +10,7 @@ export default {
   "baseUrl": "/",
   "onBrokenLinks": "warn",
   "onBrokenMarkdownLinks": "warn",
-  "favicon": "img/fav.ico",
+  "favicon": "img/favicon.ico",
   "organizationName": "MagicalZhu",
   "projectName": "XDocs",
   "presets": [
@@ -121,6 +121,10 @@ export default {
           "label": "🚀分布式系统",
           "position": "left",
           "items": [
+            {
+              "label": "理论与算法",
+              "to": "docs/distribute"
+            },
             {
               "label": "分布式基础技术",
               "to": "docs/basicTech"
