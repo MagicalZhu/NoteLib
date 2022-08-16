@@ -36,6 +36,7 @@ html[data-theme="dark"] {
   --custom-code-color: #5ad97a;
   --custom-code-background: #262b3c;
   --custom-border-color: #262b3c;
+  --custom-toc_bgcolor: #262b3c
 }
 
 html[data-theme="light"] {
@@ -48,8 +49,9 @@ html[data-theme="light"] {
   --ifm-color-primary-lightest: #1d3fea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
   --custom-code-color: var(--ifm-code-color);
-  --custom-code-background: var(--ifm-code-background);
-  --custom-border-color: #eee;
+  --custom-code-background: #e1eaff;
+  --custom-border-color: #e1eaff;
+  --custom-toc_bgcolor: #e2e3e866
 }
 
 
@@ -541,4 +543,18 @@ a.card-link:hover img {
     font: inherit;
     min-width: fit-content;
     padding: var(--ifm-pre-padding);
+}
+
+.medium-zoom-image {
+  margin-top: 10px;
+}
+
+.table-of-contents__link:hover, .table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  display: block;
+  text-decoration: none;
+  background: var(--custom-toc_bgcolor);
+  line-height: 1;
+  border-radius: 4px;
+  padding: 8px;
 }

@@ -6,10 +6,16 @@
  */
 
 .tableOfContents {
-  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+  max-height: calc(70vh - (var(--ifm-navbar-height) + 2rem));
   overflow-y: auto;
   position: sticky;
-  top: calc(var(--ifm-navbar-height) + 1rem);
+  top: calc(var(--ifm-navbar-height) + 5rem);
+}
+
+.content {
+  text-align: center;
+  white-space: pre;
+  color: #c4c4ce
 }
 
 @media (max-width: 996px) {
