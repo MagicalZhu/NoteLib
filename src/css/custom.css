@@ -197,10 +197,6 @@ h1 {
   color: var(--ifm-color-emphasis-1000);
 }
 
-h2 {
-  font-size: 1.5rem !important;
-}
-
 .doc-page h2:not(header + * + h2):before {
   height: 1px;
   content: " ";
@@ -209,9 +205,6 @@ h2 {
   margin-bottom: 2rem;
 }
 
-h3 {
-  font-size: 1.2rem !important;
-}
 
 html[data-theme='dark'] .prism-code,
 html[data-theme='dark'] div[class^='codeBlockTitle'] {
