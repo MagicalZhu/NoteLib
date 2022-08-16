@@ -65,7 +65,7 @@
   font: inherit;
   /* rtl:ignore */
   float: fit-content;
-  min-width: 100%;
+  min-width: fit-content;
   padding: var(--ifm-pre-padding);
 }
 
