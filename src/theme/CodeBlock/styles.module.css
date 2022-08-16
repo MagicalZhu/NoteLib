@@ -64,7 +64,7 @@
 .codeBlockLines {
   font: inherit;
   /* rtl:ignore */
-  float: fit-content;
+  float: left;
   min-width: fit-content;
   padding: var(--ifm-pre-padding);
 }
