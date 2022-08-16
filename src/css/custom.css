@@ -16,7 +16,6 @@ html[data-theme="dark"] {
   --ifm-color-info-contrast-foreground: #bdbdbd;
   --ifm-color-warning-contrast-foreground: #bdbdbd;
   --ifm-color-secondary-contrast-foreground: #bdbdbd;
-
   --ifm-color-success-contrast-background: #272727;
   --ifm-color-info-contrast-background: #272727;
   --ifm-color-warning-contrast-background: #272727;
@@ -26,9 +25,24 @@ html[data-theme="dark"] {
   --ifm-color-info-dark: #5fa0ff;
   --ifm-color-success-dark: #36ad99;
   --ifm-card-background-color: linear-gradient(to top right, #958383, #665baa);
+  
+  --ifm-color-primary: #07d529;
+  --ifm-color-primary-dark: #06c025;
+  --ifm-color-primary-darker: #06c025;
+  --ifm-color-primary-darkest: #06c225;
+  --ifm-color-primary-light: #08ea2d;
+  --ifm-color-primary-lighter: #08f52f;
+  --ifm-color-primary-lightest: #26f849;
 }
 
 html[data-theme="light"] {
+  --ifm-color-primary: #1f41ea;
+  --ifm-color-primary-dark: #1436da;
+  --ifm-color-primary-darker: #1333ce;
+  --ifm-color-primary-darkest: #102aaa;
+  --ifm-color-primary-light: #1333ce;
+  --ifm-color-primary-lighter: #1434d3;
+  --ifm-color-primary-lightest: #1d3fea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
   --ifm-code-background: #eae9f8;
 }
