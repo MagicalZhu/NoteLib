@@ -522,3 +522,9 @@ a.card-link:hover img {
 .dropdown > .navbar__link:after {
   border-style: none;
 }
+.codeBlockLines {
+    float: left;
+    font: inherit;
+    min-width: fit-content;
+    padding: var(--ifm-pre-padding);
+}
