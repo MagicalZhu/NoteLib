@@ -33,6 +33,9 @@ html[data-theme="dark"] {
   --ifm-color-primary-light: #08ea2d;
   --ifm-color-primary-lighter: #08f52f;
   --ifm-color-primary-lightest: #26f849;
+  --custom-code-color: #5ad97a;
+  --custom-code-background: #262b3c;
+  --custom-border-color: #262b3c;
 }
 
 html[data-theme="light"] {
@@ -44,7 +47,11 @@ html[data-theme="light"] {
   --ifm-color-primary-lighter: #1434d3;
   --ifm-color-primary-lightest: #1d3fea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
-  --ifm-code-background: #eae9f8;
+  --custom-code-color: var(--ifm-code-color);
+  --custom-code-background: var(--ifm-code-background);
+  --custom-border-color: #eee;
+}
+
 }
 
 
@@ -119,15 +126,15 @@ mark {
 }
 
 code {
-  color: var(--ifm-code-color);
+  color: var(--custom-code-color);
   word-break: break-word;
   margin: 0 1px;
-  background: var(--ifm-code-background);
+  background: var(--custom-code-background);
   /* padding: 0.2em 0.4em;*/
   padding: 4px;
   border-radius: 4px;
   /* font-size: 0.9em;*/
-  border: 1px solid #eee;
+  border: 1px solid var(--custom-border-color);
   font-family: poppins, Monaco, Consolas, Courier New, monospace;
 }
 
