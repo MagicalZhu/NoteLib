@@ -30,6 +30,7 @@ html[data-theme="dark"] {
 
 html[data-theme="light"] {
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
+  --ifm-code-background: #eae9f8;
 }
 
 
@@ -109,8 +110,9 @@ code {
   margin: 0 1px;
   background: var(--ifm-code-background);
   /* padding: 0.2em 0.4em;*/
+  padding: 4px;
   border-radius: 4px;
-  font-size: 0.9em;
+  /* font-size: 0.9em;*/
   border: 1px solid #eee;
   font-family: poppins, Monaco, Consolas, Courier New, monospace;
 }
