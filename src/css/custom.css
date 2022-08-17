@@ -563,3 +563,7 @@ a.card-link:hover img {
     padding: 8px;
     line-height: 1;
 }
+
+.markdown a {
+    text-decoration: underline;
+}
