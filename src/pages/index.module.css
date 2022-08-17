@@ -32,3 +32,6 @@
 .marginXs {
   margin-top: 0.25rem !important;
 }
+.avatar__photo--xl:hover {
+    transform: rotate(360deg);
+}
