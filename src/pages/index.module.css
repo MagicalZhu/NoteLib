@@ -33,5 +33,5 @@
   margin-top: 0.25rem !important;
 }
 .avatar__photo--xl:hover {
-    transform: rotate(360deg);
+    transform: scale(1.1) rotate(360deg);
 }
