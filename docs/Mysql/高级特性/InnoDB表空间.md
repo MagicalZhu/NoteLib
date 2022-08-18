@@ -238,7 +238,7 @@ CREATE TABLE t (
 
 InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这个结构中包含了`链表的节点数、首尾XDES节点的地址(页号和页内偏移)`的信息,具体结构图如下:
 
-  ![](http://assets.processon.com/chart_image/62fde8c00791294c5eac11ed.png?_=1660807838272)
+​	![](./image/InnoDB表空间/image-20220818222510062.png)
 
 <br/>
 
@@ -260,9 +260,9 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 ### 段的结构
 
 我们知道段是一个逻辑概念, InnoDB 使用 `INODE Entry` 结构将段这个抽象概念具象化。像每个区都有对应的 XDES Entry 来记录这个区中的属性一样, InnoDB 为`每个段`都定义了一个 `INODE Entry `结构来记录一下段中的属性:
-![INODE Entry 结构图](http://assets.processon.com/chart_image/62fdf3981e085306094e6e04.png?_=1660811430432)
+![image-20220818222423972](./image/InnoDB表空间/image-20220818222423972.png)
 
-INDOE Entry 的各个部分含义如下：
+**INDOE Entry 的各个部分含义如下：**
 
 1. `Segment ID`
     - **指 INODE Entry 结构对应的段的编号(ID)**
@@ -279,7 +279,78 @@ INDOE Entry 的各个部分含义如下：
     - 如果这个数字是值的 97937874,表明该INODE Entry已经初始化，否则没有被初始化
 
 5. `Fragment Array Entry`
-    - 段是由**完整的区和碎片区中零散的页面**组成的,**每个Fragment Array Entry 都对应着一个零散的页面**
+    - 段是由**完整的区和碎片区中零散的页面**组成的, **每个Fragment Array Entry 都对应着一个零散的页面**
     - `一共有32 个, 每个占用 4 个字节表示一个碎片区零散页面的页号`
 
 ### 各类型页面
+
+> 我们知道了,通过 XDES Entry 可以将不同类型的区连接起来,也可以使用 INODE Entry 来描述段结构
+> 
+> 那么,每个区的 XDES Entry 存储在哪里? 
+> 
+> 直属于表空间的FREE、FREE_FRAG、FULL_FRAG链表的基节点到底存储在表空间的什么地方?
+>
+> 每个段对应的 INODE Entry 到底存在表空间的什么地方?
+
+#### FSP_HDR页
+表空间中以 `256` 个区为一组,其中第一组中的 extend0 的第一个页是 `FSP_HDR` 页,它存储了表空间的一些整体属性以及第一个组内 256 个区的对应的 XDES Entry
+
+**下面是 FSP_HDR 类型页面的结构:**
+
+![image-20220818225433217](./image/InnoDB表空间/image-20220818225433217.png)
+
+<br/>
+
+**可以看到,一个完整的 FSP_HDR 页面由下面五个部分组成:**
+1. `File Header`
+    - [文件头部,这个是页的通用部分](InnoDB数据页结构#文件头file-header)
+    - 定义了页面的简单描述信息
+
+2. `File Space Header`
+    - **表空间头部,定义了表空间的一些整体的描述信息**
+
+3. `XDES Entry`
+    - 区描述信息,存储本组 256 个区对应的[属性信息](InnoDB表空间#xdes-entry-节点)
+
+4. `Empty Space`
+    - **没有使用空间,用于页结构的填充,没有实际意义**
+
+5. `File Trailer`
+    - [文件尾部,这个是页的通用部分](InnoDB数据页结构#文件尾file-trailer)
+
+##### File Space Header
+
+![image-20220818231842127](./image/InnoDB表空间/image-20220818231842127.png)
+
+
+```js title="FSP_HDR与File Space Header"
+        _________________________________          ___________________________________
+       |           File Header           |        |             Space ID              |
+       |---------------------------------|        |-----------------------------------|
+       |        File Space Header        | -----> |             Not Used              |
+       |---------------------------------|        |-----------------------------------|
+       |          XDES Entry 0           |        |               Size                |
+       |          XDES Entry 1           |        |-----------------------------------|
+       |          XDES Entry 2           |        |            FREE Limit             |
+       |             ...                 |        |-----------------------------------|
+       |          XDES Entry 255         |        |            Space Flags            |
+       |---------------------------------|        |-----------------------------------|
+       |          Emptry Space           |        |           FRAG_N_USED             |
+       |---------------------------------|        |-----------------------------------|
+       |          File Trailer           |        |    List Base Node for FREE List   |
+        ---------------------------------         |-----------------------------------|
+                                                  | List Base Node for FREE_FRAG list |
+                                                  |-----------------------------------|
+                                                  | List Base Node for FULL_FRAG list | 
+                                                  |-----------------------------------|
+                                                  |      Next Unused Segment ID       |
+                                                  |-----------------------------------|
+                                                  |List Base Node for SEG_INODES_FULL |
+                                                  |-----------------------------------|
+                                                  |List Base Node for SEG_INODES_FREE |
+                                                   -----------------------------------
+
+```
+
+
+
