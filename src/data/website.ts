@@ -31,6 +31,13 @@ export const websiteData: WebsiteCategory[] = [
         "tags": [""]
       },
       {
+        "name": "Java 全栈知识体系",
+        "desc": "包含: Java 基础, Java 部分源码, JVM, Spring, Spring Boot, Spring Cloud, 数据库原理, MySQL...",
+        "logo": "https://pdai.tech/favicon.ico",
+        "href": "https://pdai.tech/",
+        "tags": [""]
+      },
+      {
         "name": "JavaGuide",
         "desc": "「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识",
         "logo": "	https://javaguide.cn/logo.svg",
