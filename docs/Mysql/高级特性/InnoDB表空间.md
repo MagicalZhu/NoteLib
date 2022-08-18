@@ -187,7 +187,7 @@ titile: InnoDB表空间
   - 把状态为 `FREE` 的碎片区对应的 XDES Entry 通过 List Node 来连接成一个 `FREE 链表`
   - 把状态为 `FREE_FRAG` 的碎片区对应的 XDES Entry 结构通过 List Node 来连接成一个 `FREE_FRAG 链表`
   - 把状态为 `FULL_FRAG` 的碎片区对应的 XDES Entry 结构通过 List Node 来连接成一个 `FULL_FRAG 链表`
-- **流程**
+- **插入数据的流程**
   - **首先查看表空间中的碎片区中是否有状态为 FREE_FRAG 的区**
     - 如果有的话, 就从该区中取一些零散的页把数据插进去
     - 如果没有的话, 就到表空间下申请一个状态为 FREE 的区, 并把该区的状态变为FREE_FRAG, 然后从该新申请的区中取一些零散的页把数据插进去
@@ -207,6 +207,8 @@ titile: InnoDB表空间
       - 同一个段中, `仍有空闲空间的区`对应的 XDES Entry 结构会被加入到这个链表
     - `FULL链表`
       - 同一个段中, `已经没有空闲空间的区`对应的 XDES Entry 结构会被加入到这个链表
+
+- **插入数据的流程和上面类似**
 
 - **每一个索引都对应两个段, 每个段都会维护上述的 3 个链表**
 
@@ -230,3 +232,54 @@ CREATE TABLE t (
 所以段在数据量比较大时插入数据的话，会先获取`NOT_FULL`链表的头节点，直接把数据插入这个头节点对应的区中即可，如果该区的空间已经被用完，就把该节点移到`FULL`链表中。
 
 :::
+
+#### 链表基节点
+> 我们了解了,区可以通过不同的链表"连接"起来, 并且可以将区的XDES Entry 挂链表的尾部,也可以从链表开始遍历。那么这个链表在哪呢? 换句话说,链表的头节点、尾节点在哪?
+
+InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这个结构中包含了`链表的节点数、首尾XDES节点的地址(页号和页内偏移)`的信息,具体结构图如下:
+
+  ![](http://assets.processon.com/chart_image/62fde8c00791294c5eac11ed.png?_=1660807838272)
+
+<br/>
+
+**List Base Node结构说明**
+1. `List Length` : 该链表一共有多少节点
+2. `First Node Page Number + First Node Offset` : 该链表的头节点在表空间中的位置
+3. `Last Node Page Number + Last Node Offset` : 该链表的尾节点在表空间中的位置
+
+<mark>一般我们把某个链表对应的 List Base Node 结构放置在表空间中固定的位置</mark>
+
+#### 链表小结
+
+1. 表空间是由若干个区组成的,每个区都 `对应`一个 XDES Entry
+    - **直属于表空间的区对应的 XDES Entry 可以分成 FREE、FREE_FRAG、FULL_FRAG 这 3 个链表**
+    - **每个段可以附属若干个区, 每个段中的区对应的 XDES Entry 可以分成FREE、NOT_FULL、FULL 这 3 个链表**
+
+2. 每个链表都对应一个 List Base Node 的, 这个结构里记录了链表的头、尾节点的位置以及该链表中包含的节点数
+
+### 段的结构
+
+我们知道段是一个逻辑概念, InnoDB 使用 `INODE Entry` 结构将段这个抽象概念具象化。像每个区都有对应的 XDES Entry 来记录这个区中的属性一样, InnoDB 为`每个段`都定义了一个 `INODE Entry `结构来记录一下段中的属性:
+![INODE Entry 结构图](http://assets.processon.com/chart_image/62fdf3981e085306094e6e04.png?_=1660811430432)
+
+INDOE Entry 的各个部分含义如下：
+
+1. `Segment ID`
+    - **指 INODE Entry 结构对应的段的编号(ID)**
+
+2. `NOT_FULL_N_USED`
+    - **在 NOT_FULL 链表中已经使用了多少个页面**
+
+3. `List Base Node`
+    - **有三个 List Base Node, 分别为段的 FREE链表、NOT_FULL链表、FULL链表的链表[基节点](InnoDB表空间#链表基节点)**
+    - 想查找某个段的某个链表的头节点和尾节点的时候, 就可以直接到这个部分找到对应链表的List Base Node
+
+4. `Magic Number`
+    - **魔数, 用来标记这个 INODE Entry 是否已经被初始化(即把各个字段的值都填进去)**
+    - 如果这个数字是值的 97937874,表明该INODE Entry已经初始化，否则没有被初始化
+
+5. `Fragment Array Entry`
+    - 段是由**完整的区和碎片区中零散的页面**组成的,**每个Fragment Array Entry 都对应着一个零散的页面**
+    - `一共有32 个, 每个占用 4 个字节表示一个碎片区零散页面的页号`
+
+### 各类型页面
