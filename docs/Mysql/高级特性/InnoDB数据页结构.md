@@ -150,7 +150,7 @@ SQL Server中页的大小为 `8KB`,而在 Oracle 中使用`块(Block)`来代表�
 | **FIL_PAGE_INDEX**          | `0x45BF` | 索引页,也叫做数据页    |
 | **FIL_PAGE_TYPE_ALLOCATED** | `0x0000` | 最新分配的页           |
 | **FIL_PAGE_UNDO_LOG**       | `0x0002` | Undo日志页             |
-| **FIL_PAGE_INDOE**          | `0x0003` | 存储段的信息           |
+| **FIL_PAGE_INODE**          | `0x0003` | 存储段的信息           |
 | **FIL_PAGE_IBUF_FREE_LIST** | `0x0004` | Insert Buffer 空闲列表 |
 | **FIL_PAGE_TYPE_SYS**       | `0x0006` | 系统页                 |
 | **FIL_PAGE_TRX_SYS**        | `0x0007` | 事务系统数据           |
