@@ -37,6 +37,7 @@ html[data-theme="dark"] {
   --custom-code-background: #262b3c;
   --custom-border-color: #262b3c;
   --custom-toc_bgcolor: #262b3c
+  --custom-list-paragraph-margin: 5px;
 }
 
 html[data-theme="light"] {
@@ -52,6 +53,7 @@ html[data-theme="light"] {
   --custom-code-background: #e1eaff;
   --custom-border-color: #e1eaff;
   --custom-toc_bgcolor: #e2e3e866
+  --custom-list-paragraph-margin: 5px;
 }
 
 
@@ -566,4 +568,9 @@ a.card-link:hover img {
 
 .markdown a {
     text-decoration: underline;
+}
+
+.markdown li>p {
+    margin-top: var(--custom-list-paragraph-margin);
+    margin-bottom: var(--custom-list-paragraph-margin);
 }
