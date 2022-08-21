@@ -167,10 +167,9 @@ titile: InnoDB表空间
 
         ![image-20220817223125715](./image/InnoDB表空间/image-20220817223125715.png)
 
-    - 如果想定位表空间内的某一个位置的话,只需`指定页号以及该位置在指定页号中的页内偏移量`即可。所以：
+    - 如果**想定位表空间内的某一个位置**的话,只需`指定页号以及该位置在指定页号中的页内偏移量`即可(意味着可以定位到具体的页)。所以：
       - Pre Node Page Number + Pre Node Offset : 指向前一个XDES Entry
       - Next Node Page Number + Next Node Offset : 指向后一个XDES Entry
-
 
 3. `State`
     - `占用 4 字节`
@@ -265,7 +264,7 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 ### 段结构(INODE Entry)
 
 我们知道段是一个逻辑概念, InnoDB 使用 `INODE Entry` 结构将段这个抽象概念具象化。像每个区都有对应的 XDES Entry 来记录这个区中的属性一样, InnoDB 为`每个段`都定义了一个 `INODE Entry `结构来记录一下段中的属性:
-![image-20220818222423972](./image/InnoDB表空间/image-20220818222423972.png)
+![image-20220821001254057](./image/InnoDB表空间/image-20220821001254057.png)
 
 **INODE Entry 的各个部分含义如下：**
 
@@ -310,19 +309,15 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 1. `File Header`
     - [文件头部,这个是页的通用部分](InnoDB数据页结构#文件头file-header)
     - 定义了页面的简单描述信息
-
 2. `File Space Header`
     - **表空间头部,定义了表空间的一些整体的描述信息**
-
 3. `XDES Entry`
     - 区描述信息,存储本组 256 个区对应的[属性信息](InnoDB表空间#xdes-entry-节点)
-
 4. `Empty Space`
-    - **没有使用空间,用于页结构的填充,没有实际意义**
+   - **没有使用空间,用于页结构的填充,没有实际意义**
 
-   `File Trailer`
-    - [文件尾部,这个是页的通用部分](InnoDB数据页结构#文件尾file-trailer)
-    - 
+5. `File Trailer`
+   - [文件尾部,这个是页的通用部分](InnoDB数据页结构#文件尾file-trailer)
 
 
 ##### File Space Header
@@ -345,15 +340,16 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 3. `Next Unused Segment ID`
     - **表明当前表空间中最大的段 ID 的下一个 ID**
     - 每个索引对应两个段,那么每次新加一个索引都会"创建"两个段,那么如何保证表空间中`段 ID` 的唯一呢?如果遍历所有的段那么会耗费相当的时间, 所以InnoDB 在表空间属性中定义了 *Next Unused Segment ID* 字段
-    - **每次新加一个段的时候,只需要操作这个属性值就可以了**
+    - **每次新加一个段的时候,只需要直接使用这个属性值, 然后再自增一下就可以了**
 
 4. `List Base Node for SEG_INODES_FULL | SEG_INODES_FREE List`
+   
     - **默认情况下,每个段对应的 INODE Entry 会放在`INODE`页中**, 但是在表空间段特别多的情况下,一个 INODE 页中放不下 INODE Entry , 这些 INODE 类型的页会组成两种列表
       - `SEG_INODES_FULL 链表` 
         - 该链表中的 INODE 类型的页面都已经被INODE Entry 结构填充满了，没空闲空间存放额外的INODE Entry了
       - `SEG_INODES_FREE 链表`
-        - 该链表中的 INODE 类型的页面仍有空闲空间来存放 INODE Entry 结构
-
+       - 该链表中的 INODE 类型的页面仍有空闲空间来存放 INODE Entry 结构
+     
    | 属性                               | 大小(字节) | 描述                                                         |
    | ---------------------------------- | ---------- | ------------------------------------------------------------ |
    | `Space ID`                          | **4**      | 表空间的 ID                               |
@@ -370,7 +366,7 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
    | `List Base Node for SEG_INODES_FREE List`            | **16**     | **SEG_INODES_FREE 链表的基节点**|
 
 
-![image-20220818231842127](./image/InnoDB表空间/image-20220818231842127.png)
+![image-20220821001200120](./image/InnoDB表空间/image-20220821001200120.png)
 
 
 ##### XDES Entry
@@ -379,8 +375,18 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 
 
 #### XDES页
+> 每一个 XDES Entry 都会对应一个区,并且可以通过其中的 List Node 中的 `Page Number` 和 `Offset` 定位到具体的页中的具体位置,而这些 XDES Entry 信息就存储在 XDES 页中
+
+- 在实际开发中,**表空间中会有大量的区,那随之也会有大量的 XDES Entry 节点,那么一个页肯定无法存储这么多的 XDES Entry,因此 InnoDB 以 256 个区为一组对表空间进行划分**, 然后`每一组的第一个区的第一个页`中存储着当前组中 256 个区的 XDES Entry
+- 上面提到的 `FSP_HDR页` 比较特殊,除了记录了 **XDES Entry** 的信息,还记录了**表空间的属性**, 当然了整个表空间只有这一个这种类型的页, **随后的每一组区的 XDES Entry 都会被存储该分组的第一个页,**也就是`XDES 页`
+
+**XDES 页 和 FSP_HDR页 的结构除了 File Space Header 以外是一样的:**
+
+![image-20220821001654411](./image/InnoDB表空间/image-20220821001654411.png)
 
 
+
+#### INODE页
 
 
 

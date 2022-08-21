@@ -529,7 +529,8 @@ export default {
   ],
   "titleDelimiter": "|",
   "plugins": [
-    "plugin-image-zoom"
+    "plugin-image-zoom",
+    null
   ],
   "stylesheets": [
     {

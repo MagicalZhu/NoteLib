@@ -70,7 +70,8 @@ const mysqlPart =  new Category('MySQL基础与高级')
     .createSubCaregory('事务与锁', 'Mysql/高级特性', [
       '事务基础',
       'Redo日志',
-      'Undo日志'
+      'Undo日志',
+      `锁`
     ])
     
 

@@ -207,6 +207,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/锁",
+              "path": "/docs/Mysql/高级特性/锁",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/性能分析工具",
               "path": "/docs/Mysql/高级特性/性能分析工具",
               "sidebar": "mysqlSideBar"

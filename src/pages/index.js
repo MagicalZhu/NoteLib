@@ -11,7 +11,7 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const avastar = useBaseUrl(siteConfig.themeConfig.navbar.logo.src)
   return (
-    <div class="container margin-top--xl margin-bottom--xl" className={clsx(styles.heroBanner) }>
+    <div class="container margin-top--xl margin-bottom--xl " className={clsx(styles.heroBanner)}>
       <div class="avatar avatar--vertical">
         <img class="avatar__photo avatar__photo--xl" src={avastar}/>
         <h1 class="hero__title">{siteConfig.title}</h1>

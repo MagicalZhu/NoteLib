@@ -972,6 +972,28 @@
               }
             },
             {
+              "unversionedId": "Mysql/高级特性/锁",
+              "id": "Mysql/高级特性/锁",
+              "title": "锁机制",
+              "description": "事务的隔离性由锁来实现",
+              "source": "@site/docs/Mysql/高级特性/锁.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/锁",
+              "permalink": "/docs/Mysql/高级特性/锁",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/锁.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "锁",
+                "title": "锁机制"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "Undo日志",
+                "permalink": "/docs/Mysql/高级特性/Undo日志"
+              }
+            },
+            {
               "unversionedId": "Mysql/高级特性/性能分析工具",
               "id": "Mysql/高级特性/性能分析工具",
               "title": "性能分析工具",
@@ -1173,6 +1195,10 @@
               "previous": {
                 "title": "Redo日志",
                 "permalink": "/docs/Mysql/高级特性/Redo日志"
+              },
+              "next": {
+                "title": "锁机制",
+                "permalink": "/docs/Mysql/高级特性/锁"
               }
             },
             {
@@ -2255,6 +2281,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/Undo日志"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/锁"
                       }
                     ],
                     "collapsed": true,
@@ -2902,6 +2932,9 @@
     "default": null
   },
   "docusaurus-plugin-image-zoom": {
+    "default": null
+  },
+  "postcss-tailwindcss-loader": {
     "default": null
   }
 }

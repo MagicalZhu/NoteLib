@@ -498,6 +498,12 @@
                 "label": "Undo日志",
                 "href": "/docs/Mysql/高级特性/Undo日志",
                 "docId": "Mysql/高级特性/Undo日志"
+              },
+              {
+                "type": "link",
+                "label": "锁机制",
+                "href": "/docs/Mysql/高级特性/锁",
+                "docId": "Mysql/高级特性/锁"
               }
             ],
             "collapsed": true,
@@ -825,6 +831,12 @@
       "id": "Mysql/高级特性/索引与查询优化",
       "title": "索引与查询优化",
       "description": "都有哪些维度可以进行数据库调优?大体上说:",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/锁": {
+      "id": "Mysql/高级特性/锁",
+      "title": "锁机制",
+      "description": "事务的隔离性由锁来实现",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/性能分析工具": {

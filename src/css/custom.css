@@ -145,12 +145,15 @@ html[data-theme='light'] .markdown {
   line-height: 2;
 }
 
+/**
+card style disabled
 html[data-theme='light'] .card{
   background-image: linear-gradient(to top right, #e1eaff, #f4e4f5);
 }
 html[data-theme='dark'] .card{
   background-image: linear-gradient(to top right, #958383, #665baa);
 }
+*/
 
 html[data-theme='dark'] .markdown {
   line-height: 2;

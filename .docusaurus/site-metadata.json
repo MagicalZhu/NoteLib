@@ -36,6 +36,9 @@
       "type": "package",
       "name": "plugin-image-zoom",
       "version": "1.1.0"
+    },
+    "postcss-tailwindcss-loader": {
+      "type": "local"
     }
   }
 }
