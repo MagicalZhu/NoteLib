@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','4cd'),
+    component: ComponentCreator('/docs','ff0'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -298,10 +298,22 @@ export default [
         'sidebar': "springCloudSideBar"
       },
       {
+        path: '/docs/category/性能监控和调优入门',
+        component: ComponentCreator('/docs/category/性能监控和调优入门','150'),
+        exact: true,
+        'sidebar': "jvmSideBar"
+      },
+      {
         path: '/docs/category/性能优化',
         component: ComponentCreator('/docs/category/性能优化','3ba'),
         exact: true,
         'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/category/jvm优化',
+        component: ComponentCreator('/docs/category/jvm优化','788'),
+        exact: true,
+        'sidebar': "jvmSideBar"
       },
       {
         path: '/docs/category/mysql基础与高级',
@@ -312,6 +324,18 @@ export default [
       {
         path: '/docs/category/spring编程思想',
         component: ComponentCreator('/docs/category/spring编程思想','ab2'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/category/spring基础',
+        component: ComponentCreator('/docs/category/spring基础','0a2'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/category/spring注解',
+        component: ComponentCreator('/docs/category/spring注解','7e2'),
         exact: true,
         'sidebar': "springSideBar"
       },
@@ -371,6 +395,17 @@ export default [
         path: '/docs/job',
         component: ComponentCreator('/docs/job','cd2'),
         exact: true
+      },
+      {
+        path: '/docs/JVM',
+        component: ComponentCreator('/docs/JVM','d4c'),
+        exact: true
+      },
+      {
+        path: '/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控',
+        component: ComponentCreator('/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控','1fd'),
+        exact: true,
+        'sidebar': "jvmSideBar"
       },
       {
         path: '/docs/leetCode',
@@ -547,6 +582,12 @@ export default [
       {
         path: '/docs/spring',
         component: ComponentCreator('/docs/spring','a62'),
+        exact: true,
+        'sidebar': "springSideBar"
+      },
+      {
+        path: '/docs/Spring/注解驱动开发/组件注册之简单注册',
+        component: ComponentCreator('/docs/Spring/注解驱动开发/组件注册之简单注册','f61'),
         exact: true,
         'sidebar': "springSideBar"
       },

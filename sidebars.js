@@ -120,13 +120,19 @@ const sourceSideBar = [
 ]
 
 // Spring相关
-const springCode = new Category('Spring编程思想')
-  .setNoLabelItem('Spring/Spring编程思想', [
+const springCode = new Category('Spring基础')
+  .createSubCaregory('Spring编程思想','Spring/Spring编程思想',[
     'IOC容器',
     'Bean',
     '依赖查找',
     '依赖注入'
   ])
+  .createSubCaregory('Spring注解', 'Spring/注解驱动开发', [
+    '组件注册之简单注册'
+  ])
+
+
+
 const springSideBar = [
   createDoc('Spring/spring', '简介'),
   springCode
@@ -169,7 +175,15 @@ const vueSideBar = [
   vuePart,
 ]
 
-// TODO React
+// JVM
+const jvmPart =  new Category('JVM优化')
+    .createSubCaregory('性能监控和调优入门', 'JVM/性能监控和调优入门', [
+      '基于JDK命令行工具的监控',
+    ])
+
+const jvmSideBar = [
+  jvmPart
+]
 
 
 const sidebars = {
@@ -182,7 +196,8 @@ const sidebars = {
   mysqlSideBar,
   vueSideBar,
   dataStructureSidebar,
-  leetCodeSidebar
+  leetCodeSidebar,
+  jvmSideBar
 }
 
 module.exports = sidebars;

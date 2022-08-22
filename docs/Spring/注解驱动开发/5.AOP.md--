@@ -1,0 +1,750 @@
+[TOC]
+
+## 1. 引入AOP的概述
+
+> 需求以及常规的实现 : 
+> 
+> - 在计算数据前后进行日志记录,传统的解决方案是通过硬编码的方式,在代码中进行输出。这种方式使得代码强烈耦合,一旦当记录的日志内容需要修改时,需要一个一个替换,容易出现问题
+
+*比如 : 如下就是在计算前后进行日志输出,将日志输出嵌在代码中*
+
+```java
+/**
+ * @author zyl
+ * @Description 计算实现类 : 传统实现
+ * @Date 2019/8/23
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+
+@Service("calculateImpl")
+public class CalculateImpl implements  ICalculate {
+    @Override
+    public int add(int m, int n) {
+        System.out.println(String.format("入参: m=%s,n=%s",m,n));
+        int result = m+n;
+        System.out.println(String.format("结果: result=%s",result));
+        return result;
+    }
+
+    @Override
+    public int sub(int m, int n) {
+        System.out.println(String.format("入参: m=%s,n=%s",m,n));
+        int result = m-n;
+        System.out.println(String.format("结果: result=%s",result));
+        return result;
+    }
+
+    @Override
+    public int mul(int m, int n) {
+        System.out.println(String.format("入参: m=%s,n=%s",m,n));
+        int result = m*n;
+        System.out.println(String.format("结果: result=%s",result));
+        return result;
+    }
+
+    @Override
+    public int div(int m, int n) {
+        System.out.println(String.format("入参: m=%s,n=%s",m,n));
+        int result = m%n;
+        System.out.println(String.format("结果: result=%s",result));
+        return result;
+    }
+}
+```
+
+## 2.动态代理
+
+### 2.1 动态代理模式原理
+
+- <font color=red>使用一个代理将对象包装起来，然后用该代理对象取代原始对象(目标对象)</font>
+  - <font color=red>任何对原始对象的调用都要通过代理</font>
+  - <font color=red>代理对象决定是否以及何时将方法调用转到原始对象上</font>
+
+![](E:\Note\Spring注解驱动开发\Image\动态代理.png)
+
+### 2.2 动态代理的方式
+
+- 常见的动态代理有两种方式
+
+-  - <font color=blue>①.  基于接口实现动态代理  : JDK动态代理</font>
+   - <font color=blue>②.  基于继承实现动态代理  : Cglib , Javassist 动态代理</font>
+
+- 动态代理相关的类和接口 : 
+  
+   - <font color=red>***Proxy***</font>  : 是所有动态代理类的父类,用于生成代理类 或者代理对象
+      - `getProxyClass(ClassLoader loader, Class... interfaces)`
+         - 用于生成代理类的 Class对象
+      - `newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)`
+         - 用于创建代理对象
+         - 方法参数说明
+            - <font color=red>***loader***</font> :  类加载器对象,帮我们加载动态生成的代理类
+            - <font color=red>***interfaces*** </font>: 接口们,提供目标对象的所有接口
+            - <font color=red>***h***</font> : InvocationHandler 类型的对象
+   - <font color=red>***InvocationHandler***</font>   : 完成动态代理的整个过程, 需要实现这个接口
+      - `invoke(Object proxy, Method method, Object[] args)`
+         - 动态代理方法的编写
+         - 代理对象调用代理方法,会调用这个Invoke方法
+         - 方法参数说明
+            - <font color=red>***proxy***</font> : 代理对象 , 在 invoke方法中一般不会使用
+            - <font color=red>***method***</font> : 正在被调用的方法对象
+            - <font color=red>***args***</font> : 正在被调用的方法的参数
+
+### 2.3 如何通过JDK实现动态代理
+
+- `创建代理类步骤?`
+   - ①.  声明目标对象类型的变量
+   - ②.  定义一个 InvocationHandler 接口的实现类,实现Invoke()方法
+      - 定义代理过程 需要做什么
+      - 将方法的调用者 转回到目标对象    
+         - Method.Invoke()
+   - ③.  定义获取代理对象的方法
+      - 声明代理对象变量
+      - 获取目标对象的类加载器            
+         - getClass().getClassLoader()
+      - 获取目标对象的实现的所有接口   
+         - getClass().getInterfaces()
+      - 调用 Proxy.newProxyInstance()方法,返回代理对象
+- `使用动态代理?`
+   - 创建目标对象
+   - 通过代理类的 获取代理对象的方法,获取代理对象
+   - 将代理对象转换为 目标对象类型(一般是目标对象的接口类型)
+   - 通过代理对象 调用方法
+
+*代码示例:*
+<font color=green>①. 创建获取代理对象的方法</font>
+
+```java
+package com.yoey.aop.Proxy;
+
+import com.yoey.aop.ICalculate;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Arrays;
+
+/**
+ * @author zyl
+ * @Description 计算代理类
+ * @Date 2019/8/23
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+public class CalculateProxy {
+    //定义目标对象
+    private ICalculate target;
+
+    public CalculateProxy(ICalculate target) {
+        this.target = target;
+    }
+    /**
+     * 获取代理对象
+     * @return Object
+     */
+    public Object getProxy(){
+
+        // 获取目标类的类加载器
+        ClassLoader loader = target.getClass().getClassLoader();
+
+        // 获取目标类实现的所有接口
+        Class<?>[] interfaces = target.getClass().getInterfaces();
+
+        //通过 Proxy.newProxyInstance 创建代理对象
+        Object proxy = Proxy.newProxyInstance(loader, interfaces, new InvocationHandler() {
+
+            /**
+             * 定义代理对象需要做什么
+             * @param proxy 代理对象
+             * @param method 正在被调用的方法
+             * @param args 正在被调用的参数
+             * @return
+             * @throws Throwable
+             */
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                System.out.println("日志动态代理 -->方法名:"+method.getName()+",入参:"+ Arrays.asList(args));
+                // 将方法的调用转回到目标对象
+                Object result = method.invoke(target, args);
+                System.out.println("日志动态代理 -->方法名:"+method.getName()+",结果:"+ result);
+                return result;
+            }
+        });
+        return proxy;
+    }
+}
+```
+
+<font color=green>②. 使用测试类进行测试</font>
+
+- 使用 AnnotationConfigApplicationContext  加载某个注解配置类
+
+```java
+@RunWith(SpringRunner.class)
+public class AopApplicationTests 
+{
+    @Test
+    public void testProxy() {
+        AnnotationConfigApplicationContext context  = new AnnotationConfigApplicationContext(AopConfig.class);
+        CalculateImpl calculateImpl = (CalculateImpl)context.getBean("calculateImpl");
+
+        // 获取代理对象,并定义为 ICalculate类型
+        ICalculate proxy = (ICalculate)new CalculateProxy(calculateImpl).getProxy();
+        proxy.div(5,1);
+    }
+}
+```
+
+<font color=green>③. 控制台输出</font>
+
+- 可以看到 , 除去 CalculateImpl 本身方法中的日志记录 , 还有代理过程中的日志记录
+
+```tex
+日志动态代理 -->方法名:div,入参:[5, 1]
+入参: m=5,n=1
+结果: result=0
+日志动态代理 -->方法名:div,结果:0
+```
+
+### 2.4 动态代理的底层实现
+
+- 在启动测试类的时候,加上参数 `-Dsun.misc.ProxyGenerator.saveGeneratedFiles=true`
+- <font color=red>调用代理对象 的代理方法,为什么会执行 InvocationHandler 中的Invoke( ) 方法?</font>
+   - <font color=red>①.  反编译动态生成的代理类 $Proxyxx   会实现 目标类所实现的所有接口  </font>
+   - <font color=red>②.  $Proxyxx  代理类中,定义了多个Method 对象 ,   包含  目标类实现的所有接口中的方法对象 </font>
+      - 在静态代码块中 对定义的Method 对象进行赋值
+   - ③.   $Proxyxx  代理类继承了 Proxy 对象 , <font color=red>代理类的构造函数,参数是 InvocationHandler 对象 ,这个对象是在 调用newProxyInstance 方法时传入 </font>
+      - 所以实际上第一行的是 Proxy(InvocationHandler handler) {  this.h = handler; } 
+   - ④.   由于代理类实现类目标类锁实现的接口 , 所以可以和目标类一样调用接口方法
+      - <font color=red>通过 *super.h.invoke*</font> 调用接口方法 , 实际上super.h 就是 第三步中传入的  InvocationHandler 
+         - 所以,调用代理对象 的代理方法 会执行 InvocationHandler 中的Invoke( ) 方法
+
+<font color=green>①. 生成的代理类 </font>
+
+```java
+import com.yoey.aop.ICalculate;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.lang.reflect.UndeclaredThrowableException;
+
+public final class $Proxy25 extends Proxy implements ICalculate {
+    // 定义多个Method 对象,并且在静态代码块中进行初始化
+    // m0,m1,m2 :分别是 java.lang.Object 顶级父类的 hashCode(), equals() , toString() 方法
+    private static Method m0;   
+    private static Method m1;
+    private static Method m2;
+    // m3,m4,m5,m6 分别是代理对象实现的接口中的方法
+    private static Method m3;
+    private static Method m4;  
+    private static Method m5;
+    private static Method m6;   
+    static {
+        try {
+            m0 = Class.forName("java.lang.Object").getMethod("hashCode");
+            m1 = Class.forName("java.lang.Object").getMethod("equals", Class.forName("java.lang.Object"));
+            m2 = Class.forName("java.lang.Object").getMethod("toString");
+            m6 = Class.forName("com.yoey.aop.ICalculate").getMethod("mul", Integer.TYPE, Integer.TYPE);
+            m3 = Class.forName("com.yoey.aop.ICalculate").getMethod("add", Integer.TYPE, Integer.TYPE);
+            m5 = Class.forName("com.yoey.aop.ICalculate").getMethod("sub", Integer.TYPE, Integer.TYPE);
+            m4 = Class.forName("com.yoey.aop.ICalculate").getMethod("div", Integer.TYPE, Integer.TYPE);
+        } catch (NoSuchMethodException var2) {
+            throw new NoSuchMethodError(var2.getMessage());
+        } catch (ClassNotFoundException var3) {
+            throw new NoClassDefFoundError(var3.getMessage());
+        }
+    }
+    // 代理对象构造函数,由于实现了Proxy类,所以 super(handler) => Proxy(InvocationHandler handler){this.h=handler}    
+    public $Proxy25(InvocationHandler handler) throws  {
+        super(handler);
+    }
+
+   // ...省略Object三大方法
+    public final int mul(int var1, int var2) throws  {
+        try {
+            // super.h.invoke() => 实际上调用的就是 handler.invoke()
+            return (Integer)super.h.invoke(this, m6, new Object[]{var1, var2});
+        } catch (RuntimeException | Error var4) {
+            throw var4;
+        } catch (Throwable var5) {
+            throw new UndeclaredThrowableException(var5);
+        }
+    }
+
+    public final int add(int var1, int var2) throws  {
+        try {
+            return (Integer)super.h.invoke(this, m3, new Object[]{var1, var2});
+        } catch (RuntimeException | Error var4) {
+            throw var4;
+        } catch (Throwable var5) {
+            throw new UndeclaredThrowableException(var5);
+        }
+    }
+
+    public final int sub(int var1, int var2) throws  {
+        try {
+            return (Integer)super.h.invoke(this, m5, new Object[]{var1, var2});
+        } catch (RuntimeException | Error var4) {
+            throw var4;
+        } catch (Throwable var5) {
+            throw new UndeclaredThrowableException(var5);
+        }
+    }
+
+    public final int div(int var1, int var2) throws  {
+        try {
+            return (Integer)super.h.invoke(this, m4, new Object[]{var1, var2});
+        } catch (RuntimeException | Error var4) {
+            throw var4;
+        } catch (Throwable var5) {
+            throw new UndeclaredThrowableException(var5);
+        }
+    }
+}
+```
+
+### 2.5 通过Proxy创建代理类对象,理解动态代理
+
+- Proxy.getProxyClass( )  : 创建代理类对象
+- proxyClass.getDeclaredConstructor() : 获取代理类对象的构造函数
+- onstructor.newInstance(new InvocationHandler( ) { ... } ) : 创建代理对象
+
+```java
+/**
+ * @author zyl
+ * @Description 通过Proxy创建代理类对象,并通过代理类对象创建代理对象
+ * @Date 2019/8/23
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+public class CalculateProxy2 {
+    //目标类
+    private ICalculate target;
+    public CalculateProxy2(ICalculate target) {
+        this.target = target;
+    }
+
+    public Object getProxy() throws Exception {
+        //目标类加载器
+        ClassLoader loader = target.getClass().getClassLoader();
+        //目标类实现所有接口
+        Class<?>[] interfaces = target.getClass().getInterfaces();
+
+        // 创建代理类 (传入目标类加载器 以及 目标类实现的接口)
+        Class proxyClass = Proxy.getProxyClass(loader,interfaces);
+
+        // 获取代理类的构造器对象 (参数是 InvocationHandler 类型)
+        Constructor constructor = proxyClass.getDeclaredConstructor(InvocationHandler.class);
+
+        //通过构造器对象创建代理对象
+        Object proxy = constructor.newInstance(new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                System.out.println("日志动态代理 -->方法名:"+method.getName()+",入参:"+ Arrays.asList(args));
+                // 将方法的调用转回到目标对象
+                Object result = method.invoke(target, args);
+                System.out.println("日志动态代理 -->方法名:"+method.getName()+",结果:"+ result);
+                return result;
+            }
+        });
+        return proxy;
+    }
+}
+```
+
+## 3.AOP
+
+### 3.1 AOP 概述
+
+- `AOP(Aspect-Oriented Programming) ` : 面向切面编程
+   - AOP 的主要编程对象是切面(aspect), 而切面 模块化横切关注点.
+   - 在应用 AOP 编程时,仍然需要定义公共功能 , 但可以明确的定义这个功能在哪里, 以什么方式应用
+      - 并且不必修改受影响的类这样一来横切关注点就被模块化到特殊的对象(切面)里
+- <font color=red>作用 : 可以在程序运行期间 , 动态的将某段代码切入到指定方法的指定位置</font>
+
+![](E:\Note\Spring注解驱动开发\Image\AOP图.png)
+
+### 3.2 AOP术语
+
+- `横切关注点  : 从每个方法中抽取出来的同一类非核心业务 `
+   - 比如关注记录日志的方法
+- `切面(Aspect): 封装横切关注点信息的类，每个关注点体现为一个通知方法`
+   - 比如前置日志和后置日志
+- `通知(Advice) : 切面必须要完成的工作`
+   - 比如日志和验证工作
+- `目标(Target)  : 被通知的对象`
+   - 比如:业务逻辑
+- `代理(Proxy) : 向目标对象应用通知之后创建的对象`
+- `连接点（Joinpoint）：程序执行的某个特定位置：如类某个方法调用前、调用后、方法抛出异常后等`
+   - 连接点由两个信息确定
+      - 方法表示为程序执行点
+      - 相对点表示的方位
+   - 例如 ArithmethicCalculator#add() 方法执行前的连接点
+      - 执行点 :  ArithmethicCalculator#add()  
+      - 方位 :  该方法执行前的位置
+- `切入点（pointcut）`：每个类都拥有多个连接点
+   - 例如 ArithmethicCalculator 的所有方法实际上都是连接点
+      - <font color=red>即连接点是程序类中客观存在的,AOP 通过切点定位到特定的连接点</font>
+   - 类比：连接点相当于数据库中的记录，切入点相当于查询条件
+      - 切入点和连接点不是一对一的关系，一个切入点匹配多个连接点
+   - 切入点通过 org.springframework.aop.Pointcut 接口进行描述，它使用类和方法作为连接点的查询条件。
+
+![](E:\Note\Spring注解驱动开发\Image\aop术语图示.png)
+
+### 3.3 AspectJ
+
+- Java社区里最完整最流行的AOP框架
+- <font color=blue>**常见的AspectJ注解**</font>
+   - <font color=red>***@Aspect*** </font> : 标识一个切面Java类
+   - <font color=red>通知</font> : 标注有特定注解的简单的 Java 方法
+      - <font color=red>***@Before***</font>  
+         - 前置通知,在方法执行前执行
+      - <font color=red>***@After***</font>
+         - 后置通知,在方法执行之后执行
+      - <font color=red >***@AfterRunning***</font>
+         - 返回通知 , 在方法返回结果之后执行
+      - <font color=red >***@AfterThrowing***</font>
+         - 异常通知 , 在方法抛出异常之后执行
+      - <font color=red >***@Around***</font>
+         - 环绕通知，围绕着方法执行
+- <font color=blue>**切入点表达式**</font>
+   - 作用 : 通过表达式定位到一个或者多个具体的连接点
+   - <font color=red>语法格式 :  </font> `execution([权限修饰符] [返回值类型] [简单类名/全类名] [方法名]([参数列表]))`
+      - 权限修饰符 / 返回值类型 / 类名 / 方法名 都可以用 * 进行模糊匹配
+      - 参数列表 : 可以通过 `..` 匹配任意数量参数
+      - <font color=red>注意 : 如果目标类和该切面在同一个包中 , 可以使用简单类名</font>
+   - ==示例==
+      - <font color=red >execution ( *  com.atguigu.spring.ArithmeticCalculator.*(..) )</font>
+         - 匹配 ArithmeticCalculator 中声明的所有方法
+            - 第一个 *  :  任意修饰符及任意返回值
+            - 第二个 *  :  任意方法
+            - ..   :  匹配任意数量的参数
+      - <font color=red >execution public * ArithmeticCalculator.*(..)</font>
+         - 匹配 ArithmeticCalculator 接口的所有公有方法.
+      - <font color=red >execution public double ArithmeticCalculator.*(..)</font>
+         - 匹配 ArithmeticCalculator 中返回 double 类型数值的方法
+      - <font color=red >execution public double ArithmeticCalculator.*(double, ..)</font>
+         - 匹配第一个参数为 double 类型的方法, .. 匹配任意数量任意类型的参数
+      - <font color=red>execution public double ArithmeticCalculator.*(double, double)</font>
+         - 匹配参数类型为 double, double 类型的方法
+   - 在AspectJ中，切入点表达式可以通过 `"&&" 、"||" 、"!"` 等操作符结合起来
+      - <font color=red>execution (*  * .add(int,..)) || execution(*  *.sub(int,..))</font>
+         - 任意类中第一个参数为int类型的add方法或sub方法
+      - <font color=red>!execution (* *.add(int,..)) </font>
+- `连接点对象 - JoinPoint`
+   - <font color=blue>**常见方法**</font>
+     - <font color=red>getArgs( ) </font> : 获取实际参数数组
+     - <font color=red>getSignature()</font>	:封装签名信息的对象,可以进一步获取方法名
+
+- 通知的说明图 : 
+
+![](E:\Note\Spring注解驱动开发\Image\声明式事务.png)
+
+
+
+## 4. AspectJ 通知的使用
+
+### 4.0 如何在SpringBoot中启用AOP功能
+
+- ①. 加入 `spring-boot-starter-aop` 的启动器
+- ②.  使用 `@EnableAspectJAutoProxy` 注解,开启AOP注解
+- ③. 在application.properties  中 配置aop 
+  - `spring.aop.auto=true`
+  - `spring.aop.proxy-target-class=true`
+
+### 4.1 前置通知-<font color=red> **@Before (execution(...))**</font>
+
+- 在目标方法 ( 连接点 ) 执行前执行
+
+<font color=green>①.  定义一个日志切面类 </font>
+
+```java
+/**
+ * 使用 {@link Aspect}
+ * @author zyl
+ * @Description 定义日志切面类
+ * @Date 2019/8/24
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+@Component
+@Aspect
+public class LoggingAspect {
+
+    @Before("execution(public int com.yoey.aop.CalculateImpl.div(int,int))")
+    public void  beforeMethod()
+    {
+        System.out.println("日志切面===>beforeMethod");
+    }
+}
+```
+
+<font color=green>②. 在配置类中将切面类注入IOC容器中 </font>
+
+```java
+
+import com.yoey.aop.Aspect.LoggingAspect;
+import com.yoey.aop.CalculateImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
+/**
+ * @author zyl
+ * @Description AOP 配置类
+ * @Date 2019/8/23
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+// 使用 @EnableAspectJAutoProxy 开启AOP注解功能
+@EnableAspectJAutoProxy
+@Configuration
+public class AopConfig {
+    @Bean
+    public CalculateImpl calculateImpl(){
+        return new CalculateImpl();
+    }
+    /**
+     * 将切面加入到IOC容器中
+     */
+    @Bean
+    public LoggingAspect loggingAspect(){
+        return  new LoggingAspect();
+    }
+}
+
+```
+
+<font color=green>③. 测试AOP效果 </font>
+
+- 注意 : 使用AspectJ 返回的Bean 是一个代理对象
+
+```java
+@Test
+public void testAspectJ() {
+    AnnotationConfigApplicationContext context  = new AnnotationConfigApplicationContext(AopConfig.class);
+    ICalculate calculateImpl = (ICalculate)context.getBean("calculateImpl");
+    calculateImpl.div(5,1);
+}
+```
+
+<font color=green>④.  控制台输出 </font>
+
+```tex
+日志切面===>beforeMethod
+入参: m=5,n=1
+结果: result=0
+```
+
+
+
+### 4.2 后置通知-<font color=red> **@After(execution(...))**</font>
+
+- 在目标方法 ( 连接点 ) 执行后执行 ( 无论是否发生异常 )
+- <font color=red>后置通知无法 获取方法的返回结果 , 因为如果有异常是没有结果的</font>
+- <font color=red>通过JoinPoint 连接点对象 获取方法入参和方法名等</font>
+
+<font color=green>①.  在切面类中,定义一个后置通知 </font>
+
+```java
+@After("execution(public int com.yoey.aop.CalculateImpl.div(int,int))")
+public void afterMethod(JoinPoint joinPoint){
+    // 通过joinPoint 获取 方法名和入参
+    String methodName = joinPoint.getSignature().getName();
+    List<Object> list = Arrays.asList(joinPoint.getArgs());
+    System.out.println("日志切面===>afterMethod,方法名:"+methodName+",入参:"+list);
+}
+```
+
+<font color=green>②.  控制台输出 </font>
+
+```tex
+日志切面===>beforeMethod
+入参: m=5,n=1
+结果: result=0
+日志切面===>afterMethod,方法名:div,入参:[5, 1]
+```
+
+### 4.3 返回通知-<font color=red> **@AfterReturning(execution(...))**</font>
+
+- 在目标方法正常执行结束后执行 ( 方法发生异常则不会调用 )
+- <font color=red>返回通知除了可以通过JoinPoint获取方法名 , 还可以接收方法的返回值</font>
+  - 通过 `return="返回参数变量名"` 获取返回值
+
+<font color=green>①.  在切面类中,定义一个返回通知,并获取方法的返回值 </font>
+
+```java
+@AfterReturning(value = "execution(public int com.yoey.aop.CalculateImpl.div(int,int))",returning = "result")
+public void afterReturningMethod(JoinPoint joinPoint,Object result){
+    String methodName = joinPoint.getSignature().getName();
+    List<Object> list = Arrays.asList(joinPoint.getArgs());
+    System.out.println("日志切面===>afterReturningMethod,方法名:"+methodName+",入参:"+list+",返回值:"+result);
+}
+```
+
+<font color=green>②.  控制台输出 </font>
+
+```tex
+日志切面===>beforeMethod
+入参: m=5,n=1
+结果: result=0
+日志切面===>afterMethod,方法名:div,入参:[5, 1]
+日志切面===>afterReturningMethod,方法名:div,入参:[5, 1],返回值:0
+```
+
+
+
+### 4.3 异常通知-<font color=red> **@AfterThrowing(execution(...))**</font>
+
+- 在目标方法出现异常时执行
+- <font color=red>异常通知除了可以通过JoinPoint获取方法名 , 还可以访问异常对象</font>
+  - 通过 `throwing="异常参数变量名"` 获取异常对象
+
+<font color=green>①.  在切面类中,定义一个异常通知,并获取异常信息 </font>
+
+```java
+@AfterThrowing(value = "execution(public int com.yoey.aop.CalculateImpl.div(int,int))",throwing = "exception")
+public void afterThrowingMethod(JoinPoint joinPoint,Exception exception){
+    String methodName = joinPoint.getSignature().getName();
+    List<Object> list = Arrays.asList(joinPoint.getArgs());
+    System.out.println("日志切面===>afterThrowingMethod,方法名:"+methodName+",入参:"+list+",异常信息:"+exception.getMessage());
+}
+```
+
+<font color=green>②.  控制台输出 </font>
+
+- 可以看到 , 发生异常时 确实没有执行返回通知 , 但是有后置通知
+
+```tex
+日志切面===>beforeMethod
+入参: m=5,n=0
+日志切面===>afterMethod,方法名:div,入参:[5, 0]
+日志切面===>afterThrowingMethod,方法名:div,入参:[5, 0],异常信息:/ by zero
+```
+
+
+
+## 5. 切入点表达式的复用
+
+### 5.1 如何定义复用的切入点表达式
+
+- 使用 `@PointCut` 注解声明一个可以重复使用的切入点表达式
+- 步骤
+  - ①.  定义一个方法,用于声明切入点表达式 (不需要定义额外的方法)
+  - ②.  <font color=red>使用@PointCut 来声明切入点表达式</font>
+  - ③.  后面的通知注解中, <font color=red>通过使用定义的方法名 (包括括号) ,引用切入点表达式</font>
+    - 如果在其他包下也想使用这个表达式,就需要加入完整的类名
+
+<font color=green>①.  在切面类中,定义一个可重用的切入点表达式 , 并在通知注解中使用 </font>
+
+```java
+/**
+     * => 使用@PointCut 定义一个可复用的切入点表达式
+     * => 在@Before等通知注解中,使用方法名() 引入切入点表达式
+     */
+@Pointcut("execution(public * com.yoey.aop.CalculateImpl.add(int,int))")
+public void addAspect(){
+}
+
+@Before("addAspect()")
+public void  beforeMethodAdd()
+{
+    System.out.println("日志切面===>beforeMethodAdd");
+}
+
+@After("addAspect()")
+public void afterMethodAdd(JoinPoint joinPoint){
+    String methodName = joinPoint.getSignature().getName();
+    List<Object> list = Arrays.asList(joinPoint.getArgs());
+    System.out.println("日志切面===>afterMethodAdd,方法名:"+methodName+",入参:"+list);
+}
+
+@AfterReturning(value = "addAspect()",returning = "result")
+public void afterReturningMethodAdd(JoinPoint joinPoint,Object result){
+    String methodName = joinPoint.getSignature().getName();
+    List<Object> list = Arrays.asList(joinPoint.getArgs());
+    System.out.println("日志切面===>afterReturningMethodAdd,方法名:"+methodName+",入参:"+list+",返回值:"+result);
+}
+```
+
+<font color=green>②.  控制台输出 </font>
+
+- 可以看到重用的切入点表达式确实有效果
+
+```tex
+日志切面===>beforeMethodAdd
+入参: m=5,n=1
+结果: result=6
+日志切面===>afterMethodAdd,方法名:add,入参:[5, 1]
+日志切面===>afterReturningMethodAdd,方法名:add,入参:[5, 1],返回值:6
+```
+
+
+
+## 6. AOP的核心原理
+
+### `6.1 @EnableAspectAutoProxy`
+
+- 向容器中导入  <font color=red>AspectJAutoProxyRegistrar </font>
+- <font color=red>AspectJAutoProxyRegistrar  :  给容器中注入 AnnotationAwareAspectJAutoProxyCreator </font>
+
+<font color=green>①.   @EnableAspectAutoProxy</font>
+
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Import(AspectJAutoProxyRegistrar.class)
+public @interface EnableAspectJAutoProxy {
+
+	/**
+	 * Indicate whether subclass-based (CGLIB) proxies are to be created as opposed
+	 * to standard Java interface-based proxies. The default is {@code false}.
+	 */
+	boolean proxyTargetClass() default false;
+
+	/**
+	 * Indicate that the proxy should be exposed by the AOP framework as a {@code ThreadLocal}
+	 * for retrieval via the {@link org.springframework.aop.framework.AopContext} class.
+	 * Off by default, i.e. no guarantees that {@code AopContext} access will work.
+	 * @since 4.3.1
+	 */
+	boolean exposeProxy() default false;
+}
+```
+
+<font color=green>②. AspectJAutoProxyRegistrar </font>
+
+> Registers an {@link AnnotationAwareAspectJAutoProxyCreator} : 注册一个  AnnotationAwareAspectJAutoProxyCreator 组件
+
+```java
+/**
+ * Registers an {@link org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
+ * AnnotationAwareAspectJAutoProxyCreator} against the current {@link BeanDefinitionRegistry}
+ * as appropriate based on a given @{@link EnableAspectJAutoProxy} annotation.
+ * @author Chris Beams
+ * @author Juergen Hoeller
+ * @since 3.1
+ * @see EnableAspectJAutoProxy
+ */
+class AspectJAutoProxyRegistrar implements ImportBeanDefinitionRegistrar {
+    @Override
+    public void registerBeanDefinitions(
+        AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
+        // 注册 AnnotationAwareAspectJAutoProxyCreator
+        AopConfigUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary(registry);
+
+        AnnotationAttributes enableAspectJAutoProxy =
+            AnnotationConfigUtils.attributesFor(importingClassMetadata, EnableAspectJAutoProxy.class);
+        if (enableAspectJAutoProxy != null) {
+            if (enableAspectJAutoProxy.getBoolean("proxyTargetClass")) {
+                AopConfigUtils.forceAutoProxyCreatorToUseClassProxying(registry);
+            }
+            if (enableAspectJAutoProxy.getBoolean("exposeProxy")) {
+                AopConfigUtils.forceAutoProxyCreatorToExposeProxy(registry);
+            }
+        }
+    }
+}
+```
+
+
+
+### `6.2 AnnotationAwareAspectJAutoProxyCreator`
+
+- 层级关系
+

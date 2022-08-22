@@ -23,15 +23,14 @@ title: 服务容错-Sentinel
 - <font color='red'>Sentinel 具有以下特征</font>
 
   - <mark>丰富的应用场景</mark>
-
-    - 比如秒杀（即突发流量控制在系统容量可以承受的范围）、消息削峰填谷、集群流量控制、实时熔断下游不可用应用等
+- 比如秒杀（即突发流量控制在系统容量可以承受的范围）、消息削峰填谷、集群流量控制、实时熔断下游不可用应用等
   - <mark>完备的实时监控</mark>
-
-    - 可以在控制台中看到接入应用的单台机器秒级数据，甚至 500 台以下规模的集群的汇总运行情况。
-
-  - <mark>完善的 SPI 扩展点</mark>
-
-    - 提供简单易用、完善的 SPI 扩展接口，可以通过实现扩展接口来快速地定制逻辑。例如定制规则管理、适配动态数据源等
+  
+  - 可以在控制台中看到接入应用的单台机器秒级数据，甚至 500 台以下规模的集群的汇总运行情况。
+  
+- <mark>完善的 SPI 扩展点</mark>
+  
+  - 提供简单易用、完善的 SPI 扩展接口，可以通过实现扩展接口来快速地定制逻辑。例如定制规则管理、适配动态数据源等
 - <font color='red'>Sentinel分为两部分</font>
 
   - 核心库（Java 客户端）
@@ -70,14 +69,14 @@ title: 服务容错-Sentinel
        - 指定客户端监控 api 的端口,<mark>默认是 8719</mark>
 
 
-    ```shell
-      java -Dserver.port=8080 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=sentinel-dashboard -jar  xxx
-    ```
+```bash
+java -Dserver.port=8080 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=sentinel-dashboard -jar  
+```
 
-  3. 访问控制台 http://localhost:8080, 用户名密码默认是 `sentinel`
+访问控制台 http://localhost:8080, 用户名密码默认是 `sentinel`
 
   **①、 启动Sentinel控制台**
-  
+
   ```shell
 java -Dserver.port=8088 -Dcsp.sentinel.dashboard.server=localhost:8088 -Dproject.name=sentinel-dashboard -Dcsp.sentinel.log.dir=/Users/yoey/WorkSpace/Software/SpringCloud/sentinel/logs -jar sentinel-dashboard-1.8.0.jar
   ```
@@ -85,7 +84,7 @@ java -Dserver.port=8088 -Dcsp.sentinel.dashboard.server=localhost:8088 -Dproject
   **②、 访问Sentinel控制台**
 
   ![image-20201219122039928](../image/11.%E6%9C%8D%E5%8A%A1%E7%86%94%E6%96%AD%E9%99%90%E6%B5%81-%20Sentinel/image-20201219122039928.png)
-  
+
   
 
 
@@ -854,7 +853,6 @@ public void initHotKeyRule(){
 #### 6.1.1 规则设置（控制台）
 
 ![](../image/11.%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99-%20Sentinel/image-20201226165111707.png)
-
 
 
 

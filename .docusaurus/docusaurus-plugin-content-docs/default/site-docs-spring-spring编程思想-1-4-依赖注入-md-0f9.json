@@ -18,5 +18,9 @@
   "previous": {
     "title": "依赖查找",
     "permalink": "/docs/Spring/Spring编程思想/依赖查找"
+  },
+  "next": {
+    "title": "Spring注解",
+    "permalink": "/docs/category/spring注解"
   }
 }

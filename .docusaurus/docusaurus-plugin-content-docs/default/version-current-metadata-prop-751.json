@@ -172,36 +172,60 @@
       },
       {
         "type": "category",
-        "label": "Spring编程思想",
+        "label": "Spring基础",
         "items": [
           {
-            "type": "link",
-            "label": "IOC容器",
-            "href": "/docs/Spring/Spring编程思想/IOC容器",
-            "docId": "Spring/Spring编程思想/IOC容器"
+            "type": "category",
+            "label": "Spring编程思想",
+            "items": [
+              {
+                "type": "link",
+                "label": "IOC容器",
+                "href": "/docs/Spring/Spring编程思想/IOC容器",
+                "docId": "Spring/Spring编程思想/IOC容器"
+              },
+              {
+                "type": "link",
+                "label": "Bean",
+                "href": "/docs/Spring/Spring编程思想/Bean",
+                "docId": "Spring/Spring编程思想/Bean"
+              },
+              {
+                "type": "link",
+                "label": "依赖查找",
+                "href": "/docs/Spring/Spring编程思想/依赖查找",
+                "docId": "Spring/Spring编程思想/依赖查找"
+              },
+              {
+                "type": "link",
+                "label": "依赖注入",
+                "href": "/docs/Spring/Spring编程思想/依赖注入",
+                "docId": "Spring/Spring编程思想/依赖注入"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/spring编程思想"
           },
           {
-            "type": "link",
-            "label": "Bean",
-            "href": "/docs/Spring/Spring编程思想/Bean",
-            "docId": "Spring/Spring编程思想/Bean"
-          },
-          {
-            "type": "link",
-            "label": "依赖查找",
-            "href": "/docs/Spring/Spring编程思想/依赖查找",
-            "docId": "Spring/Spring编程思想/依赖查找"
-          },
-          {
-            "type": "link",
-            "label": "依赖注入",
-            "href": "/docs/Spring/Spring编程思想/依赖注入",
-            "docId": "Spring/Spring编程思想/依赖注入"
+            "type": "category",
+            "label": "Spring注解",
+            "items": [
+              {
+                "type": "link",
+                "label": "组件注册之简单注册",
+                "href": "/docs/Spring/注解驱动开发/组件注册之简单注册",
+                "docId": "Spring/注解驱动开发/组件注册之简单注册"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/spring注解"
           }
         ],
         "collapsed": true,
         "collapsible": true,
-        "href": "/docs/category/spring编程思想"
+        "href": "/docs/category/spring基础"
       }
     ],
     "springCloudSideBar": [
@@ -593,6 +617,32 @@
         "href": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm",
         "docId": "LeetCode刷题笔记/illustrationOfAlgorithm"
       }
+    ],
+    "jvmSideBar": [
+      {
+        "type": "category",
+        "label": "JVM优化",
+        "items": [
+          {
+            "type": "category",
+            "label": "性能监控和调优入门",
+            "items": [
+              {
+                "type": "link",
+                "label": "JDK命令行",
+                "href": "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+                "docId": "JVM/性能监控和调优入门/基于JDK命令行工具的监控"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/性能监控和调优入门"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true,
+        "href": "/docs/category/jvm优化"
+      }
     ]
   },
   "docs": {
@@ -773,6 +823,17 @@
       "title": "关于我",
       "description": "👨‍💻一名会写点js、java的码农"
     },
+    "JVM/性能监控和调优入门/基于JDK命令行工具的监控": {
+      "id": "JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+      "title": "JDK命令行",
+      "description": "常见的JVM参数类型",
+      "sidebar": "jvmSideBar"
+    },
+    "JVM/JVM": {
+      "id": "JVM/JVM",
+      "title": "JVM",
+      "description": "JVM技术文档概述"
+    },
     "LeetCode刷题笔记/illustrationOfAlgorithm": {
       "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
       "title": "图解算法数据结构",
@@ -928,6 +989,12 @@
       "title": "资源分享",
       "description": "分享一些简单好用的资源",
       "sidebar": "sourceSideBar"
+    },
+    "Spring/注解驱动开发/组件注册之简单注册": {
+      "id": "Spring/注解驱动开发/组件注册之简单注册",
+      "title": "组件注册之简单注册",
+      "description": "@Configuration和@Bean",
+      "sidebar": "springSideBar"
     },
     "Spring/spring": {
       "id": "Spring/spring",

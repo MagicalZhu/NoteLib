@@ -725,6 +725,46 @@
               }
             },
             {
+              "unversionedId": "JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+              "id": "JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+              "title": "JDK命令行",
+              "description": "常见的JVM参数类型",
+              "source": "@site/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控.md",
+              "sourceDirName": "JVM/性能监控和调优入门",
+              "slug": "/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+              "permalink": "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "基于JDK命令行工具的监控",
+                "title": "JDK命令行"
+              },
+              "sidebar": "jvmSideBar",
+              "previous": {
+                "title": "性能监控和调优入门",
+                "permalink": "/docs/category/性能监控和调优入门"
+              }
+            },
+            {
+              "unversionedId": "JVM/JVM",
+              "id": "JVM/JVM",
+              "title": "JVM",
+              "description": "JVM技术文档概述",
+              "source": "@site/docs/JVM/about.mdx",
+              "sourceDirName": "JVM",
+              "slug": "/JVM",
+              "permalink": "/docs/JVM",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/JVM/about.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "JVM",
+                "title": "JVM",
+                "slug": "/JVM"
+              }
+            },
+            {
               "unversionedId": "LeetCode刷题笔记/illustrationOfAlgorithm",
               "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
               "title": "图解算法数据结构",
@@ -1375,6 +1415,28 @@
               }
             },
             {
+              "unversionedId": "Spring/注解驱动开发/组件注册之简单注册",
+              "id": "Spring/注解驱动开发/组件注册之简单注册",
+              "title": "组件注册之简单注册",
+              "description": "@Configuration和@Bean",
+              "source": "@site/docs/Spring/注解驱动开发/组件注册之简单注册.md",
+              "sourceDirName": "Spring/注解驱动开发",
+              "slug": "/Spring/注解驱动开发/组件注册之简单注册",
+              "permalink": "/docs/Spring/注解驱动开发/组件注册之简单注册",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/注解驱动开发/组件注册之简单注册.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "组件注册之简单注册",
+                "title": "组件注册之简单注册"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Spring注解",
+                "permalink": "/docs/category/spring注解"
+              }
+            },
+            {
               "unversionedId": "Spring/spring",
               "id": "Spring/spring",
               "title": "Spring",
@@ -1393,8 +1455,8 @@
               },
               "sidebar": "springSideBar",
               "next": {
-                "title": "Spring编程思想",
-                "permalink": "/docs/category/spring编程思想"
+                "title": "Spring基础",
+                "permalink": "/docs/category/spring基础"
               }
             },
             {
@@ -1443,6 +1505,10 @@
               "previous": {
                 "title": "依赖查找",
                 "permalink": "/docs/Spring/Spring编程思想/依赖查找"
+              },
+              "next": {
+                "title": "Spring注解",
+                "permalink": "/docs/category/spring注解"
               }
             },
             {
@@ -1993,30 +2059,60 @@
               },
               {
                 "type": "category",
-                "label": "Spring编程思想",
+                "label": "Spring基础",
                 "items": [
                   {
-                    "type": "doc",
-                    "id": "Spring/Spring编程思想/IOC容器"
+                    "type": "category",
+                    "label": "Spring编程思想",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/IOC容器"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/Bean"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/依赖查找"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/依赖注入"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/spring编程思想",
+                      "permalink": "/docs/category/spring编程思想"
+                    },
+                    "collapsible": true
                   },
                   {
-                    "type": "doc",
-                    "id": "Spring/Spring编程思想/Bean"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "Spring/Spring编程思想/依赖查找"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "Spring/Spring编程思想/依赖注入"
+                    "type": "category",
+                    "label": "Spring注解",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "Spring/注解驱动开发/组件注册之简单注册"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/spring注解",
+                      "permalink": "/docs/category/spring注解"
+                    },
+                    "collapsible": true
                   }
                 ],
                 "collapsed": true,
                 "link": {
                   "type": "generated-index",
-                  "slug": "/category/spring编程思想",
-                  "permalink": "/docs/category/spring编程思想"
+                  "slug": "/category/spring基础",
+                  "permalink": "/docs/category/spring基础"
                 },
                 "collapsible": true
               }
@@ -2390,6 +2486,38 @@
                 "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
                 "label": "图解算法数据结构"
               }
+            ],
+            "jvmSideBar": [
+              {
+                "type": "category",
+                "label": "JVM优化",
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "性能监控和调优入门",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "JVM/性能监控和调优入门/基于JDK命令行工具的监控"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/性能监控和调优入门",
+                      "permalink": "/docs/category/性能监控和调优入门"
+                    },
+                    "collapsible": true
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/jvm优化",
+                  "permalink": "/docs/category/jvm优化"
+                },
+                "collapsible": true
+              }
             ]
           },
           "mainDocId": "并发编程/currency_about",
@@ -2451,17 +2579,45 @@
               }
             },
             {
-              "title": "Spring编程思想",
-              "slug": "/category/spring编程思想",
-              "permalink": "/docs/category/spring编程思想",
+              "title": "Spring基础",
+              "slug": "/category/spring基础",
+              "permalink": "/docs/category/spring基础",
               "sidebar": "springSideBar",
               "previous": {
                 "title": "Spring",
                 "permalink": "/docs/spring"
               },
               "next": {
+                "title": "Spring编程思想",
+                "permalink": "/docs/category/spring编程思想"
+              }
+            },
+            {
+              "title": "Spring编程思想",
+              "slug": "/category/spring编程思想",
+              "permalink": "/docs/category/spring编程思想",
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Spring基础",
+                "permalink": "/docs/category/spring基础"
+              },
+              "next": {
                 "title": "IOC容器",
                 "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+              }
+            },
+            {
+              "title": "Spring注解",
+              "slug": "/category/spring注解",
+              "permalink": "/docs/category/spring注解",
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "依赖注入",
+                "permalink": "/docs/Spring/Spring编程思想/依赖注入"
+              },
+              "next": {
+                "title": "组件注册之简单注册",
+                "permalink": "/docs/Spring/注解驱动开发/组件注册之简单注册"
               }
             },
             {
@@ -2658,6 +2814,30 @@
               "next": {
                 "title": "前提基础知识",
                 "permalink": "/docs/数据结构与算法/基础/前提基础知识"
+              }
+            },
+            {
+              "title": "JVM优化",
+              "slug": "/category/jvm优化",
+              "permalink": "/docs/category/jvm优化",
+              "sidebar": "jvmSideBar",
+              "next": {
+                "title": "性能监控和调优入门",
+                "permalink": "/docs/category/性能监控和调优入门"
+              }
+            },
+            {
+              "title": "性能监控和调优入门",
+              "slug": "/category/性能监控和调优入门",
+              "permalink": "/docs/category/性能监控和调优入门",
+              "sidebar": "jvmSideBar",
+              "previous": {
+                "title": "JVM优化",
+                "permalink": "/docs/category/jvm优化"
+              },
+              "next": {
+                "title": "JDK命令行",
+                "permalink": "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控"
               }
             }
           ]

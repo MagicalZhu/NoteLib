@@ -1,0 +1,878 @@
+[TOC]
+
+### 1. BeanFactoryPostProcessor
+
+- BeanPostProcessor : Bean后置处理器
+- BeanFactoryPostProcessor : BeanFactory的后置处理器
+  - <font color=red>在 Bean Factory 初始化之后调用 : 所有的Bean的定义已经保存加载到Bean Factory中 , 但是Bean的实例还未创建</font>
+
+<font color=green>***BeanFactoryPostProcessor***</font>
+
+```java
+@FunctionalInterface
+public interface BeanFactoryPostProcessor {
+	/**
+	 * Modify the application context's internal bean factory after its standard
+	 * initialization. All bean definitions will have been loaded, but no beans
+	 * will have been instantiated yet. This allows for overriding or adding
+	 * properties even to eager-initializing beans.
+	 * @param beanFactory the bean factory used by the application context
+	 * @throws org.springframework.beans.BeansException in case of errors
+	 */
+	void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException;
+}
+```
+
+
+
+#### 1.1 测试 BeanFactoryPostProcessor
+
+- 测试流程
+  - ①.  创建一个 BeanFactoryPostProcessor 的实现类,实现 postProcessBeanFactory(  )  方法
+  - ②.  创建一个配置类 , 注册   BeanFactoryPostProcessor 的实现类 和 其他组件
+  - ③.  启动测试
+
+<font color=blue>**①. 创建一个 BeanFactoryPostProcessor 的实现类**</font>
+
+```java
+/**
+ * @author zyl
+ * @Description BeanFactoryPostProcessor 实现类
+ * @Date 2019/8/24
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+@Component
+public class  implements BeanFactoryPostProcessor {
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        System.out.println("MyBeanFactoryPostProcessor postProcessBeanFactory...");
+        String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
+        for (String name : beanDefinitionNames) {
+            System.out.println(name);
+        }
+    }
+}
+```
+
+<font color=blue>**②.  定义配置类,注册 BeanFactoryPostProcessor 的实现类 和 其他组件**</font>
+
+```java
+@Configuration
+public class PostProcessorConfig {
+    @Bean
+    public Person person(){
+        return new Person();
+    }
+    @Bean
+    public MyBeanFactoryPostProcessor myBeanFactoryPostProcessor(){
+        return new MyBeanFactoryPostProcessor();
+    }
+}
+```
+
+<font color=blue>**③.  测试方法**</font>
+
+```java
+@Test
+public void testBeanFactoryPostProcessor(){
+    AnnotationConfigApplicationContext context  
+        		= new AnnotationConfigApplicationContext(PostProcessorConfig.class);
+    context.close();
+}
+```
+
+<font color=blue>**④.   控制台输出**</font>
+
+- <font color=red>通过日志可以看到 ,  BeanFactoryPostProcessor #postProcessBeanFactory( ) 执行时 , 还没有创建Bean实例,但是Bean的定义已经保存在Bean Factory中了 </font>
+
+```tex
+MyBeanFactoryPostProcessor postProcessBeanFactory...
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+postProcessorConfig
+person
+myBeanFactoryPostProcessor
+// 省略...
+无参构造器...
+```
+
+
+
+#### 1.2 BeanFactoryPostProcessor 调用的流程
+
+- ①.   创建 IOC容器
+- ②.    调用 `AbstractApplicationContext#refresh()` 刷新容器
+- ③.    调用 `AbstractApplicationContext#invokeBeanFactoryPostProcessors()` 
+- ④.   调用  `PostProcessorRegistrationDelegate#invokeBeanFactoryPostProcessors(...)`
+  - 在该方法中  执行 BeanFactoryPostProcessor  的  postProcessBeanFactory( ) 方法
+
+<font color=red size=3>**①.  AbstractApplicationContext # refresh( )**</font>
+
+- invokeBeanFactoryPostProcessors
+
+```java
+@Override
+public void refresh() throws BeansException, IllegalStateException {
+    synchronized (this.startupShutdownMonitor) {
+        // Prepare this context for refreshing.
+        prepareRefresh();
+
+        // Tell the subclass to refresh the internal bean factory.
+        ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
+
+        // Prepare the bean factory for use in this context.
+        prepareBeanFactory(beanFactory);
+
+        try {
+            // Allows post-processing of the bean factory in context subclasses.
+            postProcessBeanFactory(beanFactory);
+		   
+           	// 调用invokeBeanFactoryPostProcessors() 方法
+            // Invoke factory processors registered as beans in the context.
+            invokeBeanFactoryPostProcessors(beanFactory);
+
+            // Register bean processors that intercept bean creation.
+            registerBeanPostProcessors(beanFactory);
+
+            // Initialize message source for this context.
+            initMessageSource();
+
+            // Initialize event multicaster for this context.
+            initApplicationEventMulticaster();
+
+            // Initialize other special beans in specific context subclasses.
+            onRefresh();
+
+            // Check for listener beans and register them.
+            registerListeners();
+
+            // Instantiate all remaining (non-lazy-init) singletons.
+            finishBeanFactoryInitialization(beanFactory);
+
+            // Last step: publish corresponding event.
+            finishRefresh();
+        }
+
+        catch (BeansException ex) {
+            if (logger.isWarnEnabled()) {
+                logger.warn("Exception encountered during context initialization - " +
+                            "cancelling refresh attempt: " + ex);
+            }
+
+            // Destroy already created singletons to avoid dangling resources.
+            destroyBeans();
+
+            // Reset 'active' flag.
+            cancelRefresh(ex);
+
+            // Propagate exception to caller.
+            throw ex;
+        }
+
+        finally {
+            // Reset common introspection caches in Spring's core, since we
+            // might not ever need metadata for singleton beans anymore...
+            resetCommonCaches();
+        }
+    }
+}
+```
+
+<font color=red size=3>**②.  PostProcessorRegistrationDelegate # invokeBeanFactoryPostProcessors(...)**</font>
+
+- 首先 , 通过  `beanFactory.getBeanNamesForType(BeanFactoryPostProcessor.class, true, false)` 找到所有的 BeanFactoryPostProcessor类型的Bean的名称,放在  postProcessorNames 中
+- 然后 , 将 postProcessorNames 中的Bean名称 按照优先级分别放在 `priorityOrderedPostProcessors , orderedPostProcessorNames 和  nonOrderedPostProcessorNames` 中
+- 最后 , `通过重载 的  invokeBeanFactoryPostProcessors (..)  方法调用 BeanFactoryPostProcessor  的  postProcessBeanFactory( ) 方法`
+
+```java
+public static void invokeBeanFactoryPostProcessors(
+    ConfigurableListableBeanFactory beanFactory, List<BeanFactoryPostProcessor> beanFactoryPostProcessors) {
+	// 省略....
+    
+    // Do not initialize FactoryBeans here: We need to leave all regular beans
+    // uninitialized to let the bean factory post-processors apply to them!
+    String[] postProcessorNames =
+        beanFactory.getBeanNamesForType(BeanFactoryPostProcessor.class, true, false);
+
+    // Separate between BeanFactoryPostProcessors that implement PriorityOrdered,
+    // Ordered, and the rest.
+    List<BeanFactoryPostProcessor> priorityOrderedPostProcessors = new ArrayList<>();
+    List<String> orderedPostProcessorNames = new ArrayList<>();
+    List<String> nonOrderedPostProcessorNames = new ArrayList<>();
+    for (String ppName : postProcessorNames) {
+        if (processedBeans.contains(ppName)) {
+            // skip - already processed in first phase above
+        }
+        else if (beanFactory.isTypeMatch(ppName, PriorityOrdered.class)) {
+            priorityOrderedPostProcessors.add(beanFactory.getBean(ppName, BeanFactoryPostProcessor.class));
+        }
+        else if (beanFactory.isTypeMatch(ppName, Ordered.class)) {
+            orderedPostProcessorNames.add(ppName);
+        }
+        else {
+            nonOrderedPostProcessorNames.add(ppName);
+        }
+    }
+
+    // First, invoke the BeanFactoryPostProcessors that implement PriorityOrdered.
+    sortPostProcessors(priorityOrderedPostProcessors, beanFactory);
+    invokeBeanFactoryPostProcessors(priorityOrderedPostProcessors, beanFactory);
+
+    // Next, invoke the BeanFactoryPostProcessors that implement Ordered.
+    List<BeanFactoryPostProcessor> orderedPostProcessors = new ArrayList<>();
+    for (String postProcessorName : orderedPostProcessorNames) {
+        orderedPostProcessors.add(beanFactory.getBean(postProcessorName, BeanFactoryPostProcessor.class));
+    }
+    sortPostProcessors(orderedPostProcessors, beanFactory);
+    invokeBeanFactoryPostProcessors(orderedPostProcessors, beanFactory);
+
+    // Finally, invoke all other BeanFactoryPostProcessors.
+    List<BeanFactoryPostProcessor> nonOrderedPostProcessors = new ArrayList<>();
+    for (String postProcessorName : nonOrderedPostProcessorNames) {
+        nonOrderedPostProcessors.add(beanFactory.getBean(postProcessorName, BeanFactoryPostProcessor.class));
+    }
+    invokeBeanFactoryPostProcessors(nonOrderedPostProcessors, beanFactory);
+
+    // Clear cached merged bean definitions since the post-processors might have
+    // modified the original metadata, e.g. replacing placeholders in values...
+    beanFactory.clearMetadataCache();
+}
+```
+
+
+
+----
+
+### 2. BeanDefinitionRegistryPostProcessor
+
+- 是 BeanFactoryPostProcessor 的 子接口 
+- <font color=red>调用时机 : 在所有Bean 定义信息将要被加载 , 但是Bean实例还没有被创建 ,  在BeanFactoryPostProcessor 中方法被执行之前调用 </font>
+  - 调用的流程在 1.2 部分的代码中存在
+    - <font color=purple>即在refresh IOC容器的时候 , 先处理保存Bean定义信息的 BeanDefinitionRegistry , 然后在处理 BeanFactoryPostProcessor ,最后创建Bean实例</font>
+- <font color=red>**BeanDefinitionRegistry **</font>
+  - Bean定义信息的保存中心 , 以后BeanFactory 就是按照  BeanDefinitionRegistry  里面的保存的每一个 Bean定义信息创建Bean实例
+  - 比如 `@Import + ImportBeanDefinitionRegistrar` , 就是向这个Bean定义信息的保存中心 添加需要注册的Bean的信息
+
+<font color=green>***BeanDefinitionRegistryPostProcessor***</font>
+
+```java
+/**
+ * Extension to the standard {@link BeanFactoryPostProcessor} SPI, allowing for
+ * the registration of further bean definitions <i>before</i> regular
+ * BeanFactoryPostProcessor detection kicks in. In particular,
+ * BeanDefinitionRegistryPostProcessor may register further bean definitions
+ * which in turn define BeanFactoryPostProcessor instances.
+ */
+public interface BeanDefinitionRegistryPostProcessor extends BeanFactoryPostProcessor {
+    /**
+	 * Modify the application context's internal bean definition registry after its
+	 * standard initialization. All regular bean definitions will have been loaded,
+	 * but no beans will have been instantiated yet. This allows for adding further
+	 * bean definitions before the next post-processing phase kicks in.
+	 * @param registry the bean definition registry used by the application context
+	 * @throws org.springframework.beans.BeansException in case of errors
+	 */
+    void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException;
+}
+
+```
+
+
+
+#### 2.1 测试 BeanDefinitionRegistryPostProcessor
+
+- 测试流程
+  - ①.  定义一个 BeanDefinitionRegistryPostProcessor 的实现类 , 并且在配置类中进行配置
+  - ②.  启动测试
+
+<font color=blue>**①. 创建一个 BeanDefinitionRegistryPostProcessor 的实现类**</font>
+
+```java
+/**
+ * @author zyl
+ * @Description BeanDefinitionPostProcessor 的实现类
+ * @Date 2019/8/24
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+@Component
+public class MyBeanDefinitionPostProcessor  implements BeanDefinitionRegistryPostProcessor {
+    @Override
+    public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
+        System.out.println("MyBeanDefinitionPostProcessor postProcessBeanDefinitionRegistry....");
+    }
+
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        System.out.println("MyBeanDefinitionPostProcessor postProcessBeanFactory....");
+    }
+}
+
+```
+
+<font color=blue>**②.  启动测试,控制台输出**</font>
+
+```tex
+// 省略 ....
+// 这里调用了 BeanDefinitionRegistryPostProcessor#postProcessBeanDefinitionRegistry() 方法
+MyBeanDefinitionPostProcessor postProcessBeanDefinitionRegistry....
+
+// 这里调用了 BeanFactoryPostProcessor#postProcessBeanFactory()方法
+MyBeanDefinitionPostProcessor postProcessBeanFactory....
+MyBeanFactoryPostProcessor postProcessBeanFactory...
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+postProcessorConfig
+person
+myBeanFactoryPostProcessor
+myBeanDefinitionPostProcessor
+
+// 开始实例化Bean对象
+无参构造器...
+```
+
+
+
+----
+
+### 3.ApplicationListener
+
+- 基于事件驱动开发
+- <font color=red>作用 :  监听容器中发布的事件 ,  当事件发生就会触发监听器的回调 </font>
+
+<font color=green>***ApplicationListener***</font>
+
+- <font color=red>可以监听  ApplicationEvent 以及其下面的子事件</font>
+- `onApplicationEvent`  :  当容器中发布此事件后 , 改方法会触发
+
+```java
+@FunctionalInterface
+public interface ApplicationListener<E extends ApplicationEvent> extends EventListener {
+    /**
+	 * Handle an application event.
+	 * @param event the event to respond to
+	 */
+    void onApplicationEvent(E event);
+}
+```
+
+
+
+#### 3.1 测试ApplicationListener
+
+- 测试流程
+  - ①.  创建一个 ApplicationListener 的实现类 , 实现 onApplicationEvent 方法
+  - ②.  将 ApplicationListener 实现类 注入容器
+  - ③.  启动测试
+
+<font color=blue>**①. 创建 ApplicationListener 的实现类**</font>
+
+```java
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author zyl
+ * @Description ApplicationListener 实现类 {@link org.springframework.context.ApplicationListener}
+ * @Date 2019/8/25
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+@Component
+public class MyApplicationListener implements ApplicationListener<ApplicationEvent> {
+    @Override
+    public void onApplicationEvent(ApplicationEvent event) {
+        System.out.println("MyApplicationListener onApplicationEvent...");
+        System.out.println("收到事件:"+event);
+    }
+}
+```
+
+<font color=blue>**②. 将 ApplicationListener 的实现类 注入到容器**</font>
+
+- 同时注入了 单实例Bean ,  BeanFactoryPostProcessor  以及BeanDefinitionRegistryPostProcessor 
+
+```java
+@Configuration
+public class PostProcessorConfig {
+    @Bean
+    public Person person(){
+        return new Person();
+    }
+    @Bean
+    public MyBeanFactoryPostProcessor myBeanFactoryPostProcessor(){
+        return new MyBeanFactoryPostProcessor();
+    }
+
+    @Bean
+    public MyBeanDefinitionPostProcessor myBeanDefinitionPostProcessor(){
+        return new MyBeanDefinitionPostProcessor();
+    }
+
+    @Bean
+    public MyApplicationListener myApplicationListener(){
+        return new MyApplicationListener();
+    }
+}
+```
+
+<font color=blue>**③. 启动测试观察控制台**</font>
+
+```java
+// 调用 BeanDefinitionPostProcessor
+MyBeanDefinitionPostProcessor postProcessBeanDefinitionRegistry....
+MyBeanDefinitionPostProcessor postProcessBeanFactory....
+
+//调用 BeanFactoryPostProcessor
+MyBeanFactoryPostProcessor postProcessBeanFactory...
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+postProcessorConfig
+person
+myBeanFactoryPostProcessor
+myBeanDefinitionPostProcessor
+myApplicationListener
+//  初始化单实例Bean
+无参构造器...
+
+// 事件回调
+MyApplicationListener onApplicationEvent...
+收到事件:org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.annotation.AnnotationConfigApplicationContext@5b03b9fe, started on Sun Aug 25 08:50:09 CST 2019]
+MyApplicationListener onApplicationEvent...
+收到事件:org.springframework.context.event.ContextClosedEvent[source=org.springframework.context.annotation.AnnotationConfigApplicationContext@5b03b9fe, started on Sun Aug 25 08:50:09 CST 2019]
+```
+
+
+
+#### 3.2 基于事件开发
+
+- 步骤
+  - <font color=red>①.  创建一个监听器 监听某个事件 (ApplicationEvent 以及其子类)</font>
+  - <font color=red>②.  把监听器加入到容器</font>  
+  - <font color=red>③.  只要容器中有相关事件的发布 , 就可以监听到这个事件</font>
+    - `ContextRefreshedEvent`  :  容器刷新完成 ( 所有的Bean都已经创建完毕 ) 会发布这个事件
+    - `ContextClosedEvent`  :  容器关闭会发布这个事件
+  - <font color=red>④.  发布事件 : 通过容器对象的 publishEvent( ... ) 方法</font>
+
+<font color=blue>**①.使用容器的 publishEvent( ) 方法发布事件**</font>
+
+```java
+@Test
+public void testApplicationListener(){
+    AnnotationConfigApplicationContext context  
+        	= new AnnotationConfigApplicationContext(PostProcessorConfig.class);
+    // 发布一个事件
+    context.publishEvent(new ApplicationEvent(new String("自定义发布的事件")) {
+    });
+    context.close();
+}
+```
+
+<font color=blue>**②.  测试观察控制台的输出**</font>
+
+```java
+// 调用 BeanDefinitionPostProcessor
+MyBeanDefinitionPostProcessor postProcessBeanDefinitionRegistry....
+MyBeanDefinitionPostProcessor postProcessBeanFactory....
+
+//调用 BeanFactoryPostProcessor
+MyBeanFactoryPostProcessor postProcessBeanFactory...
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+postProcessorConfig
+person
+myBeanFactoryPostProcessor
+myBeanDefinitionPostProcessor
+myApplicationListener
+//  初始化单实例Bean
+无参构造器...
+
+// 事件回调
+MyApplicationListener onApplicationEvent...
+收到事件:org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.annotation.AnnotationConfigApplicationContext@5b03b9fe, started on Sun Aug 25 08:50:09 CST 2019]
+
+// 自定义的事件
+MyApplicationListener onApplicationEvent...
+收到事件:com.yoey.aop.AopApplicationTests$1[source=自定义发布的事件]
+
+MyApplicationListener onApplicationEvent...
+收到事件:org.springframework.context.event.ContextClosedEvent[source=org.springframework.context.annotation.AnnotationConfigApplicationContext@5b03b9fe, started on Sun Aug 25 08:50:09 CST 2019]
+```
+
+
+
+#### 3.3 ApplicationListener 原理
+
+- 调用流程
+  - <font color=red>①.   容器创建对象 , 调用 容器的 refresh( ) 方法</font>
+  - <font color=red>②.  调用 容器的 finishRefresh ( ) 方法 ,  同时使用  publishEvent(new ContextRefreshedEvent ( this ) )  发布事件 , 执行事件发布流程</font>
+    - <font color=red>③. 调用 事件广播器的 multicastEvent () 进行事件广播</font>
+      - <font color=red>④.  获取所有的监听器 , 并执行监听器的 onApplicationEvent ( ) 方法</font>
+  - <font color=red>⑤.  容器关闭 , 调用 publishEvent ( new  ContextClosedEvent (this) ) 方法,发布容器关闭事件 </font>
+
+<font color=red size=3>**①.  AbstractApplicationContext # refresh( )**</font>
+
+- `initApplicationEventMulticaster()`  : 初始化事件广播器
+  - 先去容器中寻找 id=" applicationEventMulticaster "  的Bean
+    - 没有的话 , 会创建一个 SimpleApplicationEventMulticaster 的Bean , 然后注册到容器中,其他组件需要派发事件时可以自动注入
+
+- `finishRefresh ()` :  最后一步(完成容器的刷新) : 发布相应的事件
+
+```java
+@Override
+public void refresh() throws BeansException, IllegalStateException {
+    synchronized (this.startupShutdownMonitor) {
+       // 省略...
+        try {
+            // 省略...   
+            // 初始化事件广播器
+            // Initialize event multicaster for this context.
+            initApplicationEventMulticaster();
+
+            // Initialize other special beans in specific context subclasses.
+            onRefresh();
+            
+            // 注册监听器
+            // Check for listener beans and register them.
+            registerListeners();
+
+            // Instantiate all remaining (non-lazy-init) singletons.
+            finishBeanFactoryInitialization(beanFactory);
+
+            // Last step: publish corresponding event.
+            finishRefresh();
+        }
+        catch (BeansException ex) {
+           //....
+        }
+        finally {
+            //...
+        }
+    }
+}
+```
+
+
+
+<font color=red size=3>**②.  AbstractApplicationContext # finishRefresh( )**</font>
+
+- <font color=red>容器刷新完成 ,  同时  publishEvent(new ContextRefreshedEvent(this))  发布了 ContextRefreshedEvent 事件</font>
+
+```java
+/**
+  * Finish the refresh of this context, invoking the LifecycleProcessor's
+  * onRefresh() method and publishing the
+  * {@link org.springframework.context.event.ContextRefreshedEvent}.
+  */
+protected void finishRefresh() {
+    // Clear context-level resource caches (such as ASM metadata from scanning).
+    clearResourceCaches();
+
+    // Initialize lifecycle processor for this context.
+    initLifecycleProcessor();
+
+    // Propagate refresh to lifecycle processor first.
+    getLifecycleProcessor().onRefresh();
+
+    // Publish the final event.
+    publishEvent(new ContextRefreshedEvent(this));
+
+    // Participate in LiveBeansView MBean, if active.
+    LiveBeansView.registerApplicationContext(this);
+}
+```
+
+
+
+<font color=red size=3>**③.  AbstractApplicationContext # publishEvent( )**</font>
+
+- `ApplicationEventMulticaster getApplicationEventMulticaster()`  :  获取事件广播器 ( 派发器 )
+- `SimpleApplicationEventMulticaster # multicastEvent(ApplicationEvent, ResolvableType)` :   事件广播
+
+```java
+protected void publishEvent(Object event, @Nullable ResolvableType eventType) {
+    ApplicationEvent applicationEvent;
+   //....
+    if (this.earlyApplicationEvents != null) {
+        this.earlyApplicationEvents.add(applicationEvent);
+    }
+    else {
+        //  获取事件广播器,同时开始广播事件
+        getApplicationEventMulticaster().multicastEvent(applicationEvent, eventType);
+    }
+    // Publish event via parent context as well...
+    if (this.parent != null) {
+        if (this.parent instanceof AbstractApplicationContext) {
+            ((AbstractApplicationContext) this.parent).publishEvent(event, eventType);
+        }
+        else {
+            this.parent.publishEvent(event);
+        }
+    }
+}
+```
+
+
+
+<font color=red size=3>**④. SimpleApplicationEventMulticaster # multicastEvent(ApplicationEvent, ResolvableType)**</font>
+
+- `getApplicationListeners()` :  获取所有的 ApplicationListener
+- `invokeListener()`  :  执行每一个 ApplicationListener
+
+```java
+@Override
+public void multicastEvent(final ApplicationEvent event, @Nullable ResolvableType eventType) {
+    ResolvableType type = (eventType != null ? eventType : resolveDefaultEventType(event));
+    Executor executor = getTaskExecutor();
+    for (ApplicationListener<?> listener : getApplicationListeners(event, type)) {
+        if (executor != null) {
+            executor.execute(() -> invokeListener(listener, event));
+        }
+        else {
+            invokeListener(listener, event);
+        }
+    }
+}
+```
+
+
+
+<font color=red size=3>**⑤. AbstractApplicationContext # initApplicationEventMulticaster( ) **</font>
+
+- 初始化事件广播器
+
+```java
+/**
+  * Initialize the ApplicationEventMulticaster.
+  * Uses SimpleApplicationEventMulticaster if none defined in the context.
+  * @see org.springframework.context.event.SimpleApplicationEventMulticaster
+  */
+protected void initApplicationEventMulticaster() {
+    ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+    if (beanFactory.containsLocalBean(APPLICATION_EVENT_MULTICASTER_BEAN_NAME)) {
+        this.applicationEventMulticaster =
+            beanFactory.getBean(APPLICATION_EVENT_MULTICASTER_BEAN_NAME, ApplicationEventMulticaster.class);
+        if (logger.isTraceEnabled()) {
+            logger.trace("Using ApplicationEventMulticaster [" + this.applicationEventMulticaster + "]");
+        }
+    }
+    else {
+        // 创建 SimpleApplicationEventMulticaster 
+        this.applicationEventMulticaster = new SimpleApplicationEventMulticaster(beanFactory);
+        // 将 SimpleApplicationEventMulticaster 加入到容器中
+        beanFactory.registerSingleton(APPLICATION_EVENT_MULTICASTER_BEAN_NAME, this.applicationEventMulticaster);
+        if (logger.isTraceEnabled()) {
+            logger.trace("No '" + APPLICATION_EVENT_MULTICASTER_BEAN_NAME + "' bean, using " +
+                         "[" + this.applicationEventMulticaster.getClass().getSimpleName() + "]");
+        }
+    }
+}
+```
+
+
+
+----
+
+### 4.@EventListener
+
+- 事件监听的另外一种方式
+
+<font color=green>***@EventListener***</font>
+
+- <font color=red>通过  Class<?>[ ]  classes( )  属性指定监听的事件</font>
+
+```java
+@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface EventListener {
+	/**
+	 * Alias for {@link #classes}.
+	 */
+	@AliasFor("classes")
+	Class<?>[] value() default {};
+
+	/**
+	 * The event classes that this listener handles.
+	 * <p>If this attribute is specified with a single value, the
+	 * annotated method may optionally accept a single parameter.
+	 * However, if this attribute is specified with multiple values,
+	 * the annotated method must <em>not</em> declare any parameters.
+	 */
+	@AliasFor("value")
+	Class<?>[] classes() default {};
+
+	/**
+	 * Spring Expression Language (SpEL) attribute used for making the
+	 * event handling conditional.
+	 * <p>Default is {@code ""}, meaning the event is always handled.
+	 * <p>The SpEL expression evaluates against a dedicated context that
+	 * provides the following meta-data:
+	 * <ul>
+	 * <li>{@code #root.event}, {@code #root.args} for
+	 * references to the {@link ApplicationEvent} and method arguments
+	 * respectively.</li>
+	 * <li>Method arguments can be accessed by index. For instance the
+	 * first argument can be accessed via {@code #root.args[0]}, {@code #p0}
+	 * or {@code #a0}. Arguments can also be accessed by name if that
+	 * information is available.</li>
+	 * </ul>
+	 */
+	String condition() default "";
+}
+```
+
+
+
+#### 4.1 测试 @EventListener
+
+- <font color=red>使用方法?</font>
+  - ①.  在方法上标注 `@EventListener` 注解
+  - ②.  通过 classes 属性指定需要监听的事件Class对象数组
+- 测试流程
+  - ①.  创建一个业务组件 ,  定义一个方法标注 @EventListener 注解
+  - ②.  在 @EventListener 中指定监听的事件
+  - ③.  在标注了 @EventListener  注解的方法中编写事件监听的逻辑
+
+<font color=blue>**①.创建一个业务组件,编写方法使用 @EventListener 标注**</font>
+
+```java
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Service;
+
+/**
+ * @author zyl
+ * @Description {@link org.springframework.context.event.EventListener}
+ * @Date 2019/8/25
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+
+@Service
+public class PersonService {
+    /**
+     * 使用 @EventListener 标识一个监听方法
+     *   -> 通过classes 属性指定监听的事件
+     */
+    @EventListener(classes = {ApplicationEvent.class})
+    public void listen(ApplicationEvent event){
+        System.out.println("PersonService 监听事件:"+event.getSource());
+    }
+}
+```
+
+<font color=blue>**②.  将业务组件注册到配置类中**</font>
+
+```java
+/**
+ * @author zyl
+ * @Description @EventListener 监听注解配置类 同时加上BeanFactoryPostProcessor 和 BeanDefinitionPostProcessor 组件
+ * @Date 2019/8/25
+ * @email <a href=mailto:zhuyuliangm@outlook.com>zyl</a>
+ */
+@Configuration
+public class EventListenerConfig {
+    @Bean
+    public Person person(){
+        return new Person();
+    }
+    @Bean
+    public MyBeanFactoryPostProcessor myBeanFactoryPostProcessor(){
+        return new MyBeanFactoryPostProcessor();
+    }
+
+    @Bean
+    public MyBeanDefinitionPostProcessor myBeanDefinitionPostProcessor(){
+        return new MyBeanDefinitionPostProcessor();
+    }
+
+    /**
+     * 注册一个 PersonService 业务组件
+     * @return
+     */
+    @Bean
+    public PersonService personService(){
+        return new PersonService();
+    }
+}
+```
+
+<font color=blue>**③. 启动测试**</font>
+
+```java
+@Test
+public void testEventListener(){
+    AnnotationConfigApplicationContext context  
+        	= new AnnotationConfigApplicationContext(EventListenerConfig.class);
+    context.close();
+}
+```
+
+<font color=blue>**④. 查看控制台输出**</font>
+
+```java
+// 调用 BeanDefinitionPostProcessor#postProcessBeanDefinitionRegistry() 方法
+MyBeanDefinitionPostProcessor postProcessBeanDefinitionRegistry....
+MyBeanDefinitionPostProcessor postProcessBeanFactory....
+
+//  调用BeanFactoryPostProcessor#postProcessBeanFactory() 方法
+MyBeanFactoryPostProcessor postProcessBeanFactory...
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+eventListenerConfig
+person
+myBeanFactoryPostProcessor
+myBeanDefinitionPostProcessor
+personService
+
+// 实例化 Bean定义信息的保存中心( BeanDefinitionRegistry ) 中的Bean
+无参构造器...
+// 使用@EventListener 监听事件
+PersonService 监听事件:org.springframework.context.annotation.AnnotationConfigApplicationContext@5b03b9fe, started on Sun Aug 25 12:12:58 CST 2019
+PersonService 监听事件:org.springframework.context.annotation.AnnotationConfigApplicationContext@5b03b9fe, started on Sun Aug 25 12:12:58 CST 2019
+```
+
+
+
+#### 4.2  @EventListener原理-SmartInitializingSingleton
+
+- 使用 `EventListenerMethodProcessor` 处理器 , 解析方法上的 @EventListener 注解
+  - <font color=green>public  class  EventListenerMethodProcessor  implements  SmartInitializingSingleton</font>
+  - 主要实现了 `SmartInitializingSingleton`
+
+<font color=green>***SmartInitializingSingleton***</font>
+
+- `afterSingletonsInstantiated ()`  
+  -  <font color=red>会在所有的单实例Bean创建完成之后进行回调 , 但是其他作用域的Bean ( 比如 prototype ) 以及 懒加载的Bean不会触发该回调函数</font>
+
+```java
+public interface SmartInitializingSingleton {
+
+	/**
+	 * Invoked right at the end of the singleton pre-instantiation phase,
+	 * with a guarantee that all regular singleton beans have been created
+	 * already. {@link ListableBeanFactory#getBeansOfType} calls within
+	 * this method won't trigger accidental side effects during bootstrap.
+	 * <p><b>NOTE:</b> This callback won't be triggered for singleton beans
+	 * lazily initialized on demand after {@link BeanFactory} bootstrap,
+	 * and not for any other bean scope either. Carefully use it for beans
+	 * with the intended bootstrap semantics only.
+	 */
+	void afterSingletonsInstantiated();
+}
+```
+

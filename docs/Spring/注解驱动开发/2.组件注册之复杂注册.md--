@@ -1,0 +1,141 @@
+[TOC]
+
+###  1. @Conditional - 按条件注册Bean
+
+- <font color=red>标注在 类 或者 方法上面 ( 标注在类上可以统一判断)</font>
+
+- <font color=red>作用 : 按照一定的条件判断后 , 将满足条件的bean 注册到 IOC容器中</font>
+
+- <font color=blue>注解属性?</font>
+  - `value`	: 指定条件判断类
+
+>- <font color=red>使用步骤:</font>
+>  - <font color=red>①.  创建条件判断类 , 并且实现Condition接口</font>
+>  - <font color=red>②.  重写 matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) 方法</font>
+>    - `conditionContext`			:  判断条件可以使用的上下文,包括系统环境,类加载器等 
+>      - conditionContext.getBeanFactory()	: 获取IOC使用的BeanFactory
+>      - conditionContext.getClassLoader()	: 获取类加载器
+>      - conditionContext.getEnvironment()	: 获取系统环境(包括JVM的信息)
+>      - context.getRegistry()                            :  获取Bean定义的注册类
+>    - `annotatedTypeMetadata` 	:  注解信息
+>  - <font color=red>③.  在类或者方法上标注@Conditional 注解,同时指定条件判断类</font>
+
+
+
+**①.定义条件判断类**
+
+- `实现Condition接口,实现matches()方法`
+  - 返回true 则会被扫描进IOC容器中
+
+```java
+/**
+ * 自定义条件判断类
+ *  - 实现Condition接口中的 matches方法
+ *  - ConditionContext : 判断条件可以使用的环境
+ *      -> conditionContext.getBeanFactory()	: 获取IOC使用的BeanFactory
+ *      -> conditionContext.getClassLoader()	: 获取类加载器
+ *      -> conditionContext.getEnvironment()	: 获取系统环境(包括JVM的信息)
+ *      -> context.getRegistry()                : 获取Bean定义的注册类
+ *  - AnnotatedTypeMetadata : 注解信息
+ */
+public class MyCondition implements Condition 
+{
+    @Override
+    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata)
+    {
+        // 获取IOC使用的BeanFactory
+        ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+        // 获取类加载器
+        ClassLoader classLoader = context.getClassLoader();
+        // 获取系统环境(包括JVM的信息)
+        Environment environment =  context.getEnvironment();
+
+        // 获取Bean定义的注册类
+        BeanDefinitionRegistry registry = context.getRegistry();
+        Arrays.stream(registry.getBeanDefinitionNames()).forEach(System.out::println);
+        System.out.println("------");
+        // 获取注解信息
+        if (metadata instanceof ClassMetadata) {
+            ClassMetadata classMetadata = (ClassMetadata) metadata;
+            System.out.println("className-->"+classMetadata.getClassName());
+        }
+        if(metadata instanceof MethodMetadata){
+            MethodMetadata methodMetadata = (MethodMetadata) metadata;
+            System.out.println("methodName-->"+methodMetadata.getMethodName());
+        }
+        return true;
+    }
+}
+```
+
+
+
+**②.使用@Conditional注解**
+
+```java
+ @Conditional({MyCondition.class})
+ @Bean(value = "person2")
+ public Person person2()
+ {
+     System.out.println("Create person2...");
+     return new Person("person2",25);
+ }
+```
+
+
+
+----
+
+### 2.@Import
+
+- <font color=blue>**通过@Import 快速的给容器中注册一个组件**</font>
+  - <font color=red>方式1 :  @Import( {要导入的组件} )  ,容器会自动注册这个组件,id默认是全类名</font>
+  - <font color=red>方式2 :  自定义导入选择器,实现ImportSelector接口 , 返回需要注册的组件的全类名数组</font>
+  - <font color=red>方式3 :  自定义注册类 ,  实现ImportBeanDefinitionRegistrar接口 , 直接向 IOC中注册组件</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-4cd": {
+  "/docs-ff0": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -244,9 +244,17 @@
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-微服务基础bdd-b7b"
   },
+  "/docs/category/性能监控和调优入门-150": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-性能监控和调优入门-4-e-1-8cb"
+  },
   "/docs/category/性能优化-3ba": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-性能优化-989-5b1"
+  },
+  "/docs/category/jvm优化-788": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-jvm优化-0-aa-f7e"
   },
   "/docs/category/mysql基础与高级-700": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
@@ -255,6 +263,14 @@
   "/docs/category/spring编程思想-ab2": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring编程思想b-16-910"
+  },
+  "/docs/category/spring基础-0a2": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring基础-1-a-0-351"
+  },
+  "/docs/category/spring注解-7e2": {
+    "component": "component---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring注解e-1-c-477"
   },
   "/docs/category/springcloud-alibaba-8d2": {
     "component": "component---theme-doc-category-generated-index-page-14-e-640",
@@ -295,6 +311,14 @@
   "/docs/job-cd2": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-job-7-e-5-58f"
+  },
+  "/docs/JVM-d4c": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-jvm-480-941"
+  },
+  "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控-1fd": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-jvm-性能监控和调优入门-基于jd-k命令行工具的监控ae-5-4e9"
   },
   "/docs/leetCode-3cf": {
     "component": "component---theme-doc-item-178-a40",
@@ -415,6 +439,10 @@
   "/docs/spring-a62": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-spring-2-ce-6fd"
+  },
+  "/docs/Spring/注解驱动开发/组件注册之简单注册-f61": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-spring-注解驱动开发-组件注册之简单注册b-80-7ec"
   },
   "/docs/Spring/Spring编程思想/依赖查找-4ac": {
     "component": "component---theme-doc-item-178-a40",
