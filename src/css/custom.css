@@ -577,3 +577,11 @@ a.card-link:hover img {
     margin-top: var(--custom-list-paragraph-margin);
     margin-bottom: var(--custom-list-paragraph-margin);
 }
+
+img.avatar__photo.avatar__photo--xl:hover {
+    transform: rotate(666turn);
+    transition-delay: 1s;
+    transition-property: all;
+    transition-duration: 59s;
+    transition-timing-function: cubic-bezier(.34,0,.84,1);
+}

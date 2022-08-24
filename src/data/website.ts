@@ -302,6 +302,18 @@ export const websiteData: WebsiteCategory[] = [
       }
     ]
   },
+  {
+    "name": "全栈开发技术",
+     "websites": [
+        {
+          "name": "Fresh",
+          "desc": "面向 JavaScript 和 TypeScript 开发者的全栈现代 Web 框架, 可以轻松创建高质量、高性能、稳定性好，以及支持定制的 Web 应用。",
+          "logo": "https://fresh.deno.dev/logo.svg",
+          "href": "https://fresh.deno.dev/",
+          "tags": [""]
+        }
+     ]
+  },
     {
     "name": "Vue",
     "websites": [
