@@ -49,9 +49,9 @@ html[data-theme="light"] {
   --ifm-color-primary-lighter: #1434d3;
   --ifm-color-primary-lightest: #1d3fea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
-  --custom-code-color: var(--ifm-code-color);
-  --custom-code-background: #e1eaff;
-  --custom-border-color: #e1eaff;
+  --custom-code-color: #4f6bc8;
+  --custom-code-background: #f1f1f1;
+  --custom-border-color: #f1f1f1;
   --custom-toc_bgcolor: #e2e3e866
   --custom-list-paragraph-margin: 5px;
 }
@@ -132,10 +132,8 @@ code {
   word-break: break-word;
   margin: 0 1px;
   background: var(--custom-code-background);
-  /* padding: 0.2em 0.4em;*/
-  padding: 4px;
+  padding: 3px;
   border-radius: 4px;
-  /* font-size: 0.9em;*/
   border: 1px solid var(--custom-border-color);
   font-family: poppins, Monaco, Consolas, Courier New, monospace;
 }
