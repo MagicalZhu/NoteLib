@@ -283,7 +283,7 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
     - 如果这个数字是值的 97937874,表明该INODE Entry已经初始化，否则没有被初始化
 
 5. `Fragment Array Entry`
-    - 段是由**完整的区和碎片区中零散的页面**组成的, **每个Fragment Array Entry 都对应着一个零散的页面**
+    - 段是由**完整的区和碎片区中零散的页面**组成的, **每个Fragment Array Entry 都对应着一个零散的页面的**
     - `一共有32 个, 每个占用 4 个字节表示一个碎片区零散页面的页号`
 
 ### 各类型页面
@@ -310,7 +310,7 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
     - [文件头部,这个是页的通用部分](InnoDB数据页结构#文件头file-header)
     - 定义了页面的简单描述信息
 2. `File Space Header`
-    - **表空间头部,定义了表空间的一些整体的描述信息**
+    - **表空间头部,定义了表空间的一些整体的[描述信息](InnoDB表空间#file-space-header)**
 3. `XDES Entry`
     - 区描述信息,存储本组 256 个区对应的[属性信息](InnoDB表空间#xdes-entry-节点)
 4. `Empty Space`
@@ -349,7 +349,10 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
         - 该链表中的 INODE 类型的页面都已经被INODE Entry 结构填充满了，没空闲空间存放额外的INODE Entry了
       - `SEG_INODES_FREE 链表`
        - 该链表中的 INODE 类型的页面仍有空闲空间来存放 INODE Entry 结构
-     
+<br/>
+
+**FileSpace Header结构表格说明:**
+
    | 属性                               | 大小(字节) | 描述                                                         |
    | ---------------------------------- | ---------- | ------------------------------------------------------------ |
    | `Space ID`                          | **4**      | 表空间的 ID                               |
@@ -377,10 +380,11 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 #### XDES页
 > 每一个 XDES Entry 都会对应一个区,并且可以通过其中的 List Node 中的 `Page Number` 和 `Offset` 定位到具体的页中的具体位置,而这些 XDES Entry 信息就存储在 XDES 页中
 
-- 在实际开发中,**表空间中会有大量的区,那随之也会有大量的 XDES Entry 节点,那么一个页肯定无法存储这么多的 XDES Entry,因此 InnoDB 以 256 个区为一组对表空间进行划分**, 然后`每一组的第一个区的第一个页`中存储着当前组中 256 个区的 XDES Entry
+- 在实际开发中,**表空间中会有大量的区,那随之也会有大量的 XDES Entry 节点,那么一个页肯定无法存储这么多的 XDES Entry,因此 InnoDB 以 256 个区为一组对表空间进行划分**, 然后**每一组的第一个区的第一个页**中存储着当前组中 `256` 个区的 XDES Entry
+
 - 上面提到的 `FSP_HDR页` 比较特殊,除了记录了 **XDES Entry** 的信息,还记录了**表空间的属性**, 当然了整个表空间只有这一个这种类型的页, **随后的每一组区的 XDES Entry 都会被存储该分组的第一个页,**也就是`XDES 页`
 
-**XDES 页 和 FSP_HDR页 的结构除了 File Space Header 以外是一样的:**
+**XDES 页 除了没有 FSP_HDR 页的 FileSpace Header 以外,其他都是一样的:**
 
 ![image-20220821001654411](./image/InnoDB表空间/image-20220821001654411.png)
 
@@ -388,9 +392,113 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 
 #### INODE页
 
+> 在前面的表空间结构图中说过,第一组的第一个区 (extent0) 的最前面的三个页是固定的(FSP_HDR、IBUF_BITMAP、INODE)。
+> 
+> 每个表在表空间中默认有两个段,而且某些特殊功能还有一些特殊的段,为了便于管理这些段, InnoDB 还设计了 INODE Entry 用于存储段的信息,那这些 INODE Entry 就存储在 INODE 页中
+
+**INODE页的结构图:**
+
+![](http://assets.processon.com/chart_image/6306e27ae0b34d07265d122a.png?_=1661396063338)
+
+<br/>
+
+从上面的结构图可以看出来, INODE 页有下面几部分组成:
+
+  | 属性                               | 大小(字节) | 描述                                                         |
+  | ---------------------------------- | ---------- | ------------------------------------------------------------ |
+  | `File Header`                      | **38**      | 页的一些通用信息                               |
+  | `List Node for INODE Page List`    | **12**     | **通用链表节点,存储上一个 INODE 页面和下一个 INODE 页面的指针**|
+  | `INODE Entry`                      | **16320**      | **段描述信息**|
+  | `Empty Space`                      | **6**     | 用于页结构的填充，没啥实际意义|
+  | `File Trailer`                     | **8**     | 校验页是否完整 |
+
+<br/>
+
+**下面是几个常见的部分:**
+
+1. `INODE Entry`
+   - [详细可见](/InnoDB表空间#段结构inode-entry)
+   - 主要包含了**附属于该段的 FREE、FULL、NOT_FULL 链表的基节点以及该段的零散页面的地址(Fragmen Array Entry)**
+
+2. `List Node for INODE Page List`
+   - 一个 INODE 页最多存储 `85` 个 INODDE Entry,所以一个 INODE 页不足以存储所有的段对应的 INODE Entry,所以需要额外的 INODE 页面来存储这些结构
+   - InnoDB 为了管理 INODE 页, 和XDES Entry 类似的,页将这些INODE 页**串联成两个不同的列表**
+     - `SEG_INODES_FULL` : 该链表中的 INODE 页中已经没有空闲空间来存储额外的 INODE Entry
+     - `SEG_INODES_FREE` : 该链表中的 INODE 页中还有空闲空间来存储额外的INODE Entry
+   - 在 `FSP_HDR` 的 [File Space Header](InnoDB表空间#file-space-header)中存储了 *SEG_INODES_FULL、SEG_INODES_FREE* 的基节点
+
+:::info 创建段
+
+每次新创建一个段(比如创建索引)时,都会创建一个INODE Entry与之对应，存储 INODE Entry的大致过程就是这样的:
+
+- 先看 `SEG_INODES_FREE` 链表是否为空
+   - **如果不为空**,直接从该链表中获取一个节点,也就相当于获取到一个仍有空闲空间的 INODE 页, 然后把该 INODE Entry 存储到该页面中。当该页面中无剩余空间时,就把该页放到 `SEG_INODES_FULL 链表`
+   - **如果为空**, 则从`表空间的 FREE_FRAG 链表` 中申请一个页面, `修改该页面的类型为 INODE`, 把该页面`放到 SEG_INODES_FREE 链表中`, 与此同时把该 INODE Entry 存储到该页面中
+:::
+  
+### Segment Header
+## 系统表空间
+
+> 我们知道,InnoDB 的表空间除了独立表空间之外,还有很多的表空间,比如`系统表空间`。
+
+### 表空间的结构
+
+系统表空间与独立表空间的一个非常明显的不同之处就是在`系统表空间开头有许多记录整个系统属性的页面`,如图:
+
+![](http://assets.processon.com/chart_image/630708a907912906e3a19759.png?_=1661406016162)
+
+<br/>
+
+可以看到, `系统表空间`和独立表空间的前三个页面(页号分别为 `0、1、2`，类型分别是 `FSP_HDR、IBUF_BITMAP、INODE` )的类型是一致的,只是页号为 `3~7` 的页面是系统表空间特有的：
+
+
+  |页号         | 页面类型                    | 英文描述                     | 描述                                                         |
+  | ---------- | -------------------------- | --------------------------- | ------------------------------------------------------------ |
+  | **3**      | `SYS`                      | **Insert Buffer Header**    | **存储 Insert Buffer 的头部信息**                              |
+  | **4**      | `INDEX`                    | **Insert Buffer Root**      | **存储 Insert Buffer 的根页面**                                |
+  | **5**      | `TRX_SYS`                  | **Transction System**       | **事务系统的相关信息**                                          |
+  | **6**      | `SYS`                      | **First Rollback Segment**  | **第一个回滚段的页面**                                          |
+  | **7**      | `SYS`                      | **Data Dictionary Header**  | **数据字典头部信息**                                            |
+
+
+#### InnoDB 数据字典
+
+- 使用 `INSERT` 语句向表中插入的那些记录称之为**用户数据**, MySQL 只是作为一个软件来为我们来保管这些数据,提供方便的增删改查接口而已。
+
+- 但是每当我们向一个表中插入一条记录的时候, **MySQL 先要校验一下插入语句对应的表存不存在,插入的列和表中的列是否匹配**。如果语法没有问题的话, 还需要知道**该表的聚簇索引和所有二级索引对应的根页面是哪个表空间的哪个页面**,然后把记录插入对应索引的B+树中
+
+- 所以 MySQL 除了保存着插入的用户数据之外, 还需要保存许多额外的信息,比方说：
+  - 某个表属于哪个表空间，表里边有多少列
+  
+  - 表对应的每一个列的类型是什么
+
+  - 该表有多少索引，每个索引对应哪几个字段，该索引对应的根页面在哪个表空间的哪个页面
+  
+  - 该表有哪些外键，外键对应哪个表的哪些列
+  
+  - 某个表空间对应文件系统上文件路径是什么
+
+  - ...
+
+这些数据并不是使用 INSERT 语句插入的用户数据, 实际上是为了更好的管理我们这些用户数据而不得已引入的一些额外数据, 这些数据也称为`元数据`。InnoDB 存储引擎特意定义了一些列的内部系统表(`internal system table`)来记录这些这些元数据:
+
+  |表名                 | 描述                                   | 
+  | ------------------ | -------------------------------------- | 
+  | `SYS_TABLES	`      | **所有的表的信息**                       | 
+  | `SYS_COLUMNS`      | **所有的列的信息**                       | 
+  | `SYS_INDEXES`      | **所有的索引的信息**                     | 
+  | `SYS_FIELDS`       | **所有的索引对应的列的信息**              | 
+  | `SYS_FOREIGN`      | **所有的外键的信息**                     | 
+  | `SYS_FOREIGN_COLS` | **所有的外键对应列的信息**                | 
+  | `SYS_TABLESPACES`  | **所有的表空间信息**                     | 
+  | `SYS_DATAFILES`    | **所有的表空间对应文件系统的文件路径信息**   | 
+  | `SYS_VIRTUAL`      | **所有的虚拟生成列的信息**                | 
+
+<br/>
+
+这些**系统表也被称为`数据字典`**, 它们都是以 B+Tree 的形式保存在系统表空间的某些页面中,其中` SYS_TABLES、SYS_COLUMNS、SYS_INDEXES、SYS_FIELDS` 这四个表尤其重要,称之为`基本系统表`(basic system tables)
 
 
 
 ## 总结
 ![](./image/InnoDB表空间/表空间.png)
-
