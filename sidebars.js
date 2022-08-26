@@ -129,7 +129,7 @@ const springCode = new Category('Spring基础')
     '依赖注入'
   ])
   .createSubCaregory('Spring注解', 'Spring/注解驱动开发', [
-    '组件注册之简单注册'
+    '组件注册'
   ])
 
 
