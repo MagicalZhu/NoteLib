@@ -53,6 +53,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
     ])
     .createSubCaregory('架构与引擎','Mysql/高级特性', [
       'MySQL逻辑架构',
+      '缓冲池'
     ])
     .createSubCaregory('存储结构与索引','Mysql/高级特性', [
       '索引',
@@ -71,7 +72,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
       '事务基础',
       'Redo日志',
       'Undo日志',
-      `锁`
+      '锁'
     ])
     
 
