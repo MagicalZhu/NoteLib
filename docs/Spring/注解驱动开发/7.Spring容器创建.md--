@@ -1,12 +1,10 @@
-[TOC]
 
-# 1.Spring容器创建(refresh)
+## Spring容器创建(refresh)
 
-- 通过 `AbstractApplicationContext #refresh()` 创建刷新容器
+- 通过 `refresh()` 创建刷新容器, 方法路径 **AbstractApplicationContext #refresh()**
 
-<font color=red size=3>**AbstractApplicationContext #refresh()**</font>
 
-```java
+```java title="AbstractApplicationContext#refresh()"
 public void refresh() throws BeansException, IllegalStateException {
     synchronized (this.startupShutdownMonitor) {
         // 刷新容器前的预处理(准备)
@@ -63,23 +61,22 @@ public void refresh() throws BeansException, IllegalStateException {
 
 
 
-## 1.1 BeanFactory预准备
+## BeanFactory预准备
 
-### 1.1.1 prepareRefresh( 刷新前预处理 )
+### prepareRefresh
 
-- 刷新容器前的预处理
+- **刷新容器前的预处理**
 - 包含的方法
   - `initPropertySources()` 
     - 初始化一些属性设置 , 由子类 自定义个性化的属性设置方法
   - `getEnvironment().validateRequiredProperties()`
     - 检验属性的合法性
-    - 参看 <font color=red>ConfigurablePropertyResolver#setRequiredProperties()</font>
+    - 参看 **ConfigurablePropertyResolver#setRequiredProperties()**
   - `earlyApplicationEvents= new LinkedHashSet<ApplicationEvent>()`
     - 保存容器中的一些早期的事件
+- 方法路径: **AbstractApplicationContext #prepareRefresh()**
 
-<font color=red size=3>**AbstractApplicationContext #prepareRefresh()**</font>
-
-```java
+```java title="AbstractApplicationContext #prepareRefresh()"
 /**
 * Prepare this context for refreshing, setting its startup date and
 * active flag as well as performing any initialization of property sources.
@@ -117,20 +114,24 @@ protected void prepareRefresh() {
 
 
 
-### 1.1.2 obtainFreshBeanFactory( 获取BeanFactory )
+### obtainFreshBeanFactory
 
-- `refreshBeanFactory()`  : 刷新BeanFactory
-  - 实际调用了 ==GenericApplicationContext #refreshBeanFactory()==
-    - 创建了BeanFactory
-      - this.beanFactory = new DefaultListableBeanFactory( )
-    - 设置序列化ID
-      - this.beanFactory.setSerializationId( getId( ) )
-- `getBeanFactory()`
-  - 返回 GenericApplicationContext 创建的BeanFactory对象 ( DefaultListableBeanFactory )
+- **获取BeanFactory**
+- **常见方法**
+  - `refreshBeanFactory()`
+    - 刷新BeanFactory
+    - 实际调用了 `GenericApplicationContext #refreshBeanFactory()`
+      - 创建了 BeanFactory
+        - this.beanFactory = new DefaultListableBeanFactory( )
+      - 设置序列化 ID
+        - this.beanFactory.setSerializationId( getId( ) )
+  - `getBeanFactory()`
+    - 返回 GenericApplicationContext 创建的BeanFactory对象 ( DefaultListableBeanFactory )
 
-<font color=red size=3>**1. AbstractApplicationContext #obtainFreshBeanFactory()**</font>
 
-```java
+**方法路径1: AbstractApplicationContext #obtainFreshBeanFactory()**
+
+```java title="AbstractApplicationContext #obtainFreshBeanFactory()**"
 /**
 * Tell the subclass to refresh the internal bean factory.
 * @return the fresh BeanFactory instance
@@ -143,9 +144,9 @@ protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
 }
 ```
 
-<font color=red size=3>**2. GenericApplicationContext #refreshBeanFactory()**</font>
+**方法路径2: GenericApplicationContext #refreshBeanFactory()**
 
-```java
+```java title="GenericApplicationContext #refreshBeanFactory()"
 /**
 * Do nothing: We hold a single internal BeanFactory and rely on callers
 * to register beans through our public methods (or the BeanFactory's).
@@ -162,9 +163,9 @@ protected final void refreshBeanFactory() throws IllegalStateException {
 }
 ```
 
-<font color=red size=3>**3. GenericApplicationContext #getBeanFactory()**</font>
+**方法路径3: GenericApplicationContext #getBeanFactory()**
 
-```java
+```java title="GenericApplicationContext #getBeanFactory()"
 /**
 * Return the single internal BeanFactory held by this context (as ConfigurableListableBeanFactory).
 */
@@ -176,32 +177,31 @@ public final ConfigurableListableBeanFactory getBeanFactory() {
 
 
 
-### 1.1.3 prepareBeanFactory(beanFactory) (设置BeanFactory)
+#### prepareBeanFactory(beanFactory)
 
-- BeanFactory的预准备工作（BeanFactory进行设置一些特性）
-- <font color=red>**常见的一些属性**</font>
-  - 设置BeanFactory的类加载器、SPEL支持表达式解析器...
-  - 添加部分BeanPostProcessor
-    - ApplicationContextAwareProcessor
-  - 设置忽略的自动装配的接口
-    - EnvironmentAware、EmbeddedValueResolverAware、ResourceLoaderAware、ApplicationEventPublisherAware、MessageSourceAware、ApplicationContextAware
+- **BeanFactory的预准备工作(对 BeanFactory 设置一些特性)**
+- **常见的一些属性**
+  - **设置BeanFactory的类加载器、SPEL支持表达式解析器...**
+  - **添加部分BeanPostProcessor**
+    - `ApplicationContextAwareProcessor`
+  - **设置忽略的自动装配的接口**
+    - `EnvironmentAware、EmbeddedValueResolverAware、ResourceLoaderAware、ApplicationEventPublisherAware、MessageSourceAware、ApplicationContextAware`
     - 这些无法通过接口类型自动注入
-  - 注册可以解析的自动装配 , 
-    - BeanFactory、ResourceLoader、ApplicationEventPublisher、ApplicationContext
+  - **注册可以解析的自动装配**
+    -` BeanFactory、ResourceLoader、ApplicationEventPublisher、ApplicationContext`
     - 我们能直接在任何组件中 通过@AutoWired 自动注入
-  - 添加BeanPostProcessor
-    - ApplicationListenerDetector
-  - 添加编译时的AspectJ
-  - 给BeanFactory中注册一些能用的组件
-    - environment【ConfigurableEnvironment】
-    - systemProperties【Map<String, Object>】
-    - systemEnvironment【Map<String, Object>】	
+  - **添加BeanPostProcessor**
+    - `ApplicationListenerDetector`
+  - **添加编译时的AspectJ**
+  - **给BeanFactory中注册一些能用的组件**
+    - `environment` 【ConfigurableEnvironment】
+    - `systemProperties` 【Map<String, Object>】
+    - `systemEnvironment` 【Map<String, Object>】	
 
-**[ 源码 ]**
+**方法路径: AbstractApplicationContext #prepareBeanFactory(ConfigurableListableBeanFactory beanFactory)**
 
-<font color=red size=3>**AbstractApplicationContext #prepareBeanFactory(ConfigurableListableBeanFactory beanFactory)**</font>
 
-```java
+```java title="AbstractApplicationContext #prepareBeanFactory"
 /**
 * Configure the factory's standard context characteristics,
 * such as the context's ClassLoader and post-processors.
@@ -254,14 +254,14 @@ protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
 
 
 
-### 1.1.4 postProcessBeanFactory(beanFactory) (BeanFactory后置处理工作)
+#### postProcessBeanFactory(beanFactory)
 
-- BeanFactory准备工作完成后进行的后置处理工作
-- `子类通过重写这个方法 , 在BeanFactory创建并预准备完成以后做进一步的设置`
+- **BeanFactory后置处理工作,在 BeanFactory 准备工作完成后进行的后置处理工作**
+- `子类可以通过重写这个方法, 在 BeanFactory 创建并预准备完成以后做进一步的设置`
 
-<font color=red size=3>**AbstractApplicationContext #postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)**</font>
 
-```java
+
+```java title="AbstractApplicationContext #postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)"
 /**
 * Modify the application context's internal bean factory after its standard
 * initialization. All bean definitions will have been loaded, but no beans
@@ -273,17 +273,14 @@ protected void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactor
 }
 ```
 
+:::info 后置处理器的示例
 
+- 比如说: `ServletWebServerApplicationContext` 也实现了 postProcessBeanFactory() 方法
+  - BeanFactory 添加一个 Bean的后置处理器 WebApplicationContextServletContextAwareProcessor
+  - 添加忽略的自动装配的接口 ServletContextAware
+  - 注册 Web 应用的作用域(Session, Request)
 
-<font color=green>**比如说 : ServletWebServerApplicationContext  也实现了 postProcessBeanFactory( ) 方法**</font>
-
-<font color=red size=3>**ServletWebServerApplicationContext #postProcessBeanFactory( )**</font>
-
-- BeanFactory 添加一个 Bean的后置处理器 WebApplicationContextServletContextAwareProcessor
-- 添加忽略的自动装配的接口 ServletContextAware
-- 注册 Web 应用的作用域(Session , Request)
-
-```java
+```java title="ServletWebServerApplicationContext#postProcessBeanFactory"
 /**
 * Register ServletContextAwareProcessor.
 * @see ServletContextAwareProcessor
@@ -296,43 +293,58 @@ protected void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactor
 }
 ```
 
-## 1.2 执行BeanFactoryPostProcessor
+:::
 
-### 1.2.1 invokeBeanFactoryPostProcessors(beanFactory) (执行BeanFactoryPostProcessor的方法)
 
-- 执行 BeanFactoryPostProcessor 的方法
+
+
+
+
+## 执行BeanFactoryPostProcessor
+
+### invokeBeanFactoryPostProcessors(beanFactory)
+
+- **执行 BeanFactoryPostProcessor 的方法**
+
 - `BeanFactoryPostProcessor`
-  
   - BeanFactory的后置处理器 , 在BeanFactory标准初始化之后执行的
-- 两个接口 :  `BeanFactoryPostProcessor、BeanDefinitionRegistryPostProcessor`
-- <font color=red>BeanDefinitionRegistryPostProcessor 执行流程</font>
-- ①.  获取所有的BeanDefinitionRegistryPostProcessor
-    - ②.  先执行实现了`PriorityOrdered`优先级接口的 BeanDefinitionRegistryPostProcessor
-        - postProcessor.postProcessBeanDefinitionRegistry(registry)
-    - ③.  再执行实现了`Ordered`顺序接口的 BeanDefinitionRegistryPostProcessor
-        - postProcessor.postProcessBeanDefinitionRegistry(registry)
-    - ④.  最后执行没有实现任何优先级或者是顺序接口的BeanDefinitionRegistryPostProcessors
-        -  postProcessor.postProcessBeanDefinitionRegistry(registry)
-- <font color=red>BeanFactoryPostProcessor  执行流程</font>
 
-    - ①.  获取所有的BeanFactoryPostProcessor
-    - ②.  先执行实现了PriorityOrdered优先级接口的BeanFactoryPostProcessor
+- **两个接口: BeanFactoryPostProcessor 、 BeanDefinitionRegistryPostProcessor**
+
+- **BeanDefinitionRegistryPostProcessor 执行流程**
+
+  1. 获取所有的BeanDefinitionRegistryPostProcessor
+
+  2. 先执行实现了`PriorityOrdered`优先级接口的 BeanDefinitionRegistryPostProcessor
+    - postProcessor.postProcessBeanDefinitionRegistry(registry)
+
+  3.  再执行实现了`Ordered`顺序接口的 BeanDefinitionRegistryPostProcessor
+        - postProcessor.postProcessBeanDefinitionRegistry(registry)
+  
+  4.  最后执行没有实现任何优先级或者是顺序接口的BeanDefinitionRegistryPostProcessors
+        -  postProcessor.postProcessBeanDefinitionRegistry(registry)
+
+- **BeanFactoryPostProcessor  执行流程**
+
+    1.  获取所有的BeanFactoryPostProcessor
+
+    2.  先执行实现了PriorityOrdered优先级接口的BeanFactoryPostProcessor
       - postProcessor.postProcessBeanFactory()
-    - ③.  再执行实现了Ordered顺序接口的BeanFactoryPostProcessor
+
+    3.  再执行实现了Ordered顺序接口的BeanFactoryPostProcessor
       - postProcessor.postProcessBeanFactory()
-    - ④.  最后执行没有实现任何优先级或者是顺序接口的BeanFactoryPostProcessor
+
+    4.  最后执行没有实现任何优先级或者是顺序接口的BeanFactoryPostProcessor
         - postProcessor.postProcessBeanFactory()
 
-**[ 源码 ]**
+**方法路径: PostProcessorRegistrationDelegate#invokeBeanFactoryPostProcessors**
 
-<font color=red size=3>**PostProcessorRegistrationDelegate#invokeBeanFactoryPostProcessors( )**</font>
-
-- <font color=purple>BeanDefinitionRegistryPostProcessor.postProcessBeanDefinitionRegistry( ) </font>
+- `BeanDefinitionRegistryPostProcessor.postProcessBeanDefinitionRegistry`
   - 扫描Bean,然后将扫描到的Bean 放在 BeanDefinitionRegistry 这个Bean注册中心中
     - 这里扫描Bean 包含 @ComponentScan 扫描的Spring 模式注解的Bean 以及 使用 @Import 导入的Bean
-  - 此时 ,  BeanDefinitionRegistry 中包含了所有扫描到的Bean
+  - 此时,  BeanDefinitionRegistry 中包含了所有扫描到的Bean
 
-```java
+```java title="PostProcessorRegistrationDelegate#invokeBeanFactoryPostProcessors"
 public static void invokeBeanFactoryPostProcessors(
     ConfigurableListableBeanFactory beanFactory, List<BeanFactoryPostProcessor> beanFactoryPostProcessors) {
 
@@ -469,37 +481,41 @@ public static void invokeBeanFactoryPostProcessors(
 
 
 
-## 1.3 注册 BeanPostProcessor
+## 注册 BeanPostProcessor
 
-### 1.3.1 registerBeanPostProcessors(beanFactory);
+### registerBeanPostProcessors(beanFactory)
 
-- <font color=red>注册 Bean的后置处理器 , 用于拦截Bean 的创建</font>
-- <font color=red>BeanPostProcessor 的子接口</font>
-  - DestructionAwareBeanPostProcessor
+- **注册 Bean的后置处理器, 用于拦截Bean 的创建**
+- **BeanPostProcessor 的子接口**
+  - `DestructionAwareBeanPostProcessor` : 
     - Bean销毁的回调
-  - InstantiationAwareBeanPostProcessor
+
+  - `InstantiationAwareBeanPostProcessor`
     - Bean初始化的回调
-  - SmartInstantiationAwareBeanPostProcessor
-  - MergedBeanDefinitionPostProcessor
 
-- `registerBeanPostProcessors 执行流程`
-  - <font color=red>①.  获取所有的 BeanPostProcessor</font>
+  - `SmartInstantiationAwareBeanPostProcessor`
+
+  - `MergedBeanDefinitionPostProcessor`
+
+- **registerBeanPostProcessors 执行流程**
+  1. 获取所有的 BeanPostProcessor
     - 后置处理器都默认可以通过PriorityOrdered、Ordered接口来执行优先级
-  - <font color=red>②.  注册 BeanPostProcessorChecker</font>
+  
+  2. 注册 BeanPostProcessorChecker
     - 当一个bean没有资格被所有BeanPostProcessor处理时，它记录一个信息消息
-  - <font color=red>③.  分别注册实现了 PriorityOrdered优先级接口 ,  Ordered顺序接口 以及 没有实现任何优先级接口 的 BeanPostProcessor </font>
-    - 把每一个BeanPostProcessor 添加到BeanFactory中
-      - `beanFactory.addBeanPostProcessor(postProcessor)`
-  - <font color=red>④. 最后注册所有的MergedBeanDefinitionPostProcessor</font>
-  - <font color=red>⑤. 添加一个ApplicationListenerDetector 来在Bean创建完成后检查是否是ApplicationListener</font>
-    - 如果是 就添加到容器的监听器中
-      - applicationContext.addApplicationListener((ApplicationListener<?>) bean)
+  
+  3. 分别注册实现了 PriorityOrdered优先级接口 ,  Ordered顺序接口 以及 没有实现任何优先级接口 的 BeanPostProcessor
+    - 把每一个BeanPostProcessor 添加到BeanFactory中 (`beanFactory.addBeanPostProcessor(postProcessor)`)
 
-**[ 源码 ]**
+  4. 最后注册所有的MergedBeanDefinitionPostProcessor
 
-<font color=red size=3>**PostProcessorRegistrationDelegate #registerBeanPostProcessors ( )**</font>
+  5. 添加一个ApplicationListenerDetector 来在Bean创建完成后检查是否是ApplicationListener
+    - 如果是,就添加到容器的监听器中 (`applicationContext.addApplicationListener((ApplicationListener<?>) bean)`)
 
-```java
+**方法路径: PostProcessorRegistrationDelegate #registerBeanPostProcessors**
+
+
+```java title="PostProcessorRegistrationDelegate #registerBeanPostProcessors"
 public static void registerBeanPostProcessors(
     ConfigurableListableBeanFactory beanFactory, AbstractApplicationContext applicationContext) {
 	
@@ -563,27 +579,27 @@ public static void registerBeanPostProcessors(
 
 
 
-## 1.4 初始化 MessageSource
+## 初始化 MessageSource
 
-### 1.4.1 InitMessageSource()
+### InitMessageSource()
 
-- <font color=red>初始化MessageSource组件（做国际化 , 消息绑定，消息解析）</font>
+- **初始化MessageSource组件(做国际化 , 消息绑定，消息解析)**
 
-- `initMessageSource执行流程`
-  - <font color=red>①.  获取BeanFactory</font>
-  - <font color=red>②.  看容器中是否有id为messageSource的，类型是MessageSource的组件</font>
-    - `MessageSource`：取出国际化配置文件中的某个key的值, 能按照区域信息获取
-    - 如果有赋值给容器的 messageSource 属性
-    - <font color=red>如果没有 , 就创建一个DelegatingMessageSource , 把创建好的MessageSource注册在容器中</font>
-      - `beanFactory.registerSingleton(MESSAGE_SOURCE_BEAN_NAME, this.messageSource)`
-      - `MessageSource.getMessage(String code, Object[] args, String defaultMessage, Locale locale)`
-        - 以后以后获取国际化配置文件的值的时候，可以自动注入MessageSource 
+- **initMessageSource执行流程**
+  1. 获取BeanFactory
 
-**[ 源码 ]**
+  2. 看容器中是否有id为 messageSource的，类型是MessageSource的组件
+     - `MessageSource`:取出国际化配置文件中的某个key的值, 能按照区域信息获取
+     - **如果有, 就赋值给容器的 messageSource 属性**
+     - **如果没有, 就创建一个DelegatingMessageSource, 把创建好的MessageSource注册在容器中**
+       - `beanFactory.registerSingleton(MESSAGE_SOURCE_BEAN_NAME, this.messageSource)`
+       - `MessageSource.getMessage(String code, Object[] args, String defaultMessage, Locale locale)`
+         - 以后以后获取国际化配置文件的值的时候，可以自动注入MessageSource 
 
-<font color=red size=3>**AbstractApplicationContext #initMessageSource( )**</font>
+**方法路径: AbstractApplicationContext #initMessageSource**
 
-```java
+
+```java title="AbstractApplicationContext #initMessageSource"
 /**
 * Initialize the MessageSource.
 * Use parent's if none defined in this context.
@@ -613,23 +629,24 @@ protected void initMessageSource() {
 
 
 
-## 1.5 初始化事件派发器和监听器等
+## 初始化事件派发器和监听器等
 
-### 1.5.1 initApplicationEventMulticaster()
+### initApplicationEventMulticaster()
 
-- <font color=red>初始化事件派发器</font>
-- `initApplicationEventMulticaster 流程`
-  - <font color=red>①.  获取BeanFactory</font>
-  - <font color=red>②.  从BeanFactory中获取的 ApplicationEventMulticaster 类型的事件派发器</font>
-    - 我们可以自定义 一个事件派发器
-  - <font color=red>③.  如果上一步没有获取到ApplicationEventMulticaster ,  创建一个SimpleApplicationEventMulticaster</font>
-  - <font color=red>④.  将创建的ApplicationEventMulticaster添加到BeanFactory中，以后其他组件直接自动注入</font>
+- **初始化事件派发器**
+- **initApplicationEventMulticaster 流程**
+  1. 获取BeanFactory
 
-**[ 源码 ]**
+  2. 从 BeanFactory 中获取的 ApplicationEventMulticaster 类型的事件派发器, 我们可以自定义一个事件派发器
+  
+  3. 如果上一步没有获取到 ApplicationEventMulticaster,  创建一个SimpleApplicationEventMulticaster
 
-<font color=red size=3>**AbstractApplicationContext #initApplicationEventMulticaster( )**</font>
+  4. 将创建的ApplicationEventMulticaster添加到BeanFactory中，以后其他组件直接自动注入
 
-```java
+**方法路径: AbstractApplicationContext #initApplicationEventMulticaster**
+
+
+```java title="AbstractApplicationContext #initApplicationEventMulticaster"
 /**
 * Initialize the ApplicationEventMulticaster.
 * Uses SimpleApplicationEventMulticaster if none defined in the context.
@@ -657,15 +674,14 @@ protected void initApplicationEventMulticaster() {
 
 
 
-### 1.5.2 onRefresh()
+## onRefresh()
 
-- <font color=red>留给子容器（子类）</font>
+- **留给子容器（子类）**
 
-**[ 源码 ]**
+**方法路径: AbstractApplicationContext #onRefresh**
 
-<font color=red size=3>**AbstractApplicationContext #onRefresh( )**</font>
 
-```java
+```java title="AbstractApplicationContext#onRefresh"
 /**
 * Template method which can be overridden to add context-specific refresh work.
 * Called on initialization of special beans, before instantiation of singletons.
@@ -680,20 +696,19 @@ protected void onRefresh() throws BeansException {
 
 
 
-### 1.5.3 registerListeners()
+## registerListeners()
 
-- <font color=red>注册容器中将所有项目里面的ApplicationListener</font>
-- `registerListeners 执行流程`
-  - <font color=red>①.  从容器中拿到所有的ApplicationListener</font>
-  - <font color=red>②.  将每个监听器添加到事件派发器中</font>
-    - ​	getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName)
-  - <font color=red>③.  派发之前步骤产生的事件</font>
+- **注册容器中将所有项目里面的ApplicationListener**
+- **registerListeners 执行流程**
+  1. 从容器中拿到所有的ApplicationListener
+  2. 将每个监听器添加到事件派发器中
+     - `getApplicationEventMulticaster().addApplicationListenerBean`(listenerBeanName)
+  4.   派发之前步骤产生的事件
 
-**[ 源码 ]**
+**方法路径: AbstractApplicationContext #registerListeners**
 
-<font color=red size=3>**AbstractApplicationContext #registerListeners( )**</font>
 
-```java
+```java title="AbstractApplicationContext #registerListeners"
 /**
 * Add beans that implement ApplicationListener as listeners.
 * Doesn't affect other listeners, which can be added without being beans.
@@ -724,18 +739,17 @@ protected void registerListeners() {
 
 
 
-## 1.6 初始化单实例Bean
+## 初始化单实例Bean
 
-### 1.6.1 finishBeanFactoryInitialization(beanFactory)
+### inishBeanFactoryInitialization(beanFactory)
 
-- <font color=red> 实例化剩下的非懒加载的 单实例Bean</font>
-  - 实际通过  beanFactory.preInstantiateSingletons() 进行实例化
+- **实例化剩下的非懒加载的 `单实例Bean`**
+  - 实际通过  `beanFactory.preInstantiateSingletons()` 进行实例化
 
-**[ 源码 ]**
+**方法路径1: AbstractApplicationContext #finishBeanFactoryInitialization**
 
-<font color=red size=3>**①. AbstractApplicationContext #finishBeanFactoryInitialization( )**</font>
 
-```java
+```java title="AbstractApplicationContext #finishBeanFactoryInitialization"
 /**
 * Finish the initialization of this context's bean factory,
 * initializing all remaining singleton beans.
@@ -762,21 +776,21 @@ protected void finishBeanFactoryInitialization(ConfigurableListableBeanFactory b
 }
 ```
 
+**方法路径2: DefaultListableBeanFactory #preInstantiateSingletons**
 
+1. 获取容器中的所有Bean，依次进行初始化和创建对象
 
-<font color=red size=3>**②. DefaultListableBeanFactory #preInstantiateSingletons( )**</font>
+2. 获取Bean的定义信息 => RootBeanDefinition
+   
+3. 如果Bean不是抽象的，是单实例的，是懒加载
+   - 判断是否是FactoryBean (是否是实现 FactoryBean 接口的 Bean)
+   - 不是工厂Bean, 利用 `getBean(beanName)` 创建对象
+     - 实际调用  `AbstractBeanFactory#doGetBean()`
 
-- - <font color=red>①. 获取容器中的所有Bean，依次进行初始化和创建对象 </font>
-  - <font color=red>②.  获取Bean的定义信息 => RootBeanDefinition </font>
-  - <font color=red>③.  如果Bean不是抽象的，是单实例的，是懒加载 </font>
-    - i.  判断是否是FactoryBean ( 是否是实现FactoryBean接口的Bean )
-    - ii.  不是工厂Bean , 利用getBean(beanName)  创建对象
-      - <font color=blue>实际调用  AbstractBeanFactory#doGetBean 方法</font>
-  - <font color=red>④.   所有Bean都利用getBean创建完成以后 </font>
-    - 检查所有的Bean是否是SmartInitializingSingleton接口的
-      - 如果是 , 就执行afterSingletonsInstantiated( ) 
+4. 所有Bean都利用getBean创建完成以后
+   - 检查所有的Bean是否是SmartInitializingSingleton接口的。如果是, 就执行 `afterSingletonsInstantiated`
 
-```java
+```java title="DefaultListableBeanFactory #preInstantiateSingletons"
 @Override
 public void preInstantiateSingletons() throws BeansException {
     if (logger.isTraceEnabled()) {
@@ -1279,7 +1293,7 @@ protected Object initializeBean(final String beanName, final Object bean, @Nulla
   - 默认从容器中找是否有lifecycleProcessor的组件【LifecycleProcessor】
     - 如果没有new DefaultLifecycleProcessor()  加入到容器
 - <font color=red>②.  getLifecycleProcessor().onRefresh()</font>
-  - ​	拿到前面定义的生命周期处理器（BeanFactory）, 回调onRefresh()
+  - 	拿到前面定义的生命周期处理器（BeanFactory）, 回调onRefresh()
 - <font color=red>③.  publishEvent(new ContextRefreshedEvent(this)) ==> 发布容器刷新完成事件</font>
 - <font color=red>④.  LiveBeansView.registerApplicationContext(this);</font>	
 
@@ -1309,7 +1323,7 @@ protected void finishRefresh() {
 
 
 
-# 2. Spring容器创建总结
+## Spring容器创建总结
 
 - <font color=red>①.  Spring容器在启动的时候，先会保存所有注册进来的Bean的定义信息</font>
   - xml注册bean；<bean>
@@ -1328,68 +1342,3 @@ protected void finishRefresh() {
 - <font color=red>④.  事件驱动模型</font>
   - ApplicationListener :  事件监听器
   - ApplicationEventMulticaster : 事件派发
-
-​	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
