@@ -213,9 +213,9 @@
             "items": [
               {
                 "type": "link",
-                "label": "组件注册之简单注册",
-                "href": "/docs/Spring/注解驱动开发/组件注册之简单注册",
-                "docId": "Spring/注解驱动开发/组件注册之简单注册"
+                "label": "组件注册",
+                "href": "/docs/Spring/注解驱动开发/组件注册",
+                "docId": "Spring/注解驱动开发/组件注册"
               }
             ],
             "collapsed": true,
@@ -423,6 +423,12 @@
                 "label": "MySQL逻辑架构",
                 "href": "/docs/Mysql/高级特性/MySQL逻辑架构",
                 "docId": "Mysql/高级特性/MySQL逻辑架构"
+              },
+              {
+                "type": "link",
+                "label": "缓冲池",
+                "href": "/docs/Mysql/高级特性/缓冲池",
+                "docId": "Mysql/高级特性/缓冲池"
               }
             ],
             "collapsed": true,
@@ -852,6 +858,12 @@
       "description": "收录了一些常用Linux命令",
       "sidebar": "linuxSideBar"
     },
+    "Mysql/高级特性/缓冲池": {
+      "id": "Mysql/高级特性/缓冲池",
+      "title": "缓冲池",
+      "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
+      "sidebar": "mysqlSideBar"
+    },
     "Mysql/高级特性/设计索引": {
       "id": "Mysql/高级特性/设计索引",
       "title": "设计索引",
@@ -990,9 +1002,9 @@
       "description": "分享一些简单好用的资源",
       "sidebar": "sourceSideBar"
     },
-    "Spring/注解驱动开发/组件注册之简单注册": {
-      "id": "Spring/注解驱动开发/组件注册之简单注册",
-      "title": "组件注册之简单注册",
+    "Spring/注解驱动开发/组件注册": {
+      "id": "Spring/注解驱动开发/组件注册",
+      "title": "组件注册",
       "description": "@Configuration和@Bean",
       "sidebar": "springSideBar"
     },

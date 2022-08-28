@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','ff0'),
+    component: ComponentCreator('/docs','8ab'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -437,6 +437,12 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
+        path: '/docs/Mysql/高级特性/缓冲池',
+        component: ComponentCreator('/docs/Mysql/高级特性/缓冲池','7e3'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
         path: '/docs/Mysql/高级特性/设计索引',
         component: ComponentCreator('/docs/Mysql/高级特性/设计索引','d16'),
         exact: true,
@@ -586,8 +592,8 @@ export default [
         'sidebar': "springSideBar"
       },
       {
-        path: '/docs/Spring/注解驱动开发/组件注册之简单注册',
-        component: ComponentCreator('/docs/Spring/注解驱动开发/组件注册之简单注册','f61'),
+        path: '/docs/Spring/注解驱动开发/组件注册',
+        component: ComponentCreator('/docs/Spring/注解驱动开发/组件注册','db4'),
         exact: true,
         'sidebar': "springSideBar"
       },

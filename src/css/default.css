@@ -19,7 +19,7 @@
   --ifm-contrast-background-dark-value: 70%;
   --ifm-contrast-foreground-dark-value: 90%;
 
-  --ifm-color-info-dark: #5fa0ff;
+  --ifm-color-info-dark: #165DFF;
   --ifm-color-success-dark: #36ad99;
 
   --ifm-color-primary: #165DFF;
@@ -353,7 +353,7 @@
   --ifm-code-padding-horizontal: 5px;
 
   /* Alerts */
-  --ifm-color-info-dark: #4284fb;
+  --ifm-color-info-dark: #165DFF;
   --ifm-alert-border-width: 1px;
   --ifm-color-success-contrast-background: #fff;
   --ifm-color-info-contrast-background: #fff;

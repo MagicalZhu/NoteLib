@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-ff0": {
+  "/docs-8ab": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -340,6 +340,10 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysqlc-28-5b2"
   },
+  "/docs/Mysql/高级特性/缓冲池-7e3": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-缓冲池-6-e-2-c34"
+  },
   "/docs/Mysql/高级特性/设计索引-d16": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-设计索引-970-5e2"
@@ -440,9 +444,9 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-spring-2-ce-6fd"
   },
-  "/docs/Spring/注解驱动开发/组件注册之简单注册-f61": {
+  "/docs/Spring/注解驱动开发/组件注册-db4": {
     "component": "component---theme-doc-item-178-a40",
-    "content": "content---docs-spring-注解驱动开发-组件注册之简单注册b-80-7ec"
+    "content": "content---docs-spring-注解驱动开发-组件注册b-80-e66"
   },
   "/docs/Spring/Spring编程思想/依赖查找-4ac": {
     "component": "component---theme-doc-item-178-a40",

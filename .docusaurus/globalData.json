@@ -181,6 +181,11 @@
               "sidebar": "linuxSideBar"
             },
             {
+              "id": "Mysql/高级特性/缓冲池",
+              "path": "/docs/Mysql/高级特性/缓冲池",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/设计索引",
               "path": "/docs/Mysql/高级特性/设计索引",
               "sidebar": "mysqlSideBar"
@@ -296,8 +301,8 @@
               "sidebar": "sourceSideBar"
             },
             {
-              "id": "Spring/注解驱动开发/组件注册之简单注册",
-              "path": "/docs/Spring/注解驱动开发/组件注册之简单注册",
+              "id": "Spring/注解驱动开发/组件注册",
+              "path": "/docs/Spring/注解驱动开发/组件注册",
               "sidebar": "springSideBar"
             },
             {

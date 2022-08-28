@@ -829,6 +829,32 @@
               "sidebar": "linuxSideBar"
             },
             {
+              "unversionedId": "Mysql/高级特性/缓冲池",
+              "id": "Mysql/高级特性/缓冲池",
+              "title": "缓冲池",
+              "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
+              "source": "@site/docs/Mysql/高级特性/缓冲池.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/缓冲池",
+              "permalink": "/docs/Mysql/高级特性/缓冲池",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/缓冲池.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "缓冲池",
+                "title": "缓冲池"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL逻辑架构",
+                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              },
+              "next": {
+                "title": "存储结构与索引",
+                "permalink": "/docs/category/存储结构与索引"
+              }
+            },
+            {
               "unversionedId": "Mysql/高级特性/设计索引",
               "id": "Mysql/高级特性/设计索引",
               "title": "设计索引",
@@ -1185,8 +1211,8 @@
                 "permalink": "/docs/category/架构与引擎"
               },
               "next": {
-                "title": "存储结构与索引",
-                "permalink": "/docs/category/存储结构与索引"
+                "title": "缓冲池",
+                "permalink": "/docs/Mysql/高级特性/缓冲池"
               }
             },
             {
@@ -1415,20 +1441,20 @@
               }
             },
             {
-              "unversionedId": "Spring/注解驱动开发/组件注册之简单注册",
-              "id": "Spring/注解驱动开发/组件注册之简单注册",
-              "title": "组件注册之简单注册",
+              "unversionedId": "Spring/注解驱动开发/组件注册",
+              "id": "Spring/注解驱动开发/组件注册",
+              "title": "组件注册",
               "description": "@Configuration和@Bean",
               "source": "@site/docs/Spring/注解驱动开发/组件注册之简单注册.md",
               "sourceDirName": "Spring/注解驱动开发",
-              "slug": "/Spring/注解驱动开发/组件注册之简单注册",
-              "permalink": "/docs/Spring/注解驱动开发/组件注册之简单注册",
+              "slug": "/Spring/注解驱动开发/组件注册",
+              "permalink": "/docs/Spring/注解驱动开发/组件注册",
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/注解驱动开发/组件注册之简单注册.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
-                "id": "组件注册之简单注册",
-                "title": "组件注册之简单注册"
+                "id": "组件注册",
+                "title": "组件注册"
               },
               "sidebar": "springSideBar",
               "previous": {
@@ -2096,7 +2122,7 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "Spring/注解驱动开发/组件注册之简单注册"
+                        "id": "Spring/注解驱动开发/组件注册"
                       }
                     ],
                     "collapsed": true,
@@ -2290,6 +2316,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/MySQL逻辑架构"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/缓冲池"
                       }
                     ],
                     "collapsed": true,
@@ -2616,8 +2646,8 @@
                 "permalink": "/docs/Spring/Spring编程思想/依赖注入"
               },
               "next": {
-                "title": "组件注册之简单注册",
-                "permalink": "/docs/Spring/注解驱动开发/组件注册之简单注册"
+                "title": "组件注册",
+                "permalink": "/docs/Spring/注解驱动开发/组件注册"
               }
             },
             {
@@ -2724,8 +2754,8 @@
               "permalink": "/docs/category/存储结构与索引",
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "MySQL逻辑架构",
-                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+                "title": "缓冲池",
+                "permalink": "/docs/Mysql/高级特性/缓冲池"
               },
               "next": {
                 "title": "索引",

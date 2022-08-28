@@ -20,7 +20,7 @@
     "permalink": "/docs/category/架构与引擎"
   },
   "next": {
-    "title": "存储结构与索引",
-    "permalink": "/docs/category/存储结构与索引"
+    "title": "缓冲池",
+    "permalink": "/docs/Mysql/高级特性/缓冲池"
   }
 }
