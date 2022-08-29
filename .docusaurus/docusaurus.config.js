@@ -4,8 +4,8 @@ Your edits in this file will be overwritten in the next build!
 Modify the docusaurus.config.js file at your site's root instead.
 */
 export default {
-  "title": "花裤衩",
-  "tagline": "知道的越多,不知道的也就越多",
+  "title": "花裤衩Wiki",
+  "tagline": "👨‍💻永远保持好奇",
   "url": "https://huakucha.com",
   "baseUrl": "/",
   "onBrokenLinks": "warn",
@@ -166,7 +166,7 @@ export default {
           ]
         },
         {
-          "label": "🚀底层",
+          "label": "⛽️底层",
           "position": "left",
           "items": [
             {
@@ -186,14 +186,12 @@ export default {
             {
               "to": "/website",
               "label": "网址导航"
+            },
+            {
+              "to": "/docs/source/devSource",
+              "label": "分享"
             }
           ]
-        },
-        {
-          "position": "right",
-          "href": "/docs/source/devSource",
-          "className": "header-share-link",
-          "aria-label": "GitHub repository"
         },
         {
           "href": "https://github.com/MagicalZhu",
@@ -407,6 +405,57 @@ export default {
             "style": {
               "color": "rgb(188, 84, 84)"
             }
+          },
+          {
+            "types": [
+              "comment"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "changed"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "deleted"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "inserted",
+              "attr-name"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "comment"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "function",
+              "selector",
+              "doctype"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
           }
         ]
       },
@@ -496,13 +545,71 @@ export default {
             "style": {
               "color": "rgb(241, 250, 140)"
             }
+          },
+          {
+            "types": [
+              "comment"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "changed"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "deleted"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "inserted",
+              "attr-name"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "comment"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "function",
+              "selector",
+              "doctype"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
+          },
+          {
+            "types": [
+              "keyword"
+            ],
+            "style": {
+              "fontStyle": "normal"
+            }
           }
         ]
       },
       "defaultLanguage": "java",
       "additionalLanguages": [
         "java",
-        "sql",
         "ini"
       ]
     },

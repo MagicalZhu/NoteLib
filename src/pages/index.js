@@ -14,7 +14,7 @@ function HomepageHeader() {
     <div class="container margin-top--xl margin-bottom--xl " className={clsx(styles.heroBanner)}>
       <div class="avatar avatar--vertical">
         <img class="avatar__photo avatar__photo--xl" src={avastar}/>
-        <h1 class="hero__title">{siteConfig.title}</h1>
+        {/* <h1 class="hero__title">{siteConfig.title}</h1> */}
         <div class="avatar__intro">
           <p class="hero__subtitle">{siteConfig.tagline}</p>
           <div  className={styles.buttons}>

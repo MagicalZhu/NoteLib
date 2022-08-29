@@ -63,11 +63,11 @@
 
 .codeBlockLines {
   font: inherit;
-  /* rtl:ignore */
   float: left;
-  min-width: fit-content;
   padding: var(--ifm-pre-padding);
-}
+  min-width: -webkit-fill-available;
+} 
+
 
 @media print {
   .codeBlockLines {

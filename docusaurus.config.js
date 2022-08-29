@@ -9,8 +9,8 @@ const customConfig = require("./configCustom")
  * @type {import('@docusaurus/types').Config} 
  */
 const config = {
-  title: '花裤衩',
-  tagline: '知道的越多,不知道的也就越多',
+  title: '花裤衩Wiki',
+  tagline: '👨‍💻永远保持好奇',
   url: 'https://huakucha.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',

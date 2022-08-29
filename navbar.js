@@ -114,7 +114,7 @@ const nav = {
       ]
     },
     {
-      label:"🚀底层",
+      label:"⛽️底层",
       position: "left",
       items: [
         {
@@ -129,13 +129,14 @@ const nav = {
       items: [
         { to: '/blog', label: '博客' },
         { to: '/website', label: '网址导航'},
+        { to: '/docs/source/devSource', label: '分享'},
       ]
     },
-    {
-      position: "right",
-      href: '/docs/source/devSource',
-      className: 'header-share-link','aria-label': 'GitHub repository',
-    },
+    // {
+    //   position: "right",
+    //   href: '/docs/source/devSource',
+    //   className: 'header-share-link','aria-label': 'GitHub repository',
+    // },
     // 社交账号
     {
       href: 'https://github.com/MagicalZhu',

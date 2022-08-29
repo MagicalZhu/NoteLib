@@ -1,6 +1,8 @@
-// const lightCodeTheme = require('prism-react-renderer/themes/github');
-const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+// const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
+// const lightCodeTheme = require('./src/prismTheme/github');
+// const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('./src/prismTheme/nightOwlLight');
+const darkCodeTheme = require('./src/prismTheme/dracula');
 const footerConfig = require('./footer')
 const navConfig = require('./navbar')
 
@@ -26,7 +28,7 @@ const themeConfig = {
     theme: lightCodeTheme,
     darkTheme: darkCodeTheme,
     defaultLanguage: 'java',
-    additionalLanguages: ['java','sql', 'ini'],
+    additionalLanguages: ['java', 'ini'],
   },
   tableOfContents: {
     minHeadingLevel: 2,

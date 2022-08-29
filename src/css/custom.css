@@ -159,15 +159,13 @@ html[data-theme='dark'] .markdown {
 }
 
 html[data-theme='light'] .docusaurus-highlight-code-line {
-  background-color: rgb(200 237 224);
-  max-width: fit-content;
+  background-color: rgb(231 237 248);
   border-radius: 4px;
   padding-left: 15px;
 }
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgb(68 115 181 / 88%);
-  max-width: fit-content;
+  background-color: rgb(36 48 65 / 88%);
   border-radius: 4px;
   padding-left: 15px;
 }
@@ -542,12 +540,12 @@ a.card-link:hover img {
 .dropdown > .navbar__link:after {
   border-style: none;
 }
-.codeBlockLines {
+/* .codeBlockLines {
     float: left;
     font: inherit;
     min-width: fit-content;
     padding: var(--ifm-pre-padding);
-}
+} */
 
 .medium-zoom-image {
   margin-top: 10px;
