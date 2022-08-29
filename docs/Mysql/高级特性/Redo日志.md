@@ -259,7 +259,7 @@ MySQL 的数据目录下有 **ib_logfile0、ib_logfile1**两个文件, log buffe
 
 redo 日志文件可以是由多个的, 也就是一个 redo 日志文件组。所以将日志写入日志文件组的时候,是从 ib_logfile0 开始写,写完之后再写 ib_logfile1,然后以此类推。
 
-<mark>当发现最后一个日志文件 ib_logfileN 写完了,就会再从 ib_logfile0 开始写。</mark>那么会导致后面的日志将前面的日志覆盖么?InnoDB 采用 **checkpoint** 的方式保证不会出现这个问题
+<mark>当发现最后一个日志文件 ib_logfileN 写完了,就会再从 ib_logfile0 开始写。</mark>那么会导致后面的日志将前面的日志覆盖么?InnoDB 采用 <strong>checkpoint</strong> 的方式保证不会出现这个问题
 
 ![image-20220814141916093](./image/事务日志/image-20220814141916093.png)
 
