@@ -158,6 +158,13 @@ export const websiteData: WebsiteCategory[] = [
     "name": "后端技术",
     "websites": [
       {
+        "name": "OpenJDK",
+        "desc": "OpenJDK",
+        "logo": "	https://openjdk.org/images/openjdk-small.png",
+        "href": "https://openjdk.org/projects/",
+        "tags": [""]
+      },
+      {
         "name": "Spring",
         "desc": "Spring",
         "logo": "/img/website/Spring.png",
