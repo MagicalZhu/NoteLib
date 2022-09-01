@@ -160,8 +160,15 @@ export const websiteData: WebsiteCategory[] = [
       {
         "name": "OpenJDK",
         "desc": "OpenJDK",
-        "logo": "	https://openjdk.org/images/openjdk-small.png",
+        "logo": "https://openjdk.org/images/openjdk-small.png",
         "href": "https://openjdk.org/projects/",
+        "tags": [""]
+      },
+      {
+        "name": "Quarkus",
+        "desc": "Quarkus 为 GraalVM 和 HotSpot 量身定制用程序...",
+        "logo": "https://cn.quarkus.io//favicon.ico",
+        "href": "https://cn.quarkus.io/guides/",
         "tags": [""]
       },
       {
