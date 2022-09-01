@@ -167,7 +167,7 @@ export const websiteData: WebsiteCategory[] = [
       {
         "name": "Quarkus",
         "desc": "Quarkus 为 GraalVM 和 HotSpot 量身定制用程序...",
-        "logo": "https://cn.quarkus.io//favicon.ico",
+        "logo": "https://avatars.githubusercontent.com/u/47638783",
         "href": "https://cn.quarkus.io/guides/",
         "tags": [""]
       },
