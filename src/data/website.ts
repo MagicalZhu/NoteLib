@@ -160,7 +160,7 @@ export const websiteData: WebsiteCategory[] = [
       {
         "name": "OpenJDK",
         "desc": "OpenJDK",
-        "logo": "https://openjdk.org/images/openjdk-small.png",
+        "logo": "https://avatars.githubusercontent.com/u/41768318",
         "href": "https://openjdk.org/projects/",
         "tags": [""]
       },
