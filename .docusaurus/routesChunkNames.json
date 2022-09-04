@@ -104,7 +104,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-8ab": {
+  "/docs-b98": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -391,6 +391,10 @@
   "/docs/Mysql/高级特性/InnoDB数据页结构-0f3": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-inno-d-b数据页结构-810-c66"
+  },
+  "/docs/Mysql/高级特性/MVCC-610": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-mvc-cac-2-0da"
   },
   "/docs/Mysql/高级特性/MySQL 部署-04f": {
     "component": "component---theme-doc-item-178-a40",

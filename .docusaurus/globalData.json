@@ -246,6 +246,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/MVCC",
+              "path": "/docs/Mysql/高级特性/MVCC",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/MySQL 部署",
               "path": "/docs/Mysql/高级特性/MySQL 部署",
               "sidebar": "mysqlSideBar"

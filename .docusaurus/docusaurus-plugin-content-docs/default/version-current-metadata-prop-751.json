@@ -534,6 +534,12 @@
                 "label": "锁机制",
                 "href": "/docs/Mysql/高级特性/锁",
                 "docId": "Mysql/高级特性/锁"
+              },
+              {
+                "type": "link",
+                "label": "MVCC",
+                "href": "/docs/Mysql/高级特性/MVCC",
+                "docId": "Mysql/高级特性/MVCC"
               }
             ],
             "collapsed": true,
@@ -934,6 +940,12 @@
       "id": "Mysql/高级特性/InnoDB数据页结构",
       "title": "InnoDB数据页结构",
       "description": "InnoDB的存储结构",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/MVCC": {
+      "id": "Mysql/高级特性/MVCC",
+      "title": "MVCC",
+      "description": "",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/MySQL 部署": {

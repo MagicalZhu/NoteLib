@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','8ab'),
+    component: ComponentCreator('/docs','b98'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -511,6 +511,12 @@ export default [
       {
         path: '/docs/Mysql/高级特性/InnoDB数据页结构',
         component: ComponentCreator('/docs/Mysql/高级特性/InnoDB数据页结构','0f3'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/MVCC',
+        component: ComponentCreator('/docs/Mysql/高级特性/MVCC','610'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

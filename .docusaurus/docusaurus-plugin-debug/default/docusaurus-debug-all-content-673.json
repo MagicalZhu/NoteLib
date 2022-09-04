@@ -1057,6 +1057,10 @@
               "previous": {
                 "title": "Undo日志",
                 "permalink": "/docs/Mysql/高级特性/Undo日志"
+              },
+              "next": {
+                "title": "MVCC",
+                "permalink": "/docs/Mysql/高级特性/MVCC"
               }
             },
             {
@@ -1161,6 +1165,28 @@
               "next": {
                 "title": "InnoDB表空间",
                 "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/MVCC",
+              "id": "Mysql/高级特性/MVCC",
+              "title": "MVCC",
+              "description": "",
+              "source": "@site/docs/Mysql/高级特性/MVCC.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/MVCC",
+              "permalink": "/docs/Mysql/高级特性/MVCC",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MVCC.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MVCC",
+                "title": "MVCC"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "锁机制",
+                "permalink": "/docs/Mysql/高级特性/锁"
               }
             },
             {
@@ -2411,6 +2437,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/锁"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/MVCC"
                       }
                     ],
                     "collapsed": true,

@@ -72,7 +72,8 @@ const mysqlPart =  new Category('MySQL基础与高级')
       '事务基础',
       'Redo日志',
       'Undo日志',
-      '锁'
+      '锁',
+      'MVCC'
     ])
     
 
