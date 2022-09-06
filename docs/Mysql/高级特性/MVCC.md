@@ -1,5 +1,5 @@
 ---
 id: MVCC
-title: MVCC
+title: 多版本并发控制
 ---
 
