@@ -80,6 +80,7 @@ const mysqlPart =  new Category('MySQL基础与高级')
 const mysqlSideBar = [
   createDoc('Mysql/mysql', '简介'),
   mysqlPart,
+  createDoc('Mysql/MySQL参数与命令', 'MySQL参数与命令')
 ]
 
 // 计算机网络相关
