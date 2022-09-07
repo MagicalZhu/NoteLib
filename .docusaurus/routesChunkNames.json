@@ -21,10 +21,13 @@
   "/__docusaurus/debug/routes-244": {
     "component": "component---theme-debug-routes-946-699"
   },
-  "/blog-69e": {
+  "/blog-580": {
     "component": "component---theme-blog-list-pagea-6-a-7ba",
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blog-08-e-8cb"
+      },
       {
         "content": "content---blogf-1-f-466"
       },
@@ -33,6 +36,11 @@
       }
     ],
     "metadata": "metadata---blogb-2-b-df1"
+  },
+  "/blog/aliSeata-26c": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-ali-seata-9-dc-7f6"
   },
   "/blog/archive-f4c": {
     "component": "component---theme-blog-archive-page-9-e-4-1d8",
@@ -86,10 +94,13 @@
     "metadata": "metadata---blog-tags-学习-66-a-be6",
     "listMetadata": "listMetadata---blog-tags-学习-41-a-c87"
   },
-  "/blog/tags/alibaba-3fc": {
+  "/blog/tags/alibaba-21f": {
     "component": "component---theme-blog-tags-posts-page-687-b6c",
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blog-08-e-8cb"
+      },
       {
         "content": "content---blogf-1-f-466"
       }
@@ -104,7 +115,7 @@
     "component": "component---site-src-pages-website-index-tsxb-38-5b5",
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-b98": {
+  "/docs-f79": {
     "component": "component---theme-doc-page-1-be-9be",
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -380,6 +391,10 @@
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-性能分析工具-6-c-5-081"
   },
+  "/docs/Mysql/高级特性/性能监控工具-daf": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-性能监控工具-324-df8"
+  },
   "/docs/Mysql/高级特性/用户权限管理-5a2": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-用户权限管理-70-c-f9c"
@@ -427,6 +442,10 @@
   "/docs/Mysql/基础/MySQL子查询-63b": {
     "component": "component---theme-doc-item-178-a40",
     "content": "content---docs-mysql-基础-my-sq-l子查询-763-c80"
+  },
+  "/docs/Mysql/MySQL参数与命令-98b": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-my-sq-l参数与命令-145-3ec"
   },
   "/docs/networrk-basic-b98": {
     "component": "component---theme-doc-item-178-a40",

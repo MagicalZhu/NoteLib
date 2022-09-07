@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "阿里技术号",
+      "permalink": "/blog/aliSeata"
+    },
+    {
       "title": "如何获得高并发的经验?",
       "permalink": "/blog/gotConcurrencyAli"
     },

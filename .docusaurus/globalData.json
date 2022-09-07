@@ -231,6 +231,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/性能监控工具",
+              "path": "/docs/Mysql/高级特性/性能监控工具",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/用户权限管理",
               "path": "/docs/Mysql/高级特性/用户权限管理",
               "sidebar": "mysqlSideBar"
@@ -293,6 +298,11 @@
             {
               "id": "Mysql/mysql",
               "path": "/docs/mysql",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/MySQL参数与命令",
+              "path": "/docs/Mysql/MySQL参数与命令",
               "sidebar": "mysqlSideBar"
             },
             {

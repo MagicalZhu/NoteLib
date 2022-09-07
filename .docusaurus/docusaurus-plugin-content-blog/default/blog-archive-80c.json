@@ -1,6 +1,63 @@
 {
   "blogPosts": [
     {
+      "id": "aliSeata",
+      "metadata": {
+        "permalink": "/blog/aliSeata",
+        "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220907.md",
+        "source": "@site/blog/20220907.md",
+        "title": "阿里技术号",
+        "description": "阿里技术号",
+        "date": "2022-09-07T00:00:00.000Z",
+        "formattedDate": "September 7, 2022",
+        "tags": [
+          {
+            "label": "Alibaba",
+            "permalink": "/blog/tags/alibaba"
+          }
+        ],
+        "readingTime": 0.21666666666666667,
+        "truncated": false,
+        "authors": [
+          {
+            "name": "花裤衩",
+            "title": "码农一枚",
+            "url": "https://github.com/MagicalZhu",
+            "email": "18151271579@163.com",
+            "imageURL": "/img/logo.svg",
+            "key": "huakucha"
+          },
+          {
+            "name": "阿里巴巴",
+            "title": "阿里巴巴技术团队",
+            "url": "https://juejin.cn/user/1433418891007399",
+            "imageURL": "https://p26-passport.byteacctimg.com/img/user-avatar/9ef77dcd14355b43f2b7fa42193e8d8d~300x300.image",
+            "key": "alibaba"
+          }
+        ],
+        "frontMatter": {
+          "title": "阿里技术号",
+          "description": "阿里技术号",
+          "slug": "aliSeata",
+          "authors": [
+            "huakucha",
+            "alibaba"
+          ],
+          "tags": [
+            "Alibaba"
+          ],
+          "image": "https://i.imgur.com/mErPwqL.png",
+          "hide_table_of_contents": false,
+          "date": "2022-09-07T00:00:00.000Z"
+        },
+        "nextItem": {
+          "title": "如何获得高并发的经验?",
+          "permalink": "/blog/gotConcurrencyAli"
+        }
+      },
+      "content": "## 推荐文章(分布式事务)\r\n\r\n1. [阿里 Seata 新版本终于解决了 TCC 模式的幂等、悬挂和空回滚问题](https://juejin.cn/post/7139824265825615885#heading-8)\r\n\r\n\r\n## 推荐文章(消息队列)\r\n\r\n1. [RocketMQ 消息集成：多类型业务消息-普通消息](https://juejin.cn/post/7139827799795171359)"
+    },
+    {
       "id": "gotConcurrencyAli",
       "metadata": {
         "permalink": "/blog/gotConcurrencyAli",
@@ -59,6 +116,10 @@
           "image": "https://i.imgur.com/mErPwqL.png",
           "hide_table_of_contents": false,
           "date": "2022-07-28T00:00:00.000Z"
+        },
+        "prevItem": {
+          "title": "阿里技术号",
+          "permalink": "/blog/aliSeata"
         },
         "nextItem": {
           "title": "网站导航",

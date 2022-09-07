@@ -17,11 +17,11 @@
   },
   "sidebar": "mysqlSideBar",
   "previous": {
-    "title": "InnoDB表空间",
-    "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
+    "title": "索引的应用",
+    "permalink": "/docs/Mysql/高级特性/索引的应用"
   },
   "next": {
-    "title": "性能优化",
-    "permalink": "/docs/category/性能优化"
+    "title": "InnoDB数据页结构",
+    "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
   }
 }

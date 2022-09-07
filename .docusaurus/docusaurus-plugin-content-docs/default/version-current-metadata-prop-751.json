@@ -453,6 +453,12 @@
               },
               {
                 "type": "link",
+                "label": "设计索引",
+                "href": "/docs/Mysql/高级特性/设计索引",
+                "docId": "Mysql/高级特性/设计索引"
+              },
+              {
+                "type": "link",
                 "label": "InnoDB数据页结构",
                 "href": "/docs/Mysql/高级特性/InnoDB数据页结构",
                 "docId": "Mysql/高级特性/InnoDB数据页结构"
@@ -462,12 +468,6 @@
                 "label": "InnoDB表空间",
                 "href": "/docs/Mysql/高级特性/InnoDB表空间",
                 "docId": "Mysql/高级特性/InnoDB表空间"
-              },
-              {
-                "type": "link",
-                "label": "设计索引",
-                "href": "/docs/Mysql/高级特性/设计索引",
-                "docId": "Mysql/高级特性/设计索引"
               }
             ],
             "collapsed": true,
@@ -483,6 +483,12 @@
                 "label": "性能分析工具",
                 "href": "/docs/Mysql/高级特性/性能分析工具",
                 "docId": "Mysql/高级特性/性能分析工具"
+              },
+              {
+                "type": "link",
+                "label": "性能监控工具",
+                "href": "/docs/Mysql/高级特性/性能监控工具",
+                "docId": "Mysql/高级特性/性能监控工具"
               },
               {
                 "type": "link",
@@ -537,7 +543,7 @@
               },
               {
                 "type": "link",
-                "label": "MVCC",
+                "label": "多版本并发控制",
                 "href": "/docs/Mysql/高级特性/MVCC",
                 "docId": "Mysql/高级特性/MVCC"
               }
@@ -550,6 +556,12 @@
         "collapsed": true,
         "collapsible": true,
         "href": "/docs/category/mysql基础与高级"
+      },
+      {
+        "type": "link",
+        "label": "MySQL参数与命令",
+        "href": "/docs/Mysql/MySQL参数与命令",
+        "docId": "Mysql/MySQL参数与命令"
       }
     ],
     "vueSideBar": [
@@ -921,7 +933,13 @@
     "Mysql/高级特性/性能分析工具": {
       "id": "Mysql/高级特性/性能分析工具",
       "title": "性能分析工具",
-      "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式",
+      "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/性能监控工具": {
+      "id": "Mysql/高级特性/性能监控工具",
+      "title": "性能监控工具",
+      "description": "MySQL 为我们提供了很多对性能进行跟踪监控分析的工具,比如 OPTIMIZERTRACE、sysschema、...",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/用户权限管理": {
@@ -944,7 +962,7 @@
     },
     "Mysql/高级特性/MVCC": {
       "id": "Mysql/高级特性/MVCC",
-      "title": "MVCC",
+      "title": "多版本并发控制",
       "description": "",
       "sidebar": "mysqlSideBar"
     },
@@ -1000,6 +1018,12 @@
       "id": "Mysql/mysql",
       "title": "MySQL笔记概述",
       "description": "MySQL笔记概述",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/MySQL参数与命令": {
+      "id": "Mysql/MySQL参数与命令",
+      "title": "MySQL参数与命令",
+      "description": "字符集相关",
       "sidebar": "mysqlSideBar"
     },
     "source/acg/acgShare_2022": {

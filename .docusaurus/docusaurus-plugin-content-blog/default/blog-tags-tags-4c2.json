@@ -1,4 +1,11 @@
 {
+  "Alibaba": {
+    "allTagsPath": "/blog/tags",
+    "slug": "/blog/tags/alibaba",
+    "name": "Alibaba",
+    "count": 2,
+    "permalink": "/blog/tags/alibaba"
+  },
   "高并发": {
     "allTagsPath": "/blog/tags",
     "slug": "/blog/tags/高并发",
@@ -12,13 +19,6 @@
     "name": "学习",
     "count": 1,
     "permalink": "/blog/tags/学习"
-  },
-  "Alibaba": {
-    "allTagsPath": "/blog/tags",
-    "slug": "/blog/tags/alibaba",
-    "name": "Alibaba",
-    "count": 1,
-    "permalink": "/blog/tags/alibaba"
   },
   "分享": {
     "allTagsPath": "/blog/tags",

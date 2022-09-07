@@ -40,7 +40,12 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog','69e'),
+    component: ComponentCreator('/blog','580'),
+    exact: true
+  },
+  {
+    path: '/blog/aliSeata',
+    component: ComponentCreator('/blog/aliSeata','26c'),
     exact: true
   },
   {
@@ -80,7 +85,7 @@ export default [
   },
   {
     path: '/blog/tags/alibaba',
-    component: ComponentCreator('/blog/tags/alibaba','3fc'),
+    component: ComponentCreator('/blog/tags/alibaba','21f'),
     exact: true
   },
   {
@@ -95,7 +100,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','b98'),
+    component: ComponentCreator('/docs','f79'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -497,6 +502,12 @@ export default [
         'sidebar': "mysqlSideBar"
       },
       {
+        path: '/docs/Mysql/高级特性/性能监控工具',
+        component: ComponentCreator('/docs/Mysql/高级特性/性能监控工具','daf'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
         path: '/docs/Mysql/高级特性/用户权限管理',
         component: ComponentCreator('/docs/Mysql/高级特性/用户权限管理','5a2'),
         exact: true,
@@ -565,6 +576,12 @@ export default [
       {
         path: '/docs/Mysql/基础/MySQL子查询',
         component: ComponentCreator('/docs/Mysql/基础/MySQL子查询','63b'),
+        exact: true,
+        'sidebar': "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/MySQL参数与命令',
+        component: ComponentCreator('/docs/Mysql/MySQL参数与命令','98b'),
         exact: true,
         'sidebar': "mysqlSideBar"
       },

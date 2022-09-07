@@ -873,12 +873,12 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "InnoDB表空间",
-                "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
+                "title": "索引的应用",
+                "permalink": "/docs/Mysql/高级特性/索引的应用"
               },
               "next": {
-                "title": "性能优化",
-                "permalink": "/docs/category/性能优化"
+                "title": "InnoDB数据页结构",
+                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
               }
             },
             {
@@ -1007,8 +1007,8 @@
                 "permalink": "/docs/Mysql/高级特性/索引"
               },
               "next": {
-                "title": "InnoDB数据页结构",
-                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
+                "title": "设计索引",
+                "permalink": "/docs/Mysql/高级特性/设计索引"
               }
             },
             {
@@ -1029,8 +1029,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "性能分析工具",
-                "permalink": "/docs/Mysql/高级特性/性能分析工具"
+                "title": "性能监控工具",
+                "permalink": "/docs/Mysql/高级特性/性能监控工具"
               },
               "next": {
                 "title": "数据库设计规范",
@@ -1059,7 +1059,7 @@
                 "permalink": "/docs/Mysql/高级特性/Undo日志"
               },
               "next": {
-                "title": "MVCC",
+                "title": "多版本并发控制",
                 "permalink": "/docs/Mysql/高级特性/MVCC"
               }
             },
@@ -1067,7 +1067,7 @@
               "unversionedId": "Mysql/高级特性/性能分析工具",
               "id": "Mysql/高级特性/性能分析工具",
               "title": "性能分析工具",
-              "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式",
+              "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
               "source": "@site/docs/Mysql/高级特性/性能分析工具.md",
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/性能分析工具",
@@ -1083,6 +1083,32 @@
               "previous": {
                 "title": "性能优化",
                 "permalink": "/docs/category/性能优化"
+              },
+              "next": {
+                "title": "性能监控工具",
+                "permalink": "/docs/Mysql/高级特性/性能监控工具"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/性能监控工具",
+              "id": "Mysql/高级特性/性能监控工具",
+              "title": "性能监控工具",
+              "description": "MySQL 为我们提供了很多对性能进行跟踪监控分析的工具,比如 OPTIMIZERTRACE、sysschema、...",
+              "source": "@site/docs/Mysql/高级特性/性能监控工具.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/性能监控工具",
+              "permalink": "/docs/Mysql/高级特性/性能监控工具",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能监控工具.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "性能监控工具",
+                "title": "性能监控工具"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "性能分析工具",
+                "permalink": "/docs/Mysql/高级特性/性能分析工具"
               },
               "next": {
                 "title": "索引与查询优化",
@@ -1137,8 +1163,8 @@
                 "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
               },
               "next": {
-                "title": "设计索引",
-                "permalink": "/docs/Mysql/高级特性/设计索引"
+                "title": "性能优化",
+                "permalink": "/docs/category/性能优化"
               }
             },
             {
@@ -1159,8 +1185,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "索引的应用",
-                "permalink": "/docs/Mysql/高级特性/索引的应用"
+                "title": "设计索引",
+                "permalink": "/docs/Mysql/高级特性/设计索引"
               },
               "next": {
                 "title": "InnoDB表空间",
@@ -1170,7 +1196,7 @@
             {
               "unversionedId": "Mysql/高级特性/MVCC",
               "id": "Mysql/高级特性/MVCC",
-              "title": "MVCC",
+              "title": "多版本并发控制",
               "description": "",
               "source": "@site/docs/Mysql/高级特性/MVCC.md",
               "sourceDirName": "Mysql/高级特性",
@@ -1181,12 +1207,16 @@
               "version": "current",
               "frontMatter": {
                 "id": "MVCC",
-                "title": "MVCC"
+                "title": "多版本并发控制"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
                 "title": "锁机制",
                 "permalink": "/docs/Mysql/高级特性/锁"
+              },
+              "next": {
+                "title": "MySQL参数与命令",
+                "permalink": "/docs/Mysql/MySQL参数与命令"
               }
             },
             {
@@ -1418,6 +1448,28 @@
               "next": {
                 "title": "MySQL基础与高级",
                 "permalink": "/docs/category/mysql基础与高级"
+              }
+            },
+            {
+              "unversionedId": "Mysql/MySQL参数与命令",
+              "id": "Mysql/MySQL参数与命令",
+              "title": "MySQL参数与命令",
+              "description": "字符集相关",
+              "source": "@site/docs/Mysql/MySQL参数与语句.md",
+              "sourceDirName": "Mysql",
+              "slug": "/Mysql/MySQL参数与命令",
+              "permalink": "/docs/Mysql/MySQL参数与命令",
+              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/MySQL参数与语句.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "MySQL参数与命令",
+                "title": "MySQL参数与命令"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "多版本并发控制",
+                "permalink": "/docs/Mysql/高级特性/MVCC"
               }
             },
             {
@@ -2370,15 +2422,15 @@
                       },
                       {
                         "type": "doc",
+                        "id": "Mysql/高级特性/设计索引"
+                      },
+                      {
+                        "type": "doc",
                         "id": "Mysql/高级特性/InnoDB数据页结构"
                       },
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/InnoDB表空间"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "Mysql/高级特性/设计索引"
                       }
                     ],
                     "collapsed": true,
@@ -2396,6 +2448,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/性能分析工具"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/性能监控工具"
                       },
                       {
                         "type": "doc",
@@ -2459,6 +2515,11 @@
                   "permalink": "/docs/category/mysql基础与高级"
                 },
                 "collapsible": true
+              },
+              {
+                "type": "doc",
+                "id": "Mysql/MySQL参数与命令",
+                "label": "MySQL参数与命令"
               }
             ],
             "vueSideBar": [
@@ -2798,8 +2859,8 @@
               "permalink": "/docs/category/性能优化",
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "设计索引",
-                "permalink": "/docs/Mysql/高级特性/设计索引"
+                "title": "InnoDB表空间",
+                "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
               },
               "next": {
                 "title": "性能分析工具",
@@ -2910,6 +2971,63 @@
       "blogSidebarTitle": "Recent posts",
       "blogPosts": [
         {
+          "id": "aliSeata",
+          "metadata": {
+            "permalink": "/blog/aliSeata",
+            "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220907.md",
+            "source": "@site/blog/20220907.md",
+            "title": "阿里技术号",
+            "description": "阿里技术号",
+            "date": "2022-09-07T00:00:00.000Z",
+            "formattedDate": "September 7, 2022",
+            "tags": [
+              {
+                "label": "Alibaba",
+                "permalink": "/blog/tags/alibaba"
+              }
+            ],
+            "readingTime": 0.21666666666666667,
+            "truncated": false,
+            "authors": [
+              {
+                "name": "花裤衩",
+                "title": "码农一枚",
+                "url": "https://github.com/MagicalZhu",
+                "email": "18151271579@163.com",
+                "imageURL": "/img/logo.svg",
+                "key": "huakucha"
+              },
+              {
+                "name": "阿里巴巴",
+                "title": "阿里巴巴技术团队",
+                "url": "https://juejin.cn/user/1433418891007399",
+                "imageURL": "https://p26-passport.byteacctimg.com/img/user-avatar/9ef77dcd14355b43f2b7fa42193e8d8d~300x300.image",
+                "key": "alibaba"
+              }
+            ],
+            "frontMatter": {
+              "title": "阿里技术号",
+              "description": "阿里技术号",
+              "slug": "aliSeata",
+              "authors": [
+                "huakucha",
+                "alibaba"
+              ],
+              "tags": [
+                "Alibaba"
+              ],
+              "image": "https://i.imgur.com/mErPwqL.png",
+              "hide_table_of_contents": false,
+              "date": "2022-09-07T00:00:00.000Z"
+            },
+            "nextItem": {
+              "title": "如何获得高并发的经验?",
+              "permalink": "/blog/gotConcurrencyAli"
+            }
+          },
+          "content": "## 推荐文章(分布式事务)\r\n\r\n1. [阿里 Seata 新版本终于解决了 TCC 模式的幂等、悬挂和空回滚问题](https://juejin.cn/post/7139824265825615885#heading-8)\r\n\r\n\r\n## 推荐文章(消息队列)\r\n\r\n1. [RocketMQ 消息集成：多类型业务消息-普通消息](https://juejin.cn/post/7139827799795171359)"
+        },
+        {
           "id": "gotConcurrencyAli",
           "metadata": {
             "permalink": "/blog/gotConcurrencyAli",
@@ -2969,6 +3087,10 @@
               "hide_table_of_contents": false,
               "date": "2022-07-28T00:00:00.000Z"
             },
+            "prevItem": {
+              "title": "阿里技术号",
+              "permalink": "/blog/aliSeata"
+            },
             "nextItem": {
               "title": "网站导航",
               "permalink": "/blog/internal-navigation"
@@ -3027,6 +3149,7 @@
       "blogListPaginated": [
         {
           "items": [
+            "aliSeata",
             "gotConcurrencyAli",
             "internal-navigation"
           ],
@@ -3035,7 +3158,7 @@
             "page": 1,
             "postsPerPage": 5,
             "totalPages": 1,
-            "totalCount": 2,
+            "totalCount": 3,
             "previousPage": null,
             "nextPage": null,
             "blogDescription": "Blog",
@@ -3044,6 +3167,33 @@
         }
       ],
       "blogTags": {
+        "/blog/tags/alibaba": {
+          "name": "Alibaba",
+          "items": [
+            "aliSeata",
+            "gotConcurrencyAli"
+          ],
+          "permalink": "/blog/tags/alibaba",
+          "pages": [
+            {
+              "items": [
+                "aliSeata",
+                "gotConcurrencyAli"
+              ],
+              "metadata": {
+                "permalink": "/blog/tags/alibaba",
+                "page": 1,
+                "postsPerPage": 5,
+                "totalPages": 1,
+                "totalCount": 2,
+                "previousPage": null,
+                "nextPage": null,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
         "/blog/tags/高并发": {
           "name": "高并发",
           "items": [
@@ -3082,31 +3232,6 @@
               ],
               "metadata": {
                 "permalink": "/blog/tags/学习",
-                "page": 1,
-                "postsPerPage": 5,
-                "totalPages": 1,
-                "totalCount": 1,
-                "previousPage": null,
-                "nextPage": null,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/blog/tags/alibaba": {
-          "name": "Alibaba",
-          "items": [
-            "gotConcurrencyAli"
-          ],
-          "permalink": "/blog/tags/alibaba",
-          "pages": [
-            {
-              "items": [
-                "gotConcurrencyAli"
-              ],
-              "metadata": {
-                "permalink": "/blog/tags/alibaba",
                 "page": 1,
                 "postsPerPage": 5,
                 "totalPages": 1,
