@@ -250,6 +250,7 @@ export const websiteData: WebsiteCategory[] = [
       }
     ]
   },
+  
   {
     "name": "包管理",
     "websites": [
@@ -331,6 +332,13 @@ export const websiteData: WebsiteCategory[] = [
           "desc": "面向 JavaScript 和 TypeScript 开发者的全栈现代 Web 框架, 可以轻松创建高质量、高性能、稳定性好，以及支持定制的 Web 应用。",
           "logo": "https://fresh.deno.dev/logo.svg",
           "href": "https://fresh.deno.dev/",
+          "tags": [""]
+        },
+        {
+          "name": "PolarDB",
+          "desc": "PolarDB-X 是一款面向超高并发、海量存储、复杂查询场景设计的云原生分布式数据库系统。",
+          "logo": "https://www.polardbx.com/favicon.svg",
+          "href": "https://www.polardbx.com/document/",
           "tags": [""]
         }
      ]
