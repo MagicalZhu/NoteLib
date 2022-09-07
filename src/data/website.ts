@@ -221,6 +221,13 @@ export const websiteData: WebsiteCategory[] = [
         "tags": [""]
       },
       {
+        "name": "KnowStreaming",
+        "desc": "Know Streaming脱胎于互联网公司内部多年的Kafka运营实践经验，是面向Kafka用户、Kafka运维人员打造的共享多租户Kafka管控平台",
+        "logo": "https://knowstreaming.com/wp-content/uploads/2022/08/cropped-KnowStreamingicon2-32x32.png",
+        "href": "https://knowstreaming.com/",
+        "tags": [""]
+      },
+      {
         "name": "RabbitMq",
         "desc": "RabbitMq",
         "logo": "/img/website/rabbitmq.png",
