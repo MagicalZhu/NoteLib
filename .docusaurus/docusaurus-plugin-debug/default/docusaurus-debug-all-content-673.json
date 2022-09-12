@@ -1197,7 +1197,7 @@
               "unversionedId": "Mysql/高级特性/MVCC",
               "id": "Mysql/高级特性/MVCC",
               "title": "多版本并发控制",
-              "description": "",
+              "description": "为了保证并发事务下,解决读-写操作下的脏读、不可重复读、幻读的并发问题,MySQL 的 InnoDB 可以加锁,同时也引入了 MVCC(Multiversion Concurrency Control)来提升并发性能, 也就是多版本并发控制。",
               "source": "@site/docs/Mysql/高级特性/MVCC.md",
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/MVCC",

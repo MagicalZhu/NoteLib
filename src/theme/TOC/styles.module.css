@@ -13,7 +13,8 @@
 }
 
 .content {
-  text-align: center;
+  text-align: left;
+  margin-left: 20px;
   white-space: pre;
   color: #c4c4ce
 }

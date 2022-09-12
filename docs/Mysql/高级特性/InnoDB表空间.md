@@ -349,7 +349,7 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
         - 该链表中的 INODE 类型的页面都已经被INODE Entry 结构填充满了，没空闲空间存放额外的INODE Entry了
       - `SEG_INODES_FREE 链表`
        - 该链表中的 INODE 类型的页面仍有空闲空间来存放 INODE Entry 结构
-<br/>
+     <br/>
 
 **FileSpace Header结构表格说明:**
 
@@ -398,7 +398,7 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 
 **INODE页的结构图:**
 
-![](http://assets.processon.com/chart_image/6306e27ae0b34d07265d122a.png?_=1661396063338)
+![image-20220912123621963](./image/InnoDB表空间/image-20220912123621963.png)
 
 <br/>
 
@@ -434,8 +434,8 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 - 先看 `SEG_INODES_FREE` 链表是否为空
    - **如果不为空**,直接从该链表中获取一个节点,也就相当于获取到一个仍有空闲空间的 INODE 页, 然后把该 INODE Entry 存储到该页面中。当该页面中无剩余空间时,就把该页放到 `SEG_INODES_FULL 链表`
    - **如果为空**, 则从`表空间的 FREE_FRAG 链表` 中申请一个页面, `修改该页面的类型为 INODE`, 把该页面`放到 SEG_INODES_FREE 链表中`, 与此同时把该 INODE Entry 存储到该页面中
-:::
-  
+   :::
+
 ### Segment Header
 ## 系统表空间
 
@@ -445,7 +445,7 @@ InnoDB 设计了 `List Base Node` 的结构,也就是**链表的基节点**, 这
 
 系统表空间与独立表空间的一个非常明显的不同之处就是在`系统表空间开头有许多记录整个系统属性的页面`,如图:
 
-![](http://assets.processon.com/chart_image/630708a907912906e3a19759.png?_=1661406016162)
+![image-20220912123648960](./image/InnoDB表空间/image-20220912123648960.png)
 
 <br/>
 

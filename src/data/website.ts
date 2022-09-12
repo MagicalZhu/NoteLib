@@ -92,6 +92,13 @@ export const websiteData: WebsiteCategory[] = [
         "logo": "https://jkchao.github.io//typescript-book-chinese/logo.png",
         "href": "https://jkchao.github.io/typescript-book-chinese/",
         "tags": [""]
+      },
+      {
+        "name": "解道",
+        "desc": "解道jdon - 传道解惑的架构师博客",
+        "logo": "/img/website/jdon.png",
+        "href": "https://www.jdon.com/",
+        "tags": [""]
       }
     ]
   },
