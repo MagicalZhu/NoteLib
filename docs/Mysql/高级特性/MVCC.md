@@ -256,11 +256,11 @@ mysql> SELECT * FROM hero;
 
 #### Read Committed
 
-- Read Committed 隔离级别 `在每次读取数据前都生成一个 ReadView`
+- Read Committed 隔离级别 `在每次读取数据前都创建一个 ReadView`
 
 :::info 示例说明
 
-**假设当前系统的事务隔离级别是 *read committed* 中有两个事务(T1、T2)正在执行,它们的 事务id 分别是:trx_100,trx_200:**
+**假设当前系统的中有两个事务(T1、T2)正在执行,它们的 事务id 分别是:trx_100,trx_200:**
 
 ```sql title="T1: trx_100"
 -- 事务并没有提交
@@ -280,11 +280,241 @@ BEGIN;
 
 ```
 
-<mark>事务执行过程中,只有在第一次真正修改记录时（比如使用INSERT、DELETE、UPDATE),才会被分配一个单独的事务id，这个事务id是递增的。所以在 T1 中更新一些别的表的记录,目的是让它分配事务id。</mark>
+<mark><strong>注意:</strong>事务执行过程中,只有在第一次真正修改记录时（比如使用INSERT、DELETE、UPDATE),才会被分配一个单独的事务id，这个事务id是递增的。所以在 T2 中更新一些别的表的记录,目的是让它分配事务id。</mark>
 
 <br/>
 
+那么此时经过事务 T1 中的两次 *update* 之后, number=1 的记录对应的版本链如下:
 
+![image1](./image/MVCC/image1.png)
+
+<br/>
+
+假设现在有一个使用 `READ COMMITTED` 隔离级别的事务开始执行:
+
+```sql
+-- 使用READ COMMITTED隔离级别的事务
+BEGIN;
+
+-- SELECT1: 由于T1、T2 未提交,所以得到的列name的值为'刘备'
+SELECT * FROM hero WHERE number = 1; 
+
+```
+
+上面的这个 **SELECT1** 的执行过程如下:
+
+1. 首先在执行 Select 语句(使用快照读)的时候会创建一个 *ReadView* , 该 readview 的属性如下:
+   - *m_ids*: [100, 200]
+   - *min_trx_id*: 100
+   - *max_trx_id*: 201
+   - *creator_trx_id*: 0
+
+2. 然后会**从版本链中挑选可见的记录**, 从上面的图中可以看到,最新版本的 name='张飞', 该版本的 trx_id=100, **在m_ids列表内，所以不符合可见性要求,所以根据roll_pointer跳到下一个版本**
+
+3. 下一个版本的 name='关羽', 该版本的 trx_id=100。也在m_ids列表内，所以也不符合要求，继续跳到下一个版本。
+
+4. 下一个版本的列name的内容是'刘备'，该版本的 trx_id=80，**小于 ReadView 中的 min_trx_id(100)**，所以这个版本是符合要求的。
+
+5. 最后返回给用户的版本就是满足版本可见的第 4 步中的记录 
+
+<br/>
+
+**假设提交事务 T1,并且事务 T2 对 hero 表进行更新**
+
+```sql title="T1、T2"
+-- T1(trx_100):最后提交了事务
+BEGIN;
+
+UPDATE hero SET name = '关羽' WHERE number = 1;
+UPDATE hero SET name = '张飞' WHERE number = 1;
+
+COMMIT;
+
+-- T2(trx_200): 事务最后没有提交
+
+# Transaction 200
+BEGIN;
+
+-- 更新了一些别的表的记录
+...
+
+UPDATE hero SET name = '赵云' WHERE number = 1;
+UPDATE hero SET name = '诸葛亮' WHERE number = 1;
+
+```
+
+此时, hero 表中 number=1 的记录的版本连变成了下面的形式:
+
+![image2](./image/MVCC/image2.png)
+
+<br/>
+
+然后再使用隔离级别为 `READ COMMITTED` 的事务中继续查找这个 number=1 的记录，如下：
+
+```sql
+-- 使用READ COMMITTED隔离级别的事务
+BEGIN;
+
+-- SELECT1: 由于T1、T2 未提交,所以得到的列name的值为'刘备'
+SELECT * FROM hero WHERE number = 1; 
+
+-- SELECT2: 由于T1提交了,但是 T2 未提交,所以得到的列 name 的值为'张飞'
+SELECT * FROM hero WHERE number = 1; 
+
+```
+
+上面的这个 **SELECT2** 的执行过程如下:
+
+1. 在执行 SELECT2 语句的时候,又会`单独的`创建一个 *readview*,该 readview 的属性如下:
+   - *m_ids*: [200]
+     - trx_100 的那个事务 T1 已经提交了, 所以再次生成快照时就没有它了
+   - *min_trx_id*: 200
+   - *max_trx_id*: 201
+   - *creator_trx_id*: 0
+   
+2. 然后**从版本链中挑选可见的记录**, 从图中可以看出，最新版本的列name='诸葛亮',该版本的 trx_id=200,**在m_ids列表内，所以不符合可见性要求,根据roll_pointer跳到下一个版本**
+
+3. 下一个版本的列name ='赵云'，该版本的 trx_id=200,也在m_ids列表内，所以也不符合要求，继续跳到下一个版本。
+
+4. 下一个版本的列name的内容是'张飞'，该版本的 trx_id = 100，**小于 ReadView 中的 min_trx_id(200)**, 所以这个版本是符合要求的
+
+5. 最后返回给用户的版本就是满足版本可见的第 4 步中的记录 
+
+
+**以此类推,如果之后事务 T2(trx_200) 的记录也提交了, 再次在使用 *READ COMMITTED* 离级别的事务中查询表 hero 中 number=1 的记录时，得到的结果就是'诸葛亮'了**
+
+<mark><strong>总结一下就是:</strong>使用 READ COMMITTED 隔离级别的事务在每次查询开始时都会创建一个独立的 ReadView</mark>
+
+:::
+
+
+#### Repeatable Read
+
+- Repeatable Read 隔离级别 `在第一次读取数据时创建一个 ReadView,之后的查询就不会重复创建了`
+
+:::info 示例说明
+
+**假设当前系统的中有两个事务(T1、T2)正在执行,它们的 事务id 分别是:trx_100,trx_200:**
+
+```sql title="T1: trx_100"
+-- 事务并没有提交
+BEGIN;
+
+UPDATE hero SET name = '关羽' WHERE number = 1;
+UPDATE hero SET name = '张飞' WHERE number = 1;
+
+```
+
+```sql title="T2: trx_200"
+-- 事务并没有提交
+BEGIN;
+
+# 更新了一些别的表的记录
+...
+
+```
+
+那么此时经过事务 T1 中的两次 `UPDATE` 之后, number=1 的记录对应的版本链如下:
+
+![image1](./image/MVCC/image1.png)
+
+<br/>
+
+假设现在有一个使用 `REPEATABLE READ` 隔离级别的事务开始执行:
+
+```sql
+-- 使用READ COMMITTED隔离级别的事务
+BEGIN;
+
+-- SELECT1: 由于T1、T2 未提交,得到的列name的值为'刘备'
+SELECT * FROM hero WHERE number = 1; 
+
+```
+
+上面的这个 **SELECT1** 的执行过程如下:
+
+1. 首先在执行 Select 语句(使用快照读)的时候会创建一个 *ReadView* , 该 readview 的属性如下:
+   - *m_ids*: [100, 200]
+   - *min_trx_id*: 100
+   - *max_trx_id*: 201
+   - *creator_trx_id*: 0
+
+2. 然后会**从版本链中挑选可见的记录**, 从上面的图中可以看到,最新版本的 name='张飞', 该版本的 trx_id=100, **在m_ids列表内，所以不符合可见性要求,所以根据roll_pointer跳到下一个版本**
+
+3. 下一个版本的 name='关羽', 该版本的 trx_id=100。也在m_ids列表内，所以也不符合要求，继续跳到下一个版本。
+
+4. 下一个版本的列name的内容是'刘备'，该版本的 trx_id=80，**小于 ReadView 中的 min_trx_id(100)**，所以这个版本是符合要求的。
+
+5. 最后返回给用户的版本就是满足版本可见的第 4 步中的记录 
+
+<br/>
+
+**假设提交事务 T1,并且事务 T2 对 hero 表进行更新**
+
+```sql title="T1、T2"
+-- T1(trx_100):最后提交了事务
+BEGIN;
+
+UPDATE hero SET name = '关羽' WHERE number = 1;
+UPDATE hero SET name = '张飞' WHERE number = 1;
+
+COMMIT;
+
+-- T2(trx_200): 事务最后没有提交
+
+# Transaction 200
+BEGIN;
+
+-- 更新了一些别的表的记录
+...
+
+UPDATE hero SET name = '赵云' WHERE number = 1;
+UPDATE hero SET name = '诸葛亮' WHERE number = 1;
+
+```
+
+此时, hero 表中 number=1 的记录的版本连变成了下面的形式:
+
+![image2](./image/MVCC/image2.png)
+
+<br/>
+
+然后再使用隔离级别为 `REPEATABLE READ` 的事务中继续查找这个 number=1 的记录，如下：
+
+```sql
+-- 使用READ COMMITTED隔离级别的事务
+BEGIN;
+
+-- SELECT1: 由于T1、T2 未提交,得到的列name的值为'刘备'
+SELECT * FROM hero WHERE number = 1; 
+
+-- SELECT2: 由于T1提交了,但是 T2 未提交,得到的列 name 的值还是'刘备'
+SELECT * FROM hero WHERE number = 1; 
+```
+
+上面的这个 **SELECT2** 的执行过程如下:
+
+1. 因为当前事务的隔离级别是 `REPEATABLE READ`,而在执行 SELECT1 的时候已经创建了一个 *ReadView* 了,所以此时直接复用之前的ReadView。之前的ReadView的m_ids列表的属性:
+   - *m_ids*: [100, 200]
+   - *min_trx_id*: 100
+   - *max_trx_id*: 201
+   - *creator_trx_id*: 0
+
+2. 然后**从版本链中挑选可见的记录**, 从图中可以看出: 最新版本的列 name='诸葛亮',该版本的 trx_id=200,在m_ids列表内,所以不符合可见性要求,根据roll_pointer跳到下一个版本 
+
+3. 下一个版本的 name='赵云',该版本的 trx_id=200,也在m_ids列表内,所以不符合可见性要求,继续跳到下一个版本
+
+4. 下一个版本的 name='张飞',该版本的 trx_id=100,也在m_ids列表内,所以不符合可见性要求,继续跳到下一个版本
+
+5. 下一个版本的 name='关羽',该版本的 trx_id=100,也在m_ids列表内,所以不符合可见性要求,继续跳到下一个版本
+
+6. 下一个版本的 name='关羽',该版本的 trx_id=80, **小于 ReadView 中的 min_trx_id(100)**，所以这个版本是符合要求的。
+
+7. 最后返回给用户的版本就是满足版本可见的第 6 步中的记录 
+
+**也就是说两次SELECT查询得到的结果是重复的, 记录的列 name='刘备'，这就是可重复读的含义。如果再把事务id为200的记录提交了,然后再到刚才使用 REPEATABLE READ 隔离级别的事务中继续查找这个number为1的记录,得到的结果还是'刘备'**
+
+<mark><strong>总结一下就是:</strong>使用 REPEATABLE READ 隔离级别的事务只有第一次会创建 ReadView,后面的查询都会复用最开始的</mark>
 
 :::
 

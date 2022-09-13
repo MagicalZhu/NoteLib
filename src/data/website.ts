@@ -139,6 +139,13 @@ export const websiteData: WebsiteCategory[] = [
         "tags": [""]
       },
       {
+        "name": "资源下载站点",
+        "desc": "这应该是东半球最好用的资源下载网站...",
+        "logo": "https://www.cxyhub.com/wp-content/uploads/2021/06/164644eb9febdzbf33d9jv.png-1.icon_-1.ico",
+        "href": "https://www.cxyhub.com/all/",
+        "tags": [""]
+      },
+      {
         "name": "ProcessOn",
         "desc": "免费在线流程图思维导图",
         "logo": "https://processon.com/favicon.ico",
