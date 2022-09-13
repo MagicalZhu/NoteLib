@@ -613,7 +613,7 @@ export const websiteData: WebsiteCategory[] = [
         "name": "Docusaurus",
         "desc": "Docusaurus",
         "logo": "/img/website/docusaurus.png",
-        "href": "https://www.docusaurus.cn/",
+        "href": "https://docusaurus.io/zh-CN",
         "tags": [""]
       },
       {
