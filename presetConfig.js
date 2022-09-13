@@ -7,7 +7,6 @@ const classicConfig = {
  // 以下参数将被直接传递给 @docusaurus/plugin-content-docs （设置为 false 则表示禁用此插件）
   docs: {
     path: 'docs',
-    // TODO 更新至2.1.0 版本 autoCollapseCategories: true,
     sidebarPath: require.resolve("./sidebars.js"),
     editUrl: "https://github.com/MagicalZhu/XDocs/tree/main",
     showLastUpdateTime: false,
