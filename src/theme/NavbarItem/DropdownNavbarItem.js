@@ -1,43 +1,35 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React, {useState, useRef, useEffect} from 'react';
 import clsx from 'clsx';
 import {
-  isSamePath,
+  isRegexpStringMatch,
   useCollapsible,
   Collapsible,
-  isRegexpStringMatch,
-  useLocalPathname,
 } from '@docusaurus/theme-common';
+import {isSamePath, useLocalPathname} from '@docusaurus/theme-common/internal';
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
-const dropdownLinkActiveClass = 'dropdown__link--active';
-
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
     return true;
   }
-
   if (isRegexpStringMatch(item.activeBaseRegex, localPathname)) {
     return true;
   }
-
   if (item.activeBasePath && localPathname.startsWith(item.activeBasePath)) {
     return true;
   }
-
   return false;
 }
-
 function containsActiveItems(items, localPathname) {
   return items.some((item) => isItemActive(item, localPathname));
 }
-
-function DropdownNavbarItemDesktop({items, position, className, ...props}) {
+function DropdownNavbarItemDesktop({
+  items,
+  position,
+  className,
+  onClick,
+  ...props
+}) {
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
   useEffect(() => {
@@ -45,10 +37,8 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
       if (!dropdownRef.current || dropdownRef.current.contains(event.target)) {
         return;
       }
-
       setShowDropdown(false);
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside);
     return () => {
@@ -64,6 +54,9 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
         'dropdown--show': showDropdown,
       })}>
       <NavbarNavLink
+        aria-haspopup="true"
+        aria-expanded={showDropdown}
+        role="button"
         href={props.to ? undefined : '#'}
         className={clsx('navbar__link', className)}
         {...props}
@@ -85,13 +78,18 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
                 e.preventDefault();
                 setShowDropdown(false);
                 const nextNavbarItem = dropdownRef.current.nextElementSibling;
-
                 if (nextNavbarItem) {
-                  nextNavbarItem.focus();
+                  const targetItem =
+                    nextNavbarItem instanceof HTMLAnchorElement
+                      ? nextNavbarItem
+                      : // Next item is another dropdown; focus on the inner
+                        // anchor element instead so there's outline
+                        nextNavbarItem.querySelector('a');
+                  targetItem.focus();
                 }
               }
             }}
-            activeClassName={dropdownLinkActiveClass}
+            activeClassName="dropdown__link--active"
             {...childItemProps}
             key={i}
           />
@@ -100,20 +98,19 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
     </div>
   );
 }
-
 function DropdownNavbarItemMobile({
   items,
   className,
-  position: _position,
-  // Need to destructure position from props so that it doesn't get passed on.
+  position, // Need to destructure position from props so that it doesn't get passed on.
+  onClick,
   ...props
 }) {
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
   const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
     initialState: () => !containsActive,
-  }); // Expand/collapse if any item active after a navigation
-
+  });
+  // Expand/collapse if any item active after a navigation
   useEffect(() => {
     if (containsActive) {
       setCollapsed(!containsActive);
@@ -126,7 +123,10 @@ function DropdownNavbarItemMobile({
       })}>
       <NavbarNavLink
         role="button"
-        className={clsx('menu__link menu__link--sublist', className)}
+        className={clsx(
+          'menu__link menu__link--sublist menu__link--sublist-caret',
+          className,
+        )}
         {...props}
         onClick={(e) => {
           e.preventDefault();
@@ -139,7 +139,7 @@ function DropdownNavbarItemMobile({
           <NavbarItem
             mobile
             isDropdownItem
-            onClick={props.onClick}
+            onClick={onClick}
             activeClassName="menu__link--active"
             {...childItemProps}
             key={i}
@@ -149,7 +149,6 @@ function DropdownNavbarItemMobile({
     </li>
   );
 }
-
 export default function DropdownNavbarItem({mobile = false, ...props}) {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;

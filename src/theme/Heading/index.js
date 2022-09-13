@@ -1,31 +1,25 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React from 'react';
 import clsx from 'clsx';
 import {translate} from '@docusaurus/Translate';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import styles from './styles.module.css';
-
-function AnchorHeading({as: As, id, ...props}) {
+export default function Heading({as: As, id, ...props}) {
   const {
     navbar: {hideOnScroll},
   } = useThemeConfig();
-
-  if (!id) {
-    return <As {...props} />;
+  // H1 headings do not need an id because they don't appear in the TOC.
+  if (As === 'h1' || !id) {
+    return <As {...props} id={undefined} />;
   }
-
   return (
     <As
       {...props}
-      className={clsx('anchor', {
-        [styles.anchorWithHideOnScrollNavbar]: hideOnScroll,
-        [styles.anchorWithStickyNavbar]: !hideOnScroll,
-      })}
+      className={clsx(
+        'anchor',
+        hideOnScroll
+          ? styles.anchorWithHideOnScrollNavbar
+          : styles.anchorWithStickyNavbar,
+      )}
       id={id}>
       {props.children}
       <a
@@ -40,19 +34,4 @@ function AnchorHeading({as: As, id, ...props}) {
       </a>
     </As>
   );
-}
-
-export default function Heading({as, ...props}) {
-  if (as === 'h1') {
-    return (
-      <h1
-        {...props}
-        id={undefined} // h1 headings do not need an id because they don't appear in the TOC
-      >
-        {props.children}
-      </h1>
-    );
-  }
-
-  return <AnchorHeading as={as} {...props} />;
 }

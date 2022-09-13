@@ -1,741 +1,740 @@
-
 import React from 'react';
 import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
     path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug','3d6'),
+    component: ComponentCreator('/__docusaurus/debug', 'bd8'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config','914'),
+    component: ComponentCreator('/__docusaurus/debug/config', '780'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content','c28'),
+    component: ComponentCreator('/__docusaurus/debug/content', 'cb1'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData','3cf'),
+    component: ComponentCreator('/__docusaurus/debug/globalData', '92e'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata','31b'),
+    component: ComponentCreator('/__docusaurus/debug/metadata', '4da'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry','0da'),
+    component: ComponentCreator('/__docusaurus/debug/registry', 'eb0'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes','244'),
+    component: ComponentCreator('/__docusaurus/debug/routes', '528'),
     exact: true
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog','580'),
+    component: ComponentCreator('/blog', 'bd1'),
     exact: true
   },
   {
     path: '/blog/aliSeata',
-    component: ComponentCreator('/blog/aliSeata','26c'),
+    component: ComponentCreator('/blog/aliSeata', 'e27'),
     exact: true
   },
   {
     path: '/blog/archive',
-    component: ComponentCreator('/blog/archive','f4c'),
+    component: ComponentCreator('/blog/archive', '3ee'),
     exact: true
   },
   {
     path: '/blog/gotConcurrencyAli',
-    component: ComponentCreator('/blog/gotConcurrencyAli','5c7'),
+    component: ComponentCreator('/blog/gotConcurrencyAli', '1bd'),
     exact: true
   },
   {
     path: '/blog/internal-navigation',
-    component: ComponentCreator('/blog/internal-navigation','bf2'),
+    component: ComponentCreator('/blog/internal-navigation', 'c25'),
     exact: true
   },
   {
     path: '/blog/tags',
-    component: ComponentCreator('/blog/tags','e13'),
+    component: ComponentCreator('/blog/tags', '963'),
     exact: true
   },
   {
     path: '/blog/tags/分享',
-    component: ComponentCreator('/blog/tags/分享','ec7'),
+    component: ComponentCreator('/blog/tags/分享', '4b3'),
     exact: true
   },
   {
     path: '/blog/tags/高并发',
-    component: ComponentCreator('/blog/tags/高并发','ea6'),
+    component: ComponentCreator('/blog/tags/高并发', '3b8'),
     exact: true
   },
   {
     path: '/blog/tags/学习',
-    component: ComponentCreator('/blog/tags/学习','460'),
+    component: ComponentCreator('/blog/tags/学习', '16b'),
     exact: true
   },
   {
     path: '/blog/tags/alibaba',
-    component: ComponentCreator('/blog/tags/alibaba','21f'),
+    component: ComponentCreator('/blog/tags/alibaba', '738'),
     exact: true
   },
   {
     path: '/search',
-    component: ComponentCreator('/search','79a'),
+    component: ComponentCreator('/search', '60c'),
     exact: true
   },
   {
     path: '/website/',
-    component: ComponentCreator('/website/','7eb'),
+    component: ComponentCreator('/website/', 'dcf'),
     exact: true
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs','f79'),
+    component: ComponentCreator('/docs', '5fe'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
-        component: ComponentCreator('/docs/并发编程/并发安全/线程安全','ab9'),
+        component: ComponentCreator('/docs/并发编程/并发安全/线程安全', 'ab9'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发安全/dead_lock',
-        component: ComponentCreator('/docs/并发编程/并发安全/dead_lock','345'),
+        component: ComponentCreator('/docs/并发编程/并发安全/dead_lock', '345'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发安全/jmm',
-        component: ComponentCreator('/docs/并发编程/并发安全/jmm','857'),
+        component: ComponentCreator('/docs/并发编程/并发安全/jmm', '857'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发安全/volatile',
-        component: ComponentCreator('/docs/并发编程/并发安全/volatile','f25'),
+        component: ComponentCreator('/docs/并发编程/并发安全/volatile', 'f25'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/并发集合与阻塞队列',
-        component: ComponentCreator('/docs/并发编程/并发控制/并发集合与阻塞队列','d29'),
+        component: ComponentCreator('/docs/并发编程/并发控制/并发集合与阻塞队列', 'd29'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/缓存实战',
-        component: ComponentCreator('/docs/并发编程/并发控制/缓存实战','03d'),
+        component: ComponentCreator('/docs/并发编程/并发控制/缓存实战', '03d'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/线程池',
-        component: ComponentCreator('/docs/并发编程/并发控制/线程池','525'),
+        component: ComponentCreator('/docs/并发编程/并发控制/线程池', '525'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/线程协作',
-        component: ComponentCreator('/docs/并发编程/并发控制/线程协作','e5f'),
+        component: ComponentCreator('/docs/并发编程/并发控制/线程协作', 'e5f'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/AQS',
-        component: ComponentCreator('/docs/并发编程/并发控制/AQS','cd0'),
+        component: ComponentCreator('/docs/并发编程/并发控制/AQS', 'cd0'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/Atomic&CAS',
-        component: ComponentCreator('/docs/并发编程/并发控制/Atomic&CAS','290'),
+        component: ComponentCreator('/docs/并发编程/并发控制/Atomic&CAS', '290'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/final',
-        component: ComponentCreator('/docs/并发编程/并发控制/final','e45'),
+        component: ComponentCreator('/docs/并发编程/并发控制/final', 'e45'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/FutureTask',
-        component: ComponentCreator('/docs/并发编程/并发控制/FutureTask','7ee'),
+        component: ComponentCreator('/docs/并发编程/并发控制/FutureTask', '7ee'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/Lock锁',
-        component: ComponentCreator('/docs/并发编程/并发控制/Lock锁','06e'),
+        component: ComponentCreator('/docs/并发编程/并发控制/Lock锁', '06e'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/并发控制/ThreadLocal',
-        component: ComponentCreator('/docs/并发编程/并发控制/ThreadLocal','70a'),
+        component: ComponentCreator('/docs/并发编程/并发控制/ThreadLocal', '70a'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/并发编程/juc基础',
-        component: ComponentCreator('/docs/并发编程/juc基础','0b3'),
+        component: ComponentCreator('/docs/并发编程/juc基础', '0b3'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/计算机网络/HTTP/http-protocol',
-        component: ComponentCreator('/docs/计算机网络/HTTP/http-protocol','394'),
+        component: ComponentCreator('/docs/计算机网络/HTTP/http-protocol', '394'),
         exact: true,
-        'sidebar': "netWorkSidebar"
+        sidebar: "netWorkSidebar"
       },
       {
         path: '/docs/前端/Vue/基础特性',
-        component: ComponentCreator('/docs/前端/Vue/基础特性','581'),
+        component: ComponentCreator('/docs/前端/Vue/基础特性', '581'),
         exact: true,
-        'sidebar': "vueSideBar"
+        sidebar: "vueSideBar"
       },
       {
         path: '/docs/数据结构与算法/基础/前提基础知识',
-        component: ComponentCreator('/docs/数据结构与算法/基础/前提基础知识','c96'),
+        component: ComponentCreator('/docs/数据结构与算法/基础/前提基础知识', 'c96'),
         exact: true,
-        'sidebar': "dataStructureSidebar"
+        sidebar: "dataStructureSidebar"
       },
       {
         path: '/docs/about',
-        component: ComponentCreator('/docs/about','0b0'),
+        component: ComponentCreator('/docs/about', '0b0'),
         exact: true
       },
       {
         path: '/docs/basicMiddleware',
-        component: ComponentCreator('/docs/basicMiddleware','fa0'),
+        component: ComponentCreator('/docs/basicMiddleware', 'fa0'),
         exact: true
       },
       {
         path: '/docs/basicTech',
-        component: ComponentCreator('/docs/basicTech','6b7'),
+        component: ComponentCreator('/docs/basicTech', '6b7'),
         exact: true
       },
       {
         path: '/docs/cache',
-        component: ComponentCreator('/docs/cache','0b3'),
+        component: ComponentCreator('/docs/cache', '0b3'),
         exact: true
       },
       {
         path: '/docs/category/并发安全',
-        component: ComponentCreator('/docs/category/并发安全','95c'),
+        component: ComponentCreator('/docs/category/并发安全', '95c'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/category/并发基础',
-        component: ComponentCreator('/docs/category/并发基础','064'),
+        component: ComponentCreator('/docs/category/并发基础', '064'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/category/并发控制',
-        component: ComponentCreator('/docs/category/并发控制','13b'),
+        component: ComponentCreator('/docs/category/并发控制', '13b'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/category/存储结构与索引',
-        component: ComponentCreator('/docs/category/存储结构与索引','db3'),
+        component: ComponentCreator('/docs/category/存储结构与索引', 'db3'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/category/动漫分享',
-        component: ComponentCreator('/docs/category/动漫分享','22d'),
+        component: ComponentCreator('/docs/category/动漫分享', '22d'),
         exact: true,
-        'sidebar': "sourceSideBar"
+        sidebar: "sourceSideBar"
       },
       {
         path: '/docs/category/基础知识',
-        component: ComponentCreator('/docs/category/基础知识','2ef'),
+        component: ComponentCreator('/docs/category/基础知识', '2ef'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/category/基础知识-1',
-        component: ComponentCreator('/docs/category/基础知识-1','c75'),
+        component: ComponentCreator('/docs/category/基础知识-1', 'c75'),
         exact: true,
-        'sidebar': "dataStructureSidebar"
+        sidebar: "dataStructureSidebar"
       },
       {
         path: '/docs/category/架构与引擎',
-        component: ComponentCreator('/docs/category/架构与引擎','0bb'),
+        component: ComponentCreator('/docs/category/架构与引擎', '0bb'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/category/事务与锁',
-        component: ComponentCreator('/docs/category/事务与锁','8ff'),
+        component: ComponentCreator('/docs/category/事务与锁', '8ff'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/category/数据结构与算法基础',
-        component: ComponentCreator('/docs/category/数据结构与算法基础','a36'),
+        component: ComponentCreator('/docs/category/数据结构与算法基础', 'a36'),
         exact: true,
-        'sidebar': "dataStructureSidebar"
+        sidebar: "dataStructureSidebar"
       },
       {
         path: '/docs/category/数据库管理',
-        component: ComponentCreator('/docs/category/数据库管理','4c5'),
+        component: ComponentCreator('/docs/category/数据库管理', '4c5'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/category/微服务基础',
-        component: ComponentCreator('/docs/category/微服务基础','40f'),
+        component: ComponentCreator('/docs/category/微服务基础', '40f'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/category/性能监控和调优入门',
-        component: ComponentCreator('/docs/category/性能监控和调优入门','150'),
+        component: ComponentCreator('/docs/category/性能监控和调优入门', '150'),
         exact: true,
-        'sidebar': "jvmSideBar"
+        sidebar: "jvmSideBar"
       },
       {
         path: '/docs/category/性能优化',
-        component: ComponentCreator('/docs/category/性能优化','3ba'),
+        component: ComponentCreator('/docs/category/性能优化', '3ba'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/category/jvm优化',
-        component: ComponentCreator('/docs/category/jvm优化','788'),
+        component: ComponentCreator('/docs/category/jvm优化', '788'),
         exact: true,
-        'sidebar': "jvmSideBar"
+        sidebar: "jvmSideBar"
       },
       {
         path: '/docs/category/mysql基础与高级',
-        component: ComponentCreator('/docs/category/mysql基础与高级','700'),
+        component: ComponentCreator('/docs/category/mysql基础与高级', '700'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/category/spring编程思想',
-        component: ComponentCreator('/docs/category/spring编程思想','ab2'),
+        component: ComponentCreator('/docs/category/spring编程思想', 'ab2'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/category/spring基础',
-        component: ComponentCreator('/docs/category/spring基础','0a2'),
+        component: ComponentCreator('/docs/category/spring基础', '0a2'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/category/spring注解',
-        component: ComponentCreator('/docs/category/spring注解','7e2'),
+        component: ComponentCreator('/docs/category/spring注解', '7e2'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/category/springcloud-alibaba',
-        component: ComponentCreator('/docs/category/springcloud-alibaba','8d2'),
+        component: ComponentCreator('/docs/category/springcloud-alibaba', '8d2'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/category/springcloud-netflix',
-        component: ComponentCreator('/docs/category/springcloud-netflix','1f8'),
+        component: ComponentCreator('/docs/category/springcloud-netflix', '1f8'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/category/vue基础',
-        component: ComponentCreator('/docs/category/vue基础','68c'),
+        component: ComponentCreator('/docs/category/vue基础', '68c'),
         exact: true,
-        'sidebar': "vueSideBar"
+        sidebar: "vueSideBar"
       },
       {
         path: '/docs/category/vue学习笔记',
-        component: ComponentCreator('/docs/category/vue学习笔记','b30'),
+        component: ComponentCreator('/docs/category/vue学习笔记', 'b30'),
         exact: true,
-        'sidebar': "vueSideBar"
+        sidebar: "vueSideBar"
       },
       {
         path: '/docs/currency',
-        component: ComponentCreator('/docs/currency','102'),
+        component: ComponentCreator('/docs/currency', '102'),
         exact: true,
-        'sidebar': "basicSideBar"
+        sidebar: "basicSideBar"
       },
       {
         path: '/docs/database',
-        component: ComponentCreator('/docs/database','d19'),
+        component: ComponentCreator('/docs/database', 'd19'),
         exact: true
       },
       {
         path: '/docs/dataStructure',
-        component: ComponentCreator('/docs/dataStructure','f02'),
+        component: ComponentCreator('/docs/dataStructure', 'f02'),
         exact: true,
-        'sidebar': "dataStructureSidebar"
+        sidebar: "dataStructureSidebar"
       },
       {
         path: '/docs/distribute',
-        component: ComponentCreator('/docs/distribute','873'),
+        component: ComponentCreator('/docs/distribute', '873'),
         exact: true
       },
       {
         path: '/docs/front/Vue',
-        component: ComponentCreator('/docs/front/Vue','a4d'),
+        component: ComponentCreator('/docs/front/Vue', 'a4d'),
         exact: true,
-        'sidebar': "vueSideBar"
+        sidebar: "vueSideBar"
       },
       {
         path: '/docs/job',
-        component: ComponentCreator('/docs/job','cd2'),
+        component: ComponentCreator('/docs/job', 'cd2'),
         exact: true
       },
       {
         path: '/docs/JVM',
-        component: ComponentCreator('/docs/JVM','d4c'),
+        component: ComponentCreator('/docs/JVM', 'd4c'),
         exact: true
       },
       {
         path: '/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控',
-        component: ComponentCreator('/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控','1fd'),
+        component: ComponentCreator('/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控', '1fd'),
         exact: true,
-        'sidebar': "jvmSideBar"
+        sidebar: "jvmSideBar"
       },
       {
         path: '/docs/leetCode',
-        component: ComponentCreator('/docs/leetCode','3cf'),
+        component: ComponentCreator('/docs/leetCode', '3cf'),
         exact: true,
-        'sidebar': "leetCodeSidebar"
+        sidebar: "leetCodeSidebar"
       },
       {
         path: '/docs/LeetCode刷题笔记/illustrationOfAlgorithm',
-        component: ComponentCreator('/docs/LeetCode刷题笔记/illustrationOfAlgorithm','d37'),
+        component: ComponentCreator('/docs/LeetCode刷题笔记/illustrationOfAlgorithm', 'd37'),
         exact: true,
-        'sidebar': "leetCodeSidebar"
+        sidebar: "leetCodeSidebar"
       },
       {
         path: '/docs/linuxCommand',
-        component: ComponentCreator('/docs/linuxCommand','ecb'),
+        component: ComponentCreator('/docs/linuxCommand', 'ecb'),
         exact: true,
-        'sidebar': "linuxSideBar"
+        sidebar: "linuxSideBar"
       },
       {
         path: '/docs/messageQueue',
-        component: ComponentCreator('/docs/messageQueue','e64'),
+        component: ComponentCreator('/docs/messageQueue', 'e64'),
         exact: true
       },
       {
         path: '/docs/mysql',
-        component: ComponentCreator('/docs/mysql','a05'),
+        component: ComponentCreator('/docs/mysql', 'a05'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/缓冲池',
-        component: ComponentCreator('/docs/Mysql/高级特性/缓冲池','7e3'),
+        component: ComponentCreator('/docs/Mysql/高级特性/缓冲池', '7e3'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/设计索引',
-        component: ComponentCreator('/docs/Mysql/高级特性/设计索引','d16'),
+        component: ComponentCreator('/docs/Mysql/高级特性/设计索引', 'd16'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/事务基础',
-        component: ComponentCreator('/docs/Mysql/高级特性/事务基础','966'),
+        component: ComponentCreator('/docs/Mysql/高级特性/事务基础', '966'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/数据库其他调优策略',
-        component: ComponentCreator('/docs/Mysql/高级特性/数据库其他调优策略','ef6'),
+        component: ComponentCreator('/docs/Mysql/高级特性/数据库其他调优策略', 'ef6'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/数据库设计规范',
-        component: ComponentCreator('/docs/Mysql/高级特性/数据库设计规范','ecd'),
+        component: ComponentCreator('/docs/Mysql/高级特性/数据库设计规范', 'ecd'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/索引',
-        component: ComponentCreator('/docs/Mysql/高级特性/索引','f13'),
+        component: ComponentCreator('/docs/Mysql/高级特性/索引', 'f13'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/索引的应用',
-        component: ComponentCreator('/docs/Mysql/高级特性/索引的应用','933'),
+        component: ComponentCreator('/docs/Mysql/高级特性/索引的应用', '933'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/索引与查询优化',
-        component: ComponentCreator('/docs/Mysql/高级特性/索引与查询优化','bb0'),
+        component: ComponentCreator('/docs/Mysql/高级特性/索引与查询优化', 'bb0'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/锁',
-        component: ComponentCreator('/docs/Mysql/高级特性/锁','bd7'),
+        component: ComponentCreator('/docs/Mysql/高级特性/锁', 'bd7'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/性能分析工具',
-        component: ComponentCreator('/docs/Mysql/高级特性/性能分析工具','bb7'),
+        component: ComponentCreator('/docs/Mysql/高级特性/性能分析工具', 'bb7'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/性能监控工具',
-        component: ComponentCreator('/docs/Mysql/高级特性/性能监控工具','daf'),
+        component: ComponentCreator('/docs/Mysql/高级特性/性能监控工具', 'daf'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/用户权限管理',
-        component: ComponentCreator('/docs/Mysql/高级特性/用户权限管理','5a2'),
+        component: ComponentCreator('/docs/Mysql/高级特性/用户权限管理', '5a2'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/InnoDB表空间',
-        component: ComponentCreator('/docs/Mysql/高级特性/InnoDB表空间','bb9'),
+        component: ComponentCreator('/docs/Mysql/高级特性/InnoDB表空间', 'bb9'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/InnoDB数据页结构',
-        component: ComponentCreator('/docs/Mysql/高级特性/InnoDB数据页结构','0f3'),
+        component: ComponentCreator('/docs/Mysql/高级特性/InnoDB数据页结构', '0f3'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/MVCC',
-        component: ComponentCreator('/docs/Mysql/高级特性/MVCC','610'),
+        component: ComponentCreator('/docs/Mysql/高级特性/MVCC', '610'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/MySQL 部署',
-        component: ComponentCreator('/docs/Mysql/高级特性/MySQL 部署','04f'),
+        component: ComponentCreator('/docs/Mysql/高级特性/MySQL 部署', '04f'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/MySQL逻辑架构',
-        component: ComponentCreator('/docs/Mysql/高级特性/MySQL逻辑架构','161'),
+        component: ComponentCreator('/docs/Mysql/高级特性/MySQL逻辑架构', '161'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/Redo日志',
-        component: ComponentCreator('/docs/Mysql/高级特性/Redo日志','6f3'),
+        component: ComponentCreator('/docs/Mysql/高级特性/Redo日志', '6f3'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/高级特性/Undo日志',
-        component: ComponentCreator('/docs/Mysql/高级特性/Undo日志','863'),
+        component: ComponentCreator('/docs/Mysql/高级特性/Undo日志', '863'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/基础/MySQL函数与聚合',
-        component: ComponentCreator('/docs/Mysql/基础/MySQL函数与聚合','91e'),
+        component: ComponentCreator('/docs/Mysql/基础/MySQL函数与聚合', '91e'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/基础/MySQL基础查询',
-        component: ComponentCreator('/docs/Mysql/基础/MySQL基础查询','949'),
+        component: ComponentCreator('/docs/Mysql/基础/MySQL基础查询', '949'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/基础/MySQL库对象',
-        component: ComponentCreator('/docs/Mysql/基础/MySQL库对象','400'),
+        component: ComponentCreator('/docs/Mysql/基础/MySQL库对象', '400'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/基础/MySQL子查询',
-        component: ComponentCreator('/docs/Mysql/基础/MySQL子查询','63b'),
+        component: ComponentCreator('/docs/Mysql/基础/MySQL子查询', '63b'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/Mysql/MySQL参数与命令',
-        component: ComponentCreator('/docs/Mysql/MySQL参数与命令','98b'),
+        component: ComponentCreator('/docs/Mysql/MySQL参数与命令', '98b'),
         exact: true,
-        'sidebar': "mysqlSideBar"
+        sidebar: "mysqlSideBar"
       },
       {
         path: '/docs/networrk-basic',
-        component: ComponentCreator('/docs/networrk-basic','b98'),
+        component: ComponentCreator('/docs/networrk-basic', 'b98'),
         exact: true,
-        'sidebar': "netWorkSidebar"
+        sidebar: "netWorkSidebar"
       },
       {
         path: '/docs/searchEngine',
-        component: ComponentCreator('/docs/searchEngine','3c2'),
+        component: ComponentCreator('/docs/searchEngine', '3c2'),
         exact: true
       },
       {
         path: '/docs/source/acg/acgShare_2022',
-        component: ComponentCreator('/docs/source/acg/acgShare_2022','c01'),
+        component: ComponentCreator('/docs/source/acg/acgShare_2022', 'c01'),
         exact: true,
-        'sidebar': "sourceSideBar"
+        sidebar: "sourceSideBar"
       },
       {
         path: '/docs/source/devSource',
-        component: ComponentCreator('/docs/source/devSource','d6c'),
+        component: ComponentCreator('/docs/source/devSource', 'd6c'),
         exact: true,
-        'sidebar': "sourceSideBar"
+        sidebar: "sourceSideBar"
       },
       {
         path: '/docs/spring',
-        component: ComponentCreator('/docs/spring','a62'),
+        component: ComponentCreator('/docs/spring', 'a62'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/Spring/注解驱动开发/组件注册',
-        component: ComponentCreator('/docs/Spring/注解驱动开发/组件注册','db4'),
+        component: ComponentCreator('/docs/Spring/注解驱动开发/组件注册', 'db4'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/Spring/Spring编程思想/依赖查找',
-        component: ComponentCreator('/docs/Spring/Spring编程思想/依赖查找','4ac'),
+        component: ComponentCreator('/docs/Spring/Spring编程思想/依赖查找', '4ac'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/Spring/Spring编程思想/依赖注入',
-        component: ComponentCreator('/docs/Spring/Spring编程思想/依赖注入','d01'),
+        component: ComponentCreator('/docs/Spring/Spring编程思想/依赖注入', 'd01'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/Spring/Spring编程思想/Bean',
-        component: ComponentCreator('/docs/Spring/Spring编程思想/Bean','fd0'),
+        component: ComponentCreator('/docs/Spring/Spring编程思想/Bean', 'fd0'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/Spring/Spring编程思想/IOC容器',
-        component: ComponentCreator('/docs/Spring/Spring编程思想/IOC容器','a79'),
+        component: ComponentCreator('/docs/Spring/Spring编程思想/IOC容器', 'a79'),
         exact: true,
-        'sidebar': "springSideBar"
+        sidebar: "springSideBar"
       },
       {
         path: '/docs/springCloud',
-        component: ComponentCreator('/docs/springCloud','aef'),
+        component: ComponentCreator('/docs/springCloud', 'aef'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/微服务技术栈',
-        component: ComponentCreator('/docs/SpringCloud/微服务技术栈','764'),
+        component: ComponentCreator('/docs/SpringCloud/微服务技术栈', '764'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Alibaba/Nacos',
-        component: ComponentCreator('/docs/SpringCloud/Alibaba/Nacos','448'),
+        component: ComponentCreator('/docs/SpringCloud/Alibaba/Nacos', '448'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Alibaba/Sentinel',
-        component: ComponentCreator('/docs/SpringCloud/Alibaba/Sentinel','da2'),
+        component: ComponentCreator('/docs/SpringCloud/Alibaba/Sentinel', 'da2'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/Bus',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/Bus','92e'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Bus', '92e'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/Config',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/Config','fad'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Config', 'fad'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/eureka_config',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/eureka_config','cad'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/eureka_config', 'cad'),
         exact: true
       },
       {
         path: '/docs/SpringCloud/Netflix/Eureka&Consul',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/Eureka&Consul','1cb'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Eureka&Consul', '1cb'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/GateWay',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/GateWay','c64'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/GateWay', 'c64'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/Hystrix',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/Hystrix','288'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Hystrix', '288'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/OpenFeign',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/OpenFeign','c59'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/OpenFeign', 'c59'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/Ribbon',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/Ribbon','a3d'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Ribbon', 'a3d'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/Sleuth',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/Sleuth','d1c'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Sleuth', 'd1c'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       },
       {
         path: '/docs/SpringCloud/Netflix/Stream',
-        component: ComponentCreator('/docs/SpringCloud/Netflix/Stream','3be'),
+        component: ComponentCreator('/docs/SpringCloud/Netflix/Stream', '3be'),
         exact: true,
-        'sidebar': "springCloudSideBar"
+        sidebar: "springCloudSideBar"
       }
     ]
   },
   {
     path: '/',
-    component: ComponentCreator('/','deb'),
+    component: ComponentCreator('/', '17d'),
     exact: true
   },
   {
     path: '*',
-    component: ComponentCreator('*')
-  }
+    component: ComponentCreator('*'),
+  },
 ];

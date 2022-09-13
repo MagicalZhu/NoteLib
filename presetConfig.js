@@ -7,6 +7,7 @@ const classicConfig = {
  // 以下参数将被直接传递给 @docusaurus/plugin-content-docs （设置为 false 则表示禁用此插件）
   docs: {
     path: 'docs',
+    breadcrumbs: true,
     sidebarPath: require.resolve("./sidebars.js"),
     editUrl: "https://github.com/MagicalZhu/XDocs/tree/main",
     showLastUpdateTime: false,
@@ -23,14 +24,17 @@ const classicConfig = {
     editUrl: 'https://github.com/MagicalZhu/XDocs/tree/main',
     postsPerPage: 5,
     authorsMapPath: 'author.yml',
-    showReadingTime: true, // When set to false, the "x min read" won't be shown
-    readingTime: ({content, frontMatter, defaultReadingTime}) =>
-      defaultReadingTime({
-        content, 
-        options: {
-          wordsPerMinute: 300
+    showReadingTime: true, // 如果设置为 false，「x 分钟阅读」的文字就不会显示
+    readingTime: (
+      { content, frontMatter, defaultReadingTime}) =>
+        defaultReadingTime({content, options: {wordsPerMinute: 300}
       }
-    })
+    ),
+    // 订阅源
+    feedOptions: {
+      type: 'all',
+      copyright: `Copyright © ${new Date().getFullYear()} Huakucha, Inc.`,
+    },
   },
   // 以下参数将被直接传递给 @docusaurus/plugin-content-pages （设置为 false 则表示禁用此插件）
   pages: {

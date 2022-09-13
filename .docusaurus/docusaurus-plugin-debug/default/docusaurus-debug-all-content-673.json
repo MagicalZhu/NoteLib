@@ -4,14 +4,15 @@
       "loadedVersions": [
         {
           "versionName": "current",
-          "versionLabel": "Next",
-          "versionPath": "/docs",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs",
           "tagsPath": "/docs/tags",
-          "versionEditUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs",
-          "versionEditUrlLocalized": "https://github.com/MagicalZhu/XDocs/tree/main/i18n/en/docusaurus-plugin-content-docs/current",
-          "versionBanner": null,
-          "versionBadge": false,
-          "versionClassName": "docs-version-current",
+          "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs",
+          "editUrlLocalized": "https://github.com/MagicalZhu/XDocs/tree/main/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/yoey/Desktop/XDocs/sidebars.js",
@@ -27,6 +28,7 @@
               "sourceDirName": "并发编程/并发安全",
               "slug": "/并发编程/并发安全/线程安全",
               "permalink": "/docs/并发编程/并发安全/线程安全",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
               "tags": [],
               "version": "current",
@@ -53,6 +55,7 @@
               "sourceDirName": "并发编程/并发安全",
               "slug": "/并发编程/并发安全/dead_lock",
               "permalink": "/docs/并发编程/并发安全/dead_lock",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
               "tags": [],
               "version": "current",
@@ -79,6 +82,7 @@
               "sourceDirName": "并发编程/并发安全",
               "slug": "/并发编程/并发安全/jmm",
               "permalink": "/docs/并发编程/并发安全/jmm",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.2并发安全-JMM.md",
               "tags": [],
               "version": "current",
@@ -105,6 +109,7 @@
               "sourceDirName": "并发编程/并发安全",
               "slug": "/并发编程/并发安全/volatile",
               "permalink": "/docs/并发编程/并发安全/volatile",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
               "tags": [],
               "version": "current",
@@ -131,6 +136,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/并发集合与阻塞队列",
               "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
               "tags": [],
               "version": "current",
@@ -157,6 +163,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/缓存实战",
               "permalink": "/docs/并发编程/并发控制/缓存实战",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/4.1并发实战-缓存.md",
               "tags": [],
               "version": "current",
@@ -179,6 +186,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/线程池",
               "permalink": "/docs/并发编程/并发控制/线程池",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
               "tags": [],
               "version": "current",
@@ -205,6 +213,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/线程协作",
               "permalink": "/docs/并发编程/并发控制/线程协作",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
               "tags": [],
               "version": "current",
@@ -231,6 +240,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/AQS",
               "permalink": "/docs/并发编程/并发控制/AQS",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
               "tags": [],
               "version": "current",
@@ -257,6 +267,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/Atomic&CAS",
               "permalink": "/docs/并发编程/并发控制/Atomic&CAS",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
               "tags": [],
               "version": "current",
@@ -283,6 +294,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/final",
               "permalink": "/docs/并发编程/并发控制/final",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
               "tags": [],
               "version": "current",
@@ -309,6 +321,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/FutureTask",
               "permalink": "/docs/并发编程/并发控制/FutureTask",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
               "tags": [],
               "version": "current",
@@ -335,6 +348,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/Lock锁",
               "permalink": "/docs/并发编程/并发控制/Lock锁",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
               "tags": [],
               "version": "current",
@@ -361,6 +375,7 @@
               "sourceDirName": "并发编程/并发控制",
               "slug": "/并发编程/并发控制/ThreadLocal",
               "permalink": "/docs/并发编程/并发控制/ThreadLocal",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
               "tags": [],
               "version": "current",
@@ -387,6 +402,7 @@
               "sourceDirName": "并发编程",
               "slug": "/currency",
               "permalink": "/docs/currency",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/about.md",
               "tags": [],
               "version": "current",
@@ -410,6 +426,7 @@
               "sourceDirName": "并发编程",
               "slug": "/并发编程/juc基础",
               "permalink": "/docs/并发编程/juc基础",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/1.1JUC基础.md",
               "tags": [],
               "version": "current",
@@ -436,6 +453,7 @@
               "sourceDirName": "定时任务",
               "slug": "/job",
               "permalink": "/docs/job",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/定时任务/about.mdx",
               "tags": [],
               "version": "current",
@@ -454,6 +472,7 @@
               "sourceDirName": "分布式基础技术",
               "slug": "/basicTech",
               "permalink": "/docs/basicTech",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式基础技术/about.mdx",
               "tags": [],
               "version": "current",
@@ -472,6 +491,7 @@
               "sourceDirName": "分布式理论",
               "slug": "/distribute",
               "permalink": "/docs/distribute",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式理论/about.md",
               "tags": [],
               "version": "current",
@@ -490,6 +510,7 @@
               "sourceDirName": "缓存",
               "slug": "/cache",
               "permalink": "/docs/cache",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/缓存/about.mdx",
               "tags": [],
               "version": "current",
@@ -508,6 +529,7 @@
               "sourceDirName": "基础中间件",
               "slug": "/basicMiddleware",
               "permalink": "/docs/basicMiddleware",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/基础中间件/about.mdx",
               "tags": [],
               "version": "current",
@@ -526,6 +548,7 @@
               "sourceDirName": "计算机网络/HTTP",
               "slug": "/计算机网络/HTTP/http-protocol",
               "permalink": "/docs/计算机网络/HTTP/http-protocol",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
               "tags": [],
               "version": "current",
@@ -548,6 +571,7 @@
               "sourceDirName": "计算机网络",
               "slug": "/networrk-basic",
               "permalink": "/docs/networrk-basic",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/about.md",
               "tags": [],
               "version": "current",
@@ -571,6 +595,7 @@
               "sourceDirName": "前端/Vue",
               "slug": "/前端/Vue/基础特性",
               "permalink": "/docs/前端/Vue/基础特性",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/基础特性.md",
               "tags": [],
               "version": "current",
@@ -593,6 +618,7 @@
               "sourceDirName": "前端/Vue",
               "slug": "/front/Vue",
               "permalink": "/docs/front/Vue",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/about.md",
               "tags": [],
               "version": "current",
@@ -616,6 +642,7 @@
               "sourceDirName": "数据结构与算法/基础",
               "slug": "/数据结构与算法/基础/前提基础知识",
               "permalink": "/docs/数据结构与算法/基础/前提基础知识",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/基础/基础知识.md",
               "tags": [],
               "version": "current",
@@ -638,6 +665,7 @@
               "sourceDirName": "数据结构与算法",
               "slug": "/dataStructure",
               "permalink": "/docs/dataStructure",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/about.md",
               "tags": [],
               "version": "current",
@@ -661,6 +689,7 @@
               "sourceDirName": "数据库",
               "slug": "/database",
               "permalink": "/docs/database",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据库/about.mdx",
               "tags": [],
               "version": "current",
@@ -679,6 +708,7 @@
               "sourceDirName": "搜索引擎",
               "slug": "/searchEngine",
               "permalink": "/docs/searchEngine",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/搜索引擎/about.mdx",
               "tags": [],
               "version": "current",
@@ -697,6 +727,7 @@
               "sourceDirName": "消息队列",
               "slug": "/messageQueue",
               "permalink": "/docs/messageQueue",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/消息队列/about.mdx",
               "tags": [],
               "version": "current",
@@ -715,6 +746,7 @@
               "sourceDirName": ".",
               "slug": "/about",
               "permalink": "/docs/about",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/about.mdx",
               "tags": [],
               "version": "current",
@@ -733,6 +765,7 @@
               "sourceDirName": "JVM/性能监控和调优入门",
               "slug": "/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
               "permalink": "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控.md",
               "tags": [],
               "version": "current",
@@ -755,6 +788,7 @@
               "sourceDirName": "JVM",
               "slug": "/JVM",
               "permalink": "/docs/JVM",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/JVM/about.mdx",
               "tags": [],
               "version": "current",
@@ -773,6 +807,7 @@
               "sourceDirName": "LeetCode刷题笔记",
               "slug": "/LeetCode刷题笔记/illustrationOfAlgorithm",
               "permalink": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/LeetCode刷题笔记/图解算法数据结构.md",
               "tags": [],
               "version": "current",
@@ -795,6 +830,7 @@
               "sourceDirName": "LeetCode刷题笔记",
               "slug": "/leetCode",
               "permalink": "/docs/leetCode",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/LeetCode刷题笔记/about.md",
               "tags": [],
               "version": "current",
@@ -818,6 +854,7 @@
               "sourceDirName": "Linux",
               "slug": "/linuxCommand",
               "permalink": "/docs/linuxCommand",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Linux/Linux命令.md",
               "tags": [],
               "version": "current",
@@ -837,6 +874,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/缓冲池",
               "permalink": "/docs/Mysql/高级特性/缓冲池",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/缓冲池.md",
               "tags": [],
               "version": "current",
@@ -863,6 +901,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/设计索引",
               "permalink": "/docs/Mysql/高级特性/设计索引",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/设计索引.md",
               "tags": [],
               "version": "current",
@@ -890,6 +929,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/事务基础",
               "permalink": "/docs/Mysql/高级特性/事务基础",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/事务基础.md",
               "tags": [],
               "version": "current",
@@ -916,6 +956,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/数据库其他调优策略",
               "permalink": "/docs/Mysql/高级特性/数据库其他调优策略",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/数据库其他调优策略.md",
               "tags": [],
               "version": "current",
@@ -942,6 +983,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/数据库设计规范",
               "permalink": "/docs/Mysql/高级特性/数据库设计规范",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/数据库设计规范.md",
               "tags": [],
               "version": "current",
@@ -968,6 +1010,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/索引",
               "permalink": "/docs/Mysql/高级特性/索引",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引.md",
               "tags": [],
               "version": "current",
@@ -994,6 +1037,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/索引的应用",
               "permalink": "/docs/Mysql/高级特性/索引的应用",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引的应用.md",
               "tags": [],
               "version": "current",
@@ -1020,6 +1064,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/索引与查询优化",
               "permalink": "/docs/Mysql/高级特性/索引与查询优化",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引与查询优化.md",
               "tags": [],
               "version": "current",
@@ -1046,6 +1091,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/锁",
               "permalink": "/docs/Mysql/高级特性/锁",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/锁.md",
               "tags": [],
               "version": "current",
@@ -1072,6 +1118,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/性能分析工具",
               "permalink": "/docs/Mysql/高级特性/性能分析工具",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能分析工具.md",
               "tags": [],
               "version": "current",
@@ -1098,6 +1145,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/性能监控工具",
               "permalink": "/docs/Mysql/高级特性/性能监控工具",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能监控工具.md",
               "tags": [],
               "version": "current",
@@ -1124,6 +1172,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/用户权限管理",
               "permalink": "/docs/Mysql/高级特性/用户权限管理",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/用户权限管理.md",
               "tags": [],
               "version": "current",
@@ -1150,6 +1199,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/InnoDB表空间",
               "permalink": "/docs/Mysql/高级特性/InnoDB表空间",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB表空间.md",
               "tags": [],
               "version": "current",
@@ -1176,6 +1226,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/InnoDB数据页结构",
               "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB数据页结构.md",
               "tags": [],
               "version": "current",
@@ -1202,6 +1253,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/MVCC",
               "permalink": "/docs/Mysql/高级特性/MVCC",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MVCC.md",
               "tags": [],
               "version": "current",
@@ -1228,6 +1280,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/MySQL 部署",
               "permalink": "/docs/Mysql/高级特性/MySQL 部署",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL 部署.md",
               "tags": [],
               "version": "current",
@@ -1254,6 +1307,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/MySQL逻辑架构",
               "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL逻辑架构.md",
               "tags": [],
               "version": "current",
@@ -1280,6 +1334,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/Redo日志",
               "permalink": "/docs/Mysql/高级特性/Redo日志",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/Redo日志.md",
               "tags": [],
               "version": "current",
@@ -1306,6 +1361,7 @@
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/Undo日志",
               "permalink": "/docs/Mysql/高级特性/Undo日志",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/Undo日志.md",
               "tags": [],
               "version": "current",
@@ -1332,6 +1388,7 @@
               "sourceDirName": "Mysql/基础",
               "slug": "/Mysql/基础/MySQL函数与聚合",
               "permalink": "/docs/Mysql/基础/MySQL函数与聚合",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL函数与聚合.md",
               "tags": [],
               "version": "current",
@@ -1358,6 +1415,7 @@
               "sourceDirName": "Mysql/基础",
               "slug": "/Mysql/基础/MySQL基础查询",
               "permalink": "/docs/Mysql/基础/MySQL基础查询",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL基础.md",
               "tags": [],
               "version": "current",
@@ -1384,6 +1442,7 @@
               "sourceDirName": "Mysql/基础",
               "slug": "/Mysql/基础/MySQL库对象",
               "permalink": "/docs/Mysql/基础/MySQL库对象",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL库对象.md",
               "tags": [],
               "version": "current",
@@ -1410,6 +1469,7 @@
               "sourceDirName": "Mysql/基础",
               "slug": "/Mysql/基础/MySQL子查询",
               "permalink": "/docs/Mysql/基础/MySQL子查询",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL子查询.md",
               "tags": [],
               "version": "current",
@@ -1436,6 +1496,7 @@
               "sourceDirName": "Mysql",
               "slug": "/mysql",
               "permalink": "/docs/mysql",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/about.md",
               "tags": [],
               "version": "current",
@@ -1459,6 +1520,7 @@
               "sourceDirName": "Mysql",
               "slug": "/Mysql/MySQL参数与命令",
               "permalink": "/docs/Mysql/MySQL参数与命令",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/MySQL参数与语句.md",
               "tags": [],
               "version": "current",
@@ -1481,6 +1543,7 @@
               "sourceDirName": "source/acg",
               "slug": "/source/acg/acgShare_2022",
               "permalink": "/docs/source/acg/acgShare_2022",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/acg/2022.md",
               "tags": [],
               "version": "current",
@@ -1504,6 +1567,7 @@
               "sourceDirName": "source",
               "slug": "/source/devSource",
               "permalink": "/docs/source/devSource",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/about.md",
               "tags": [],
               "version": "current",
@@ -1527,6 +1591,7 @@
               "sourceDirName": "Spring/注解驱动开发",
               "slug": "/Spring/注解驱动开发/组件注册",
               "permalink": "/docs/Spring/注解驱动开发/组件注册",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/注解驱动开发/组件注册之简单注册.md",
               "tags": [],
               "version": "current",
@@ -1549,6 +1614,7 @@
               "sourceDirName": "Spring",
               "slug": "/spring",
               "permalink": "/docs/spring",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/about.mdx",
               "tags": [],
               "version": "current",
@@ -1572,6 +1638,7 @@
               "sourceDirName": "Spring/Spring编程思想",
               "slug": "/Spring/Spring编程思想/依赖查找",
               "permalink": "/docs/Spring/Spring编程思想/依赖查找",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.3依赖查找.md",
               "tags": [],
               "version": "current",
@@ -1598,6 +1665,7 @@
               "sourceDirName": "Spring/Spring编程思想",
               "slug": "/Spring/Spring编程思想/依赖注入",
               "permalink": "/docs/Spring/Spring编程思想/依赖注入",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.4依赖注入.md",
               "tags": [],
               "version": "current",
@@ -1624,6 +1692,7 @@
               "sourceDirName": "Spring/Spring编程思想",
               "slug": "/Spring/Spring编程思想/Bean",
               "permalink": "/docs/Spring/Spring编程思想/Bean",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.2Bean.md",
               "tags": [],
               "version": "current",
@@ -1650,6 +1719,7 @@
               "sourceDirName": "Spring/Spring编程思想",
               "slug": "/Spring/Spring编程思想/IOC容器",
               "permalink": "/docs/Spring/Spring编程思想/IOC容器",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.1IOC.md",
               "tags": [],
               "version": "current",
@@ -1676,6 +1746,7 @@
               "sourceDirName": "SpringCloud",
               "slug": "/SpringCloud/微服务技术栈",
               "permalink": "/docs/SpringCloud/微服务技术栈",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/微服务技术栈.md",
               "tags": [],
               "version": "current",
@@ -1702,6 +1773,7 @@
               "sourceDirName": "SpringCloud/Alibaba",
               "slug": "/SpringCloud/Alibaba/Nacos",
               "permalink": "/docs/SpringCloud/Alibaba/Nacos",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/服务注册与配置中心-Nacos.md",
               "tags": [],
               "version": "current",
@@ -1728,6 +1800,7 @@
               "sourceDirName": "SpringCloud/Alibaba",
               "slug": "/SpringCloud/Alibaba/Sentinel",
               "permalink": "/docs/SpringCloud/Alibaba/Sentinel",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
               "tags": [],
               "version": "current",
@@ -1750,6 +1823,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Bus",
               "permalink": "/docs/SpringCloud/Netflix/Bus",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.7消息总线-Bus.md",
               "tags": [],
               "version": "current",
@@ -1776,6 +1850,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Config",
               "permalink": "/docs/SpringCloud/Netflix/Config",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
               "tags": [],
               "version": "current",
@@ -1802,6 +1877,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/eureka_config",
               "permalink": "/docs/SpringCloud/Netflix/eureka_config",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/Eureka配置说明.md",
               "tags": [],
               "version": "current",
@@ -1819,6 +1895,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Eureka&Consul",
               "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
               "tags": [],
               "version": "current",
@@ -1845,6 +1922,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/GateWay",
               "permalink": "/docs/SpringCloud/Netflix/GateWay",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.5服务网关-GateWay.md",
               "tags": [],
               "version": "current",
@@ -1871,6 +1949,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Hystrix",
               "permalink": "/docs/SpringCloud/Netflix/Hystrix",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
               "tags": [],
               "version": "current",
@@ -1897,6 +1976,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/OpenFeign",
               "permalink": "/docs/SpringCloud/Netflix/OpenFeign",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
               "tags": [],
               "version": "current",
@@ -1923,6 +2003,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Ribbon",
               "permalink": "/docs/SpringCloud/Netflix/Ribbon",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.2服务调用-Ribbon.md",
               "tags": [],
               "version": "current",
@@ -1949,6 +2030,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Sleuth",
               "permalink": "/docs/SpringCloud/Netflix/Sleuth",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
               "tags": [],
               "version": "current",
@@ -1975,6 +2057,7 @@
               "sourceDirName": "SpringCloud/Netflix",
               "slug": "/SpringCloud/Netflix/Stream",
               "permalink": "/docs/SpringCloud/Netflix/Stream",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.8消息驱动-Stream.md",
               "tags": [],
               "version": "current",
@@ -2001,6 +2084,7 @@
               "sourceDirName": "SpringCloud",
               "slug": "/springCloud",
               "permalink": "/docs/springCloud",
+              "draft": false,
               "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/about.mdx",
               "tags": [],
               "version": "current",
@@ -2016,17 +2100,20 @@
               }
             }
           ],
+          "drafts": [],
           "sidebars": {
             "basicSideBar": [
               {
                 "type": "doc",
                 "id": "并发编程/currency_about",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "doc",
                 "id": "并发编程/juc基础",
-                "label": "并发包基础"
+                "label": "并发包基础",
+                "translatable": true
               },
               {
                 "type": "category",
@@ -2128,14 +2215,16 @@
               {
                 "type": "doc",
                 "id": "Linux/linuxCommand",
-                "label": "Linux命令"
+                "label": "Linux命令",
+                "translatable": true
               }
             ],
             "sourceSideBar": [
               {
                 "type": "doc",
                 "id": "source/devSource",
-                "label": "资源分享"
+                "label": "资源分享",
+                "translatable": true
               },
               {
                 "type": "category",
@@ -2159,7 +2248,8 @@
               {
                 "type": "doc",
                 "id": "Spring/spring",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "category",
@@ -2225,7 +2315,8 @@
               {
                 "type": "doc",
                 "id": "SpringCloud/springCloud",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "category",
@@ -2319,19 +2410,22 @@
               {
                 "type": "doc",
                 "id": "计算机网络/networrk-basic",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "doc",
                 "id": "计算机网络/HTTP/http-protocol",
-                "label": "HTTP协议"
+                "label": "HTTP协议",
+                "translatable": true
               }
             ],
             "mysqlSideBar": [
               {
                 "type": "doc",
                 "id": "Mysql/mysql",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "category",
@@ -2519,14 +2613,16 @@
               {
                 "type": "doc",
                 "id": "Mysql/MySQL参数与命令",
-                "label": "MySQL参数与命令"
+                "label": "MySQL参数与命令",
+                "translatable": true
               }
             ],
             "vueSideBar": [
               {
                 "type": "doc",
                 "id": "前端/Vue/vueDesc",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "category",
@@ -2563,7 +2659,8 @@
               {
                 "type": "doc",
                 "id": "数据结构与算法/dataStructure",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "category",
@@ -2600,12 +2697,14 @@
               {
                 "type": "doc",
                 "id": "LeetCode刷题笔记/leetCode",
-                "label": "简介"
+                "label": "简介",
+                "translatable": true
               },
               {
                 "type": "doc",
                 "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
-                "label": "图解算法数据结构"
+                "label": "图解算法数据结构",
+                "translatable": true
               }
             ],
             "jvmSideBar": [
@@ -2640,328 +2739,7 @@
                 "collapsible": true
               }
             ]
-          },
-          "mainDocId": "并发编程/currency_about",
-          "categoryGeneratedIndices": [
-            {
-              "title": "并发基础",
-              "slug": "/category/并发基础",
-              "permalink": "/docs/category/并发基础",
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "并发包基础",
-                "permalink": "/docs/并发编程/juc基础"
-              },
-              "next": {
-                "title": "并发安全",
-                "permalink": "/docs/category/并发安全"
-              }
-            },
-            {
-              "title": "并发安全",
-              "slug": "/category/并发安全",
-              "permalink": "/docs/category/并发安全",
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "并发基础",
-                "permalink": "/docs/category/并发基础"
-              },
-              "next": {
-                "title": "线程安全",
-                "permalink": "/docs/并发编程/并发安全/线程安全"
-              }
-            },
-            {
-              "title": "并发控制",
-              "slug": "/category/并发控制",
-              "permalink": "/docs/category/并发控制",
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "死锁与其他活跃锁",
-                "permalink": "/docs/并发编程/并发安全/dead_lock"
-              },
-              "next": {
-                "title": "线程池",
-                "permalink": "/docs/并发编程/并发控制/线程池"
-              }
-            },
-            {
-              "title": "动漫分享",
-              "slug": "/category/动漫分享",
-              "permalink": "/docs/category/动漫分享",
-              "sidebar": "sourceSideBar",
-              "previous": {
-                "title": "资源分享",
-                "permalink": "/docs/source/devSource"
-              },
-              "next": {
-                "title": "acg-2022",
-                "permalink": "/docs/source/acg/acgShare_2022"
-              }
-            },
-            {
-              "title": "Spring基础",
-              "slug": "/category/spring基础",
-              "permalink": "/docs/category/spring基础",
-              "sidebar": "springSideBar",
-              "previous": {
-                "title": "Spring",
-                "permalink": "/docs/spring"
-              },
-              "next": {
-                "title": "Spring编程思想",
-                "permalink": "/docs/category/spring编程思想"
-              }
-            },
-            {
-              "title": "Spring编程思想",
-              "slug": "/category/spring编程思想",
-              "permalink": "/docs/category/spring编程思想",
-              "sidebar": "springSideBar",
-              "previous": {
-                "title": "Spring基础",
-                "permalink": "/docs/category/spring基础"
-              },
-              "next": {
-                "title": "IOC容器",
-                "permalink": "/docs/Spring/Spring编程思想/IOC容器"
-              }
-            },
-            {
-              "title": "Spring注解",
-              "slug": "/category/spring注解",
-              "permalink": "/docs/category/spring注解",
-              "sidebar": "springSideBar",
-              "previous": {
-                "title": "依赖注入",
-                "permalink": "/docs/Spring/Spring编程思想/依赖注入"
-              },
-              "next": {
-                "title": "组件注册",
-                "permalink": "/docs/Spring/注解驱动开发/组件注册"
-              }
-            },
-            {
-              "title": "微服务基础",
-              "slug": "/category/微服务基础",
-              "permalink": "/docs/category/微服务基础",
-              "sidebar": "springCloudSideBar",
-              "previous": {
-                "title": "springCloud",
-                "permalink": "/docs/springCloud"
-              },
-              "next": {
-                "title": "微服务技术栈",
-                "permalink": "/docs/SpringCloud/微服务技术栈"
-              }
-            },
-            {
-              "title": "SpringCloud-Netflix",
-              "slug": "/category/springcloud-netflix",
-              "permalink": "/docs/category/springcloud-netflix",
-              "sidebar": "springCloudSideBar",
-              "previous": {
-                "title": "微服务技术栈",
-                "permalink": "/docs/SpringCloud/微服务技术栈"
-              },
-              "next": {
-                "title": "服务注册-Eureka&Consul",
-                "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"
-              }
-            },
-            {
-              "title": "SpringCloud-Alibaba",
-              "slug": "/category/springcloud-alibaba",
-              "permalink": "/docs/category/springcloud-alibaba",
-              "sidebar": "springCloudSideBar",
-              "previous": {
-                "title": "链路追踪-Sleuth",
-                "permalink": "/docs/SpringCloud/Netflix/Sleuth"
-              },
-              "next": {
-                "title": "服务注册与配置中心-Nacos",
-                "permalink": "/docs/SpringCloud/Alibaba/Nacos"
-              }
-            },
-            {
-              "title": "MySQL基础与高级",
-              "slug": "/category/mysql基础与高级",
-              "permalink": "/docs/category/mysql基础与高级",
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "MySQL笔记概述",
-                "permalink": "/docs/mysql"
-              },
-              "next": {
-                "title": "基础知识",
-                "permalink": "/docs/category/基础知识"
-              }
-            },
-            {
-              "title": "基础知识",
-              "slug": "/category/基础知识",
-              "permalink": "/docs/category/基础知识",
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "MySQL基础与高级",
-                "permalink": "/docs/category/mysql基础与高级"
-              },
-              "next": {
-                "title": "MySQL基础查询",
-                "permalink": "/docs/Mysql/基础/MySQL基础查询"
-              }
-            },
-            {
-              "title": "数据库管理",
-              "slug": "/category/数据库管理",
-              "permalink": "/docs/category/数据库管理",
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "MySQL库对象",
-                "permalink": "/docs/Mysql/基础/MySQL库对象"
-              },
-              "next": {
-                "title": "MySQL 部署",
-                "permalink": "/docs/Mysql/高级特性/MySQL 部署"
-              }
-            },
-            {
-              "title": "架构与引擎",
-              "slug": "/category/架构与引擎",
-              "permalink": "/docs/category/架构与引擎",
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "用户权限管理",
-                "permalink": "/docs/Mysql/高级特性/用户权限管理"
-              },
-              "next": {
-                "title": "MySQL逻辑架构",
-                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
-              }
-            },
-            {
-              "title": "存储结构与索引",
-              "slug": "/category/存储结构与索引",
-              "permalink": "/docs/category/存储结构与索引",
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "缓冲池",
-                "permalink": "/docs/Mysql/高级特性/缓冲池"
-              },
-              "next": {
-                "title": "索引",
-                "permalink": "/docs/Mysql/高级特性/索引"
-              }
-            },
-            {
-              "title": "性能优化",
-              "slug": "/category/性能优化",
-              "permalink": "/docs/category/性能优化",
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "InnoDB表空间",
-                "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
-              },
-              "next": {
-                "title": "性能分析工具",
-                "permalink": "/docs/Mysql/高级特性/性能分析工具"
-              }
-            },
-            {
-              "title": "事务与锁",
-              "slug": "/category/事务与锁",
-              "permalink": "/docs/category/事务与锁",
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "数据库其他调优策略",
-                "permalink": "/docs/Mysql/高级特性/数据库其他调优策略"
-              },
-              "next": {
-                "title": "事务基础",
-                "permalink": "/docs/Mysql/高级特性/事务基础"
-              }
-            },
-            {
-              "title": "Vue学习笔记",
-              "slug": "/category/vue学习笔记",
-              "permalink": "/docs/category/vue学习笔记",
-              "sidebar": "vueSideBar",
-              "previous": {
-                "title": "vue学习笔记",
-                "permalink": "/docs/front/Vue"
-              },
-              "next": {
-                "title": "Vue基础",
-                "permalink": "/docs/category/vue基础"
-              }
-            },
-            {
-              "title": "Vue基础",
-              "slug": "/category/vue基础",
-              "permalink": "/docs/category/vue基础",
-              "sidebar": "vueSideBar",
-              "previous": {
-                "title": "Vue学习笔记",
-                "permalink": "/docs/category/vue学习笔记"
-              },
-              "next": {
-                "title": "Vue基础特性",
-                "permalink": "/docs/前端/Vue/基础特性"
-              }
-            },
-            {
-              "title": "数据结构与算法基础",
-              "slug": "/category/数据结构与算法基础",
-              "permalink": "/docs/category/数据结构与算法基础",
-              "sidebar": "dataStructureSidebar",
-              "previous": {
-                "title": "数据结构与算法",
-                "permalink": "/docs/dataStructure"
-              },
-              "next": {
-                "title": "基础知识",
-                "permalink": "/docs/category/基础知识-1"
-              }
-            },
-            {
-              "title": "基础知识",
-              "slug": "/category/基础知识-1",
-              "permalink": "/docs/category/基础知识-1",
-              "sidebar": "dataStructureSidebar",
-              "previous": {
-                "title": "数据结构与算法基础",
-                "permalink": "/docs/category/数据结构与算法基础"
-              },
-              "next": {
-                "title": "前提基础知识",
-                "permalink": "/docs/数据结构与算法/基础/前提基础知识"
-              }
-            },
-            {
-              "title": "JVM优化",
-              "slug": "/category/jvm优化",
-              "permalink": "/docs/category/jvm优化",
-              "sidebar": "jvmSideBar",
-              "next": {
-                "title": "性能监控和调优入门",
-                "permalink": "/docs/category/性能监控和调优入门"
-              }
-            },
-            {
-              "title": "性能监控和调优入门",
-              "slug": "/category/性能监控和调优入门",
-              "permalink": "/docs/category/性能监控和调优入门",
-              "sidebar": "jvmSideBar",
-              "previous": {
-                "title": "JVM优化",
-                "permalink": "/docs/category/jvm优化"
-              },
-              "next": {
-                "title": "JDK命令行",
-                "permalink": "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控"
-              }
-            }
-          ]
+          }
         }
       ]
     }
@@ -2986,8 +2764,8 @@
                 "permalink": "/blog/tags/alibaba"
               }
             ],
-            "readingTime": 0.21666666666666667,
-            "truncated": false,
+            "readingTime": 0.22,
+            "hasTruncateMarker": true,
             "authors": [
               {
                 "name": "花裤衩",
@@ -3025,7 +2803,7 @@
               "permalink": "/blog/gotConcurrencyAli"
             }
           },
-          "content": "## 推荐文章(分布式事务)\r\n\r\n1. [阿里 Seata 新版本终于解决了 TCC 模式的幂等、悬挂和空回滚问题](https://juejin.cn/post/7139824265825615885#heading-8)\r\n\r\n\r\n## 推荐文章(消息队列)\r\n\r\n1. [RocketMQ 消息集成：多类型业务消息-普通消息](https://juejin.cn/post/7139827799795171359)"
+          "content": "## 推荐文章(分布式事务)\r\n\r\n1. [阿里 Seata 新版本终于解决了 TCC 模式的幂等、悬挂和空回滚问题](https://juejin.cn/post/7139824265825615885#heading-8)\r\n\r\n\r\n## 推荐文章(消息队列)\r\n\r\n1. [RocketMQ 消息集成：多类型业务消息-普通消息](https://juejin.cn/post/7139827799795171359)\r\n\r\n\r\n\r\n<!--truncate-->"
         },
         {
           "id": "gotConcurrencyAli",
@@ -3051,8 +2829,8 @@
                 "permalink": "/blog/tags/alibaba"
               }
             ],
-            "readingTime": 3.776666666666667,
-            "truncated": false,
+            "readingTime": 3.78,
+            "hasTruncateMarker": true,
             "authors": [
               {
                 "name": "花裤衩",
@@ -3096,7 +2874,7 @@
               "permalink": "/blog/internal-navigation"
             }
           },
-          "content": "**现实中，哪怕是大公司，高并发系统也是可遇不可求的。不过，高并发其实是可以通过压测来模拟的。**\n\n高并发的背后，核心是高可用和低延迟。所以我们其实是想有能力设计一个系统，在高并发访问的时候，系统依然可用，而且响应速度不会变慢。\n\n想提升高并发系统的设计和开发能力，有2个方面：\n\n**一个是系统的学习相关理论；**\n\n**一个是找一个目标系统，不断想办法去提升他的性能。**\n\n前者是后者的理论基础。\n\n如果想从事一个高并发系统开发的岗位，要学习的相关技术其实是很多的，这些技术核心就是解决高并发情况下如何保持系统的高可用和低延迟。\n\n以Java工程师为例，互联网程序员面试中经常会考察的内容包括：\n\n**（1） 架构设计：**\n\n高可用与稳定性、事务一致性、多副本一致性、CAP理论。\n\n**（2） 相关技术：**\n\n多线程（JUC/AQS/线程池）、RPC调用及框架（如Thrift）、NIO及NIO框架（如Netty）、高并发框架（如Disruptor） 、微服务框架（SpringBoot）、微服务治理（Spring Cloud）、数据库相关技术（如：索引优化、分库分表、读写分离）、分布式缓存（如redis）、消息中间件系统（如RabbitMQ）、容器技术（如docker）。\n\n**（3） 工具：**\n\n系统性能查看（top、uptime、vmstat、iostat）、压测工具（如ab、locust、Jmeter、go）、线程分析（如jps、jstack）等。\n\n当然，一开始，我们不可能逐一把这些技能全部掌握，我们可以从一个实际项目入手，不断的把这些技术用上去，发现哪些知识不足，再去补充相关的知识。\n\n**“如何设计一个好的秒杀系统“，一定是互联网大厂面试中最常问的一个问题。所以从设计一个秒杀系统开始实践，是个不错的选择。**\n\n**秒杀系统的特点：**\n\n**（1）瞬时并发量大**\n\n秒杀时会有大量用户在同一时间进行抢购，瞬时并发访问量突增 10 倍，甚至 100 倍以上都有。\n\n**（2）库存量少**\n\n一般秒杀活动商品量很少，这就导致了只有极少量用户能成功购买到。\n\n**（3）业务简单**\n\n流程比较简单，一般都是下订单、扣库存、支付订单。\n\n设计秒杀系统的关键点：\n\n**（1）限流**\n\n由于活动库存量一般都是很少，对应的只有少部分用户才能秒杀成功。所以我们需要限制大部分用户流量，只准少量用户流量进入后端服务器。\n\n**（2）削峰**\n\n秒杀开始的那一瞬间，会有大量用户冲击进来，所以在开始时候会有一个瞬间流量峰值。如何把瞬间的流量峰值变得更平缓，是能否成功设计好秒杀系统的关键因素。实现流量削峰填谷，一般的采用缓存和 MQ 中间件来解决。\n\n**（3）异步**\n\n秒杀其实可以当做高并发系统来处理，在这个时候，可以考虑从业务上做兼容，将同步的业务，设计成异步处理的任务，提高网站的整体可用性。\n\n**（4）缓存**\n\n秒杀系统的瓶颈主要体现在下订单、扣减库存流程中。在这些流程中主要用到 OLTP 的数据库，类似 MySQL、Oracle。由于数据库底层采用 B+ 树的储存结构，对应我们随机写入与读取的效率，相对较低。如果我们把部分业务逻辑迁移到内存的缓存或者 Redis 中，会极大的提高并发效率。\n\n从0到1搭建一个秒杀系统，也并不容易，涉及到很多前端、后端、中间件的技术。这个跟其实是所有公司的工作常态，大部分时间也是在搭架子，真正做技术优化的时间并不多，经常是在业务量突增或者大促活动来临时，集中搞一波性能优化。\n\n所以，如果没有实际的高并发项目可做，自己弄个秒杀系统自娱自乐也是不错的。\n\n**搭建系统 -> 压测 -> 发现问题 -> 学习知识 -> 优化系统，通过这样的循环，相信你一定既能体验到学习的乐趣，同时实力也大幅提升。**"
+          "content": "**现实中，哪怕是大公司，高并发系统也是可遇不可求的。不过，高并发其实是可以通过压测来模拟的。**\n\n高并发的背后，核心是高可用和低延迟。所以我们其实是想有能力设计一个系统，在高并发访问的时候，系统依然可用，而且响应速度不会变慢。\n\n<!--truncate-->\n\n想提升高并发系统的设计和开发能力，有2个方面：\n\n**一个是系统的学习相关理论；**\n\n**一个是找一个目标系统，不断想办法去提升他的性能。**\n\n前者是后者的理论基础。\n\n如果想从事一个高并发系统开发的岗位，要学习的相关技术其实是很多的，这些技术核心就是解决高并发情况下如何保持系统的高可用和低延迟。\n\n以Java工程师为例，互联网程序员面试中经常会考察的内容包括：\n\n**（1） 架构设计：**\n\n高可用与稳定性、事务一致性、多副本一致性、CAP理论。\n\n**（2） 相关技术：**\n\n多线程（JUC/AQS/线程池）、RPC调用及框架（如Thrift）、NIO及NIO框架（如Netty）、高并发框架（如Disruptor） 、微服务框架（SpringBoot）、微服务治理（Spring Cloud）、数据库相关技术（如：索引优化、分库分表、读写分离）、分布式缓存（如redis）、消息中间件系统（如RabbitMQ）、容器技术（如docker）。\n\n**（3） 工具：**\n\n系统性能查看（top、uptime、vmstat、iostat）、压测工具（如ab、locust、Jmeter、go）、线程分析（如jps、jstack）等。\n\n当然，一开始，我们不可能逐一把这些技能全部掌握，我们可以从一个实际项目入手，不断的把这些技术用上去，发现哪些知识不足，再去补充相关的知识。\n\n**“如何设计一个好的秒杀系统“，一定是互联网大厂面试中最常问的一个问题。所以从设计一个秒杀系统开始实践，是个不错的选择。**\n\n**秒杀系统的特点：**\n\n**（1）瞬时并发量大**\n\n秒杀时会有大量用户在同一时间进行抢购，瞬时并发访问量突增 10 倍，甚至 100 倍以上都有。\n\n**（2）库存量少**\n\n一般秒杀活动商品量很少，这就导致了只有极少量用户能成功购买到。\n\n**（3）业务简单**\n\n流程比较简单，一般都是下订单、扣库存、支付订单。\n\n设计秒杀系统的关键点：\n\n**（1）限流**\n\n由于活动库存量一般都是很少，对应的只有少部分用户才能秒杀成功。所以我们需要限制大部分用户流量，只准少量用户流量进入后端服务器。\n\n**（2）削峰**\n\n秒杀开始的那一瞬间，会有大量用户冲击进来，所以在开始时候会有一个瞬间流量峰值。如何把瞬间的流量峰值变得更平缓，是能否成功设计好秒杀系统的关键因素。实现流量削峰填谷，一般的采用缓存和 MQ 中间件来解决。\n\n**（3）异步**\n\n秒杀其实可以当做高并发系统来处理，在这个时候，可以考虑从业务上做兼容，将同步的业务，设计成异步处理的任务，提高网站的整体可用性。\n\n**（4）缓存**\n\n秒杀系统的瓶颈主要体现在下订单、扣减库存流程中。在这些流程中主要用到 OLTP 的数据库，类似 MySQL、Oracle。由于数据库底层采用 B+ 树的储存结构，对应我们随机写入与读取的效率，相对较低。如果我们把部分业务逻辑迁移到内存的缓存或者 Redis 中，会极大的提高并发效率。\n\n从0到1搭建一个秒杀系统，也并不容易，涉及到很多前端、后端、中间件的技术。这个跟其实是所有公司的工作常态，大部分时间也是在搭架子，真正做技术优化的时间并不多，经常是在业务量突增或者大促活动来临时，集中搞一波性能优化。\n\n所以，如果没有实际的高并发项目可做，自己弄个秒杀系统自娱自乐也是不错的。\n\n**搭建系统 -> 压测 -> 发现问题 -> 学习知识 -> 优化系统，通过这样的循环，相信你一定既能体验到学习的乐趣，同时实力也大幅提升。**"
         },
         {
           "id": "internal-navigation",
@@ -3114,8 +2892,8 @@
                 "permalink": "/blog/tags/分享"
               }
             ],
-            "readingTime": 0.5333333333333333,
-            "truncated": false,
+            "readingTime": 0.5366666666666666,
+            "hasTruncateMarker": true,
             "authors": [
               {
                 "name": "花裤衩",
@@ -3143,7 +2921,7 @@
               "permalink": "/blog/gotConcurrencyAli"
             }
           },
-          "content": "## 👨‍💻 ‍前端库\n[**Lodash**](https://www.lodashjs.com/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Day.js**](https://dayjs.gitee.io/docs/zh-CN/installation/installation) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Tailwind**](https://www.tailwindcss.cn/docs) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Sortablejs**](http://www.sortablejs.com/index.html) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Axios**](https://www.axios-http.cn/docs/intro) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dplayer**](http://dplayer.js.org/zh/) \n\n\n## 👨‍💻 ‍后端库\n\n[**MybatisPlus**](https://baomidou.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Hutool**](https://www.hutool.cn/docs/#/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Arthas**](https://arthas.gitee.io/index.html) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**XxlJob**](https://www.xuxueli.com/xxl-conf/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Mycat**](http://www.mycat.org.cn/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**ShardingSphere**](https://shardingsphere.apache.org/document/current/cn/overview/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Shenyu**](https://shenyu.apache.org/zh/docs/index)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Canal**](https://github.com/alibaba/canal/wiki)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Seata**](https://seata.io/zh-cn/docs/overview/what-is-seata.html)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dubbo**](https://dubbo.apache.org/zh/docs/quick-start/)\n\n\n## 🗃 资料\n[**JVM**](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/index.html)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**ES6 入门教程**](https://es6.ruanyifeng.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Source Academy**](https://sourceacademy.org/sicpjs/index)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**百度前端技术学园**](http://ife.baidu.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**FreeCodeCamp**](https://chinese.freecodecamp.org/learn)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**现代 JavaScript 教程**](https://zh.javascript.info/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Quick Reference 各类语言、工具速查**](https://quickref.me/)\n\n## 🔨 CSS工具\n\n[**选择器学习游戏**](https://flukeout.github.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**常见布局**](https://csslayout.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**flex生成**](https://loading.io/flexbox/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**grid生成**](https://cssgr.id/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**css答题**](https://www.guess-css.app/)\n\n\n## 👩‍⚖️‍ 设计师\n[**Coolors 调色板**](https://coolors.co)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dribbble 设计稿**](https://dribbble.com)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Freepik 下载高质量的图片**](https://www.freepik.com)\n\n## 🎊 有趣的网站\n[**Thosefree**](https://www.thosefree.com/)"
+          "content": "## 👨‍💻 ‍前端库\n[**Lodash**](https://www.lodashjs.com/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Day.js**](https://dayjs.gitee.io/docs/zh-CN/installation/installation) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Tailwind**](https://www.tailwindcss.cn/docs) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Sortablejs**](http://www.sortablejs.com/index.html) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Axios**](https://www.axios-http.cn/docs/intro) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dplayer**](http://dplayer.js.org/zh/) \n\n<!--truncate-->\n\n\n## 👨‍💻 ‍后端库\n\n[**MybatisPlus**](https://baomidou.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Hutool**](https://www.hutool.cn/docs/#/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Arthas**](https://arthas.gitee.io/index.html) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**XxlJob**](https://www.xuxueli.com/xxl-conf/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Mycat**](http://www.mycat.org.cn/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**ShardingSphere**](https://shardingsphere.apache.org/document/current/cn/overview/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Shenyu**](https://shenyu.apache.org/zh/docs/index)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Canal**](https://github.com/alibaba/canal/wiki)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Seata**](https://seata.io/zh-cn/docs/overview/what-is-seata.html)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dubbo**](https://dubbo.apache.org/zh/docs/quick-start/)\n\n\n## 🗃 资料\n[**JVM**](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/index.html)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**ES6 入门教程**](https://es6.ruanyifeng.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Source Academy**](https://sourceacademy.org/sicpjs/index)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**百度前端技术学园**](http://ife.baidu.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**FreeCodeCamp**](https://chinese.freecodecamp.org/learn)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**现代 JavaScript 教程**](https://zh.javascript.info/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Quick Reference 各类语言、工具速查**](https://quickref.me/)\n\n## 🔨 CSS工具\n\n[**选择器学习游戏**](https://flukeout.github.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**常见布局**](https://csslayout.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**flex生成**](https://loading.io/flexbox/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**grid生成**](https://cssgr.id/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**css答题**](https://www.guess-css.app/)\n\n\n## 👩‍⚖️‍ 设计师\n[**Coolors 调色板**](https://coolors.co)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dribbble 设计稿**](https://dribbble.com)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Freepik 下载高质量的图片**](https://www.freepik.com)\n\n## 🎊 有趣的网站\n[**Thosefree**](https://www.thosefree.com/)"
         }
       ],
       "blogListPaginated": [
@@ -3159,8 +2937,6 @@
             "postsPerPage": 5,
             "totalPages": 1,
             "totalCount": 3,
-            "previousPage": null,
-            "nextPage": null,
             "blogDescription": "Blog",
             "blogTitle": "Blog"
           }
@@ -3168,7 +2944,7 @@
       ],
       "blogTags": {
         "/blog/tags/alibaba": {
-          "name": "Alibaba",
+          "label": "Alibaba",
           "items": [
             "aliSeata",
             "gotConcurrencyAli"
@@ -3186,8 +2962,6 @@
                 "postsPerPage": 5,
                 "totalPages": 1,
                 "totalCount": 2,
-                "previousPage": null,
-                "nextPage": null,
                 "blogDescription": "Blog",
                 "blogTitle": "Blog"
               }
@@ -3195,7 +2969,7 @@
           ]
         },
         "/blog/tags/高并发": {
-          "name": "高并发",
+          "label": "高并发",
           "items": [
             "gotConcurrencyAli"
           ],
@@ -3211,8 +2985,6 @@
                 "postsPerPage": 5,
                 "totalPages": 1,
                 "totalCount": 1,
-                "previousPage": null,
-                "nextPage": null,
                 "blogDescription": "Blog",
                 "blogTitle": "Blog"
               }
@@ -3220,7 +2992,7 @@
           ]
         },
         "/blog/tags/学习": {
-          "name": "学习",
+          "label": "学习",
           "items": [
             "gotConcurrencyAli"
           ],
@@ -3236,8 +3008,6 @@
                 "postsPerPage": 5,
                 "totalPages": 1,
                 "totalCount": 1,
-                "previousPage": null,
-                "nextPage": null,
                 "blogDescription": "Blog",
                 "blogTitle": "Blog"
               }
@@ -3245,7 +3015,7 @@
           ]
         },
         "/blog/tags/分享": {
-          "name": "分享",
+          "label": "分享",
           "items": [
             "internal-navigation"
           ],
@@ -3261,8 +3031,6 @@
                 "postsPerPage": 5,
                 "totalPages": 1,
                 "totalCount": 1,
-                "previousPage": null,
-                "nextPage": null,
                 "blogDescription": "Blog",
                 "blogTitle": "Blog"
               }
@@ -3287,19 +3055,10 @@
       }
     ]
   },
-  "docusaurus-plugin-debug": {
-    "default": null
-  },
-  "docusaurus-theme-classic": {
-    "default": null
-  },
-  "docusaurus-theme-search-algolia": {
-    "default": null
-  },
-  "docusaurus-plugin-image-zoom": {
-    "default": null
-  },
-  "postcss-tailwindcss-loader": {
-    "default": null
-  }
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-theme-search-algolia": {},
+  "docusaurus-plugin-image-zoom": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
 }

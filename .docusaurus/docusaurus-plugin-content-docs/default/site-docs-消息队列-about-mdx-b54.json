@@ -7,6 +7,7 @@
   "sourceDirName": "消息队列",
   "slug": "/messageQueue",
   "permalink": "/docs/messageQueue",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/消息队列/about.mdx",
   "tags": [],
   "version": "current",

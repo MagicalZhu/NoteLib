@@ -58,8 +58,11 @@ html[data-theme="light"] {
 }
 
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme='dark'] .theme-code-block-highlighted-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+html[data-theme='light'] .theme-code-block-highlighted-line {
+  background-color: rgba(177, 196, 240, 0.82);
 }
 
 html[data-theme="light"] .navbar {
@@ -582,3 +585,8 @@ img.avatar__photo.avatar__photo--xl:hover {
     transition-duration: 59s;
     transition-timing-function: cubic-bezier(.34,0,.84,1);
 }
+
+/*upgrade*/
+.codeBlockLines {
+  min-width: -webkit-fill-available;
+} 

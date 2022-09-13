@@ -7,6 +7,7 @@
   "sourceDirName": "分布式基础技术",
   "slug": "/basicTech",
   "permalink": "/docs/basicTech",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式基础技术/about.mdx",
   "tags": [],
   "version": "current",

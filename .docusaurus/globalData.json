@@ -530,6 +530,7 @@
               "sidebar": "jvmSideBar"
             }
           ],
+          "draftIds": [],
           "sidebars": {
             "basicSideBar": {
               "link": {

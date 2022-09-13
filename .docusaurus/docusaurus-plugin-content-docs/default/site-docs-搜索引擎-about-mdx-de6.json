@@ -7,6 +7,7 @@
   "sourceDirName": "搜索引擎",
   "slug": "/searchEngine",
   "permalink": "/docs/searchEngine",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/搜索引擎/about.mdx",
   "tags": [],
   "version": "current",

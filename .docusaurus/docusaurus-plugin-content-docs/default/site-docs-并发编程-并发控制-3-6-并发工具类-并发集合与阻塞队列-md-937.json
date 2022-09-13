@@ -7,6 +7,7 @@
   "sourceDirName": "并发编程/并发控制",
   "slug": "/并发编程/并发控制/并发集合与阻塞队列",
   "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
   "tags": [],
   "version": "current",

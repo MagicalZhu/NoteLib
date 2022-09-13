@@ -1,13 +1,6 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React from 'react';
 import Translate from '@docusaurus/Translate';
 import {ThemeClassNames} from '@docusaurus/theme-common';
-
 function LastUpdatedAtDate({lastUpdatedAt, formattedLastUpdatedAt}) {
   return (
     <Translate
@@ -16,7 +9,7 @@ function LastUpdatedAtDate({lastUpdatedAt, formattedLastUpdatedAt}) {
       values={{
         date: (
           <b>
-            <time dateTime={new Date(lastUpdatedAt * 1000).toLocaleString()}>
+            <time dateTime={new Date(lastUpdatedAt * 1000).toISOString()}>
               {formattedLastUpdatedAt}
             </time>
           </b>
@@ -26,7 +19,6 @@ function LastUpdatedAtDate({lastUpdatedAt, formattedLastUpdatedAt}) {
     </Translate>
   );
 }
-
 function LastUpdatedByUser({lastUpdatedBy}) {
   return (
     <Translate
@@ -39,7 +31,6 @@ function LastUpdatedByUser({lastUpdatedBy}) {
     </Translate>
   );
 }
-
 export default function LastUpdated({
   lastUpdatedAt,
   formattedLastUpdatedAt,
@@ -70,6 +61,7 @@ export default function LastUpdated({
       </Translate>
       {process.env.NODE_ENV === 'development' && (
         <div>
+          {/* eslint-disable-next-line @docusaurus/no-untranslated-text */}
           <small> (Simulated during dev for better perf)</small>
         </div>
       )}

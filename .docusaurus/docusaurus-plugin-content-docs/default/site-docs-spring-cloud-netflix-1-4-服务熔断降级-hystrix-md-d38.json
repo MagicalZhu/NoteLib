@@ -7,6 +7,7 @@
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/Hystrix",
   "permalink": "/docs/SpringCloud/Netflix/Hystrix",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
   "tags": [],
   "version": "current",

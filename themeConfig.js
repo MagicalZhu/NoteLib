@@ -8,13 +8,14 @@ const navConfig = require('./navbar')
 
 /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 const themeConfig = {
+  // 色彩模式
   colorMode: {
     defaultMode: 'light',
     disableSwitch: false,
     respectPrefersColorScheme: true,
   },
-  hideableSidebar:true,
   image: 'img/fav.png',
+  // 告示条
   announcementBar: {
     id: 'support_us',
     content: '🌟欢迎来到花裤衩的博客🌟',
@@ -23,12 +24,23 @@ const themeConfig = {
     isCloseable: true,
   },
   navbar: navConfig,
+  docs:{
+    sidebar: {
+      hideable: true,
+      autoCollapseCategories: true,
+    }
+  },
   footer: footerConfig,
   prism: {
     theme: lightCodeTheme,
     darkTheme: darkCodeTheme,
     defaultLanguage: 'java',
     additionalLanguages: ['java', 'ini'],
+    magicComments: [{
+      className: 'theme-code-block-highlighted-line',
+      line: 'highlight-next-line',
+      block: {start: 'highlight-start', end: 'highlight-end'},
+    }],
   },
   tableOfContents: {
     minHeadingLevel: 2,

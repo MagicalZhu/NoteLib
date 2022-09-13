@@ -7,6 +7,7 @@
   "sourceDirName": "基础中间件",
   "slug": "/basicMiddleware",
   "permalink": "/docs/basicMiddleware",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/基础中间件/about.mdx",
   "tags": [],
   "version": "current",

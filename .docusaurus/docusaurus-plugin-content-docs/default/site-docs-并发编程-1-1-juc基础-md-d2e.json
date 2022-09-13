@@ -7,6 +7,7 @@
   "sourceDirName": "并发编程",
   "slug": "/并发编程/juc基础",
   "permalink": "/docs/并发编程/juc基础",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/1.1JUC基础.md",
   "tags": [],
   "version": "current",

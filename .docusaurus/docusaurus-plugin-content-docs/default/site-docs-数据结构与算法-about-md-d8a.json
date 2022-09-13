@@ -7,6 +7,7 @@
   "sourceDirName": "数据结构与算法",
   "slug": "/dataStructure",
   "permalink": "/docs/dataStructure",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/about.md",
   "tags": [],
   "version": "current",

@@ -1,43 +1,14 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-import React, {useRef} from 'react';
-import {useHistory} from '@docusaurus/router';
-import Translate from '@docusaurus/Translate';
-import {useLocationChange} from '@docusaurus/theme-common';
+import React from 'react';
+import Translate, {translate} from '@docusaurus/Translate';
+import {useSkipToContent} from '@docusaurus/theme-common/internal';
 import styles from './styles.module.css';
-
-function programmaticFocus(el) {
-  el.setAttribute('tabindex', '-1');
-  el.focus();
-  el.removeAttribute('tabindex');
-}
-
 export default function SkipToContent() {
-  const containerRef = useRef(null);
-  const {action} = useHistory();
-
-  const handleSkip = (e) => {
-    e.preventDefault();
-    const targetElement =
-      document.querySelector('main:first-of-type') ||
-      document.querySelector('.main-wrapper');
-
-    if (targetElement) {
-      programmaticFocus(targetElement);
-    }
-  };
-
-  useLocationChange(({location}) => {
-    if (containerRef.current && !location.hash && action === 'PUSH') {
-      programmaticFocus(containerRef.current);
-    }
-  });
+  const {containerRef, handleSkip} = useSkipToContent();
   return (
-    <div ref={containerRef} role="region">
+    <div
+      ref={containerRef}
+      role="region"
+      aria-label={translate({id: 'theme.common.skipToMainContent'})}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a href="#" className={styles.skipToContent} onClick={handleSkip}>
         <Translate

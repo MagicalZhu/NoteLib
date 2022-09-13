@@ -7,6 +7,7 @@
   "sourceDirName": "计算机网络",
   "slug": "/networrk-basic",
   "permalink": "/docs/networrk-basic",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/about.md",
   "tags": [],
   "version": "current",

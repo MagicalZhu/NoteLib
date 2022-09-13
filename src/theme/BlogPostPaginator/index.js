@@ -1,9 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
 import PaginatorNavLink from '@theme/PaginatorNavLink';
@@ -17,34 +11,31 @@ export default function BlogPostPaginator(props) {
         message: 'Blog post page navigation',
         description: 'The ARIA label for the blog posts pagination',
       })}>
-      <div className="pagination-nav__item">
-        {prevItem && (
-          <PaginatorNavLink
-            {...prevItem}
-            subLabel={
-              <Translate
-                id="theme.blog.post.paginator.newerPost"
-                description="The blog post button label to navigate to the newer/previous post">
-                Newer Post
-              </Translate>
-            }
-          />
-        )}
-      </div>
-      <div className="pagination-nav__item pagination-nav__item--next">
-        {nextItem && (
-          <PaginatorNavLink
-            {...nextItem}
-            subLabel={
-              <Translate
-                id="theme.blog.post.paginator.olderPost"
-                description="The blog post button label to navigate to the older/next post">
-                Older Post
-              </Translate>
-            }
-          />
-        )}
-      </div>
+      {prevItem && (
+        <PaginatorNavLink
+          {...prevItem}
+          subLabel={
+            <Translate
+              id="theme.blog.post.paginator.newerPost"
+              description="The blog post button label to navigate to the newer/previous post">
+              Newer Post
+            </Translate>
+          }
+        />
+      )}
+      {nextItem && (
+        <PaginatorNavLink
+          {...nextItem}
+          subLabel={
+            <Translate
+              id="theme.blog.post.paginator.olderPost"
+              description="The blog post button label to navigate to the older/next post">
+              Older Post
+            </Translate>
+          }
+          isNext
+        />
+      )}
     </nav>
   );
 }

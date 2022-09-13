@@ -7,6 +7,7 @@
   "sourceDirName": "定时任务",
   "slug": "/job",
   "permalink": "/docs/job",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/定时任务/about.mdx",
   "tags": [],
   "version": "current",

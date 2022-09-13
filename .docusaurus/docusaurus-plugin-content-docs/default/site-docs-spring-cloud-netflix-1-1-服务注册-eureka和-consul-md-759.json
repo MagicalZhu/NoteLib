@@ -7,6 +7,7 @@
   "sourceDirName": "SpringCloud/Netflix",
   "slug": "/SpringCloud/Netflix/Eureka&Consul",
   "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul",
+  "draft": false,
   "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
   "tags": [],
   "version": "current",

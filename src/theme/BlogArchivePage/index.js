@@ -1,14 +1,8 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React from 'react';
-import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
-
+import {PageMetadata} from '@docusaurus/theme-common';
+import Layout from '@theme/Layout';
 function Year({year, posts}) {
   return (
     <>
@@ -25,7 +19,6 @@ function Year({year, posts}) {
     </>
   );
 }
-
 function YearsSection({years}) {
   return (
     <section className="margin-vert--lg">
@@ -41,11 +34,10 @@ function YearsSection({years}) {
     </section>
   );
 }
-
 function listPostsByYears(blogPosts) {
   const postsByYear = blogPosts.reduceRight((posts, post) => {
     const year = post.metadata.date.split('-')[0];
-    const yearPosts = posts.get(year) || [];
+    const yearPosts = posts.get(year) ?? [];
     return posts.set(year, [post, ...yearPosts]);
   }, new Map());
   return Array.from(postsByYear, ([year, posts]) => ({
@@ -53,7 +45,6 @@ function listPostsByYears(blogPosts) {
     posts,
   }));
 }
-
 export default function BlogArchive({archive}) {
   const title = translate({
     id: 'theme.blog.archive.title',
@@ -67,14 +58,17 @@ export default function BlogArchive({archive}) {
   });
   const years = listPostsByYears(archive.blogPosts);
   return (
-    <Layout title={title} description={description}>
-      <header className="hero hero--primary">
-        <div className="container">
-          <h1 className="hero__title">{title}</h1>
-          <p className="hero__subtitle">{description}</p>
-        </div>
-      </header>
-      <main>{years.length > 0 && <YearsSection years={years} />}</main>
-    </Layout>
+    <>
+      <PageMetadata title={title} description={description} />
+      <Layout>
+        <header className="hero hero--primary">
+          <div className="container">
+            <h1 className="hero__title">{title}</h1>
+            <p className="hero__subtitle">{description}</p>
+          </div>
+        </header>
+        <main>{years.length > 0 && <YearsSection years={years} />}</main>
+      </Layout>
+    </>
   );
 }

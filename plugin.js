@@ -1,7 +1,7 @@
-const docusauruTailwindcssLoader  = require('./plugins/docusaurus-tailwindcss-loader/index')
+// const docusauruTailwindcssLoader  = require('./plugins/docusaurus-tailwindcss-loader/index')
 const plugin = [
   // '@docusaurus/plugin-debug',
   'plugin-image-zoom',
-  docusauruTailwindcssLoader
+  // docusauruTailwindcssLoader
 ]
 module.exports = plugin
