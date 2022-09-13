@@ -224,7 +224,6 @@ mysql> SELECT * FROM hero;
 ### MVCC整体操作流程
 
 当查询一条记录的时候,系统利用 MVCC 通过以下步骤找到它:
-
 1. 首先获取事务自己的**事务 ID**
 2. 获取 ReadView
 3. 查询得到的数据, 然后与 ReadView 中的事务版本号进行比较
@@ -250,7 +249,7 @@ mysql> SELECT * FROM hero;
 +--------+--------+---------+
 | number | name   | country |
 +--------+--------+---------+
-|      1 | 刘备   | 蜀      |
+|      1 | 刘备    | 蜀      |
 +--------+--------+---------+
 1 row in set (0.07 sec)
 ```
@@ -258,4 +257,34 @@ mysql> SELECT * FROM hero;
 #### Read Committed
 
 - Read Committed 隔离级别 `在每次读取数据前都生成一个 ReadView`
+
+:::info 示例说明
+
+**假设当前系统的事务隔离级别是 *read committed* 中有两个事务(T1、T2)正在执行,它们的 事务id 分别是:trx_100,trx_200:**
+
+```sql title="T1: trx_100"
+-- 事务并没有提交
+BEGIN;
+
+UPDATE hero SET name = '关羽' WHERE number = 1;
+UPDATE hero SET name = '张飞' WHERE number = 1;
+
+```
+
+```sql title="T2: trx_200"
+-- 事务并没有提交
+BEGIN;
+
+# 更新了一些别的表的记录
+...
+
+```
+
+<mark>事务执行过程中,只有在第一次真正修改记录时（比如使用INSERT、DELETE、UPDATE),才会被分配一个单独的事务id，这个事务id是递增的。所以在 T1 中更新一些别的表的记录,目的是让它分配事务id。</mark>
+
+<br/>
+
+
+
+:::
 
