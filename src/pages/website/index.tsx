@@ -21,6 +21,8 @@ function CategoryNav() {
   )
 }
 
+
+
 function CategoryList() {
   return (
     <div className={styles.category}>

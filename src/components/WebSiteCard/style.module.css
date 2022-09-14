@@ -1,59 +1,100 @@
-.websiteCard {
-  background-color: var(--ifm-card-background-color);
-  border-radius: 8px;
-  border: 1px solid rgba(204, 204, 204, 0.5);
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
+
+
+.articlesList {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 0;
+  text-decoration: none;
 }
 
-.websiteCard:hover {
+.post {
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+  overflow: visible;
+  text-decoration: none;
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  text-decoration: none;
+}
+
+.inner {
+  border-radius: 8px;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  font-weight: 800;
+  display: block;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+  min-height: 150px;
+  margin: 0 0px 20px;
+  background-color: var(--ifm-card-background-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.inner:hover {
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.1);
   background-color: #f2f8fd;
   transform: translateY(-5px);
+  text-decoration: none;
 }
 
-.websiteCardImage {
+.pluginHead {
+  display: flex;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.pluginHeadImg {
+  margin-right: 15px !important;
+}
+
+.cardImg {
   align-self: center;
   width: 64px;
   height: 64px;
   min-width: 64px;
 }
 
-.websiteCardHeader {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.websiteCardTitle {
-  margin-bottom: 0;
-  flex: 1 1 auto;
-}
-
-.websiteCardTitle a {
+.pluginHeadDesc {
+  margin-top: 10px;
+  width: calc(100% - 20px) !important;
+  overflow: hidden;
   text-decoration: none;
-  background: linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) 0% 100% / 0% 1px no-repeat;
-  transition: background-size ease-out 200ms;
 }
 
-.websiteCardTitle a:not(:focus):hover {
-  background-size: 100% 1px;
-}
-
-.websiteCardBody {
-  padding: 0.2rem 0 0 var(--ifm-card-horizontal-spacing);
-}
-
-.websiteCardDesc {
-  cursor: pointer;
-  font-size: smaller;
-  line-height: 1.66;
-  width: 100%;
-  margin: 0;
+.pluginHeadTitle {
+  font-size: 13px;
+  font-weight: 600;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 30px;
   display: -webkit-box;
   overflow: hidden;
+  text-decoration: none;
+}
+
+.pluginBody {
+  min-height: 40px;
+  padding: 0 20px 0 20px;
+  /* margin-bottom: 18px; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  display: -webkit-box;
+  overflow: hidden;
+  /* margin-top: 14px; */
+  text-overflow: ellipsis;
+  color: rgba(101, 101, 101, 1);
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  text-decoration: none;
 }
