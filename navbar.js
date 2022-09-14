@@ -132,11 +132,17 @@ const nav = {
         { to: '/docs/source/devSource', label: '分享'},
       ]
     },
-    // {
-    //   position: "right",
-    //   href: '/docs/source/devSource',
-    //   className: 'header-share-link','aria-label': 'GitHub repository',
-    // },
+    {
+      type: Type.search,
+      position: 'right',
+    },
+    /*
+      // i18n
+      {
+        type: Type.localeDropdown,
+        position: 'right',
+      },
+    */
     // 社交账号
     {
       href: 'https://github.com/MagicalZhu',

@@ -47,6 +47,10 @@ const config = {
       rel: "stylesheet",
     },
   ],
+  i18n: {
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
+  },
 }
 
 module.exports = config

@@ -1,29 +1,22 @@
 import React from 'react'
 import clsx from 'clsx'
-import Link from '@docusaurus/Link'
 import Layout from '@theme/Layout'
 import WebsiteCard from '../../components/WebSiteCard/index'
 import { websiteData } from '../../data/website'
 import styles from './website.module.css'
 
+import SiteSiderbar from '../../components/WebSiteSiderbar/SiteSiderbar'
+
 function CategoryNav() {
   const sidebar = {
     title: '',
-    items: websiteData.map((w) => ({ title: w.name, permalink: `#${w.name}` })),
+    items: websiteData.map((w) => ({ title: w.name, permalink: `#${w.name}`, headingId: w.name })),
   }
 
   return (
     <nav className={clsx(styles.sidebar, 'thin-scrollbar')}>
       <div className={clsx(styles.sidebarItemTitle, 'margin-bottom--md')}>{sidebar.title}</div>
-      <ul className={clsx(styles.sidebarItemList, 'clean-list')}>
-        {sidebar.items.map((item) => (
-          <li key={item.permalink} className={styles.sidebarItem}>
-            <Link isNavLink to={item.permalink} className={styles.sidebarItemLink} activeClassName={styles.sidebarItemLinkActive}>
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <SiteSiderbar toc={sidebar.items}/>
     </nav>
   )
 }
