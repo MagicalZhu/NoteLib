@@ -9,7 +9,7 @@ const classicConfig = {
     path: 'docs',
     breadcrumbs: true,
     sidebarPath: require.resolve("./sidebars.js"),
-    editUrl: "https://github.com/MagicalZhu/XDocs/tree/main",
+    editUrl: "https://github.com/MagicalZhu/NoteLib/tree/main",
     showLastUpdateTime: false,
     showLastUpdateAuthor: false,
     remarkPlugins: [require('mdx-mermaid')],
@@ -21,7 +21,7 @@ const classicConfig = {
   // 以下参数将被直接传递给 @docusaurus/plugin-content-blog （设置为 false 则表示禁用此插件）
   blog: {
     path: 'blog',
-    editUrl: 'https://github.com/MagicalZhu/XDocs/tree/main',
+    editUrl: 'https://github.com/MagicalZhu/NoteLib/tree/main',
     postsPerPage: 5,
     authorsMapPath: 'author.yml',
     showReadingTime: true, // 如果设置为 false，「x 分钟阅读」的文字就不会显示

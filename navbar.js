@@ -132,10 +132,6 @@ const nav = {
         { to: '/docs/source/devSource', label: '分享'},
       ]
     },
-    {
-      type: Type.search,
-      position: 'right',
-    },
     /*
       // i18n
       {
@@ -148,7 +144,11 @@ const nav = {
       href: 'https://github.com/MagicalZhu',
       position: 'right',
       className: 'header-github-link','aria-label': 'GitHub repository',
-    }
+    },
+    {
+      type: Type.search,
+      position: 'right',
+    },
   ]
 }
 

@@ -47,10 +47,11 @@ const themeConfig = {
     maxHeadingLevel: 6,
   },
   algolia: {
-    appId: '4FYW54E03N',
-    apiKey: 'bdbf6635d35dfa0c308bb91c8b85ea01',
-    indexName: 'huakucha',
+    appId: 'QZ9YPBGUYT',
+    apiKey: '6fbdcfb4f791b5c14fe38c070c15fbfa',
+    indexName: 'huakuchaDoc',
     contextualSearch: true,
+    searchPagePath: 'search',
   },
   imageZoom: {
     selector: '.markdown img',

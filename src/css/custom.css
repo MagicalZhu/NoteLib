@@ -543,12 +543,6 @@ a.card-link:hover img {
 .dropdown > .navbar__link:after {
   border-style: none;
 }
-/* .codeBlockLines {
-    float: left;
-    font: inherit;
-    min-width: fit-content;
-    padding: var(--ifm-pre-padding);
-} */
 
 .medium-zoom-image {
   margin-top: 10px;
@@ -569,9 +563,6 @@ a.card-link:hover img {
     line-height: 1;
 }
 
-.markdown a {
-    text-decoration: underline;
-}
 
 .markdown li>p {
     margin-top: var(--custom-list-paragraph-margin);

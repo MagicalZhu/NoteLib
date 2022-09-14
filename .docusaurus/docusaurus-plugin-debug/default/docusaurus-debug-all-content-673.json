@@ -12,12 +12,12 @@
           "path": "/docs",
           "tagsPath": "/docs/tags",
           "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs",
-          "editUrlLocalized": "https://github.com/MagicalZhu/XDocs/tree/main/i18n/en/docusaurus-plugin-content-docs/current",
+          "editUrlLocalized": "https://github.com/MagicalZhu/XDocs/tree/main/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/yoey/Desktop/XDocs/sidebars.js",
           "contentPath": "/Users/yoey/Desktop/XDocs/docs",
-          "contentPathLocalized": "/Users/yoey/Desktop/XDocs/i18n/en/docusaurus-plugin-content-docs/current",
+          "contentPathLocalized": "/Users/yoey/Desktop/XDocs/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "并发编程/并发安全/线程安全",
@@ -2757,7 +2757,7 @@
             "title": "阿里技术号",
             "description": "阿里技术号",
             "date": "2022-09-07T00:00:00.000Z",
-            "formattedDate": "September 7, 2022",
+            "formattedDate": "2022年9月7日",
             "tags": [
               {
                 "label": "Alibaba",
@@ -2814,7 +2814,7 @@
             "title": "如何获得高并发的经验?",
             "description": "如何获得高并发的经验?",
             "date": "2022-07-28T00:00:00.000Z",
-            "formattedDate": "July 28, 2022",
+            "formattedDate": "2022年7月28日",
             "tags": [
               {
                 "label": "高并发",
@@ -2885,7 +2885,7 @@
             "title": "网站导航",
             "description": "常用的网址导航",
             "date": "2022-07-20T00:00:00.000Z",
-            "formattedDate": "July 20, 2022",
+            "formattedDate": "2022年7月20日",
             "tags": [
               {
                 "label": "分享",
