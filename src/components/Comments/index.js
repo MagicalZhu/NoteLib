@@ -6,7 +6,7 @@ export default function Comments(props) {
   const {colorMode} = useColorMode();
   let dataCategory = ''
   let dataCategoryID = ''
-  let { type, category, categoryId } = props
+  let { type } = props
   if (type == 'blog') {
     dataCategory = 'Blog'
     dataCategoryID = 'DIC_kwDOG3FwKs4CReC8'
@@ -20,21 +20,18 @@ export default function Comments(props) {
 
   return (
     <Giscus
-      data-repo="MagicalZhu/NoteLib"
-      data-repo-id="R_kgDOG3FwKg"
-      data-category={dataCategory}
-      data-category-id={dataCategoryID}
-      data-mapping="pathname"
-      data-strict="1"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="light"
-      data-lang="zh-CN"
-      data-loading="lazy"
-      theme={colorMode}
-      crossorigin="anonymous"
-      async
+    id={dataCategory}
+    repo="MagicalZhu/NoteLib"
+    repoId="R_kgDOG3FwKg"
+    category={dataCategory}
+    categoryId={dataCategoryID}
+    mapping="pathname"
+    reactionsEnabled="1"
+    emitMetadata="0"
+    inputPosition="top"
+    theme={colorMode}
+    lang="en"
+    loading="lazy"
     />
   );
 }

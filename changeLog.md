@@ -1,3 +1,5 @@
 - update to Version 2.1.0
-  - TagsListByLetter/*
-  - NotFound.js
+  - src/theme/TagsListByLetter/*
+  - src/theme/NotFound.js
+  - src/theme/DocItem/Footer/index.js
+  - src/theme/BlogPostItem/Footer/index.js

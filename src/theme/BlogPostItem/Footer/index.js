@@ -5,6 +5,8 @@ import EditThisPage from '@theme/EditThisPage';
 import TagsListInline from '@theme/TagsListInline';
 import ReadMoreLink from '@theme/BlogPostItem/Footer/ReadMoreLink';
 import styles from './styles.module.css';
+import Comments from '../../../components/Comments/index'
+
 export default function BlogPostItemFooter() {
   const {metadata, isBlogPostPage} = useBlogPost();
   const {tags, title, editUrl, hasTruncateMarker} = metadata;
@@ -16,31 +18,34 @@ export default function BlogPostItemFooter() {
     return null;
   }
   return (
-    <footer
-      className={clsx(
-        'row docusaurus-mt-lg',
-        isBlogPostPage && styles.blogPostFooterDetailsFull,
-      )}>
-      {tagsExists && (
-        <div className={clsx('col', {'col--9': truncatedPost})}>
-          <TagsListInline tags={tags} />
-        </div>
-      )}
+    <>
+      <Comments {...{ type: 'Blog' }} />
+      <footer
+        className={clsx(
+          'row docusaurus-mt-lg',
+          isBlogPostPage && styles.blogPostFooterDetailsFull,
+        )}>
+        {tagsExists && (
+          <div className={clsx('col', {'col--9': truncatedPost})}>
+            <TagsListInline tags={tags} />
+          </div>
+        )}
 
-      {isBlogPostPage && editUrl && (
-        <div className="col margin-top--sm">
-          <EditThisPage editUrl={editUrl} />
-        </div>
-      )}
+        {isBlogPostPage && editUrl && (
+          <div className="col margin-top--sm">
+            <EditThisPage editUrl={editUrl} />
+          </div>
+        )}
 
-      {truncatedPost && (
-        <div
-          className={clsx('col text--right', {
-            'col--3': tagsExists,
-          })}>
-          <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
-        </div>
-      )}
-    </footer>
+        {truncatedPost && (
+          <div
+            className={clsx('col text--right', {
+              'col--3': tagsExists,
+            })}>
+            <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
+          </div>
+        )}
+      </footer>
+    </>
   );
 }
