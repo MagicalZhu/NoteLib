@@ -1,0 +1,3 @@
+- update to Version 2.1.0
+  - TagsListByLetter/*
+  - NotFound.js
