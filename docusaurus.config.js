@@ -17,7 +17,8 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'MagicalZhu', 
-  projectName: 'XDocs',
+  projectName: 'NoteLib',
+  deploymentBranch: 'main',
   presets: [
     [
       'classic',

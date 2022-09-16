@@ -11,8 +11,8 @@
           "className": "docs-version-current",
           "path": "/docs",
           "tagsPath": "/docs/tags",
-          "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs",
-          "editUrlLocalized": "https://github.com/MagicalZhu/XDocs/tree/main/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
+          "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs",
+          "editUrlLocalized": "https://github.com/MagicalZhu/NoteLib/tree/main/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/yoey/Desktop/XDocs/sidebars.js",
@@ -29,7 +29,7 @@
               "slug": "/并发编程/并发安全/线程安全",
               "permalink": "/docs/并发编程/并发安全/线程安全",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -56,7 +56,7 @@
               "slug": "/并发编程/并发安全/dead_lock",
               "permalink": "/docs/并发编程/并发安全/dead_lock",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -83,7 +83,7 @@
               "slug": "/并发编程/并发安全/jmm",
               "permalink": "/docs/并发编程/并发安全/jmm",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.2并发安全-JMM.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.2并发安全-JMM.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -110,7 +110,7 @@
               "slug": "/并发编程/并发安全/volatile",
               "permalink": "/docs/并发编程/并发安全/volatile",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -137,7 +137,7 @@
               "slug": "/并发编程/并发控制/并发集合与阻塞队列",
               "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -164,7 +164,7 @@
               "slug": "/并发编程/并发控制/缓存实战",
               "permalink": "/docs/并发编程/并发控制/缓存实战",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/4.1并发实战-缓存.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/4.1并发实战-缓存.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -187,7 +187,7 @@
               "slug": "/并发编程/并发控制/线程池",
               "permalink": "/docs/并发编程/并发控制/线程池",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -214,7 +214,7 @@
               "slug": "/并发编程/并发控制/线程协作",
               "permalink": "/docs/并发编程/并发控制/线程协作",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -241,7 +241,7 @@
               "slug": "/并发编程/并发控制/AQS",
               "permalink": "/docs/并发编程/并发控制/AQS",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -268,7 +268,7 @@
               "slug": "/并发编程/并发控制/Atomic&CAS",
               "permalink": "/docs/并发编程/并发控制/Atomic&CAS",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -295,7 +295,7 @@
               "slug": "/并发编程/并发控制/final",
               "permalink": "/docs/并发编程/并发控制/final",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -322,7 +322,7 @@
               "slug": "/并发编程/并发控制/FutureTask",
               "permalink": "/docs/并发编程/并发控制/FutureTask",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -349,7 +349,7 @@
               "slug": "/并发编程/并发控制/Lock锁",
               "permalink": "/docs/并发编程/并发控制/Lock锁",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -376,7 +376,7 @@
               "slug": "/并发编程/并发控制/ThreadLocal",
               "permalink": "/docs/并发编程/并发控制/ThreadLocal",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -403,7 +403,7 @@
               "slug": "/currency",
               "permalink": "/docs/currency",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -427,7 +427,7 @@
               "slug": "/并发编程/juc基础",
               "permalink": "/docs/并发编程/juc基础",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/并发编程/1.1JUC基础.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/1.1JUC基础.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -454,7 +454,7 @@
               "slug": "/job",
               "permalink": "/docs/job",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/定时任务/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/定时任务/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -473,7 +473,7 @@
               "slug": "/basicTech",
               "permalink": "/docs/basicTech",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式基础技术/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式基础技术/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -492,7 +492,7 @@
               "slug": "/distribute",
               "permalink": "/docs/distribute",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/分布式理论/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式理论/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -511,7 +511,7 @@
               "slug": "/cache",
               "permalink": "/docs/cache",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/缓存/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/缓存/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -530,7 +530,7 @@
               "slug": "/basicMiddleware",
               "permalink": "/docs/basicMiddleware",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/基础中间件/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/基础中间件/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -549,7 +549,7 @@
               "slug": "/计算机网络/HTTP/http-protocol",
               "permalink": "/docs/计算机网络/HTTP/http-protocol",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -572,7 +572,7 @@
               "slug": "/networrk-basic",
               "permalink": "/docs/networrk-basic",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/计算机网络/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -596,7 +596,7 @@
               "slug": "/前端/Vue/基础特性",
               "permalink": "/docs/前端/Vue/基础特性",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/基础特性.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/前端/Vue/基础特性.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -619,7 +619,7 @@
               "slug": "/front/Vue",
               "permalink": "/docs/front/Vue",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/前端/Vue/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/前端/Vue/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -643,7 +643,7 @@
               "slug": "/数据结构与算法/基础/前提基础知识",
               "permalink": "/docs/数据结构与算法/基础/前提基础知识",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/基础/基础知识.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/数据结构与算法/基础/基础知识.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -666,7 +666,7 @@
               "slug": "/dataStructure",
               "permalink": "/docs/dataStructure",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据结构与算法/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/数据结构与算法/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -690,7 +690,7 @@
               "slug": "/database",
               "permalink": "/docs/database",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/数据库/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/数据库/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -709,7 +709,7 @@
               "slug": "/searchEngine",
               "permalink": "/docs/searchEngine",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/搜索引擎/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/搜索引擎/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -728,7 +728,7 @@
               "slug": "/messageQueue",
               "permalink": "/docs/messageQueue",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/消息队列/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/消息队列/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -741,13 +741,13 @@
               "unversionedId": "about",
               "id": "about",
               "title": "关于我",
-              "description": "👨‍💻一名会写点js、java的码农",
+              "description": "👨‍💻 一名会写点js、java的十八线码农",
               "source": "@site/docs/about.mdx",
               "sourceDirName": ".",
               "slug": "/about",
               "permalink": "/docs/about",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -766,7 +766,7 @@
               "slug": "/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
               "permalink": "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -789,7 +789,7 @@
               "slug": "/JVM",
               "permalink": "/docs/JVM",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/JVM/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/JVM/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -808,7 +808,7 @@
               "slug": "/LeetCode刷题笔记/illustrationOfAlgorithm",
               "permalink": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/LeetCode刷题笔记/图解算法数据结构.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/LeetCode刷题笔记/图解算法数据结构.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -831,7 +831,7 @@
               "slug": "/leetCode",
               "permalink": "/docs/leetCode",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/LeetCode刷题笔记/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/LeetCode刷题笔记/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -855,7 +855,7 @@
               "slug": "/linuxCommand",
               "permalink": "/docs/linuxCommand",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Linux/Linux命令.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Linux/Linux命令.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -875,7 +875,7 @@
               "slug": "/Mysql/高级特性/缓冲池",
               "permalink": "/docs/Mysql/高级特性/缓冲池",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/缓冲池.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/缓冲池.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -902,7 +902,7 @@
               "slug": "/Mysql/高级特性/设计索引",
               "permalink": "/docs/Mysql/高级特性/设计索引",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/设计索引.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/设计索引.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -930,7 +930,7 @@
               "slug": "/Mysql/高级特性/事务基础",
               "permalink": "/docs/Mysql/高级特性/事务基础",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/事务基础.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/事务基础.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -957,7 +957,7 @@
               "slug": "/Mysql/高级特性/数据库其他调优策略",
               "permalink": "/docs/Mysql/高级特性/数据库其他调优策略",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/数据库其他调优策略.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/数据库其他调优策略.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -984,7 +984,7 @@
               "slug": "/Mysql/高级特性/数据库设计规范",
               "permalink": "/docs/Mysql/高级特性/数据库设计规范",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/数据库设计规范.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/数据库设计规范.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1011,7 +1011,7 @@
               "slug": "/Mysql/高级特性/索引",
               "permalink": "/docs/Mysql/高级特性/索引",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1038,7 +1038,7 @@
               "slug": "/Mysql/高级特性/索引的应用",
               "permalink": "/docs/Mysql/高级特性/索引的应用",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引的应用.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引的应用.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1065,7 +1065,7 @@
               "slug": "/Mysql/高级特性/索引与查询优化",
               "permalink": "/docs/Mysql/高级特性/索引与查询优化",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/索引与查询优化.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引与查询优化.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1092,7 +1092,7 @@
               "slug": "/Mysql/高级特性/锁",
               "permalink": "/docs/Mysql/高级特性/锁",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/锁.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/锁.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1119,7 +1119,7 @@
               "slug": "/Mysql/高级特性/性能分析工具",
               "permalink": "/docs/Mysql/高级特性/性能分析工具",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能分析工具.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能分析工具.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1146,7 +1146,7 @@
               "slug": "/Mysql/高级特性/性能监控工具",
               "permalink": "/docs/Mysql/高级特性/性能监控工具",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/性能监控工具.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能监控工具.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1173,7 +1173,7 @@
               "slug": "/Mysql/高级特性/用户权限管理",
               "permalink": "/docs/Mysql/高级特性/用户权限管理",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/用户权限管理.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/用户权限管理.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1200,7 +1200,7 @@
               "slug": "/Mysql/高级特性/InnoDB表空间",
               "permalink": "/docs/Mysql/高级特性/InnoDB表空间",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB表空间.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/InnoDB表空间.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1227,7 +1227,7 @@
               "slug": "/Mysql/高级特性/InnoDB数据页结构",
               "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/InnoDB数据页结构.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/InnoDB数据页结构.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1254,7 +1254,7 @@
               "slug": "/Mysql/高级特性/MVCC",
               "permalink": "/docs/Mysql/高级特性/MVCC",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MVCC.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/MVCC.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1281,7 +1281,7 @@
               "slug": "/Mysql/高级特性/MySQL 部署",
               "permalink": "/docs/Mysql/高级特性/MySQL 部署",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL 部署.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/MySQL 部署.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1308,7 +1308,7 @@
               "slug": "/Mysql/高级特性/MySQL逻辑架构",
               "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/MySQL逻辑架构.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/MySQL逻辑架构.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1335,7 +1335,7 @@
               "slug": "/Mysql/高级特性/Redo日志",
               "permalink": "/docs/Mysql/高级特性/Redo日志",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/Redo日志.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/Redo日志.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1362,7 +1362,7 @@
               "slug": "/Mysql/高级特性/Undo日志",
               "permalink": "/docs/Mysql/高级特性/Undo日志",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/高级特性/Undo日志.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/Undo日志.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1389,7 +1389,7 @@
               "slug": "/Mysql/基础/MySQL函数与聚合",
               "permalink": "/docs/Mysql/基础/MySQL函数与聚合",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL函数与聚合.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL函数与聚合.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1416,7 +1416,7 @@
               "slug": "/Mysql/基础/MySQL基础查询",
               "permalink": "/docs/Mysql/基础/MySQL基础查询",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL基础.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL基础.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1443,7 +1443,7 @@
               "slug": "/Mysql/基础/MySQL库对象",
               "permalink": "/docs/Mysql/基础/MySQL库对象",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL库对象.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL库对象.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1470,7 +1470,7 @@
               "slug": "/Mysql/基础/MySQL子查询",
               "permalink": "/docs/Mysql/基础/MySQL子查询",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/基础/MySQL子查询.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL子查询.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1497,7 +1497,7 @@
               "slug": "/mysql",
               "permalink": "/docs/mysql",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1521,7 +1521,7 @@
               "slug": "/Mysql/MySQL参数与命令",
               "permalink": "/docs/Mysql/MySQL参数与命令",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Mysql/MySQL参数与语句.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/MySQL参数与语句.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1544,7 +1544,7 @@
               "slug": "/source/acg/acgShare_2022",
               "permalink": "/docs/source/acg/acgShare_2022",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/acg/2022.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/source/acg/2022.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1568,7 +1568,7 @@
               "slug": "/source/devSource",
               "permalink": "/docs/source/devSource",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/source/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/source/about.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1592,7 +1592,7 @@
               "slug": "/Spring/注解驱动开发/组件注册",
               "permalink": "/docs/Spring/注解驱动开发/组件注册",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/注解驱动开发/组件注册之简单注册.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/注解驱动开发/组件注册之简单注册.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1615,7 +1615,7 @@
               "slug": "/spring",
               "permalink": "/docs/spring",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1639,7 +1639,7 @@
               "slug": "/Spring/Spring编程思想/依赖查找",
               "permalink": "/docs/Spring/Spring编程思想/依赖查找",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.3依赖查找.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.3依赖查找.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1666,7 +1666,7 @@
               "slug": "/Spring/Spring编程思想/依赖注入",
               "permalink": "/docs/Spring/Spring编程思想/依赖注入",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.4依赖注入.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.4依赖注入.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1693,7 +1693,7 @@
               "slug": "/Spring/Spring编程思想/Bean",
               "permalink": "/docs/Spring/Spring编程思想/Bean",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.2Bean.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.2Bean.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1720,7 +1720,7 @@
               "slug": "/Spring/Spring编程思想/IOC容器",
               "permalink": "/docs/Spring/Spring编程思想/IOC容器",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/Spring/Spring编程思想/1.1IOC.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.1IOC.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1747,7 +1747,7 @@
               "slug": "/SpringCloud/微服务技术栈",
               "permalink": "/docs/SpringCloud/微服务技术栈",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/微服务技术栈.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/微服务技术栈.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1774,7 +1774,7 @@
               "slug": "/SpringCloud/Alibaba/Nacos",
               "permalink": "/docs/SpringCloud/Alibaba/Nacos",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/服务注册与配置中心-Nacos.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Alibaba/服务注册与配置中心-Nacos.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1801,7 +1801,7 @@
               "slug": "/SpringCloud/Alibaba/Sentinel",
               "permalink": "/docs/SpringCloud/Alibaba/Sentinel",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1824,7 +1824,7 @@
               "slug": "/SpringCloud/Netflix/Bus",
               "permalink": "/docs/SpringCloud/Netflix/Bus",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.7消息总线-Bus.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.7消息总线-Bus.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1851,7 +1851,7 @@
               "slug": "/SpringCloud/Netflix/Config",
               "permalink": "/docs/SpringCloud/Netflix/Config",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.6服务配置中心-Config.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1878,7 +1878,7 @@
               "slug": "/SpringCloud/Netflix/eureka_config",
               "permalink": "/docs/SpringCloud/Netflix/eureka_config",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/Eureka配置说明.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/Eureka配置说明.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1896,7 +1896,7 @@
               "slug": "/SpringCloud/Netflix/Eureka&Consul",
               "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.1服务注册-Eureka和Consul.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1923,7 +1923,7 @@
               "slug": "/SpringCloud/Netflix/GateWay",
               "permalink": "/docs/SpringCloud/Netflix/GateWay",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.5服务网关-GateWay.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.5服务网关-GateWay.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1950,7 +1950,7 @@
               "slug": "/SpringCloud/Netflix/Hystrix",
               "permalink": "/docs/SpringCloud/Netflix/Hystrix",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -1977,7 +1977,7 @@
               "slug": "/SpringCloud/Netflix/OpenFeign",
               "permalink": "/docs/SpringCloud/Netflix/OpenFeign",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.3服务接口调用-OpenFeign.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -2004,7 +2004,7 @@
               "slug": "/SpringCloud/Netflix/Ribbon",
               "permalink": "/docs/SpringCloud/Netflix/Ribbon",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.2服务调用-Ribbon.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.2服务调用-Ribbon.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -2031,7 +2031,7 @@
               "slug": "/SpringCloud/Netflix/Sleuth",
               "permalink": "/docs/SpringCloud/Netflix/Sleuth",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -2058,7 +2058,7 @@
               "slug": "/SpringCloud/Netflix/Stream",
               "permalink": "/docs/SpringCloud/Netflix/Stream",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/Netflix/1.8消息驱动-Stream.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.8消息驱动-Stream.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -2085,7 +2085,7 @@
               "slug": "/springCloud",
               "permalink": "/docs/springCloud",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/docs/SpringCloud/about.mdx",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/about.mdx",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -2752,7 +2752,7 @@
           "id": "aliSeata",
           "metadata": {
             "permalink": "/blog/aliSeata",
-            "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220907.md",
+            "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/blog/20220907.md",
             "source": "@site/blog/20220907.md",
             "title": "阿里技术号",
             "description": "阿里技术号",
@@ -2809,7 +2809,7 @@
           "id": "gotConcurrencyAli",
           "metadata": {
             "permalink": "/blog/gotConcurrencyAli",
-            "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220708.md",
+            "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/blog/20220708.md",
             "source": "@site/blog/20220708.md",
             "title": "如何获得高并发的经验?",
             "description": "如何获得高并发的经验?",
@@ -2880,7 +2880,7 @@
           "id": "internal-navigation",
           "metadata": {
             "permalink": "/blog/internal-navigation",
-            "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220720.md",
+            "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/blog/20220720.md",
             "source": "@site/blog/20220720.md",
             "title": "网站导航",
             "description": "常用的网址导航",

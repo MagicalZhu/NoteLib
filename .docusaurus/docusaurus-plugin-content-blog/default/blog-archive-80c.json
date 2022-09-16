@@ -4,7 +4,7 @@
       "id": "aliSeata",
       "metadata": {
         "permalink": "/blog/aliSeata",
-        "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220907.md",
+        "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/blog/20220907.md",
         "source": "@site/blog/20220907.md",
         "title": "阿里技术号",
         "description": "阿里技术号",
@@ -61,7 +61,7 @@
       "id": "gotConcurrencyAli",
       "metadata": {
         "permalink": "/blog/gotConcurrencyAli",
-        "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220708.md",
+        "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/blog/20220708.md",
         "source": "@site/blog/20220708.md",
         "title": "如何获得高并发的经验?",
         "description": "如何获得高并发的经验?",
@@ -132,7 +132,7 @@
       "id": "internal-navigation",
       "metadata": {
         "permalink": "/blog/internal-navigation",
-        "editUrl": "https://github.com/MagicalZhu/XDocs/tree/main/blog/20220720.md",
+        "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/blog/20220720.md",
         "source": "@site/blog/20220720.md",
         "title": "网站导航",
         "description": "常用的网址导航",
