@@ -41,7 +41,7 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --ifm-color-primary: #1f41ea;
+  --ifm-color-primary: #5B86FF;
   --ifm-color-primary-dark: #1436da;
   --ifm-color-primary-darker: #1333ce;
   --ifm-color-primary-darkest: #102aaa;
@@ -590,3 +590,7 @@ img.avatar__photo.avatar__photo--xl:hover {
 .codeBlockLines {
   min-width: -webkit-fill-available;
 } 
+
+::selection {
+  background: #165dff52;
+}

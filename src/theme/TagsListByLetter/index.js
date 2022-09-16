@@ -1,32 +1,34 @@
 import React from 'react';
-import {listTagsByLetters} from '@docusaurus/theme-common';
-import Tag from '@theme/Tag';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
-function TagLetterEntryItem({letterEntry}) {
+
+
+function TagItem({ permalink, label, count }) {
   return (
-    <article>
-      <h2>{letterEntry.letter}</h2>
-      <ul className="padding--none">
-        {letterEntry.tags.map((tag) => (
-          <li key={tag.permalink} className={styles.tag}>
-            <Tag {...tag} />
-          </li>
-        ))}
-      </ul>
-      <hr />
-    </article>
+    <Link
+      href={permalink}
+      className={clsx(
+        styles.tagItem,
+        styles.tagItemRegular,
+      )}>
+      {label}
+      {count && <span className={styles.tagCount}>{count}</span>}
+    </Link>
   );
 }
-export default function TagsListByLetter({tags}) {
-  const letterList = listTagsByLetters(tags);
+
+export default function TagsListByLetter({ tags }) {
   return (
-    <section className="margin-vert--lg">
-      {letterList.map((letterEntry) => (
-        <TagLetterEntryItem
-          key={letterEntry.letter}
-          letterEntry={letterEntry}
-        />
-      ))}
-    </section>
-  );
+      <>
+      <ul className={clsx(styles.tagUl, 'padding--none', 'margin-left--sm')}>
+          {tags.map(({label, permalink: tagPermalink, count}) => (
+            <li key={tagPermalink} className={styles.tagCat}>
+              <TagItem label={label} permalink={tagPermalink} count={count}/>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
 }
+
