@@ -19,7 +19,7 @@ export default function BlogPostItemFooter() {
   }
   return (
     <>
-      <Comments {...{ type: 'Blog' }} />
+      <Comments {...{ type: 'blog' }} />
       <footer
         className={clsx(
           'row docusaurus-mt-lg',
