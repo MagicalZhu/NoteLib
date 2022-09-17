@@ -585,3 +585,7 @@ img.avatar__photo.avatar__photo--xl:hover {
 ::selection {
   background: #165dff52;
 }
+
+.gsc-main {
+  width: 90%;
+}
