@@ -10,7 +10,7 @@ const customConfig = require("./configCustom")
  */
 const config = {
   title: '花裤衩Wiki',
-  tagline: '👨‍💻永远保持好奇',
+  tagline: '永远保持好奇',
   url: 'https://huakucha.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',

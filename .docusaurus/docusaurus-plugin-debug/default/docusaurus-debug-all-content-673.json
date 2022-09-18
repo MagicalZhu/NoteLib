@@ -893,6 +893,33 @@
               }
             },
             {
+              "unversionedId": "Mysql/高级特性/其他日志",
+              "id": "Mysql/高级特性/其他日志",
+              "title": "其他日志",
+              "description": "在前面的数据库的事务中,我们遇到了两种日志: redo日志、undo日志",
+              "source": "@site/docs/Mysql/高级特性/其他日志.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/其他日志",
+              "permalink": "/docs/Mysql/高级特性/其他日志",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/其他日志.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "其他日志",
+                "title": "其他日志"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "运维",
+                "permalink": "/docs/category/运维"
+              },
+              "next": {
+                "title": "MySQL参数与命令",
+                "permalink": "/docs/Mysql/MySQL参数与命令"
+              }
+            },
+            {
               "unversionedId": "Mysql/高级特性/设计索引",
               "id": "Mysql/高级特性/设计索引",
               "title": "设计索引",
@@ -1267,8 +1294,8 @@
                 "permalink": "/docs/Mysql/高级特性/锁"
               },
               "next": {
-                "title": "MySQL参数与命令",
-                "permalink": "/docs/Mysql/MySQL参数与命令"
+                "title": "运维",
+                "permalink": "/docs/category/运维"
               }
             },
             {
@@ -1530,8 +1557,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "多版本并发控制",
-                "permalink": "/docs/Mysql/高级特性/MVCC"
+                "title": "其他日志",
+                "permalink": "/docs/Mysql/高级特性/其他日志"
               }
             },
             {
@@ -2598,6 +2625,23 @@
                       "type": "generated-index",
                       "slug": "/category/事务与锁",
                       "permalink": "/docs/category/事务与锁"
+                    },
+                    "collapsible": true
+                  },
+                  {
+                    "type": "category",
+                    "label": "运维",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/其他日志"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/运维",
+                      "permalink": "/docs/category/运维"
                     },
                     "collapsible": true
                   }

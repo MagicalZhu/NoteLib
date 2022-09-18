@@ -172,7 +172,7 @@
     },
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-5fe": {
+  "/docs-4b5": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-10-fc6"
@@ -323,6 +323,10 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-性能优化-989-5b1"
   },
+  "/docs/category/运维-8a8": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-运维b-6-b-1c5"
+  },
   "/docs/category/jvm优化-788": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-jvm优化-0-aa-f7e"
@@ -414,6 +418,10 @@
   "/docs/Mysql/高级特性/缓冲池-7e3": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-缓冲池-6-e-2-c34"
+  },
+  "/docs/Mysql/高级特性/其他日志-b2d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-其他日志ed-5-ece"
   },
   "/docs/Mysql/高级特性/设计索引-d16": {
     "__comp": "__comp---theme-doc-item-178-a40",

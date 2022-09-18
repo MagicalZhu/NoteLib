@@ -268,7 +268,6 @@ BEGIN;
 
 UPDATE hero SET name = '关羽' WHERE number = 1;
 UPDATE hero SET name = '张飞' WHERE number = 1;
-
 ```
 
 ```sql title="T2: trx_200"
@@ -277,7 +276,6 @@ BEGIN;
 
 # 更新了一些别的表的记录
 ...
-
 ```
 
 <mark><strong>注意:</strong>事务执行过程中,只有在第一次真正修改记录时（比如使用INSERT、DELETE、UPDATE),才会被分配一个单独的事务id，这个事务id是递增的。所以在 T2 中更新一些别的表的记录,目的是让它分配事务id。</mark>
@@ -290,7 +288,7 @@ BEGIN;
 
 <br/>
 
-假设现在有一个使用 `READ COMMITTED` 隔离级别的事务开始执行:
+假设现在有一个使用 `READ COMMITTED` 隔离级别的事务(trx_0)开始执行:
 
 ```sql
 -- 使用READ COMMITTED隔离级别的事务
@@ -298,7 +296,6 @@ BEGIN;
 
 -- SELECT1: 由于T1、T2 未提交,所以得到的列name的值为'刘备'
 SELECT * FROM hero WHERE number = 1; 
-
 ```
 
 上面的这个 **SELECT1** 的执行过程如下:
@@ -340,7 +337,6 @@ BEGIN;
 
 UPDATE hero SET name = '赵云' WHERE number = 1;
 UPDATE hero SET name = '诸葛亮' WHERE number = 1;
-
 ```
 
 此时, hero 表中 number=1 的记录的版本连变成了下面的形式:
@@ -349,7 +345,7 @@ UPDATE hero SET name = '诸葛亮' WHERE number = 1;
 
 <br/>
 
-然后再使用隔离级别为 `READ COMMITTED` 的事务中继续查找这个 number=1 的记录，如下：
+然后再使用隔离级别为 `READ COMMITTED` 的事务(trx_0)中继续查找这个 number=1 的记录，如下：
 
 ```sql
 -- 使用READ COMMITTED隔离级别的事务
@@ -360,7 +356,6 @@ SELECT * FROM hero WHERE number = 1;
 
 -- SELECT2: 由于T1提交了,但是 T2 未提交,所以得到的列 name 的值为'张飞'
 SELECT * FROM hero WHERE number = 1; 
-
 ```
 
 上面的这个 **SELECT2** 的执行过程如下:
@@ -420,7 +415,7 @@ BEGIN;
 
 <br/>
 
-假设现在有一个使用 `REPEATABLE READ` 隔离级别的事务开始执行:
+假设现在有一个使用 `REPEATABLE READ` 隔离级别的事务(trx_0)开始执行:
 
 ```sql
 -- 使用READ COMMITTED隔离级别的事务
@@ -473,13 +468,13 @@ UPDATE hero SET name = '诸葛亮' WHERE number = 1;
 
 ```
 
-此时, hero 表中 number=1 的记录的版本连变成了下面的形式:
+此时, hero 表中 number=1 的记录的版本链变成了下面的形式:
 
 ![image2](./image/MVCC/image2.png)
 
 <br/>
 
-然后再使用隔离级别为 `REPEATABLE READ` 的事务中继续查找这个 number=1 的记录，如下：
+然后再使用隔离级别为 `REPEATABLE READ` 的事务(trx_0)中继续查找这个 number=1 的记录，如下：
 
 ```sql
 -- 使用READ COMMITTED隔离级别的事务
@@ -494,7 +489,7 @@ SELECT * FROM hero WHERE number = 1;
 
 上面的这个 **SELECT2** 的执行过程如下:
 
-1. 因为当前事务的隔离级别是 `REPEATABLE READ`,而在执行 SELECT1 的时候已经创建了一个 *ReadView* 了,所以此时直接复用之前的ReadView。之前的ReadView的m_ids列表的属性:
+1. 因为当前事务的隔离级别是 `REPEATABLE READ`,而在执行 SELECT1 的时候已经创建了一个 *ReadView* 了,所以此时直接复用之前的ReadView。之前的ReadView的属性:
    - *m_ids*: [100, 200]
    - *min_trx_id*: 100
    - *max_trx_id*: 201
@@ -518,3 +513,85 @@ SELECT * FROM hero WHERE number = 1;
 
 :::
 
+### 解决幻读
+
+- InnoDB 在*Repeatable Read* 的隔离级别下,可以解决幻读问题
+
+:::info 示例说明
+
+**还是使用 hero 表, 且表中只有一条由 事务id=80 插入的记录**
+
+```sql
+mysql> SELECT * FROM hero;
++--------+--------+---------+
+| number | name   | country |
++--------+--------+---------+
+|      1 | 刘备    | 蜀      |
++--------+--------+---------+
+1 row in set (0.07 sec)
+```
+
+**那么此时表中所有记录的版本链如下:**
+
+![image-20220918105146695](./image/MVCC/image-20220918105146695.png)
+
+<br/>
+
+> **假设系统中有两个事务(T1、T2)正在执行中, 它们的 事务id 分别是: trx_100、trx_200**
+
+**步骤 1: T1 开始第一次查询,查询的 SQL 如下:**
+
+```sql title="T1:trx_100"
+BEGIN;
+SELECT * FROM hero where number >= 1;
+```
+
+开始查询的时候,事务 T1 会创建一个 ReadView,且该 ReadView 对应的属性如下
+
+- *m_ids*: [100, 200]
+- *min_trx_id*: 100
+- *max_trx_id*: 201
+- *creator_trx_id*: 100
+
+此时表中记录只有一个 *number=1* 的,且*trx_id=80*, 小于*min_trx_id*: 100, 所以这条记录的这个版本对于事务 T1 是可见的,那么**事务 T1 的第一次查询,可以读取到一条记录: number=1**
+
+<br/>
+
+**步骤 2: T2 向hero 表中插入两条数据,SQL 语句如下**
+
+```sql title="T2:trx_200"
+INSERT INTO hero VALUES(2, '关羽', '蜀')	;
+INSERT INTO hero VALUES(3, '张飞', '蜀')	;
+```
+
+**那么此时表中有三条记录,那么此时表中所有记录的版本链如下:**
+
+![image-20220918111050768](./image/MVCC/image-20220918111050768.png)
+
+<br/>
+
+**步骤 2: T1 开始第二次查询,查询的 SQL 如下:**
+
+```sql  title="T1:trx_100"
+BEGIN;
+-- 第一次查询
+SELECT * FROM hero where number >= 1;
+
+-- 第二次查询
+SELECT * FROM hero where number >= 1;
+```
+
+在 *Repeatable Read* 隔离级别下进行第二次读取数据,此时还是使用第一次查询的 ReadView,即 ReadView 的属性如下:
+
+- *m_ids*: [100, 200]
+- *min_trx_id*: 100
+- *max_trx_id*: 201
+- *creator_trx_id*: 100
+
+**从上面的分析可以看到: number=1 的记录是可以读取到**,然后看下新插入的两条记录:
+
+- 新插入的记录的 trx_id=200, 在 m_ids列表(100,200)中,所以**这两条记录版本对事务T1 是不可见的**, 即最终只能读取到一条记录: number=1
+
+<mark>从上面我们可以看出来:InnoDB 的 Repeatable Read 隔离级别下,确实可以解决幻读问题</mark> 
+
+:::

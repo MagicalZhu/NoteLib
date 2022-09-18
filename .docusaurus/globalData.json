@@ -186,6 +186,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/其他日志",
+              "path": "/docs/Mysql/高级特性/其他日志",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/设计索引",
               "path": "/docs/Mysql/高级特性/设计索引",
               "sidebar": "mysqlSideBar"
@@ -497,6 +502,11 @@
             {
               "id": "/category/事务与锁",
               "path": "/docs/category/事务与锁",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "/category/运维",
+              "path": "/docs/category/运维",
               "sidebar": "mysqlSideBar"
             },
             {

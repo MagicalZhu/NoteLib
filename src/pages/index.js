@@ -13,13 +13,18 @@ function HomepageHeader() {
   return (
     <div class="container margin-top--xl margin-bottom--xl " className={clsx(styles.heroBanner)}>
       <div class="avatar avatar--vertical">
-        <img class="avatar__photo avatar__photo--xl" src={avastar}/>
+        <img src={avastar} style={{width: 256, borderRadius: '50%', marginBottom: '15px'}}/>
         {/* <h1 class="hero__title">{siteConfig.title}</h1> */}
-        <div class="avatar__intro">
-          <p class="hero__subtitle">{siteConfig.tagline}</p>
+        <div>
+        <div className={clsx('avatar__intro', styles.printTyping)}>
+          <p className={clsx(styles.printContent)} style={{width: (siteConfig.tagline?.length ?? 0) + 'em'}}>
+            {siteConfig.tagline}
+          </p>
+        </div>
+          {/* <p class="hero__subtitle">{siteConfig.tagline}</p> */}
           <div  className={styles.buttons}>
             <Link className="margin-top--md button button--primary button--lg" to="/docs/about">
-              阅读 →
+              Wiki →
             </Link>
           </div>
         </div>

@@ -99,7 +99,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '5fe'),
+    component: ComponentCreator('/docs', '4b5'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -314,6 +314,12 @@ export default [
         sidebar: "mysqlSideBar"
       },
       {
+        path: '/docs/category/运维',
+        component: ComponentCreator('/docs/category/运维', '8a8'),
+        exact: true,
+        sidebar: "mysqlSideBar"
+      },
+      {
         path: '/docs/category/jvm优化',
         component: ComponentCreator('/docs/category/jvm优化', '788'),
         exact: true,
@@ -443,6 +449,12 @@ export default [
       {
         path: '/docs/Mysql/高级特性/缓冲池',
         component: ComponentCreator('/docs/Mysql/高级特性/缓冲池', '7e3'),
+        exact: true,
+        sidebar: "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/其他日志',
+        component: ComponentCreator('/docs/Mysql/高级特性/其他日志', 'b2d'),
         exact: true,
         sidebar: "mysqlSideBar"
       },

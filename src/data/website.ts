@@ -119,7 +119,7 @@ export const websiteData: WebsiteCategory[] = [
         "href": "https://github.com/fenixsoft/awesome-fenix",
         "tags": [""]
       },
-       {
+      {
         "name": "《设计数据密集型应用》中文版",
         "desc": "《Designing Data-Intensive Application》DDIA 中文翻译。",
         "logo": "https://github.githubassets.com/favicons/favicon.svg",
@@ -164,6 +164,20 @@ export const websiteData: WebsiteCategory[] = [
         "desc": "开源聊天机器人，可以用来做一些自动化任务，如部署网站，翻译语言等等",
         "logo": "https://hubot.github.com/assets/images/layout/hubot-avatar@2x.png",
         "href": "https://hubot.github.com/docs/",
+        "tags": []
+      },
+      {
+        "name": "Cloudreve",
+        "desc": "Cloudreve 可以让您快速搭建起公私兼备的网盘系统。Cloudreve 在底层支持不同的云存储平台，用户在实际使用时无须关心物理存储方式",
+        "logo": "https://cloudreve.org/favicon.ico",
+        "href": "https://docs.cloudreve.org/",
+        "tags": []
+      },
+      {
+        "name": "ZFile",
+        "desc": "基于 Java 的在线网盘程序，支持对接 S3、OneDrive、SharePoint、又拍云、本地存储、FTP 等存储源，支持在线浏览图片、播放音视频，文本文件等文件类型。",
+        "logo": "https://docs.zfile.vip/img/favicon.ico",
+        "href": "https://docs.zfile.vip/",
         "tags": []
       }
     ]

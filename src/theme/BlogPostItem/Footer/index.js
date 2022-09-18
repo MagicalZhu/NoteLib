@@ -5,7 +5,6 @@ import EditThisPage from '@theme/EditThisPage';
 import TagsListInline from '@theme/TagsListInline';
 import ReadMoreLink from '@theme/BlogPostItem/Footer/ReadMoreLink';
 import styles from './styles.module.css';
-import Comments from '../../../components/Comments/index'
 
 export default function BlogPostItemFooter() {
   const {metadata, isBlogPostPage} = useBlogPost();
@@ -19,7 +18,7 @@ export default function BlogPostItemFooter() {
   }
   return (
     <>
-      <Comments {...{ type: 'blog' }} />
+      {/* <Comments {...{ type: 'blog' }} /> */}
       <footer
         className={clsx(
           'row docusaurus-mt-lg',

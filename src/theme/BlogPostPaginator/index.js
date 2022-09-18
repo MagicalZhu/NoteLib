@@ -1,9 +1,12 @@
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
 import PaginatorNavLink from '@theme/PaginatorNavLink';
+import Comments from '../../components/Comments';
 export default function BlogPostPaginator(props) {
   const {nextItem, prevItem} = props;
   return (
+    <>
+    <Comments {...{ type: 'blog' }} />
     <nav
       className="pagination-nav docusaurus-mt-lg"
       aria-label={translate({
@@ -37,5 +40,6 @@ export default function BlogPostPaginator(props) {
         />
       )}
     </nav>
+    </>
   );
 }

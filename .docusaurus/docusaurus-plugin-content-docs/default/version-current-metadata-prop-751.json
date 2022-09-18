@@ -552,6 +552,21 @@
             "collapsed": true,
             "collapsible": true,
             "href": "/docs/category/事务与锁"
+          },
+          {
+            "type": "category",
+            "label": "运维",
+            "items": [
+              {
+                "type": "link",
+                "label": "其他日志",
+                "href": "/docs/Mysql/高级特性/其他日志",
+                "docId": "Mysql/高级特性/其他日志"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/运维"
           }
         ],
         "collapsed": true,
@@ -881,6 +896,12 @@
       "id": "Mysql/高级特性/缓冲池",
       "title": "缓冲池",
       "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/其他日志": {
+      "id": "Mysql/高级特性/其他日志",
+      "title": "其他日志",
+      "description": "在前面的数据库的事务中,我们遇到了两种日志: redo日志、undo日志",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/设计索引": {

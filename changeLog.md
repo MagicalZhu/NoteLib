@@ -2,4 +2,4 @@
   - src/theme/TagsListByLetter/*
   - src/theme/NotFound.js
   - src/theme/DocItem/Footer/index.js
-  - src/theme/BlogPostItem/Footer/index.js
+  - src/theme/BlogPostPaginator/index.js
