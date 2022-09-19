@@ -2,7 +2,11 @@
 // 配置自定义的参数
 const customConfig = {
   home: '/',
-  sidebarHiddenWhenLoad: true
+  sidebarHiddenWhenLoad: true,
+  profileTagline: [
+    '山海有归期,风雨自相逢',
+    '永远保持好奇'
+  ]
 }
 
 module.exports = customConfig

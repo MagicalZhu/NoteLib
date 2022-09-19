@@ -6,6 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
+import Typer from '../components/Typer'
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -16,10 +17,8 @@ function HomepageHeader() {
         <img src={avastar} style={{width: 256, borderRadius: '50%', marginBottom: '15px'}}/>
         {/* <h1 class="hero__title">{siteConfig.title}</h1> */}
         <div>
-        <div className={clsx('avatar__intro', styles.printTyping)}>
-          <p className={clsx(styles.printContent)} style={{width: (siteConfig.tagline?.length ?? 0) + 'em'}}>
-            {siteConfig.tagline}
-          </p>
+        <div className={clsx(styles.printContent)}>
+          <Typer strings={siteConfig.customFields.profileTagline}/>
         </div>
           {/* <p class="hero__subtitle">{siteConfig.tagline}</p> */}
           <div  className={styles.buttons}>
