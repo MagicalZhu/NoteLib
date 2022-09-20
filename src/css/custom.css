@@ -58,26 +58,39 @@ html[data-theme="light"] {
 }
 
 
+/* navbar */
+html[data-theme="light"] .navbar {
+  backdrop-filter: saturate(180%) blur(16px);
+  /*background: transparent;*/
+  background: hsla(0, 0%, 100%, 0.8);
+}
+
+
+html[data-theme="dark"] .navbar {
+  backdrop-filter: saturate(180%) blur(16px);
+}
+
+.navbar__logo img {
+  border-radius: 30px;
+}
+
+
+/* toggle Color Button */
+
+html[data-theme='dark'] .clean-btn:hover {
+  background:unset;
+}
+
+html[data-theme='light'] .clean-btn:hover {
+  background: unset;
+}
+
+
 html[data-theme='dark'] .theme-code-block-highlighted-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 html[data-theme='light'] .theme-code-block-highlighted-line {
   background-color: rgba(177, 196, 240, 0.82);
-}
-
-html[data-theme="light"] .navbar {
-    backdrop-filter: saturate(180%) blur(16px);
-    /*background: transparent;*/
-    background: hsla(0, 0%, 100%, 0.8);
-}
-
-
-html[data-theme="dark"] .navbar {
-    backdrop-filter: saturate(180%) blur(16px);
-}
-
-.navbar__logo img {
-    border-radius: 30px;
 }
 
 
@@ -328,13 +341,6 @@ html[data-theme="dark"] .medium-zoom-overlay {
 
 
 /* Icon List */
-.header-github-link:hover,
-.header-share-link:hover,
-.header-discord-link:hover,
-.header-nanos-link:hover {
-  opacity: 0.6;
-}
-
 .header-github-link:before,
 .header-share-link:before,
 .header-discord-link:before,
@@ -540,10 +546,6 @@ a.card-link:hover img {
 }
 
 
-.markdown li>p {
-    margin-top: var(--custom-list-paragraph-margin);
-    margin-bottom: var(--custom-list-paragraph-margin);
-}
 
 img.avatar__photo.avatar__photo--xl:hover {
     transform: rotate(666turn);
@@ -553,7 +555,6 @@ img.avatar__photo.avatar__photo--xl:hover {
     transition-timing-function: cubic-bezier(.34,0,.84,1);
 }
 
-/*upgrade*/
 .codeBlockLines {
   min-width: -webkit-fill-available;
 } 
@@ -562,6 +563,7 @@ img.avatar__photo.avatar__photo--xl:hover {
   background: #b3d7ff;
 }
 
+/*giscus*/
 .gsc-main {
   width: 90%;
 }
@@ -575,7 +577,6 @@ img.avatar__photo.avatar__photo--xl:hover {
 
 
 /* Menu */
-
 .menu__link:not([href]) {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -594,11 +595,18 @@ img.avatar__photo.avatar__photo--xl:hover {
 } */
 
 
+/*markdown*/
+
 /* .markdown>pre,
 .markdown>ul,
 .markdown>p {
   margin-bottom: 5px;
 } */
+
+.markdown li>p {
+  margin-top: var(--custom-list-paragraph-margin);
+  margin-bottom: var(--custom-list-paragraph-margin);
+}
 
 
 /*typer*/

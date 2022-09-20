@@ -144,11 +144,7 @@ const nav = {
       href: 'https://github.com/MagicalZhu',
       position: 'right',
       className: 'header-github-link','aria-label': 'GitHub repository',
-    },
-    {
-      type: Type.search,
-      position: 'right',
-    },
+    }
   ]
 }
 
