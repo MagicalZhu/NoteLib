@@ -20,9 +20,9 @@ const WebsiteCard = memo(({ website }: { website: Website }) => (
               </div>
               <div className={styles.pluginTag}>
                 <span title={website.desc} className={styles.pluginTagContent}>
-                  {website.name}           
+                  {website.tag}           
                 </span>
-                <span className={styles.colorLabel} style={{ backgroundColor:website.dotColor}}></span>
+                <span className={styles.colorLabel} style={{ backgroundColor:'#39ca30'}}></span>
               </div>
             </div>
           </div>
