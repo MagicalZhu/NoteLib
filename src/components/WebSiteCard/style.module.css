@@ -80,6 +80,27 @@
   overflow: hidden;
   text-decoration: none;
 }
+.pluginTag {
+  align-items: center;
+  border: 1px solid var(--ifm-color-secondary-darkest);
+  border-radius: 4px;
+  cursor: default;
+  display: inline-flex;
+  font-size: .675rem;
+  margin-bottom: 6px !important;
+  margin-right: 6px;  
+}
+.pluginTagContent {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.colorLabel {
+  border-radius: 50%;
+  height: 7px;
+  margin-left: 6px;
+  margin-right: 6px;
+  width: 7px;
+}
 
 .pluginBody {
   min-height: 40px;

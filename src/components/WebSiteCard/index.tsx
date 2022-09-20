@@ -18,10 +18,16 @@ const WebsiteCard = memo(({ website }: { website: Website }) => (
               <div title={website.name} className={styles.pluginHeadTitle}>
                 {website.name}                    
               </div>
+              <div className={styles.pluginTag}>
+                <span title={website.desc} className={styles.pluginTagContent}>
+                  {website.name}           
+                </span>
+                <span className={styles.colorLabel} style={{ backgroundColor:website.dotColor}}></span>
+              </div>
             </div>
           </div>
             <p title={website.desc} className={styles.pluginBody}>
-                {website.desc}            
+              {website.desc}            
             </p>
         </div>
       </a>
