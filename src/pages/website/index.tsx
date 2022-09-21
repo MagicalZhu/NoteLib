@@ -62,7 +62,7 @@ export default function Websites() {
               <CategoryNav />
             </aside> */}
             <main className='col col--12 margin-left--lg margin-top--xl'>
-              <CategoryList />
+              <CategoryList/>
             </main>
           </div>
         </div>

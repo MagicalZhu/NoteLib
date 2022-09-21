@@ -2,7 +2,24 @@ import React, { memo } from 'react'
 import clsx from 'clsx'
 import Link from '@docusaurus/Link'
 import styles from './style.module.css'
-import { type Website } from '../../data/website'
+import { type Website, type tagDot } from '../../data/website'
+
+function CardTag({tags}) {
+  return (
+    <>
+      {
+        tags.map((ele: tagDot)=> {
+          <div className={styles.pluginTag}>
+            <span title={ele.tagName} className={styles.pluginTagContent}>
+              {ele.tagName}           
+            </span>
+            <span className={styles.colorLabel} style={{ backgroundColor: ele.dotColor}}></span>
+          </div>
+        })
+      }
+    </>
+  )
+}
 
 
 const WebsiteCard = memo(({ website }: { website: Website }) => (
@@ -18,12 +35,7 @@ const WebsiteCard = memo(({ website }: { website: Website }) => (
               <div title={website.name} className={styles.pluginHeadTitle}>
                 {website.name}                    
               </div>
-              <div className={styles.pluginTag}>
-                <span title={website.desc} className={styles.pluginTagContent}>
-                  {website.tag}           
-                </span>
-                <span className={styles.colorLabel} style={{ backgroundColor:'#39ca30'}}></span>
-              </div>
+                <CardTag tags={website.tags}/>
             </div>
           </div>
             <p title={website.desc} className={styles.pluginBody}>
