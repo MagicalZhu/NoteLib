@@ -78,24 +78,17 @@ class Category {
       return this
     }
     /**
-     * @description 添加文档(route eg: Category.label + '/' + prefix + '/' + itemId)
-     * @param {Array} itemIds 
-     * @returns 
-     */
-    setCategoryRouteItem(prefix,itemIds) {
-      itemIds.forEach((item) => {
-        this.items.push(`${this.label}/${prefix}/${item}`)
-      })
-      return this
-    }
-    /**
      * @description 添加文档(route eg: prefix + '/' + itemId)
      * @param {Array} itemIds 
      * @returns 
      */
     setNoLabelItem( prefix,itemIds) {
       itemIds.forEach((item) => {
-        this.items.push(`${prefix}/${item}`)
+        if (typeof item === 'string') {
+          this.items.push(`${prefix}/${item}`)
+        } else {
+          this.items.push(item)
+        }
       })
       return this
     }

@@ -64,6 +64,8 @@ const mysqlPart =  new Category('MySQL基础与高级')
     ])
     .createSubCaregory('性能优化','Mysql/高级特性', [
       '性能分析工具',
+      // TODO 对性能分析工具的expain进行拆分
+      // new Category('Explain').setNoLabelItem('Mysql/高级特性',['性能分析工具']),
       '性能监控工具',
       '索引与查询优化',
       '数据库设计规范',
