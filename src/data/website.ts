@@ -7,7 +7,7 @@ const COLOR_MAP = {
   JAVA: {
     ID: 'JAVA',
     NAME:'Java',
-    COLOR:'#945434'
+    COLOR:'#CB8C98'
   },
   ARCH: {
     ID: 'ARCH',
@@ -27,7 +27,7 @@ const COLOR_MAP = {
   TOOL: {
     ID: 'TOOL',
     NAME:'工具资源',
-    COLOR:'#16750D',
+    COLOR:'#8C3047',
   },
   MID: {
     ID: 'MID',
@@ -52,7 +52,7 @@ const COLOR_MAP = {
   OUT: {
     ID: 'OUT',
     NAME:' 框架',
-    COLOR:'#5fa0ff'
+    COLOR:'#1218B9'
   },
   LEARN: {
     ID: 'LEARN',
@@ -67,22 +67,22 @@ const COLOR_MAP = {
   VUE: {
     ID: 'VUE',
     NAME:'Vue',
-    COLOR:'#78D274'
+    COLOR:'#9FDB1D'
   },
   REACT: {
     ID: 'REACT',
     NAME:'React',
-    COLOR:'#2F3962'
+    COLOR:'#6B88B9'
   },
   OTHER: {
     ID: 'OTHER',
     NAME:'其他',
-    COLOR:'#9CA3E3'
+    COLOR:'#67388B'
   },
   CSS: {
     ID: 'CSS',
     NAME:'CSS',
-    COLOR:'#33A64A'
+    COLOR:'#6FDABE'
   },
   DESIGN: {
     ID: 'DESIGN',
@@ -96,8 +96,8 @@ const COLOR_MAP = {
   },
   NODE: {
     ID: 'NODE',
-    NAME:'NODE',
-    COLOR:'#4CD263'
+    NAME:'Node',
+    COLOR:'#14C9C9'
   },
 }
 
