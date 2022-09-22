@@ -353,11 +353,11 @@ html[data-theme="dark"] .medium-zoom-overlay {
 
 /* Github */
 .header-github-link:before {
-  background: no-repeat center/24px url("/img/social/github-black.svg");
+  background: no-repeat center/24px url("/img/social/Github-Light.svg");
 }
 
 html[data-theme='dark'] .header-github-link:before {
-  background: no-repeat center/24px url("/img/social/github-white.svg");
+  background: no-repeat center/24px url("/img/social/Github-Dark.svg");
 }
 
 
