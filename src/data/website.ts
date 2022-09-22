@@ -96,7 +96,7 @@ const COLOR_MAP = {
   },
   NODE: {
     ID: 'NODE',
-    NAME:'文档',
+    NAME:'NODE',
     COLOR:'#4CD263'
   },
 }
