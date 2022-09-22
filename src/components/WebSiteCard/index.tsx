@@ -1,23 +1,23 @@
 import React, { memo } from 'react'
-import clsx from 'clsx'
-import Link from '@docusaurus/Link'
+// import clsx from 'clsx'
+// import Link from '@docusaurus/Link'
 import styles from './style.module.css'
 import { type Website, type tagDot } from '../../data/website'
 
 function CardTag({tags}) {
   return (
-    <>
+    <div>
       {
-        tags.map((ele: tagDot)=> {
+        tags.map((tag: tagDot)=> (
           <div className={styles.pluginTag}>
-            <span title={ele.tagName} className={styles.pluginTagContent}>
-              {ele.tagName}           
+            <span title={tag.tagName} className={styles.pluginTagContent}>
+              {tag.tagName}           
             </span>
-            <span className={styles.colorLabel} style={{ backgroundColor: ele.dotColor}}></span>
+            <span className={styles.colorLabel} style={{ backgroundColor: tag.dotColor}}></span>
           </div>
-        })
+        ))
       }
-    </>
+    </div>
   )
 }
 

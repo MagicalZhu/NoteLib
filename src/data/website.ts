@@ -6,7 +6,7 @@ const COLOR_MAP = {
   },
   JAVA: {
     ID: 'JAVA',
-    NAME:'JAVA',
+    NAME:'Java',
     COLOR:'#945434'
   },
   ARCH: {
@@ -129,7 +129,7 @@ const createTagDot = (tags:string[]) => {
   const tagDots:tagDot[]= []
   tags.forEach((tag) => {
     tagDots.push({
-      tagName: tag,
+      tagName: COLOR_MAP[tag].NAME,
       dotColor: COLOR_MAP[tag].COLOR
     })
   })
