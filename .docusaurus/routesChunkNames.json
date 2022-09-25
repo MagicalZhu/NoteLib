@@ -172,7 +172,7 @@
     },
     "config": "config---website-5-e-9-af4"
   },
-  "/docs-4b5": {
+  "/docs-594": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-10-fc6"
@@ -466,6 +466,10 @@
   "/docs/Mysql/高级特性/用户权限管理-5a2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-mysql-高级特性-用户权限管理-70-c-f9c"
+  },
+  "/docs/Mysql/高级特性/主从复制-e5b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-mysql-高级特性-主从复制e-19-e02"
   },
   "/docs/Mysql/高级特性/InnoDB表空间-bb9": {
     "__comp": "__comp---theme-doc-item-178-a40",

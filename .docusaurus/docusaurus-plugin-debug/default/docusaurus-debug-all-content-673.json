@@ -740,7 +740,7 @@
             {
               "unversionedId": "about",
               "id": "about",
-              "title": "关于我",
+              "title": "About Me",
               "description": "👨‍💻 一名会写点js、java的十八线码农",
               "source": "@site/docs/about.mdx",
               "sourceDirName": ".",
@@ -752,7 +752,7 @@
               "version": "current",
               "frontMatter": {
                 "id": "about",
-                "title": "关于我",
+                "title": "About Me",
                 "slug": "/about"
               }
             },
@@ -915,8 +915,8 @@
                 "permalink": "/docs/category/运维"
               },
               "next": {
-                "title": "MySQL参数与命令",
-                "permalink": "/docs/Mysql/MySQL参数与命令"
+                "title": "主从复制",
+                "permalink": "/docs/Mysql/高级特性/主从复制"
               }
             },
             {
@@ -1218,6 +1218,33 @@
               }
             },
             {
+              "unversionedId": "Mysql/高级特性/主从复制",
+              "id": "Mysql/高级特性/主从复制",
+              "title": "主从复制",
+              "description": "引入",
+              "source": "@site/docs/Mysql/高级特性/主从复制.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/主从复制",
+              "permalink": "/docs/Mysql/高级特性/主从复制",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/主从复制.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "主从复制",
+                "title": "主从复制"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "其他日志",
+                "permalink": "/docs/Mysql/高级特性/其他日志"
+              },
+              "next": {
+                "title": "MySQL参数与命令",
+                "permalink": "/docs/Mysql/MySQL参数与命令"
+              }
+            },
+            {
               "unversionedId": "Mysql/高级特性/InnoDB表空间",
               "id": "Mysql/高级特性/InnoDB表空间",
               "title": "InnoDB表空间",
@@ -1383,7 +1410,7 @@
               "unversionedId": "Mysql/高级特性/Undo日志",
               "id": "Mysql/高级特性/Undo日志",
               "title": "Undo日志",
-              "description": "redo 日志记录的事务的行为,可以很好的对页进行“重做”, 但是事务除了能提交,还可以回滚,这个时候就需要undo",
+              "description": "redo 日志记录的事务的行为,可以很好的对页进行“重做”, 但是事务除了能提交,还可以回滚,这个时候就需要undo日志",
               "source": "@site/docs/Mysql/高级特性/Undo日志.md",
               "sourceDirName": "Mysql/高级特性",
               "slug": "/Mysql/高级特性/Undo日志",
@@ -1557,8 +1584,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "其他日志",
-                "permalink": "/docs/Mysql/高级特性/其他日志"
+                "title": "主从复制",
+                "permalink": "/docs/Mysql/高级特性/主从复制"
               }
             },
             {
@@ -2635,6 +2662,10 @@
                       {
                         "type": "doc",
                         "id": "Mysql/高级特性/其他日志"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Mysql/高级特性/主从复制"
                       }
                     ],
                     "collapsed": true,

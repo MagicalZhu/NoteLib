@@ -246,6 +246,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/主从复制",
+              "path": "/docs/Mysql/高级特性/主从复制",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/InnoDB表空间",
               "path": "/docs/Mysql/高级特性/InnoDB表空间",
               "sidebar": "mysqlSideBar"

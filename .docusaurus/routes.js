@@ -99,7 +99,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '4b5'),
+    component: ComponentCreator('/docs', '594'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -521,6 +521,12 @@ export default [
       {
         path: '/docs/Mysql/高级特性/用户权限管理',
         component: ComponentCreator('/docs/Mysql/高级特性/用户权限管理', '5a2'),
+        exact: true,
+        sidebar: "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/主从复制',
+        component: ComponentCreator('/docs/Mysql/高级特性/主从复制', 'e5b'),
         exact: true,
         sidebar: "mysqlSideBar"
       },

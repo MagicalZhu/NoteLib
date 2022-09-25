@@ -79,7 +79,8 @@ const mysqlPart =  new Category('MySQL基础与高级')
       'MVCC',
     ])
     .createSubCaregory('运维', 'Mysql/高级特性', [
-      '其他日志'
+      '其他日志',
+      '主从复制',
     ])
     
 

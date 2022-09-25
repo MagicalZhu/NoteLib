@@ -562,6 +562,12 @@
                 "label": "其他日志",
                 "href": "/docs/Mysql/高级特性/其他日志",
                 "docId": "Mysql/高级特性/其他日志"
+              },
+              {
+                "type": "link",
+                "label": "主从复制",
+                "href": "/docs/Mysql/高级特性/主从复制",
+                "docId": "Mysql/高级特性/主从复制"
               }
             ],
             "collapsed": true,
@@ -860,7 +866,7 @@
     },
     "about": {
       "id": "about",
-      "title": "关于我",
+      "title": "About Me",
       "description": "👨‍💻 一名会写点js、java的十八线码农"
     },
     "JVM/性能监控和调优入门/基于JDK命令行工具的监控": {
@@ -970,6 +976,12 @@
       "description": "示意图",
       "sidebar": "mysqlSideBar"
     },
+    "Mysql/高级特性/主从复制": {
+      "id": "Mysql/高级特性/主从复制",
+      "title": "主从复制",
+      "description": "引入",
+      "sidebar": "mysqlSideBar"
+    },
     "Mysql/高级特性/InnoDB表空间": {
       "id": "Mysql/高级特性/InnoDB表空间",
       "title": "InnoDB表空间",
@@ -1009,7 +1021,7 @@
     "Mysql/高级特性/Undo日志": {
       "id": "Mysql/高级特性/Undo日志",
       "title": "Undo日志",
-      "description": "redo 日志记录的事务的行为,可以很好的对页进行“重做”, 但是事务除了能提交,还可以回滚,这个时候就需要undo",
+      "description": "redo 日志记录的事务的行为,可以很好的对页进行“重做”, 但是事务除了能提交,还可以回滚,这个时候就需要undo日志",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/基础/MySQL函数与聚合": {
