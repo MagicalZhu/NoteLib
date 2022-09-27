@@ -67,39 +67,45 @@ const nav = {
       ]
     },
     {
-      label: "🚀分布式系统",
+      label: "🚀方法论",
       position: "left",
       items: [
         {
-          label: "理论与算法",
-          to: 'docs/distribute',
+          label: "分布式理论",
+          to: 'docs/distribute/protol',
         },
         {
-          label: "分布式基础技术",
-          to: 'docs/basicTech',
-        },
+          label: "分布式技术点",
+          to: 'docs/distribute/basicTech',
+        }
+      ]
+    },
+    {
+      label: "中间件",
+      position: "left",
+      items: [
         {
           label: "基础中间件",
-          to: 'docs/basicMiddleware',
+          to: 'docs/middleware/basicMiddleware',
         },
         {
           label: "定时任务",
-          to: 'docs/job',
+          to: 'docs/middleware/job',
         },
         {
           label: "缓存",
-          to: 'docs/cache',
+          to: 'docs/middleware/cache',
         },
         {
           label: "搜索引擎",
-          to: 'docs/searchEngine',
+          to: 'docs/middleware/searchEngine',
         },
         {
           label: "消息队列",
-          to: 'docs/messageQueue',
+          to: 'docs/middleware/messageQueue',
         },{
           label: "数据库",
-          to: 'docs/database'
+          to: 'docs/middleware/database'
         }
       ]
     },
