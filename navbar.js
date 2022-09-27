@@ -81,7 +81,7 @@ const nav = {
       ]
     },
     {
-      label: "中间件",
+      label: "🚀中间件",
       position: "left",
       items: [
         {
