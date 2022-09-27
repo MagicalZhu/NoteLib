@@ -182,6 +182,16 @@ export const websiteData: WebsiteCategory[] = [
         ])
       },
       {
+        "name": " Doocs",
+        "desc": "专注于分享技术领域相关知识的技术社区",
+        "logo": "https://avatars.githubusercontent.com/u/43716716?s=200&v=4",
+        "href": "https://doocs.github.io/#/README_CN",
+        "tags": createTagDot([
+          COLOR_MAP.BLOG.ID,
+          COLOR_MAP.JAVA.ID,
+        ])
+      },
+      {
         "name": "MartinFowler",
         "desc": "MartinFowler的个人网站,就是那个提出微服务架构,敏捷开发的...",
         "logo": "https://martinfowler.com/logo-sq.png",
