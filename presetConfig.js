@@ -10,8 +10,8 @@ const classicConfig = {
     breadcrumbs: true,
     sidebarPath: require.resolve("./sidebars.js"),
     editUrl: "https://github.com/MagicalZhu/NoteLib/tree/main",
-    showLastUpdateTime: false,
-    showLastUpdateAuthor: false,
+    showLastUpdateTime: true,
+    showLastUpdateAuthor: true,
     remarkPlugins: [require('mdx-mermaid')],
   },
   // 以下参数将被直接传递给 @docusaurus/theme-classic。
