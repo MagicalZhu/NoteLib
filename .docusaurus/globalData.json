@@ -91,24 +91,12 @@
               "sidebar": "basicSideBar"
             },
             {
-              "id": "定时任务/job",
-              "path": "/docs/job"
+              "id": "分布式/分布式技术点/basicTech",
+              "path": "/docs/distribute/basicTech"
             },
             {
-              "id": "分布式基础技术/basicTech",
-              "path": "/docs/basicTech"
-            },
-            {
-              "id": "分布式理论/distribute",
-              "path": "/docs/distribute"
-            },
-            {
-              "id": "缓存/cache",
-              "path": "/docs/cache"
-            },
-            {
-              "id": "基础中间件/basicMiddleware",
-              "path": "/docs/basicMiddleware"
+              "id": "分布式/分布式理论/distribute",
+              "path": "/docs/distribute/protol"
             },
             {
               "id": "计算机网络/HTTP/http-protocol",
@@ -141,16 +129,28 @@
               "sidebar": "dataStructureSidebar"
             },
             {
-              "id": "数据库/database",
-              "path": "/docs/database"
+              "id": "中间件/定时任务/job",
+              "path": "/docs/middleware/job"
             },
             {
-              "id": "搜索引擎/searchEngine",
-              "path": "/docs/searchEngine"
+              "id": "中间件/缓存/cache",
+              "path": "/docs/middleware/cache"
             },
             {
-              "id": "消息队列/messageQueue",
-              "path": "/docs/messageQueue"
+              "id": "中间件/基础中间件/basicMiddleware",
+              "path": "/docs/middleware/basicMiddleware"
+            },
+            {
+              "id": "中间件/数据库/database",
+              "path": "/docs/middleware/database"
+            },
+            {
+              "id": "中间件/搜索引擎/searchEngine",
+              "path": "/docs/middleware/searchEngine"
+            },
+            {
+              "id": "中间件/消息队列/messageQueue",
+              "path": "/docs/middleware/messageQueue"
             },
             {
               "id": "about",

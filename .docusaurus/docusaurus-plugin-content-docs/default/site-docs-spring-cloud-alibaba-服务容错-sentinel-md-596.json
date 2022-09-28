@@ -11,6 +11,9 @@
   "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Alibaba/服务容错- Sentinel.md",
   "tags": [],
   "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "2018年10月14日",
   "frontMatter": {
     "id": "Sentinel",
     "title": "服务容错-Sentinel"

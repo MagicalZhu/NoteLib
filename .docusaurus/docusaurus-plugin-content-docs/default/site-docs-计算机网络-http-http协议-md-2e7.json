@@ -11,6 +11,9 @@
   "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
   "tags": [],
   "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "2018年10月14日",
   "frontMatter": {
     "id": "http-protocol",
     "title": "HTTP协议"

@@ -788,30 +788,15 @@
       "description": "JUC基础知识概述",
       "sidebar": "basicSideBar"
     },
-    "定时任务/job": {
-      "id": "定时任务/job",
-      "title": "定时任务概述",
-      "description": "定时任务文档概述"
+    "分布式/分布式技术点/basicTech": {
+      "id": "分布式/分布式技术点/basicTech",
+      "title": "分布式技术点",
+      "description": "分布式技术点文档概述"
     },
-    "分布式基础技术/basicTech": {
-      "id": "分布式基础技术/basicTech",
-      "title": "分布式基础技术概述",
-      "description": "分布式基础技术文档概述"
-    },
-    "分布式理论/distribute": {
-      "id": "分布式理论/distribute",
-      "title": "分布式理论&算法&协议",
+    "分布式/分布式理论/distribute": {
+      "id": "分布式/分布式理论/distribute",
+      "title": "分布式理论",
       "description": "一些分布式的理论、算法、协议"
-    },
-    "缓存/cache": {
-      "id": "缓存/cache",
-      "title": "缓存概述",
-      "description": "缓存文档概述"
-    },
-    "基础中间件/basicMiddleware": {
-      "id": "基础中间件/basicMiddleware",
-      "title": "基础中间件",
-      "description": "基础中间件文档概述"
     },
     "计算机网络/HTTP/http-protocol": {
       "id": "计算机网络/HTTP/http-protocol",
@@ -849,18 +834,33 @@
       "description": "数据结构与算法的学习笔记",
       "sidebar": "dataStructureSidebar"
     },
-    "数据库/database": {
-      "id": "数据库/database",
+    "中间件/定时任务/job": {
+      "id": "中间件/定时任务/job",
+      "title": "定时任务概述",
+      "description": "定时任务文档概述"
+    },
+    "中间件/缓存/cache": {
+      "id": "中间件/缓存/cache",
+      "title": "缓存概述",
+      "description": "缓存文档概述"
+    },
+    "中间件/基础中间件/basicMiddleware": {
+      "id": "中间件/基础中间件/basicMiddleware",
+      "title": "基础中间件",
+      "description": "基础中间件文档概述"
+    },
+    "中间件/数据库/database": {
+      "id": "中间件/数据库/database",
       "title": "数据库概述",
       "description": "数据库文档概述"
     },
-    "搜索引擎/searchEngine": {
-      "id": "搜索引擎/searchEngine",
+    "中间件/搜索引擎/searchEngine": {
+      "id": "中间件/搜索引擎/searchEngine",
       "title": "搜索引擎概述",
       "description": "搜索引擎文档概述"
     },
-    "消息队列/messageQueue": {
-      "id": "消息队列/messageQueue",
+    "中间件/消息队列/messageQueue": {
+      "id": "中间件/消息队列/messageQueue",
       "title": "消息队列概述",
       "description": "消息队列文档概述"
     },

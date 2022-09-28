@@ -66,8 +66,12 @@
 }
 
 .websiteList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  /* gap: 16px; */
   padding: 0;
+  list-style: none;
+  margin-top: 0.5rem;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  grid-gap: 2rem;
 }

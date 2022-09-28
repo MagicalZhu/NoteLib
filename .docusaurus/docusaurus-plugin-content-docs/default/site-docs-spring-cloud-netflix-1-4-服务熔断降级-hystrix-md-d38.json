@@ -11,6 +11,9 @@
   "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.4服务熔断降级-Hystrix.md",
   "tags": [],
   "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "2018年10月14日",
   "frontMatter": {
     "id": "Hystrix",
     "title": "服务熔断-Hystrix"

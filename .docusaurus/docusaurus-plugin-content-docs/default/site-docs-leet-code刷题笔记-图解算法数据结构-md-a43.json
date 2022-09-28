@@ -11,6 +11,9 @@
   "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/LeetCode刷题笔记/图解算法数据结构.md",
   "tags": [],
   "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "2018年10月14日",
   "frontMatter": {
     "id": "illustrationOfAlgorithm",
     "title": "图解算法数据结构"

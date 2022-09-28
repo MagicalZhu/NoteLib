@@ -35,7 +35,7 @@ const WebsiteCard = memo(({ website }: { website: Website }) => (
               <div title={website.name} className={styles.pluginHeadTitle}>
                 {website.name}                    
               </div>
-                <CardTag tags={website.tags}/>
+              <CardTag tags={website.tags}/>
             </div>
           </div>
             <p title={website.desc} className={styles.pluginBody}>

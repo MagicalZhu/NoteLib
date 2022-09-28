@@ -11,6 +11,9 @@
   "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/Netflix/1.9链路追踪- Sleuth.md",
   "tags": [],
   "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "2018年10月14日",
   "frontMatter": {
     "id": "Sleuth",
     "title": "链路追踪-Sleuth"

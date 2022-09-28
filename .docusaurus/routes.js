@@ -99,7 +99,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '594'),
+    component: ComponentCreator('/docs', 'f9f'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -212,21 +212,6 @@ export default [
       {
         path: '/docs/about',
         component: ComponentCreator('/docs/about', '0b0'),
-        exact: true
-      },
-      {
-        path: '/docs/basicMiddleware',
-        component: ComponentCreator('/docs/basicMiddleware', 'fa0'),
-        exact: true
-      },
-      {
-        path: '/docs/basicTech',
-        component: ComponentCreator('/docs/basicTech', '6b7'),
-        exact: true
-      },
-      {
-        path: '/docs/cache',
-        component: ComponentCreator('/docs/cache', '0b3'),
         exact: true
       },
       {
@@ -380,19 +365,19 @@ export default [
         sidebar: "basicSideBar"
       },
       {
-        path: '/docs/database',
-        component: ComponentCreator('/docs/database', 'd19'),
-        exact: true
-      },
-      {
         path: '/docs/dataStructure',
         component: ComponentCreator('/docs/dataStructure', 'f02'),
         exact: true,
         sidebar: "dataStructureSidebar"
       },
       {
-        path: '/docs/distribute',
-        component: ComponentCreator('/docs/distribute', '873'),
+        path: '/docs/distribute/basicTech',
+        component: ComponentCreator('/docs/distribute/basicTech', '72c'),
+        exact: true
+      },
+      {
+        path: '/docs/distribute/protol',
+        component: ComponentCreator('/docs/distribute/protol', '566'),
         exact: true
       },
       {
@@ -400,11 +385,6 @@ export default [
         component: ComponentCreator('/docs/front/Vue', 'a4d'),
         exact: true,
         sidebar: "vueSideBar"
-      },
-      {
-        path: '/docs/job',
-        component: ComponentCreator('/docs/job', 'cd2'),
-        exact: true
       },
       {
         path: '/docs/JVM',
@@ -436,8 +416,33 @@ export default [
         sidebar: "linuxSideBar"
       },
       {
-        path: '/docs/messageQueue',
-        component: ComponentCreator('/docs/messageQueue', 'e64'),
+        path: '/docs/middleware/basicMiddleware',
+        component: ComponentCreator('/docs/middleware/basicMiddleware', '924'),
+        exact: true
+      },
+      {
+        path: '/docs/middleware/cache',
+        component: ComponentCreator('/docs/middleware/cache', '194'),
+        exact: true
+      },
+      {
+        path: '/docs/middleware/database',
+        component: ComponentCreator('/docs/middleware/database', '0e9'),
+        exact: true
+      },
+      {
+        path: '/docs/middleware/job',
+        component: ComponentCreator('/docs/middleware/job', 'bc7'),
+        exact: true
+      },
+      {
+        path: '/docs/middleware/messageQueue',
+        component: ComponentCreator('/docs/middleware/messageQueue', '1ad'),
+        exact: true
+      },
+      {
+        path: '/docs/middleware/searchEngine',
+        component: ComponentCreator('/docs/middleware/searchEngine', 'fb2'),
         exact: true
       },
       {
@@ -607,11 +612,6 @@ export default [
         component: ComponentCreator('/docs/networrk-basic', 'b98'),
         exact: true,
         sidebar: "netWorkSidebar"
-      },
-      {
-        path: '/docs/searchEngine',
-        component: ComponentCreator('/docs/searchEngine', '3c2'),
-        exact: true
       },
       {
         path: '/docs/source/acg/acgShare_2022',
