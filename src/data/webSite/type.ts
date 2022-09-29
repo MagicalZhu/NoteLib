@@ -2,7 +2,7 @@
 /**
  * 站点标签
  */
- export interface Tag {
+export interface Tag {
 	// 标签名称
 	name: string,
 	// 标签font颜色
@@ -16,15 +16,15 @@
 type rateEnuum = 1|2|3|4|5
 
 type langEnum = 'Java' | 
-								'Go' | 
-								'Ruby' | 
-								'JavaScript' | 
-								'TypeScript' | 
-								'Node' | 
-								'Deno' |
-								'Rust' |
-								'React' |
-								'Vue'
+				'Go' | 
+				'Ruby' | 
+				'JavaScript' | 
+				'TypeScript' |
+				'Node' | 
+				'Deno' |
+				'Rust' |
+				'React' |
+				'Vue'
 	
 /**
  * Web站点
@@ -47,5 +47,5 @@ export interface WebSite  {
 	// 推荐等级
 	rate: rateEnuum,
 	// 语言
-	lang?: langEnum[] | langEnum
+	lang?: langEnum[]
 }

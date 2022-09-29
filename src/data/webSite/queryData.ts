@@ -23,7 +23,7 @@ const FE_MAP = {
 		fontColor: '#6FDABE',
 		description: 'CSS相关的框架与资源'
 	},
-	FE_TOOL:{
+	FE_TOOL_LIB:{
 		name: '前端工具库',
 		fontColor: '#6FDABE',
 		description: '常用的一些前端工具'
@@ -72,6 +72,11 @@ const FE_MAP = {
 		name: 'Web框架',
 		fontColor: '#6FDABE',
 		description: '利用Web框架快速的构建Web应用'
+	},
+	FE_WEB_EXT:{
+		name: '框架拓展',
+		fontColor: '#6FDABE',
+		description: '对Web框架的功能进行拓展'
 	}
 }
 
@@ -168,17 +173,17 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_BLOG, BE_MAP.BE_BAISC],
 		description: '一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点',
 		rate: 2,
-		lang: 'Java',
+		lang: ['Java'],
 	},
 	{
 		name: '虫洞栈',
 		icon: 'https://bugstack.cn/favicon.ico',
-  	href: 'https://bugstack.cn/',
+		href: 'https://bugstack.cn/',
 		isOpenSource: true,
 		tags: [BE_MAP.BE_BLOG, BE_MAP.BE_BAISC],
 		description: 'Java 基础、面经手册、Netty4.x、手写Spring、用Java实现JVM、重学Java设计模式、SpringBoot中间件开发、DDD系统架构项目开发、字节码编程...',
 		rate: 2,
-		lang: 'Java'
+		lang: ['Java']
 	},
 	{
 		name: 'Java 全栈知识体系',
@@ -188,7 +193,7 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_BLOG, BE_MAP.BE_BAISC],
 		description: '包含: Java 基础, Java 部分源码, JVM, Spring, Spring Boot, Spring Cloud, 数据库原理, MySQL...',
 		rate: 3,
-		lang: 'Java'
+		lang: ['Java']
 	}, 
 	{
 		name: 'JavaGuide',
@@ -198,7 +203,7 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_BLOG, BE_MAP.BE_BAISC],
 		description: '「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识',
 		rate: 2,
-		lang: 'Java'
+		lang: ['Java']
 	}, {
 		name: 'Doocs',
 		icon: 'https://avatars.githubusercontent.com/u/43716716?s=200&v=4',
@@ -207,7 +212,7 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_BLOG, BE_MAP.BE_BAISC],
 		description: '专注于分享技术领域相关知识的技术社区',
 		rate: 1,
-		lang: 'Java'
+		lang: ['Java']
 	},{
 		name: 'Martin Fowler',
 		icon: 'https://martinfowler.com/logo-sq.png',
@@ -240,7 +245,7 @@ export const websiteData:WebSite[] = [
 		tags: [FE_MAP.FE_BLOG],
 		description: '是作者五月君从事 Node.js 开发以来的学习历程，希望这些分享能帮助到正在学习、使用 Node.js 的朋友们',
 		rate: 1,
-		lang: 'Node'
+		lang: ['Node']
 	}, {
 		name: 'Road To Coding',
 		icon: '/img/website/roadMap.ico',
@@ -257,7 +262,7 @@ export const websiteData:WebSite[] = [
 		tags: [COM.COM_BOOK],
 		description: '《ECMAScript 6 入门教程》阮一峰老师开源的一本 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性。',
 		rate: 3,
-		lang: 'JavaScript'
+		lang: ['JavaScript']
 	}, {
 		name: '深入理解 TypeScript',
 		icon: 'https://jkchao.github.io//typescript-book-chinese/logo.png',
@@ -266,7 +271,7 @@ export const websiteData:WebSite[] = [
 		tags: [COM.COM_BOOK],
 		description: '《TypeScript Deep Dive》 是一本很好的开源书，从基础到深入，很全面的阐述了 TypeScript 的各种魔法，不管你是新手，还是老鸟，它都将适应你。',
 		rate: 2,
-		lang: 'TypeScript'
+		lang: ['TypeScript']
 	}, {
 		name: '解道',
 		icon: '/img/website/jdon.png',
@@ -355,7 +360,7 @@ export const websiteData:WebSite[] = [
 		tags: [COM.COM_DEV_LAN],
 		description: 'Open Jdk项目',
 		rate: 2,
-		lang: 'Java'
+		lang: ['Java']
 	}, {
 		name: 'Quarkus',
 		icon: 'https://avatars.githubusercontent.com/u/47638783',
@@ -364,7 +369,7 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_FRAMEWOKR, BE_MAP.BE_CLOUD_NATIVE],
 		description: 'Quarkus 为 GraalVM 和 HotSpot 量身定制用程序...',
 		rate: 3,
-		lang: 'Java'
+		lang: ['Java']
 	}, {
 		name: 'Spring',
 		icon: '/img/website/Spring.png',
@@ -373,7 +378,7 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_FRAMEWOKR],
 		description: 'Spring',
 		rate: 3,
-		lang: 'Java'
+		lang: ['Java']
 	}, {
 		name: 'Mybatis',
 		icon: '/img/website/mybatis.png',
@@ -382,7 +387,7 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_FRAMEWOKR],
 		description: 'Mybatis是一个很好用的ORM框架',
 		rate: 3,
-		lang: 'Java'
+		lang: ['Java']
 	}, {
 		name: 'Redis',
 		icon: '/img/website/redis.png',
@@ -455,6 +460,301 @@ export const websiteData:WebSite[] = [
 		tags: [BE_MAP.BE_MIDDLEWARE],
 		description: 'ElasticSearch',
 		rate: 3
+	}, {
+		name: 'NPM',
+		icon: '/img/website/npm.png',
+		href: 'https://www.npmjs.com',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_BUILD],
+		description: 'NPM是世界上最大的前端包管理器',
+		rate: 2,
+		lang: ['JavaScript','TypeScript']
+	}, {
+		name: 'Yarn',
+		icon: '/img/website/yarn.png',
+		href: 'https://www.yarnpkg.cn',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_BUILD],
+		description: 'Yarn 是一个软件包管理器，还可以作为项目管理工具。无论你是小型项目还是大型单体仓库（monorepos），无论是业余爱好者还是企业用户，Yarn 都能满足你的需求。',
+		rate: 2,
+		lang: ['JavaScript','TypeScript']
+	}, {
+		name: 'Pnpm',
+		icon: '/img/website/pnpm.svg',
+		href: 'https://pnpm.io',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_BUILD],
+		description: '速度快、节省磁盘空间的软件包管理',
+		rate: 2,
+		lang: ['JavaScript','TypeScript']
+	}, {
+		name: 'Webpack',
+		icon: '/img/website/webpack.png',
+		href: 'https://www.webpackjs.com',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_BUILD],
+		description: 'webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)',
+		rate: 2,
+		lang: ['JavaScript','TypeScript']
+	}, {
+		name: 'Vite',
+		icon: '/img/website/vite.svg',
+		href: 'https://cn.vitejs.dev',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_BUILD],
+		description: '下一代的前端工具链，为开发提供极速响应',
+		rate: 2,
+		lang: ['JavaScript','TypeScript']
+	}, {
+		name: 'Maven',
+		icon: '/img/website/Maven.png',
+		href: 'https://maven.apache.org/guides/getting-started/index.html',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_BUILD],
+		description: 'Maven',
+		rate: 3,
+		lang: ['Java']
+	}, {
+		name: 'Gradle',
+		icon: '/img/website/gradle.png',
+		href: 'https://docs.gradle.org/current/userguide/userguide.html',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_BUILD],
+		description: 'Gradle',
+		rate: 3,
+		lang: ['Java']
+	}, {
+		name: 'TypeScript',
+		icon: '/img/website/ts.svg',
+		href: 'http://ts.xcatliu.com/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_BLOG],
+		description: 'TypeScript',
+		rate: 2,
+		lang: ['TypeScript']
+	}, {
+		name: 'MDN',
+		icon: '/img/website/mdn.svg',
+		href: 'https://developer.mozilla.org/zh-CN/docs/Web',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_BLOG],
+		description: 'MDN',
+		rate: 3,
+		lang: ['JavaScript']
+	}, {
+		name: 'Fresh',
+		icon: 'https://fresh.deno.dev/logo.svg',
+		href: 'https://fresh.deno.dev/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_SERVER],
+		description: '面向 JavaScript 和 TypeScript 开发者的全栈现代 Web 框架, 可以轻松创建高质量、高性能、稳定性好，以及支持定制的 Web 应用。',
+		rate: 2,
+		lang: ['Deno']
+	}, {
+		name: 'PolarDB',
+		icon: 'https://www.polardbx.com/favicon.svg',
+		href: 'https://www.polardbx.com/document/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_MIDDLEWARE,BE_MAP.BE_CLOUD_NATIVE],
+		description: 'PolarDB-X 是一款面向超高并发、海量存储、复杂查询场景设计的云原生分布式数据库系统。',
+		rate: 3
+	}, {
+		name: 'Vue',
+		icon: '/img/website/vue.svg',
+		href: 'https://cn.vuejs.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_WEB_FRAMEWORK],
+		description: 'Vue',
+		rate: 3,
+		lang: ['Vue']
+	}, {
+		name: 'Element-Plus',
+		icon: '/img/website/elementPlus.png',
+		href: 'https://element-plus.gitee.io/zh-CN/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_UI_LIB],
+		description: 'Element-Plus',
+		rate: 3,
+		lang: ['Vue']
+	}, {
+		name: 'Nuxt.js',
+		icon: '/img/website/nuxt.svg',
+		href: 'https://nuxtjs.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_SERVER],
+		description: '使用 NuxtJS 充满信心地构建您的下一个 Vue.js 应用程序',
+		rate: 2,
+		lang: ['Vue']
+	}, {
+		name: 'Pinia',
+		icon: '/img/website/pinia.svg',
+		href: 'https://pinia.vuejs.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_WEB_EXT],
+		description: 'Vue下一代的状态管理拓展',
+		rate: 3,
+		lang: ['Vue']
+	}, {
+		name: 'VueUse',
+		icon: '/img/website/vueUse.svg',
+		href: 'https://vueuse.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_WEB_EXT],
+		description: '基本 Vue 合成实用程序的集合',
+		rate: 3,
+		lang: ['Vue']
+	}, {
+		name: 'React',
+		icon: '/img/website/React.svg',
+		href: 'https://react.docschina.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_WEB_FRAMEWORK],
+		description: 'React',
+		rate: 3,
+		lang: ['React']
+	}, {
+		name: 'Ant Design',
+		icon: '/img/website/AntDesign.svg',
+		href: 'https://ant.design/index-cn',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_UI_LIB],
+		description: 'Ant Design',
+		rate: 3,
+		lang: ['React']
+	}, {
+		name: 'Next.js',
+		icon: '/img/website/next.ico',
+		href: 'https://nextjs.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_SERVER],
+		description: 'Next.js 为您提供生产环境所需的所有功能以及最佳的开发体验：包括静态及服务器端融合渲染、 支持 TypeScript、智能化打包、 路由预取等功能 无需任何配置。',
+		rate: 3,
+		lang: ['React']
+	}, {
+		name: 'UmiJS',
+		icon: '/img/website/umi.png',
+		href: 'https://umijs.org',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_SERVER],
+		description: '用 Umi 构建你的下一个应用，带给你简单而愉悦的 Web 开发体验',
+		rate: 3,
+		lang: ['React']
+	}, {
+		name: 'ahooks',
+		icon: '/img/website/ahooks.svg',
+		href: 'https://ahooks.js.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_WEB_EXT],
+		description: '一个高质量和可靠的 React Hooks 库',
+		rate: 3,
+		lang: ['React']
+	}, {
+		name: 'react-spring',
+		icon: '/img/website/react-spring.ico',
+		href: 'https://react-spring.dev',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_COMIC_LIB],
+		description: '通过简单的动画基元使您的组件栩栩如生',
+		rate: 3,
+		lang: ['React']
+	}, {
+		name: 'Cloudscape',
+		icon: 'https://avatars.githubusercontent.com/u/107056549?s=200&v=4',
+		href: 'https://cloudscape.design/get-started/guides/introduction/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_UI_LIB],
+		description: '亚马逊开源的React  UI 库',
+		rate: 2,
+		lang: ['React']
+	}, {
+		name: 'Electron',
+		icon: '/img/website/electron.svg',
+		href: 'https://www.electronjs.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_DESK_APP],
+		description: 'Electron',
+		rate: 3,
+		lang: ['Node']
+	}, {
+		name: 'Node.js',
+		icon: '/img/website/node.svg',
+		href: 'http://nodejs.cn/api/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_RUNTIME],
+		description: 'Node.js',
+		rate: 3,
+		lang: ['Node']
+	}, {
+		name: 'Deno',
+		icon: '/img/website/deno.svg',
+		href: 'https://deno.land/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_RUNTIME],
+		description: '一个现代的JavaScript和TypeScript运行时。',
+		rate: 2,
+		lang: ['Deno']
+	}, {
+		name: 'Sequelize',
+		icon: '/img/website/sequelize.png',
+		href: 'https://www.sequelize.com.cn/core-concepts/getting-started',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_TOOL_LIB],
+		description: 'Sequelize 是一个基于 promise 的 Node.js的 ORM框架',
+		rate: 3,
+		lang: ['Node']
+	},{
+		name: 'Axios',
+		icon: '/img/website/axios.png',
+		href: 'https://axios-http.cn/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_TOOL_LIB],
+		description: 'Axios 是一个基于 promise 的网络请求库',
+		rate: 3,
+		lang: ['JavaScript']
+	}, {
+		name: 'Express',
+		icon: '/img/website/express.png',
+		href: 'https://www.expressjs.com.cn/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_SERVER],
+		description: '基于 Node.js 平台，快速、开放、极简的 Web 开发框架',
+		rate: 3,
+		lang: ['Node']
+	}, {
+		name: 'Socket.io',
+		icon: '/img/website/socketIo.png',
+		href: 'https://socketio.bootcss.com',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_TOOL_LIB],
+		description: 'Socket.IO 是一个可以在浏览器与服务器之间实现实时、双向、基于事件的通信的工具库。',
+		rate: 3,
+		lang: ['JavaScript']
+	}, {
+		name: 'Lodash',
+		icon: '/img/website/lodash.png',
+		href: 'https://lodash.net',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_TOOL_LIB],
+		description: '一个 JavaScript 的实用工具库, 表现一致性, 模块化, 高性能, 以及可扩展。',
+		rate: 3,
+		lang: ['JavaScript']
+	}, {
+		name: 'Docusaurus',
+		icon: '/img/website/docusaurus.png',
+		href: 'https://docusaurus.io/zh-CN',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_SITE_GEN],
+		description: 'Docusaurus',
+		rate: 3,
+		lang: ['React']
+	}, {
+		name: 'Vuepress',
+		icon: '/img/website/vuepress.png',
+		href: 'https://vuepress.vuejs.org/zh/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_SITE_GEN],
+		description: 'Vuepress',
+		rate: 3,
+		lang: ['Vue']
 	}
 ]
-
