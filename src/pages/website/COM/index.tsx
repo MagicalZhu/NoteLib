@@ -1,8 +1,8 @@
 import React from 'react'
 import clsx from 'clsx'
 import Layout from '@theme/Layout'
-import WebsiteCard from '../../components/WebSiteCard/index'
-import { websiteData } from '../../data/website'
+import WebsiteCard from '../../../components/WebSiteCard/index'
+import { websiteData } from '../../../data/website'
 import styles from './style.module.css'
 
 

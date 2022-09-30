@@ -1,0 +1,35 @@
+
+.navpage {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.tagContainer {
+  padding: 0 4%;
+  position: sticky;
+  z-index: 5;
+  background: #fff;
+  top: 3.6rem;
+}
+
+.tagBox {
+  background: #fff;
+  padding: 2rem 0;
+}
+.tagBox button {
+  background: #fff;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  line-height: 20px;
+  color: #6e6d7a;
+  font-weight: 400;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.tagBox button:active {
+  background-color: rgba(13,12,34,.05);
+  font-weight: 600;
+}

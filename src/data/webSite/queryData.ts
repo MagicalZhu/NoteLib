@@ -3,11 +3,14 @@
 import { type Tag, type WebSite } from './type'
 
 
+type CusTag = {
+	[proName: string]: Tag
+}
 
 /**
  * 前端站点
  */
-const FE_MAP = {
+ export const FE_MAP: CusTag = {
 	FE_BLOG: {
 		name: '博客教程',
 		fontColor: '#39ca30',
@@ -83,7 +86,7 @@ const FE_MAP = {
 /**
  * 后端站点
  */
-const BE_MAP= {
+export const BE_MAP: CusTag = {
 	BE_BLOG:{
 		name: '博客教程',
 		fontColor: '#39ca30',
@@ -139,7 +142,7 @@ const BE_MAP= {
 /**
  * 通用资源
  */
-const COM = {
+export const COM: CusTag = {
 	COM_BOOK:{
 		name: '开源书籍',
 		fontColor: '#39ca30',
@@ -756,5 +759,93 @@ export const websiteData:WebSite[] = [
 		description: 'Vuepress',
 		rate: 3,
 		lang: ['Vue']
+	}, {
+		name: 'CSS常用样式',
+		icon: '/img/website/cssTrick.png',
+		href: 'https://qishaoxuan.github.io/css_tricks/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS],
+		description: 'CSS常用样式',
+		rate: 2,
+	}, {
+		name: 'w3schools Css 教程',
+		icon: '/img/website/w3c.ico',
+		href: 'https://www.w3schools.com/css',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS,FE_MAP.FE_BLOG],
+		description: 'w3schools 从基础到高级的CSS教程',
+		rate: 2,
+	}, {
+		name: 'TailwindCSS',
+		icon: '/img/website/tailwind.png',
+		href: 'https://www.tailwindcss.cn',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS, FE_MAP.FE_UI_LIB],
+		description: 'Tailwind CSS 是一个功能类优先的 CSS 框架，它集成了诸如 flex, pt-4, text-center 和 rotate-90 这样的的类，它们能直接在脚本标记语言中组合起来，构建出任何设计',
+		rate: 2,
+	}, {
+		name: 'WindiCSS',
+		icon: '/img/website/windi.svg',
+		href: 'https://windicss.org',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS, FE_MAP.FE_UI_LIB],
+		description: 'Windi CSS 是下一代工具优先的 CSS 框架。',
+		rate: 3,
+	}, {
+		name: 'uiverse',
+		icon: '/img/website/uiverse.svg',
+		href: 'https://uiverse.io/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS],
+		description: '丰富的 UI 元素助您脱颖而出，开源且免费使用',
+		rate: 3,
+	}, {
+		name: 'iconfont',
+		icon: '/img/website/iconfont.svg',
+		href: 'https://www.iconfont.cn/',
+		isOpenSource: false,
+		tags: [FE_MAP.FE_CSS],
+		description: 'iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能。',
+		rate: 2
+	}, {
+		name: 'Font Awesome',
+		icon: '/img/website/fontAw.png',
+		href: 'https://fa5.dashgame.com',
+		isOpenSource: false,
+		tags: [FE_MAP.FE_CSS],
+		description: '在您的网站上使用Font Awesome展示矢量图标和社交标志，这可是网络上最流行的图标集和工具包。',
+		rate: 2
+	},{
+		name: 'feathericons',
+		icon: '/img/website/feather.ico',
+		href: 'https://feathericons.com/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS],
+		description: '简单美丽的开源图标',
+		rate: 2
+	},{
+		name: 'undraw',
+		icon: '/img/website/undraw.png',
+		href: 'https://undraw.co/',
+		isOpenSource: false,
+		tags: [FE_MAP.FE_CSS],
+		description: '一个不断更新的设计项目与美丽的SVG图像，使用完全免费',
+		rate: 2
+	}, {
+		name: '渐变色网站',
+		icon: '/img/website/grad.ico',
+		href: 'https://gradihunt.com/',
+		isOpenSource: false,
+		tags: [FE_MAP.FE_CSS],
+		description: '数百万个自动生成的渐变的网站',
+		rate: 2
+	}, {
+		name: 'Google Fonts',
+		icon: '/img/website/googleFonts.ico',
+		href: 'https://googlefonts.cn/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS],
+		description: '谷歌字体',
+		rate: 2
 	}
 ]

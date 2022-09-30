@@ -23,7 +23,15 @@ const nav = {
   // 设置导航条上的元素
   items: [
     {
-      label: "🤖基础知识",
+      label: "关于我👋",
+      position: "left",
+      items: [
+        { to: '/blog', label: '博客' },
+        // { to: '/docs/source/devSource', label: '分享' },
+      ]
+    },
+    {
+      label: "基础知识🤖",
       position: "left",
       items: [
         {
@@ -53,7 +61,7 @@ const nav = {
       ]
     },
     {
-      label: "👨‍💻后端框架",
+      label: "后端框架👨‍💻",
       position: "left",
       items: [
         {
@@ -67,7 +75,7 @@ const nav = {
       ]
     },
     {
-      label: "🚀方法论",
+      label: "方法论🚀",
       position: "left",
       items: [
         {
@@ -81,7 +89,7 @@ const nav = {
       ]
     },
     {
-      label: "🚀中间件",
+      label: "中间件🚀",
       position: "left",
       items: [
         {
@@ -110,7 +118,7 @@ const nav = {
       ]
     },
     {
-      label: "👩‍💻前端技术",
+      label: "前端技术👩‍💻",
       position: "left",
       items: [
         {
@@ -120,7 +128,7 @@ const nav = {
       ]
     },
     {
-      label:"⛽️底层",
+      label:"底层⛽️",
       position: "left",
       items: [
         {
@@ -130,12 +138,12 @@ const nav = {
       ]
     },
     {
-      label: "👋其他",
+      label: '物料中心👏',
       position: "left",
       items: [
-        { to: '/blog', label: '博客' },
-        { to: '/website', label: '网址导航'},
-        { to: '/docs/source/devSource', label: '分享'},
+        { to: '/website/BE', label: '后端物料' },
+        { to: '/website/COM', label: '其他物料' },
+        { to: '/website/FE', label: '前端物料' },
       ]
     },
     /*
