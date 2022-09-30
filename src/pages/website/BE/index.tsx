@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import clsx from 'clsx'
 import Layout from '@theme/Layout'
 import WebsiteCard from '../../../components/WebSiteCard/index'
@@ -22,6 +22,10 @@ const getTags = () => {
 
 
 function TagButtonList() {
+  const [isActive, setActive] = useState(true);
+  function onclickEvent () {
+    setActive(!isActive)
+  }
   getTags()
   return (
     <>
@@ -30,7 +34,7 @@ function TagButtonList() {
           <div className={styles.tagBox}>
              {
               totalTags.map((tag) => (
-                <button>{tag.name}</button>
+                <button onClick={onclickEvent}>{tag.name}</button>
               ))
             }
           </div>
