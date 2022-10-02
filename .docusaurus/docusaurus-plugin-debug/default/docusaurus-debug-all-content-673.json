@@ -3380,8 +3380,18 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/",
-        "source": "@site/src/pages/website/index.tsx"
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
+      },
+      {
+        "type": "jsx",
+        "permalink": "/website/COM/",
+        "source": "@site/src/pages/website/COM/index.tsx"
+      },
+      {
+        "type": "jsx",
+        "permalink": "/website/FE/",
+        "source": "@site/src/pages/website/FE/index.tsx"
       }
     ]
   },

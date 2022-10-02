@@ -1,6 +1,6 @@
 
 
-import { type Tag, type WebSite } from './type'
+import { type Tag, type WebSite, type queryType } from './type'
 
 
 type CusTag = {
@@ -10,73 +10,87 @@ type CusTag = {
 /**
  * 前端站点
  */
- export const FE_MAP: CusTag = {
+export const FE_MAP: CusTag = {
 	FE_BLOG: {
+		type: 'FE',
 		name: '博客教程',
 		fontColor: '#39ca30',
 		description: '不错的前端学习资源'
 	},
 	FE_SITE_GEN:{
+		type: 'FE',
 		name: '静态站点生成器',
 		fontColor: '#AAC98E',
 		description: '简单快速的构建出个人文档'
 	},
 	FE_CSS:{
+		type: 'FE',
 		name: 'CSS',
 		fontColor: '#6FDABE',
 		description: 'CSS相关的框架与资源'
 	},
 	FE_TOOL_LIB:{
+		type: 'FE',
 		name: '前端工具库',
 		fontColor: '#6FDABE',
 		description: '常用的一些前端工具'
 	},
 	FE_RUNTIME:{
+		type: 'FE',
 		name: 'JS运行时',
 		fontColor: '#6FDABE',
 		description: 'JavaScript的运行时环境'
 	},
 	FE_DESK_APP:{
+		type: 'FE',
 		name: '桌面应用',
 		fontColor: '#6FDABE',
 		description: '用JavaScript构建桌面应用'
 	},
 	FE_UI_LIB:{
+		type: 'FE',
 		name: 'UI库',
 		fontColor: '#6FDABE',
 		description: '现代Web站点使用的UI库'
 	},
 	FE_COMIC_LIB:{
+		type: 'FE',
 		name: '动画库',
 		fontColor: '#6FDABE',
 		description: '快速构建动画效果'
 	},
 	FE_BUILD:{
+		type: 'FE',
 		name: '构建工具',
 		fontColor: '#6FDABE',
 		description: '对Web应用进行构建'
 	},
 	FE_TEST:{
+		type: 'FE',
 		name: 'Web测试',
 		fontColor: '#6FDABE',
 		description: '测试Web应用的工具'
 	},
 	FE_DEV_TOOL:{
+		type: 'FE',
 		name: '开发工具',
 		fontColor: '#6FDABE',
 		description: '开发Web应用中的工具插件'
 	},
 	FE_SERVER:{
+		type: 'FE',
 		name: '服务端',
 		fontColor: '#6FDABE',
 		description: 'JavaScript基于服务端的框架工具'
 	},
 	FE_WEB_FRAMEWORK:{
+		type: 'FE',
 		name: 'Web框架',
 		fontColor: '#6FDABE',
 		description: '利用Web框架快速的构建Web应用'
 	},
 	FE_WEB_EXT:{
+		type: 'FE',
 		name: '框架拓展',
 		fontColor: '#6FDABE',
 		description: '对Web框架的功能进行拓展'
@@ -88,51 +102,61 @@ type CusTag = {
  */
 export const BE_MAP: CusTag = {
 	BE_BLOG:{
+		type: 'BE',
 		name: '博客教程',
 		fontColor: '#39ca30',
 		description: '不错的后端学习资源'
 	},
 	BE_BAISC:{
+		type: 'BE',
 		name: '基础',
 		fontColor: '#39ca30',
 		description: '一些基础的学习资源'
 	},
 	BE_ARCH:{
 		name: '架构',
+		type: 'BE',
 		fontColor: '#39ca30',
 		description: '关于分布式、微服务架构说明'
 	},
 	BE_CLOUD_NATIVE:{
 		name: '云原生',
+		type: 'BE',
 		fontColor: '#39ca30',
 		description: '关于云原生的说明'
 	},
 	BE_CONTAINER:{
 		name: '容器化',
+		type: 'BE',
 		fontColor: '#39ca30',
 		description: '使用容器化构建系统'
 	},
 	BE_FRAMEWOKR:{
 		name: '后端框架',
+		type: 'BE',
 		fontColor: '#39ca30',
 		description: '开发中常用的框架'
 	},
 	BE_TOOL_LIB:{
+		type: 'BE',
 		name: '后端工具包',
 		fontColor: '#39ca30',
 		description: '开发中常用的工具包'
 	},
 	BE_MIDDLEWARE:{
 		name: '中间件',
+		type: 'BE',
 		fontColor: '#39ca30',
 		description: '开发中常用的中间件'
 	},
 	BE_PLATFORM:{
 		name: '平台',
+		type: 'BE',
 		fontColor: '#39ca30',
 		description: '常见的存储组件'
 	},
 	BE_BUILD:{
+		type: 'BE',
 		name: '构建工具',
 		fontColor: '#6FDABE',
 		description: '对应用进行构建'
@@ -144,21 +168,25 @@ export const BE_MAP: CusTag = {
  */
 export const COM: CusTag = {
 	COM_BOOK:{
+		type: 'COM',
 		name: '开源书籍',
 		fontColor: '#39ca30',
 		description: '一些开源的书籍'
 	},
 	COM_TOOL_SOURCE:{
+		type: 'COM',
 		name: '工具资源',
 		fontColor: '#39ca30',
 		description: '一些常用的工具'
 	},
 	COM_DEV_LAN:{
 		name: '开发语言',
+		type: 'COM',
 		fontColor: '#39ca30',
 		description: '最常使用的开发语言'
 	},
 	COM_OTHER:{
+		type: 'COM',
 		name: '其他',
 		fontColor: '#39ca30',
 		description: '其他资源'
@@ -166,8 +194,12 @@ export const COM: CusTag = {
 }
 
 
+/**
+ * @description 网站导航
+ */
 
-export const websiteData:WebSite[] = [
+//TODO 将博客中的网站导航合并到这里
+const websiteData:WebSite[] = [
 	{
 		name: 'Java程序员进阶之路',
 		icon: 'http://cdn.tobebetterjavaer.com/tobebetterjavaer/images/logo.png',
@@ -242,7 +274,7 @@ export const websiteData:WebSite[] = [
 		rate: 2,
 	}, {
 		name: 'Node.js技术栈',
-		icon: '"/img/website/nodeTech.jpeg',
+		icon: '/img/website/nodeTech.jpeg',
 		href: 'https://www.nodejs.red/',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_BLOG],
@@ -849,3 +881,27 @@ export const websiteData:WebSite[] = [
 		rate: 2
 	}
 ]
+
+
+export function getData(query: queryType):{
+	tagsList: Tag[]
+	sites: WebSite[]
+} {
+	const result = {
+		tagsList:  new Array<Tag>(),
+		sites: new Array<WebSite>()
+	}
+	const set = new Set()
+	websiteData.forEach((item) => {
+		let flag = false
+		item.tags.forEach((tag) => {
+			if (tag.type === query) {
+				set.add(tag)
+				flag = true
+			}
+		})
+		if (flag) { result.sites.push(item) }
+	})
+	result.tagsList = Array.from(set) as Tag[]
+	return result
+}

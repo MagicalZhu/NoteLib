@@ -165,12 +165,26 @@
       "plugin": "plugin---search-2-a-4-e5e"
     }
   },
-  "/website/-dcf": {
-    "__comp": "__comp---site-src-pages-website-index-tsxb-38-5b5",
+  "/website/BE/-39b": {
+    "__comp": "__comp---site-src-pages-website-be-index-tsxbb-0-d21",
     "__context": {
-      "plugin": "plugin---website-ae-9-946"
+      "plugin": "plugin---website-be-ae-9-ed6"
     },
-    "config": "config---website-5-e-9-af4"
+    "config": "config---website-be-5-e-9-987"
+  },
+  "/website/COM/-684": {
+    "__comp": "__comp---site-src-pages-website-com-index-tsx-1-e-3-c23",
+    "__context": {
+      "plugin": "plugin---website-be-ae-9-ed6"
+    },
+    "config": "config---website-be-5-e-9-987"
+  },
+  "/website/FE/-313": {
+    "__comp": "__comp---site-src-pages-website-fe-index-tsx-9-b-3-1bc",
+    "__context": {
+      "plugin": "plugin---website-be-ae-9-ed6"
+    },
+    "config": "config---website-be-5-e-9-987"
   },
   "/docs-f9f": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
@@ -618,8 +632,8 @@
   "/-17d": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "plugin---website-ae-9-946"
+      "plugin": "plugin---website-be-ae-9-ed6"
     },
-    "config": "config---website-5-e-9-af4"
+    "config": "config---website-be-5-e-9-987"
   }
 }

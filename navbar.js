@@ -141,9 +141,9 @@ const nav = {
       label: '物料中心👏',
       position: "left",
       items: [
-        { to: '/website/BE', label: '后端物料' },
-        { to: '/website/COM', label: '其他物料' },
-        { to: '/website/FE', label: '前端物料' },
+        { to: '/website/BE', label: '后端产品' },
+        { to: '/website/COM', label: '其他产品' },
+        { to: '/website/FE', label: '前端产品' },
       ]
     },
     /*

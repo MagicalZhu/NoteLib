@@ -11,6 +11,8 @@ export interface Tag {
 	fontColor: string,
 	// 标签描述
 	description: string,
+	// 标签类型
+	type: string
 }
 
 type rateEnuum = 1|2|3|4|5
@@ -25,6 +27,8 @@ type langEnum = 'Java' |
 				'Rust' |
 				'React' |
 				'Vue'
+
+export type queryType = 'BE' | 'FE' | 'COM'
 	
 /**
  * Web站点

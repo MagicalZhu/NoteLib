@@ -93,8 +93,18 @@ export default [
     exact: true
   },
   {
-    path: '/website/',
-    component: ComponentCreator('/website/', 'dcf'),
+    path: '/website/BE/',
+    component: ComponentCreator('/website/BE/', '39b'),
+    exact: true
+  },
+  {
+    path: '/website/COM/',
+    component: ComponentCreator('/website/COM/', '684'),
+    exact: true
+  },
+  {
+    path: '/website/FE/',
+    component: ComponentCreator('/website/FE/', '313'),
     exact: true
   },
   {

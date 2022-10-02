@@ -26,6 +26,7 @@
     "@docusaurus/types": "2.1.0",
     "@giscus/react": "^2.0.6",
     "@saucelabs/theme-github-codeblock": "^0.1.1",
+    "ahooks": "^3.7.1",
     "clsx": "^1.1.1",
     "mdx-mermaid": "^1.2.2",
     "mermaid": "^8.14.0",
