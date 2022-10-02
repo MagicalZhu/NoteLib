@@ -23,14 +23,6 @@ const nav = {
   // 设置导航条上的元素
   items: [
     {
-      label: "关于我👋",
-      position: "left",
-      items: [
-        { to: '/blog', label: '博客' },
-        // { to: '/docs/source/devSource', label: '分享' },
-      ]
-    },
-    {
       label: "基础知识🤖",
       position: "left",
       items: [
@@ -144,6 +136,14 @@ const nav = {
         { to: '/website/BE', label: '后端产品' },
         { to: '/website/COM', label: '其他产品' },
         { to: '/website/FE', label: '前端产品' },
+      ]
+    },
+    {
+      label: "关于👋",
+      position: "right",
+      items: [
+        { to: '/blog', label: '博客' },
+        // { to: '/docs/source/devSource', label: '分享' },
       ]
     },
     /*
