@@ -109,7 +109,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'f9f'),
+    component: ComponentCreator('/docs', '609'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -220,6 +220,12 @@ export default [
         sidebar: "dataStructureSidebar"
       },
       {
+        path: '/docs/中间件/数据库/MyCat/基础/MyCat基础',
+        component: ComponentCreator('/docs/中间件/数据库/MyCat/基础/MyCat基础', 'e05'),
+        exact: true,
+        sidebar: "myCatSideBar"
+      },
+      {
         path: '/docs/about',
         component: ComponentCreator('/docs/about', '0b0'),
         exact: true
@@ -265,6 +271,12 @@ export default [
         component: ComponentCreator('/docs/category/基础知识-1', 'c75'),
         exact: true,
         sidebar: "dataStructureSidebar"
+      },
+      {
+        path: '/docs/category/基础知识-2',
+        component: ComponentCreator('/docs/category/基础知识-2', '9b1'),
+        exact: true,
+        sidebar: "myCatSideBar"
       },
       {
         path: '/docs/category/架构与引擎',
@@ -319,6 +331,12 @@ export default [
         component: ComponentCreator('/docs/category/jvm优化', '788'),
         exact: true,
         sidebar: "jvmSideBar"
+      },
+      {
+        path: '/docs/category/mycat',
+        component: ComponentCreator('/docs/category/mycat', 'd92'),
+        exact: true,
+        sidebar: "myCatSideBar"
       },
       {
         path: '/docs/category/mysql基础与高级',
@@ -437,8 +455,9 @@ export default [
       },
       {
         path: '/docs/middleware/database',
-        component: ComponentCreator('/docs/middleware/database', '0e9'),
-        exact: true
+        component: ComponentCreator('/docs/middleware/database', '494'),
+        exact: true,
+        sidebar: "myCatSideBar"
       },
       {
         path: '/docs/middleware/job',
@@ -453,6 +472,11 @@ export default [
       {
         path: '/docs/middleware/searchEngine',
         component: ComponentCreator('/docs/middleware/searchEngine', 'fb2'),
+        exact: true
+      },
+      {
+        path: '/docs/MyCat',
+        component: ComponentCreator('/docs/MyCat', '179'),
         exact: true
       },
       {

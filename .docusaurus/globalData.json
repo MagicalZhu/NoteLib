@@ -142,7 +142,17 @@
             },
             {
               "id": "中间件/数据库/database",
-              "path": "/docs/middleware/database"
+              "path": "/docs/middleware/database",
+              "sidebar": "myCatSideBar"
+            },
+            {
+              "id": "中间件/数据库/MyCat/基础/MyCat基础",
+              "path": "/docs/中间件/数据库/MyCat/基础/MyCat基础",
+              "sidebar": "myCatSideBar"
+            },
+            {
+              "id": "中间件/数据库/MyCat/MyCat",
+              "path": "/docs/MyCat"
             },
             {
               "id": "中间件/搜索引擎/searchEngine",
@@ -543,6 +553,16 @@
               "id": "/category/性能监控和调优入门",
               "path": "/docs/category/性能监控和调优入门",
               "sidebar": "jvmSideBar"
+            },
+            {
+              "id": "/category/mycat",
+              "path": "/docs/category/mycat",
+              "sidebar": "myCatSideBar"
+            },
+            {
+              "id": "/category/基础知识-2",
+              "path": "/docs/category/基础知识-2",
+              "sidebar": "myCatSideBar"
             }
           ],
           "draftIds": [],
@@ -611,6 +631,12 @@
               "link": {
                 "path": "/docs/category/jvm优化",
                 "label": "JVM优化"
+              }
+            },
+            "myCatSideBar": {
+              "link": {
+                "path": "/docs/middleware/database",
+                "label": "简介"
               }
             }
           }

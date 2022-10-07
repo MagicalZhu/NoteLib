@@ -186,7 +186,7 @@
     },
     "config": "config---website-be-5-e-9-987"
   },
-  "/docs-f9f": {
+  "/docs-609": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-10-fc6"
@@ -265,6 +265,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-数据结构与算法-基础-前提基础知识-2-bf-fc4"
   },
+  "/docs/中间件/数据库/MyCat/基础/MyCat基础-e05": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-中间件-数据库-my-cat-基础-my-cat基础e-7-a-4b5"
+  },
   "/docs/about-0b0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-about-360-72c"
@@ -296,6 +300,10 @@
   "/docs/category/基础知识-1-c75": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-基础知识-1-ee-5-5d3"
+  },
+  "/docs/category/基础知识-2-9b1": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-基础知识-2710-ca6"
   },
   "/docs/category/架构与引擎-0bb": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -332,6 +340,10 @@
   "/docs/category/jvm优化-788": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-jvm优化-0-aa-f7e"
+  },
+  "/docs/category/mycat-d92": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-mycat-89-c-992"
   },
   "/docs/category/mysql基础与高级-700": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -413,7 +425,7 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-middleware-cache-71-f-3c1"
   },
-  "/docs/middleware/database-0e9": {
+  "/docs/middleware/database-494": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-middleware-database-3-ab-e09"
   },
@@ -428,6 +440,10 @@
   "/docs/middleware/searchEngine-fb2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-middleware-search-engine-6-aa-0af"
+  },
+  "/docs/MyCat-179": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-my-cat-575-d84"
   },
   "/docs/mysql-a05": {
     "__comp": "__comp---theme-doc-item-178-a40",

@@ -82,13 +82,27 @@ const mysqlPart =  new Category('MySQL基础与高级')
       '其他日志',
       '主从复制',
     ])
-    
+
 
 const mysqlSideBar = [
   createDoc('Mysql/mysql', '简介'),
   mysqlPart,
   createDoc('Mysql/MySQL参数与命令', 'MySQL参数与命令')
 ]
+
+
+// MyCat
+const myCatPart =  new Category('MyCat')
+.createSubCaregory('基础知识', '中间件/数据库/MyCat/基础', [
+  'MyCat基础',
+  // TODO subMenu => new Category('Explain').setNoLabelItem('Mysql/高级特性',['性能分析工具']),
+])
+
+const myCatSideBar = [
+  createDoc('中间件/数据库/database', '简介'),
+  myCatPart,
+]
+
 
 // 计算机网络相关
 const netWorkSidebar = [
@@ -207,7 +221,8 @@ const sidebars = {
   vueSideBar,
   dataStructureSidebar,
   leetCodeSidebar,
-  jvmSideBar
+  jvmSideBar,
+  myCatSideBar
 }
 
 module.exports = sidebars;

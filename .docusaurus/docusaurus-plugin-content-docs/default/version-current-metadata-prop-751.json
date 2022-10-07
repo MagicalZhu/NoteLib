@@ -689,6 +689,38 @@
         "collapsible": true,
         "href": "/docs/category/jvm优化"
       }
+    ],
+    "myCatSideBar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/middleware/database",
+        "docId": "中间件/数据库/database"
+      },
+      {
+        "type": "category",
+        "label": "MyCat",
+        "items": [
+          {
+            "type": "category",
+            "label": "基础知识",
+            "items": [
+              {
+                "type": "link",
+                "label": "基础使用",
+                "href": "/docs/中间件/数据库/MyCat/基础/MyCat基础",
+                "docId": "中间件/数据库/MyCat/基础/MyCat基础"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/基础知识-2"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true,
+        "href": "/docs/category/mycat"
+      }
     ]
   },
   "docs": {
@@ -852,7 +884,19 @@
     "中间件/数据库/database": {
       "id": "中间件/数据库/database",
       "title": "数据库概述",
-      "description": "数据库文档概述"
+      "description": "数据库文档概述",
+      "sidebar": "myCatSideBar"
+    },
+    "中间件/数据库/MyCat/基础/MyCat基础": {
+      "id": "中间件/数据库/MyCat/基础/MyCat基础",
+      "title": "基础使用",
+      "description": "",
+      "sidebar": "myCatSideBar"
+    },
+    "中间件/数据库/MyCat/MyCat": {
+      "id": "中间件/数据库/MyCat/MyCat",
+      "title": "MyCat笔记概述",
+      "description": "MyCat笔记概述"
     },
     "中间件/搜索引擎/searchEngine": {
       "id": "中间件/搜索引擎/searchEngine",

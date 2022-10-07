@@ -781,6 +781,59 @@
                 "id": "database",
                 "title": "数据库概述",
                 "slug": "/middleware/database"
+              },
+              "sidebar": "myCatSideBar",
+              "next": {
+                "title": "MyCat",
+                "permalink": "/docs/category/mycat"
+              }
+            },
+            {
+              "unversionedId": "中间件/数据库/MyCat/基础/MyCat基础",
+              "id": "中间件/数据库/MyCat/基础/MyCat基础",
+              "title": "基础使用",
+              "description": "",
+              "source": "@site/docs/中间件/数据库/MyCat/基础/MyCat基础.md",
+              "sourceDirName": "中间件/数据库/MyCat/基础",
+              "slug": "/中间件/数据库/MyCat/基础/MyCat基础",
+              "permalink": "/docs/中间件/数据库/MyCat/基础/MyCat基础",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/MyCat/基础/MyCat基础.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "MyCat基础",
+                "title": "基础使用"
+              },
+              "sidebar": "myCatSideBar",
+              "previous": {
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识-2"
+              }
+            },
+            {
+              "unversionedId": "中间件/数据库/MyCat/MyCat",
+              "id": "中间件/数据库/MyCat/MyCat",
+              "title": "MyCat笔记概述",
+              "description": "MyCat笔记概述",
+              "source": "@site/docs/中间件/数据库/MyCat/about.md",
+              "sourceDirName": "中间件/数据库/MyCat",
+              "slug": "/MyCat",
+              "permalink": "/docs/MyCat",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/MyCat/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "MyCat",
+                "slug": "/MyCat",
+                "title": "MyCat笔记概述"
               }
             },
             {
@@ -1051,8 +1104,7 @@
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
                 "id": "设计索引",
-                "title": "设计索引",
-                "author": "管理员"
+                "title": "设计索引"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
@@ -3068,6 +3120,44 @@
                 },
                 "collapsible": true
               }
+            ],
+            "myCatSideBar": [
+              {
+                "type": "doc",
+                "id": "中间件/数据库/database",
+                "label": "简介",
+                "translatable": true
+              },
+              {
+                "type": "category",
+                "label": "MyCat",
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "基础知识",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "中间件/数据库/MyCat/基础/MyCat基础"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/基础知识-2",
+                      "permalink": "/docs/category/基础知识-2"
+                    },
+                    "collapsible": true
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/mycat",
+                  "permalink": "/docs/category/mycat"
+                },
+                "collapsible": true
+              }
             ]
           }
         }
@@ -3380,11 +3470,6 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/BE/",
-        "source": "@site/src/pages/website/BE/index.tsx"
-      },
-      {
-        "type": "jsx",
         "permalink": "/website/COM/",
         "source": "@site/src/pages/website/COM/index.tsx"
       },
@@ -3392,6 +3477,11 @@
         "type": "jsx",
         "permalink": "/website/FE/",
         "source": "@site/src/pages/website/FE/index.tsx"
+      },
+      {
+        "type": "jsx",
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
       }
     ]
   },
