@@ -992,7 +992,7 @@ const websiteData:WebSite[] = [
 		icon: 'http://ife.baidu.com/assets/img/ife-logo.png',
 		href: 'http://ife.baidu.com/',
 		isOpenSource: true,
-		tags: [BE_MAP.BE_BLOG],
+		tags: [FE_MAP.FE_BLOG],
 		description: '面向所有自驱成长,终身学习,热爱生活的人,打造的Web前端技术学习园地',
 		rate: 3
 	}, {
