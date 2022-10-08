@@ -206,7 +206,7 @@ const websiteData:WebSite[] = [
 		href: 'https://tobebetterjavaer.com/',
 		isOpenSource: true,
 		tags: [BE_MAP.BE_BLOG, BE_MAP.BE_BAISC],
-		description: '一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点',
+		description: '一份通俗易懂、风趣幽默的Java学习指南,内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点',
 		rate: 2,
 		lang: ['Java'],
 	},
@@ -278,7 +278,7 @@ const websiteData:WebSite[] = [
 		href: 'https://www.nodejs.red/',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_BLOG],
-		description: '是作者五月君从事 Node.js 开发以来的学习历程，希望这些分享能帮助到正在学习、使用 Node.js 的朋友们',
+		description: '是作者五月君从事 Node.js 开发以来的学习历程,希望这些分享能帮助到正在学习、使用 Node.js 的朋友们',
 		rate: 1,
 		lang: ['Node']
 	}, {
@@ -287,7 +287,7 @@ const websiteData:WebSite[] = [
 		href: 'https://r2coding.com/',
 		isOpenSource: true,
 		tags: [COM.COM_OTHER],
-		description: 'Road To Coding，意为「编程自学之路」，是自学编程以来所用资源和分享内容的大聚合',
+		description: 'Road To Coding,意为「编程自学之路」,是自学编程以来所用资源和分享内容的大聚合',
 		rate: 1
 	}, {
 		name: 'ES6 入门教程',
@@ -295,7 +295,7 @@ const websiteData:WebSite[] = [
 		href: 'https://es6.ruanyifeng.com/',
 		isOpenSource: true,
 		tags: [COM.COM_BOOK],
-		description: '《ECMAScript 6 入门教程》阮一峰老师开源的一本 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性。',
+		description: '《ECMAScript 6 入门教程》阮一峰老师开源的一本 JavaScript 语言教程,全面介绍 ECMAScript 6 新引入的语法特性。',
 		rate: 3,
 		lang: ['JavaScript']
 	}, {
@@ -304,7 +304,7 @@ const websiteData:WebSite[] = [
 		href: 'https://jkchao.github.io/typescript-book-chinese/',
 		isOpenSource: true,
 		tags: [COM.COM_BOOK],
-		description: '《TypeScript Deep Dive》 是一本很好的开源书，从基础到深入，很全面的阐述了 TypeScript 的各种魔法，不管你是新手，还是老鸟，它都将适应你。',
+		description: '《TypeScript Deep Dive》 是一本很好的开源书,从基础到深入,很全面的阐述了 TypeScript 的各种魔法,不管你是新手,还是老鸟,它都将适应你。',
 		rate: 2,
 		lang: ['TypeScript']
 	}, {
@@ -329,7 +329,7 @@ const websiteData:WebSite[] = [
 		href: 'https://pds.gin.sh/',
 		isOpenSource: true,
 		tags: [COM.COM_BOOK],
-		description: '《分布式系统模式》是 Unmesh Joshi 编写的一系列关于分布式系统实现的文章。这个系列的文章采用模式的格式，介绍了像 Kafka、Zookeeper 这种分布式系统在实现过程采用的通用模式，是学习分布式系统实现的基础。',
+		description: '《分布式系统模式》是 Unmesh Joshi 编写的一系列关于分布式系统实现的文章。这个系列的文章采用模式的格式,介绍了像 Kafka、Zookeeper 这种分布式系统在实现过程采用的通用模式,是学习分布式系统实现的基础。',
 		rate: 3
 	}, {
 		name: '《设计数据密集型应用》中文版',
@@ -345,7 +345,7 @@ const websiteData:WebSite[] = [
 		href: 'https://www.coderutil.com/',
 		isOpenSource: false,
 		tags: [COM.COM_TOOL_SOURCE],
-		description: '程序员一站式编程导航，专注于程序员学习编程提效，官网',
+		description: '程序员一站式编程导航,专注于程序员学习编程提效,官网',
 		rate: 1
 	}, {
 		name: '资源下载站点',
@@ -377,7 +377,7 @@ const websiteData:WebSite[] = [
 		href: 'https://hubot.github.com/docs',
 		isOpenSource: true,
 		tags: [COM.COM_TOOL_SOURCE],
-		description: '开源聊天机器人，可以用来做一些自动化任务，如部署网站，翻译语言等等',
+		description: '开源聊天机器人,可以用来做一些自动化任务,如部署网站,翻译语言等等',
 		rate: 1
 	}, {
 		name: 'ZFile',
@@ -385,7 +385,7 @@ const websiteData:WebSite[] = [
 		href: 'https://docs.zfile.vip/',
 		isOpenSource: true,
 		tags: [COM.COM_TOOL_SOURCE],
-		description: '基于 Java 的在线网盘程序，支持对接 S3、OneDrive、SharePoint、又拍云、本地存储、FTP 等存储源，支持在线浏览图片、播放音视频，文本文件等文件类型。',
+		description: '基于 Java 的在线网盘程序,支持对接 S3、OneDrive、SharePoint、又拍云、本地存储、FTP 等存储源,支持在线浏览图片、播放音视频,文本文件等文件类型。',
 		rate: 2
 	}, {
 		name: 'OpenJDK',
@@ -469,7 +469,7 @@ const websiteData:WebSite[] = [
 		href: 'https://knowstreaming.com/',
 		isOpenSource: true,
 		tags: [BE_MAP.BE_PLATFORM],
-		description: 'Know Streaming脱胎于互联网公司内部多年的Kafka运营实践经验，是面向Kafka用户、Kafka运维人员打造的共享多租户Kafka管控平台',
+		description: 'Know Streaming脱胎于互联网公司内部多年的Kafka运营实践经验,是面向Kafka用户、Kafka运维人员打造的共享多租户Kafka管控平台',
 		rate: 2
 	}, {
 		name: 'RabbitMq',
@@ -510,7 +510,7 @@ const websiteData:WebSite[] = [
 		href: 'https://www.yarnpkg.cn',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_BUILD],
-		description: 'Yarn 是一个软件包管理器，还可以作为项目管理工具。无论你是小型项目还是大型单体仓库（monorepos），无论是业余爱好者还是企业用户，Yarn 都能满足你的需求。',
+		description: 'Yarn 是一个软件包管理器,还可以作为项目管理工具。无论你是小型项目还是大型单体仓库（monorepos）,无论是业余爱好者还是企业用户,Yarn 都能满足你的需求。',
 		rate: 2,
 		lang: ['JavaScript','TypeScript']
 	}, {
@@ -537,7 +537,7 @@ const websiteData:WebSite[] = [
 		href: 'https://cn.vitejs.dev',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_BUILD],
-		description: '下一代的前端工具链，为开发提供极速响应',
+		description: '下一代的前端工具链,为开发提供极速响应',
 		rate: 2,
 		lang: ['JavaScript','TypeScript']
 	}, {
@@ -582,7 +582,7 @@ const websiteData:WebSite[] = [
 		href: 'https://fresh.deno.dev/',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_SERVER],
-		description: '面向 JavaScript 和 TypeScript 开发者的全栈现代 Web 框架, 可以轻松创建高质量、高性能、稳定性好，以及支持定制的 Web 应用。',
+		description: '面向 JavaScript 和 TypeScript 开发者的全栈现代 Web 框架, 可以轻松创建高质量、高性能、稳定性好,以及支持定制的 Web 应用。',
 		rate: 2,
 		lang: ['Deno']
 	}, {
@@ -671,7 +671,7 @@ const websiteData:WebSite[] = [
 		href: 'https://umijs.org',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_SERVER],
-		description: '用 Umi 构建你的下一个应用，带给你简单而愉悦的 Web 开发体验',
+		description: '用 Umi 构建你的下一个应用,带给你简单而愉悦的 Web 开发体验',
 		rate: 3,
 		lang: ['React']
 	}, {
@@ -698,7 +698,7 @@ const websiteData:WebSite[] = [
 		href: 'https://cloudscape.design/get-started/guides/introduction/',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_UI_LIB],
-		description: '亚马逊开源的React  UI 库',
+		description: '亚马逊开源的React UI 库',
 		rate: 2,
 		lang: ['React']
 	}, {
@@ -752,7 +752,7 @@ const websiteData:WebSite[] = [
 		href: 'https://www.expressjs.com.cn/',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_SERVER],
-		description: '基于 Node.js 平台，快速、开放、极简的 Web 开发框架',
+		description: '基于 Node.js 平台,快速、开放、极简的 Web 开发框架',
 		rate: 3,
 		lang: ['Node']
 	}, {
@@ -813,7 +813,7 @@ const websiteData:WebSite[] = [
 		href: 'https://www.tailwindcss.cn',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_CSS, FE_MAP.FE_UI_LIB],
-		description: 'Tailwind CSS 是一个功能类优先的 CSS 框架，它集成了诸如 flex, pt-4, text-center 和 rotate-90 这样的的类，它们能直接在脚本标记语言中组合起来，构建出任何设计',
+		description: 'Tailwind CSS 是一个功能类优先的 CSS 框架,它集成了诸如 flex, pt-4, text-center 和 rotate-90 这样的的类,它们能直接在脚本标记语言中组合起来,构建出任何设计',
 		rate: 2,
 	}, {
 		name: 'WindiCSS',
@@ -829,7 +829,7 @@ const websiteData:WebSite[] = [
 		href: 'https://uiverse.io/',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_CSS],
-		description: '丰富的 UI 元素助您脱颖而出，开源且免费使用',
+		description: '丰富的 UI 元素助您脱颖而出,开源且免费使用',
 		rate: 3,
 	}, {
 		name: 'iconfont',
@@ -837,7 +837,7 @@ const websiteData:WebSite[] = [
 		href: 'https://www.iconfont.cn/',
 		isOpenSource: false,
 		tags: [FE_MAP.FE_CSS],
-		description: 'iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能。',
+		description: 'iconfont-国内功能很强大且图标内容很丰富的矢量图标库,提供矢量图标下载、在线存储、格式转换等功能。',
 		rate: 2
 	}, {
 		name: 'Font Awesome',
@@ -845,7 +845,7 @@ const websiteData:WebSite[] = [
 		href: 'https://fa5.dashgame.com',
 		isOpenSource: false,
 		tags: [FE_MAP.FE_CSS],
-		description: '在您的网站上使用Font Awesome展示矢量图标和社交标志，这可是网络上最流行的图标集和工具包。',
+		description: '在您的网站上使用Font Awesome展示矢量图标和社交标志,这可是网络上最流行的图标集和工具包。',
 		rate: 2
 	},{
 		name: 'feathericons',
@@ -861,7 +861,7 @@ const websiteData:WebSite[] = [
 		href: 'https://undraw.co/',
 		isOpenSource: false,
 		tags: [FE_MAP.FE_CSS],
-		description: '一个不断更新的设计项目与美丽的SVG图像，使用完全免费',
+		description: '一个不断更新的设计项目与美丽的SVG图像,使用完全免费',
 		rate: 2
 	}, {
 		name: '渐变色网站',
@@ -879,8 +879,149 @@ const websiteData:WebSite[] = [
 		tags: [FE_MAP.FE_CSS],
 		description: '谷歌字体',
 		rate: 2
+	}, 	{
+		name: 'Day.js',
+		icon: 'https://day.js.org/img/logo.png',
+		href: 'https://day.js.org/zh-CN/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_TOOL_LIB],
+		description: 'Day.js 是一个轻量的处理时间和日期的 JavaScript 库,和 Moment.js 的 API 设计保持完全一样',
+		rate: 3,
+		lang: ['JavaScript']
+	}, {
+		name: 'DPlayer',
+		icon: 'https://dplayer.diygod.dev/logo.png',
+		href: 'https://dplayer.diygod.dev/zh/guide.html',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_TOOL_LIB],
+		description: 'DPlayer是一个可爱的HTML5 弹幕视频播放器,可以帮助人们轻松构建视频和弹幕',
+		rate: 2,
+		lang: ['JavaScript']
+	}, {
+		name: 'MyBatis-Plus',
+		icon: 'https://baomidou.com/img/logo.svg',
+		href: 'https://baomidou.com/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_FRAMEWOKR, BE_MAP.BE_TOOL_LIB],
+		description: 'MyBatis-Plus是一个 MyBatis的增强工具,在 MyBatis 的基础上只做增强不做改变,为简化开发、提高效率而生。',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'Hutool',
+		icon: 'https://www.hutool.cn/favicon.ico',
+		href: 'https://www.hutool.cn/docs/#/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_TOOL_LIB],
+		description: 'Hutool是一个小而全的Java工具类库,通过静态方法封装,降低相关API的学习成本,提高工作效率,使Java拥有函数式语言般的优雅,让Java语言也可以“甜甜的”',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'Arthas',
+		icon: 'https://arthas.aliyun.com/images/favicon.ico',
+		href: 'https://arthas.aliyun.com/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_TOOL_LIB],
+		description: '一款线上监控诊断产品,通过全局视角实时查看应用 load、内存、gc、线程的状态信息,并能在不修改应用代码的情况下,对业务问题进行诊断,包括查看方法调用的出入参、异常,监测方法执行耗时,类加载信息等,大大提升线上问题排查效率',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'MyCat',
+		icon: 'https://gw.alipayobjects.com/zos/bmw-prod/735cefc9-f976-4c87-8b48-85f713f5b713.svg',
+		href: 'http://www.mycat.org.cn/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_MIDDLEWARE, BE_MAP.BE_TOOL_LIB],
+		description: 'Mycat2是Mycat社区开发的一款分布式关系型数据库(中间件)。它支持分布式SQL查询,兼容MySQL通信协议,以Java生态支持多种后端数据库,通过数据分片提高数据查询处理能力',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'ShardingSphere',
+		icon: 'https://shardingsphere.apache.org/document/current/img/favicon.png',
+		href: 'https://shardingsphere.apache.org/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_MIDDLEWARE, BE_MAP.BE_TOOL_LIB],
+		description: 'Apache ShardingSphere 是一款分布式的数据库生态系统, 可以将任意数据库转换为分布式数据库,并通过数据分片、弹性伸缩、加密等能力对原有数据库进行增强',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'Shenyu',
+		icon: 'https://shenyu.apache.org/zh/img/favicon.svg',
+		href: 'https://shenyu.apache.org/zh/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_MIDDLEWARE, BE_MAP.BE_TOOL_LIB],
+		description: 'Java 原生API网关,用于服务代理、协议转换和API治理',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'Canal',
+		icon: 'https://github.githubassets.com/favicons/favicon.svg',
+		href: 'https://github.com/alibaba/canal/wiki',
+		isOpenSource: true,
+		tags: [ BE_MAP.BE_TOOL_LIB],
+		description: '基于 MySQL 数据库增量日志解析,提供增量数据订阅和消费',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'Seata',
+		icon: 'https://seata.io/img/seata_logo_small.jpeg',
+		href: 'https://seata.io/zh-cn/index.html',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_MIDDLEWARE,BE_MAP.BE_TOOL_LIB],
+		description: 'Seata 是一款开源的分布式事务解决方案,致力于提供高性能和简单易用的分布式事务服务。Seata 将为用户提供了 AT、TCC、SAGA 和 XA 事务模式,为用户打造一站式的分布式解决方案',
+		rate: 3,
+		lang: ['Java'],
+	},{
+		name: 'Dubbo',
+		icon: 'https://dubbo.apache.org//favicons/apple-touch-icon-180x180.png',
+		href: 'https://dubbo.apache.org/zh/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_FRAMEWOKR,BE_MAP.BE_TOOL_LIB],
+		description: 'Apache Dubbo 是一款微服务框架,为大规模微服务实践提供高性能 RPC 通信、流量治理、可观测性等解决方案,涵盖 Java、Golang 等多种语言 SDK 实现。',
+		rate: 3,
+		lang: ['Java'],
+	}, {
+		name: 'JDK',
+		icon: 'https://github.githubassets.com/favicons/favicon.svg',
+		href: 'https://docs.oracle.com/en/java/javase/index.html',
+		isOpenSource: true,
+		tags: [COM.COM_DEV_LAN],
+		description: 'JDK',
+		rate: 4,
+		lang: ['Java'],
+	}, {
+		name: '百度前端技术学园',
+		icon: 'http://ife.baidu.com/assets/img/ife-logo.png',
+		href: 'http://ife.baidu.com/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_BLOG],
+		description: '面向所有自驱成长,终身学习,热爱生活的人,打造的Web前端技术学习园地',
+		rate: 3
+	}, {
+		name: 'Source Academy',
+		icon: 'https://sourceacademy.org/icons/favicon.ico',
+		href: 'https://sourceacademy.org/sicpjs/index',
+		isOpenSource: true,
+		tags: [COM.COM_BOOK],
+		description: 'Source Academy',
+		rate: 2
+	},{
+		name: '现代 JavaScript 教程',
+		icon: 'https://zh.javascript.info/img/favicon/apple-touch-icon-precomposed.png',
+		href: 'https://zh.javascript.info/',
+		isOpenSource: true,
+		tags: [COM.COM_BOOK],
+		description: '现代 JavaScript 教程',
+		rate: 3
+	},{
+		name: 'Quickref',
+		icon: 'https://quickref.me/images/favicon.png',
+		href: 'https://quickref.me/',
+		isOpenSource: true,
+		tags: [COM.COM_OTHER],
+		description: 'Here are some cheatsheets and quick references contributed by open source angels.',
+		rate: 2
 	}
 ]
+
 
 
 export function getData(query: queryType):{
