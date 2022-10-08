@@ -109,7 +109,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '609'),
+    component: ComponentCreator('/docs', '526'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -202,6 +202,12 @@ export default [
         sidebar: "basicSideBar"
       },
       {
+        path: '/docs/工具/Gradle/基础/Gradle基础',
+        component: ComponentCreator('/docs/工具/Gradle/基础/Gradle基础', '903'),
+        exact: true,
+        sidebar: "gradleSideBar"
+      },
+      {
         path: '/docs/计算机网络/HTTP/http-protocol',
         component: ComponentCreator('/docs/计算机网络/HTTP/http-protocol', '394'),
         exact: true,
@@ -261,6 +267,12 @@ export default [
         sidebar: "sourceSideBar"
       },
       {
+        path: '/docs/category/基础',
+        component: ComponentCreator('/docs/category/基础', '26d'),
+        exact: true,
+        sidebar: "gradleSideBar"
+      },
+      {
         path: '/docs/category/基础知识',
         component: ComponentCreator('/docs/category/基础知识', '2ef'),
         exact: true,
@@ -309,6 +321,12 @@ export default [
         sidebar: "springCloudSideBar"
       },
       {
+        path: '/docs/category/性能分析工具',
+        component: ComponentCreator('/docs/category/性能分析工具', 'a23'),
+        exact: true,
+        sidebar: "mysqlSideBar"
+      },
+      {
         path: '/docs/category/性能监控和调优入门',
         component: ComponentCreator('/docs/category/性能监控和调优入门', '150'),
         exact: true,
@@ -325,6 +343,12 @@ export default [
         component: ComponentCreator('/docs/category/运维', '8a8'),
         exact: true,
         sidebar: "mysqlSideBar"
+      },
+      {
+        path: '/docs/category/gradle',
+        component: ComponentCreator('/docs/category/gradle', 'c67'),
+        exact: true,
+        sidebar: "gradleSideBar"
       },
       {
         path: '/docs/category/jvm优化',
@@ -409,10 +433,21 @@ export default [
         exact: true
       },
       {
+        path: '/docs/FeThird',
+        component: ComponentCreator('/docs/FeThird', 'a4c'),
+        exact: true
+      },
+      {
         path: '/docs/front/Vue',
         component: ComponentCreator('/docs/front/Vue', 'a4d'),
         exact: true,
         sidebar: "vueSideBar"
+      },
+      {
+        path: '/docs/gradle',
+        component: ComponentCreator('/docs/gradle', '1d9'),
+        exact: true,
+        sidebar: "gradleSideBar"
       },
       {
         path: '/docs/JVM',
@@ -492,6 +527,12 @@ export default [
         sidebar: "mysqlSideBar"
       },
       {
+        path: '/docs/Mysql/高级特性/基本分析工具',
+        component: ComponentCreator('/docs/Mysql/高级特性/基本分析工具', '724'),
+        exact: true,
+        sidebar: "mysqlSideBar"
+      },
+      {
         path: '/docs/Mysql/高级特性/其他日志',
         component: ComponentCreator('/docs/Mysql/高级特性/其他日志', 'b2d'),
         exact: true,
@@ -546,12 +587,6 @@ export default [
         sidebar: "mysqlSideBar"
       },
       {
-        path: '/docs/Mysql/高级特性/性能分析工具',
-        component: ComponentCreator('/docs/Mysql/高级特性/性能分析工具', 'bb7'),
-        exact: true,
-        sidebar: "mysqlSideBar"
-      },
-      {
         path: '/docs/Mysql/高级特性/性能监控工具',
         component: ComponentCreator('/docs/Mysql/高级特性/性能监控工具', 'daf'),
         exact: true,
@@ -566,6 +601,12 @@ export default [
       {
         path: '/docs/Mysql/高级特性/主从复制',
         component: ComponentCreator('/docs/Mysql/高级特性/主从复制', 'e5b'),
+        exact: true,
+        sidebar: "mysqlSideBar"
+      },
+      {
+        path: '/docs/Mysql/高级特性/Explain',
+        component: ComponentCreator('/docs/Mysql/高级特性/Explain', 'd0e'),
         exact: true,
         sidebar: "mysqlSideBar"
       },

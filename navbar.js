@@ -67,7 +67,7 @@ const nav = {
       ]
     },
     {
-      label: "方法论🚀",
+      label: "方法论🚧",
       position: "left",
       items: [
         {
@@ -110,6 +110,16 @@ const nav = {
       ]
     },
     {
+      label:"底层⛽️",
+      position: "left",
+      items: [
+        {
+          label: "JVM",
+          to: 'docs/JVM',
+        }
+      ]
+    },
+    {
       label: "前端技术👩‍💻",
       position: "left",
       items: [
@@ -120,12 +130,12 @@ const nav = {
       ]
     },
     {
-      label:"底层⛽️",
+      label:"其他工具👹",
       position: "left",
       items: [
         {
-          label: "JVM",
-          to: 'docs/JVM',
+          label: "Gradle",
+          to: 'docs/Gradle',
         }
       ]
     },

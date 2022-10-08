@@ -99,6 +99,20 @@
               "path": "/docs/distribute/protol"
             },
             {
+              "id": "工具/后端三方库/FeThird",
+              "path": "/docs/FeThird"
+            },
+            {
+              "id": "工具/Gradle/基础/Gradle基础",
+              "path": "/docs/工具/Gradle/基础/Gradle基础",
+              "sidebar": "gradleSideBar"
+            },
+            {
+              "id": "工具/Gradle/gradle",
+              "path": "/docs/gradle",
+              "sidebar": "gradleSideBar"
+            },
+            {
               "id": "计算机网络/HTTP/http-protocol",
               "path": "/docs/计算机网络/HTTP/http-protocol",
               "sidebar": "netWorkSidebar"
@@ -196,6 +210,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "Mysql/高级特性/基本分析工具",
+              "path": "/docs/Mysql/高级特性/基本分析工具",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "Mysql/高级特性/其他日志",
               "path": "/docs/Mysql/高级特性/其他日志",
               "sidebar": "mysqlSideBar"
@@ -241,11 +260,6 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/性能分析工具",
-              "path": "/docs/Mysql/高级特性/性能分析工具",
-              "sidebar": "mysqlSideBar"
-            },
-            {
               "id": "Mysql/高级特性/性能监控工具",
               "path": "/docs/Mysql/高级特性/性能监控工具",
               "sidebar": "mysqlSideBar"
@@ -258,6 +272,11 @@
             {
               "id": "Mysql/高级特性/主从复制",
               "path": "/docs/Mysql/高级特性/主从复制",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/Explain",
+              "path": "/docs/Mysql/高级特性/Explain",
               "sidebar": "mysqlSideBar"
             },
             {
@@ -515,6 +534,11 @@
               "sidebar": "mysqlSideBar"
             },
             {
+              "id": "/category/性能分析工具",
+              "path": "/docs/category/性能分析工具",
+              "sidebar": "mysqlSideBar"
+            },
+            {
               "id": "/category/事务与锁",
               "path": "/docs/category/事务与锁",
               "sidebar": "mysqlSideBar"
@@ -563,6 +587,16 @@
               "id": "/category/基础知识-2",
               "path": "/docs/category/基础知识-2",
               "sidebar": "myCatSideBar"
+            },
+            {
+              "id": "/category/gradle",
+              "path": "/docs/category/gradle",
+              "sidebar": "gradleSideBar"
+            },
+            {
+              "id": "/category/基础",
+              "path": "/docs/category/基础",
+              "sidebar": "gradleSideBar"
             }
           ],
           "draftIds": [],
@@ -636,6 +670,12 @@
             "myCatSideBar": {
               "link": {
                 "path": "/docs/middleware/database",
+                "label": "简介"
+              }
+            },
+            "gradleSideBar": {
+              "link": {
+                "path": "/docs/gradle",
                 "label": "简介"
               }
             }

@@ -480,10 +480,25 @@
             "label": "性能优化",
             "items": [
               {
-                "type": "link",
+                "type": "category",
                 "label": "性能分析工具",
-                "href": "/docs/Mysql/高级特性/性能分析工具",
-                "docId": "Mysql/高级特性/性能分析工具"
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "基本分析工具",
+                    "href": "/docs/Mysql/高级特性/基本分析工具",
+                    "docId": "Mysql/高级特性/基本分析工具"
+                  },
+                  {
+                    "type": "link",
+                    "label": "执行计划分析",
+                    "href": "/docs/Mysql/高级特性/Explain",
+                    "docId": "Mysql/高级特性/Explain"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true,
+                "href": "/docs/category/性能分析工具"
               },
               {
                 "type": "link",
@@ -721,6 +736,38 @@
         "collapsible": true,
         "href": "/docs/category/mycat"
       }
+    ],
+    "gradleSideBar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/gradle",
+        "docId": "工具/Gradle/gradle"
+      },
+      {
+        "type": "category",
+        "label": "Gradle",
+        "items": [
+          {
+            "type": "category",
+            "label": "基础",
+            "items": [
+              {
+                "type": "link",
+                "label": "Gradle基础",
+                "href": "/docs/工具/Gradle/基础/Gradle基础",
+                "docId": "工具/Gradle/基础/Gradle基础"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/基础"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true,
+        "href": "/docs/category/gradle"
+      }
     ]
   },
   "docs": {
@@ -829,6 +876,23 @@
       "id": "分布式/分布式理论/distribute",
       "title": "分布式理论",
       "description": "一些分布式的理论、算法、协议"
+    },
+    "工具/后端三方库/FeThird": {
+      "id": "工具/后端三方库/FeThird",
+      "title": "后端库",
+      "description": "后端库"
+    },
+    "工具/Gradle/基础/Gradle基础": {
+      "id": "工具/Gradle/基础/Gradle基础",
+      "title": "Gradle基础",
+      "description": "",
+      "sidebar": "gradleSideBar"
+    },
+    "工具/Gradle/gradle": {
+      "id": "工具/Gradle/gradle",
+      "title": "Gradle",
+      "description": "Gradle",
+      "sidebar": "gradleSideBar"
     },
     "计算机网络/HTTP/http-protocol": {
       "id": "计算机网络/HTTP/http-protocol",
@@ -948,6 +1012,12 @@
       "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
       "sidebar": "mysqlSideBar"
     },
+    "Mysql/高级特性/基本分析工具": {
+      "id": "Mysql/高级特性/基本分析工具",
+      "title": "基本分析工具",
+      "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
+      "sidebar": "mysqlSideBar"
+    },
     "Mysql/高级特性/其他日志": {
       "id": "Mysql/高级特性/其他日志",
       "title": "其他日志",
@@ -1002,12 +1072,6 @@
       "description": "事务的隔离性由锁来实现",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/性能分析工具": {
-      "id": "Mysql/高级特性/性能分析工具",
-      "title": "性能分析工具",
-      "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
-      "sidebar": "mysqlSideBar"
-    },
     "Mysql/高级特性/性能监控工具": {
       "id": "Mysql/高级特性/性能监控工具",
       "title": "性能监控工具",
@@ -1024,6 +1088,12 @@
       "id": "Mysql/高级特性/主从复制",
       "title": "主从复制",
       "description": "引入",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/Explain": {
+      "id": "Mysql/高级特性/Explain",
+      "title": "执行计划分析",
+      "description": "在数据库调优中,除了使用慢查询日志(slowquerylog), 还可以利用执行计划分析(explain) 对查询语句进行优化分析",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/InnoDB表空间": {

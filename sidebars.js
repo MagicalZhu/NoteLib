@@ -96,7 +96,6 @@ const mysqlSideBar = [
 const myCatPart =  new Category('MyCat')
 .createSubCaregory('基础知识', '中间件/数据库/MyCat/基础', [
   'MyCat基础',
-  // TODO subMenu => new Category('Explain').setNoLabelItem('Mysql/高级特性',['性能分析工具']),
 ])
 
 const myCatSideBar = [
@@ -210,6 +209,20 @@ const jvmSideBar = [
   jvmPart
 ]
 
+// Gradle
+const gradlePart =  new Category('Gradle')
+    .createSubCaregory('基础', '工具/Gradle/基础', [
+      'Gradle基础',
+    ])
+
+const gradleSideBar = [
+  createDoc('工具/Gradle/gradle', '简介'),
+  gradlePart
+]
+
+
+
+
 
 const sidebars = {
   basicSideBar,
@@ -223,7 +236,8 @@ const sidebars = {
   dataStructureSidebar,
   leetCodeSidebar,
   jvmSideBar,
-  myCatSideBar
+  myCatSideBar,
+  gradleSideBar
 }
 
 module.exports = sidebars;

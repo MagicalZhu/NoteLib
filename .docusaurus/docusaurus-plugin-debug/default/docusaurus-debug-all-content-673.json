@@ -537,6 +537,81 @@
               }
             },
             {
+              "unversionedId": "工具/后端三方库/FeThird",
+              "id": "工具/后端三方库/FeThird",
+              "title": "后端库",
+              "description": "后端库",
+              "source": "@site/docs/工具/后端三方库/about.md",
+              "sourceDirName": "工具/后端三方库",
+              "slug": "/FeThird",
+              "permalink": "/docs/FeThird",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/后端三方库/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "FeThird",
+                "slug": "/FeThird",
+                "title": "后端库"
+              }
+            },
+            {
+              "unversionedId": "工具/Gradle/基础/Gradle基础",
+              "id": "工具/Gradle/基础/Gradle基础",
+              "title": "Gradle基础",
+              "description": "",
+              "source": "@site/docs/工具/Gradle/基础/Gradle使用.md",
+              "sourceDirName": "工具/Gradle/基础",
+              "slug": "/工具/Gradle/基础/Gradle基础",
+              "permalink": "/docs/工具/Gradle/基础/Gradle基础",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Gradle/基础/Gradle使用.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Gradle基础",
+                "title": "Gradle基础"
+              },
+              "sidebar": "gradleSideBar",
+              "previous": {
+                "title": "基础",
+                "permalink": "/docs/category/基础"
+              }
+            },
+            {
+              "unversionedId": "工具/Gradle/gradle",
+              "id": "工具/Gradle/gradle",
+              "title": "Gradle",
+              "description": "Gradle",
+              "source": "@site/docs/工具/Gradle/about.md",
+              "sourceDirName": "工具/Gradle",
+              "slug": "/gradle",
+              "permalink": "/docs/gradle",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Gradle/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "gradle",
+                "slug": "/gradle",
+                "title": "Gradle"
+              },
+              "sidebar": "gradleSideBar",
+              "next": {
+                "title": "Gradle",
+                "permalink": "/docs/category/gradle"
+              }
+            },
+            {
               "unversionedId": "计算机网络/HTTP/http-protocol",
               "id": "计算机网络/HTTP/http-protocol",
               "title": "HTTP协议",
@@ -1057,6 +1132,36 @@
               }
             },
             {
+              "unversionedId": "Mysql/高级特性/基本分析工具",
+              "id": "Mysql/高级特性/基本分析工具",
+              "title": "基本分析工具",
+              "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
+              "source": "@site/docs/Mysql/高级特性/性能分析基本工具.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/基本分析工具",
+              "permalink": "/docs/Mysql/高级特性/基本分析工具",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能分析基本工具.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "基本分析工具",
+                "title": "基本分析工具"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "性能分析工具",
+                "permalink": "/docs/category/性能分析工具"
+              },
+              "next": {
+                "title": "执行计划分析",
+                "permalink": "/docs/Mysql/高级特性/Explain"
+              }
+            },
+            {
               "unversionedId": "Mysql/高级特性/其他日志",
               "id": "Mysql/高级特性/其他日志",
               "title": "其他日志",
@@ -1327,36 +1432,6 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/性能分析工具",
-              "id": "Mysql/高级特性/性能分析工具",
-              "title": "性能分析工具",
-              "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
-              "source": "@site/docs/Mysql/高级特性/性能分析工具.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/性能分析工具",
-              "permalink": "/docs/Mysql/高级特性/性能分析工具",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能分析工具.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "性能分析工具",
-                "title": "性能分析工具"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "性能优化",
-                "permalink": "/docs/category/性能优化"
-              },
-              "next": {
-                "title": "性能监控工具",
-                "permalink": "/docs/Mysql/高级特性/性能监控工具"
-              }
-            },
-            {
               "unversionedId": "Mysql/高级特性/性能监控工具",
               "id": "Mysql/高级特性/性能监控工具",
               "title": "性能监控工具",
@@ -1378,8 +1453,8 @@
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "性能分析工具",
-                "permalink": "/docs/Mysql/高级特性/性能分析工具"
+                "title": "执行计划分析",
+                "permalink": "/docs/Mysql/高级特性/Explain"
               },
               "next": {
                 "title": "索引与查询优化",
@@ -1444,6 +1519,36 @@
               "next": {
                 "title": "MySQL参数与命令",
                 "permalink": "/docs/Mysql/MySQL参数与命令"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/Explain",
+              "id": "Mysql/高级特性/Explain",
+              "title": "执行计划分析",
+              "description": "在数据库调优中,除了使用慢查询日志(slowquerylog), 还可以利用执行计划分析(explain) 对查询语句进行优化分析",
+              "source": "@site/docs/Mysql/高级特性/执行计划分析.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/Explain",
+              "permalink": "/docs/Mysql/高级特性/Explain",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/执行计划分析.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Explain",
+                "title": "执行计划分析"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "基本分析工具",
+                "permalink": "/docs/Mysql/高级特性/基本分析工具"
+              },
+              "next": {
+                "title": "性能监控工具",
+                "permalink": "/docs/Mysql/高级特性/性能监控工具"
               }
             },
             {
@@ -2901,8 +3006,25 @@
                     "label": "性能优化",
                     "items": [
                       {
-                        "type": "doc",
-                        "id": "Mysql/高级特性/性能分析工具"
+                        "type": "category",
+                        "label": "性能分析工具",
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "Mysql/高级特性/基本分析工具"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "Mysql/高级特性/Explain"
+                          }
+                        ],
+                        "collapsed": true,
+                        "link": {
+                          "type": "generated-index",
+                          "slug": "/category/性能分析工具",
+                          "permalink": "/docs/category/性能分析工具"
+                        },
+                        "collapsible": true
                       },
                       {
                         "type": "doc",
@@ -3158,6 +3280,44 @@
                 },
                 "collapsible": true
               }
+            ],
+            "gradleSideBar": [
+              {
+                "type": "doc",
+                "id": "工具/Gradle/gradle",
+                "label": "简介",
+                "translatable": true
+              },
+              {
+                "type": "category",
+                "label": "Gradle",
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "基础",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "工具/Gradle/基础/Gradle基础"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/基础",
+                      "permalink": "/docs/category/基础"
+                    },
+                    "collapsible": true
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/gradle",
+                  "permalink": "/docs/category/gradle"
+                },
+                "collapsible": true
+              }
             ]
           }
         }
@@ -3312,8 +3472,8 @@
                 "permalink": "/blog/tags/分享"
               }
             ],
-            "readingTime": 0.5366666666666666,
-            "hasTruncateMarker": true,
+            "readingTime": 0.23333333333333334,
+            "hasTruncateMarker": false,
             "authors": [
               {
                 "name": "花裤衩",
@@ -3341,7 +3501,7 @@
               "permalink": "/blog/gotConcurrencyAli"
             }
           },
-          "content": "## 👨‍💻 ‍前端库\n[**Lodash**](https://www.lodashjs.com/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Day.js**](https://dayjs.gitee.io/docs/zh-CN/installation/installation) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Tailwind**](https://www.tailwindcss.cn/docs) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Sortablejs**](http://www.sortablejs.com/index.html) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Axios**](https://www.axios-http.cn/docs/intro) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dplayer**](http://dplayer.js.org/zh/) \n\n<!--truncate-->\n\n\n## 👨‍💻 ‍后端库\n\n[**MybatisPlus**](https://baomidou.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Hutool**](https://www.hutool.cn/docs/#/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Arthas**](https://arthas.gitee.io/index.html) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**XxlJob**](https://www.xuxueli.com/xxl-conf/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Mycat**](http://www.mycat.org.cn/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**ShardingSphere**](https://shardingsphere.apache.org/document/current/cn/overview/) \n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Shenyu**](https://shenyu.apache.org/zh/docs/index)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Canal**](https://github.com/alibaba/canal/wiki)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Seata**](https://seata.io/zh-cn/docs/overview/what-is-seata.html)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dubbo**](https://dubbo.apache.org/zh/docs/quick-start/)\n\n\n## 🗃 资料\n[**JVM**](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/index.html)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**ES6 入门教程**](https://es6.ruanyifeng.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Source Academy**](https://sourceacademy.org/sicpjs/index)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**百度前端技术学园**](http://ife.baidu.com/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**FreeCodeCamp**](https://chinese.freecodecamp.org/learn)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**现代 JavaScript 教程**](https://zh.javascript.info/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Quick Reference 各类语言、工具速查**](https://quickref.me/)\n\n## 🔨 CSS工具\n\n[**选择器学习游戏**](https://flukeout.github.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**常见布局**](https://csslayout.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**flex生成**](https://loading.io/flexbox/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**grid生成**](https://cssgr.id/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**css答题**](https://www.guess-css.app/)\n\n\n## 👩‍⚖️‍ 设计师\n[**Coolors 调色板**](https://coolors.co)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dribbble 设计稿**](https://dribbble.com)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Freepik 下载高质量的图片**](https://www.freepik.com)\n\n## 🎊 有趣的网站\n[**Thosefree**](https://www.thosefree.com/)"
+          "content": "## 🔨 CSS工具\n\n[**选择器学习游戏**](https://flukeout.github.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**常见布局**](https://csslayout.io/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**flex生成**](https://loading.io/flexbox/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**grid生成**](https://cssgr.id/)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**css答题**](https://www.guess-css.app/)\n\n\n## 👩‍⚖️‍ 设计师\n[**Coolors 调色板**](https://coolors.co)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Dribbble 设计稿**](https://dribbble.com)\n&nbsp;&nbsp;&nbsp;&nbsp;\n[**Freepik 下载高质量的图片**](https://www.freepik.com)\n\n## 🎊 有趣的网站\n[**Thosefree**](https://www.thosefree.com/)"
         }
       ],
       "blogListPaginated": [
@@ -3470,6 +3630,11 @@
       },
       {
         "type": "jsx",
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
+      },
+      {
+        "type": "jsx",
         "permalink": "/website/COM/",
         "source": "@site/src/pages/website/COM/index.tsx"
       },
@@ -3477,11 +3642,6 @@
         "type": "jsx",
         "permalink": "/website/FE/",
         "source": "@site/src/pages/website/FE/index.tsx"
-      },
-      {
-        "type": "jsx",
-        "permalink": "/website/BE/",
-        "source": "@site/src/pages/website/BE/index.tsx"
       }
     ]
   },
