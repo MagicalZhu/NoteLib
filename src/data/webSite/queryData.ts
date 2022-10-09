@@ -211,6 +211,16 @@ const websiteData:WebSite[] = [
 		lang: ['Java'],
 	},
 	{
+		name: 'Moremind',
+		icon: 'https://finen-1251602255.cos.ap-shanghai.myqcloud.com/file/pic/finen.png',
+		href: 'https://www.finen.top/',
+		isOpenSource: true,
+		tags: [BE_MAP.BE_BLOG],
+		description: '不错的Java博客站点',
+		rate: 2,
+		lang: ['Java'],
+	},
+	{
 		name: '虫洞栈',
 		icon: 'https://bugstack.cn/favicon.ico',
 		href: 'https://bugstack.cn/',
