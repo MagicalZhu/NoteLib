@@ -149,12 +149,14 @@ const nav = {
       ]
     },
     {
-      label: "关于👋",
+      label: "博客👋",
+      position: "left",
+      to: '/blog', label: '博客'
+    },
+    {
+      label: "关于",
       position: "right",
-      items: [
-        { to: '/blog', label: '博客' },
-        // { to: '/docs/source/devSource', label: '分享' },
-      ]
+      href: 'https://blog.huakucha.top'
     },
     /*
       // i18n
