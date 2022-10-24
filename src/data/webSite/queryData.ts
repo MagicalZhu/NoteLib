@@ -1029,6 +1029,24 @@ const websiteData:WebSite[] = [
 		tags: [COM.COM_OTHER],
 		description: 'Here are some cheatsheets and quick references contributed by open source angels.',
 		rate: 2
+	},
+	{
+		name: 'Netlify',
+		icon: 'https://avatars.githubusercontent.com/u/7892489?s=200&v=4',
+		href: 'https://app.netlify.com/',
+		isOpenSource: true,
+		tags: [COM.COM_OTHER],
+		description: '简单快速的部署你的静态资源网站',
+		rate: 3
+	},
+	{
+		name: 'Vercel',
+		icon: 'https://avatars.githubusercontent.com/u/14985020?s=200&v=4',
+		href: 'https://vercel.com',
+		isOpenSource: true,
+		tags: [COM.COM_OTHER],
+		description: '简单快速的部署你的静态资源网站',
+		rate: 3
 	}
 ]
 
