@@ -1,9 +1,0 @@
-{
-"origins": [
-    "https://huakucha.top"
-],
-"originsRegex": [   
-    "http://localhost:[0-9]+"
-],
-"defaultCommentOrder": "newest"
-}

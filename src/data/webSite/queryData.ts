@@ -809,7 +809,7 @@ const websiteData:WebSite[] = [
 		tags: [FE_MAP.FE_CSS],
 		description: 'CSS常用样式',
 		rate: 2,
-	}, {
+	},{
 		name: 'w3schools Css 教程',
 		icon: '/img/website/w3c.ico',
 		href: 'https://www.w3schools.com/css',
@@ -826,12 +826,28 @@ const websiteData:WebSite[] = [
 		description: 'Tailwind CSS 是一个功能类优先的 CSS 框架,它集成了诸如 flex, pt-4, text-center 和 rotate-90 这样的的类,它们能直接在脚本标记语言中组合起来,构建出任何设计',
 		rate: 2,
 	}, {
+		name: 'UnoCss',
+		icon: 'https://uno.antfu.me/favicon.svg',
+		href: 'https://uno.antfu.me/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS,FE_MAP.FE_UI_LIB],
+		description: 'antfu开源的原子 CSS 框架(Dev 中)',
+		rate: 3,
+	}, {
 		name: 'WindiCSS',
 		icon: '/img/website/windi.svg',
 		href: 'https://windicss.org',
 		isOpenSource: true,
 		tags: [FE_MAP.FE_CSS, FE_MAP.FE_UI_LIB],
 		description: 'Windi CSS 是下一代工具优先的 CSS 框架。',
+		rate: 3,
+	}, {
+		name: 'Flowbite',
+		icon: 'https://flowbite.com/docs/images/logo.svg',
+		href: 'https://flowbite.com/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS, FE_MAP.FE_UI_LIB],
+		description: 'Flowbite是一个基于实用优先的 Tailwind CSS框架的开源UI组件库。',
 		rate: 3,
 	}, {
 		name: 'uiverse',
