@@ -177,6 +177,45 @@
         "items": [
           {
             "type": "category",
+            "label": "Spring5",
+            "items": [
+              {
+                "type": "link",
+                "label": "IOC容器",
+                "href": "/docs/Spring/Spring5/IOC容器",
+                "docId": "Spring/Spring5/IOC容器"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/spring5"
+          },
+          {
+            "type": "category",
+            "label": "Spring注解",
+            "items": [
+              {
+                "type": "link",
+                "label": "组件注册",
+                "href": "/docs/Spring/注解驱动开发/组件注册",
+                "docId": "Spring/注解驱动开发/组件注册"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/spring注解"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true,
+        "href": "/docs/category/spring基础"
+      },
+      {
+        "type": "category",
+        "label": "Spring进阶",
+        "items": [
+          {
+            "type": "category",
             "label": "Spring编程思想",
             "items": [
               {
@@ -207,26 +246,11 @@
             "collapsed": true,
             "collapsible": true,
             "href": "/docs/category/spring编程思想"
-          },
-          {
-            "type": "category",
-            "label": "Spring注解",
-            "items": [
-              {
-                "type": "link",
-                "label": "组件注册",
-                "href": "/docs/Spring/注解驱动开发/组件注册",
-                "docId": "Spring/注解驱动开发/组件注册"
-              }
-            ],
-            "collapsed": true,
-            "collapsible": true,
-            "href": "/docs/category/spring注解"
           }
         ],
         "collapsed": true,
         "collapsible": true,
-        "href": "/docs/category/spring基础"
+        "href": "/docs/category/spring进阶"
       }
     ],
     "springCloudSideBar": [
@@ -1196,6 +1220,12 @@
       "id": "Spring/spring",
       "title": "Spring",
       "description": "Spring技术文档概述",
+      "sidebar": "springSideBar"
+    },
+    "Spring/Spring5/IOC容器": {
+      "id": "Spring/Spring5/IOC容器",
+      "title": "IOC容器",
+      "description": "基础",
       "sidebar": "springSideBar"
     },
     "Spring/Spring编程思想/依赖查找": {

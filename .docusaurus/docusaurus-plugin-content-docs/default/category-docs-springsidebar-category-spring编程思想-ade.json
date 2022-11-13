@@ -4,8 +4,8 @@
   "permalink": "/docs/category/spring编程思想",
   "navigation": {
     "previous": {
-      "title": "Spring基础",
-      "permalink": "/docs/category/spring基础"
+      "title": "Spring进阶",
+      "permalink": "/docs/category/spring进阶"
     },
     "next": {
       "title": "IOC容器",

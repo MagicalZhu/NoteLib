@@ -2012,6 +2012,10 @@
               "previous": {
                 "title": "Spring注解",
                 "permalink": "/docs/category/spring注解"
+              },
+              "next": {
+                "title": "Spring进阶",
+                "permalink": "/docs/category/spring进阶"
               }
             },
             {
@@ -2039,6 +2043,37 @@
               "next": {
                 "title": "Spring基础",
                 "permalink": "/docs/category/spring基础"
+              }
+            },
+            {
+              "unversionedId": "Spring/Spring5/IOC容器",
+              "id": "Spring/Spring5/IOC容器",
+              "title": "IOC容器",
+              "description": "基础",
+              "source": "@site/docs/Spring/Spring5/1.IOC.md",
+              "sourceDirName": "Spring/Spring5",
+              "slug": "/Spring/Spring5/IOC容器",
+              "permalink": "/docs/Spring/Spring5/IOC容器",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring5/1.IOC.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "id": "IOC容器",
+                "title": "IOC容器"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Spring5",
+                "permalink": "/docs/category/spring5"
+              },
+              "next": {
+                "title": "Spring注解",
+                "permalink": "/docs/category/spring注解"
               }
             },
             {
@@ -2095,10 +2130,6 @@
               "previous": {
                 "title": "依赖查找",
                 "permalink": "/docs/Spring/Spring编程思想/依赖查找"
-              },
-              "next": {
-                "title": "Spring注解",
-                "permalink": "/docs/category/spring注解"
               }
             },
             {
@@ -2723,30 +2754,18 @@
                 "items": [
                   {
                     "type": "category",
-                    "label": "Spring编程思想",
+                    "label": "Spring5",
                     "items": [
                       {
                         "type": "doc",
-                        "id": "Spring/Spring编程思想/IOC容器"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "Spring/Spring编程思想/Bean"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "Spring/Spring编程思想/依赖查找"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "Spring/Spring编程思想/依赖注入"
+                        "id": "Spring/Spring5/IOC容器"
                       }
                     ],
                     "collapsed": true,
                     "link": {
                       "type": "generated-index",
-                      "slug": "/category/spring编程思想",
-                      "permalink": "/docs/category/spring编程思想"
+                      "slug": "/category/spring5",
+                      "permalink": "/docs/category/spring5"
                     },
                     "collapsible": true
                   },
@@ -2773,6 +2792,48 @@
                   "type": "generated-index",
                   "slug": "/category/spring基础",
                   "permalink": "/docs/category/spring基础"
+                },
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Spring进阶",
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "Spring编程思想",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/IOC容器"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/Bean"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/依赖查找"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/依赖注入"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/spring编程思想",
+                      "permalink": "/docs/category/spring编程思想"
+                    },
+                    "collapsible": true
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/spring进阶",
+                  "permalink": "/docs/category/spring进阶"
                 },
                 "collapsible": true
               }
@@ -3630,11 +3691,6 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/BE/",
-        "source": "@site/src/pages/website/BE/index.tsx"
-      },
-      {
-        "type": "jsx",
         "permalink": "/website/COM/",
         "source": "@site/src/pages/website/COM/index.tsx"
       },
@@ -3642,6 +3698,11 @@
         "type": "jsx",
         "permalink": "/website/FE/",
         "source": "@site/src/pages/website/FE/index.tsx"
+      },
+      {
+        "type": "jsx",
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
       }
     ]
   },

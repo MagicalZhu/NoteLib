@@ -145,21 +145,26 @@ const sourceSideBar = [
 
 // Spring相关
 const springCode = new Category('Spring基础')
-  .createSubCaregory('Spring编程思想','Spring/Spring编程思想',[
-    'IOC容器',
-    'Bean',
-    '依赖查找',
-    '依赖注入'
+  .createSubCaregory('Spring5', 'Spring/Spring5', [
+    'IOC容器'
   ])
   .createSubCaregory('Spring注解', 'Spring/注解驱动开发', [
     '组件注册'
   ])
 
 
+const springAdvance = new Category('Spring进阶')
+  . createSubCaregory('Spring编程思想','Spring/Spring编程思想',[
+    'IOC容器',
+    'Bean',
+    '依赖查找',
+    '依赖注入'
+  ])
 
 const springSideBar = [
   createDoc('Spring/spring', '简介'),
-  springCode
+  springCode,
+  springAdvance
 ]
 
 // SpringCloud

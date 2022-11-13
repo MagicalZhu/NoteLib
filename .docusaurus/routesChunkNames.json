@@ -186,7 +186,7 @@
     },
     "config": "config---website-be-5-e-9-987"
   },
-  "/docs-526": {
+  "/docs-dd1": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-10-fc6"
@@ -365,6 +365,10 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-mysql基础与高级-340-84b"
   },
+  "/docs/category/spring5-6d7": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring-5467-2fb"
+  },
   "/docs/category/spring编程思想-ab2": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring编程思想b-16-910"
@@ -372,6 +376,10 @@
   "/docs/category/spring基础-0a2": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring基础-1-a-0-351"
+  },
+  "/docs/category/spring进阶-2f6": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-spring进阶-379-186"
   },
   "/docs/category/spring注解-7e2": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -600,6 +608,10 @@
   "/docs/Spring/注解驱动开发/组件注册-db4": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-spring-注解驱动开发-组件注册b-80-e66"
+  },
+  "/docs/Spring/Spring5/IOC容器-5d9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-spring-spring-5-io-c容器-2-bf-88e"
   },
   "/docs/Spring/Spring编程思想/依赖查找-4ac": {
     "__comp": "__comp---theme-doc-item-178-a40",

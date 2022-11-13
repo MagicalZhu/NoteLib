@@ -109,7 +109,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '526'),
+    component: ComponentCreator('/docs', 'dd1'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -369,6 +369,12 @@ export default [
         sidebar: "mysqlSideBar"
       },
       {
+        path: '/docs/category/spring5',
+        component: ComponentCreator('/docs/category/spring5', '6d7'),
+        exact: true,
+        sidebar: "springSideBar"
+      },
+      {
         path: '/docs/category/spring编程思想',
         component: ComponentCreator('/docs/category/spring编程思想', 'ab2'),
         exact: true,
@@ -377,6 +383,12 @@ export default [
       {
         path: '/docs/category/spring基础',
         component: ComponentCreator('/docs/category/spring基础', '0a2'),
+        exact: true,
+        sidebar: "springSideBar"
+      },
+      {
+        path: '/docs/category/spring进阶',
+        component: ComponentCreator('/docs/category/spring进阶', '2f6'),
         exact: true,
         sidebar: "springSideBar"
       },
@@ -709,6 +721,12 @@ export default [
       {
         path: '/docs/Spring/注解驱动开发/组件注册',
         component: ComponentCreator('/docs/Spring/注解驱动开发/组件注册', 'db4'),
+        exact: true,
+        sidebar: "springSideBar"
+      },
+      {
+        path: '/docs/Spring/Spring5/IOC容器',
+        component: ComponentCreator('/docs/Spring/Spring5/IOC容器', '5d9'),
         exact: true,
         sidebar: "springSideBar"
       },

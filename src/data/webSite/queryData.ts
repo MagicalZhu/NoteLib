@@ -842,6 +842,14 @@ const websiteData:WebSite[] = [
 		description: 'Windi CSS 是下一代工具优先的 CSS 框架。',
 		rate: 3,
 	}, {
+		name: 'Tippy.js',
+		icon: 'https://tippyjs.bootcss.com/icons/icon-48x48.png',
+		href: 'https://tippyjs.bootcss.com',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_CSS, FE_MAP.FE_UI_LIB],
+		description: 'Tippy.js is a highly customizable tooltip and popover library powered by Popper.js。',
+		rate: 3,
+	}, {
 		name: 'Flowbite',
 		icon: 'https://flowbite.com/docs/images/logo.svg',
 		href: 'https://flowbite.com/',

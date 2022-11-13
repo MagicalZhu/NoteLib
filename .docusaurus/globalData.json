@@ -365,6 +365,11 @@
               "sidebar": "springSideBar"
             },
             {
+              "id": "Spring/Spring5/IOC容器",
+              "path": "/docs/Spring/Spring5/IOC容器",
+              "sidebar": "springSideBar"
+            },
+            {
               "id": "Spring/Spring编程思想/依赖查找",
               "path": "/docs/Spring/Spring编程思想/依赖查找",
               "sidebar": "springSideBar"
@@ -479,13 +484,23 @@
               "sidebar": "springSideBar"
             },
             {
-              "id": "/category/spring编程思想",
-              "path": "/docs/category/spring编程思想",
+              "id": "/category/spring5",
+              "path": "/docs/category/spring5",
               "sidebar": "springSideBar"
             },
             {
               "id": "/category/spring注解",
               "path": "/docs/category/spring注解",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "/category/spring进阶",
+              "path": "/docs/category/spring进阶",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "/category/spring编程思想",
+              "path": "/docs/category/spring编程思想",
               "sidebar": "springSideBar"
             },
             {
