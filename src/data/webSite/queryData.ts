@@ -748,6 +748,15 @@ const websiteData:WebSite[] = [
 		rate: 3,
 		lang: ['Node']
 	},{
+		name: 'D3',
+		icon: 'https://d3js.org/favicon.png',
+		href: 'https://d3js.org/',
+		isOpenSource: true,
+		tags: [FE_MAP.FE_TOOL_LIB],
+		description: 'D3使用动态图形进行数据可视化的JavaScript程序库',
+		rate: 3,
+		lang: ['Node']
+	},{
 		name: 'Axios',
 		icon: '/img/website/axios.png',
 		href: 'https://axios-http.cn/',
