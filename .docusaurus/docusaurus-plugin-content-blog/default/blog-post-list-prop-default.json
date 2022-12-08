@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "一颗彪悍的种子",
+      "permalink": "/blog/juejinPost"
+    },
+    {
       "title": "阿里技术号",
       "permalink": "/blog/aliSeata"
     },

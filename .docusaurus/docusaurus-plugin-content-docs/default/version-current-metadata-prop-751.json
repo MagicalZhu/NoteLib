@@ -792,225 +792,56 @@
         "collapsible": true,
         "href": "/docs/category/gradle"
       }
+    ],
+    "distributeSiderBar": [
+      {
+        "type": "link",
+        "label": "简介",
+        "href": "/docs/distribute/protol",
+        "docId": "分布式/分布式理论/distribute"
+      },
+      {
+        "type": "category",
+        "label": "分布式算法",
+        "items": [
+          {
+            "type": "category",
+            "label": "一致性算法",
+            "items": [
+              {
+                "type": "link",
+                "label": "Paxos算法",
+                "href": "/docs/分布式/分布式理论/分布式一致性算法/paxos",
+                "docId": "分布式/分布式理论/分布式一致性算法/paxos"
+              }
+            ],
+            "collapsed": true,
+            "collapsible": true,
+            "href": "/docs/category/一致性算法"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true,
+        "href": "/docs/category/分布式算法"
+      }
     ]
   },
   "docs": {
-    "并发编程/并发安全/线程安全": {
-      "id": "并发编程/并发安全/线程安全",
-      "title": "线程安全",
-      "description": "概述",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发安全/dead_lock": {
-      "id": "并发编程/并发安全/dead_lock",
-      "title": "死锁与其他活跃锁",
-      "description": "概述",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发安全/jmm": {
-      "id": "并发编程/并发安全/jmm",
-      "title": "JMM",
-      "description": "性能问题",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发安全/volatile": {
-      "id": "并发编程/并发安全/volatile",
-      "title": "volatile与锁",
-      "description": "概述",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/并发集合与阻塞队列": {
-      "id": "并发编程/并发控制/并发集合与阻塞队列",
-      "title": "并发容器",
-      "description": "概览",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/缓存实战": {
-      "id": "并发编程/并发控制/缓存实战",
-      "title": "自定义缓存",
-      "description": "利用并发工具类实现一个简单的缓存",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/线程池": {
-      "id": "并发编程/并发控制/线程池",
-      "title": "线程池",
-      "description": "并发工具类",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/线程协作": {
-      "id": "并发编程/并发控制/线程协作",
-      "title": "线程协作",
-      "description": "概述",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/AQS": {
-      "id": "并发编程/并发控制/AQS",
-      "title": "AQS(队列同步器)",
-      "description": "概述",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/Atomic&CAS": {
-      "id": "并发编程/并发控制/Atomic&CAS",
-      "title": "原子变量类&CAS",
-      "description": "非阻塞同步机制与锁",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/final": {
-      "id": "并发编程/并发控制/final",
-      "title": "final",
-      "description": "final不变性",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/FutureTask": {
-      "id": "并发编程/并发控制/FutureTask",
-      "title": "FutureTask",
-      "description": "Future概述",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/Lock锁": {
-      "id": "并发编程/并发控制/Lock锁",
-      "title": "Lock锁",
-      "description": "锁分类",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/并发控制/ThreadLocal": {
-      "id": "并发编程/并发控制/ThreadLocal",
-      "title": "ThreadLocal",
-      "description": "概述",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/currency_about": {
-      "id": "并发编程/currency_about",
-      "title": "并发笔记概述",
-      "description": "并发首页",
-      "sidebar": "basicSideBar"
-    },
-    "并发编程/juc基础": {
-      "id": "并发编程/juc基础",
-      "title": "并发包基础",
-      "description": "JUC基础知识概述",
-      "sidebar": "basicSideBar"
-    },
-    "分布式/分布式技术点/basicTech": {
-      "id": "分布式/分布式技术点/basicTech",
-      "title": "分布式技术点",
-      "description": "分布式技术点文档概述"
-    },
-    "分布式/分布式理论/distribute": {
-      "id": "分布式/分布式理论/distribute",
-      "title": "分布式理论",
-      "description": "一些分布式的理论、算法、协议"
-    },
-    "工具/后端三方库/FeThird": {
-      "id": "工具/后端三方库/FeThird",
-      "title": "后端库",
-      "description": "后端库"
-    },
-    "工具/Gradle/基础/Gradle基础": {
-      "id": "工具/Gradle/基础/Gradle基础",
-      "title": "Gradle基础",
-      "description": "",
-      "sidebar": "gradleSideBar"
-    },
-    "工具/Gradle/gradle": {
-      "id": "工具/Gradle/gradle",
-      "title": "Gradle",
-      "description": "Gradle",
-      "sidebar": "gradleSideBar"
-    },
-    "计算机网络/HTTP/http-protocol": {
-      "id": "计算机网络/HTTP/http-protocol",
-      "title": "HTTP协议",
-      "description": "网络基础",
-      "sidebar": "netWorkSidebar"
-    },
-    "计算机网络/networrk-basic": {
-      "id": "计算机网络/networrk-basic",
-      "title": "计算机网络概述",
-      "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
-      "sidebar": "netWorkSidebar"
-    },
-    "前端/Vue/基础特性": {
-      "id": "前端/Vue/基础特性",
-      "title": "Vue基础特性",
-      "description": "应用&组件实例",
-      "sidebar": "vueSideBar"
-    },
-    "前端/Vue/vueDesc": {
-      "id": "前端/Vue/vueDesc",
-      "title": "vue学习笔记",
-      "description": "vue学习笔记",
-      "sidebar": "vueSideBar"
-    },
-    "数据结构与算法/基础/前提基础知识": {
-      "id": "数据结构与算法/基础/前提基础知识",
-      "title": "前提基础知识",
-      "description": "",
-      "sidebar": "dataStructureSidebar"
-    },
-    "数据结构与算法/dataStructure": {
-      "id": "数据结构与算法/dataStructure",
-      "title": "数据结构与算法",
-      "description": "数据结构与算法的学习笔记",
-      "sidebar": "dataStructureSidebar"
-    },
-    "中间件/定时任务/job": {
-      "id": "中间件/定时任务/job",
-      "title": "定时任务概述",
-      "description": "定时任务文档概述"
-    },
-    "中间件/缓存/cache": {
-      "id": "中间件/缓存/cache",
-      "title": "缓存概述",
-      "description": "缓存文档概述"
-    },
-    "中间件/基础中间件/basicMiddleware": {
-      "id": "中间件/基础中间件/basicMiddleware",
-      "title": "基础中间件",
-      "description": "基础中间件文档概述"
-    },
-    "中间件/数据库/database": {
-      "id": "中间件/数据库/database",
-      "title": "数据库概述",
-      "description": "数据库文档概述",
-      "sidebar": "myCatSideBar"
-    },
-    "中间件/数据库/MyCat/基础/MyCat基础": {
-      "id": "中间件/数据库/MyCat/基础/MyCat基础",
-      "title": "基础使用",
-      "description": "",
-      "sidebar": "myCatSideBar"
-    },
-    "中间件/数据库/MyCat/MyCat": {
-      "id": "中间件/数据库/MyCat/MyCat",
-      "title": "MyCat笔记概述",
-      "description": "MyCat笔记概述"
-    },
-    "中间件/搜索引擎/searchEngine": {
-      "id": "中间件/搜索引擎/searchEngine",
-      "title": "搜索引擎概述",
-      "description": "搜索引擎文档概述"
-    },
-    "中间件/消息队列/messageQueue": {
-      "id": "中间件/消息队列/messageQueue",
-      "title": "消息队列概述",
-      "description": "消息队列文档概述"
-    },
     "about": {
       "id": "about",
       "title": "About Me",
       "description": "👨‍💻 一名会写点js、java的十八线码农"
+    },
+    "JVM/JVM": {
+      "id": "JVM/JVM",
+      "title": "JVM",
+      "description": "JVM技术文档概述"
     },
     "JVM/性能监控和调优入门/基于JDK命令行工具的监控": {
       "id": "JVM/性能监控和调优入门/基于JDK命令行工具的监控",
       "title": "JDK命令行",
       "description": "常见的JVM参数类型",
       "sidebar": "jvmSideBar"
-    },
-    "JVM/JVM": {
-      "id": "JVM/JVM",
-      "title": "JVM",
-      "description": "JVM技术文档概述"
     },
     "LeetCode刷题笔记/illustrationOfAlgorithm": {
       "id": "LeetCode刷题笔记/illustrationOfAlgorithm",
@@ -1030,88 +861,40 @@
       "description": "收录了一些常用Linux命令",
       "sidebar": "linuxSideBar"
     },
-    "Mysql/高级特性/缓冲池": {
-      "id": "Mysql/高级特性/缓冲池",
-      "title": "缓冲池",
-      "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
+    "Mysql/mysql": {
+      "id": "Mysql/mysql",
+      "title": "MySQL笔记概述",
+      "description": "MySQL笔记概述",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/基本分析工具": {
-      "id": "Mysql/高级特性/基本分析工具",
-      "title": "基本分析工具",
-      "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
+    "Mysql/MySQL参数与命令": {
+      "id": "Mysql/MySQL参数与命令",
+      "title": "MySQL参数与命令",
+      "description": "字符集相关",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/其他日志": {
-      "id": "Mysql/高级特性/其他日志",
-      "title": "其他日志",
-      "description": "在前面的数据库的事务中,我们遇到了两种日志: redo日志、undo日志",
+    "Mysql/基础/MySQL函数与聚合": {
+      "id": "Mysql/基础/MySQL函数与聚合",
+      "title": "MySQL函数与聚合",
+      "description": "函数",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/设计索引": {
-      "id": "Mysql/高级特性/设计索引",
-      "title": "设计索引",
-      "description": "使用索引",
+    "Mysql/基础/MySQL基础查询": {
+      "id": "Mysql/基础/MySQL基础查询",
+      "title": "MySQL基础查询",
+      "description": "表的关联关系",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/事务基础": {
-      "id": "Mysql/高级特性/事务基础",
-      "title": "事务基础",
-      "description": "数据库事务",
+    "Mysql/基础/MySQL子查询": {
+      "id": "Mysql/基础/MySQL子查询",
+      "title": "MySQL子查询",
+      "description": "子查询是指一个查询语句嵌套在另一个查询语句的内部的查询,这个特性从 MySQL4.1 开始引入,也叫做内查询",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/数据库其他调优策略": {
-      "id": "Mysql/高级特性/数据库其他调优策略",
-      "title": "数据库其他调优策略",
-      "description": "数据库调优的策略",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/数据库设计规范": {
-      "id": "Mysql/高级特性/数据库设计规范",
-      "title": "数据库设计规范",
-      "description": "为什么需要数据库设计",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/索引": {
-      "id": "Mysql/高级特性/索引",
-      "title": "索引",
-      "description": "为什么使用索引",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/索引的应用": {
-      "id": "Mysql/高级特性/索引的应用",
-      "title": "索引的应用",
-      "description": "对于 InnoDB 存储引擎的 B+Tree 索引,我们已经知道:",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/索引与查询优化": {
-      "id": "Mysql/高级特性/索引与查询优化",
-      "title": "索引与查询优化",
-      "description": "都有哪些维度可以进行数据库调优?大体上说:",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/锁": {
-      "id": "Mysql/高级特性/锁",
-      "title": "锁机制",
-      "description": "事务的隔离性由锁来实现",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/性能监控工具": {
-      "id": "Mysql/高级特性/性能监控工具",
-      "title": "性能监控工具",
-      "description": "MySQL 为我们提供了很多对性能进行跟踪监控分析的工具,比如 OPTIMIZERTRACE、sysschema、...",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/用户权限管理": {
-      "id": "Mysql/高级特性/用户权限管理",
-      "title": "用户权限管理",
-      "description": "示意图",
-      "sidebar": "mysqlSideBar"
-    },
-    "Mysql/高级特性/主从复制": {
-      "id": "Mysql/高级特性/主从复制",
-      "title": "主从复制",
-      "description": "引入",
+    "Mysql/基础/MySQL库对象": {
+      "id": "Mysql/基础/MySQL库对象",
+      "title": "MySQL库对象",
+      "description": "数据库对象",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/Explain": {
@@ -1120,16 +903,16 @@
       "description": "在数据库调优中,除了使用慢查询日志(slowquerylog), 还可以利用执行计划分析(explain) 对查询语句进行优化分析",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/高级特性/InnoDB表空间": {
-      "id": "Mysql/高级特性/InnoDB表空间",
-      "title": "InnoDB表空间",
-      "description": "表空间是一个抽象的概念,从管理上可以将表空间分为系统表空间、独立表空间、临时表空间等。",
-      "sidebar": "mysqlSideBar"
-    },
     "Mysql/高级特性/InnoDB数据页结构": {
       "id": "Mysql/高级特性/InnoDB数据页结构",
       "title": "InnoDB数据页结构",
       "description": "InnoDB的存储结构",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/InnoDB表空间": {
+      "id": "Mysql/高级特性/InnoDB表空间",
+      "title": "InnoDB表空间",
+      "description": "表空间是一个抽象的概念,从管理上可以将表空间分为系统表空间、独立表空间、临时表空间等。",
       "sidebar": "mysqlSideBar"
     },
     "Mysql/高级特性/MVCC": {
@@ -1162,40 +945,88 @@
       "description": "redo 日志记录的事务的行为,可以很好的对页进行“重做”, 但是事务除了能提交,还可以回滚,这个时候就需要undo日志",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/基础/MySQL函数与聚合": {
-      "id": "Mysql/基础/MySQL函数与聚合",
-      "title": "MySQL函数与聚合",
-      "description": "函数",
+    "Mysql/高级特性/主从复制": {
+      "id": "Mysql/高级特性/主从复制",
+      "title": "主从复制",
+      "description": "引入",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/基础/MySQL基础查询": {
-      "id": "Mysql/基础/MySQL基础查询",
-      "title": "MySQL基础查询",
-      "description": "表的关联关系",
+    "Mysql/高级特性/事务基础": {
+      "id": "Mysql/高级特性/事务基础",
+      "title": "事务基础",
+      "description": "数据库事务",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/基础/MySQL库对象": {
-      "id": "Mysql/基础/MySQL库对象",
-      "title": "MySQL库对象",
-      "description": "数据库对象",
+    "Mysql/高级特性/其他日志": {
+      "id": "Mysql/高级特性/其他日志",
+      "title": "其他日志",
+      "description": "在前面的数据库的事务中,我们遇到了两种日志: redo日志、undo日志",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/基础/MySQL子查询": {
-      "id": "Mysql/基础/MySQL子查询",
-      "title": "MySQL子查询",
-      "description": "子查询是指一个查询语句嵌套在另一个查询语句的内部的查询,这个特性从 MySQL4.1 开始引入,也叫做内查询",
+    "Mysql/高级特性/基本分析工具": {
+      "id": "Mysql/高级特性/基本分析工具",
+      "title": "基本分析工具",
+      "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/mysql": {
-      "id": "Mysql/mysql",
-      "title": "MySQL笔记概述",
-      "description": "MySQL笔记概述",
+    "Mysql/高级特性/性能监控工具": {
+      "id": "Mysql/高级特性/性能监控工具",
+      "title": "性能监控工具",
+      "description": "MySQL 为我们提供了很多对性能进行跟踪监控分析的工具,比如 OPTIMIZERTRACE、sysschema、...",
       "sidebar": "mysqlSideBar"
     },
-    "Mysql/MySQL参数与命令": {
-      "id": "Mysql/MySQL参数与命令",
-      "title": "MySQL参数与命令",
-      "description": "字符集相关",
+    "Mysql/高级特性/数据库其他调优策略": {
+      "id": "Mysql/高级特性/数据库其他调优策略",
+      "title": "数据库其他调优策略",
+      "description": "数据库调优的策略",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/数据库设计规范": {
+      "id": "Mysql/高级特性/数据库设计规范",
+      "title": "数据库设计规范",
+      "description": "为什么需要数据库设计",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/用户权限管理": {
+      "id": "Mysql/高级特性/用户权限管理",
+      "title": "用户权限管理",
+      "description": "示意图",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/索引": {
+      "id": "Mysql/高级特性/索引",
+      "title": "索引",
+      "description": "为什么使用索引",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/索引与查询优化": {
+      "id": "Mysql/高级特性/索引与查询优化",
+      "title": "索引与查询优化",
+      "description": "都有哪些维度可以进行数据库调优?大体上说:",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/索引的应用": {
+      "id": "Mysql/高级特性/索引的应用",
+      "title": "索引的应用",
+      "description": "对于 InnoDB 存储引擎的 B+Tree 索引,我们已经知道:",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/缓冲池": {
+      "id": "Mysql/高级特性/缓冲池",
+      "title": "缓冲池",
+      "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/设计索引": {
+      "id": "Mysql/高级特性/设计索引",
+      "title": "设计索引",
+      "description": "使用索引",
+      "sidebar": "mysqlSideBar"
+    },
+    "Mysql/高级特性/锁": {
+      "id": "Mysql/高级特性/锁",
+      "title": "锁机制",
+      "description": "事务的隔离性由锁来实现",
       "sidebar": "mysqlSideBar"
     },
     "source/acg/acgShare_2022": {
@@ -1210,12 +1041,6 @@
       "description": "分享一些简单好用的资源",
       "sidebar": "sourceSideBar"
     },
-    "Spring/注解驱动开发/组件注册": {
-      "id": "Spring/注解驱动开发/组件注册",
-      "title": "组件注册",
-      "description": "@Configuration和@Bean",
-      "sidebar": "springSideBar"
-    },
     "Spring/spring": {
       "id": "Spring/spring",
       "title": "Spring",
@@ -1226,18 +1051,6 @@
       "id": "Spring/Spring5/IOC容器",
       "title": "IOC容器",
       "description": "基础",
-      "sidebar": "springSideBar"
-    },
-    "Spring/Spring编程思想/依赖查找": {
-      "id": "Spring/Spring编程思想/依赖查找",
-      "title": "依赖查找",
-      "description": "1.依赖查找的历史（传统java）",
-      "sidebar": "springSideBar"
-    },
-    "Spring/Spring编程思想/依赖注入": {
-      "id": "Spring/Spring编程思想/依赖注入",
-      "title": "依赖注入",
-      "description": "1. 依赖注入的模式与类型",
       "sidebar": "springSideBar"
     },
     "Spring/Spring编程思想/Bean": {
@@ -1252,11 +1065,23 @@
       "description": "1. IOC 的主要实现",
       "sidebar": "springSideBar"
     },
-    "SpringCloud/微服务技术栈": {
-      "id": "SpringCloud/微服务技术栈",
-      "title": "微服务技术栈",
-      "description": "1.2 微服务落地技术栈",
-      "sidebar": "springCloudSideBar"
+    "Spring/Spring编程思想/依赖查找": {
+      "id": "Spring/Spring编程思想/依赖查找",
+      "title": "依赖查找",
+      "description": "1.依赖查找的历史（传统java）",
+      "sidebar": "springSideBar"
+    },
+    "Spring/Spring编程思想/依赖注入": {
+      "id": "Spring/Spring编程思想/依赖注入",
+      "title": "依赖注入",
+      "description": "1. 依赖注入的模式与类型",
+      "sidebar": "springSideBar"
+    },
+    "Spring/注解驱动开发/组件注册": {
+      "id": "Spring/注解驱动开发/组件注册",
+      "title": "组件注册",
+      "description": "@Configuration和@Bean",
+      "sidebar": "springSideBar"
     },
     "SpringCloud/Alibaba/Nacos": {
       "id": "SpringCloud/Alibaba/Nacos",
@@ -1334,6 +1159,220 @@
       "title": "springCloud",
       "description": "SpringCloud技术文档概述",
       "sidebar": "springCloudSideBar"
+    },
+    "SpringCloud/微服务技术栈": {
+      "id": "SpringCloud/微服务技术栈",
+      "title": "微服务技术栈",
+      "description": "1.2 微服务落地技术栈",
+      "sidebar": "springCloudSideBar"
+    },
+    "中间件/基础中间件/basicMiddleware": {
+      "id": "中间件/基础中间件/basicMiddleware",
+      "title": "基础中间件",
+      "description": "基础中间件文档概述"
+    },
+    "中间件/定时任务/job": {
+      "id": "中间件/定时任务/job",
+      "title": "定时任务概述",
+      "description": "定时任务文档概述"
+    },
+    "中间件/搜索引擎/searchEngine": {
+      "id": "中间件/搜索引擎/searchEngine",
+      "title": "搜索引擎概述",
+      "description": "搜索引擎文档概述"
+    },
+    "中间件/数据库/database": {
+      "id": "中间件/数据库/database",
+      "title": "数据库概述",
+      "description": "数据库文档概述",
+      "sidebar": "myCatSideBar"
+    },
+    "中间件/数据库/MyCat/MyCat": {
+      "id": "中间件/数据库/MyCat/MyCat",
+      "title": "MyCat笔记概述",
+      "description": "MyCat笔记概述"
+    },
+    "中间件/数据库/MyCat/基础/MyCat基础": {
+      "id": "中间件/数据库/MyCat/基础/MyCat基础",
+      "title": "基础使用",
+      "description": "",
+      "sidebar": "myCatSideBar"
+    },
+    "中间件/消息队列/messageQueue": {
+      "id": "中间件/消息队列/messageQueue",
+      "title": "消息队列概述",
+      "description": "消息队列文档概述"
+    },
+    "中间件/缓存/cache": {
+      "id": "中间件/缓存/cache",
+      "title": "缓存概述",
+      "description": "缓存文档概述"
+    },
+    "分布式/分布式技术点/basicTech": {
+      "id": "分布式/分布式技术点/basicTech",
+      "title": "分布式技术点",
+      "description": "分布式技术点文档概述"
+    },
+    "分布式/分布式理论/distribute": {
+      "id": "分布式/分布式理论/distribute",
+      "title": "分布式理论",
+      "description": "一些分布式的理论、算法、协议",
+      "sidebar": "distributeSiderBar"
+    },
+    "分布式/分布式理论/分布式一致性算法/paxos": {
+      "id": "分布式/分布式理论/分布式一致性算法/paxos",
+      "title": "Paxos算法",
+      "description": "Paxos算法是Lamport宗师提出的一种基于消息传递的分布式一致性算法，使其获得2013年图灵奖。",
+      "sidebar": "distributeSiderBar"
+    },
+    "前端/Vue/vueDesc": {
+      "id": "前端/Vue/vueDesc",
+      "title": "vue学习笔记",
+      "description": "vue学习笔记",
+      "sidebar": "vueSideBar"
+    },
+    "前端/Vue/基础特性": {
+      "id": "前端/Vue/基础特性",
+      "title": "Vue基础特性",
+      "description": "应用&组件实例",
+      "sidebar": "vueSideBar"
+    },
+    "工具/Gradle/gradle": {
+      "id": "工具/Gradle/gradle",
+      "title": "Gradle",
+      "description": "Gradle",
+      "sidebar": "gradleSideBar"
+    },
+    "工具/Gradle/基础/Gradle基础": {
+      "id": "工具/Gradle/基础/Gradle基础",
+      "title": "Gradle基础",
+      "description": "",
+      "sidebar": "gradleSideBar"
+    },
+    "工具/后端三方库/FeThird": {
+      "id": "工具/后端三方库/FeThird",
+      "title": "后端库",
+      "description": "后端库"
+    },
+    "并发编程/currency_about": {
+      "id": "并发编程/currency_about",
+      "title": "并发笔记概述",
+      "description": "并发首页",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/juc基础": {
+      "id": "并发编程/juc基础",
+      "title": "并发包基础",
+      "description": "JUC基础知识概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发安全/dead_lock": {
+      "id": "并发编程/并发安全/dead_lock",
+      "title": "死锁与其他活跃锁",
+      "description": "概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发安全/jmm": {
+      "id": "并发编程/并发安全/jmm",
+      "title": "JMM",
+      "description": "性能问题",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发安全/volatile": {
+      "id": "并发编程/并发安全/volatile",
+      "title": "volatile与锁",
+      "description": "概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发安全/线程安全": {
+      "id": "并发编程/并发安全/线程安全",
+      "title": "线程安全",
+      "description": "概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/AQS": {
+      "id": "并发编程/并发控制/AQS",
+      "title": "AQS(队列同步器)",
+      "description": "概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/Atomic&CAS": {
+      "id": "并发编程/并发控制/Atomic&CAS",
+      "title": "原子变量类&CAS",
+      "description": "非阻塞同步机制与锁",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/final": {
+      "id": "并发编程/并发控制/final",
+      "title": "final",
+      "description": "final不变性",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/FutureTask": {
+      "id": "并发编程/并发控制/FutureTask",
+      "title": "FutureTask",
+      "description": "Future概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/Lock锁": {
+      "id": "并发编程/并发控制/Lock锁",
+      "title": "Lock锁",
+      "description": "锁分类",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/ThreadLocal": {
+      "id": "并发编程/并发控制/ThreadLocal",
+      "title": "ThreadLocal",
+      "description": "概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/并发集合与阻塞队列": {
+      "id": "并发编程/并发控制/并发集合与阻塞队列",
+      "title": "并发容器",
+      "description": "概览",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/线程协作": {
+      "id": "并发编程/并发控制/线程协作",
+      "title": "线程协作",
+      "description": "概述",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/线程池": {
+      "id": "并发编程/并发控制/线程池",
+      "title": "线程池",
+      "description": "并发工具类",
+      "sidebar": "basicSideBar"
+    },
+    "并发编程/并发控制/缓存实战": {
+      "id": "并发编程/并发控制/缓存实战",
+      "title": "自定义缓存",
+      "description": "利用并发工具类实现一个简单的缓存",
+      "sidebar": "basicSideBar"
+    },
+    "数据结构与算法/dataStructure": {
+      "id": "数据结构与算法/dataStructure",
+      "title": "数据结构与算法",
+      "description": "数据结构与算法的学习笔记",
+      "sidebar": "dataStructureSidebar"
+    },
+    "数据结构与算法/基础/前提基础知识": {
+      "id": "数据结构与算法/基础/前提基础知识",
+      "title": "前提基础知识",
+      "description": "",
+      "sidebar": "dataStructureSidebar"
+    },
+    "计算机网络/HTTP/http-protocol": {
+      "id": "计算机网络/HTTP/http-protocol",
+      "title": "HTTP协议",
+      "description": "网络基础",
+      "sidebar": "netWorkSidebar"
+    },
+    "计算机网络/networrk-basic": {
+      "id": "计算机网络/networrk-basic",
+      "title": "计算机网络概述",
+      "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
+      "sidebar": "netWorkSidebar"
     }
   }
 }

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhuakucha=self.webpackChunkhuakucha||[]).push([[6164],{8915:a=>{a.exports=JSON.parse('{"permalink":"/blog/tags/\u5206\u4eab","page":1,"postsPerPage":5,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

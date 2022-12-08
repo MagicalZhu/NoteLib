@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhuakucha=self.webpackChunkhuakucha||[]).push([[6093],{87448:e=>{e.exports=JSON.parse('{"title":"Gradle","slug":"/category/gradle","permalink":"/docs/category/gradle","navigation":{"previous":{"title":"Gradle","permalink":"/docs/gradle"},"next":{"title":"\u57fa\u7840","permalink":"/docs/category/\u57fa\u7840"}}}')}}]);

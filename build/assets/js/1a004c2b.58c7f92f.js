@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhuakucha=self.webpackChunkhuakucha||[]).push([[61],{58324:e=>{e.exports=JSON.parse('{"title":"Spring\u57fa\u7840","slug":"/category/spring\u57fa\u7840","permalink":"/docs/category/spring\u57fa\u7840","navigation":{"previous":{"title":"Spring","permalink":"/docs/spring"},"next":{"title":"Spring5","permalink":"/docs/category/spring5"}}}')}}]);

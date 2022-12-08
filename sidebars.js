@@ -103,6 +103,18 @@ const myCatSideBar = [
   myCatPart,
 ]
 
+// 分布式理论
+const distributePart = new Category('分布式算法')
+.createSubCaregory('一致性算法', '分布式/分布式理论/分布式一致性算法', [
+  'paxos',
+])
+
+const distributeSiderBar = [
+  createDoc('分布式/分布式理论/distribute', '简介'),
+  distributePart
+]
+
+
 
 // 计算机网络相关
 const netWorkSidebar = [
@@ -242,7 +254,8 @@ const sidebars = {
   leetCodeSidebar,
   jvmSideBar,
   myCatSideBar,
-  gradleSideBar
+  gradleSideBar,
+  distributeSiderBar
 }
 
 module.exports = sidebars;
