@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkhuakucha=self.webpackChunkhuakucha||[]).push([[9627],{6074:(e,t,c)=>{c.r(t),c.d(t,{default:()=>h});var n=c(67294),u=c(52263),a=c(42566),l=c(20272);function h(){const{siteConfig:e}=(0,u.Z)();return n.createElement(a.Z,null,n.createElement("h2",null,"Site config"),n.createElement(l.Z,{src:e,collapseDepth:3}))}}}]);
