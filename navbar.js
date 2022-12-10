@@ -116,6 +116,10 @@ const nav = {
         {
           label: "JVM",
           to: 'docs/JVM',
+        },
+        {
+          label: "操作系统",
+          to: 'docs/OS',
         }
       ]
     },

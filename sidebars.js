@@ -39,6 +39,17 @@ const basicSideBar = [
   ConcurrencySafe,
 ]
 
+// 操作系统相关
+const OSPart =  new Category('操作系统概念')
+    .setNoLabelItem('操作系统/操作系统概念',[
+      'OSBaisc',
+    ])
+  const OSSiderBar = [
+    createDoc('操作系统/OS', '简介'),
+    OSPart
+  ]
+
+
 // Mysql入门
 const mysqlPart =  new Category('MySQL基础与高级')
     .createSubCaregory('基础知识', 'Mysql/基础', [
@@ -255,7 +266,8 @@ const sidebars = {
   jvmSideBar,
   myCatSideBar,
   gradleSideBar,
-  distributeSiderBar
+  distributeSiderBar,
+  OSSiderBar
 }
 
 module.exports = sidebars;

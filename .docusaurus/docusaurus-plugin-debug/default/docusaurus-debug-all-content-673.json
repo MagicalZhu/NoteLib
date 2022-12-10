@@ -15,10 +15,1030 @@
           "editUrlLocalized": "https://github.com/MagicalZhu/NoteLib/tree/main/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/workspaces/NoteLib/sidebars.js",
-          "contentPath": "/workspaces/NoteLib/docs",
-          "contentPathLocalized": "/workspaces/NoteLib/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/yoey/Desktop/XDocs/sidebars.js",
+          "contentPath": "/Users/yoey/Desktop/XDocs/docs",
+          "contentPathLocalized": "/Users/yoey/Desktop/XDocs/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
           "docs": [
+            {
+              "unversionedId": "并发编程/并发安全/线程安全",
+              "id": "并发编程/并发安全/线程安全",
+              "title": "线程安全",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
+              "sourceDirName": "并发编程/并发安全",
+              "slug": "/并发编程/并发安全/线程安全",
+              "permalink": "/docs/并发编程/并发安全/线程安全",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "线程安全",
+                "title": "线程安全"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "并发安全",
+                "permalink": "/docs/category/并发安全"
+              },
+              "next": {
+                "title": "JMM",
+                "permalink": "/docs/并发编程/并发安全/jmm"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发安全/dead_lock",
+              "id": "并发编程/并发安全/dead_lock",
+              "title": "死锁与其他活跃锁",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
+              "sourceDirName": "并发编程/并发安全",
+              "slug": "/并发编程/并发安全/dead_lock",
+              "permalink": "/docs/并发编程/并发安全/dead_lock",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "dead_lock",
+                "title": "死锁与其他活跃锁"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "volatile与锁",
+                "permalink": "/docs/并发编程/并发安全/volatile"
+              },
+              "next": {
+                "title": "并发控制",
+                "permalink": "/docs/category/并发控制"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发安全/jmm",
+              "id": "并发编程/并发安全/jmm",
+              "title": "JMM",
+              "description": "性能问题",
+              "source": "@site/docs/并发编程/并发安全/2.2并发安全-JMM.md",
+              "sourceDirName": "并发编程/并发安全",
+              "slug": "/并发编程/并发安全/jmm",
+              "permalink": "/docs/并发编程/并发安全/jmm",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.2并发安全-JMM.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "jmm",
+                "title": "JMM"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "线程安全",
+                "permalink": "/docs/并发编程/并发安全/线程安全"
+              },
+              "next": {
+                "title": "volatile与锁",
+                "permalink": "/docs/并发编程/并发安全/volatile"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发安全/volatile",
+              "id": "并发编程/并发安全/volatile",
+              "title": "volatile与锁",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
+              "sourceDirName": "并发编程/并发安全",
+              "slug": "/并发编程/并发安全/volatile",
+              "permalink": "/docs/并发编程/并发安全/volatile",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "volatile",
+                "title": "volatile与锁"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "JMM",
+                "permalink": "/docs/并发编程/并发安全/jmm"
+              },
+              "next": {
+                "title": "死锁与其他活跃锁",
+                "permalink": "/docs/并发编程/并发安全/dead_lock"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/并发集合与阻塞队列",
+              "id": "并发编程/并发控制/并发集合与阻塞队列",
+              "title": "并发容器",
+              "description": "概览",
+              "source": "@site/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/并发集合与阻塞队列",
+              "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "并发集合与阻塞队列",
+                "title": "并发容器"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "final",
+                "permalink": "/docs/并发编程/并发控制/final"
+              },
+              "next": {
+                "title": "线程协作",
+                "permalink": "/docs/并发编程/并发控制/线程协作"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/缓存实战",
+              "id": "并发编程/并发控制/缓存实战",
+              "title": "自定义缓存",
+              "description": "利用并发工具类实现一个简单的缓存",
+              "source": "@site/docs/并发编程/并发控制/4.1并发实战-缓存.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/缓存实战",
+              "permalink": "/docs/并发编程/并发控制/缓存实战",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/4.1并发实战-缓存.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "缓存实战",
+                "title": "自定义缓存"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "FutureTask",
+                "permalink": "/docs/并发编程/并发控制/FutureTask"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/线程池",
+              "id": "并发编程/并发控制/线程池",
+              "title": "线程池",
+              "description": "并发工具类",
+              "source": "@site/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/线程池",
+              "permalink": "/docs/并发编程/并发控制/线程池",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "线程池",
+                "title": "线程池"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "并发控制",
+                "permalink": "/docs/category/并发控制"
+              },
+              "next": {
+                "title": "ThreadLocal",
+                "permalink": "/docs/并发编程/并发控制/ThreadLocal"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/线程协作",
+              "id": "并发编程/并发控制/线程协作",
+              "title": "线程协作",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/线程协作",
+              "permalink": "/docs/并发编程/并发控制/线程协作",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "线程协作",
+                "title": "线程协作"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "并发容器",
+                "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
+              },
+              "next": {
+                "title": "AQS(队列同步器)",
+                "permalink": "/docs/并发编程/并发控制/AQS"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/AQS",
+              "id": "并发编程/并发控制/AQS",
+              "title": "AQS(队列同步器)",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/AQS",
+              "permalink": "/docs/并发编程/并发控制/AQS",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "AQS",
+                "title": "AQS(队列同步器)"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "线程协作",
+                "permalink": "/docs/并发编程/并发控制/线程协作"
+              },
+              "next": {
+                "title": "FutureTask",
+                "permalink": "/docs/并发编程/并发控制/FutureTask"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/Atomic&CAS",
+              "id": "并发编程/并发控制/Atomic&CAS",
+              "title": "原子变量类&CAS",
+              "description": "非阻塞同步机制与锁",
+              "source": "@site/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/Atomic&CAS",
+              "permalink": "/docs/并发编程/并发控制/Atomic&CAS",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Atomic&CAS",
+                "title": "原子变量类&CAS"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "Lock锁",
+                "permalink": "/docs/并发编程/并发控制/Lock锁"
+              },
+              "next": {
+                "title": "final",
+                "permalink": "/docs/并发编程/并发控制/final"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/final",
+              "id": "并发编程/并发控制/final",
+              "title": "final",
+              "description": "final不变性",
+              "source": "@site/docs/并发编程/并发控制/3.5并发工具类-final.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/final",
+              "permalink": "/docs/并发编程/并发控制/final",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "final",
+                "title": "final"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "原子变量类&CAS",
+                "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
+              },
+              "next": {
+                "title": "并发容器",
+                "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/FutureTask",
+              "id": "并发编程/并发控制/FutureTask",
+              "title": "FutureTask",
+              "description": "Future概述",
+              "source": "@site/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/FutureTask",
+              "permalink": "/docs/并发编程/并发控制/FutureTask",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "FutureTask",
+                "title": "FutureTask"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "AQS(队列同步器)",
+                "permalink": "/docs/并发编程/并发控制/AQS"
+              },
+              "next": {
+                "title": "自定义缓存",
+                "permalink": "/docs/并发编程/并发控制/缓存实战"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/Lock锁",
+              "id": "并发编程/并发控制/Lock锁",
+              "title": "Lock锁",
+              "description": "锁分类",
+              "source": "@site/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/Lock锁",
+              "permalink": "/docs/并发编程/并发控制/Lock锁",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Lock锁",
+                "title": "Lock锁"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "ThreadLocal",
+                "permalink": "/docs/并发编程/并发控制/ThreadLocal"
+              },
+              "next": {
+                "title": "原子变量类&CAS",
+                "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
+              }
+            },
+            {
+              "unversionedId": "并发编程/并发控制/ThreadLocal",
+              "id": "并发编程/并发控制/ThreadLocal",
+              "title": "ThreadLocal",
+              "description": "概述",
+              "source": "@site/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
+              "sourceDirName": "并发编程/并发控制",
+              "slug": "/并发编程/并发控制/ThreadLocal",
+              "permalink": "/docs/并发编程/并发控制/ThreadLocal",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "ThreadLocal",
+                "title": "ThreadLocal"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "线程池",
+                "permalink": "/docs/并发编程/并发控制/线程池"
+              },
+              "next": {
+                "title": "Lock锁",
+                "permalink": "/docs/并发编程/并发控制/Lock锁"
+              }
+            },
+            {
+              "unversionedId": "并发编程/currency_about",
+              "id": "并发编程/currency_about",
+              "title": "并发笔记概述",
+              "description": "并发首页",
+              "source": "@site/docs/并发编程/about.md",
+              "sourceDirName": "并发编程",
+              "slug": "/currency",
+              "permalink": "/docs/currency",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "currency_about",
+                "slug": "/currency",
+                "title": "并发笔记概述"
+              },
+              "sidebar": "basicSideBar",
+              "next": {
+                "title": "并发包基础",
+                "permalink": "/docs/并发编程/juc基础"
+              }
+            },
+            {
+              "unversionedId": "并发编程/juc基础",
+              "id": "并发编程/juc基础",
+              "title": "并发包基础",
+              "description": "JUC基础知识概述",
+              "source": "@site/docs/并发编程/1.1JUC基础.md",
+              "sourceDirName": "并发编程",
+              "slug": "/并发编程/juc基础",
+              "permalink": "/docs/并发编程/juc基础",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/1.1JUC基础.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "juc基础",
+                "title": "并发包基础"
+              },
+              "sidebar": "basicSideBar",
+              "previous": {
+                "title": "并发笔记概述",
+                "permalink": "/docs/currency"
+              },
+              "next": {
+                "title": "并发基础",
+                "permalink": "/docs/category/并发基础"
+              }
+            },
+            {
+              "unversionedId": "操作系统/操作系统概念/OSBaisc",
+              "id": "操作系统/操作系统概念/OSBaisc",
+              "title": "概论",
+              "description": "操作系统概念的笔记",
+              "source": "@site/docs/操作系统/操作系统概念/概论.md",
+              "sourceDirName": "操作系统/操作系统概念",
+              "slug": "/操作系统/操作系统概念/OSBaisc",
+              "permalink": "/docs/操作系统/操作系统概念/OSBaisc",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/操作系统/操作系统概念/概论.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "OSBaisc",
+                "title": "概论"
+              },
+              "sidebar": "OSSiderBar",
+              "previous": {
+                "title": "操作系统概念",
+                "permalink": "/docs/category/操作系统概念"
+              }
+            },
+            {
+              "unversionedId": "操作系统/OS",
+              "id": "操作系统/OS",
+              "title": "操作系统",
+              "description": "操作系统相关",
+              "source": "@site/docs/操作系统/about.md",
+              "sourceDirName": "操作系统",
+              "slug": "/OS",
+              "permalink": "/docs/OS",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/操作系统/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "OS",
+                "title": "操作系统",
+                "slug": "/OS"
+              },
+              "sidebar": "OSSiderBar",
+              "next": {
+                "title": "操作系统概念",
+                "permalink": "/docs/category/操作系统概念"
+              }
+            },
+            {
+              "unversionedId": "分布式/分布式技术点/basicTech",
+              "id": "分布式/分布式技术点/basicTech",
+              "title": "分布式技术点",
+              "description": "分布式技术点文档概述",
+              "source": "@site/docs/分布式/分布式技术点/about.md",
+              "sourceDirName": "分布式/分布式技术点",
+              "slug": "/distribute/basicTech",
+              "permalink": "/docs/distribute/basicTech",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式/分布式技术点/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "basicTech",
+                "title": "分布式技术点",
+                "slug": "/distribute/basicTech"
+              }
+            },
+            {
+              "unversionedId": "分布式/分布式理论/分布式一致性算法/paxos",
+              "id": "分布式/分布式理论/分布式一致性算法/paxos",
+              "title": "Paxos算法",
+              "description": "Paxos算法是Lamport宗师提出的一种基于消息传递的分布式一致性算法，使其获得2013年图灵奖。",
+              "source": "@site/docs/分布式/分布式理论/分布式一致性算法/paxos.md",
+              "sourceDirName": "分布式/分布式理论/分布式一致性算法",
+              "slug": "/分布式/分布式理论/分布式一致性算法/paxos",
+              "permalink": "/docs/分布式/分布式理论/分布式一致性算法/paxos",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式/分布式理论/分布式一致性算法/paxos.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "paxos",
+                "title": "Paxos算法"
+              },
+              "sidebar": "distributeSiderBar",
+              "previous": {
+                "title": "一致性算法",
+                "permalink": "/docs/category/一致性算法"
+              }
+            },
+            {
+              "unversionedId": "分布式/分布式理论/distribute",
+              "id": "分布式/分布式理论/distribute",
+              "title": "分布式理论",
+              "description": "一些分布式的理论、算法、协议",
+              "source": "@site/docs/分布式/分布式理论/about.md",
+              "sourceDirName": "分布式/分布式理论",
+              "slug": "/distribute/protol",
+              "permalink": "/docs/distribute/protol",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式/分布式理论/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "distribute",
+                "title": "分布式理论",
+                "slug": "/distribute/protol"
+              },
+              "sidebar": "distributeSiderBar",
+              "next": {
+                "title": "分布式算法",
+                "permalink": "/docs/category/分布式算法"
+              }
+            },
+            {
+              "unversionedId": "工具/后端三方库/FeThird",
+              "id": "工具/后端三方库/FeThird",
+              "title": "后端库",
+              "description": "后端库",
+              "source": "@site/docs/工具/后端三方库/about.md",
+              "sourceDirName": "工具/后端三方库",
+              "slug": "/FeThird",
+              "permalink": "/docs/FeThird",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/后端三方库/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "FeThird",
+                "slug": "/FeThird",
+                "title": "后端库"
+              }
+            },
+            {
+              "unversionedId": "工具/Gradle/基础/Gradle基础",
+              "id": "工具/Gradle/基础/Gradle基础",
+              "title": "Gradle基础",
+              "description": "",
+              "source": "@site/docs/工具/Gradle/基础/Gradle使用.md",
+              "sourceDirName": "工具/Gradle/基础",
+              "slug": "/工具/Gradle/基础/Gradle基础",
+              "permalink": "/docs/工具/Gradle/基础/Gradle基础",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Gradle/基础/Gradle使用.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Gradle基础",
+                "title": "Gradle基础"
+              },
+              "sidebar": "gradleSideBar",
+              "previous": {
+                "title": "基础",
+                "permalink": "/docs/category/基础"
+              }
+            },
+            {
+              "unversionedId": "工具/Gradle/gradle",
+              "id": "工具/Gradle/gradle",
+              "title": "Gradle",
+              "description": "Gradle",
+              "source": "@site/docs/工具/Gradle/about.md",
+              "sourceDirName": "工具/Gradle",
+              "slug": "/gradle",
+              "permalink": "/docs/gradle",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Gradle/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "gradle",
+                "slug": "/gradle",
+                "title": "Gradle"
+              },
+              "sidebar": "gradleSideBar",
+              "next": {
+                "title": "Gradle",
+                "permalink": "/docs/category/gradle"
+              }
+            },
+            {
+              "unversionedId": "计算机网络/HTTP/http-protocol",
+              "id": "计算机网络/HTTP/http-protocol",
+              "title": "HTTP协议",
+              "description": "网络基础",
+              "source": "@site/docs/计算机网络/HTTP/HTTP协议.md",
+              "sourceDirName": "计算机网络/HTTP",
+              "slug": "/计算机网络/HTTP/http-protocol",
+              "permalink": "/docs/计算机网络/HTTP/http-protocol",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "http-protocol",
+                "title": "HTTP协议"
+              },
+              "sidebar": "netWorkSidebar",
+              "previous": {
+                "title": "计算机网络概述",
+                "permalink": "/docs/networrk-basic"
+              }
+            },
+            {
+              "unversionedId": "计算机网络/networrk-basic",
+              "id": "计算机网络/networrk-basic",
+              "title": "计算机网络概述",
+              "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
+              "source": "@site/docs/计算机网络/about.md",
+              "sourceDirName": "计算机网络",
+              "slug": "/networrk-basic",
+              "permalink": "/docs/networrk-basic",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "networrk-basic",
+                "title": "计算机网络概述",
+                "slug": "/networrk-basic"
+              },
+              "sidebar": "netWorkSidebar",
+              "next": {
+                "title": "HTTP协议",
+                "permalink": "/docs/计算机网络/HTTP/http-protocol"
+              }
+            },
+            {
+              "unversionedId": "前端/Vue/基础特性",
+              "id": "前端/Vue/基础特性",
+              "title": "Vue基础特性",
+              "description": "应用&组件实例",
+              "source": "@site/docs/前端/Vue/基础特性.md",
+              "sourceDirName": "前端/Vue",
+              "slug": "/前端/Vue/基础特性",
+              "permalink": "/docs/前端/Vue/基础特性",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/前端/Vue/基础特性.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "基础特性",
+                "title": "Vue基础特性"
+              },
+              "sidebar": "vueSideBar",
+              "previous": {
+                "title": "Vue基础",
+                "permalink": "/docs/category/vue基础"
+              }
+            },
+            {
+              "unversionedId": "前端/Vue/vueDesc",
+              "id": "前端/Vue/vueDesc",
+              "title": "vue学习笔记",
+              "description": "vue学习笔记",
+              "source": "@site/docs/前端/Vue/about.md",
+              "sourceDirName": "前端/Vue",
+              "slug": "/front/Vue",
+              "permalink": "/docs/front/Vue",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/前端/Vue/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "vueDesc",
+                "slug": "/front/Vue",
+                "title": "vue学习笔记"
+              },
+              "sidebar": "vueSideBar",
+              "next": {
+                "title": "Vue学习笔记",
+                "permalink": "/docs/category/vue学习笔记"
+              }
+            },
+            {
+              "unversionedId": "数据结构与算法/基础/前提基础知识",
+              "id": "数据结构与算法/基础/前提基础知识",
+              "title": "前提基础知识",
+              "description": "",
+              "source": "@site/docs/数据结构与算法/基础/基础知识.md",
+              "sourceDirName": "数据结构与算法/基础",
+              "slug": "/数据结构与算法/基础/前提基础知识",
+              "permalink": "/docs/数据结构与算法/基础/前提基础知识",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/数据结构与算法/基础/基础知识.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "前提基础知识",
+                "title": "前提基础知识"
+              },
+              "sidebar": "dataStructureSidebar",
+              "previous": {
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识-1"
+              }
+            },
+            {
+              "unversionedId": "数据结构与算法/dataStructure",
+              "id": "数据结构与算法/dataStructure",
+              "title": "数据结构与算法",
+              "description": "数据结构与算法的学习笔记",
+              "source": "@site/docs/数据结构与算法/about.md",
+              "sourceDirName": "数据结构与算法",
+              "slug": "/dataStructure",
+              "permalink": "/docs/dataStructure",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/数据结构与算法/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "dataStructure",
+                "title": "数据结构与算法",
+                "slug": "/dataStructure"
+              },
+              "sidebar": "dataStructureSidebar",
+              "next": {
+                "title": "数据结构与算法基础",
+                "permalink": "/docs/category/数据结构与算法基础"
+              }
+            },
+            {
+              "unversionedId": "中间件/定时任务/job",
+              "id": "中间件/定时任务/job",
+              "title": "定时任务概述",
+              "description": "定时任务文档概述",
+              "source": "@site/docs/中间件/定时任务/about.md",
+              "sourceDirName": "中间件/定时任务",
+              "slug": "/middleware/job",
+              "permalink": "/docs/middleware/job",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/定时任务/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "job",
+                "title": "定时任务概述",
+                "slug": "/middleware/job"
+              }
+            },
+            {
+              "unversionedId": "中间件/缓存/cache",
+              "id": "中间件/缓存/cache",
+              "title": "缓存概述",
+              "description": "缓存文档概述",
+              "source": "@site/docs/中间件/缓存/about.md",
+              "sourceDirName": "中间件/缓存",
+              "slug": "/middleware/cache",
+              "permalink": "/docs/middleware/cache",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/缓存/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "cache",
+                "title": "缓存概述",
+                "slug": "/middleware/cache"
+              }
+            },
+            {
+              "unversionedId": "中间件/基础中间件/basicMiddleware",
+              "id": "中间件/基础中间件/basicMiddleware",
+              "title": "基础中间件",
+              "description": "基础中间件文档概述",
+              "source": "@site/docs/中间件/基础中间件/about.md",
+              "sourceDirName": "中间件/基础中间件",
+              "slug": "/middleware/basicMiddleware",
+              "permalink": "/docs/middleware/basicMiddleware",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/基础中间件/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "basicMiddleware",
+                "title": "基础中间件",
+                "slug": "/middleware/basicMiddleware"
+              }
+            },
+            {
+              "unversionedId": "中间件/数据库/database",
+              "id": "中间件/数据库/database",
+              "title": "数据库概述",
+              "description": "数据库文档概述",
+              "source": "@site/docs/中间件/数据库/about.md",
+              "sourceDirName": "中间件/数据库",
+              "slug": "/middleware/database",
+              "permalink": "/docs/middleware/database",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "database",
+                "title": "数据库概述",
+                "slug": "/middleware/database"
+              },
+              "sidebar": "myCatSideBar",
+              "next": {
+                "title": "MyCat",
+                "permalink": "/docs/category/mycat"
+              }
+            },
+            {
+              "unversionedId": "中间件/数据库/MyCat/基础/MyCat基础",
+              "id": "中间件/数据库/MyCat/基础/MyCat基础",
+              "title": "基础使用",
+              "description": "",
+              "source": "@site/docs/中间件/数据库/MyCat/基础/MyCat基础.md",
+              "sourceDirName": "中间件/数据库/MyCat/基础",
+              "slug": "/中间件/数据库/MyCat/基础/MyCat基础",
+              "permalink": "/docs/中间件/数据库/MyCat/基础/MyCat基础",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/MyCat/基础/MyCat基础.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "MyCat基础",
+                "title": "基础使用"
+              },
+              "sidebar": "myCatSideBar",
+              "previous": {
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识-2"
+              }
+            },
+            {
+              "unversionedId": "中间件/数据库/MyCat/MyCat",
+              "id": "中间件/数据库/MyCat/MyCat",
+              "title": "MyCat笔记概述",
+              "description": "MyCat笔记概述",
+              "source": "@site/docs/中间件/数据库/MyCat/about.md",
+              "sourceDirName": "中间件/数据库/MyCat",
+              "slug": "/MyCat",
+              "permalink": "/docs/MyCat",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/MyCat/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "MyCat",
+                "slug": "/MyCat",
+                "title": "MyCat笔记概述"
+              }
+            },
+            {
+              "unversionedId": "中间件/搜索引擎/searchEngine",
+              "id": "中间件/搜索引擎/searchEngine",
+              "title": "搜索引擎概述",
+              "description": "搜索引擎文档概述",
+              "source": "@site/docs/中间件/搜索引擎/about.md",
+              "sourceDirName": "中间件/搜索引擎",
+              "slug": "/middleware/searchEngine",
+              "permalink": "/docs/middleware/searchEngine",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/搜索引擎/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "searchEngine",
+                "title": "搜索引擎概述",
+                "slug": "/middleware/searchEngine"
+              }
+            },
+            {
+              "unversionedId": "中间件/消息队列/messageQueue",
+              "id": "中间件/消息队列/messageQueue",
+              "title": "消息队列概述",
+              "description": "消息队列文档概述",
+              "source": "@site/docs/中间件/消息队列/about.md",
+              "sourceDirName": "中间件/消息队列",
+              "slug": "/middleware/messageQueue",
+              "permalink": "/docs/middleware/messageQueue",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/消息队列/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "messageQueue",
+                "title": "消息队列概述",
+                "slug": "/middleware/messageQueue"
+              }
+            },
             {
               "unversionedId": "about",
               "id": "about",
@@ -39,28 +1059,6 @@
                 "id": "about",
                 "title": "About Me",
                 "slug": "/about"
-              }
-            },
-            {
-              "unversionedId": "JVM/JVM",
-              "id": "JVM/JVM",
-              "title": "JVM",
-              "description": "JVM技术文档概述",
-              "source": "@site/docs/JVM/about.mdx",
-              "sourceDirName": "JVM",
-              "slug": "/JVM",
-              "permalink": "/docs/JVM",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/JVM/about.mdx",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "JVM",
-                "title": "JVM",
-                "slug": "/JVM"
               }
             },
             {
@@ -87,6 +1085,28 @@
               "previous": {
                 "title": "性能监控和调优入门",
                 "permalink": "/docs/category/性能监控和调优入门"
+              }
+            },
+            {
+              "unversionedId": "JVM/JVM",
+              "id": "JVM/JVM",
+              "title": "JVM",
+              "description": "JVM技术文档概述",
+              "source": "@site/docs/JVM/about.mdx",
+              "sourceDirName": "JVM",
+              "slug": "/JVM",
+              "permalink": "/docs/JVM",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/JVM/about.mdx",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "JVM",
+                "title": "JVM",
+                "slug": "/JVM"
               }
             },
             {
@@ -166,176 +1186,423 @@
               "sidebar": "linuxSideBar"
             },
             {
-              "unversionedId": "Mysql/mysql",
-              "id": "Mysql/mysql",
-              "title": "MySQL笔记概述",
-              "description": "MySQL笔记概述",
-              "source": "@site/docs/Mysql/about.md",
-              "sourceDirName": "Mysql",
-              "slug": "/mysql",
-              "permalink": "/docs/mysql",
+              "unversionedId": "Mysql/高级特性/缓冲池",
+              "id": "Mysql/高级特性/缓冲池",
+              "title": "缓冲池",
+              "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
+              "source": "@site/docs/Mysql/高级特性/缓冲池.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/缓冲池",
+              "permalink": "/docs/Mysql/高级特性/缓冲池",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/about.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/缓冲池.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "mysql",
-                "slug": "/mysql",
-                "title": "MySQL笔记概述"
-              },
-              "sidebar": "mysqlSideBar",
-              "next": {
-                "title": "MySQL基础与高级",
-                "permalink": "/docs/category/mysql基础与高级"
-              }
-            },
-            {
-              "unversionedId": "Mysql/MySQL参数与命令",
-              "id": "Mysql/MySQL参数与命令",
-              "title": "MySQL参数与命令",
-              "description": "字符集相关",
-              "source": "@site/docs/Mysql/MySQL参数与语句.md",
-              "sourceDirName": "Mysql",
-              "slug": "/Mysql/MySQL参数与命令",
-              "permalink": "/docs/Mysql/MySQL参数与命令",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/MySQL参数与语句.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "MySQL参数与命令",
-                "title": "MySQL参数与命令"
+                "id": "缓冲池",
+                "title": "缓冲池"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
+                "title": "MySQL逻辑架构",
+                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
+              },
+              "next": {
+                "title": "存储结构与索引",
+                "permalink": "/docs/category/存储结构与索引"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/基本分析工具",
+              "id": "Mysql/高级特性/基本分析工具",
+              "title": "基本分析工具",
+              "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
+              "source": "@site/docs/Mysql/高级特性/性能分析基本工具.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/基本分析工具",
+              "permalink": "/docs/Mysql/高级特性/基本分析工具",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能分析基本工具.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "基本分析工具",
+                "title": "基本分析工具"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "性能分析工具",
+                "permalink": "/docs/category/性能分析工具"
+              },
+              "next": {
+                "title": "执行计划分析",
+                "permalink": "/docs/Mysql/高级特性/Explain"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/其他日志",
+              "id": "Mysql/高级特性/其他日志",
+              "title": "其他日志",
+              "description": "在前面的数据库的事务中,我们遇到了两种日志: redo日志、undo日志",
+              "source": "@site/docs/Mysql/高级特性/其他日志.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/其他日志",
+              "permalink": "/docs/Mysql/高级特性/其他日志",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/其他日志.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "其他日志",
+                "title": "其他日志"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "运维",
+                "permalink": "/docs/category/运维"
+              },
+              "next": {
                 "title": "主从复制",
                 "permalink": "/docs/Mysql/高级特性/主从复制"
               }
             },
             {
-              "unversionedId": "Mysql/基础/MySQL函数与聚合",
-              "id": "Mysql/基础/MySQL函数与聚合",
-              "title": "MySQL函数与聚合",
-              "description": "函数",
-              "source": "@site/docs/Mysql/基础/MySQL函数与聚合.md",
-              "sourceDirName": "Mysql/基础",
-              "slug": "/Mysql/基础/MySQL函数与聚合",
-              "permalink": "/docs/Mysql/基础/MySQL函数与聚合",
+              "unversionedId": "Mysql/高级特性/设计索引",
+              "id": "Mysql/高级特性/设计索引",
+              "title": "设计索引",
+              "description": "使用索引",
+              "source": "@site/docs/Mysql/高级特性/设计索引.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/设计索引",
+              "permalink": "/docs/Mysql/高级特性/设计索引",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL函数与聚合.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/设计索引.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "MySQL函数与聚合",
-                "title": "MySQL函数与聚合"
+                "id": "设计索引",
+                "title": "设计索引"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "MySQL基础查询",
-                "permalink": "/docs/Mysql/基础/MySQL基础查询"
+                "title": "索引的应用",
+                "permalink": "/docs/Mysql/高级特性/索引的应用"
               },
               "next": {
-                "title": "MySQL子查询",
-                "permalink": "/docs/Mysql/基础/MySQL子查询"
+                "title": "InnoDB数据页结构",
+                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
               }
             },
             {
-              "unversionedId": "Mysql/基础/MySQL基础查询",
-              "id": "Mysql/基础/MySQL基础查询",
-              "title": "MySQL基础查询",
-              "description": "表的关联关系",
-              "source": "@site/docs/Mysql/基础/MySQL基础.md",
-              "sourceDirName": "Mysql/基础",
-              "slug": "/Mysql/基础/MySQL基础查询",
-              "permalink": "/docs/Mysql/基础/MySQL基础查询",
+              "unversionedId": "Mysql/高级特性/事务基础",
+              "id": "Mysql/高级特性/事务基础",
+              "title": "事务基础",
+              "description": "数据库事务",
+              "source": "@site/docs/Mysql/高级特性/事务基础.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/事务基础",
+              "permalink": "/docs/Mysql/高级特性/事务基础",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL基础.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/事务基础.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "MySQL基础查询",
-                "title": "MySQL基础查询"
+                "id": "事务基础",
+                "title": "事务基础"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "基础知识",
-                "permalink": "/docs/category/基础知识"
+                "title": "事务与锁",
+                "permalink": "/docs/category/事务与锁"
               },
               "next": {
-                "title": "MySQL函数与聚合",
-                "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
+                "title": "Redo日志",
+                "permalink": "/docs/Mysql/高级特性/Redo日志"
               }
             },
             {
-              "unversionedId": "Mysql/基础/MySQL子查询",
-              "id": "Mysql/基础/MySQL子查询",
-              "title": "MySQL子查询",
-              "description": "子查询是指一个查询语句嵌套在另一个查询语句的内部的查询,这个特性从 MySQL4.1 开始引入,也叫做内查询",
-              "source": "@site/docs/Mysql/基础/MySQL子查询.md",
-              "sourceDirName": "Mysql/基础",
-              "slug": "/Mysql/基础/MySQL子查询",
-              "permalink": "/docs/Mysql/基础/MySQL子查询",
+              "unversionedId": "Mysql/高级特性/数据库其他调优策略",
+              "id": "Mysql/高级特性/数据库其他调优策略",
+              "title": "数据库其他调优策略",
+              "description": "数据库调优的策略",
+              "source": "@site/docs/Mysql/高级特性/数据库其他调优策略.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/数据库其他调优策略",
+              "permalink": "/docs/Mysql/高级特性/数据库其他调优策略",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL子查询.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/数据库其他调优策略.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "MySQL子查询",
-                "title": "MySQL子查询"
+                "id": "数据库其他调优策略",
+                "title": "数据库其他调优策略"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "MySQL函数与聚合",
-                "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
+                "title": "数据库设计规范",
+                "permalink": "/docs/Mysql/高级特性/数据库设计规范"
               },
               "next": {
-                "title": "MySQL库对象",
-                "permalink": "/docs/Mysql/基础/MySQL库对象"
+                "title": "事务与锁",
+                "permalink": "/docs/category/事务与锁"
               }
             },
             {
-              "unversionedId": "Mysql/基础/MySQL库对象",
-              "id": "Mysql/基础/MySQL库对象",
-              "title": "MySQL库对象",
-              "description": "数据库对象",
-              "source": "@site/docs/Mysql/基础/MySQL库对象.md",
-              "sourceDirName": "Mysql/基础",
-              "slug": "/Mysql/基础/MySQL库对象",
-              "permalink": "/docs/Mysql/基础/MySQL库对象",
+              "unversionedId": "Mysql/高级特性/数据库设计规范",
+              "id": "Mysql/高级特性/数据库设计规范",
+              "title": "数据库设计规范",
+              "description": "为什么需要数据库设计",
+              "source": "@site/docs/Mysql/高级特性/数据库设计规范.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/数据库设计规范",
+              "permalink": "/docs/Mysql/高级特性/数据库设计规范",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL库对象.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/数据库设计规范.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "MySQL库对象",
-                "title": "MySQL库对象"
+                "id": "数据库设计规范",
+                "title": "数据库设计规范"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "MySQL子查询",
-                "permalink": "/docs/Mysql/基础/MySQL子查询"
+                "title": "索引与查询优化",
+                "permalink": "/docs/Mysql/高级特性/索引与查询优化"
               },
               "next": {
-                "title": "数据库管理",
-                "permalink": "/docs/category/数据库管理"
+                "title": "数据库其他调优策略",
+                "permalink": "/docs/Mysql/高级特性/数据库其他调优策略"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/索引",
+              "id": "Mysql/高级特性/索引",
+              "title": "索引",
+              "description": "为什么使用索引",
+              "source": "@site/docs/Mysql/高级特性/索引.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/索引",
+              "permalink": "/docs/Mysql/高级特性/索引",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "索引",
+                "title": "索引"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "存储结构与索引",
+                "permalink": "/docs/category/存储结构与索引"
+              },
+              "next": {
+                "title": "索引的应用",
+                "permalink": "/docs/Mysql/高级特性/索引的应用"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/索引的应用",
+              "id": "Mysql/高级特性/索引的应用",
+              "title": "索引的应用",
+              "description": "对于 InnoDB 存储引擎的 B+Tree 索引,我们已经知道:",
+              "source": "@site/docs/Mysql/高级特性/索引的应用.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/索引的应用",
+              "permalink": "/docs/Mysql/高级特性/索引的应用",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引的应用.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "索引的应用",
+                "title": "索引的应用"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "索引",
+                "permalink": "/docs/Mysql/高级特性/索引"
+              },
+              "next": {
+                "title": "设计索引",
+                "permalink": "/docs/Mysql/高级特性/设计索引"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/索引与查询优化",
+              "id": "Mysql/高级特性/索引与查询优化",
+              "title": "索引与查询优化",
+              "description": "都有哪些维度可以进行数据库调优?大体上说:",
+              "source": "@site/docs/Mysql/高级特性/索引与查询优化.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/索引与查询优化",
+              "permalink": "/docs/Mysql/高级特性/索引与查询优化",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引与查询优化.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "索引与查询优化",
+                "title": "索引与查询优化"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "性能监控工具",
+                "permalink": "/docs/Mysql/高级特性/性能监控工具"
+              },
+              "next": {
+                "title": "数据库设计规范",
+                "permalink": "/docs/Mysql/高级特性/数据库设计规范"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/锁",
+              "id": "Mysql/高级特性/锁",
+              "title": "锁机制",
+              "description": "事务的隔离性由锁来实现",
+              "source": "@site/docs/Mysql/高级特性/锁.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/锁",
+              "permalink": "/docs/Mysql/高级特性/锁",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/锁.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "锁",
+                "title": "锁机制"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "Undo日志",
+                "permalink": "/docs/Mysql/高级特性/Undo日志"
+              },
+              "next": {
+                "title": "多版本并发控制",
+                "permalink": "/docs/Mysql/高级特性/MVCC"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/性能监控工具",
+              "id": "Mysql/高级特性/性能监控工具",
+              "title": "性能监控工具",
+              "description": "MySQL 为我们提供了很多对性能进行跟踪监控分析的工具,比如 OPTIMIZERTRACE、sysschema、...",
+              "source": "@site/docs/Mysql/高级特性/性能监控工具.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/性能监控工具",
+              "permalink": "/docs/Mysql/高级特性/性能监控工具",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能监控工具.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "性能监控工具",
+                "title": "性能监控工具"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "执行计划分析",
+                "permalink": "/docs/Mysql/高级特性/Explain"
+              },
+              "next": {
+                "title": "索引与查询优化",
+                "permalink": "/docs/Mysql/高级特性/索引与查询优化"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/用户权限管理",
+              "id": "Mysql/高级特性/用户权限管理",
+              "title": "用户权限管理",
+              "description": "示意图",
+              "source": "@site/docs/Mysql/高级特性/用户权限管理.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/用户权限管理",
+              "permalink": "/docs/Mysql/高级特性/用户权限管理",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/用户权限管理.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "用户权限管理",
+                "title": "用户权限管理"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL 部署",
+                "permalink": "/docs/Mysql/高级特性/MySQL 部署"
+              },
+              "next": {
+                "title": "架构与引擎",
+                "permalink": "/docs/category/架构与引擎"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/主从复制",
+              "id": "Mysql/高级特性/主从复制",
+              "title": "主从复制",
+              "description": "引入",
+              "source": "@site/docs/Mysql/高级特性/主从复制.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/主从复制",
+              "permalink": "/docs/Mysql/高级特性/主从复制",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/主从复制.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "主从复制",
+                "title": "主从复制"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "其他日志",
+                "permalink": "/docs/Mysql/高级特性/其他日志"
+              },
+              "next": {
+                "title": "MySQL参数与命令",
+                "permalink": "/docs/Mysql/MySQL参数与命令"
               }
             },
             {
@@ -369,36 +1636,6 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/InnoDB数据页结构",
-              "id": "Mysql/高级特性/InnoDB数据页结构",
-              "title": "InnoDB数据页结构",
-              "description": "InnoDB的存储结构",
-              "source": "@site/docs/Mysql/高级特性/InnoDB数据页结构.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/InnoDB数据页结构",
-              "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/InnoDB数据页结构.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "InnoDB数据页结构",
-                "title": "InnoDB数据页结构"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "设计索引",
-                "permalink": "/docs/Mysql/高级特性/设计索引"
-              },
-              "next": {
-                "title": "InnoDB表空间",
-                "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
-              }
-            },
-            {
               "unversionedId": "Mysql/高级特性/InnoDB表空间",
               "id": "Mysql/高级特性/InnoDB表空间",
               "title": "InnoDB表空间",
@@ -426,6 +1663,36 @@
               "next": {
                 "title": "性能优化",
                 "permalink": "/docs/category/性能优化"
+              }
+            },
+            {
+              "unversionedId": "Mysql/高级特性/InnoDB数据页结构",
+              "id": "Mysql/高级特性/InnoDB数据页结构",
+              "title": "InnoDB数据页结构",
+              "description": "InnoDB的存储结构",
+              "source": "@site/docs/Mysql/高级特性/InnoDB数据页结构.md",
+              "sourceDirName": "Mysql/高级特性",
+              "slug": "/Mysql/高级特性/InnoDB数据页结构",
+              "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/InnoDB数据页结构.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "InnoDB数据页结构",
+                "title": "InnoDB数据页结构"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "设计索引",
+                "permalink": "/docs/Mysql/高级特性/设计索引"
+              },
+              "next": {
+                "title": "InnoDB表空间",
+                "permalink": "/docs/Mysql/高级特性/InnoDB表空间"
               }
             },
             {
@@ -579,423 +1846,176 @@
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/主从复制",
-              "id": "Mysql/高级特性/主从复制",
-              "title": "主从复制",
-              "description": "引入",
-              "source": "@site/docs/Mysql/高级特性/主从复制.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/主从复制",
-              "permalink": "/docs/Mysql/高级特性/主从复制",
+              "unversionedId": "Mysql/基础/MySQL函数与聚合",
+              "id": "Mysql/基础/MySQL函数与聚合",
+              "title": "MySQL函数与聚合",
+              "description": "函数",
+              "source": "@site/docs/Mysql/基础/MySQL函数与聚合.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL函数与聚合",
+              "permalink": "/docs/Mysql/基础/MySQL函数与聚合",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/主从复制.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL函数与聚合.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "主从复制",
-                "title": "主从复制"
+                "id": "MySQL函数与聚合",
+                "title": "MySQL函数与聚合"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "其他日志",
-                "permalink": "/docs/Mysql/高级特性/其他日志"
+                "title": "MySQL基础查询",
+                "permalink": "/docs/Mysql/基础/MySQL基础查询"
               },
               "next": {
-                "title": "MySQL参数与命令",
-                "permalink": "/docs/Mysql/MySQL参数与命令"
+                "title": "MySQL子查询",
+                "permalink": "/docs/Mysql/基础/MySQL子查询"
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/事务基础",
-              "id": "Mysql/高级特性/事务基础",
-              "title": "事务基础",
-              "description": "数据库事务",
-              "source": "@site/docs/Mysql/高级特性/事务基础.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/事务基础",
-              "permalink": "/docs/Mysql/高级特性/事务基础",
+              "unversionedId": "Mysql/基础/MySQL基础查询",
+              "id": "Mysql/基础/MySQL基础查询",
+              "title": "MySQL基础查询",
+              "description": "表的关联关系",
+              "source": "@site/docs/Mysql/基础/MySQL基础.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL基础查询",
+              "permalink": "/docs/Mysql/基础/MySQL基础查询",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/事务基础.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL基础.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "事务基础",
-                "title": "事务基础"
+                "id": "MySQL基础查询",
+                "title": "MySQL基础查询"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "事务与锁",
-                "permalink": "/docs/category/事务与锁"
+                "title": "基础知识",
+                "permalink": "/docs/category/基础知识"
               },
               "next": {
-                "title": "Redo日志",
-                "permalink": "/docs/Mysql/高级特性/Redo日志"
+                "title": "MySQL函数与聚合",
+                "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
               }
             },
             {
-              "unversionedId": "Mysql/高级特性/其他日志",
-              "id": "Mysql/高级特性/其他日志",
-              "title": "其他日志",
-              "description": "在前面的数据库的事务中,我们遇到了两种日志: redo日志、undo日志",
-              "source": "@site/docs/Mysql/高级特性/其他日志.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/其他日志",
-              "permalink": "/docs/Mysql/高级特性/其他日志",
+              "unversionedId": "Mysql/基础/MySQL库对象",
+              "id": "Mysql/基础/MySQL库对象",
+              "title": "MySQL库对象",
+              "description": "数据库对象",
+              "source": "@site/docs/Mysql/基础/MySQL库对象.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL库对象",
+              "permalink": "/docs/Mysql/基础/MySQL库对象",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/其他日志.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL库对象.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "其他日志",
-                "title": "其他日志"
+                "id": "MySQL库对象",
+                "title": "MySQL库对象"
               },
               "sidebar": "mysqlSideBar",
               "previous": {
-                "title": "运维",
-                "permalink": "/docs/category/运维"
+                "title": "MySQL子查询",
+                "permalink": "/docs/Mysql/基础/MySQL子查询"
               },
               "next": {
+                "title": "数据库管理",
+                "permalink": "/docs/category/数据库管理"
+              }
+            },
+            {
+              "unversionedId": "Mysql/基础/MySQL子查询",
+              "id": "Mysql/基础/MySQL子查询",
+              "title": "MySQL子查询",
+              "description": "子查询是指一个查询语句嵌套在另一个查询语句的内部的查询,这个特性从 MySQL4.1 开始引入,也叫做内查询",
+              "source": "@site/docs/Mysql/基础/MySQL子查询.md",
+              "sourceDirName": "Mysql/基础",
+              "slug": "/Mysql/基础/MySQL子查询",
+              "permalink": "/docs/Mysql/基础/MySQL子查询",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/基础/MySQL子查询.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "MySQL子查询",
+                "title": "MySQL子查询"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
+                "title": "MySQL函数与聚合",
+                "permalink": "/docs/Mysql/基础/MySQL函数与聚合"
+              },
+              "next": {
+                "title": "MySQL库对象",
+                "permalink": "/docs/Mysql/基础/MySQL库对象"
+              }
+            },
+            {
+              "unversionedId": "Mysql/mysql",
+              "id": "Mysql/mysql",
+              "title": "MySQL笔记概述",
+              "description": "MySQL笔记概述",
+              "source": "@site/docs/Mysql/about.md",
+              "sourceDirName": "Mysql",
+              "slug": "/mysql",
+              "permalink": "/docs/mysql",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "mysql",
+                "slug": "/mysql",
+                "title": "MySQL笔记概述"
+              },
+              "sidebar": "mysqlSideBar",
+              "next": {
+                "title": "MySQL基础与高级",
+                "permalink": "/docs/category/mysql基础与高级"
+              }
+            },
+            {
+              "unversionedId": "Mysql/MySQL参数与命令",
+              "id": "Mysql/MySQL参数与命令",
+              "title": "MySQL参数与命令",
+              "description": "字符集相关",
+              "source": "@site/docs/Mysql/MySQL参数与语句.md",
+              "sourceDirName": "Mysql",
+              "slug": "/Mysql/MySQL参数与命令",
+              "permalink": "/docs/Mysql/MySQL参数与命令",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/MySQL参数与语句.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "MySQL参数与命令",
+                "title": "MySQL参数与命令"
+              },
+              "sidebar": "mysqlSideBar",
+              "previous": {
                 "title": "主从复制",
                 "permalink": "/docs/Mysql/高级特性/主从复制"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/基本分析工具",
-              "id": "Mysql/高级特性/基本分析工具",
-              "title": "基本分析工具",
-              "description": "在数据库调优中,我们的目标是响应时间快、吞吐量大,利用监测工具和日志分析可以帮我们快速的找到调优的思路和方式,比如慢查询日志(slowquerylog)、执行计划分析(explain)...",
-              "source": "@site/docs/Mysql/高级特性/性能分析基本工具.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/基本分析工具",
-              "permalink": "/docs/Mysql/高级特性/基本分析工具",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能分析基本工具.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "基本分析工具",
-                "title": "基本分析工具"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "性能分析工具",
-                "permalink": "/docs/category/性能分析工具"
-              },
-              "next": {
-                "title": "执行计划分析",
-                "permalink": "/docs/Mysql/高级特性/Explain"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/性能监控工具",
-              "id": "Mysql/高级特性/性能监控工具",
-              "title": "性能监控工具",
-              "description": "MySQL 为我们提供了很多对性能进行跟踪监控分析的工具,比如 OPTIMIZERTRACE、sysschema、...",
-              "source": "@site/docs/Mysql/高级特性/性能监控工具.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/性能监控工具",
-              "permalink": "/docs/Mysql/高级特性/性能监控工具",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/性能监控工具.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "性能监控工具",
-                "title": "性能监控工具"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "执行计划分析",
-                "permalink": "/docs/Mysql/高级特性/Explain"
-              },
-              "next": {
-                "title": "索引与查询优化",
-                "permalink": "/docs/Mysql/高级特性/索引与查询优化"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/数据库其他调优策略",
-              "id": "Mysql/高级特性/数据库其他调优策略",
-              "title": "数据库其他调优策略",
-              "description": "数据库调优的策略",
-              "source": "@site/docs/Mysql/高级特性/数据库其他调优策略.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/数据库其他调优策略",
-              "permalink": "/docs/Mysql/高级特性/数据库其他调优策略",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/数据库其他调优策略.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "数据库其他调优策略",
-                "title": "数据库其他调优策略"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "数据库设计规范",
-                "permalink": "/docs/Mysql/高级特性/数据库设计规范"
-              },
-              "next": {
-                "title": "事务与锁",
-                "permalink": "/docs/category/事务与锁"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/数据库设计规范",
-              "id": "Mysql/高级特性/数据库设计规范",
-              "title": "数据库设计规范",
-              "description": "为什么需要数据库设计",
-              "source": "@site/docs/Mysql/高级特性/数据库设计规范.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/数据库设计规范",
-              "permalink": "/docs/Mysql/高级特性/数据库设计规范",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/数据库设计规范.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "数据库设计规范",
-                "title": "数据库设计规范"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "索引与查询优化",
-                "permalink": "/docs/Mysql/高级特性/索引与查询优化"
-              },
-              "next": {
-                "title": "数据库其他调优策略",
-                "permalink": "/docs/Mysql/高级特性/数据库其他调优策略"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/用户权限管理",
-              "id": "Mysql/高级特性/用户权限管理",
-              "title": "用户权限管理",
-              "description": "示意图",
-              "source": "@site/docs/Mysql/高级特性/用户权限管理.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/用户权限管理",
-              "permalink": "/docs/Mysql/高级特性/用户权限管理",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/用户权限管理.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "用户权限管理",
-                "title": "用户权限管理"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "MySQL 部署",
-                "permalink": "/docs/Mysql/高级特性/MySQL 部署"
-              },
-              "next": {
-                "title": "架构与引擎",
-                "permalink": "/docs/category/架构与引擎"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/索引",
-              "id": "Mysql/高级特性/索引",
-              "title": "索引",
-              "description": "为什么使用索引",
-              "source": "@site/docs/Mysql/高级特性/索引.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/索引",
-              "permalink": "/docs/Mysql/高级特性/索引",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "索引",
-                "title": "索引"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "存储结构与索引",
-                "permalink": "/docs/category/存储结构与索引"
-              },
-              "next": {
-                "title": "索引的应用",
-                "permalink": "/docs/Mysql/高级特性/索引的应用"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/索引与查询优化",
-              "id": "Mysql/高级特性/索引与查询优化",
-              "title": "索引与查询优化",
-              "description": "都有哪些维度可以进行数据库调优?大体上说:",
-              "source": "@site/docs/Mysql/高级特性/索引与查询优化.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/索引与查询优化",
-              "permalink": "/docs/Mysql/高级特性/索引与查询优化",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引与查询优化.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "索引与查询优化",
-                "title": "索引与查询优化"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "性能监控工具",
-                "permalink": "/docs/Mysql/高级特性/性能监控工具"
-              },
-              "next": {
-                "title": "数据库设计规范",
-                "permalink": "/docs/Mysql/高级特性/数据库设计规范"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/索引的应用",
-              "id": "Mysql/高级特性/索引的应用",
-              "title": "索引的应用",
-              "description": "对于 InnoDB 存储引擎的 B+Tree 索引,我们已经知道:",
-              "source": "@site/docs/Mysql/高级特性/索引的应用.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/索引的应用",
-              "permalink": "/docs/Mysql/高级特性/索引的应用",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/索引的应用.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "索引的应用",
-                "title": "索引的应用"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "索引",
-                "permalink": "/docs/Mysql/高级特性/索引"
-              },
-              "next": {
-                "title": "设计索引",
-                "permalink": "/docs/Mysql/高级特性/设计索引"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/缓冲池",
-              "id": "Mysql/高级特性/缓冲池",
-              "title": "缓冲池",
-              "description": "对于使用 InnoDB 作为存储引擎的表来说, 所有的数据(系统数据、索引等)都是以页的形式存放在表空间中的, 而所谓的表空间只不过是 InnoDB 对文件系统上一个或几个实际文件的抽象",
-              "source": "@site/docs/Mysql/高级特性/缓冲池.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/缓冲池",
-              "permalink": "/docs/Mysql/高级特性/缓冲池",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/缓冲池.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "缓冲池",
-                "title": "缓冲池"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "MySQL逻辑架构",
-                "permalink": "/docs/Mysql/高级特性/MySQL逻辑架构"
-              },
-              "next": {
-                "title": "存储结构与索引",
-                "permalink": "/docs/category/存储结构与索引"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/设计索引",
-              "id": "Mysql/高级特性/设计索引",
-              "title": "设计索引",
-              "description": "使用索引",
-              "source": "@site/docs/Mysql/高级特性/设计索引.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/设计索引",
-              "permalink": "/docs/Mysql/高级特性/设计索引",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/设计索引.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "设计索引",
-                "title": "设计索引"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "索引的应用",
-                "permalink": "/docs/Mysql/高级特性/索引的应用"
-              },
-              "next": {
-                "title": "InnoDB数据页结构",
-                "permalink": "/docs/Mysql/高级特性/InnoDB数据页结构"
-              }
-            },
-            {
-              "unversionedId": "Mysql/高级特性/锁",
-              "id": "Mysql/高级特性/锁",
-              "title": "锁机制",
-              "description": "事务的隔离性由锁来实现",
-              "source": "@site/docs/Mysql/高级特性/锁.md",
-              "sourceDirName": "Mysql/高级特性",
-              "slug": "/Mysql/高级特性/锁",
-              "permalink": "/docs/Mysql/高级特性/锁",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Mysql/高级特性/锁.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "锁",
-                "title": "锁机制"
-              },
-              "sidebar": "mysqlSideBar",
-              "previous": {
-                "title": "Undo日志",
-                "permalink": "/docs/Mysql/高级特性/Undo日志"
-              },
-              "next": {
-                "title": "多版本并发控制",
-                "permalink": "/docs/Mysql/高级特性/MVCC"
               }
             },
             {
@@ -1050,6 +2070,36 @@
               "next": {
                 "title": "动漫分享",
                 "permalink": "/docs/category/动漫分享"
+              }
+            },
+            {
+              "unversionedId": "Spring/注解驱动开发/组件注册",
+              "id": "Spring/注解驱动开发/组件注册",
+              "title": "组件注册",
+              "description": "@Configuration和@Bean",
+              "source": "@site/docs/Spring/注解驱动开发/组件注册之简单注册.md",
+              "sourceDirName": "Spring/注解驱动开发",
+              "slug": "/Spring/注解驱动开发/组件注册",
+              "permalink": "/docs/Spring/注解驱动开发/组件注册",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/注解驱动开发/组件注册之简单注册.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "组件注册",
+                "title": "组件注册"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Spring注解",
+                "permalink": "/docs/category/spring注解"
+              },
+              "next": {
+                "title": "Spring进阶",
+                "permalink": "/docs/category/spring进阶"
               }
             },
             {
@@ -1108,6 +2158,62 @@
               "next": {
                 "title": "Spring注解",
                 "permalink": "/docs/category/spring注解"
+              }
+            },
+            {
+              "unversionedId": "Spring/Spring编程思想/依赖查找",
+              "id": "Spring/Spring编程思想/依赖查找",
+              "title": "依赖查找",
+              "description": "1.依赖查找的历史（传统java）",
+              "source": "@site/docs/Spring/Spring编程思想/1.3依赖查找.md",
+              "sourceDirName": "Spring/Spring编程思想",
+              "slug": "/Spring/Spring编程思想/依赖查找",
+              "permalink": "/docs/Spring/Spring编程思想/依赖查找",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.3依赖查找.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "依赖查找",
+                "title": "依赖查找"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Bean",
+                "permalink": "/docs/Spring/Spring编程思想/Bean"
+              },
+              "next": {
+                "title": "依赖注入",
+                "permalink": "/docs/Spring/Spring编程思想/依赖注入"
+              }
+            },
+            {
+              "unversionedId": "Spring/Spring编程思想/依赖注入",
+              "id": "Spring/Spring编程思想/依赖注入",
+              "title": "依赖注入",
+              "description": "1. 依赖注入的模式与类型",
+              "source": "@site/docs/Spring/Spring编程思想/1.4依赖注入.md",
+              "sourceDirName": "Spring/Spring编程思想",
+              "slug": "/Spring/Spring编程思想/依赖注入",
+              "permalink": "/docs/Spring/Spring编程思想/依赖注入",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.4依赖注入.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "依赖注入",
+                "title": "依赖注入"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "依赖查找",
+                "permalink": "/docs/Spring/Spring编程思想/依赖查找"
               }
             },
             {
@@ -1171,89 +2277,33 @@
               }
             },
             {
-              "unversionedId": "Spring/Spring编程思想/依赖查找",
-              "id": "Spring/Spring编程思想/依赖查找",
-              "title": "依赖查找",
-              "description": "1.依赖查找的历史（传统java）",
-              "source": "@site/docs/Spring/Spring编程思想/1.3依赖查找.md",
-              "sourceDirName": "Spring/Spring编程思想",
-              "slug": "/Spring/Spring编程思想/依赖查找",
-              "permalink": "/docs/Spring/Spring编程思想/依赖查找",
+              "unversionedId": "SpringCloud/微服务技术栈",
+              "id": "SpringCloud/微服务技术栈",
+              "title": "微服务技术栈",
+              "description": "1.2 微服务落地技术栈",
+              "source": "@site/docs/SpringCloud/微服务技术栈.md",
+              "sourceDirName": "SpringCloud",
+              "slug": "/SpringCloud/微服务技术栈",
+              "permalink": "/docs/SpringCloud/微服务技术栈",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.3依赖查找.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/微服务技术栈.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "依赖查找",
-                "title": "依赖查找"
+                "id": "微服务技术栈",
+                "title": "微服务技术栈"
               },
-              "sidebar": "springSideBar",
+              "sidebar": "springCloudSideBar",
               "previous": {
-                "title": "Bean",
-                "permalink": "/docs/Spring/Spring编程思想/Bean"
+                "title": "微服务基础",
+                "permalink": "/docs/category/微服务基础"
               },
               "next": {
-                "title": "依赖注入",
-                "permalink": "/docs/Spring/Spring编程思想/依赖注入"
-              }
-            },
-            {
-              "unversionedId": "Spring/Spring编程思想/依赖注入",
-              "id": "Spring/Spring编程思想/依赖注入",
-              "title": "依赖注入",
-              "description": "1. 依赖注入的模式与类型",
-              "source": "@site/docs/Spring/Spring编程思想/1.4依赖注入.md",
-              "sourceDirName": "Spring/Spring编程思想",
-              "slug": "/Spring/Spring编程思想/依赖注入",
-              "permalink": "/docs/Spring/Spring编程思想/依赖注入",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/1.4依赖注入.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "依赖注入",
-                "title": "依赖注入"
-              },
-              "sidebar": "springSideBar",
-              "previous": {
-                "title": "依赖查找",
-                "permalink": "/docs/Spring/Spring编程思想/依赖查找"
-              }
-            },
-            {
-              "unversionedId": "Spring/注解驱动开发/组件注册",
-              "id": "Spring/注解驱动开发/组件注册",
-              "title": "组件注册",
-              "description": "@Configuration和@Bean",
-              "source": "@site/docs/Spring/注解驱动开发/组件注册之简单注册.md",
-              "sourceDirName": "Spring/注解驱动开发",
-              "slug": "/Spring/注解驱动开发/组件注册",
-              "permalink": "/docs/Spring/注解驱动开发/组件注册",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/注解驱动开发/组件注册之简单注册.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "组件注册",
-                "title": "组件注册"
-              },
-              "sidebar": "springSideBar",
-              "previous": {
-                "title": "Spring注解",
-                "permalink": "/docs/category/spring注解"
-              },
-              "next": {
-                "title": "Spring进阶",
-                "permalink": "/docs/category/spring进阶"
+                "title": "SpringCloud-Netflix",
+                "permalink": "/docs/category/springcloud-netflix"
               }
             },
             {
@@ -1628,1003 +2678,6 @@
               "next": {
                 "title": "微服务基础",
                 "permalink": "/docs/category/微服务基础"
-              }
-            },
-            {
-              "unversionedId": "SpringCloud/微服务技术栈",
-              "id": "SpringCloud/微服务技术栈",
-              "title": "微服务技术栈",
-              "description": "1.2 微服务落地技术栈",
-              "source": "@site/docs/SpringCloud/微服务技术栈.md",
-              "sourceDirName": "SpringCloud",
-              "slug": "/SpringCloud/微服务技术栈",
-              "permalink": "/docs/SpringCloud/微服务技术栈",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/SpringCloud/微服务技术栈.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "微服务技术栈",
-                "title": "微服务技术栈"
-              },
-              "sidebar": "springCloudSideBar",
-              "previous": {
-                "title": "微服务基础",
-                "permalink": "/docs/category/微服务基础"
-              },
-              "next": {
-                "title": "SpringCloud-Netflix",
-                "permalink": "/docs/category/springcloud-netflix"
-              }
-            },
-            {
-              "unversionedId": "中间件/基础中间件/basicMiddleware",
-              "id": "中间件/基础中间件/basicMiddleware",
-              "title": "基础中间件",
-              "description": "基础中间件文档概述",
-              "source": "@site/docs/中间件/基础中间件/about.md",
-              "sourceDirName": "中间件/基础中间件",
-              "slug": "/middleware/basicMiddleware",
-              "permalink": "/docs/middleware/basicMiddleware",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/基础中间件/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "basicMiddleware",
-                "title": "基础中间件",
-                "slug": "/middleware/basicMiddleware"
-              }
-            },
-            {
-              "unversionedId": "中间件/定时任务/job",
-              "id": "中间件/定时任务/job",
-              "title": "定时任务概述",
-              "description": "定时任务文档概述",
-              "source": "@site/docs/中间件/定时任务/about.md",
-              "sourceDirName": "中间件/定时任务",
-              "slug": "/middleware/job",
-              "permalink": "/docs/middleware/job",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/定时任务/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "job",
-                "title": "定时任务概述",
-                "slug": "/middleware/job"
-              }
-            },
-            {
-              "unversionedId": "中间件/搜索引擎/searchEngine",
-              "id": "中间件/搜索引擎/searchEngine",
-              "title": "搜索引擎概述",
-              "description": "搜索引擎文档概述",
-              "source": "@site/docs/中间件/搜索引擎/about.md",
-              "sourceDirName": "中间件/搜索引擎",
-              "slug": "/middleware/searchEngine",
-              "permalink": "/docs/middleware/searchEngine",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/搜索引擎/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "searchEngine",
-                "title": "搜索引擎概述",
-                "slug": "/middleware/searchEngine"
-              }
-            },
-            {
-              "unversionedId": "中间件/数据库/database",
-              "id": "中间件/数据库/database",
-              "title": "数据库概述",
-              "description": "数据库文档概述",
-              "source": "@site/docs/中间件/数据库/about.md",
-              "sourceDirName": "中间件/数据库",
-              "slug": "/middleware/database",
-              "permalink": "/docs/middleware/database",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "database",
-                "title": "数据库概述",
-                "slug": "/middleware/database"
-              },
-              "sidebar": "myCatSideBar",
-              "next": {
-                "title": "MyCat",
-                "permalink": "/docs/category/mycat"
-              }
-            },
-            {
-              "unversionedId": "中间件/数据库/MyCat/MyCat",
-              "id": "中间件/数据库/MyCat/MyCat",
-              "title": "MyCat笔记概述",
-              "description": "MyCat笔记概述",
-              "source": "@site/docs/中间件/数据库/MyCat/about.md",
-              "sourceDirName": "中间件/数据库/MyCat",
-              "slug": "/MyCat",
-              "permalink": "/docs/MyCat",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/MyCat/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "MyCat",
-                "slug": "/MyCat",
-                "title": "MyCat笔记概述"
-              }
-            },
-            {
-              "unversionedId": "中间件/数据库/MyCat/基础/MyCat基础",
-              "id": "中间件/数据库/MyCat/基础/MyCat基础",
-              "title": "基础使用",
-              "description": "",
-              "source": "@site/docs/中间件/数据库/MyCat/基础/MyCat基础.md",
-              "sourceDirName": "中间件/数据库/MyCat/基础",
-              "slug": "/中间件/数据库/MyCat/基础/MyCat基础",
-              "permalink": "/docs/中间件/数据库/MyCat/基础/MyCat基础",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/数据库/MyCat/基础/MyCat基础.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "MyCat基础",
-                "title": "基础使用"
-              },
-              "sidebar": "myCatSideBar",
-              "previous": {
-                "title": "基础知识",
-                "permalink": "/docs/category/基础知识-2"
-              }
-            },
-            {
-              "unversionedId": "中间件/消息队列/messageQueue",
-              "id": "中间件/消息队列/messageQueue",
-              "title": "消息队列概述",
-              "description": "消息队列文档概述",
-              "source": "@site/docs/中间件/消息队列/about.md",
-              "sourceDirName": "中间件/消息队列",
-              "slug": "/middleware/messageQueue",
-              "permalink": "/docs/middleware/messageQueue",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/消息队列/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "messageQueue",
-                "title": "消息队列概述",
-                "slug": "/middleware/messageQueue"
-              }
-            },
-            {
-              "unversionedId": "中间件/缓存/cache",
-              "id": "中间件/缓存/cache",
-              "title": "缓存概述",
-              "description": "缓存文档概述",
-              "source": "@site/docs/中间件/缓存/about.md",
-              "sourceDirName": "中间件/缓存",
-              "slug": "/middleware/cache",
-              "permalink": "/docs/middleware/cache",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/中间件/缓存/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "cache",
-                "title": "缓存概述",
-                "slug": "/middleware/cache"
-              }
-            },
-            {
-              "unversionedId": "分布式/分布式技术点/basicTech",
-              "id": "分布式/分布式技术点/basicTech",
-              "title": "分布式技术点",
-              "description": "分布式技术点文档概述",
-              "source": "@site/docs/分布式/分布式技术点/about.md",
-              "sourceDirName": "分布式/分布式技术点",
-              "slug": "/distribute/basicTech",
-              "permalink": "/docs/distribute/basicTech",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式/分布式技术点/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "basicTech",
-                "title": "分布式技术点",
-                "slug": "/distribute/basicTech"
-              }
-            },
-            {
-              "unversionedId": "分布式/分布式理论/distribute",
-              "id": "分布式/分布式理论/distribute",
-              "title": "分布式理论",
-              "description": "一些分布式的理论、算法、协议",
-              "source": "@site/docs/分布式/分布式理论/about.md",
-              "sourceDirName": "分布式/分布式理论",
-              "slug": "/distribute/protol",
-              "permalink": "/docs/distribute/protol",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式/分布式理论/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "distribute",
-                "title": "分布式理论",
-                "slug": "/distribute/protol"
-              },
-              "sidebar": "distributeSiderBar",
-              "next": {
-                "title": "分布式算法",
-                "permalink": "/docs/category/分布式算法"
-              }
-            },
-            {
-              "unversionedId": "分布式/分布式理论/分布式一致性算法/paxos",
-              "id": "分布式/分布式理论/分布式一致性算法/paxos",
-              "title": "Paxos算法",
-              "description": "Paxos算法是Lamport宗师提出的一种基于消息传递的分布式一致性算法，使其获得2013年图灵奖。",
-              "source": "@site/docs/分布式/分布式理论/分布式一致性算法/paxos.md",
-              "sourceDirName": "分布式/分布式理论/分布式一致性算法",
-              "slug": "/分布式/分布式理论/分布式一致性算法/paxos",
-              "permalink": "/docs/分布式/分布式理论/分布式一致性算法/paxos",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/分布式/分布式理论/分布式一致性算法/paxos.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "paxos",
-                "title": "Paxos算法"
-              },
-              "sidebar": "distributeSiderBar",
-              "previous": {
-                "title": "一致性算法",
-                "permalink": "/docs/category/一致性算法"
-              }
-            },
-            {
-              "unversionedId": "前端/Vue/vueDesc",
-              "id": "前端/Vue/vueDesc",
-              "title": "vue学习笔记",
-              "description": "vue学习笔记",
-              "source": "@site/docs/前端/Vue/about.md",
-              "sourceDirName": "前端/Vue",
-              "slug": "/front/Vue",
-              "permalink": "/docs/front/Vue",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/前端/Vue/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "vueDesc",
-                "slug": "/front/Vue",
-                "title": "vue学习笔记"
-              },
-              "sidebar": "vueSideBar",
-              "next": {
-                "title": "Vue学习笔记",
-                "permalink": "/docs/category/vue学习笔记"
-              }
-            },
-            {
-              "unversionedId": "前端/Vue/基础特性",
-              "id": "前端/Vue/基础特性",
-              "title": "Vue基础特性",
-              "description": "应用&组件实例",
-              "source": "@site/docs/前端/Vue/基础特性.md",
-              "sourceDirName": "前端/Vue",
-              "slug": "/前端/Vue/基础特性",
-              "permalink": "/docs/前端/Vue/基础特性",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/前端/Vue/基础特性.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "基础特性",
-                "title": "Vue基础特性"
-              },
-              "sidebar": "vueSideBar",
-              "previous": {
-                "title": "Vue基础",
-                "permalink": "/docs/category/vue基础"
-              }
-            },
-            {
-              "unversionedId": "工具/Gradle/gradle",
-              "id": "工具/Gradle/gradle",
-              "title": "Gradle",
-              "description": "Gradle",
-              "source": "@site/docs/工具/Gradle/about.md",
-              "sourceDirName": "工具/Gradle",
-              "slug": "/gradle",
-              "permalink": "/docs/gradle",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Gradle/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "gradle",
-                "slug": "/gradle",
-                "title": "Gradle"
-              },
-              "sidebar": "gradleSideBar",
-              "next": {
-                "title": "Gradle",
-                "permalink": "/docs/category/gradle"
-              }
-            },
-            {
-              "unversionedId": "工具/Gradle/基础/Gradle基础",
-              "id": "工具/Gradle/基础/Gradle基础",
-              "title": "Gradle基础",
-              "description": "",
-              "source": "@site/docs/工具/Gradle/基础/Gradle使用.md",
-              "sourceDirName": "工具/Gradle/基础",
-              "slug": "/工具/Gradle/基础/Gradle基础",
-              "permalink": "/docs/工具/Gradle/基础/Gradle基础",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Gradle/基础/Gradle使用.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "Gradle基础",
-                "title": "Gradle基础"
-              },
-              "sidebar": "gradleSideBar",
-              "previous": {
-                "title": "基础",
-                "permalink": "/docs/category/基础"
-              }
-            },
-            {
-              "unversionedId": "工具/后端三方库/FeThird",
-              "id": "工具/后端三方库/FeThird",
-              "title": "后端库",
-              "description": "后端库",
-              "source": "@site/docs/工具/后端三方库/about.md",
-              "sourceDirName": "工具/后端三方库",
-              "slug": "/FeThird",
-              "permalink": "/docs/FeThird",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/后端三方库/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "FeThird",
-                "slug": "/FeThird",
-                "title": "后端库"
-              }
-            },
-            {
-              "unversionedId": "并发编程/currency_about",
-              "id": "并发编程/currency_about",
-              "title": "并发笔记概述",
-              "description": "并发首页",
-              "source": "@site/docs/并发编程/about.md",
-              "sourceDirName": "并发编程",
-              "slug": "/currency",
-              "permalink": "/docs/currency",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "currency_about",
-                "slug": "/currency",
-                "title": "并发笔记概述"
-              },
-              "sidebar": "basicSideBar",
-              "next": {
-                "title": "并发包基础",
-                "permalink": "/docs/并发编程/juc基础"
-              }
-            },
-            {
-              "unversionedId": "并发编程/juc基础",
-              "id": "并发编程/juc基础",
-              "title": "并发包基础",
-              "description": "JUC基础知识概述",
-              "source": "@site/docs/并发编程/1.1JUC基础.md",
-              "sourceDirName": "并发编程",
-              "slug": "/并发编程/juc基础",
-              "permalink": "/docs/并发编程/juc基础",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/1.1JUC基础.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "juc基础",
-                "title": "并发包基础"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "并发笔记概述",
-                "permalink": "/docs/currency"
-              },
-              "next": {
-                "title": "并发基础",
-                "permalink": "/docs/category/并发基础"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发安全/dead_lock",
-              "id": "并发编程/并发安全/dead_lock",
-              "title": "死锁与其他活跃锁",
-              "description": "概述",
-              "source": "@site/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
-              "sourceDirName": "并发编程/并发安全",
-              "slug": "/并发编程/并发安全/dead_lock",
-              "permalink": "/docs/并发编程/并发安全/dead_lock",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.4并发安全-死锁与其他活跃锁.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "dead_lock",
-                "title": "死锁与其他活跃锁"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "volatile与锁",
-                "permalink": "/docs/并发编程/并发安全/volatile"
-              },
-              "next": {
-                "title": "并发控制",
-                "permalink": "/docs/category/并发控制"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发安全/jmm",
-              "id": "并发编程/并发安全/jmm",
-              "title": "JMM",
-              "description": "性能问题",
-              "source": "@site/docs/并发编程/并发安全/2.2并发安全-JMM.md",
-              "sourceDirName": "并发编程/并发安全",
-              "slug": "/并发编程/并发安全/jmm",
-              "permalink": "/docs/并发编程/并发安全/jmm",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.2并发安全-JMM.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "jmm",
-                "title": "JMM"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "线程安全",
-                "permalink": "/docs/并发编程/并发安全/线程安全"
-              },
-              "next": {
-                "title": "volatile与锁",
-                "permalink": "/docs/并发编程/并发安全/volatile"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发安全/volatile",
-              "id": "并发编程/并发安全/volatile",
-              "title": "volatile与锁",
-              "description": "概述",
-              "source": "@site/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
-              "sourceDirName": "并发编程/并发安全",
-              "slug": "/并发编程/并发安全/volatile",
-              "permalink": "/docs/并发编程/并发安全/volatile",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.3并发安全-volatile与锁.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "volatile",
-                "title": "volatile与锁"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "JMM",
-                "permalink": "/docs/并发编程/并发安全/jmm"
-              },
-              "next": {
-                "title": "死锁与其他活跃锁",
-                "permalink": "/docs/并发编程/并发安全/dead_lock"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发安全/线程安全",
-              "id": "并发编程/并发安全/线程安全",
-              "title": "线程安全",
-              "description": "概述",
-              "source": "@site/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
-              "sourceDirName": "并发编程/并发安全",
-              "slug": "/并发编程/并发安全/线程安全",
-              "permalink": "/docs/并发编程/并发安全/线程安全",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发安全/2.1并发安全-线程安全.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "线程安全",
-                "title": "线程安全"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "并发安全",
-                "permalink": "/docs/category/并发安全"
-              },
-              "next": {
-                "title": "JMM",
-                "permalink": "/docs/并发编程/并发安全/jmm"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/AQS",
-              "id": "并发编程/并发控制/AQS",
-              "title": "AQS(队列同步器)",
-              "description": "概述",
-              "source": "@site/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/AQS",
-              "permalink": "/docs/并发编程/并发控制/AQS",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.8并发工具类-AQS.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "AQS",
-                "title": "AQS(队列同步器)"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "线程协作",
-                "permalink": "/docs/并发编程/并发控制/线程协作"
-              },
-              "next": {
-                "title": "FutureTask",
-                "permalink": "/docs/并发编程/并发控制/FutureTask"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/Atomic&CAS",
-              "id": "并发编程/并发控制/Atomic&CAS",
-              "title": "原子变量类&CAS",
-              "description": "非阻塞同步机制与锁",
-              "source": "@site/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/Atomic&CAS",
-              "permalink": "/docs/并发编程/并发控制/Atomic&CAS",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.4并发工具类-Atomic与CAS.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "Atomic&CAS",
-                "title": "原子变量类&CAS"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "Lock锁",
-                "permalink": "/docs/并发编程/并发控制/Lock锁"
-              },
-              "next": {
-                "title": "final",
-                "permalink": "/docs/并发编程/并发控制/final"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/final",
-              "id": "并发编程/并发控制/final",
-              "title": "final",
-              "description": "final不变性",
-              "source": "@site/docs/并发编程/并发控制/3.5并发工具类-final.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/final",
-              "permalink": "/docs/并发编程/并发控制/final",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.5并发工具类-final.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "final",
-                "title": "final"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "原子变量类&CAS",
-                "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
-              },
-              "next": {
-                "title": "并发容器",
-                "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/FutureTask",
-              "id": "并发编程/并发控制/FutureTask",
-              "title": "FutureTask",
-              "description": "Future概述",
-              "source": "@site/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/FutureTask",
-              "permalink": "/docs/并发编程/并发控制/FutureTask",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.9并发工具类-FutureTask.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "FutureTask",
-                "title": "FutureTask"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "AQS(队列同步器)",
-                "permalink": "/docs/并发编程/并发控制/AQS"
-              },
-              "next": {
-                "title": "自定义缓存",
-                "permalink": "/docs/并发编程/并发控制/缓存实战"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/Lock锁",
-              "id": "并发编程/并发控制/Lock锁",
-              "title": "Lock锁",
-              "description": "锁分类",
-              "source": "@site/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/Lock锁",
-              "permalink": "/docs/并发编程/并发控制/Lock锁",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.3并发工具类-Lock锁.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "Lock锁",
-                "title": "Lock锁"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "ThreadLocal",
-                "permalink": "/docs/并发编程/并发控制/ThreadLocal"
-              },
-              "next": {
-                "title": "原子变量类&CAS",
-                "permalink": "/docs/并发编程/并发控制/Atomic&CAS"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/ThreadLocal",
-              "id": "并发编程/并发控制/ThreadLocal",
-              "title": "ThreadLocal",
-              "description": "概述",
-              "source": "@site/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/ThreadLocal",
-              "permalink": "/docs/并发编程/并发控制/ThreadLocal",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.2并发工具类-ThreadLocal.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "ThreadLocal",
-                "title": "ThreadLocal"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "线程池",
-                "permalink": "/docs/并发编程/并发控制/线程池"
-              },
-              "next": {
-                "title": "Lock锁",
-                "permalink": "/docs/并发编程/并发控制/Lock锁"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/并发集合与阻塞队列",
-              "id": "并发编程/并发控制/并发集合与阻塞队列",
-              "title": "并发容器",
-              "description": "概览",
-              "source": "@site/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/并发集合与阻塞队列",
-              "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.6并发工具类-并发集合与阻塞队列.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "并发集合与阻塞队列",
-                "title": "并发容器"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "final",
-                "permalink": "/docs/并发编程/并发控制/final"
-              },
-              "next": {
-                "title": "线程协作",
-                "permalink": "/docs/并发编程/并发控制/线程协作"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/线程协作",
-              "id": "并发编程/并发控制/线程协作",
-              "title": "线程协作",
-              "description": "概述",
-              "source": "@site/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/线程协作",
-              "permalink": "/docs/并发编程/并发控制/线程协作",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.7并发工具类-线程协作.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "线程协作",
-                "title": "线程协作"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "并发容器",
-                "permalink": "/docs/并发编程/并发控制/并发集合与阻塞队列"
-              },
-              "next": {
-                "title": "AQS(队列同步器)",
-                "permalink": "/docs/并发编程/并发控制/AQS"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/线程池",
-              "id": "并发编程/并发控制/线程池",
-              "title": "线程池",
-              "description": "并发工具类",
-              "source": "@site/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/线程池",
-              "permalink": "/docs/并发编程/并发控制/线程池",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/3.1并发工具类-线程池.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "线程池",
-                "title": "线程池"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "并发控制",
-                "permalink": "/docs/category/并发控制"
-              },
-              "next": {
-                "title": "ThreadLocal",
-                "permalink": "/docs/并发编程/并发控制/ThreadLocal"
-              }
-            },
-            {
-              "unversionedId": "并发编程/并发控制/缓存实战",
-              "id": "并发编程/并发控制/缓存实战",
-              "title": "自定义缓存",
-              "description": "利用并发工具类实现一个简单的缓存",
-              "source": "@site/docs/并发编程/并发控制/4.1并发实战-缓存.md",
-              "sourceDirName": "并发编程/并发控制",
-              "slug": "/并发编程/并发控制/缓存实战",
-              "permalink": "/docs/并发编程/并发控制/缓存实战",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/并发编程/并发控制/4.1并发实战-缓存.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "缓存实战",
-                "title": "自定义缓存"
-              },
-              "sidebar": "basicSideBar",
-              "previous": {
-                "title": "FutureTask",
-                "permalink": "/docs/并发编程/并发控制/FutureTask"
-              }
-            },
-            {
-              "unversionedId": "数据结构与算法/dataStructure",
-              "id": "数据结构与算法/dataStructure",
-              "title": "数据结构与算法",
-              "description": "数据结构与算法的学习笔记",
-              "source": "@site/docs/数据结构与算法/about.md",
-              "sourceDirName": "数据结构与算法",
-              "slug": "/dataStructure",
-              "permalink": "/docs/dataStructure",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/数据结构与算法/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "dataStructure",
-                "title": "数据结构与算法",
-                "slug": "/dataStructure"
-              },
-              "sidebar": "dataStructureSidebar",
-              "next": {
-                "title": "数据结构与算法基础",
-                "permalink": "/docs/category/数据结构与算法基础"
-              }
-            },
-            {
-              "unversionedId": "数据结构与算法/基础/前提基础知识",
-              "id": "数据结构与算法/基础/前提基础知识",
-              "title": "前提基础知识",
-              "description": "",
-              "source": "@site/docs/数据结构与算法/基础/基础知识.md",
-              "sourceDirName": "数据结构与算法/基础",
-              "slug": "/数据结构与算法/基础/前提基础知识",
-              "permalink": "/docs/数据结构与算法/基础/前提基础知识",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/数据结构与算法/基础/基础知识.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "前提基础知识",
-                "title": "前提基础知识"
-              },
-              "sidebar": "dataStructureSidebar",
-              "previous": {
-                "title": "基础知识",
-                "permalink": "/docs/category/基础知识-1"
-              }
-            },
-            {
-              "unversionedId": "计算机网络/HTTP/http-protocol",
-              "id": "计算机网络/HTTP/http-protocol",
-              "title": "HTTP协议",
-              "description": "网络基础",
-              "source": "@site/docs/计算机网络/HTTP/HTTP协议.md",
-              "sourceDirName": "计算机网络/HTTP",
-              "slug": "/计算机网络/HTTP/http-protocol",
-              "permalink": "/docs/计算机网络/HTTP/http-protocol",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/HTTP/HTTP协议.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "http-protocol",
-                "title": "HTTP协议"
-              },
-              "sidebar": "netWorkSidebar",
-              "previous": {
-                "title": "计算机网络概述",
-                "permalink": "/docs/networrk-basic"
-              }
-            },
-            {
-              "unversionedId": "计算机网络/networrk-basic",
-              "id": "计算机网络/networrk-basic",
-              "title": "计算机网络概述",
-              "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
-              "source": "@site/docs/计算机网络/about.md",
-              "sourceDirName": "计算机网络",
-              "slug": "/networrk-basic",
-              "permalink": "/docs/networrk-basic",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/about.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "networrk-basic",
-                "title": "计算机网络概述",
-                "slug": "/networrk-basic"
-              },
-              "sidebar": "netWorkSidebar",
-              "next": {
-                "title": "HTTP协议",
-                "permalink": "/docs/计算机网络/HTTP/http-protocol"
               }
             }
           ],
@@ -3445,6 +3498,31 @@
                   "type": "generated-index",
                   "slug": "/category/分布式算法",
                   "permalink": "/docs/category/分布式算法"
+                },
+                "collapsible": true
+              }
+            ],
+            "OSSiderBar": [
+              {
+                "type": "doc",
+                "id": "操作系统/OS",
+                "label": "简介",
+                "translatable": true
+              },
+              {
+                "type": "category",
+                "label": "操作系统概念",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "操作系统/操作系统概念/OSBaisc"
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/操作系统概念",
+                  "permalink": "/docs/category/操作系统概念"
                 },
                 "collapsible": true
               }
