@@ -20,8 +20,8 @@
   },
   "sidebar": "springSideBar",
   "previous": {
-    "title": "Spring编程思想",
-    "permalink": "/docs/category/spring编程思想"
+    "title": "Spring基础知识",
+    "permalink": "/docs/Spring/Spring编程思想/基础知识"
   },
   "next": {
     "title": "Bean",

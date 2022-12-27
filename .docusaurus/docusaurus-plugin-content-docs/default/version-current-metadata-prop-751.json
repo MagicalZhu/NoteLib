@@ -220,6 +220,12 @@
             "items": [
               {
                 "type": "link",
+                "label": "Spring基础知识",
+                "href": "/docs/Spring/Spring编程思想/基础知识",
+                "docId": "Spring/Spring编程思想/基础知识"
+              },
+              {
+                "type": "link",
                 "label": "IOC容器",
                 "href": "/docs/Spring/Spring编程思想/IOC容器",
                 "docId": "Spring/Spring编程思想/IOC容器"
@@ -1300,6 +1306,12 @@
       "id": "Spring/Spring5/IOC容器",
       "title": "IOC容器",
       "description": "基础",
+      "sidebar": "springSideBar"
+    },
+    "Spring/Spring编程思想/基础知识": {
+      "id": "Spring/Spring编程思想/基础知识",
+      "title": "Spring基础知识",
+      "description": "模块化设计",
       "sidebar": "springSideBar"
     },
     "Spring/Spring编程思想/依赖查找": {

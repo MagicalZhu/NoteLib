@@ -119,7 +119,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'e2f'),
+    component: ComponentCreator('/docs', '876'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -774,6 +774,12 @@ export default [
       {
         path: '/docs/Spring/Spring5/IOC容器',
         component: ComponentCreator('/docs/Spring/Spring5/IOC容器', '5d9'),
+        exact: true,
+        sidebar: "springSideBar"
+      },
+      {
+        path: '/docs/Spring/Spring编程思想/基础知识',
+        component: ComponentCreator('/docs/Spring/Spring编程思想/基础知识', 'a5d'),
         exact: true,
         sidebar: "springSideBar"
       },

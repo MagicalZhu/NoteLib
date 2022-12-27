@@ -177,7 +177,8 @@ const springCode = new Category('Spring基础')
 
 
 const springAdvance = new Category('Spring进阶')
-  . createSubCaregory('Spring编程思想','Spring/Spring编程思想',[
+  .createSubCaregory('Spring编程思想','Spring/Spring编程思想',[
+    '基础知识',
     'IOC容器',
     'Bean',
     '依赖查找',

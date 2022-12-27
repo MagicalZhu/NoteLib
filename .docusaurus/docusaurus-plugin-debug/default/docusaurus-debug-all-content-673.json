@@ -2161,6 +2161,36 @@
               }
             },
             {
+              "unversionedId": "Spring/Spring编程思想/基础知识",
+              "id": "Spring/Spring编程思想/基础知识",
+              "title": "Spring基础知识",
+              "description": "模块化设计",
+              "source": "@site/docs/Spring/Spring编程思想/基础知识.md",
+              "sourceDirName": "Spring/Spring编程思想",
+              "slug": "/Spring/Spring编程思想/基础知识",
+              "permalink": "/docs/Spring/Spring编程思想/基础知识",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/Spring/Spring编程思想/基础知识.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "基础知识",
+                "title": "Spring基础知识"
+              },
+              "sidebar": "springSideBar",
+              "previous": {
+                "title": "Spring编程思想",
+                "permalink": "/docs/category/spring编程思想"
+              },
+              "next": {
+                "title": "IOC容器",
+                "permalink": "/docs/Spring/Spring编程思想/IOC容器"
+              }
+            },
+            {
               "unversionedId": "Spring/Spring编程思想/依赖查找",
               "id": "Spring/Spring编程思想/依赖查找",
               "title": "依赖查找",
@@ -2268,8 +2298,8 @@
               },
               "sidebar": "springSideBar",
               "previous": {
-                "title": "Spring编程思想",
-                "permalink": "/docs/category/spring编程思想"
+                "title": "Spring基础知识",
+                "permalink": "/docs/Spring/Spring编程思想/基础知识"
               },
               "next": {
                 "title": "Bean",
@@ -2887,6 +2917,10 @@
                     "type": "category",
                     "label": "Spring编程思想",
                     "items": [
+                      {
+                        "type": "doc",
+                        "id": "Spring/Spring编程思想/基础知识"
+                      },
                       {
                         "type": "doc",
                         "id": "Spring/Spring编程思想/IOC容器"
