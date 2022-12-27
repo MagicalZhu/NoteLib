@@ -233,7 +233,16 @@ const jvmPart =  new Category('JVM优化')
       '基于JDK命令行工具的监控',
     ])
 
+const jvmPart2 =  new Category('理解JVM')
+.createSubCaregory('内存与垃圾回收', 'JVM/内存与垃圾回收', [
+  'JVM-Intro',
+  '类加载子系统',
+  '运行时数据区',
+])
+
 const jvmSideBar = [
+  createDoc('JVM/JVM', '简介'),
+  jvmPart2,
   jvmPart
 ]
 
