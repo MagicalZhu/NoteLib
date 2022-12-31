@@ -1,7 +1,7 @@
 export default [
-  require('/workspace/NoteLib/node_modules/infima/dist/css/default/default.css'),
-  require('/workspace/NoteLib/node_modules/@docusaurus/theme-classic/lib/prism-include-languages'),
-  require('/workspace/NoteLib/node_modules/@docusaurus/theme-classic/lib/nprogress'),
-  require('/workspace/NoteLib/src/css/custom.css'),
-  require('/workspace/NoteLib/node_modules/plugin-image-zoom/src/zoom'),
+  require('/Users/yoey/Desktop/XDocs/node_modules/infima/dist/css/default/default.css'),
+  require('/Users/yoey/Desktop/XDocs/node_modules/@docusaurus/theme-classic/lib/prism-include-languages'),
+  require('/Users/yoey/Desktop/XDocs/node_modules/@docusaurus/theme-classic/lib/nprogress'),
+  require('/Users/yoey/Desktop/XDocs/src/css/custom.css'),
+  require('/Users/yoey/Desktop/XDocs/node_modules/plugin-image-zoom/src/zoom'),
 ];

@@ -11,18 +11,190 @@
           "mainDocId": "并发编程/currency_about",
           "docs": [
             {
+              "id": "并发编程/并发安全/线程安全",
+              "path": "/docs/并发编程/并发安全/线程安全",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发安全/dead_lock",
+              "path": "/docs/并发编程/并发安全/dead_lock",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发安全/jmm",
+              "path": "/docs/并发编程/并发安全/jmm",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发安全/volatile",
+              "path": "/docs/并发编程/并发安全/volatile",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/并发集合与阻塞队列",
+              "path": "/docs/并发编程/并发控制/并发集合与阻塞队列",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/缓存实战",
+              "path": "/docs/并发编程/并发控制/缓存实战",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/线程池",
+              "path": "/docs/并发编程/并发控制/线程池",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/线程协作",
+              "path": "/docs/并发编程/并发控制/线程协作",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/AQS",
+              "path": "/docs/并发编程/并发控制/AQS",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/Atomic&CAS",
+              "path": "/docs/并发编程/并发控制/Atomic&CAS",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/final",
+              "path": "/docs/并发编程/并发控制/final",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/FutureTask",
+              "path": "/docs/并发编程/并发控制/FutureTask",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/Lock锁",
+              "path": "/docs/并发编程/并发控制/Lock锁",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/并发控制/ThreadLocal",
+              "path": "/docs/并发编程/并发控制/ThreadLocal",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/currency_about",
+              "path": "/docs/currency",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "并发编程/juc基础",
+              "path": "/docs/并发编程/juc基础",
+              "sidebar": "basicSideBar"
+            },
+            {
+              "id": "操作系统/操作系统概念/OSBaisc",
+              "path": "/docs/操作系统/操作系统概念/OSBaisc",
+              "sidebar": "OSSiderBar"
+            },
+            {
+              "id": "操作系统/OS",
+              "path": "/docs/OS",
+              "sidebar": "OSSiderBar"
+            },
+            {
+              "id": "分布式/分布式技术点/basicTech",
+              "path": "/docs/distribute/basicTech"
+            },
+            {
+              "id": "分布式/分布式理论/分布式一致性算法/paxos",
+              "path": "/docs/分布式/分布式理论/分布式一致性算法/paxos",
+              "sidebar": "distributeSiderBar"
+            },
+            {
+              "id": "分布式/分布式理论/distribute",
+              "path": "/docs/distribute/protol",
+              "sidebar": "distributeSiderBar"
+            },
+            {
+              "id": "工具/后端三方库/FeThird",
+              "path": "/docs/FeThird"
+            },
+            {
+              "id": "工具/Gradle/基础/Gradle基础",
+              "path": "/docs/工具/Gradle/基础/Gradle基础",
+              "sidebar": "gradleSideBar"
+            },
+            {
+              "id": "工具/Gradle/gradle",
+              "path": "/docs/gradle",
+              "sidebar": "gradleSideBar"
+            },
+            {
+              "id": "计算机网络/HTTP/http-protocol",
+              "path": "/docs/计算机网络/HTTP/http-protocol",
+              "sidebar": "netWorkSidebar"
+            },
+            {
+              "id": "计算机网络/networrk-basic",
+              "path": "/docs/networrk-basic",
+              "sidebar": "netWorkSidebar"
+            },
+            {
+              "id": "前端/Vue/基础特性",
+              "path": "/docs/前端/Vue/基础特性",
+              "sidebar": "vueSideBar"
+            },
+            {
+              "id": "前端/Vue/vueDesc",
+              "path": "/docs/front/Vue",
+              "sidebar": "vueSideBar"
+            },
+            {
+              "id": "数据结构与算法/基础/前提基础知识",
+              "path": "/docs/数据结构与算法/基础/前提基础知识",
+              "sidebar": "dataStructureSidebar"
+            },
+            {
+              "id": "数据结构与算法/dataStructure",
+              "path": "/docs/dataStructure",
+              "sidebar": "dataStructureSidebar"
+            },
+            {
+              "id": "中间件/定时任务/job",
+              "path": "/docs/middleware/job"
+            },
+            {
+              "id": "中间件/缓存/cache",
+              "path": "/docs/middleware/cache"
+            },
+            {
+              "id": "中间件/基础中间件/basicMiddleware",
+              "path": "/docs/middleware/basicMiddleware"
+            },
+            {
+              "id": "中间件/数据库/database",
+              "path": "/docs/middleware/database",
+              "sidebar": "myCatSideBar"
+            },
+            {
+              "id": "中间件/数据库/MyCat/基础/MyCat基础",
+              "path": "/docs/中间件/数据库/MyCat/基础/MyCat基础",
+              "sidebar": "myCatSideBar"
+            },
+            {
+              "id": "中间件/数据库/MyCat/MyCat",
+              "path": "/docs/MyCat"
+            },
+            {
+              "id": "中间件/搜索引擎/searchEngine",
+              "path": "/docs/middleware/searchEngine"
+            },
+            {
+              "id": "中间件/消息队列/messageQueue",
+              "path": "/docs/middleware/messageQueue"
+            },
+            {
               "id": "about",
               "path": "/docs/about"
-            },
-            {
-              "id": "JVM/JVM",
-              "path": "/docs/JVM",
-              "sidebar": "jvmSideBar"
-            },
-            {
-              "id": "JVM/内存与垃圾回收/JVM-Intro",
-              "path": "/docs/JVM/内存与垃圾回收/JVM-Intro",
-              "sidebar": "jvmSideBar"
             },
             {
               "id": "JVM/内存与垃圾回收/类加载子系统",
@@ -35,8 +207,18 @@
               "sidebar": "jvmSideBar"
             },
             {
+              "id": "JVM/内存与垃圾回收/JVM-Intro",
+              "path": "/docs/JVM/内存与垃圾回收/JVM-Intro",
+              "sidebar": "jvmSideBar"
+            },
+            {
               "id": "JVM/性能监控和调优入门/基于JDK命令行工具的监控",
               "path": "/docs/JVM/性能监控和调优入门/基于JDK命令行工具的监控",
+              "sidebar": "jvmSideBar"
+            },
+            {
+              "id": "JVM/JVM",
+              "path": "/docs/JVM",
               "sidebar": "jvmSideBar"
             },
             {
@@ -55,33 +237,73 @@
               "sidebar": "linuxSideBar"
             },
             {
-              "id": "Mysql/mysql",
-              "path": "/docs/mysql",
+              "id": "Mysql/高级特性/缓冲池",
+              "path": "/docs/Mysql/高级特性/缓冲池",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/MySQL参数与命令",
-              "path": "/docs/Mysql/MySQL参数与命令",
+              "id": "Mysql/高级特性/基本分析工具",
+              "path": "/docs/Mysql/高级特性/基本分析工具",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/基础/MySQL函数与聚合",
-              "path": "/docs/Mysql/基础/MySQL函数与聚合",
+              "id": "Mysql/高级特性/其他日志",
+              "path": "/docs/Mysql/高级特性/其他日志",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/基础/MySQL基础查询",
-              "path": "/docs/Mysql/基础/MySQL基础查询",
+              "id": "Mysql/高级特性/设计索引",
+              "path": "/docs/Mysql/高级特性/设计索引",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/基础/MySQL子查询",
-              "path": "/docs/Mysql/基础/MySQL子查询",
+              "id": "Mysql/高级特性/事务基础",
+              "path": "/docs/Mysql/高级特性/事务基础",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/基础/MySQL库对象",
-              "path": "/docs/Mysql/基础/MySQL库对象",
+              "id": "Mysql/高级特性/数据库其他调优策略",
+              "path": "/docs/Mysql/高级特性/数据库其他调优策略",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/数据库设计规范",
+              "path": "/docs/Mysql/高级特性/数据库设计规范",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/索引",
+              "path": "/docs/Mysql/高级特性/索引",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/索引的应用",
+              "path": "/docs/Mysql/高级特性/索引的应用",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/索引与查询优化",
+              "path": "/docs/Mysql/高级特性/索引与查询优化",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/锁",
+              "path": "/docs/Mysql/高级特性/锁",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/性能监控工具",
+              "path": "/docs/Mysql/高级特性/性能监控工具",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/用户权限管理",
+              "path": "/docs/Mysql/高级特性/用户权限管理",
+              "sidebar": "mysqlSideBar"
+            },
+            {
+              "id": "Mysql/高级特性/主从复制",
+              "path": "/docs/Mysql/高级特性/主从复制",
               "sidebar": "mysqlSideBar"
             },
             {
@@ -90,13 +312,13 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/InnoDB数据页结构",
-              "path": "/docs/Mysql/高级特性/InnoDB数据页结构",
+              "id": "Mysql/高级特性/InnoDB表空间",
+              "path": "/docs/Mysql/高级特性/InnoDB表空间",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/InnoDB表空间",
-              "path": "/docs/Mysql/高级特性/InnoDB表空间",
+              "id": "Mysql/高级特性/InnoDB数据页结构",
+              "path": "/docs/Mysql/高级特性/InnoDB数据页结构",
               "sidebar": "mysqlSideBar"
             },
             {
@@ -125,73 +347,33 @@
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/主从复制",
-              "path": "/docs/Mysql/高级特性/主从复制",
+              "id": "Mysql/基础/MySQL函数与聚合",
+              "path": "/docs/Mysql/基础/MySQL函数与聚合",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/事务基础",
-              "path": "/docs/Mysql/高级特性/事务基础",
+              "id": "Mysql/基础/MySQL基础查询",
+              "path": "/docs/Mysql/基础/MySQL基础查询",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/其他日志",
-              "path": "/docs/Mysql/高级特性/其他日志",
+              "id": "Mysql/基础/MySQL库对象",
+              "path": "/docs/Mysql/基础/MySQL库对象",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/基本分析工具",
-              "path": "/docs/Mysql/高级特性/基本分析工具",
+              "id": "Mysql/基础/MySQL子查询",
+              "path": "/docs/Mysql/基础/MySQL子查询",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/性能监控工具",
-              "path": "/docs/Mysql/高级特性/性能监控工具",
+              "id": "Mysql/mysql",
+              "path": "/docs/mysql",
               "sidebar": "mysqlSideBar"
             },
             {
-              "id": "Mysql/高级特性/数据库其他调优策略",
-              "path": "/docs/Mysql/高级特性/数据库其他调优策略",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/数据库设计规范",
-              "path": "/docs/Mysql/高级特性/数据库设计规范",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/用户权限管理",
-              "path": "/docs/Mysql/高级特性/用户权限管理",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/索引",
-              "path": "/docs/Mysql/高级特性/索引",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/索引与查询优化",
-              "path": "/docs/Mysql/高级特性/索引与查询优化",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/索引的应用",
-              "path": "/docs/Mysql/高级特性/索引的应用",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/缓冲池",
-              "path": "/docs/Mysql/高级特性/缓冲池",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/设计索引",
-              "path": "/docs/Mysql/高级特性/设计索引",
-              "sidebar": "mysqlSideBar"
-            },
-            {
-              "id": "Mysql/高级特性/锁",
-              "path": "/docs/Mysql/高级特性/锁",
+              "id": "Mysql/MySQL参数与命令",
+              "path": "/docs/Mysql/MySQL参数与命令",
               "sidebar": "mysqlSideBar"
             },
             {
@@ -205,6 +387,11 @@
               "sidebar": "sourceSideBar"
             },
             {
+              "id": "Spring/注解驱动开发/组件注册",
+              "path": "/docs/Spring/注解驱动开发/组件注册",
+              "sidebar": "springSideBar"
+            },
+            {
               "id": "Spring/spring",
               "path": "/docs/spring",
               "sidebar": "springSideBar"
@@ -215,23 +402,8 @@
               "sidebar": "springSideBar"
             },
             {
-<<<<<<< HEAD
               "id": "Spring/Spring编程思想/基础知识",
               "path": "/docs/Spring/Spring编程思想/基础知识",
-              "sidebar": "springSideBar"
-            },
-            {
-              "id": "Spring/Spring编程思想/依赖查找",
-              "path": "/docs/Spring/Spring编程思想/依赖查找",
-=======
-              "id": "Spring/Spring编程思想/Bean",
-              "path": "/docs/Spring/Spring编程思想/Bean",
->>>>>>> 6baf21adbf5e097cf4e2a6ba0e73b6772c06bd5c
-              "sidebar": "springSideBar"
-            },
-            {
-              "id": "Spring/Spring编程思想/IOC容器",
-              "path": "/docs/Spring/Spring编程思想/IOC容器",
               "sidebar": "springSideBar"
             },
             {
@@ -245,9 +417,19 @@
               "sidebar": "springSideBar"
             },
             {
-              "id": "Spring/注解驱动开发/组件注册",
-              "path": "/docs/Spring/注解驱动开发/组件注册",
+              "id": "Spring/Spring编程思想/Bean",
+              "path": "/docs/Spring/Spring编程思想/Bean",
               "sidebar": "springSideBar"
+            },
+            {
+              "id": "Spring/Spring编程思想/IOC容器",
+              "path": "/docs/Spring/Spring编程思想/IOC容器",
+              "sidebar": "springSideBar"
+            },
+            {
+              "id": "SpringCloud/微服务技术栈",
+              "path": "/docs/SpringCloud/微服务技术栈",
+              "sidebar": "springCloudSideBar"
             },
             {
               "id": "SpringCloud/Alibaba/Nacos",
@@ -312,193 +494,6 @@
               "id": "SpringCloud/springCloud",
               "path": "/docs/springCloud",
               "sidebar": "springCloudSideBar"
-            },
-            {
-              "id": "SpringCloud/微服务技术栈",
-              "path": "/docs/SpringCloud/微服务技术栈",
-              "sidebar": "springCloudSideBar"
-            },
-            {
-              "id": "中间件/基础中间件/basicMiddleware",
-              "path": "/docs/middleware/basicMiddleware"
-            },
-            {
-              "id": "中间件/定时任务/job",
-              "path": "/docs/middleware/job"
-            },
-            {
-              "id": "中间件/搜索引擎/searchEngine",
-              "path": "/docs/middleware/searchEngine"
-            },
-            {
-              "id": "中间件/数据库/database",
-              "path": "/docs/middleware/database",
-              "sidebar": "myCatSideBar"
-            },
-            {
-              "id": "中间件/数据库/MyCat/MyCat",
-              "path": "/docs/MyCat"
-            },
-            {
-              "id": "中间件/数据库/MyCat/基础/MyCat基础",
-              "path": "/docs/中间件/数据库/MyCat/基础/MyCat基础",
-              "sidebar": "myCatSideBar"
-            },
-            {
-              "id": "中间件/消息队列/messageQueue",
-              "path": "/docs/middleware/messageQueue"
-            },
-            {
-              "id": "中间件/缓存/cache",
-              "path": "/docs/middleware/cache"
-            },
-            {
-              "id": "分布式/分布式技术点/basicTech",
-              "path": "/docs/distribute/basicTech"
-            },
-            {
-              "id": "分布式/分布式理论/distribute",
-              "path": "/docs/distribute/protol",
-              "sidebar": "distributeSiderBar"
-            },
-            {
-              "id": "分布式/分布式理论/分布式一致性算法/paxos",
-              "path": "/docs/分布式/分布式理论/分布式一致性算法/paxos",
-              "sidebar": "distributeSiderBar"
-            },
-            {
-              "id": "前端/Vue/vueDesc",
-              "path": "/docs/front/Vue",
-              "sidebar": "vueSideBar"
-            },
-            {
-              "id": "前端/Vue/基础特性",
-              "path": "/docs/前端/Vue/基础特性",
-              "sidebar": "vueSideBar"
-            },
-            {
-              "id": "工具/Gradle/gradle",
-              "path": "/docs/gradle",
-              "sidebar": "gradleSideBar"
-            },
-            {
-              "id": "工具/Gradle/基础/Gradle基础",
-              "path": "/docs/工具/Gradle/基础/Gradle基础",
-              "sidebar": "gradleSideBar"
-            },
-            {
-              "id": "工具/后端三方库/FeThird",
-              "path": "/docs/FeThird"
-            },
-            {
-              "id": "并发编程/currency_about",
-              "path": "/docs/currency",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/juc基础",
-              "path": "/docs/并发编程/juc基础",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发安全/dead_lock",
-              "path": "/docs/并发编程/并发安全/dead_lock",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发安全/jmm",
-              "path": "/docs/并发编程/并发安全/jmm",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发安全/volatile",
-              "path": "/docs/并发编程/并发安全/volatile",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发安全/线程安全",
-              "path": "/docs/并发编程/并发安全/线程安全",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/AQS",
-              "path": "/docs/并发编程/并发控制/AQS",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/Atomic&CAS",
-              "path": "/docs/并发编程/并发控制/Atomic&CAS",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/final",
-              "path": "/docs/并发编程/并发控制/final",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/FutureTask",
-              "path": "/docs/并发编程/并发控制/FutureTask",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/Lock锁",
-              "path": "/docs/并发编程/并发控制/Lock锁",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/ThreadLocal",
-              "path": "/docs/并发编程/并发控制/ThreadLocal",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/并发集合与阻塞队列",
-              "path": "/docs/并发编程/并发控制/并发集合与阻塞队列",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/线程协作",
-              "path": "/docs/并发编程/并发控制/线程协作",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/线程池",
-              "path": "/docs/并发编程/并发控制/线程池",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "并发编程/并发控制/缓存实战",
-              "path": "/docs/并发编程/并发控制/缓存实战",
-              "sidebar": "basicSideBar"
-            },
-            {
-              "id": "操作系统/OS",
-              "path": "/docs/OS",
-              "sidebar": "OSSiderBar"
-            },
-            {
-              "id": "操作系统/操作系统概念/OSBaisc",
-              "path": "/docs/操作系统/操作系统概念/OSBaisc",
-              "sidebar": "OSSiderBar"
-            },
-            {
-              "id": "数据结构与算法/dataStructure",
-              "path": "/docs/dataStructure",
-              "sidebar": "dataStructureSidebar"
-            },
-            {
-              "id": "数据结构与算法/基础/前提基础知识",
-              "path": "/docs/数据结构与算法/基础/前提基础知识",
-              "sidebar": "dataStructureSidebar"
-            },
-            {
-              "id": "计算机网络/HTTP/http-protocol",
-              "path": "/docs/计算机网络/HTTP/http-protocol",
-              "sidebar": "netWorkSidebar"
-            },
-            {
-              "id": "计算机网络/networrk-basic",
-              "path": "/docs/networrk-basic",
-              "sidebar": "netWorkSidebar"
             },
             {
               "id": "/category/并发基础",
