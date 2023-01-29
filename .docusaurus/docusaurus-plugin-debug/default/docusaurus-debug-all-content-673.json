@@ -2345,7 +2345,7 @@
               "unversionedId": "Spring/Spring编程思想/Bean",
               "id": "Spring/Spring编程思想/Bean",
               "title": "Bean",
-              "description": "1. Spring Bean",
+              "description": "BeanDefinition",
               "source": "@site/docs/Spring/Spring编程思想/1.2Bean.md",
               "sourceDirName": "Spring/Spring编程思想",
               "slug": "/Spring/Spring编程思想/Bean",
@@ -4095,6 +4095,11 @@
       },
       {
         "type": "jsx",
+        "permalink": "/website/FE/",
+        "source": "@site/src/pages/website/FE/index.tsx"
+      },
+      {
+        "type": "jsx",
         "permalink": "/website/BE/",
         "source": "@site/src/pages/website/BE/index.tsx"
       },
@@ -4102,11 +4107,6 @@
         "type": "jsx",
         "permalink": "/website/COM/",
         "source": "@site/src/pages/website/COM/index.tsx"
-      },
-      {
-        "type": "jsx",
-        "permalink": "/website/FE/",
-        "source": "@site/src/pages/website/FE/index.tsx"
       }
     ]
   },
