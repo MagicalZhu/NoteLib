@@ -119,7 +119,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'cee'),
+    component: ComponentCreator('/docs', '0d7'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -232,6 +232,12 @@ export default [
       {
         path: '/docs/计算机网络/HTTP/http-protocol',
         component: ComponentCreator('/docs/计算机网络/HTTP/http-protocol', '394'),
+        exact: true,
+        sidebar: "netWorkSidebar"
+      },
+      {
+        path: '/docs/计算机网络/TCP-IP/net-basic',
+        component: ComponentCreator('/docs/计算机网络/TCP-IP/net-basic', '27f'),
         exact: true,
         sidebar: "netWorkSidebar"
       },
@@ -461,6 +467,12 @@ export default [
         component: ComponentCreator('/docs/category/springcloud-netflix', '1f8'),
         exact: true,
         sidebar: "springCloudSideBar"
+      },
+      {
+        path: '/docs/category/tcpip',
+        component: ComponentCreator('/docs/category/tcpip', '987'),
+        exact: true,
+        sidebar: "netWorkSidebar"
       },
       {
         path: '/docs/category/vue基础',

@@ -2,7 +2,7 @@
   "unversionedId": "计算机网络/networrk-basic",
   "id": "计算机网络/networrk-basic",
   "title": "计算机网络概述",
-  "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
+  "description": "计算机网络学习的一些笔记,参考的书籍:",
   "source": "@site/docs/计算机网络/about.md",
   "sourceDirName": "计算机网络",
   "slug": "/networrk-basic",

@@ -124,13 +124,17 @@ const distributeSiderBar = [
   createDoc('分布式/分布式理论/distribute', '简介'),
   distributePart
 ]
-
+const tcpipPart = new Category('TCP/IP')
+.setNoLabelItem('计算机网络/TCP-IP', [
+  'net-basic',
+])
 
 
 // 计算机网络相关
 const netWorkSidebar = [
   createDoc('计算机网络/networrk-basic', '简介'),
-  createDoc('计算机网络/HTTP/http-protocol', 'HTTP协议')
+  createDoc('计算机网络/HTTP/http-protocol', 'HTTP协议'),
+  tcpipPart
 ]
 
 // Linux相关  

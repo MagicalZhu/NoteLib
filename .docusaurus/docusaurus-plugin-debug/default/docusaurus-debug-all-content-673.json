@@ -719,13 +719,17 @@
               "previous": {
                 "title": "计算机网络概述",
                 "permalink": "/docs/networrk-basic"
+              },
+              "next": {
+                "title": "TCP/IP",
+                "permalink": "/docs/category/tcpip"
               }
             },
             {
               "unversionedId": "计算机网络/networrk-basic",
               "id": "计算机网络/networrk-basic",
               "title": "计算机网络概述",
-              "description": "计算机网络学习的一些笔记,参考的书籍:《图解HTTp》",
+              "description": "计算机网络学习的一些笔记,参考的书籍:",
               "source": "@site/docs/计算机网络/about.md",
               "sourceDirName": "计算机网络",
               "slug": "/networrk-basic",
@@ -746,6 +750,32 @@
               "next": {
                 "title": "HTTP协议",
                 "permalink": "/docs/计算机网络/HTTP/http-protocol"
+              }
+            },
+            {
+              "unversionedId": "计算机网络/TCP-IP/net-basic",
+              "id": "计算机网络/TCP-IP/net-basic",
+              "title": "网络基础知识",
+              "description": "阐述了 TCP/IP 需要的基础知识,包括计算机和网络发展的历史以及标准化过程、OSI参考模型、网络概念的本质、网络构建的设备等",
+              "source": "@site/docs/计算机网络/TCP-IP/网络基础知识.md",
+              "sourceDirName": "计算机网络/TCP-IP",
+              "slug": "/计算机网络/TCP-IP/net-basic",
+              "permalink": "/docs/计算机网络/TCP-IP/net-basic",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/计算机网络/TCP-IP/网络基础知识.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "net-basic",
+                "title": "网络基础知识"
+              },
+              "sidebar": "netWorkSidebar",
+              "previous": {
+                "title": "TCP/IP",
+                "permalink": "/docs/category/tcpip"
               }
             },
             {
@@ -3158,6 +3188,23 @@
                 "id": "计算机网络/HTTP/http-protocol",
                 "label": "HTTP协议",
                 "translatable": true
+              },
+              {
+                "type": "category",
+                "label": "TCP/IP",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "计算机网络/TCP-IP/net-basic"
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/tcpip",
+                  "permalink": "/docs/category/tcpip"
+                },
+                "collapsible": true
               }
             ],
             "mysqlSideBar": [
@@ -4095,11 +4142,6 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/FE/",
-        "source": "@site/src/pages/website/FE/index.tsx"
-      },
-      {
-        "type": "jsx",
         "permalink": "/website/BE/",
         "source": "@site/src/pages/website/BE/index.tsx"
       },
@@ -4107,6 +4149,11 @@
         "type": "jsx",
         "permalink": "/website/COM/",
         "source": "@site/src/pages/website/COM/index.tsx"
+      },
+      {
+        "type": "jsx",
+        "permalink": "/website/FE/",
+        "source": "@site/src/pages/website/FE/index.tsx"
       }
     ]
   },

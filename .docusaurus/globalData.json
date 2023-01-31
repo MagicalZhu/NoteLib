@@ -139,6 +139,11 @@
               "sidebar": "netWorkSidebar"
             },
             {
+              "id": "计算机网络/TCP-IP/net-basic",
+              "path": "/docs/计算机网络/TCP-IP/net-basic",
+              "sidebar": "netWorkSidebar"
+            },
+            {
               "id": "前端/Vue/基础特性",
               "path": "/docs/前端/Vue/基础特性",
               "sidebar": "vueSideBar"
@@ -554,6 +559,11 @@
               "id": "/category/springcloud-alibaba",
               "path": "/docs/category/springcloud-alibaba",
               "sidebar": "springCloudSideBar"
+            },
+            {
+              "id": "/category/tcpip",
+              "path": "/docs/category/tcpip",
+              "sidebar": "netWorkSidebar"
             },
             {
               "id": "/category/mysql基础与高级",
