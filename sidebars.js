@@ -269,6 +269,7 @@ const gradleSideBar = [
 const dockerPart = new Category('Docker入门(大目)')
 .setNoLabelItem('工具/Docker/Docker入门', [
   'Docker基础',
+  'Docker镜像命令'
 ])
 const dockerSideBar = [
   createDoc('工具/Docker/docker', '简介'),
