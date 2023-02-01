@@ -140,6 +140,10 @@ const nav = {
         {
           label: "Gradle",
           to: 'docs/Gradle',
+        },
+        {
+          label: "Docker",
+          to: 'docs/docker',
         }
       ]
     },
