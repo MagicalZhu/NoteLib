@@ -9,8 +9,10 @@ title: Docker基础
 Docker 是一个开源的**容器引擎**, 它可以帮助我们更快地交付应用。Docker可**将应用程序和基础设施层隔离,并且能将基础设施当作程序一样进行管理**。使用Docker,可更快地打包、测试以及部署应用程序,并可**减少从编写到部署运行代码的周期**
 
 Docker相关的资源网站
-1. [Docker官方网站](https://www.docker.com/)
+
+1. [Docker 官方网站](https://www.docker.com/)
 2. [Docker GitHub](https://github.com/docker/docker)
+3. [Docker 命令指南](https://docs.docker.com/engine/reference/run/)
 
 ## 发展历程
 
@@ -23,6 +25,7 @@ Docker相关的资源网站
 | **Docker 1.11后**  | 改用 [runC](https://github.com/opencontainers/runc) 和 [containerd](https://github.com/containerd/containerd)  |
 
 常见的术语:
+
 1. [OCI](https://www.opencontainers.org/) : 定义了容器运行的标准,其[规范文档](http://www.infoq.com/cn/news/2017/02/Docker-Containerd-RunC)作为一个项目在GitHub上维护
 2. `runC`
    - **标准化容器执行引擎**
@@ -32,6 +35,7 @@ Docker相关的资源网站
    - [参考文档](https://blog.docker.com/2015/12/containerd-daemon-to-control-runc/), [译文](http://dockone.io/article/914)
 
 :::tip 拓展阅读
+
 1. [Docker 背后的容器管理——Libcontainer 深度解析](https://www.infoq.cn/article/docker-container-management-libcontainer-depth-analysis/)
 2. [Docker背后的标准化容器执行引擎——runC](https://www.infoq.cn/article/docker-standard-container-execution-engine-runc/)
 3. [Docker、Containerd、RunC…:你应该知道的所有](http://www.infoq.com/cn/news/2017/02/Docker-Containerd-RunC)
@@ -44,6 +48,7 @@ Docker官方文档的架构图,如图所示:
 ![image-20230131220859994](./image/Docker基础/docker-architecture.png)
 
 上图中包含的组件:
+
 1. `Docker daemon`
    - **Docker 守护进程**
    - 是一个运行在宿主机(**DOCKER_HOST**)的后台进程。我们可通过 Docker 客户端与之通信
@@ -67,8 +72,8 @@ Docker官方文档的架构图,如图所示:
 
 - Hypervisor 层被 Docker Engine 取代
 - 虚拟化粒度不同
-   - 虚拟机利用Hypervisor虚拟化CPU、内存、IO设备等实现的,然后在其上运行完整的操作系统,再在该系统上运行所需的应用。**资源隔离级别:OS级别**
-   - 运行在Docker容器中的应用直接运行于宿主机的内核,容器共享宿主机的内核,容器内部运行的是Linux副本,没有自己的内核,直接使用物理机的硬件资源,因此CPU/内存利用率上有一定优势。**资源隔离级别:利用Linux内核本身支持的容器方式实现资源和环境隔离**
+  - 虚拟机利用Hypervisor虚拟化CPU、内存、IO设备等实现的,然后在其上运行完整的操作系统,再在该系统上运行所需的应用。**资源隔离级别:OS级别**
+  - 运行在Docker容器中的应用直接运行于宿主机的内核,容器共享宿主机的内核,容器内部运行的是Linux副本,没有自己的内核,直接使用物理机的硬件资源,因此CPU/内存利用率上有一定优势。**资源隔离级别:利用Linux内核本身支持的容器方式实现资源和环境隔离**
 
 :::tip 拓展阅读
 [Docker、LXC、Cgroup的结构关系](https://blog.51cto.com/speakingbaicai/1359825)
@@ -79,6 +84,7 @@ Docker官方文档的架构图,如图所示:
 [八个Docker的真实应用场景](http://dockone.io/article/126)
 
 ## 安装Docker(Centos)
+
 > 系统要求:
 >   1. **CentOS 7** 或更高版本
 >   2. **centos-extras** 仓库必须处于启用状态,该仓库默认启用
@@ -108,6 +114,7 @@ sudo yum remove docker \
     sudo yum-config-manager \
         --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     ```
+
 2. 执行如下命令,安装`stable` 仓库。**必须**安装`stable` 仓库,即使你想安装`edge` 或`test` 仓库中的 Docker 构建版本。
 
    ```Shell
@@ -115,6 +122,7 @@ sudo yum remove docker \
        --add-repo \
        https://download.docker.com/linux/centos/docker-ce.repo
    ```
+
 3. [**可选**] 执行如下命令,启用`edge` 及`test` 仓库。edge/test仓库其实也包含在了`docker.repo` 文件中,但默认是禁用的,可使用以下命令来启用。
 
    ```Shell
@@ -168,7 +176,7 @@ sudo yum remove docker \
 
    这样,Docker将会下载测试镜像,并使用该镜像启动一个容器。如能够看到类似如下的输出,则说明安装成功。
 
-   ```
+   ```txt
    Unable to find image 'hello-world:latest' locally
    latest: Pulling from library/hello-world
    b04784fba78d: Pull complete
