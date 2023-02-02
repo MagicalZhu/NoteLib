@@ -32,14 +32,14 @@ Docker相关的资源网站
    - 根据根据 OCI 规范编写的,生成和运行容器的CLI工具,是按照开放容器格式标准（OCF, Open Container Format）制定的一种具体实现。由 libcontainer 中迁移而来的,实现了容器启停、资源隔离等功能
 3. `containerd`
    - **用于控制 runC 的守护进程,构建在 OCI 规范和runC之上**。目前內建在 Docker Engine 中
-   - [参考文档](https://blog.docker.com/2015/12/containerd-daemon-to-control-runc/), [译文](http://dockone.io/article/914)
+   - [参考文档](https://blog.docker.com/2015/12/containerd-daemon-to-control-runc/),以及[译文](http://dockone.io/article/914)
 
 :::tip 拓展阅读
 
 1. [Docker 背后的容器管理——Libcontainer 深度解析](https://www.infoq.cn/article/docker-container-management-libcontainer-depth-analysis/)
 2. [Docker背后的标准化容器执行引擎——runC](https://www.infoq.cn/article/docker-standard-container-execution-engine-runc/)
 3. [Docker、Containerd、RunC…:你应该知道的所有](http://www.infoq.com/cn/news/2017/02/Docker-Containerd-RunC)
-::
+:::
 
 ## Docker架构
 
@@ -77,7 +77,7 @@ Docker官方文档的架构图,如图所示:
 
 :::tip 拓展阅读
 [Docker、LXC、Cgroup的结构关系](https://blog.51cto.com/speakingbaicai/1359825)
-::
+:::
 
 ## Docker应用场景
 
@@ -89,7 +89,6 @@ Docker官方文档的架构图,如图所示:
 >   1. **CentOS 7** 或更高版本
 >   2. **centos-extras** 仓库必须处于启用状态,该仓库默认启用
 >   3. 建议使用 **overlay2** 存储驱动
-
 
 ### yum安装
 
