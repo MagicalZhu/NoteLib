@@ -98,42 +98,36 @@ Docker官方文档的架构图,如图所示:
   
 ```Shell
 sudo yum remove docker \
-                docker-common \
-                docker-selinux \
-                docker-engine
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
 ```
 
 需要注意的是,执行该命令**只会卸载Docker本身,而不会删除Docker存储的文件**,例如镜像、容器、卷以及网络文件等。这些文件保存在 `/var/lib/docker` 目录中,需要**手动删除**
 
-#### 安装仓库
+#### 使用仓库安装
 
 1. 执行以下命令,安装Docker所需的包。其中,`yum-utils` 提供了`yum-config-manager` 工具。`device-mapper-persistent-data` 及 `lvm2` 则是`devicemapper` 存储驱动所需的包
 
     ```Shell
+    sudo yum install -y yum-utils
     sudo yum-config-manager \
-        --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+        --add-repo 
+        https://download.docker.com/linux/centos/docker-ce.repo
     ```
 
 2. 执行如下命令,安装`stable` 仓库。**必须**安装`stable` 仓库,即使你想安装`edge` 或`test` 仓库中的 Docker 构建版本。
 
    ```Shell
    sudo yum-config-manager \
-       --add-repo \
-       https://download.docker.com/linux/centos/docker-ce.repo
+      --add-repo \
+      https://download.docker.com/linux/centos/docker-ce.repo
    ```
 
-3. [**可选**] 执行如下命令,启用`edge` 及`test` 仓库。edge/test仓库其实也包含在了`docker.repo` 文件中,但默认是禁用的,可使用以下命令来启用。
-
-   ```Shell
-   sudo yum-config-manager --enable docker-ce-edge    # 启用edge仓库
-   sudo yum-config-manager --enable docker-ce-test    # 启用test仓库
-   ```
-
-   如需再次禁用,可加上`--disable` 标签。例如,执行如下命令即可禁用edge仓库。
-
-   ```shell
-   sudo yum-config-manager --disable docker-ce-edge
-   ```
 
 #### 安装 Docker CE
 
