@@ -240,7 +240,7 @@ docker.io/library/debian:latest
 ```
 
 :::tip 说明
-**Docker 镜像可以由多层组成,并且层可以被镜像重复使用。** 例如，debian:bullseye 镜像共享 debian 镜像的层, 因此，拉取 debian:bullseye 镜像**只拉动它的元数据，而不是它的层，因为该层已经存在于本地**。
+**Docker 镜像可以由多层组成,并且层可以被镜像重复使用。** 例如,debian:bullseye 镜像共享 debian 镜像的层, 因此,拉取 debian:bullseye 镜像**只拉动它的元数据,而不是它的层,因为该层已经存在于本地**。
 
 ```shell
 # 拉取 debian 镜像
@@ -270,7 +270,7 @@ docker image pull debian:bullseye
 
 > Docker 使用了**内容可寻址的镜像存储, 镜像ID是一个涵盖镜像配置和层的SHA256摘要**
 > 
-> 在上面的示例中, debian:bullseye和debian:latest有相同的镜像ID,因为他们是同一个镜像,不过是被标记了不同的名字,因为它们是同一个镜像，它们的图层只被存储一次，不会消耗额外的磁盘空间
+> 在上面的示例中, debian:bullseye和debian:latest有相同的镜像ID,因为他们是同一个镜像,不过是被标记了不同的名字,因为它们是同一个镜像,它们的图层只被存储一次,不会消耗额外的磁盘空间
 
 一般来说,我们可以通过 **NAME:TAG** 的格式拉取某个 TAG 的镜像,并且**每次执行都会拉取该TAG的最新镜像**, 但是同一个镜像即使 TAG 是相同的,但镜像也可能不同,因为打包的时候可以使用同一个 TAG。所以,在某些情况下,我们不需要拉取某个TAG最新的版本的话,就需要使用`镜像的 Digest 摘要` 拉取指定镜像。
 
@@ -290,13 +290,16 @@ docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40c
 # docker.io/library/ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
 ```
 
-
 :::tip 提示
+
 1. 当将镜像 push 到仓库中时, Docker 也会打印出镜像的摘要。如果想锁定刚刚推送的镜像的一个版本, Digest 就会很有用。
+
 2. Digest 也可以用在 Dockerfile 的 `FROM` 指令中
+
   ```dockerfile
   FROM ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
   ```
+
 :::
 
 ## 列出镜像
@@ -304,16 +307,117 @@ docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40c
 使用 `docker images` 命令即可列出已下载的镜像,执行该命令后的输出结果包含下面的信息
 
 1. `REPOSITORY` : 镜像所属仓库名称
-2. `TAG` : 镜像标签。默认是latest，表示最新
-3. `IMAGE ID` : 镜像ID，表示镜像唯一标识
+2. `TAG` : 镜像标签。默认是latest,表示最新
+3. `IMAGE ID` : 镜像ID,表示镜像唯一标识
 4. `CREATED` : 镜像创建时间
 5. `SIZE` : 镜像大小
 
 ### 命令
 
-### 命令
 - 命令格式
 
   ```shell
   docker images [OPTIONS] [REPOSITORY[:TAG]]
   ```
+
+- 可选项[OPTIONS]
+
+  | Name(shorthand) | Default | Description      |
+  | --------------- | ------- | ---------------- |
+  | `--all, -a`     |         | 列出本地所有的镜像（含中间映像层,默认情况下,过滤掉中间映像层） |
+  | `--digests`     |         | 显示摘要信息                        |
+  | `--filter, -f`  |         | 显示满足条件的镜像                   |
+  | `--format`      |         | 通过Go语言模板文件展示镜像            |
+  | `--no-trunc`    |         | 不截断输出,显示完整的镜像信息         |
+  | `--quiet, -q`   |         | 只显示镜像ID                         |
+
+- 其他参数
+  - **REPOSITORY**: 镜像所属仓库名称
+  - **:TAG**: 表示标签, 多为软件的版本。默认是`latest`
+
+### 基本使用
+
+通过执行下面的命令, 列出最近创建的镜像
+
+```shell
+docker images
+
+REPOSITORY              TAG        IMAGE ID       CREATED         SIZE
+debian                  bullseye   20473158e8b3   4 days ago      124MB
+debian                  latest     20473158e8b3   4 days ago      124MB
+ubuntu                  <none>     d2e4e1f51132   9 months ago    77.8MB
+openwhisk/java8action   latest     a3b03869cfff   18 months ago   640MB
+```
+
+### TAG & NAME
+
+- 我们还可以在命令后面加上 **[REPOSITORY[:TAG]]** 参数,将查询结果限制在与该参数相匹配的镜像上。如果指定了 REPOSITORY,但没有指定 TAG,那么 docker images 命令就会列出指定存储库中的所有镜像
+
+- TAG & NAME的匹配是一种`精确匹配,` 即 **docker images jav 命令不能匹配到 java 镜像**
+
+```shell
+# REPOSITORY
+docker images debian
+REPOSITORY   TAG        IMAGE ID       CREATED      SIZE
+debian       bullseye   20473158e8b3   4 days ago   124MB
+debian       latest     20473158e8b3   4 days ago   124MB
+
+# REPOSITORY:TAG
+docker images debian:bullseye
+REPOSITORY   TAG        IMAGE ID       CREATED      SIZE
+debian       bullseye   20473158e8b3   4 days ago   124MB
+
+# 精确匹配,而不是模糊匹配
+docker images deb
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+```
+
+### 过滤
+
+通过参数 `--filter | -f` 可以对输出结果进行过滤, 过滤条件采用 **key=value** 的方式,并且**支持一个或多个过滤条件**。比如: *--filter "foo=bar" --filter "bif=baz"*
+
+现在支持的过滤条件有
+
+1. `dangling [boolean]`
+    - 格式: **dangling = true|false**
+    - 是否展示虚悬镜像
+2. `label [string]`
+    - 格式 : **label="key" | label="key=value"**
+    - 过滤符合指定标签的镜像
+3. `before [string]`
+    - 格式 : **before = "镜像NAME[:TAG] | 镜像ID | 镜像@Digest"**
+    - 过滤在指定镜像(可以通过镜像的NAME、ID、Digest)之前创建的镜像
+
+4. `since`
+    - 格式 : **since="镜像NAME[:TAG] | 镜像ID | 镜像@Digest"**
+    - 过滤在指定镜像(可以通过镜像的NAME、ID、Digest)之前创建的镜像
+
+### 格式化输出
+
+通过参数 `--format` 可以使用**Go模板**格式化输出结果
+
+有以下的合法的占位符:
+
+1. `.ID`: 镜像的 ID
+2. `.Repository`: 镜像的 Repository
+3. `.Tag` : 镜像的 Tag
+4. `.Digest` : 镜像的 Digest
+5. `.CreatedSince` : 镜像创建了多久
+6. `.CreatedAt` : 镜像什么时候创建的
+7. `.Size` : 镜像的大小
+
+如果使用了 `--format` 参数,那么搜索结果将会以指定的模板进行输出,但如果使用 **table** 指令,那么则会以表格的方式输出搜索结果
+
+**示例:**
+
+```shell
+docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
+
+IMAGE ID       REPOSITORY              TAG
+20473158e8b3   debian                  bullseye
+20473158e8b3   debian                  latest
+d2e4e1f51132   ubuntu                  <none>
+a3b03869cfff   openwhisk/java8action   latest
+```
+
+## 删除本地镜像
