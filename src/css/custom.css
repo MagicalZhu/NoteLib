@@ -549,17 +549,19 @@ a.card-link:hover img {
 
 .table-of-contents__link:hover, .table-of-contents__link--active {
   color: var(--ifm-color-primary);
+  /* 
   display: block;
   text-decoration: none;
   background: var(--custom-toc_bgcolor);
   line-height: 1;
   border-radius: 4px;
   padding: 8px;
+  */
 }
 .table-of-contents__link {
   display: block;
-  padding: 8px;
   line-height: 1;
+  padding: 2px;
 }
 
 
