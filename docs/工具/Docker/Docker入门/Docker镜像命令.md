@@ -72,7 +72,6 @@ ibmcom/java-websphere-traditional                                               
 4. `OFFICAL`:表示是否为官方仓库,该列标记为 [OK] 的镜像均由各软件的官方项目组创建和维护。由结果可知,java这个镜像仓库是官方仓库,而其他的仓库都不是镜像仓库。
 5. `AUTOMATED`:表示是否是自动构建的镜像仓库。
 
-:::
 
 ### 完整的搜索结果
 
@@ -113,7 +112,7 @@ ghost     Ghost is a free and open source blogging pla…   1598      [OK]
 
 ### 过滤
 
-通过参数 `-f | --filter` 可以对输出结果进行过滤, 过滤条件采用 **key=value** 的方式,并且**支持一个或多个过滤条件**。比如: *--filter is-automated=true --filter stars=3*
+通过参数 `--filter | -f` 可以对输出结果进行过滤, 过滤条件采用 **key=value** 的方式,并且**支持一个或多个过滤条件**。比如: *--filter is-automated=true --filter stars=3*
 
 现在支持的过滤条件有:
 
@@ -203,6 +202,7 @@ circleci/nginx: 2
 
 > 使用命令`docker pull` 命令即可从Docker Registry上下载镜像。
 
+### 命令
 - 命令格式
 
   ```shell
@@ -261,8 +261,59 @@ docker image pull debian:bullseye
 # Digest: sha256:534da5794e770279c889daa891f46f5a530b0c5de8bfbc5e40394a0164d9fa87
 # Status: Downloaded newer image for debian:bullseye
 # docker.io/library/debian:bullseye
-
 ```
 
 :::
 
+
+### 摘要(Digest,不可改变的标识符)
+
+> Docker 使用了**内容可寻址的镜像存储, 镜像ID是一个涵盖镜像配置和层的SHA256摘要**
+> 
+> 在上面的示例中, debian:bullseye和debian:latest有相同的镜像ID,因为他们是同一个镜像,不过是被标记了不同的名字,因为它们是同一个镜像，它们的图层只被存储一次，不会消耗额外的磁盘空间
+
+一般来说,我们可以通过 **NAME:TAG** 的格式拉取某个 TAG 的镜像,并且**每次执行都会拉取该TAG的最新镜像**, 但是同一个镜像即使 TAG 是相同的,但镜像也可能不同,因为打包的时候可以使用同一个 TAG。所以,在某些情况下,我们不需要拉取某个TAG最新的版本的话,就需要使用`镜像的 Digest 摘要` 拉取指定镜像。
+
+
+![image-20230131220859994](./image/Docker镜像命令/docker-digest.png)
+
+
+通过执行下面的命令, 从 Docker Hub 中下载 **debian**的镜像,且指定了 Digest
+
+```shell
+docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d 
+
+# docker.io/library/ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d: Pulling from library/ubuntu
+# 125a6e411906: Pull complete 
+# Digest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+# Status: Downloaded newer image for ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+# docker.io/library/ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+```
+
+
+:::tip 提示
+1. 当将镜像 push 到仓库中时, Docker 也会打印出镜像的摘要。如果想锁定刚刚推送的镜像的一个版本, Digest 就会很有用。
+2. Digest 也可以用在 Dockerfile 的 `FROM` 指令中
+  ```dockerfile
+  FROM ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+  ```
+:::
+
+## 列出镜像
+
+使用 `docker images` 命令即可列出已下载的镜像,执行该命令后的输出结果包含下面的信息
+
+1. `REPOSITORY` : 镜像所属仓库名称
+2. `TAG` : 镜像标签。默认是latest，表示最新
+3. `IMAGE ID` : 镜像ID，表示镜像唯一标识
+4. `CREATED` : 镜像创建时间
+5. `SIZE` : 镜像大小
+
+### 命令
+
+### 命令
+- 命令格式
+
+  ```shell
+  docker images [OPTIONS] [REPOSITORY[:TAG]]
+  ```
