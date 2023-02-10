@@ -5,7 +5,13 @@ title: Docker镜像命令
 
 ## 搜索镜像
 
-> 可使用`docker search` 命令搜索存放在Docker Hub中的镜像。
+通过 `docker search` 命令搜索存放在Docker Hub中的镜像,执行该命令后通常会返回下面的信息:
+
+1. `NAME`:镜像仓库名称。
+2. `DESCRIPTION`:镜像仓库描述。
+3. `STARS`:镜像仓库收藏数,表示该镜像仓库的受欢迎程度,类似于GitHub的Stars。
+4. `OFFICAL`:表示是否为官方仓库,该列标记为 [OK] 的镜像均由各软件的官方项目组创建和维护。
+5. `AUTOMATED`:表示是否是自动构建的镜像仓库。
 
 ### 命令
 
@@ -64,18 +70,9 @@ kope/java7                                                                      
 ibmcom/java-websphere-traditional                                                    0                    
 ```
 
-该输出结果中包含五列,含义如下:
-
-1. `NAME`:镜像仓库名称。
-2. `DESCRIPTION`:镜像仓库描述。
-3. `STARS`:镜像仓库收藏数,表示该镜像仓库的受欢迎程度,类似于GitHub的Stars。
-4. `OFFICAL`:表示是否为官方仓库,该列标记为 [OK] 的镜像均由各软件的官方项目组创建和维护。由结果可知,java这个镜像仓库是官方仓库,而其他的仓库都不是镜像仓库。
-5. `AUTOMATED`:表示是否是自动构建的镜像仓库。
-
-
 ### 完整的搜索结果
 
-查询的时候可以选择输出完整的结果
+查询的时候可以选择输出完整的结果,比如 DESCRIPTION 信息不会被折叠
 
 ```shell
 docker search --no-trunc  java
@@ -116,12 +113,14 @@ ghost     Ghost is a free and open source blogging pla…   1598      [OK]
 
 现在支持的过滤条件有:
 
-1. `stars [int]`
-   - number of stars the image has
-2. `is-automated [boolean, true or false]`
+1. `stars`
+   - 镜像至少有几个stars
+2. `is-automated`
    - 镜像是否是自动构建的
-3. `is-official  [boolean, true or false]`
+   - 可选值: **true | false**
+3. `is-official`
    - 是否是官方镜像
+   - 可选值: **true | false**
 
 执行下面的命令,对输出结果进行过滤:
 
@@ -152,7 +151,7 @@ bitnami/java   Bitnami Java Docker Image   14                   [OK]
 
 #### 示例1
 
-> 用 : 将 Name 和 STARS连接起来
+> 用 : 将 Name 和 STARS 连接起来
 
 ```shell
 docker search --format "{{.Name}}: {{.StarCount}}" nginx
@@ -203,6 +202,7 @@ circleci/nginx: 2
 > 使用命令`docker pull` 命令即可从Docker Registry上下载镜像。
 
 ### 命令
+
 - 命令格式
 
   ```shell
@@ -217,8 +217,12 @@ circleci/nginx: 2
   | `--disable-content-trust` | `true`  | 忽略镜像的校验     |
 
 - 其他参数
-  - **:TAG**: 表示标签, 多为软件的版本。默认是`latest`
+  - **:TAG**: 表示标签,多为软件的版本。默认是`latest`
   - **@DIGEST**: 表示摘要信息
+
+:::tip 提示
+**NAME[:TAG|@DIGEST]** 可以定位一个镜像,在镜像的操作中经常可以看到该参数,比如删除操作
+:::
 
 ### 基本使用
 
@@ -265,18 +269,15 @@ docker image pull debian:bullseye
 
 :::
 
-
 ### 摘要(Digest,不可改变的标识符)
 
 > Docker 使用了**内容可寻址的镜像存储, 镜像ID是一个涵盖镜像配置和层的SHA256摘要**
-> 
+>
 > 在上面的示例中, debian:bullseye和debian:latest有相同的镜像ID,因为他们是同一个镜像,不过是被标记了不同的名字,因为它们是同一个镜像,它们的图层只被存储一次,不会消耗额外的磁盘空间
 
 一般来说,我们可以通过 **NAME:TAG** 的格式拉取某个 TAG 的镜像,并且**每次执行都会拉取该TAG的最新镜像**, 但是同一个镜像即使 TAG 是相同的,但镜像也可能不同,因为打包的时候可以使用同一个 TAG。所以,在某些情况下,我们不需要拉取某个TAG最新的版本的话,就需要使用`镜像的 Digest 摘要` 拉取指定镜像。
 
-
 ![image-20230131220859994](./image/Docker镜像命令/docker-digest.png)
-
 
 通过执行下面的命令, 从 Docker Hub 中下载 **debian**的镜像,且指定了 Digest
 
@@ -304,13 +305,21 @@ docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40c
 
 ## 列出镜像
 
-使用 `docker images` 命令即可列出已下载的镜像,执行该命令后的输出结果包含下面的信息
+> 使用 `docker images` 命令即可列出已下载的镜像,执行该命令后的输出结果包含下面的信息
+>
+> - `REPOSITORY` : 镜像所属仓库名称
+> - `TAG` : 镜像标签。默认是latest,表示最新
+> - `IMAGE ID` : 镜像ID,表示镜像唯一标识
+> - `CREATED` : 镜像创建时间
+> - `SIZE` : 镜像大小
 
-1. `REPOSITORY` : 镜像所属仓库名称
-2. `TAG` : 镜像标签。默认是latest,表示最新
-3. `IMAGE ID` : 镜像ID,表示镜像唯一标识
-4. `CREATED` : 镜像创建时间
-5. `SIZE` : 镜像大小
+默认的 docker 镜像会显示所有的顶级镜像,它们的存储库和标签,以及它们的大小。
+
+1. docker 镜像有中间层,可以提高重用性,减少磁盘使用量,并通过允许每个步骤被缓存来加速docker构建。这些中间层在默认情况下是不显示的。
+
+2. 镜像大小(SIZE) 是指该镜像及其所有父镜像所占用的累积空间, 这也是在 [docker 保存镜像](Docker镜像命令#保存镜像)时创建的Tar文件的内容所占用的磁盘空间
+
+3. 如果一个镜像有多个 REPOSITORY 或 TAG,它将被列出不止一次。这个单一的镜像(可通过其匹配的IMAGE ID识别)只用了一次列出的 SIZE
 
 ### 命令
 
@@ -318,22 +327,25 @@ docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40c
 
   ```shell
   docker images [OPTIONS] [REPOSITORY[:TAG]]
+  # 别名
+  docker image ls, docker image list
   ```
 
 - 可选项[OPTIONS]
 
   | Name(shorthand) | Default | Description      |
   | --------------- | ------- | ---------------- |
-  | `--all, -a`     |         | 列出本地所有的镜像（含中间映像层,默认情况下,过滤掉中间映像层） |
-  | `--digests`     |         | 显示摘要信息                        |
-  | `--filter, -f`  |         | 显示满足条件的镜像                   |
+  | `--all, -a`     |         | 列出本地所有的镜像(含中间映像层,默认情况下,过滤掉中间映像层) |
+  | `--digests`     |         | 显示 Digest 摘要信息                |
+  | `--filter, -f`  |         | 过滤出满足条件的镜像                   |
   | `--format`      |         | 通过Go语言模板文件展示镜像            |
-  | `--no-trunc`    |         | 不截断输出,显示完整的镜像信息         |
+  | `--no-trunc`    |         | 不截断输出,显示完整的镜像信息          |
   | `--quiet, -q`   |         | 只显示镜像ID                         |
 
 - 其他参数
   - **REPOSITORY**: 镜像所属仓库名称
   - **:TAG**: 表示标签, 多为软件的版本。默认是`latest`
+
 
 ### 基本使用
 
@@ -349,11 +361,11 @@ ubuntu                  <none>     d2e4e1f51132   9 months ago    77.8MB
 openwhisk/java8action   latest     a3b03869cfff   18 months ago   640MB
 ```
 
-### TAG & NAME
+### REPOSITORY & TAG
 
-- 我们还可以在命令后面加上 **[REPOSITORY[:TAG]]** 参数,将查询结果限制在与该参数相匹配的镜像上。如果指定了 REPOSITORY,但没有指定 TAG,那么 docker images 命令就会列出指定存储库中的所有镜像
+- 我们还可以在命令后面加上 **REPOSITORY[:TAG]** 参数,将查询结果限制在与该参数相匹配的镜像上。如果指定了 REPOSITORY,但没有指定 TAG,那么 docker images 命令就会列出指定存储库中的所有镜像
 
-- TAG & NAME的匹配是一种`精确匹配,` 即 **docker images jav 命令不能匹配到 java 镜像**
+- REPOSITORY & TAG的匹配是一种`精确匹配,` 比如 **docker images jav 命令不能匹配到 java 镜像**
 
 ```shell
 # REPOSITORY
@@ -421,3 +433,131 @@ a3b03869cfff   openwhisk/java8action   latest
 ```
 
 ## 删除本地镜像
+
+> 通过 `docker rmi` 命令可以删除(和取消标签)本地指定的一个或者多个镜像
+
+1. **如果一个图像有多个标签,以标签为参数使用此命令只删除标签。如果标签是图像的唯一标签,图像和标签都会被删除。**
+2. 当然,这不会从远程Docker仓库中删除镜像
+3. **除非使用-f 选项,否则不能删除一个正在运行的容器的镜像**
+4. 要查看一个主机上的所有镜像,请使用[docker images 命令](Docker镜像命令#列出镜像)
+
+### 命令
+
+- 命令格式
+
+  ```shell
+  docker rmi [OPTIONS] IMAGE1  IMAGE2 ....
+  # 别名
+  docker image rm、 docker image remove
+  ```
+
+- 可选项[OPTIONS]
+
+  | Name, shorthand | Default | Description      |
+  | --------------- | ------- | ---------------- |
+  | `--force, -f`   |  | 强制删除             |
+  | `--no-prune`    |  | 不移除该镜像的过程镜像,默认移除 |
+
+:::caution IMAGE 是什么
+
+- IMAGE 对应的值 **镜像ID(IMAGE ID)、镜像仓库(Repository)、镜像摘要信息(Digest)**,这些信息可以通过 *images* 命令获取到
+- 需要注意的是, IMAGE 需要能唯一确定到某个镜像。比如用 **镜像ID** 去删除某个镜像,如果有多个镜像的ID是一样的,那么就会报错。当然,如果加上`--force |-f`参数,则会将这些镜像ID相同的镜像全部删除
+
+  ```shell
+  docker image ls
+  REPOSITORY   TAG        IMAGE ID       CREATED        SIZE
+  debian       bullseye   54e726b437fb   22 hours ago   124MB
+  debian       latest     54e726b437fb   22 hours ago   124MB
+
+  # 这个的 debian:bullseye 和 debian:latest 的 IMAGE ID 是一样的,都是 54e726b437fb
+  # 所以删除的时候会报错
+  docker rmi 54e726b437fb
+  Error response from daemon: conflict: unable to delete 54e726b437fb (must be forced) - image is referenced in multiple repositories
+
+  # 使用 --force 参数强制删除
+  docker rmi --force 54e726b437fb
+  Untagged: debian:bullseye
+  Untagged: debian:latest
+  Untagged: debian@sha256:43ef0c6c3585d5b406caa7a0f232ff5a19c1402aeb415f68bcd1cf9d10180af8
+  Deleted: sha256:54e726b437fbb2dd7b43e4dd5cd79b0181e96a22849b7fc2ffe934fac2d65440
+  Deleted: sha256:8e396a1aad506affc6fa1b7c7b8ee75b54b78019e0a945e6ac52e3dc407e0766
+  # 再次查看镜像
+  docker images
+  REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+  ```
+
+:::
+
+### 基本使用
+
+```shell
+# 首先列出本地的镜像
+docker images
+
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+test1                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
+test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
+test2                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
+
+# 删除 test1:latest 
+docker rmi test1:latest
+
+Untagged: test1:latest
+
+# 删除 test2:latest 
+docker rmi test2:latest
+Untagged: test2:latest
+
+# 列出本地剩余的镜像
+docker images
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
+
+# 删除 test:latest 
+docker rmi test:latest
+Untagged: test:latest
+Deleted: fd484f19954f4920da7ff372b5067f5b7ddb2fd3830cecd17b96ea9e286ba5b8
+```
+
+### 拓展
+
+rmi 命令也支持 `${}` 的方式
+
+  ```shell
+  # 列出本地的镜像
+  docker images
+  REPOSITORY   TAG        IMAGE ID       CREATED        SIZE
+  debian       bullseye   54e726b437fb   23 hours ago   124MB
+  debian       latest     54e726b437fb   23 hours ago   124MB
+  
+  # 强制删除本地所有的镜像
+  docker rmi -f $(docker images -qa)
+  Untagged: debian:bullseye
+  Untagged: debian:latest
+  Untagged: debian@sha256:43ef0c6c3585d5b406caa7a0f232ff5a19c1402aeb415f68bcd1cf9d10180af8
+  Deleted: sha256:54e726b437fbb2dd7b43e4dd5cd79b0181e96a22849b7fc2ffe934fac2d65440
+  Deleted: sha256:8e396a1aad506affc6fa1b7c7b8ee75b54b78019e0a945e6ac52e3dc407e0766
+  Error: No such image: 54e726b437fb
+  
+  # 列出本地的镜像
+  docker images
+  REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+  ```
+
+## 保存镜像
+
+> 通过`docker save` 命令可以**将一个或多个图像保存到tar存档(默认情况下流式传输到STDOUT)**
+
+### 命令
+
+- 命令格式
+
+  ```shell
+  docker save [OPTIONS] IMAGE1  IMAGE2 ....
+  ```
+
+- 可选项[OPTIONS]
+
+  | Name, shorthand | Default | Description      |
+  | --------------- | ------- | ---------------- |
+  | `--output , -o` |         | 写入文件,而不是STDOUT |
