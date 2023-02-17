@@ -269,10 +269,20 @@ const gradleSideBar = [
 const dockerPart = new Category('Docker入门(大目)')
 .setNoLabelItem('工具/Docker/Docker入门', [
   'Docker基础',
-  'Docker镜像命令'
+  'Docker镜像命令',
+  'Docker容器命令'
 ])
+
+// Docker CLI
+const dockerCliPart = new Category('Docker CLI(docker)')
+.setNoLabelItem('工具/Docker/Command/Docker-CLI', [
+  'run'
+])
+
+
 const dockerSideBar = [
   createDoc('工具/Docker/docker', '简介'),
+  dockerCliPart,
   dockerPart
 ]
 

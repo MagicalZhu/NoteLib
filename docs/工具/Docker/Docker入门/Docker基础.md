@@ -13,10 +13,9 @@ Docker相关的资源网站
 1. [Docker 官方网站](https://www.docker.com/)
 2. [Docker GitHub](https://github.com/docker/docker)
 3. [Docker 命令指南](https://docs.docker.com/engine/reference/run/)
+4. [Docker Engine API (v1.41)](https://docs.docker.com/engine/api/v1.41/)
 
 ## 发展历程
-
-**发展历程**
 
 | Docker版本         | Docker基于{?}实现          |
 | ------------------ | ------------------------ |
@@ -59,8 +58,9 @@ Docker官方文档的架构图,如图所示:
    - **Docker镜像**
    - **是一个只读模板,它包含创建Docker容器的说明**。它和系统安装光盘有点像(我们使用系统安装光盘安装系统,同理,我们使用Docker镜像运行Docker镜像中的程序)
 4. `Container`
-   - **容器**
-   - **是镜像的可运行实例**。镜像和容器的关系有点类似于面向对象中,类和对象的关系。**我们可通过Docker API或者CLI命令来启停、移动、删除容器**
+   - **容器,是镜像运行的实例,镜像启动后的实例称为一个容器,容器是独立运行的一个或一组应用**。
+   - 容器的定义和镜像几乎一模一样，也是一堆层的统一视角，唯一区别在于容器的最上面那一层是可读可写的
+   - 镜像和容器的关系有点类似于面向对象中,类和对象的关系。**我们可通过 Docker API 或者 CLI 命令来启停、移动、删除容器**
 5. `Registry`
    - **镜像仓库**
    - Docker Registry 是一个集中存储与分发镜像的服务。我们构建完Docker镜像后,就可在当前宿主机上运行。但如果想要在其他机器上运行这个镜像,我们就需要手动拷贝。此时,我们可借助Docker Registry来避免镜像的手动拷贝
@@ -86,6 +86,7 @@ Docker官方文档的架构图,如图所示:
 ## 安装Docker(Centos)
 
 > 系统要求:
+>
 >   1. **CentOS 7** 或更高版本
 >   2. **centos-extras** 仓库必须处于启用状态,该仓库默认启用
 >   3. 建议使用 **overlay2** 存储驱动
@@ -109,65 +110,51 @@ sudo yum remove docker \
 
 需要注意的是,执行该命令**只会卸载Docker本身,而不会删除Docker存储的文件**,例如镜像、容器、卷以及网络文件等。这些文件保存在 `/var/lib/docker` 目录中,需要**手动删除**
 
+#### 卸载 Docker Engine
+
+1. 卸载Docker引擎、CLI、containerd和Docker Compose软件包。
+
+   ```shell
+   sudo yum remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
+   ```
+
+2. 主机上的Images、Container、Volumes或定制的配置文件不会被自动删除。要删除所有图像、容器和卷
+
+   ```shell
+   sudo rm -rf /var/lib/docker
+   sudo rm -rf /var/lib/containerd
+   ```
+
 #### 使用仓库安装
 
-1. 执行以下命令,安装Docker所需的包。其中,`yum-utils` 提供了`yum-config-manager` 工具。`device-mapper-persistent-data` 及 `lvm2` 则是`devicemapper` 存储驱动所需的包
+1. 设置仓库,安装 yum-utils 软件包(提供 yum-config-manager工具 ), 并设置 Docker 仓库
 
-    ```Shell
-    sudo yum install -y yum-utils
-    sudo yum-config-manager \
-        --add-repo 
-        https://download.docker.com/linux/centos/docker-ce.repo
-    ```
-
-2. 执行如下命令,安装`stable` 仓库。**必须**安装`stable` 仓库,即使你想安装`edge` 或`test` 仓库中的 Docker 构建版本。
-
-   ```Shell
+   ```shell
+   sudo yum install -y yum-utils
    sudo yum-config-manager \
       --add-repo \
       https://download.docker.com/linux/centos/docker-ce.repo
    ```
 
-
-#### 安装 Docker CE
-
-1. 执行以下命令,更新`yum`的包索引
-
-   ```Shell
-   sudo yum makecache fast
-   ```
-
-2. 执行如下命令即可安装最新版本的Docker CE
-
-   ```Shell
-   sudo yum install docker-ce
-   ```
-
-3. 在生产环境中,可能需要指定想要安装的版本,此时可使用如下命令列出当前可用的Docker版本。
+2. 安装 Docker Engine
 
    ```shell
-   yum list docker-ce.x86_64  --showduplicates | sort -r
+   sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 
-   这样,列出版本后,可使用如下命令,安装想要安装的Docker CE版本。
+3. 启动 Docker
 
    ```shell
-   sudo yum install docker-ce-<VERSION>
-   ```
-
-4. 启动Docker
-
-   ```Shell
    sudo systemctl start docker
    ```
 
-5. 验证安装是否正确。
+4. 验证安装是否正确。
 
    ```shell
    sudo docker run hello-world
    ```
 
-   这样,Docker将会下载测试镜像,并使用该镜像启动一个容器。如能够看到类似如下的输出,则说明安装成功。
+   执行该命令 Docker 会下载测试镜像,并使用该镜像启动一个容器。如能够看到类似如下的输出,则说明安装成功。
 
    ```txt
    Unable to find image 'hello-world:latest' locally
@@ -197,28 +184,28 @@ sudo yum remove docker \
     https://docs.docker.com/engine/userguide/
    ```
 
-#### 升级Docker CE
-
-如需升级Docker CE,只需执行如下命令:
-
-```shell
-sudo yum makecache fast
-```
-
-然后按照安装Docker的步骤,即可升级Docker。
-
-#### 参考文档
-
-CentOS 7 安装 Docker [官方文档](https://docs.docker.com/engine/installation/linux/docker-ce/centos/)
-
-
 ### Shell一键安装
 
 ```shell
-curl -fsSL get.docker.com -o get-docker.sh
+curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
 ### 加速安装
 
 注册阿里云,参考该页面的[内容](https://cr.console.aliyun.com/#/accelerator)安装即可
+
+## 配置 Docker
+
+### Docker 开启启动
+
+许多现代Linux发行版使用systemd来管理系统启动时的服务。在Debian和Ubuntu上，Docker服务默认在启动时启动。在其他使用systemd的Linux发行版上，要在开机时自动启动Docker和containerd，请运行以下命令。
+
+```shell
+# 设置开启启动
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+# 取消开机启动
+sudo systemctl disable docker.service
+sudo systemctl disable containerd.service
+```

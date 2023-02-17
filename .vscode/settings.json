@@ -9,5 +9,11 @@
     "**/node_modules": true,
     "**/.docusaurus": true,
     "**/LICENSE": true
+  },
+  "markdownlint.config": {
+    "no-duplicate-header": {
+      "allow_different_nesting": true,
+      "siblings_only": true
+   }
   }
 }

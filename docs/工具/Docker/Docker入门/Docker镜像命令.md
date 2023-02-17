@@ -92,7 +92,7 @@ couchdb                              CouchDB is a database that uses JSON for do
 
 ### 限制搜索结果
 
-通过参数 `--limit` 可以设置**搜索结果的最大条数**,且它的可选值为 **[1~100]** , 默认值是**25**
+通过参数 `--limit` 可以设置**搜索结果的最大条数**,且它的可选值为 **[1~100]** , 默认值是`25`
 
 ```shell
 docker search --limit 3  java
@@ -269,13 +269,13 @@ docker image pull debian:bullseye
 
 :::
 
-### 摘要(Digest,不可改变的标识符)
+### 摘要(Digest)
 
-> Docker 使用了**内容可寻址的镜像存储, 镜像ID是一个涵盖镜像配置和层的SHA256摘要**
+> Digest 是一种**不可改变的标识符**, Docker 使用了**内容可寻址的镜像存储, 镜像ID是一个涵盖镜像配置和层的SHA256 Digest摘要**
 >
 > 在上面的示例中, debian:bullseye和debian:latest有相同的镜像ID,因为他们是同一个镜像,不过是被标记了不同的名字,因为它们是同一个镜像,它们的图层只被存储一次,不会消耗额外的磁盘空间
 
-一般来说,我们可以通过 **NAME:TAG** 的格式拉取某个 TAG 的镜像,并且**每次执行都会拉取该TAG的最新镜像**, 但是同一个镜像即使 TAG 是相同的,但镜像也可能不同,因为打包的时候可以使用同一个 TAG。所以,在某些情况下,我们不需要拉取某个TAG最新的版本的话,就需要使用`镜像的 Digest 摘要` 拉取指定镜像。
+一般来说,我们可以通过 **NAME:TAG** 的格式拉取某个 TAG 的镜像,并且**每次执行都会拉取该TAG的最新镜像**, 但是同一个镜像即使 TAG 是相同的,但镜像内部的可能不同,因为打包的时候可以使用同一个 TAG。所以,在某些情况下,我们不需要拉取某个TAG最新的版本的话,就需要使用`镜像的 Digest 摘要` 拉取指定镜像。
 
 ![image-20230131220859994](./image/Docker镜像命令/docker-digest.png)
 
@@ -561,3 +561,14 @@ rmi 命令也支持 `${}` 的方式
   | Name, shorthand | Default | Description      |
   | --------------- | ------- | ---------------- |
   | `--output , -o` |         | 写入文件,而不是STDOUT |
+
+### 基本使用
+
+> 利用 save 命令创建一个备份,然后可以与 **docker load** 命令一起使用
+
+```shell
+# 利用 docker save 保存 busybox 镜像到当前目录的 busybox.tar
+docker save busybox > busybox.tar
+# 或者
+docker save --output busybox.tar busybox
+```

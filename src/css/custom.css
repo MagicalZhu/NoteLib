@@ -561,8 +561,8 @@ a.card-link:hover img {
 .table-of-contents__link {
   display: block;
   line-height: 1;
-  padding: 2px;
   font-size: 14px;
+  padding-bottom: 5px;
 }
 
 
