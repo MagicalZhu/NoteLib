@@ -158,8 +158,6 @@ round-trip min/avg/max = 92.209/92.495/93.052 ms
 
 ### 命令
 
-docker ps [OPTIONS]
-
 - 命令格式
 
   ```shell
