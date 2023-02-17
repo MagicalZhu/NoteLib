@@ -276,7 +276,7 @@ const dockerPart = new Category('Docker入门(大目)')
 // Docker CLI
 const dockerCliPart = new Category('Docker CLI(docker)')
 .setNoLabelItem('工具/Docker/Command/Docker-CLI', [
-  'run'
+  'docker-run'
 ])
 
 
