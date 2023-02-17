@@ -346,7 +346,6 @@ docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40c
   - **REPOSITORY**: 镜像所属仓库名称
   - **:TAG**: 表示标签, 多为软件的版本。默认是`latest`
 
-
 ### 基本使用
 
 通过执行下面的命令, 列出最近创建的镜像
