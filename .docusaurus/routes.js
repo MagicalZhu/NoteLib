@@ -119,7 +119,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '168'),
+    component: ComponentCreator('/docs', '87f'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -224,6 +224,12 @@ export default [
         sidebar: "distributeSiderBar"
       },
       {
+        path: '/docs/工具/Docker/Command/Docker-CLI/docker-run',
+        component: ComponentCreator('/docs/工具/Docker/Command/Docker-CLI/docker-run', '8a5'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
         path: '/docs/工具/Docker/Docker入门/Docker基础',
         component: ComponentCreator('/docs/工具/Docker/Docker入门/Docker基础', '69b'),
         exact: true,
@@ -232,6 +238,24 @@ export default [
       {
         path: '/docs/工具/Docker/Docker入门/Docker镜像命令',
         component: ComponentCreator('/docs/工具/Docker/Docker入门/Docker镜像命令', '979'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/工具/Docker/Docker入门/Docker容器命令',
+        component: ComponentCreator('/docs/工具/Docker/Docker入门/Docker容器命令', '902'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/工具/Docker/Docker入门/Docker数据持久化',
+        component: ComponentCreator('/docs/工具/Docker/Docker入门/Docker数据持久化', '32b'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/工具/Docker/Docker入门/Docker通用命令',
+        component: ComponentCreator('/docs/工具/Docker/Docker入门/Docker通用命令', '817'),
         exact: true,
         sidebar: "dockerSideBar"
       },
@@ -413,6 +437,12 @@ export default [
         component: ComponentCreator('/docs/category/运维', '8a8'),
         exact: true,
         sidebar: "mysqlSideBar"
+      },
+      {
+        path: '/docs/category/docker-clidocker',
+        component: ComponentCreator('/docs/category/docker-clidocker', 'afe'),
+        exact: true,
+        sidebar: "dockerSideBar"
       },
       {
         path: '/docs/category/docker入门大目',

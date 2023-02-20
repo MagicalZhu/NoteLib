@@ -643,6 +643,36 @@
               }
             },
             {
+              "unversionedId": "工具/Docker/Command/Docker-CLI/docker-run",
+              "id": "工具/Docker/Command/Docker-CLI/docker-run",
+              "title": "docker run",
+              "description": "",
+              "source": "@site/docs/工具/Docker/Command/Docker-CLI/run.md",
+              "sourceDirName": "工具/Docker/Command/Docker-CLI",
+              "slug": "/工具/Docker/Command/Docker-CLI/docker-run",
+              "permalink": "/docs/工具/Docker/Command/Docker-CLI/docker-run",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Command/Docker-CLI/run.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "docker-run",
+                "title": "docker run"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
+                "title": "Docker CLI(docker)",
+                "permalink": "/docs/category/docker-clidocker"
+              },
+              "next": {
+                "title": "Docker入门(大目)",
+                "permalink": "/docs/category/docker入门大目"
+              }
+            },
+            {
               "unversionedId": "工具/Docker/docker",
               "id": "工具/Docker/docker",
               "title": "Docker学习",
@@ -665,8 +695,8 @@
               },
               "sidebar": "dockerSideBar",
               "next": {
-                "title": "Docker入门(大目)",
-                "permalink": "/docs/category/docker入门大目"
+                "title": "Docker CLI(docker)",
+                "permalink": "/docs/category/docker-clidocker"
               }
             },
             {
@@ -723,6 +753,96 @@
               "previous": {
                 "title": "Docker基础",
                 "permalink": "/docs/工具/Docker/Docker入门/Docker基础"
+              },
+              "next": {
+                "title": "Docker容器命令",
+                "permalink": "/docs/工具/Docker/Docker入门/Docker容器命令"
+              }
+            },
+            {
+              "unversionedId": "工具/Docker/Docker入门/Docker容器命令",
+              "id": "工具/Docker/Docker入门/Docker容器命令",
+              "title": "Docker容器命令",
+              "description": "创建并启动容器",
+              "source": "@site/docs/工具/Docker/Docker入门/Docker容器命令.md",
+              "sourceDirName": "工具/Docker/Docker入门",
+              "slug": "/工具/Docker/Docker入门/Docker容器命令",
+              "permalink": "/docs/工具/Docker/Docker入门/Docker容器命令",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Docker入门/Docker容器命令.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Docker容器命令",
+                "title": "Docker容器命令"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
+                "title": "Docker镜像命令",
+                "permalink": "/docs/工具/Docker/Docker入门/Docker镜像命令"
+              },
+              "next": {
+                "title": "Docker数据持久化",
+                "permalink": "/docs/工具/Docker/Docker入门/Docker数据持久化"
+              }
+            },
+            {
+              "unversionedId": "工具/Docker/Docker入门/Docker数据持久化",
+              "id": "工具/Docker/Docker入门/Docker数据持久化",
+              "title": "Docker数据持久化",
+              "description": "coming soon...",
+              "source": "@site/docs/工具/Docker/Docker入门/Docker数据持久化.md",
+              "sourceDirName": "工具/Docker/Docker入门",
+              "slug": "/工具/Docker/Docker入门/Docker数据持久化",
+              "permalink": "/docs/工具/Docker/Docker入门/Docker数据持久化",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Docker入门/Docker数据持久化.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Docker数据持久化",
+                "title": "Docker数据持久化"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
+                "title": "Docker容器命令",
+                "permalink": "/docs/工具/Docker/Docker入门/Docker容器命令"
+              },
+              "next": {
+                "title": "Docker通用命令",
+                "permalink": "/docs/工具/Docker/Docker入门/Docker通用命令"
+              }
+            },
+            {
+              "unversionedId": "工具/Docker/Docker入门/Docker通用命令",
+              "id": "工具/Docker/Docker入门/Docker通用命令",
+              "title": "Docker通用命令",
+              "description": "除了 docker 镜像、容器使用的命令,还有一些通用的命令,对于镜像、容器都可以使用",
+              "source": "@site/docs/工具/Docker/Docker入门/Docker通用命令.md",
+              "sourceDirName": "工具/Docker/Docker入门",
+              "slug": "/工具/Docker/Docker入门/Docker通用命令",
+              "permalink": "/docs/工具/Docker/Docker入门/Docker通用命令",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Docker入门/Docker通用命令.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "Docker通用命令",
+                "title": "Docker通用命令"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
+                "title": "Docker数据持久化",
+                "permalink": "/docs/工具/Docker/Docker入门/Docker数据持久化"
               }
             },
             {
@@ -3839,6 +3959,23 @@
               },
               {
                 "type": "category",
+                "label": "Docker CLI(docker)",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "工具/Docker/Command/Docker-CLI/docker-run"
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/docker-clidocker",
+                  "permalink": "/docs/category/docker-clidocker"
+                },
+                "collapsible": true
+              },
+              {
+                "type": "category",
                 "label": "Docker入门(大目)",
                 "items": [
                   {
@@ -3848,6 +3985,18 @@
                   {
                     "type": "doc",
                     "id": "工具/Docker/Docker入门/Docker镜像命令"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "工具/Docker/Docker入门/Docker容器命令"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "工具/Docker/Docker入门/Docker数据持久化"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "工具/Docker/Docker入门/Docker通用命令"
                   }
                 ],
                 "collapsed": true,
@@ -4254,6 +4403,11 @@
       },
       {
         "type": "jsx",
+        "permalink": "/website/COM/",
+        "source": "@site/src/pages/website/COM/index.tsx"
+      },
+      {
+        "type": "jsx",
         "permalink": "/website/BE/",
         "source": "@site/src/pages/website/BE/index.tsx"
       },
@@ -4261,11 +4415,6 @@
         "type": "jsx",
         "permalink": "/website/FE/",
         "source": "@site/src/pages/website/FE/index.tsx"
-      },
-      {
-        "type": "jsx",
-        "permalink": "/website/COM/",
-        "source": "@site/src/pages/website/COM/index.tsx"
       }
     ]
   },
