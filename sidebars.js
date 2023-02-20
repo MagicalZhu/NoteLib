@@ -270,7 +270,9 @@ const dockerPart = new Category('Docker入门(大目)')
 .setNoLabelItem('工具/Docker/Docker入门', [
   'Docker基础',
   'Docker镜像命令',
-  'Docker容器命令'
+  'Docker容器命令',
+  'Docker数据持久化',
+  'Docker通用命令'
 ])
 
 // Docker CLI

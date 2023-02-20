@@ -520,7 +520,7 @@ Deleted: fd484f19954f4920da7ff372b5067f5b7ddb2fd3830cecd17b96ea9e286ba5b8
 
 ### 拓展
 
-rmi 命令也支持 `${}` 的方式
+rmi 命令也支持 `$()` 的方式
 
   ```shell
   # 列出本地的镜像

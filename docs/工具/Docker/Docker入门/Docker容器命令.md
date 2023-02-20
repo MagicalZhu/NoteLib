@@ -3,7 +3,7 @@ id: Docker容器命令
 title: Docker容器命令
 ---
 
-## 运行创建容器
+## 创建并启动容器
 
 > 通过 `docker run` 可以**根据本地的镜像创建并且启动一个新的容器**
 
@@ -18,7 +18,7 @@ title: Docker容器命令
 - 命令格式
 
   ```shell
-  docker run [OPTIONS] IMAGE镜像 [COMMAND] [ARGS...]
+  docker run [OPTIONS] IMAGE镜像 [COMMAND命令] [ARGS...]
 
   # 别名
   docker container run
@@ -51,7 +51,8 @@ title: Docker容器命令
   | `--volumes-from`       |         | 从指定的容器挂载卷        |
   | `-workdir , -w`        |         | 设置容器内的工作目录        |
 
-### 常见参数详解
+
+### 常见可选参数详解
 
 1. `--publish | -p`, 用于端口映射,有下面几种格式
     - **主机IP:主机端口A:容器端口B** :  主机的A端口映射到容器的B端口
@@ -113,7 +114,7 @@ docker run --expose 80 ubuntu bash
 
 ### 交互式容器
 
-- 利用 `-i -t` 组合参数可以分配一个伪终端
+- 利用 `-i -t` 组合参数(也可以合并为`-it`),可以分配一个伪终端
 - 如何退出伪终端?
   - `exit`: 退出当前终端并返回客户端, **容器中没有其他进程运行的话这个容器会停止**
   - `Ctrl+Q+P (WINDOW)`: 不退出当前终端直接返回客户端
@@ -217,9 +218,9 @@ CONTAINER ID   IMAGE         COMMAND             CREATED             STATUS     
 | `health`              |  根据容器的健康检查状态来过滤,可选值: `starting、healthy、unhealthy、none`   |
 | `is-task`             |  过滤作为一个服务的 "任务 "的容器. 可选值:`true、false`)  |
 
-## 启动容器
+## 启动停止的容器
 
-> 通过 `docker start` 可以启动一个或多个停止的容器,并且执行容器的CMD。与 *docker run* 不同的是,docker start 不会创建容器
+> 通过 `docker start` 可以**启动一个或多个停止的容器,并且执行容器的CMD**。与 *docker run* 不同的是,docker start 不会创建容器
 
 ### 命令
 
@@ -248,7 +249,7 @@ CONTAINER ID   IMAGE         COMMAND             CREATED        STATUS          
 0f20b6c89770   tomcat        "catalina.sh run"   24 hours ago   Exited (143) 30 minutes ago             tomcat1
 d22630cd9754   hello-world   "/hello"            28 hours ago   Exited (0) 28 hours ago                 elastic_almeida
 
-# 启动容器名为tomcat1 的容器
+# 启动容器名为 tomcat1 的容器
 docker start tomcat1
 tomcat1
 
@@ -260,7 +261,7 @@ CONTAINER ID   IMAGE     COMMAND             CREATED        STATUS         PORTS
 
 ## 优雅停止
 
-> 通过 `docker stop` 可以优雅的停止一个或多个正在运行的容器
+> 通过 `docker stop` 可以**优雅的停止一个或多个正在运行的容器**
 
 1. stop 命令 首先尝试通过向容器中的主进程（PID 1）发送 `SIGTERM 信号` 来停止正在运行的容器。如果该进程在超时时间内仍未退出,则将发送 `SIGKILL 信号`
    - 进程可以选择忽略SIGTERM,而 SIGKILL 则直接进入将终止该进程的内核
@@ -292,7 +293,7 @@ docker stop tomcat
 
 ## 强制停止
 
-> 通过 `docker kill` 可以强制停止一个或多个正在运行的容器
+> 通过 `docker kill` 可以**强制停止一个或多个正在运行的容器**
 
 1. docker kill 命令会向容器中的主进程发送 `SIGKILL 信号(默认)` , 或者用可选项 `--signal , -s` 来指定发送的信号
 2. 与 docker stop 不同的是,docker kill 没有任何超时时间, 它仅发出一个信号
@@ -326,4 +327,196 @@ docker kill --signal=SIGHUP my_container
 docker kill --signal=HUP my_container
 docker kill --signal=1 my_container
 ```
+
+## 重启容器
+
+> 通过 `docker restart` 可以**重新启动一个或多个容器**。该命令实际上是先执行了`docker stop` 命令，然后执行了`docker start` 命令
+
+### 命令
+
+- 命令格式
+  
+  ```shell
+  docker restart [OPTIONS] CONTAINER1 CONTAINER2 ...
+  ```
+
+- 常见的可选项[OPTIONS]
+
+  | Name(shorthand)        | Default | Description      |
+  | ---------------------- | ------- | ---------------- |
+  | `--signal , -s`        |         | 发送给容器的系统调用信号   |
+  | `--time , -t`          |         | 如果在指定时间(秒)内没有停止容器,就强制停止   |
+
+##  进入容器
+
+> 通过 `docker attach` 可以**将本地终端的标准输入、输出和错误用容器的ID或名称附加到一个正在运行的容器上**。这允许你查看其正在进行的输出，或以交互方式控制它，就像命令直接在你的终端中运行一样。(即进入容器)
+
+### 命令
+
+- 命令格式
+
+  ```shell
+  docker attach [OPTIONS] CONTAINER容器
+  ```
+
+- 常见的可选项[OPTIONS]
+
+  | Name(shorthand)        | Default | Description      |
+  | ---------------------- | ------- | ---------------- |
+  | `--detach-keys`        |         | 覆盖脱离附加到容器的按键序列   |
+  | `--no-stdin`           |         | 不要附加STDIN   |
+  | `--sig-proxy`          |   true  | 是否将所有收到的信号代理给进程   |
+
+:::caution 注意点
+
+1. 当多个窗口同时attach到同一个容器时，所有窗口都会同步显示。同理，如果某个窗口发生阻塞，其他窗口也无法执行操作。
+
+2. attach 直接进入容器启动命令的终端，**而不会启动新的终端进程**
+
+
+
+:::
+
+### 基本使用
+
+```shell
+# 查看本地运行着的容器
+docker ps -a --filter="status=running"
+CONTAINER ID   IMAGE     COMMAND   CREATED      STATUS         PORTS     NAMES
+3a933c21af5a   debian    "bash"    3 days ago   Up 2 minutes             test
+
+# 通过 docker attach 将本地终端附加到容器中
+docker attach test
+# 这里进入了容器内部
+root@3a933c21af5a:/#
+```
+
+### 自定义脱离容器
+
+- 通过 `--detach-keys` 可以自定义脱离附加到容器的按键序列, 序列的格式有`[a~Z]`以及 `ctrl-`与下面的结合
+  - **a-z**
+  - **@**
+  - **[**
+  - **\\\\** (双斜线)
+  - **_** (下划线)
+  - **^**
+
+```shell
+# 设置 detach-keys 为 组合键 => ctrl-c
+docker attach --detach-keys="ctrl-c"  test
+
+# 这里按下 ctrl-c 后脱离了容器
+root@3a933c21af5a:/# read escape sequence
+
+# 设置 detach-keys 为 单独的一个键 => s
+docker attach --detach-keys="s" test
+
+# 这里按下 s 后脱离了容器
+root@3a933c21af5a:/# read escape sequence
+```
+
+## 删除容器
+
+> 通过 `docker rm`命令可以 **删除一个或者多个容器** ,详细文档可见[这里](https://docs.docker.com/engine/reference/commandline/rm/)
+
+### 命令
+
+- 命令格式
+
+  ```shell
+  docker rm [OPTIONS] CONTAINER1 CONTAINER2 ... 
+  ```
+
+- 常见的可选项[OPTIONS]
+
+  | Name(shorthand)        | Default | Description      |
+  | ---------------------- | ------- | ---------------- |
+  | `--force , -f`         |         | 强制删除一个正在运行的容器（使用 [SIGKILL](Docker容器命令#强制停止) ）  |
+  | `--link , -l`          |         | 删除容器间的网络连接   |
+  | `--volumes , -v`       |         | 删除与容器关联的卷     |
+
+:::caution 注意
+
+该命令只能删除停止的容器,如果需要删除正在运行的容器,则需要加上 *--force、-f* 参数
+
+:::
+
+### 基本使用
+
+> 删除一个容器
+
+```shell
+# 查看本地的所有容器
+docker ps -a
+CONTAINER ID   IMAGE         COMMAND             CREATED      STATUS                    PORTS     NAMES
+1527f9349c90   tomcat        "catalina.sh run"   3 days ago   Exited (130) 3 days ago             testTomcat
+3a933c21af5a   debian        "bash"              3 days ago   Up 15 minutes                       test
+0f20b6c89770   tomcat        "catalina.sh run"   3 days ago   Exited (143) 2 days ago             tomcat1
+d22630cd9754   hello-world   "/hello"            3 days ago   Exited (0) 3 days ago               elastic_almeida
+# 删除 容器ID=d22630cd9754 的容器
+docker rm d22630cd9754
+d22630cd9754
+# 查看本地的所有容器,容器ID=d22630cd9754 的容器被删除了
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND             CREATED      STATUS                    PORTS     NAMES
+1527f9349c90   tomcat    "catalina.sh run"   3 days ago   Exited (130) 3 days ago             testTomcat
+3a933c21af5a   debian    "bash"              3 days ago   Up 15 minutes                       test
+0f20b6c89770   tomcat    "catalina.sh run"   3 days ago   Exited (143) 2 days ago             tomcat1
+```
+
+### 批量删除
+
+> 和[删除镜像](Docker镜像命令#拓展)类似的,Docker删除容器也支持`$()`移除所有停止的容器
+
+```shell
+# 查看本地所有的容器
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND             CREATED      STATUS                    PORTS     NAMES
+1527f9349c90   tomcat    "catalina.sh run"   3 days ago   Exited (130) 3 days ago             testTomcat
+3a933c21af5a   debian    "bash"              3 days ago   Up 20 minutes                       test
+0f20b6c89770   tomcat    "catalina.sh run"   3 days ago   Exited (143) 2 days ago             tomcat1
+
+# 删除本地所有停止的容器
+docker rm $(docker ps -a -f="status=exited" -q)
+1527f9349c90
+0f20b6c89770
+# 查看本地所有的容器,只剩下一个运行中的容器
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED      STATUS          PORTS     NAMES
+3a933c21af5a   debian    "bash"    3 days ago   Up 21 minutes             test
+```
+
+## 执行命令
+
+> - 通过 `docker exec`  可以**在一个正在运行的容器的默认bash终端中执行一个命令**
+>   - 比如/bin/bash 可以在容器中打开新的终端，并且可以启动新的进程: docker exec [-it] 容器Id/容器名 /bin/bash
+
+1. 使用 docker exec 启动的命令只在容器的主进程（PID 1）运行时运行。 如果容器被重新启动，它也不会被重新启动
+
+2. 命令在容器的默认目录下运行。如果底层镜像在其 Dockerfile 中用 `WORKDIR` 指令指定了一个自定义目录，则会使用这个目录。
+
+3. COMMAND必须是一个可执行的, 链式或带引号的命令不起作用
+    - docker exec -it my_container sh -c "echo a && echo b "可以执行
+    - docker exec -it my_container "echo a && echo b " 无法执行
+
+### 命令
+
+- 命令格式
+
+  ```shell
+  docker exec [OPTIONS] CONTAINER COMMAND命令 [ARG...]
+  ```
+
+- 常见的可选项[OPTIONS]
+
+  | Name(shorthand)        | Default | Description      |
+  | ---------------------- | ------- | ---------------- |
+  | `--detach , -d`        |         | 分离模式：在后台运行命令  |
+  | `--detach-keys`        |         | 覆盖脱离附加到容器的按键序列   |
+  | `--env , -e`           |         | 设置环境变量     |
+  | `--env-file`           |         | 从文件中读取环境变量     |
+  | `--privileged`         |         | 给予命令赋予权限     |
+  | `--tty , -t`           |         | 分配一个伪终端     |
+  | `--user , -u`          |         | 用户名或UID     |
+  | `--workdir , -w`       |         | 容器内的工作目录     |
 

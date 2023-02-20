@@ -2,5 +2,6 @@
     "no-duplicate-header": {
         "allow_different_nesting": true,
         "siblings_only": true
-    }
+    },
+    "MD033": false
 }
