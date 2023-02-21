@@ -8,13 +8,6 @@ title: Docker基础
 
 Docker 是一个开源的**容器引擎**, 它可以帮助我们更快地交付应用。Docker可**将应用程序和基础设施层隔离,并且能将基础设施当作程序一样进行管理**。使用Docker,可更快地打包、测试以及部署应用程序,并可**减少从编写到部署运行代码的周期**
 
-Docker相关的资源网站
-
-1. [Docker 官方网站](https://www.docker.com/)
-2. [Docker GitHub](https://github.com/docker/docker)
-3. [Docker 命令指南](https://docs.docker.com/engine/reference/run/)
-4. [Docker Engine API (v1.41)](https://docs.docker.com/engine/api/v1.41/)
-
 ## 发展历程
 
 | Docker版本         | Docker基于{?}实现          |
