@@ -676,7 +676,7 @@
               "unversionedId": "工具/Docker/docker",
               "id": "工具/Docker/docker",
               "title": "Docker学习",
-              "description": "Docker学习笔记",
+              "description": "Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。",
               "source": "@site/docs/工具/Docker/about.md",
               "sourceDirName": "工具/Docker",
               "slug": "/docker",
@@ -793,7 +793,7 @@
               "unversionedId": "工具/Docker/Docker入门/Docker数据持久化",
               "id": "工具/Docker/Docker入门/Docker数据持久化",
               "title": "Docker数据持久化",
-              "description": "coming soon...",
+              "description": "通过 Docker 可以将运行的运行的环境打包成镜像,并且通过容器的方式运行。但是如果不通过commit的方式生成新的镜像,那么当容器删除后数据就没有了。",
               "source": "@site/docs/工具/Docker/Docker入门/Docker数据持久化.md",
               "sourceDirName": "工具/Docker/Docker入门",
               "slug": "/工具/Docker/Docker入门/Docker数据持久化",
@@ -823,7 +823,7 @@
               "unversionedId": "工具/Docker/Docker入门/Docker通用命令",
               "id": "工具/Docker/Docker入门/Docker通用命令",
               "title": "Docker通用命令",
-              "description": "除了 docker 镜像、容器使用的命令,还有一些通用的命令,对于镜像、容器都可以使用",
+              "description": "除了 docker 镜像、容器使用的命令,还有一些通用的命令,对于镜像、容器、数据卷等都可以使用",
               "source": "@site/docs/工具/Docker/Docker入门/Docker通用命令.md",
               "sourceDirName": "工具/Docker/Docker入门",
               "slug": "/工具/Docker/Docker入门/Docker通用命令",
@@ -4403,6 +4403,11 @@
       },
       {
         "type": "jsx",
+        "permalink": "/website/FE/",
+        "source": "@site/src/pages/website/FE/index.tsx"
+      },
+      {
+        "type": "jsx",
         "permalink": "/website/COM/",
         "source": "@site/src/pages/website/COM/index.tsx"
       },
@@ -4410,11 +4415,6 @@
         "type": "jsx",
         "permalink": "/website/BE/",
         "source": "@site/src/pages/website/BE/index.tsx"
-      },
-      {
-        "type": "jsx",
-        "permalink": "/website/FE/",
-        "source": "@site/src/pages/website/FE/index.tsx"
       }
     ]
   },
