@@ -18,10 +18,10 @@ title: Docker容器命令
 - 命令格式
 
   ```shell
-  docker run [OPTIONS] IMAGE镜像 [COMMAND命令] [ARGS...]
+  ➜ docker run [OPTIONS] IMAGE镜像 [COMMAND命令] [ARGS...]
 
   # 别名
-  docker container run
+  ➜ docker container run
   ```
 
 - 常见的可选项[OPTIONS]
@@ -43,14 +43,14 @@ title: Docker容器命令
   | `--network,--net`      |         | 将一个容器连接到一个网络上   |
   | `--add-host`           |         | 添加一个自定义的主机到IP的映射(host:ip)  |
   | `--dns`                |         | 设置自定义的DNS服务器  |
-  | `--mount`              |         | 给容器附加一个文件系统挂载           |
   | `--rm`                 |         | 容器退出时自动删除该容器           |
   | `--stop-timeout`       |         | 停止一个容器的超时(秒)        |
   | `--sysctl`             |         | Sysctl选项        |
+  | `--mount`              |         | 给容器附加一个文件系统挂载           |
   | `--volume , -v`        |         | 绑定挂载一个卷        |
   | `--volumes-from`       |         | 从指定的容器挂载卷        |
+  | `--read-only`          |         | 将容器的根文件系统挂载为只读        |
   | `-workdir , -w`        |         | 设置容器内的工作目录        |
-
 
 ### 常见可选参数详解
 
@@ -72,7 +72,7 @@ title: Docker容器命令
 
 ```shell
 # 拉取 tomcat 的镜像
-docker pull tomcat
+➜ docker pull tomcat
 Using default tag: latest
 latest: Pulling from library/tomcat
 10ac4908093d: Pull complete 
@@ -87,18 +87,17 @@ Status: Downloaded newer image for tomcat:latest
 docker.io/library/tomcat:latest
 
 # 查看本地的镜像
-docker images
+➜ docker images
 REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
 tomcat        latest    2362f0cdbf14   2 weeks ago     474MB
 
 # 运行创建一个tomcat,同时自定义容器名 tomcat1,并且将主机的 8888 端口映射到容器的 TCP 8080 端口
-docker run --name tomcat1 -p 8888:8080 -d tomcat
+➜ docker run --name tomcat1 -p 8888:8080 -d tomcat
 0f20b6c897700a6b070d273205fad70e6c28d6372281abe30fab3dcfe6022631
 
 # 下面直接访问主机IP的8888端口即可
 # 列出运行的容器
-docker ps
-
+➜ docker ps
 CONTAINER ID   IMAGE     COMMAND             CREATED         STATUS         PORTS                                       NAMES
 0f20b6c89770   tomcat    "catalina.sh run"   8 minutes ago   Up 8 minutes   0.0.0.0:8888->8080/tcp, :::8888->8080/tcp   tomcat1
 ```
@@ -109,7 +108,7 @@ CONTAINER ID   IMAGE     COMMAND             CREATED         STATUS         PORT
 
 ```shell
 # 该命令暴露了容器的80端口,但没有将该端口映射到主机上
-docker run --expose 80 ubuntu bash
+➜ docker run --expose 80 ubuntu bash
 ```
 
 ### 交互式容器
@@ -121,14 +120,14 @@ docker run --expose 80 ubuntu bash
 
 ```shell
 # 通过 debian 进行运行创建一个交互式容器,且容器的名称为 test
-docker run --name test -i -t debian
+➜ docker run --name test -i -t debian
 
 # 容器创建启动完成后,会进入交互式界面
 root@3a933c21af5a:/# exit
 exit
 
 # 查看运行着的容器,由于 test 容器退出后,容器中没有其他进程,容器就退出了
-docker ps
+➜ docker ps
 CONTAINER ID   IMAGE     COMMAND             CREATED          STATUS          PORTS                                       NAMES
 0f20b6c89770   tomcat    "catalina.sh run"   27 minutes ago   Up 27 minutes   0.0.0.0:8888->8080/tcp, :::8888->8080/tcp   tomcat1
 ```
@@ -139,10 +138,10 @@ CONTAINER ID   IMAGE     COMMAND             CREATED          STATUS          PO
 
 ```shell
 # 这为一个名为docker的 host 添加了一个静态地址
-docker run --add-host=docker:93.184.216.34 --rm -it debian
+➜ docker run --add-host=docker:93.184.216.34 --rm -it debian
 
 # 指定ping 命令
-ping docker
+➜ ping docker
 PING docker (93.184.216.34): 56 data bytes
 64 bytes from 93.184.216.34: seq=0 ttl=37 time=93.052 ms
 64 bytes from 93.184.216.34: seq=1 ttl=37 time=92.467 ms
@@ -190,7 +189,7 @@ round-trip min/avg/max = 92.209/92.495/93.052 ms
 
 ```shell
 # 列出所有的容器,包括停止的容器
-docker ps -a
+➜ docker ps -a
 
 CONTAINER ID   IMAGE         COMMAND             CREATED             STATUS                         PORTS                                       NAMES
 1527f9349c90   tomcat        "catalina.sh run"   55 minutes ago      Exited (130) 54 minutes ago                                                testTomcat
@@ -242,7 +241,7 @@ CONTAINER ID   IMAGE         COMMAND             CREATED             STATUS     
 
 ```shell
 # 查看本地的所有 exited 的容器
-docker ps --filter "status=exited"
+➜ docker ps --filter "status=exited"
 CONTAINER ID   IMAGE         COMMAND             CREATED        STATUS                        PORTS     NAMES
 1527f9349c90   tomcat        "catalina.sh run"   24 hours ago   Exited (130) 24 hours ago               testTomcat
 3a933c21af5a   debian        "bash"              24 hours ago   Exited (0) 19 seconds ago               test
@@ -250,11 +249,11 @@ CONTAINER ID   IMAGE         COMMAND             CREATED        STATUS          
 d22630cd9754   hello-world   "/hello"            28 hours ago   Exited (0) 28 hours ago                 elastic_almeida
 
 # 启动容器名为 tomcat1 的容器
-docker start tomcat1
+➜ docker start tomcat1
 tomcat1
 
 # 查看本地的所有 running 的容器
-docker ps --filter "status=running"
+➜ docker ps --filter "status=running"
 CONTAINER ID   IMAGE     COMMAND             CREATED        STATUS         PORTS                                       NAMES
 0f20b6c89770   tomcat    "catalina.sh run"   24 hours ago   Up 6 seconds   0.0.0.0:8888->8080/tcp, :::8888->8080/tcp   tomcat1
 ```
@@ -288,7 +287,7 @@ CONTAINER ID   IMAGE     COMMAND             CREATED        STATUS         PORTS
 
 ```shell
 # 停止 tomcat 容器
-docker stop tomcat
+➜ docker stop tomcat
 ```
 
 ## 强制停止
@@ -319,13 +318,13 @@ docker stop tomcat
 
 ```shell
 # 发送 KILL 信号给容器内的主进程
-docker kill my_container
+➜ docker kill my_container
 
 # 发送自定义的信号给容器内的主进程
 
-docker kill --signal=SIGHUP my_container
-docker kill --signal=HUP my_container
-docker kill --signal=1 my_container
+➜ docker kill --signal=SIGHUP my_container
+➜ docker kill --signal=HUP my_container
+➜ docker kill --signal=1 my_container
 ```
 
 ## 重启容器
@@ -347,7 +346,7 @@ docker kill --signal=1 my_container
   | `--signal , -s`        |         | 发送给容器的系统调用信号   |
   | `--time , -t`          |         | 如果在指定时间(秒)内没有停止容器,就强制停止   |
 
-##  进入容器
+## 进入容器
 
 > 通过 `docker attach` 可以**将本地终端的标准输入、输出和错误用容器的ID或名称附加到一个正在运行的容器上**。这允许你查看其正在进行的输出，或以交互方式控制它，就像命令直接在你的终端中运行一样。(即进入容器)
 
@@ -373,22 +372,20 @@ docker kill --signal=1 my_container
 
 2. attach 直接进入容器启动命令的终端，**而不会启动新的终端进程**
 
-
-
 :::
 
 ### 基本使用
 
 ```shell
 # 查看本地运行着的容器
-docker ps -a --filter="status=running"
+➜ docker ps -a --filter="status=running"
 CONTAINER ID   IMAGE     COMMAND   CREATED      STATUS         PORTS     NAMES
 3a933c21af5a   debian    "bash"    3 days ago   Up 2 minutes             test
 
 # 通过 docker attach 将本地终端附加到容器中
-docker attach test
+➜ docker attach test
 # 这里进入了容器内部
-root@3a933c21af5a:/#
+➜ root@3a933c21af5a:/#
 ```
 
 ### 自定义脱离容器
@@ -403,16 +400,16 @@ root@3a933c21af5a:/#
 
 ```shell
 # 设置 detach-keys 为 组合键 => ctrl-c
-docker attach --detach-keys="ctrl-c"  test
+➜ docker attach --detach-keys="ctrl-c"  test
 
 # 这里按下 ctrl-c 后脱离了容器
-root@3a933c21af5a:/# read escape sequence
+➜ root@3a933c21af5a:/# read escape sequence
 
 # 设置 detach-keys 为 单独的一个键 => s
-docker attach --detach-keys="s" test
+➜ docker attach --detach-keys="s" test
 
 # 这里按下 s 后脱离了容器
-root@3a933c21af5a:/# read escape sequence
+➜ root@3a933c21af5a:/# read escape sequence
 ```
 
 ## 删除容器
@@ -447,17 +444,17 @@ root@3a933c21af5a:/# read escape sequence
 
 ```shell
 # 查看本地的所有容器
-docker ps -a
+➜ docker ps -a
 CONTAINER ID   IMAGE         COMMAND             CREATED      STATUS                    PORTS     NAMES
 1527f9349c90   tomcat        "catalina.sh run"   3 days ago   Exited (130) 3 days ago             testTomcat
 3a933c21af5a   debian        "bash"              3 days ago   Up 15 minutes                       test
 0f20b6c89770   tomcat        "catalina.sh run"   3 days ago   Exited (143) 2 days ago             tomcat1
 d22630cd9754   hello-world   "/hello"            3 days ago   Exited (0) 3 days ago               elastic_almeida
 # 删除 容器ID=d22630cd9754 的容器
-docker rm d22630cd9754
+➜ docker rm d22630cd9754
 d22630cd9754
 # 查看本地的所有容器,容器ID=d22630cd9754 的容器被删除了
-docker ps -a
+➜ docker ps -a
 CONTAINER ID   IMAGE     COMMAND             CREATED      STATUS                    PORTS     NAMES
 1527f9349c90   tomcat    "catalina.sh run"   3 days ago   Exited (130) 3 days ago             testTomcat
 3a933c21af5a   debian    "bash"              3 days ago   Up 15 minutes                       test
@@ -470,18 +467,18 @@ CONTAINER ID   IMAGE     COMMAND             CREATED      STATUS                
 
 ```shell
 # 查看本地所有的容器
-docker ps -a
+➜ docker ps -a
 CONTAINER ID   IMAGE     COMMAND             CREATED      STATUS                    PORTS     NAMES
 1527f9349c90   tomcat    "catalina.sh run"   3 days ago   Exited (130) 3 days ago             testTomcat
 3a933c21af5a   debian    "bash"              3 days ago   Up 20 minutes                       test
 0f20b6c89770   tomcat    "catalina.sh run"   3 days ago   Exited (143) 2 days ago             tomcat1
 
 # 删除本地所有停止的容器
-docker rm $(docker ps -a -f="status=exited" -q)
+➜ docker rm $(docker ps -a -f="status=exited" -q)
 1527f9349c90
 0f20b6c89770
 # 查看本地所有的容器,只剩下一个运行中的容器
-docker ps -a
+➜ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED      STATUS          PORTS     NAMES
 3a933c21af5a   debian    "bash"    3 days ago   Up 21 minutes             test
 ```
@@ -516,7 +513,77 @@ CONTAINER ID   IMAGE     COMMAND   CREATED      STATUS          PORTS     NAMES
   | `--env , -e`           |         | 设置环境变量     |
   | `--env-file`           |         | 从文件中读取环境变量     |
   | `--privileged`         |         | 给予命令赋予权限     |
-  | `--tty , -t`           |         | 分配一个伪终端     |
+  | `--interactive, -i`    |         | 以交互模式运行容器,通常与 -t 一起使用      |
+  | `--tty, -t`            |         | 为容器重新分配一个伪输入终端,通常与 -i 一起使用   |
   | `--user , -u`          |         | 用户名或UID     |
   | `--workdir , -w`       |         | 容器内的工作目录     |
+  
+## 提交镜像
 
+> 通过 `docker commit`命令 可以**根据已有的容器的变化来创建一个新的镜像**
+
+### 命令
+
+- 基本命令
+  
+  ```shell
+  docker commit [OPTIONS] CONTAINER容器 [REPOSITORY_NAME[:标签TAG]]
+  ```
+
+- 常见的可选项[OPTIONS]
+
+  | Name(shorthand)        | Default | Description      |
+  | ---------------------- | ------- | ---------------- |
+  | `--author , -a`        |         | 提交的作者   |
+  | `--change , -c`        |         | 将Dockerfile指令应用到创建的镜像上   |
+  | `--message , -m`       |         | 提交的信息   |
+  | `--pause , -p`         |  true   | 提交镜像的时候,被提交的容器及其进程是否被暂停   |
+
+### 基本使用
+
+```shell
+# 查看本地所有的镜像
+➜ docker images 
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+debian       latest    54e726b437fb   2 weeks ago   124MB
+tomcat       latest    2362f0cdbf14   3 weeks ago   474MB
+busybox      latest    66ba00ad3de8   7 weeks ago   4.87MB
+
+# 运行一个tomcat容器
+➜ docker run --name tomcat1 -p 8080:8080 -d 2362f0cdbf14
+43349a99ffc36fdd609f176f3da1e6d52cb32f80863a83be5019bdb651179d5d
+
+# 查看本地启动着的容器
+➜ docker ps
+CONTAINER ID   IMAGE          COMMAND             CREATED         STATUS         PORTS                                       NAMES
+43349a99ffc3   2362f0cdbf14   "catalina.sh run"   6 seconds ago   Up 5 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   tomcat1
+
+# 进入容器内部
+➜ docker exec -it tomcat1 /bin/bash
+
+# 创建文件 1.txt,并且写入数据
+root@43349a99ffc3:~# touch 1.txt
+root@43349a99ffc3:~# touch 2.txt
+root@43349a99ffc3:~# touch 3.txt
+root@43349a99ffc3:~# echo  1231233333333333333 > 1.txt 
+
+
+# 进入 jdk 目录
+root@43349a99ffc3:/usr/local# cd /opt/java/openjdk
+# 创建新的目录将jdk移动到新的目录
+root@43349a99ffc3:/opt/java# mkdir java2
+root@43349a99ffc3:/opt/java# cp -r openjdk/ java2/
+
+# 提交容器,生成一个新的镜像
+➜ docker commit -a "athu@gmail.com" -m "add 1.txt" tomcat1 athu-tomcat:V1.0
+sha256:71562e6d171859a9d907a6504114cb067d278b569f59983d8834a4f0f2adb27c
+
+# 查看本地所有的镜像
+# 可以看到新提交的镜像(athu-tomcat:V1.0)的大小比原本的tomcat镜像大了将近400MB的(JDK的大小)
+➜ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+athu-tomcat   V1.0      71562e6d1718   3 seconds ago   803MB
+debian        latest    54e726b437fb   2 weeks ago     124MB
+tomcat        latest    2362f0cdbf14   3 weeks ago     474MB
+busybox       latest    66ba00ad3de8   7 weeks ago     4.87MB
+```

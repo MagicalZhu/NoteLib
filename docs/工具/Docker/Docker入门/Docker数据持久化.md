@@ -3,7 +3,7 @@ id: Docker数据持久化
 title: Docker数据持久化
 ---
 
-> 通过 Docker 可以将运行的运行的环境打包成镜像,并且通过容器的方式运行。但是如果不通过commit的方式生成新的镜像,那么当容器删除后数据就没有了。
+> 通过 Docker 可以将运行的运行的环境打包成镜像,并且通过容器的方式运行。但是如果不通过[commit](Docker容器命令#提交镜像)的方式生成新的镜像,那么当容器删除后数据就没有了。
 
 我们希望 docker 容器中产生的数据可以持久化,并且容器之间可以共享数据。docker 支持下面下种方式实现数据的持久化
 
@@ -18,12 +18,221 @@ title: Docker数据持久化
 - 数据卷的设计目的就是**数据的持久化**,完全独立于容器的生存周期, 因此 **docker不会在容器删除时删除其挂载的数据卷**
 
 - 数据卷有以下的特点:
-  - 数据卷可以在容器之间共享和重用
-  - 对数据卷的修改会立马生效
-  - 对数据卷的更新,不会影响镜像
-  - 数据卷默认会一直存在,即使容器被删除
-  - 一个容器可以挂载多个数据卷
+  - **数据卷可以在容器之间共享和重用**
+  - **对数据卷的修改会立马生效**
+  - **对数据卷的更新,不会影响镜像**
+  - **数据卷默认会一直存在,即使容器被删除**
+  - **一个容器可以挂载多个数据卷**
 
 - 有下面两种方式来使用数据卷
-  - `直接只用命令`
+  - `使用命令添加`
   - `DockerFile`
+
+## 命令添加
+
+Docker提供了三种不同的方式将数据从宿主机挂载到容器中:
+
+1. `volumes (卷)` : 最为常用
+
+2. `bind mounts (绑定挂载)`
+
+3. `tmpfs mounts (临时挂载)`
+
+### Bind mounts
+
+![types-of-mounts-tmpfs](./image/Docker数据持久化/types-of-mounts-bind.png)
+
+:::caution 注意
+
+Bind mounts 在不同的主机OS 是不可移植的,比如Windows和Linux的目录结构是不一样的, bind mount所指向的host目录也不能一样。这也是为什么 Bind mounts 不能出现在 Dockerfile 中的原因, 因为这样 Dockerfile 就不可移植了
+
+:::
+
+### Volumes
+
+#### 概述
+
+> 这是保存由Docker容器产生和使用的数据的首选机制, [Bind mounts](Docker数据持久化#bind-mounts) 依赖于主机的目录结构和操作系统, 而卷则完全由Docker管理
+
+![types-of-mounts-tmpfs](./image/Docker数据持久化/types-of-mounts-volume.png)
+
+**卷 vs 绑定挂载**
+
+1. 卷比绑定挂载更容易备份或迁移
+2. 可以使用 Docker CLI 命令 或Docker API 来管理卷
+3. 卷在Linux和Windows容器上都可以使用, 而 绑定挂载依赖于OS
+4. 卷可以更安全地在多个容器之间共享
+5. 卷的驱动可以让你在远程主机或云供应商上存储卷, 对卷的内容进行加密, 或添加其他功能
+6. 新的卷可以由容器预先填充其内容
+7. Docker桌面上的卷比来自Mac和Windows主机的绑定挂载的性能高得多
+
+**Volume CLI 命令**
+
+> 命令的可选参数可以参见[这里](https://docs.docker.com/engine/reference/commandline/volume_ls/)
+
+- `docker volume create [OPTIONS] VOLUME1 VOLUME2 ...`
+  - 创建一个或者多个自定义的 Volume 卷, 数据位置在 **/var/lib/docker/volumes**
+
+- `docker volume ls [OPTIONS]`
+  - 查看所有的 Volume 卷
+
+- `docker volume rm [OPTIONS] VOLUME1 VOLUME2 ...`
+  - 删除一个或者多个 Volume 卷
+
+:::tip 绑定方式
+
+docker 支持通过 `--volume` 、 `--mount` 两种命令将 volume卷 与容器绑定
+
+:::
+
+#### --volume
+
+> 参见[创建并启动容器](Docker容器命令#创建并启动容器)
+
+`--volume` 后面**由三个字段组成, 用冒号字符（:）隔开**。这些字段必须有正确的顺序, 而且每个字段的含义并不明显。
+
+1. 在命名卷的情况下, 第一个字段是卷的名称, 在一个特定的主机上是唯一的(对于匿名卷, 第一个字段被省略了)
+2. 第二个字段是文件或目录在容器中被挂载的路径
+3. 第三个字段是可选的, 是一个用逗号隔开的选项列表, 比如**ro**。
+
+- 基本的命令
+  - `docker run --volume Volume卷:/容器内目录[:ro] IMAGE镜像[:TAG标签]`
+    - **:ro**: read-only,数据卷对容器来说是只读的
+
+```shell
+# 创建一个volume卷
+➜ docker volume create tomcat-volume
+tomcat-volume
+
+# 查看所有的卷
+➜ docker volume ls
+DRIVER    VOLUME NAME
+local     tomcat-volume
+
+# 查看卷本地的目录
+➜ ls -la /var/lib/docker/volumes/
+total 36
+drwx-----x  3 root root   4096 Feb 24 15:41 .
+drwx--x--- 12 root root   4096 Feb 17 10:23 ..
+brw-------  1 root root 253, 1 Feb 17 10:23 backingFsBlockDev
+-rw-------  1 root root  32768 Feb 24 15:41 metadata.db
+drwx-----x  3 root root   4096 Feb 24 15:41 tomcat-volume
+
+# 查看卷本地目录的数据
+➜ tree
+.
+└── _data
+
+# 创建并启动一个容器,并且容器与卷 tomcat-volume绑定
+➜ docker run --name volumeDemo --volume tomcat-volume:/usr/local/tomcat/logs -d -p 8080:8080 tomcat
+35f37e14f78aa33cdb6cd14f5e2ebe1a207e8872a2584f10bf3fb59fd5e3b347
+
+# 查看卷本地目录的数据
+➜ tree
+.
+└── _data
+    ├── catalina.2023-02-24.log
+    └── localhost_access_log.2023-02-24.txt
+
+1 directory, 2 files
+
+# 我们再对卷 tomcat-volume 进行检查
+➜ docker inspect --type volume tomcat-volume
+[
+    {
+        "CreatedAt": "2023-02-24T15:41:04+08:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/tomcat-volume/_data",
+        "Name": "tomcat-volume",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+```
+
+#### --mount
+
+> 参见[创建并启动容器](Docker容器命令#创建并启动容器)
+
+`--mount` 后面 **由多个键值对组成，用逗号隔开，每个键值对由一个 `key=value`键值对组成**, --mount 语法比 --volume(-v) 更为冗长，但键的顺序并不重要，而且标志的值更容易理解。
+
+主要有下面几个的参数:
+
+1. `type`
+   - **挂载的类型**
+   - 有下面的可选值: `bind、volume、tmpfs`
+
+2. `source | src`
+    - **挂载的来源**
+    - 对于命名的卷，这是卷的名称。对于匿名卷，这个字段被省略了
+
+3. `target | destination | dst`
+    - **绑定到容器中文件或目录的路径**
+
+4. `readonly | ro`
+    - 可选参数
+    - 如果存在的话，会**导致绑定的挂载以只读的方式挂载到容器中**
+
+5. `volume-opt`
+    - 可选参数
+    - 可以指定多次，需要一个**由选项名称和其值组成的键值对**
+
+```shell
+# 创建一个volume卷
+➜ docker volume create tomcat-mount
+tomcat-mount
+
+# 查看所有的卷
+➜ docker volume ls
+DRIVER    VOLUME NAME
+local     tomcat-mount
+local     tomcat-volume
+
+# 查看本地的卷 tomcat-mount 的目录结构
+➜ tree /var/lib/docker/volumes/tomcat-mount/
+/var/lib/docker/volumes/tomcat-mount/
+└── _data
+
+1 directory, 0 files
+
+# 创建启动一个容器, 并且通过 --mount 的方式挂载一个卷
+➜ docker run --name mountDemo -d -p 8081:8080 --mount type=volume,src=tomcat-mount,dst=/usr/local/tomcat/logs tomcat
+dc30d6db8b86cde413667c0328f58f55675cbcfcdb8aa118b94ffa85d66d3b4f
+
+# 查看本地的卷 tomcat-mount 的目录结构
+# 可以看到tomcat 的log同步到了这个 tomcat-mount 卷目录中了
+➜ tree /var/lib/docker/volumes/tomcat-mount
+/var/lib/docker/volumes/tomcat-mount
+└── _data
+    ├── catalina.2023-02-24.log
+    └── localhost_access_log.2023-02-24.txt
+
+1 directory, 2 files
+
+# 通过inspect 查看卷 tomcat-mount 信息
+➜ docker inspect --type volume tomcat-mount
+[
+    {
+        "CreatedAt": "2023-02-24T16:15:30+08:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/tomcat-mount/_data",
+        "Name": "tomcat-mount",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+```
+
+### tmpfs mounts
+
+![types-of-mounts-tmpfs](./image/Docker数据持久化/types-of-mounts-tmpfs.png)
+
+- [Volumes](Docker数据持久化#volumes) 和 [Bind mounts](Docker数据持久化#bind-mounts) 可以实现**Docker容器和主机之间共享文件**,这样就可以保证容器在停止的时候,数据也不会丢失
+
+- 如果在 **Linux** 上运行docker 的话,还有另外的一个选择: `tmpfs mounts`。和 volumes 与 bind mounts 不同的是, tmpfs mounts 是临时的, 只在主机内存中持续存在。当容器停止时, tmpfs挂载会被删除, 写在那里的文件也不会被持久化。
+
+- tmpfs mounts 的限制
+  - 和 volumes 与 bind mounts 不同的是, tmpfs mounts 无法在多个容器之间共享
+  - 只有在Linux上运行Docker时才可用
