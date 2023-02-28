@@ -5,10 +5,10 @@ title: Docker数据持久化
 
 > 通过 Docker 可以将运行的运行的环境打包成镜像,并且通过容器的方式运行。但是如果不通过[commit](Docker容器命令#提交镜像)的方式生成新的镜像,那么当容器删除后数据就没有了。
 
-我们希望 docker 容器中产生的数据可以持久化,并且容器之间可以共享数据。docker 支持下面下种方式实现数据的持久化
+我们希望 docker 容器中产生的数据可以持久化,甚至实现容器之间可以共享数据。docker 支持下面下种方式实现数据的持久化
 
-1. 数据卷(volume)
-2. 数据卷容器(volumes-from)
+1. [数据卷(volume)](Docker数据持久化#数据卷)
+2. [数据卷容器(volumes-from)](Docker数据持久化#数据卷容器)
 
 ## 数据卷
 
@@ -40,6 +40,14 @@ Docker提供了三种不同的方式将数据从宿主机挂载到容器中:
 
 ### Bind mounts
 
+> 事实上, Bind mounts(挂载绑定) 在 docker的早期就已经存在了,但是和 volumes 相比,bind mounts 的功能有限。
+
+- 在使用 bind mounts 的时候,主机 host 上的文件或者目录被挂载到容器中,这个文件或者目录是主机 host 上的绝对路径,并且**该文件或目录是通过它在主机上的绝对路径来引用的**。相比之下, [Volumes 的挂载方式](Docker数据持久化#volumes) 则是在主机上的 docker 存储目录中会创建一个新的目录,docker 会管理该目录的内容
+
+  - 当然,**该文件或目录不需要在Docker主机上已经存在。如果它还不存在,就按需创建**
+
+- **bind mounts 的性能非常好,但它们依赖于主机的文件系统有一个特定的目录结构**
+
 ![types-of-mounts-tmpfs](./image/Docker数据持久化/types-of-mounts-bind.png)
 
 :::caution 注意
@@ -47,6 +55,139 @@ Docker提供了三种不同的方式将数据从宿主机挂载到容器中:
 Bind mounts 在不同的主机OS 是不可移植的,比如Windows和Linux的目录结构是不一样的, bind mount所指向的host目录也不能一样。这也是为什么 Bind mounts 不能出现在 Dockerfile 中的原因, 因为这样 Dockerfile 就不可移植了
 
 :::
+
+docker 支持通过 `--volume` 、 `--mount` 两种命令将实现 bind mounts
+
+#### --volume
+
+> 参见[创建并启动容器](Docker容器命令#创建并启动容器)
+
+`--volume` 后面**由三个字段组成, 用冒号字符（:）隔开**。这些字段必须有正确的顺序, 而且每个字段的含义并不明显。
+
+1. 第一个字段是主机上的文件或目录的路径(不存在的话会创建)
+
+2. 第二个字段是该文件或目录在容器中被挂载的路径。
+
+3. 第三个字段是**可选的**,是一个以逗号分隔的选项列表,如**ro、z和Z**。
+
+- 基本的命令
+  - `docker run --volume /宿主机绝对路径目录:/容器内目录[:ro] IMAGE镜像[:TAG标签]`
+    - **:ro**: read-only,数据卷对容器来说是只读的
+
+```shell
+# 查看本地的目录结构
+➜ tree
+.
+└── get-docker.sh
+
+# 通过 --volume 的方式进行 bind mounts
+➜ docker run --name tomcat-volume -d -p 8080:8080 --volume /root/tomcat-volume-data:/usr/local/tomcat/logs  tomcat
+7bf86cc58cd39225868006eab07486d6d2391742f7f1e8dbef6bd03561708733 
+
+# 查看本地的目录结构
+➜  tree
+.
+├── get-docker.sh
+└── tomcat-volume-data
+    ├── catalina.2023-02-28.log
+    └── localhost_access_log.2023-02-28.txt
+
+# 查看容器对象的信息,
+➜ docker inspect tomcat-volume --format "{{.Mounts}}"
+[{
+  "Type": "bind",
+  "Source": "/root/tomcat-volume-data",
+  "Destination": "/usr/local/tomcat/logs",
+  "Mode": "",
+  "RW": true,
+  "Propagation": "rprivate"
+}]
+```
+
+#### --mounts
+
+> 参见[创建并启动容器](Docker容器命令#创建并启动容器)
+
+`--mount` 后面 **由多个键值对组成,用逗号隔开,每个键值对由一个 `key=value`键值对组成**, --mount 语法比 --volume(-v) 更为冗长,但键的顺序并不重要,而且标志的值更容易理解。
+
+1. `type`
+   - **挂载的类型**
+   - 有下面的可选值: `bind、volume、tmpfs`
+
+2. `source | src`
+    - **挂载的来源**
+    - 对于 bind mounts 来说,这个是宿主机上的文件或者目录的路径
+
+3. `target | destination | dst`
+    - **绑定到容器中文件或目录的路径**
+
+4. `readonly | ro`
+    - 可选参数
+    - 如果存在的话,会**导致绑定的挂载以只读的方式挂载到容器中**
+
+5. `bind-propagation`
+    - 可选参数,有下面的可选值: `rprivate、private、rshared、shared、rslave、slave`
+    - 如果存在的话,会改变 bind 的传播方式
+
+:::caution 使用 --mount 进行挂载绑定的注意点
+
+1. **--mount 不支持 z 或 Z 选项!**
+2. 如果宿主机上的指定目录不存在, docker 不会自动创建,而是抛出一个错误
+
+如果你使用--mount来绑定--mount一个在Docker主机上尚不存在的文件或目录，Docker不会自动为你创建它，而是会产生一个错误
+
+:::
+
+```shell
+# 查看本地的目录结构
+➜ tree
+.
+└── get-docker.sh
+
+# 启动一个容器,并且通过 --mount 参数进行 bind mounts,其中src 的路径在本地不存在
+➜ docker run \
+  --name tomcat-volume \
+  -d -p 8080:8080 \
+  --mount type=bind,src=/root/tomcat-mount,dst=/usr/local/tomcat/logs \
+  tomcat
+docker: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /root/tomcat-mount.
+See 'docker run --help'.
+
+# 创建目录
+➜ mkdir tomcat-mount
+➜ tree
+.
+├── get-docker.sh
+└── tomcat-mount
+
+# 启动一个容器,并且通过 --mount 参数进行 bind mounts, 但是 src 的路径在本地存在
+➜ docker run \
+  --name tomcat-volume \
+  -d -p 8080:8080 \
+  --mount type=bind,src=/root/tomcat-mount,dst=/usr/local/tomcat/logs \
+  tomcat
+38e91e80af64e313175a088f77d313e9628382da39acfedb650c12917c0b53fe
+➜ tree
+.
+├── get-docker.sh
+└── tomcat-mount
+    ├── catalina.2023-02-28.log
+    └── localhost_access_log.2023-02-28.txt
+
+1 directory, 3 files
+
+# 查看容器对象的信息
+➜ docker inspect tomcat-volume --format "{{.Mounts}}"
+[{
+  "Type": "bind",
+  "Source": "/root/tomcat-mount",
+  "Destination": "/usr/local/tomcat/logs",
+  "Mode": "",
+  "RW": true,
+  "Propagation": "rprivate"
+}]
+
+```
 
 ### Volumes
 
@@ -81,7 +222,7 @@ Bind mounts 在不同的主机OS 是不可移植的,比如Windows和Linux的目�
 
 :::tip 绑定方式
 
-docker 支持通过 `--volume` 、 `--mount` 两种命令将 volume卷 与容器绑定
+和bind mounts一样的, docker 支持通过 `--volume` 、 `--mount` 两种命令将 volume卷 与容器绑定
 
 :::
 
@@ -155,7 +296,7 @@ drwx-----x  3 root root   4096 Feb 24 15:41 tomcat-volume
 
 > 参见[创建并启动容器](Docker容器命令#创建并启动容器)
 
-`--mount` 后面 **由多个键值对组成，用逗号隔开，每个键值对由一个 `key=value`键值对组成**, --mount 语法比 --volume(-v) 更为冗长，但键的顺序并不重要，而且标志的值更容易理解。
+`--mount` 后面 **由多个键值对组成,用逗号隔开,每个键值对由一个 `key=value`键值对组成**, --mount 语法比 --volume(-v) 更为冗长,但键的顺序并不重要,而且标志的值更容易理解。
 
 主要有下面几个的参数:
 
@@ -165,18 +306,18 @@ drwx-----x  3 root root   4096 Feb 24 15:41 tomcat-volume
 
 2. `source | src`
     - **挂载的来源**
-    - 对于命名的卷，这是卷的名称。对于匿名卷，这个字段被省略了
+    - 对于命名的卷,这是卷的名称。对于匿名卷,这个字段被省略了
 
 3. `target | destination | dst`
     - **绑定到容器中文件或目录的路径**
 
 4. `readonly | ro`
     - 可选参数
-    - 如果存在的话，会**导致绑定的挂载以只读的方式挂载到容器中**
+    - 如果存在的话,会**导致绑定的挂载以只读的方式挂载到容器中**
 
 5. `volume-opt`
     - 可选参数
-    - 可以指定多次，需要一个**由选项名称和其值组成的键值对**
+    - 可以指定多次,需要一个**由选项名称和其值组成的键值对**
 
 ```shell
 # 创建一个volume卷
@@ -236,3 +377,74 @@ dc30d6db8b86cde413667c0328f58f55675cbcfcdb8aa118b94ffa85d66d3b4f
 - tmpfs mounts 的限制
   - 和 volumes 与 bind mounts 不同的是, tmpfs mounts 无法在多个容器之间共享
   - 只有在Linux上运行Docker时才可用
+
+## DockerFile 添加
+
+基本步骤:
+
+1. 创建一个文件夹,并在文件夹内部创建一个`DockerFile`的文件
+2. 通过 `Volume` 指令来**指定绑定到容器中文件或目录的路径(不存在的话会自动创建)**.类似于 --mount 的dst参数,有下面几种方式:
+    - VOLUME ["Volume1","Volume2"...]
+    - VOLUME Volume1  Volume2  ...
+3. 通过 `build` 命令构建 docker 镜像
+4. 启动容器
+
+```shell
+# 创建目录,并且目录中添加 dockerfile 文件
+➜ mkdir dockerfile-volume
+➜ cd dockerfile-volume/
+➜ vim Dockerfile
+
+# 查看 dockerfile 内容
+➜ cat Dockerfile 
+  # 指定基础镜像
+  FROM tomcat
+
+  # 指定容器中的一个目录具有存储数据的功能
+  VOLUME /root/test
+
+# 通过 docker build 打包镜像
+➜  cd ..
+➜  docker build dockerfile-volume
+[+] Building 0.3s (5/5) FINISHED                                                                                                                                               
+ => [internal] load build definition from Dockerfile                                                                                                                      0.1s
+ => => transferring dockerfile: 298B                                                                                                                                      0.0s
+ => [internal] load .dockerignore                                                                                                                                         0.1s
+ => => transferring context: 2B                                                                                                                                           0.0s
+ => [internal] load metadata for docker.io/library/tomcat:latest                                                                                                          0.0s
+ => [1/1] FROM docker.io/library/tomcat                                                                                                                                   0.2s
+ => exporting to image                                                                                                                                                    0.0s
+ => => exporting layers                                                                                                                                                   0.0s
+ => => writing image sha256:112f3d2be32cfc78e8d968aa364b574e1751d6752185863d901fe3d6ddaed091
+
+# 启动容器
+➜ docker run --name dockerfileVolume -it -p 8080:8080 112f3d2be32c
+➜ cd /root
+➜ ls
+test
+
+# 使用 inspect 查看启动的容器的信息
+➜ docker inspect dockerfileVolume --format "{{.Mounts}}"
+[{
+"Type": "volume",
+"Name": "588c5c475dd8bb0de283d2d237cf8f0849d6100fd93e59a75b8b6d1f6b98869c",
+"Source": "/var/lib/docker/volumes/588c5c475dd8bb0de283d2d237cf8f0849d6100fd93e59a75b8b6d1f6b98869c/_data",
+"Destination": "/root/test",
+"Driver": "local",
+"Mode": "",
+"RW": true,
+"Propagation": ""
+}]
+```
+
+:::tip 提示
+
+通过 VOLUME 指令创建的挂载点，无法指定宿主主机上对应的目录，而是自动生成的
+
+:::
+
+---
+
+## 数据卷容器
+
+> 虽然可以

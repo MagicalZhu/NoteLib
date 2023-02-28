@@ -24,6 +24,7 @@ title: Docker学习
 4. [Docker Engine API (v1.41)](https://docs.docker.com/engine/api/v1.41/)
 5. [红帽 topic](https://www.redhat.com/zh/topics/)
 6. [大目老师的Docker开源书](http://www.itmuch.com/categories/Docker/)
+7. [Docker — 从入门到实践](https://docker-practice.github.io/zh-cn/)
 
 ## Kubernetes
 
