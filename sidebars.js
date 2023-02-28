@@ -266,12 +266,13 @@ const gradleSideBar = [
 
 
 // Docker
-const dockerPart = new Category('Docker入门(大目)')
+const dockerPart = new Category('Docker入门')
 .setNoLabelItem('工具/Docker/Docker入门', [
   'Docker基础',
   'Docker镜像命令',
   'Docker容器命令',
   'Docker数据持久化',
+  'DockerFile',
   'Docker通用命令'
 ])
 
@@ -287,10 +288,6 @@ const dockerSideBar = [
   dockerCliPart,
   dockerPart
 ]
-
-
-
-
 
 const sidebars = {
   basicSideBar,

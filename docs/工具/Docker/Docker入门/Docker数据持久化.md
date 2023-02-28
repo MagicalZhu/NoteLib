@@ -12,8 +12,8 @@ title: Docker数据持久化
 
 ## 数据卷
 
-- 数据卷就是目录或文件,数据卷是一个可供一个或多个容器使用。它由 docker 挂载(mount)到容器,但不属于 UnionFs(联合文件系统),因此能够绕过 UnionFS 提供一些用于持续存储或共享数据的特性
-  - **类似于 Linux 下对目录或文件进行 mount**  
+- **数据卷就是目录或文件,数据卷是一个可供一个或多个容器使用**。它**从宿主机挂载到容器**,但不属于 UnionFs(联合文件系统),因此能够绕过 UnionFS 提供一些用于持续存储或共享数据的特性
+  - 类似于 Linux 下对目录或文件进行 mount,把容器内部对应的目录称之为**挂载点**
 
 - 数据卷的设计目的就是**数据的持久化**,完全独立于容器的生存周期, 因此 **docker不会在容器删除时删除其挂载的数据卷**
 
@@ -30,13 +30,21 @@ title: Docker数据持久化
 
 ## 命令添加
 
-Docker提供了三种不同的方式将数据从宿主机挂载到容器中:
+Docker提供了三种不同的方式将数据从宿主机目录挂载到容器中:
 
 1. `volumes (卷)` : 最为常用
 
 2. `bind mounts (绑定挂载)`
 
 3. `tmpfs mounts (临时挂载)`
+
+:::tip 关于具名挂载、匿名挂载、指定路径挂载?
+
+- 匿名挂载: `-v 容器内路径`
+- 具名挂载: `-v 卷名:容器内路径`
+- 指定路径挂载: `-v /宿主机路径:容器内路径`
+
+:::
 
 ### Bind mounts
 
@@ -133,8 +141,6 @@ docker 支持通过 `--volume` 、 `--mount` 两种命令将实现 bind mounts
 
 1. **--mount 不支持 z 或 Z 选项!**
 2. 如果宿主机上的指定目录不存在, docker 不会自动创建,而是抛出一个错误
-
-如果你使用--mount来绑定--mount一个在Docker主机上尚不存在的文件或目录，Docker不会自动为你创建它，而是会产生一个错误
 
 :::
 
@@ -383,7 +389,7 @@ dc30d6db8b86cde413667c0328f58f55675cbcfcdb8aa118b94ffa85d66d3b4f
 基本步骤:
 
 1. 创建一个文件夹,并在文件夹内部创建一个`DockerFile`的文件
-2. 通过 `Volume` 指令来**指定绑定到容器中文件或目录的路径(不存在的话会自动创建)**.类似于 --mount 的dst参数,有下面几种方式:
+2. 通过 `Volume` 指令来**指定与容器中文件或目录的路径进行绑定(不存在的话会自动创建)**.类似于 --mount 的dst参数,有下面几种方式:
     - VOLUME ["Volume1","Volume2"...]
     - VOLUME Volume1  Volume2  ...
 3. 通过 `build` 命令构建 docker 镜像
@@ -399,22 +405,25 @@ dc30d6db8b86cde413667c0328f58f55675cbcfcdb8aa118b94ffa85d66d3b4f
 ➜ cat Dockerfile 
   # 指定基础镜像
   FROM tomcat
-
   # 指定容器中的一个目录具有存储数据的功能
   VOLUME /root/test
+  RUN echo "finish"
+  RUN /bin/bash
 
 # 通过 docker build 打包镜像
 ➜  cd ..
 ➜  docker build dockerfile-volume
 [+] Building 0.3s (5/5) FINISHED                                                                                                                                               
- => [internal] load build definition from Dockerfile                                                                                                                      0.1s
- => => transferring dockerfile: 298B                                                                                                                                      0.0s
- => [internal] load .dockerignore                                                                                                                                         0.1s
+ => [internal] load build definition from Dockerfile                                                                                                                      0.0s
+ => => transferring dockerfile: 100B                                                                                                                                      0.0s
+ => [internal] load .dockerignore                                                                                                                                         0.0s
  => => transferring context: 2B                                                                                                                                           0.0s
  => [internal] load metadata for docker.io/library/tomcat:latest                                                                                                          0.0s
- => [1/1] FROM docker.io/library/tomcat                                                                                                                                   0.2s
+ => [1/3] FROM docker.io/library/tomcat                                                                                                                                   0.0s
+ => CACHED [2/3] RUN echo "finish"                                                                                                                                        0.0s
+ => CACHED [3/3] RUN /bin/bash                                                                                                                                            0.0s
  => exporting to image                                                                                                                                                    0.0s
- => => exporting layers                                                                                                                                                   0.0s
+ => => exporting layers                                                                                                                                                      0.0s
  => => writing image sha256:112f3d2be32cfc78e8d968aa364b574e1751d6752185863d901fe3d6ddaed091
 
 # 启动容器
@@ -439,7 +448,9 @@ test
 
 :::tip 提示
 
-通过 VOLUME 指令创建的挂载点，无法指定宿主主机上对应的目录，而是自动生成的
+- 通过 VOLUME 指令创建的挂载点，无法指定挂载到宿主主机上对应的目录,当然在创建容器的时候可以通过`--mount、--volume`参数进行修改
+
+- 创建容器没有指定 -v、--mount 参数的话,会默认在宿主机的 `$DOCKER_PATH/volumes/` 下创建一个数字字符的文件夹
 
 :::
 
@@ -447,4 +458,12 @@ test
 
 ## 数据卷容器
 
-> 虽然可以
+> 虽然多个容器可以使用同一个主机上的同一个数据卷作为数据存储的位置,但是还是推荐通过**数据卷容器**让数据在多个容器之间共享
+
+- 数据卷容器就是: **将一个运行的容器作为数据卷，其他容器可以通过挂载这个容器实现数据共享**
+- 数据卷容器的优势
+  1. 轻松的将数据卷进行归类和汇总
+  2. 能够更好的管理容器与数据卷之间的关系
+  3. 更加合理的控制数据卷的生命周期
+- 基本的命令
+  - `docker run --volume-from 数据卷容器ID/数据卷容器NAME IMAGE镜像[:TAG标签]`
