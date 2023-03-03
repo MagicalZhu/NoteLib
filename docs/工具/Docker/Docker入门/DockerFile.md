@@ -25,9 +25,8 @@ Dockerfile定义了进程需要的一切东西,包括:
 
 - 基础概念
   1. **指令按照从上到下,顺序执行**
-  2. **#表示注释**
+  2. **# 表示注释**
   3. **每条指令都会创建一个新的镜像层,并对镜像进行提交**
-  4. 
 
 - **构建缓存**
   - 在镜像的构建过程中,Docker 会遍历 Dockerfile 文件中的指令，然后按顺序执行
@@ -69,16 +68,121 @@ world
 
 ## 解析器指令
 
+目前支持两种解析器指令:
+
+1. `syntax`
+2. `escape`
+
 解析器指令有下面的特性:
 
 1. 解析器指令是以`# directive=value`的形式写成一种特殊的注释
 2. 它是可选的，并且会影响 Dockerfile 中后续行的处理方式
 3. **解析器指令不会在构建过程中增加层数，也不会被显示为构建步骤**
-4. 一个指令只能使用一次。
+4. 一个指令只能使用一次
+5. 解析器指令不分大小写, 但依照惯例是它们都是**小写**的
+6. 解析器指令中不支持换行符
+
+由于上述的特性，下面的例子都是无效的:
+
+- 不允许换行符
+
+  ```docker
+  # direc \
+  tive=value
+  ```
+
+- 同一个指令出现了两次
+
+  ```docker
+  # directive=value1
+  # directive=value2
+  FROM ImageName
+  ```
+
+- 出现在 构建指令 后面,被认为是注释
+
+  ```docker
+  FROM ImageName
+  # directive=value
+  ```
+
+- 出现在 注释 后面,被认为是注释
+
+  ```docker
+  # About my dockerfile
+  # directive=value
+  FROM ImageName
+  ```
+
+- 使用了未知指令由于没有被识别而被当作注释,且由于已知指令由于出现在非解析器指令的注释之后而被视为注释
+
+  ```docker
+  # unknowndirective=value
+  # knowndirective=value
+  ```
 
 :::caution 注意点
-**一旦一个注释、空行或构建器指令被处理，Docker 不再寻找解析器指令**。相反，它将任何格式化为解析器指令的东西视为注释，并且不试图验证它是否可能是解析器指令。因此，**所有的解析器指令必须在 Dockerfile 的最顶端**
+**一旦一个注释、空行或指令被处理，Docker 不再寻找解析器指令**。相反，它将任何格式化为解析器指令的东西视为注释，并且不试图验证它是否可能是解析器指令。因此，**所有的解析器指令必须在 Dockerfile 的最顶部**
 :::
 
+## 替换环境变量
+
+- 环境变量(用 `ENV` 指令声明)也可以在某些指令中作为变量使用, 一般通过`$variable_name或${variable_name}` 来使用。
+- 如果需要使用 `$` 字符,可以通过转义符 `\` 来处理。比如 \\$foo 或者 \\${foo} 会被解析为字符串: $foo 与 ${foo}
+
+下面是一个示例:
+
+```docker
+FROM busybox
+ENV FOO=/bar
+WORKDIR ${FOO}      # 等价于 WORKDIR /bar
+ADD . $FOO          # 等价于 ADD . /bar
+COPY \$FOO /quux    # 这里通过\ 进行转移了, 等价于 COPY $FOO /quux
+```
+
+环境变量支持在下面的几个指令中使用:
+
+1. `ADD`
+2. `COPY`
+3. `ENV`
+4. `EXPOSE`
+5. `FROM`
+6. `LABEL`
+7. `STOPSIGNAL`
+8. `USER`
+9. `VOLUME`
+10. `WORKDIR`
+11. `ONBUILD` (当与上述支持的指令之一一起使用时)
+
+## FROM
+
+> 使用 FROM 指令指定基础镜像
+
+FROM 支持下面 3 种格式:
+
+1. `FROM <image镜像> [AS 阶段名称]`
+2. `FROM <image镜像> [:tag标签] [AS 阶段名称]`
+3. `FROM <image镜像> [@DIGEST摘要] [AS 阶段名称]`
+
+**FROM 指令用于初始化一个新的构建阶段,并为后续指令设置基础镜像**, 所以一个有效的 Dockerfile **必须以 FROM 指令开始**
+
+1. `ARG 指令` 是 Dockerfile 中唯一可以在FROM之前的指令, 参见了解ARG和FROM的交互方式
+2. `FROM 指令` 可以在 Dockerfile 中出现多次, 以便 **创建多个镜像或将一个构建阶段作为另一个的依赖**。
+    - 在每个新的 FROM 指令之前，只需记下提交所输出的最后一个镜像ID
+    - 每条 FROM 指令都会清除之前指令所创建的任何状态
+3. 在 FROM 指令后面可以加入 `AS 阶段名称` 来给新的构建阶段一个名称,这个名称可以在随后的 `FROM` 和`COPY --from=阶段名称`指令中使用，以指代在这个阶段建立的镜像
+4. `tag 标签或 DIGEST 摘要` 是可选的。如果省略了其中任何一个，构建的时候默认会使用最新的标签。如果找不到指定的标签值，就会返回一个错误
+
+## RUN
+
+RUN有2种形式:
+
+1. `RUN COMMAND命令`
+    - shell 的形式, 在shell终端中运行。
+    - 在Linux中默认是 /bin/sh -c ，在Windows中是 cmd /s /c
+2. `RUN ["可执行语句", "param1", "param2"]`
+    - exec 的形式
+
+`RUN 指令` 将**在当前镜像之上的新层中执行任何命令并提交结果**, 提交后的镜像将被用于 Dockerfile 的下一个步骤
 
 ## ARG
