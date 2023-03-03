@@ -35,7 +35,7 @@ const themeConfig = {
     theme: lightCodeTheme,
     darkTheme: darkCodeTheme,
     defaultLanguage: 'java',
-    additionalLanguages: ['java', 'ini'],
+    additionalLanguages: ['java', 'ini', 'docker', 'dockerfile'],
     magicComments: [{
       className: 'theme-code-block-highlighted-line',
       line: 'highlight-next-line',
