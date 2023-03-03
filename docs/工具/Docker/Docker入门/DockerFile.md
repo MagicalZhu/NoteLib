@@ -175,14 +175,72 @@ FROM 支持下面 3 种格式:
 
 ## RUN
 
+> `RUN 指令` 将**在当前镜像之上的新层中执行任何命令并提交结果**, 提交后的镜像将被用于 Dockerfile 的下一个步骤。
+
 RUN有2种形式:
 
 1. `RUN COMMAND命令`
-    - shell 的形式, 在shell终端中运行。
-    - 在Linux中默认是 /bin/sh -c ，在Windows中是 cmd /s /c
+    - shell 的形式
+    - 命令是在shell中执行的, Linux中默认的shell是 **/bin/sh -c** ，Windows中默认的shell是 **cmd /s /c**
 2. `RUN ["可执行语句", "param1", "param2"]`
-    - exec 的形式
+    - exec 的形式,类似于函数调用
+    - 这种方式必须使用双引号 **"**,  而不能使用单引号 **'**，因为该方式会被转换成一个JSON 数组
 
-`RUN 指令` 将**在当前镜像之上的新层中执行任何命令并提交结果**, 提交后的镜像将被用于 Dockerfile 的下一个步骤
+<mark>shell vs exec</mark>
+
+- shell 形式
+  - **替换默认的shell : 除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](DockerFile#shell)来替换**
+  - 使用反斜杠 **\\** 可以将一条 RUN指令语句分割成多行
+
+    ```docker
+    RUN /bin/bash -c 'source $HOME/.bashrc && \
+                    echo $HOME'
+    # 上述的RUn 指令等价于下面的
+    RUN /bin/bash -c 'source $HOME/.bashrc && echo $HOME'
+    ```
+
+- exec 形式
+  - 可以避免出现 shell 字符串混杂的问题，并且可以使用 不包含指定 shell 可执行文件的基础镜像来运行命令
+  - **替换默认的shell : 可以在数组的第一位中指定使用shell**
+
+    ```docker
+    # 使用 /bin/bash 替换默认的 /bin/sh
+    RUN ["/bin/bash", "-c", "echo hello"]
+    ```
+  
+  - 与 shell 形式不同，exec 形式不调用命令shell, 这意味着不会使用常规的 shell 进行处理
+    - 比如 RUN [ "echo", "$HOME" ] 不会对$HOME进行变量替换。如果想进行 shell 处理，那么*要么使用shell形式，要么直接执行一个shell*,比如 RUN [ "sh", "-c", "echo $HOME" ] 。
+
+:::caution RUN 与 构建缓存
+
+1. **RUN 指令的缓存在下次构建时不会自动失效**。比如 RUN apt-get dist-upgrade -y 这样的指令的缓存会在下次构建时被重新使用
+2. RUN 指令的缓存可以通过使用 `--no-cache` 标志来失效，例如 docker build --no-cache
+3. [ADD 指令](DockerFile#add) 和 [COPY 指令](DockerFile#copy) 会导致 RUN 指令的缓存失效
+
+:::
+
+## RUN --mount
+
+利用 `RUN --mount` 可以创建文件系统的挂载，以便在构建的时候可以访问。这可以用来:
+
+1. 创建 bind mount 到主机文件系统或其他构建阶段
+2. 访问构建 secrets 或ssh-agent套接字
+3. 使用持久的软件包管理缓存来加快构建速度
+
+- 基本命令
+  - `--mount=[type] [,option1=value1,option2=value2, ...]`
+- 挂载类型[type]
+  - `bind [default]` : 绑定-挂载上下文目录(只读)
+  - `cache` : 为编译器和软件包管理器缓存目录挂载一个临时目录
+  - `secret` : 允许构建容器访问安全文件，如私钥，而不把它们备份到镜像中
+  - `ssh` : 允许构建容器通过SSH代理访问SSH密钥，并支持口令
+
+
+
+## ADD
+
+## COPY
 
 ## ARG
+
+## SHELL
