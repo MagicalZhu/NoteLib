@@ -266,7 +266,7 @@ html[data-theme='dark'] div[class^='codeBlockTitle'] {
 div[class^='codeBlockTitle'] {
   background-color: #f6f8fa !important;
   color: #575757 !important;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -294,7 +294,7 @@ li::marker {
   display: list-item;
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
-  font-size: 16px;
+  font-size: 14px;
   font-family: dm, Menlo, monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
