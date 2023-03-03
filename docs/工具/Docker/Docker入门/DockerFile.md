@@ -55,6 +55,18 @@ Docker 将以 `#` 开头的行视为注释，除非该行是一个有效的[解�
 RUN echo 'we are running some # of cool things'
 ```
 
+在执行Dockerfile指令之前，注释行会被删除，这意味着下面例子中的注释不会被执行echo命令的shell处理，下面例子中的两个RUN指令是等效的:
+
+```dockerfile
+RUN echo hello \
+# comment
+world
+
+# 等价于
+RUN echo hello \
+world
+```
+
 ## 解析器指令
 
 ## ARG
