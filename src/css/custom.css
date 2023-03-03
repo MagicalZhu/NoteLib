@@ -205,15 +205,17 @@ html[data-theme='light'] strong {
 
 blockquote {
   color: rgb(102, 102, 102);
-  border-left: 5px solid rgb(169, 202, 255);
+  border-left: 4px solid #859aff;
+  border-radius: 2px;
 }
-
+/*
 blockquote::before {
   display: block;
   height: 2rem;
   width: 2px;
   content: "🌈";
 }
+*/
 
 
 /* Header Description */
