@@ -1,5 +1,6 @@
 /* Website font */
-@import url('poppins.css');
+/* @import url('poppins.css'); */
+@import 'lxgw-wenkai-webfont/style.css';
 :root {
   --ifm-color-scheme: light;
   --ifm-container-width: 75%;
@@ -371,7 +372,7 @@
   /* --ifm-code-font-size: 90%;
   --ifm-font-size-base: 95%; */
   /*--ifm-font-family-base: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;*/
-  --ifm-font-family-base: dm,-apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial;
+  --ifm-font-family-base: "LXGW WenKai",-apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial;
 
 
   --ifm-color-info-contrast-background: #fefefe;

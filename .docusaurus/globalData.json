@@ -119,8 +119,8 @@
               "path": "/docs/FeThird"
             },
             {
-              "id": "工具/Docker/Command/Docker-CLI/docker-run",
-              "path": "/docs/工具/Docker/Command/Docker-CLI/docker-run",
+              "id": "工具/Docker/Command/Docker-CLI/docker-build",
+              "path": "/docs/工具/Docker/Command/Docker-CLI/docker-build",
               "sidebar": "dockerSideBar"
             },
             {
@@ -151,6 +151,11 @@
             {
               "id": "工具/Docker/Docker入门/Docker通用命令",
               "path": "/docs/工具/Docker/Docker入门/Docker通用命令",
+              "sidebar": "dockerSideBar"
+            },
+            {
+              "id": "工具/Docker/Docker入门/DockerFile",
+              "path": "/docs/工具/Docker/Docker入门/DockerFile",
               "sidebar": "dockerSideBar"
             },
             {
@@ -721,13 +726,13 @@
               "sidebar": "OSSiderBar"
             },
             {
-              "id": "/category/docker-clidocker",
-              "path": "/docs/category/docker-clidocker",
+              "id": "/category/docker-cli",
+              "path": "/docs/category/docker-cli",
               "sidebar": "dockerSideBar"
             },
             {
-              "id": "/category/docker入门大目",
-              "path": "/docs/category/docker入门大目",
+              "id": "/category/docker入门",
+              "path": "/docs/category/docker入门",
               "sidebar": "dockerSideBar"
             }
           ],

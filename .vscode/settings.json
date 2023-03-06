@@ -14,6 +14,11 @@
     "no-duplicate-header": {
       "allow_different_nesting": true,
       "siblings_only": true
-   }
-  }
+    }
+  },
+  "markdown.preview.fontSize": 14,
+  "markdown.preview.doubleClickToSwitchToEditor": true,
+  "markdown.preview.lineHeight": 1.2,
+  "tailwindCSS.rootFontSize": 15,
+  "editor.fontSize": 14
 }

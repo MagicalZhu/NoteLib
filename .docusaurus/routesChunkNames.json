@@ -211,7 +211,7 @@
     },
     "config": "config---website-be-5-e-9-987"
   },
-  "/docs-87f": {
+  "/docs-d1a": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-10-fc6"
@@ -286,9 +286,9 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-分布式-分布式理论-分布式一致性算法-paxos-0-e-6-d30"
   },
-  "/docs/工具/Docker/Command/Docker-CLI/docker-run-8a5": {
+  "/docs/工具/Docker/Command/Docker-CLI/docker-build-15c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-工具-docker-command-docker-cli-docker-run-337-033"
+    "content": "content---docs-工具-docker-command-docker-cli-docker-build-511-af0"
   },
   "/docs/工具/Docker/Docker入门/Docker基础-69b": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -309,6 +309,10 @@
   "/docs/工具/Docker/Docker入门/Docker通用命令-817": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-工具-docker-docker入门-docker通用命令-6-f-8-882"
+  },
+  "/docs/工具/Docker/Docker入门/DockerFile-5ce": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-工具-docker-docker入门-docker-file-3-b-0-df4"
   },
   "/docs/工具/Gradle/基础/Gradle基础-903": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -430,13 +434,13 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-运维b-6-b-1c5"
   },
-  "/docs/category/docker-clidocker-afe": {
+  "/docs/category/docker-cli-f06": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-docker-clidocker-88-b-f1f"
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-docker-cli-686-1a6"
   },
-  "/docs/category/docker入门大目-c01": {
+  "/docs/category/docker入门-ef5": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-docker入门大目e-97-74e"
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-docker入门-423-9dc"
   },
   "/docs/category/gradle-c67": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",

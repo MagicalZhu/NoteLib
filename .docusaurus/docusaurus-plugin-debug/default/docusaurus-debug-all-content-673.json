@@ -643,33 +643,33 @@
               }
             },
             {
-              "unversionedId": "工具/Docker/Command/Docker-CLI/docker-run",
-              "id": "工具/Docker/Command/Docker-CLI/docker-run",
-              "title": "docker run",
-              "description": "",
-              "source": "@site/docs/工具/Docker/Command/Docker-CLI/run.md",
+              "unversionedId": "工具/Docker/Command/Docker-CLI/docker-build",
+              "id": "工具/Docker/Command/Docker-CLI/docker-build",
+              "title": "docker构建",
+              "description": "概述",
+              "source": "@site/docs/工具/Docker/Command/Docker-CLI/build.md",
               "sourceDirName": "工具/Docker/Command/Docker-CLI",
-              "slug": "/工具/Docker/Command/Docker-CLI/docker-run",
-              "permalink": "/docs/工具/Docker/Command/Docker-CLI/docker-run",
+              "slug": "/工具/Docker/Command/Docker-CLI/docker-build",
+              "permalink": "/docs/工具/Docker/Command/Docker-CLI/docker-build",
               "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Command/Docker-CLI/run.md",
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Command/Docker-CLI/build.md",
               "tags": [],
               "version": "current",
               "lastUpdatedBy": "Author",
               "lastUpdatedAt": 1539502055,
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
-                "id": "docker-run",
-                "title": "docker run"
+                "id": "docker-build",
+                "title": "docker构建"
               },
               "sidebar": "dockerSideBar",
               "previous": {
-                "title": "Docker CLI(docker)",
-                "permalink": "/docs/category/docker-clidocker"
+                "title": "Docker CLI",
+                "permalink": "/docs/category/docker-cli"
               },
               "next": {
-                "title": "Docker入门(大目)",
-                "permalink": "/docs/category/docker入门大目"
+                "title": "Docker入门",
+                "permalink": "/docs/category/docker入门"
               }
             },
             {
@@ -695,8 +695,8 @@
               },
               "sidebar": "dockerSideBar",
               "next": {
-                "title": "Docker CLI(docker)",
-                "permalink": "/docs/category/docker-clidocker"
+                "title": "Docker CLI",
+                "permalink": "/docs/category/docker-cli"
               }
             },
             {
@@ -721,8 +721,8 @@
               },
               "sidebar": "dockerSideBar",
               "previous": {
-                "title": "Docker入门(大目)",
-                "permalink": "/docs/category/docker入门大目"
+                "title": "Docker入门",
+                "permalink": "/docs/category/docker入门"
               },
               "next": {
                 "title": "Docker镜像命令",
@@ -815,8 +815,8 @@
                 "permalink": "/docs/工具/Docker/Docker入门/Docker容器命令"
               },
               "next": {
-                "title": "Docker通用命令",
-                "permalink": "/docs/工具/Docker/Docker入门/Docker通用命令"
+                "title": "DockerFile",
+                "permalink": "/docs/工具/Docker/Docker入门/DockerFile"
               }
             },
             {
@@ -841,8 +841,38 @@
               },
               "sidebar": "dockerSideBar",
               "previous": {
+                "title": "DockerFile",
+                "permalink": "/docs/工具/Docker/Docker入门/DockerFile"
+              }
+            },
+            {
+              "unversionedId": "工具/Docker/Docker入门/DockerFile",
+              "id": "工具/Docker/Docker入门/DockerFile",
+              "title": "DockerFile",
+              "description": "Docker可以通过读取Dockerfile中的指令自动构建镜像,Dockerfile是由一系列命令和参数构成的脚本文件,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像",
+              "source": "@site/docs/工具/Docker/Docker入门/DockerFile.md",
+              "sourceDirName": "工具/Docker/Docker入门",
+              "slug": "/工具/Docker/Docker入门/DockerFile",
+              "permalink": "/docs/工具/Docker/Docker入门/DockerFile",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Docker入门/DockerFile.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "DockerFile",
+                "title": "DockerFile"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
                 "title": "Docker数据持久化",
                 "permalink": "/docs/工具/Docker/Docker入门/Docker数据持久化"
+              },
+              "next": {
+                "title": "Docker通用命令",
+                "permalink": "/docs/工具/Docker/Docker入门/Docker通用命令"
               }
             },
             {
@@ -3959,24 +3989,24 @@
               },
               {
                 "type": "category",
-                "label": "Docker CLI(docker)",
+                "label": "Docker CLI",
                 "items": [
                   {
                     "type": "doc",
-                    "id": "工具/Docker/Command/Docker-CLI/docker-run"
+                    "id": "工具/Docker/Command/Docker-CLI/docker-build"
                   }
                 ],
                 "collapsed": true,
                 "link": {
                   "type": "generated-index",
-                  "slug": "/category/docker-clidocker",
-                  "permalink": "/docs/category/docker-clidocker"
+                  "slug": "/category/docker-cli",
+                  "permalink": "/docs/category/docker-cli"
                 },
                 "collapsible": true
               },
               {
                 "type": "category",
-                "label": "Docker入门(大目)",
+                "label": "Docker入门",
                 "items": [
                   {
                     "type": "doc",
@@ -3996,14 +4026,18 @@
                   },
                   {
                     "type": "doc",
+                    "id": "工具/Docker/Docker入门/DockerFile"
+                  },
+                  {
+                    "type": "doc",
                     "id": "工具/Docker/Docker入门/Docker通用命令"
                   }
                 ],
                 "collapsed": true,
                 "link": {
                   "type": "generated-index",
-                  "slug": "/category/docker入门大目",
-                  "permalink": "/docs/category/docker入门大目"
+                  "slug": "/category/docker入门",
+                  "permalink": "/docs/category/docker入门"
                 },
                 "collapsible": true
               }
@@ -4403,8 +4437,8 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/FE/",
-        "source": "@site/src/pages/website/FE/index.tsx"
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
       },
       {
         "type": "jsx",
@@ -4413,8 +4447,8 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/BE/",
-        "source": "@site/src/pages/website/BE/index.tsx"
+        "permalink": "/website/FE/",
+        "source": "@site/src/pages/website/FE/index.tsx"
       }
     ]
   },

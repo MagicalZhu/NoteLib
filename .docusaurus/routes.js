@@ -119,7 +119,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '87f'),
+    component: ComponentCreator('/docs', 'd1a'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -224,8 +224,8 @@ export default [
         sidebar: "distributeSiderBar"
       },
       {
-        path: '/docs/工具/Docker/Command/Docker-CLI/docker-run',
-        component: ComponentCreator('/docs/工具/Docker/Command/Docker-CLI/docker-run', '8a5'),
+        path: '/docs/工具/Docker/Command/Docker-CLI/docker-build',
+        component: ComponentCreator('/docs/工具/Docker/Command/Docker-CLI/docker-build', '15c'),
         exact: true,
         sidebar: "dockerSideBar"
       },
@@ -256,6 +256,12 @@ export default [
       {
         path: '/docs/工具/Docker/Docker入门/Docker通用命令',
         component: ComponentCreator('/docs/工具/Docker/Docker入门/Docker通用命令', '817'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/工具/Docker/Docker入门/DockerFile',
+        component: ComponentCreator('/docs/工具/Docker/Docker入门/DockerFile', '5ce'),
         exact: true,
         sidebar: "dockerSideBar"
       },
@@ -439,14 +445,14 @@ export default [
         sidebar: "mysqlSideBar"
       },
       {
-        path: '/docs/category/docker-clidocker',
-        component: ComponentCreator('/docs/category/docker-clidocker', 'afe'),
+        path: '/docs/category/docker-cli',
+        component: ComponentCreator('/docs/category/docker-cli', 'f06'),
         exact: true,
         sidebar: "dockerSideBar"
       },
       {
-        path: '/docs/category/docker入门大目',
-        component: ComponentCreator('/docs/category/docker入门大目', 'c01'),
+        path: '/docs/category/docker入门',
+        component: ComponentCreator('/docs/category/docker入门', 'ef5'),
         exact: true,
         sidebar: "dockerSideBar"
       },
