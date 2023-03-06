@@ -175,18 +175,19 @@ FROM 支持下面 3 种格式:
 
 ## RUN
 
-> `RUN 指令` 将**在当前镜像之上的新层中执行任何命令并提交结果**, 提交后的镜像将被用于 Dockerfile 的下一个步骤。
+> `RUN 指令` 将**在当前镜像之上的新层中执行任何命令并提交结果**, 提交后的镜像将被用于 Dockerfile 的下一个步骤
 
 RUN有2种形式:
 
-1. `RUN <COMMADN命令>`
-    - shell 形式, 就像直接在命令行中输入的命令一样
-    - 这种方式是通过 shell 进行处理的, Linux中默认的是 **/bin/sh -c** , 而Windows中默认的是 **cmd /s /c**
-2. `RUN ["可执行文件", "参数1", "参数2"]`
-    - exec 形式,类似于函数调用
-    - 这种方式必须使用双引号 **"**,  而不能使用单引号 **'**,因为该方式会被转换成一个JSON 数组
+1. `RUN <Command命令>`
+    - shell 的形式, 命令是用 shell 执行的
+      - Linux中默认的shell是 **/bin/sh -c** 
+      - Windows中默认的shell是 **cmd /s /c**
+2. `RUN ["可执行语句", "param1", "param2"]`
+    - exec 的形式,类似于函数调用
+    - 这种方式必须使用双引号 **"**,  而不能使用单引号 **'**，因为该方式会被转换成一个JSON 数组
 
-<mark>shell vs exec</mark>
+<mark>shell 形式 vs exec 形式</mark>
 
 - shell 形式
   - **替换默认的shell : 除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](DockerFile#shell)来替换**
@@ -208,8 +209,14 @@ RUN有2种形式:
     RUN ["/bin/bash", "-c", "echo hello"]
     ```
   
-- 与 shell 形式不同,exec 形式不调用命令shell, 这意味着不会使用常规的 shell 进行处理
-  - 比如 RUN [ "echo", "$HOME" ] 不会对$HOME进行变量替换。如果想进行 shell 处理,那么*要么使用shell形式,要么直接执行一个shell*,比如 RUN [ "sh", "-c", "echo $HOME" ] 。
+  - 与 shell 形式不同，exec 形式不使用 shell 进行处理, 也就是不会使用常规的 shell 进行处理,如果想进行 shell 处理，那么*要么使用shell形式，要么直接执行一个 shell*
+
+      ```docker
+      # exec 形式下无法进行 $HOME 替换
+      RUN [ "echo", "$HOME" ]
+      # 可以进行 $HOME 替换
+      RUN [ "sh", "-c", "echo $HOME" ]
+      ```
 
 :::caution RUN 与 构建缓存
 
@@ -219,7 +226,9 @@ RUN有2种形式:
 
 :::
 
-## RUN --mount
+### RUN --mount
+
+> BuildKit 是下一代的镜像构建组件，在 [GitHub](https://github.com/moby/buildkit) 开源,使用 BuildKit 之后，可以使用下面几个新的 Dockerfile 指令来加快镜像构建,比如这里的 *RUN --mount*
 
 利用 `RUN --mount` 可以创建文件系统的挂载,以便在构建的时候可以访问。这可以用来:
 
@@ -228,12 +237,49 @@ RUN有2种形式:
 3. 使用持久的软件包管理缓存来加快构建速度
 
 - 基本命令
-  - `--mount=[type] [,option1=value1,option2=value2, ...]`
+  - `--mount=[type=<type>] [,option1=value1,option2=value2, ...]`
 - 挂载类型[type]
-  - `bind [default]` : 绑定-挂载上下文目录(只读)
-  - `cache` : 为编译器和软件包管理器缓存目录挂载一个临时目录
-  - `secret` : 允许构建容器访问安全文件,如私钥,而不把它们备份到镜像中
-  - `ssh` : 允许构建容器通过SSH代理访问SSH密钥,并支持口令
+
+  | Type                 | Description |
+  -----------------------|-------------
+  **bind [default]**    | 绑定-挂载上下文目录(默认只读)
+  **cache**             | 挂载一个临时目录来缓存编译器和包管理器的目录  
+  **secret**            | 允许构建容器访问私钥之类的安全文件，且此类文件不会出现在构建好的镜像中，避免密钥外泄
+  **ssh**               | 允许构建容器通过SSH代理访问SSH密钥，并支持密码短语
+
+#### --mount=type=cache
+
+> 
+
+#### --mount=type=bind
+
+通过 `RUN --mount=type=bind` 该指令可以将一个镜像(或上一构建阶段)的文件挂载到指定位置
+
+1. **由于 RUN指令 是容器构建阶段生效运行，所以挂载的目录也仅仅在构建阶段可以访问**
+2. **由于不同的 RUN指令 会创建新的层，所以只有同一个RUN指令中，才可以访问挂载的目录**
+3. **仅支持挂载上下文或者引用的镜像中存在的目录，不能挂载宿主机上的目录，或者上下文以及镜像中不存在的目录（就算挂载上也没有任何意义）**
+
+- 基本参数
+
+  | Option       | Description |
+  ---------------|-------------
+  target        | 挂载路径
+  source        | from中的源路径。默认为from的根目录
+  from          | 构建阶段名称或者镜像名称,默认为镜像构建上下文
+  readwrite,rw  | 允许在挂载上写入。写入的数据将被丢弃
+
+基本示例
+
+```docker
+RUN --mount=type=bind,from=php:alpine, \
+        source=/usr/local/bin/docker-php-entrypoint, \
+        target=/docker-php-entrypoint \
+    cat /docker-php-entrypoint
+```
+
+:::info 使用示例
+
+:::
 
 ## ADD
 
