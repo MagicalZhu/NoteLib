@@ -643,36 +643,6 @@
               }
             },
             {
-              "unversionedId": "工具/Docker/Command/Docker-CLI/docker-build",
-              "id": "工具/Docker/Command/Docker-CLI/docker-build",
-              "title": "docker构建",
-              "description": "概述",
-              "source": "@site/docs/工具/Docker/Command/Docker-CLI/build.md",
-              "sourceDirName": "工具/Docker/Command/Docker-CLI",
-              "slug": "/工具/Docker/Command/Docker-CLI/docker-build",
-              "permalink": "/docs/工具/Docker/Command/Docker-CLI/docker-build",
-              "draft": false,
-              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Command/Docker-CLI/build.md",
-              "tags": [],
-              "version": "current",
-              "lastUpdatedBy": "Author",
-              "lastUpdatedAt": 1539502055,
-              "formattedLastUpdatedAt": "2018年10月14日",
-              "frontMatter": {
-                "id": "docker-build",
-                "title": "docker构建"
-              },
-              "sidebar": "dockerSideBar",
-              "previous": {
-                "title": "Docker CLI",
-                "permalink": "/docs/category/docker-cli"
-              },
-              "next": {
-                "title": "Docker入门",
-                "permalink": "/docs/category/docker入门"
-              }
-            },
-            {
               "unversionedId": "工具/Docker/docker",
               "id": "工具/Docker/docker",
               "title": "Docker学习",
@@ -695,8 +665,8 @@
               },
               "sidebar": "dockerSideBar",
               "next": {
-                "title": "Docker CLI",
-                "permalink": "/docs/category/docker-cli"
+                "title": "Docker 手册",
+                "permalink": "/docs/category/docker-手册"
               }
             },
             {
@@ -873,6 +843,132 @@
               "next": {
                 "title": "Docker通用命令",
                 "permalink": "/docs/工具/Docker/Docker入门/Docker通用命令"
+              }
+            },
+            {
+              "unversionedId": "工具/Docker/Manuals/docker-build/about",
+              "id": "工具/Docker/Manuals/docker-build/about",
+              "title": "about",
+              "description": "",
+              "source": "@site/docs/工具/Docker/Manuals/docker-build/about.md",
+              "sourceDirName": "工具/Docker/Manuals/docker-build",
+              "slug": "/工具/Docker/Manuals/docker-build/about",
+              "permalink": "/docs/工具/Docker/Manuals/docker-build/about",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Manuals/docker-build/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {}
+            },
+            {
+              "unversionedId": "工具/Docker/Manuals/docker-build/build-cache",
+              "id": "工具/Docker/Manuals/docker-build/build-cache",
+              "title": "缓存",
+              "description": "实际的开发中能会一次又一次地重建同一个Docker镜像,无论是为你的软件的下一个版本，还是在本地开发期间。由于构建镜像是一项常见的任务，Docker提供了一些工具来加速构建。",
+              "source": "@site/docs/工具/Docker/Manuals/docker-build/cache.md",
+              "sourceDirName": "工具/Docker/Manuals/docker-build",
+              "slug": "/工具/Docker/Manuals/docker-build/build-cache",
+              "permalink": "/docs/工具/Docker/Manuals/docker-build/build-cache",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Manuals/docker-build/cache.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "build-cache",
+                "title": "缓存"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
+                "title": "构建",
+                "permalink": "/docs/category/构建"
+              },
+              "next": {
+                "title": "Docker 指南",
+                "permalink": "/docs/category/docker-指南"
+              }
+            },
+            {
+              "unversionedId": "工具/Docker/Manuals/docker-engine/about",
+              "id": "工具/Docker/Manuals/docker-engine/about",
+              "title": "about",
+              "description": "",
+              "source": "@site/docs/工具/Docker/Manuals/docker-engine/about.md",
+              "sourceDirName": "工具/Docker/Manuals/docker-engine",
+              "slug": "/工具/Docker/Manuals/docker-engine/about",
+              "permalink": "/docs/工具/Docker/Manuals/docker-engine/about",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Manuals/docker-engine/about.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {}
+            },
+            {
+              "unversionedId": "工具/Docker/Reference/command-line/daemon-cli",
+              "id": "工具/Docker/Reference/command-line/daemon-cli",
+              "title": "daemon",
+              "description": "概述",
+              "source": "@site/docs/工具/Docker/Reference/command-line/daemon-cli.md",
+              "sourceDirName": "工具/Docker/Reference/command-line",
+              "slug": "/工具/Docker/Reference/command-line/daemon-cli",
+              "permalink": "/docs/工具/Docker/Reference/command-line/daemon-cli",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Reference/command-line/daemon-cli.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "daemon-cli",
+                "title": "daemon"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
+                "title": "build",
+                "permalink": "/docs/工具/Docker/Reference/command-line/docker-cli/docker-build"
+              },
+              "next": {
+                "title": "Docker入门",
+                "permalink": "/docs/category/docker入门"
+              }
+            },
+            {
+              "unversionedId": "工具/Docker/Reference/command-line/docker-cli/docker-build",
+              "id": "工具/Docker/Reference/command-line/docker-cli/docker-build",
+              "title": "build",
+              "description": "概述",
+              "source": "@site/docs/工具/Docker/Reference/command-line/docker-cli/build.md",
+              "sourceDirName": "工具/Docker/Reference/command-line/docker-cli",
+              "slug": "/工具/Docker/Reference/command-line/docker-cli/docker-build",
+              "permalink": "/docs/工具/Docker/Reference/command-line/docker-cli/docker-build",
+              "draft": false,
+              "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/docs/工具/Docker/Reference/command-line/docker-cli/build.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "2018年10月14日",
+              "frontMatter": {
+                "id": "docker-build",
+                "title": "build"
+              },
+              "sidebar": "dockerSideBar",
+              "previous": {
+                "title": "Docker Cli",
+                "permalink": "/docs/category/docker-cli"
+              },
+              "next": {
+                "title": "daemon",
+                "permalink": "/docs/工具/Docker/Reference/command-line/daemon-cli"
               }
             },
             {
@@ -3989,18 +4085,65 @@
               },
               {
                 "type": "category",
-                "label": "Docker CLI",
+                "label": "Docker 手册",
                 "items": [
                   {
-                    "type": "doc",
-                    "id": "工具/Docker/Command/Docker-CLI/docker-build"
+                    "type": "category",
+                    "label": "构建",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "工具/Docker/Manuals/docker-build/build-cache"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/构建",
+                      "permalink": "/docs/category/构建"
+                    },
+                    "collapsible": true
                   }
                 ],
                 "collapsed": true,
                 "link": {
                   "type": "generated-index",
-                  "slug": "/category/docker-cli",
-                  "permalink": "/docs/category/docker-cli"
+                  "slug": "/category/docker-手册",
+                  "permalink": "/docs/category/docker-手册"
+                },
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Docker 指南",
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "Docker Cli",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "工具/Docker/Reference/command-line/docker-cli/docker-build"
+                      }
+                    ],
+                    "collapsed": true,
+                    "link": {
+                      "type": "generated-index",
+                      "slug": "/category/docker-cli",
+                      "permalink": "/docs/category/docker-cli"
+                    },
+                    "collapsible": true
+                  },
+                  {
+                    "type": "doc",
+                    "id": "工具/Docker/Reference/command-line/daemon-cli"
+                  }
+                ],
+                "collapsed": true,
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/docker-指南",
+                  "permalink": "/docs/category/docker-指南"
                 },
                 "collapsible": true
               },
@@ -4442,13 +4585,13 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/BE/",
-        "source": "@site/src/pages/website/BE/index.tsx"
+        "permalink": "/website/FE/",
+        "source": "@site/src/pages/website/FE/index.tsx"
       },
       {
         "type": "jsx",
-        "permalink": "/website/FE/",
-        "source": "@site/src/pages/website/FE/index.tsx"
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
       }
     ]
   },

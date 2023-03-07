@@ -211,7 +211,7 @@
     },
     "config": "config---website-be-5-e-9-987"
   },
-  "/docs-d1a": {
+  "/docs-899": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-10-fc6"
@@ -286,10 +286,6 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-分布式-分布式理论-分布式一致性算法-paxos-0-e-6-d30"
   },
-  "/docs/工具/Docker/Command/Docker-CLI/docker-build-15c": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-工具-docker-command-docker-cli-docker-build-511-af0"
-  },
   "/docs/工具/Docker/Docker入门/Docker基础-69b": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-工具-docker-docker入门-docker基础-803-064"
@@ -313,6 +309,26 @@
   "/docs/工具/Docker/Docker入门/DockerFile-5ce": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-工具-docker-docker入门-docker-file-3-b-0-df4"
+  },
+  "/docs/工具/Docker/Manuals/docker-build/about-b15": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-工具-docker-manuals-docker-build-aboutd-06-22c"
+  },
+  "/docs/工具/Docker/Manuals/docker-build/build-cache-2e8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-工具-docker-manuals-docker-build-build-cache-2-ff-a81"
+  },
+  "/docs/工具/Docker/Manuals/docker-engine/about-e44": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-工具-docker-manuals-docker-engine-about-6-a-5-a52"
+  },
+  "/docs/工具/Docker/Reference/command-line/daemon-cli-e00": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-工具-docker-reference-command-line-daemon-cli-382-92d"
+  },
+  "/docs/工具/Docker/Reference/command-line/docker-cli/docker-build-ce4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-工具-docker-reference-command-line-docker-cli-docker-buildea-6-4b2"
   },
   "/docs/工具/Gradle/基础/Gradle基础-903": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -369,6 +385,10 @@
   "/docs/category/分布式算法-65a": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-分布式算法-0-d-8-6fe"
+  },
+  "/docs/category/构建-a68": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-构建-11-c-b27"
   },
   "/docs/category/基础-26d": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -433,6 +453,14 @@
   "/docs/category/运维-8a8": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-运维b-6-b-1c5"
+  },
+  "/docs/category/docker-手册-289": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-docker-手册f-28-b1e"
+  },
+  "/docs/category/docker-指南-0c2": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-docker-指南b-19-a3c"
   },
   "/docs/category/docker-cli-f06": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",

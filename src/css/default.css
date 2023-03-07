@@ -1,6 +1,6 @@
 /* Website font */
 @import url('poppins.css'); 
-@import 'lxgw-wenkai-webfont/style.css';
+/* @import 'lxgw-wenkai-webfont/style.css'; */
 :root {
   --ifm-color-scheme: light;
   --ifm-container-width: 75%;

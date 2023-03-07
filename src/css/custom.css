@@ -3,7 +3,7 @@
 
 /* Website font */
 @import url('poppins.css');
-@import 'lxgw-wenkai-webfont/style.css';
+/* @import 'lxgw-wenkai-webfont/style.css'; */
 
 @import url('default.css');
 
@@ -165,7 +165,7 @@ code {
   padding: 0.2em;
   border-radius: 4px;
   border: 1px solid var(--custom-border-color);
-  font-family: "LXGW WenKai", Monaco, Consolas, Courier New, monospace;
+  font-family: dm, Monaco, Consolas, Courier New, monospace;
 }
 
 html[data-theme='light'] .markdown {
@@ -297,8 +297,8 @@ li::marker {
   display: list-item;
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
-  font-size: 14px;
-  font-family: "LXGW WenKai", Menlo, monaco, Consolas, "Courier New";
+  font-size: 15px;
+  font-family: dm, Menlo, monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
 }

@@ -119,11 +119,6 @@
               "path": "/docs/FeThird"
             },
             {
-              "id": "工具/Docker/Command/Docker-CLI/docker-build",
-              "path": "/docs/工具/Docker/Command/Docker-CLI/docker-build",
-              "sidebar": "dockerSideBar"
-            },
-            {
               "id": "工具/Docker/docker",
               "path": "/docs/docker",
               "sidebar": "dockerSideBar"
@@ -156,6 +151,29 @@
             {
               "id": "工具/Docker/Docker入门/DockerFile",
               "path": "/docs/工具/Docker/Docker入门/DockerFile",
+              "sidebar": "dockerSideBar"
+            },
+            {
+              "id": "工具/Docker/Manuals/docker-build/about",
+              "path": "/docs/工具/Docker/Manuals/docker-build/about"
+            },
+            {
+              "id": "工具/Docker/Manuals/docker-build/build-cache",
+              "path": "/docs/工具/Docker/Manuals/docker-build/build-cache",
+              "sidebar": "dockerSideBar"
+            },
+            {
+              "id": "工具/Docker/Manuals/docker-engine/about",
+              "path": "/docs/工具/Docker/Manuals/docker-engine/about"
+            },
+            {
+              "id": "工具/Docker/Reference/command-line/daemon-cli",
+              "path": "/docs/工具/Docker/Reference/command-line/daemon-cli",
+              "sidebar": "dockerSideBar"
+            },
+            {
+              "id": "工具/Docker/Reference/command-line/docker-cli/docker-build",
+              "path": "/docs/工具/Docker/Reference/command-line/docker-cli/docker-build",
               "sidebar": "dockerSideBar"
             },
             {
@@ -724,6 +742,21 @@
               "id": "/category/操作系统概念",
               "path": "/docs/category/操作系统概念",
               "sidebar": "OSSiderBar"
+            },
+            {
+              "id": "/category/docker-手册",
+              "path": "/docs/category/docker-手册",
+              "sidebar": "dockerSideBar"
+            },
+            {
+              "id": "/category/构建",
+              "path": "/docs/category/构建",
+              "sidebar": "dockerSideBar"
+            },
+            {
+              "id": "/category/docker-指南",
+              "path": "/docs/category/docker-指南",
+              "sidebar": "dockerSideBar"
             },
             {
               "id": "/category/docker-cli",

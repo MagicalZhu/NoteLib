@@ -119,7 +119,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'd1a'),
+    component: ComponentCreator('/docs', '899'),
     routes: [
       {
         path: '/docs/并发编程/并发安全/线程安全',
@@ -224,12 +224,6 @@ export default [
         sidebar: "distributeSiderBar"
       },
       {
-        path: '/docs/工具/Docker/Command/Docker-CLI/docker-build',
-        component: ComponentCreator('/docs/工具/Docker/Command/Docker-CLI/docker-build', '15c'),
-        exact: true,
-        sidebar: "dockerSideBar"
-      },
-      {
         path: '/docs/工具/Docker/Docker入门/Docker基础',
         component: ComponentCreator('/docs/工具/Docker/Docker入门/Docker基础', '69b'),
         exact: true,
@@ -262,6 +256,34 @@ export default [
       {
         path: '/docs/工具/Docker/Docker入门/DockerFile',
         component: ComponentCreator('/docs/工具/Docker/Docker入门/DockerFile', '5ce'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/工具/Docker/Manuals/docker-build/about',
+        component: ComponentCreator('/docs/工具/Docker/Manuals/docker-build/about', 'b15'),
+        exact: true
+      },
+      {
+        path: '/docs/工具/Docker/Manuals/docker-build/build-cache',
+        component: ComponentCreator('/docs/工具/Docker/Manuals/docker-build/build-cache', '2e8'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/工具/Docker/Manuals/docker-engine/about',
+        component: ComponentCreator('/docs/工具/Docker/Manuals/docker-engine/about', 'e44'),
+        exact: true
+      },
+      {
+        path: '/docs/工具/Docker/Reference/command-line/daemon-cli',
+        component: ComponentCreator('/docs/工具/Docker/Reference/command-line/daemon-cli', 'e00'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/工具/Docker/Reference/command-line/docker-cli/docker-build',
+        component: ComponentCreator('/docs/工具/Docker/Reference/command-line/docker-cli/docker-build', 'ce4'),
         exact: true,
         sidebar: "dockerSideBar"
       },
@@ -347,6 +369,12 @@ export default [
         component: ComponentCreator('/docs/category/分布式算法', '65a'),
         exact: true,
         sidebar: "distributeSiderBar"
+      },
+      {
+        path: '/docs/category/构建',
+        component: ComponentCreator('/docs/category/构建', 'a68'),
+        exact: true,
+        sidebar: "dockerSideBar"
       },
       {
         path: '/docs/category/基础',
@@ -443,6 +471,18 @@ export default [
         component: ComponentCreator('/docs/category/运维', '8a8'),
         exact: true,
         sidebar: "mysqlSideBar"
+      },
+      {
+        path: '/docs/category/docker-手册',
+        component: ComponentCreator('/docs/category/docker-手册', '289'),
+        exact: true,
+        sidebar: "dockerSideBar"
+      },
+      {
+        path: '/docs/category/docker-指南',
+        component: ComponentCreator('/docs/category/docker-指南', '0c2'),
+        exact: true,
+        sidebar: "dockerSideBar"
       },
       {
         path: '/docs/category/docker-cli',
