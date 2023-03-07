@@ -277,18 +277,18 @@ const dockerPart = new Category('Docker入门')
 ])
 
 // Docker CLI
-const dockerReferencePart = new Category('指南')
-.createSubCaregory('Docker Cli', '工具/Docker/Reference/command-line/docker-cli', [
-  'docker-build'
-])
-.setNoLabelItem('工具/Docker/Reference/command-line', [
-  'daemon-cli'
-])
+const dockerReferencePart = new Category('Docker 指南')
+  .createSubCaregory('Docker Cli', '工具/Docker/Reference/command-line/docker-cli', [
+    'docker-build'
+  ])
+  .setNoLabelItem('工具/Docker/Reference/command-line', [
+    'daemon-cli'
+  ])
 
 const dockerManualsPart =  new Category('Docker 手册')
-    .createSubCaregory('构建', '工具/Docker/Manuals/docker-build', [
-      'build-cache',
-    ])
+  .createSubCaregory('构建', '工具/Docker/Manuals/docker-build', [
+    'build-cache',
+  ])
 
 
 const dockerSideBar = [
