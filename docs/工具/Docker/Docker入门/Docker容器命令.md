@@ -11,7 +11,7 @@ title: Docker容器命令
    - 首先: `/containers/create`
    - 其次: `/containers/(id)/start`
 
-2. 使用 `docker start` 可以重新启动一个已经停止的容器,并保持其之前的所有变化不变。参见`docker ps -a`来查看所有容器的列表
+2. 使用 `docker start` 可以重新启动一个已经停止的容器,并保持其之前的所有变化不变。使用`docker ps -a`来查看所有容器的列表
 
 ### 命令
 

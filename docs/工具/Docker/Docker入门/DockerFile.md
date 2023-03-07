@@ -180,12 +180,12 @@ FROM 支持下面 3 种格式:
 RUN有2种形式:
 
 1. `RUN <Command命令>`
-    - shell 的形式, 命令是用 shell 执行的
-      - Linux中默认的shell是 **/bin/sh -c** 
-      - Windows中默认的shell是 **cmd /s /c**
+    - shell 的形式, 命令是用 shell 的方式去执行的
+      - Linux中默认使用 **/bin/sh -c**
+      - Windows中默认使用 **cmd /s /c**
 2. `RUN ["可执行语句", "param1", "param2"]`
-    - exec 的形式,类似于函数调用
-    - 这种方式必须使用双引号 **"**,  而不能使用单引号 **'**，因为该方式会被转换成一个JSON 数组
+    - exec 的形式,类似于函数调用。可以避免出现 shell 字符串混杂的问题,并且可以使用 不包含指定 shell 可执行文件的基础镜像来运行命令
+    - 这种方式必须使用双引号 **"**,  而不能使用单引号 **'**,因为该方式会被转换成一个JSON 数组
 
 <mark>shell 形式 vs exec 形式</mark>
 
@@ -194,6 +194,7 @@ RUN有2种形式:
   - 使用反斜杠 **\\** 可以将一条 RUN指令语句分割成多行
 
     ```docker
+    # 用 /bin/bash 替换默认的 /bin/sh
     RUN /bin/bash -c 'source $HOME/.bashrc && \
                     echo $HOME'
     # 上述的RUn 指令等价于下面的
@@ -201,7 +202,6 @@ RUN有2种形式:
     ```
 
 - exec 形式
-  - 可以避免出现 shell 字符串混杂的问题,并且可以使用 不包含指定 shell 可执行文件的基础镜像来运行命令
   - **替换默认的shell : 可以在数组的第一位中指定使用shell**
 
     ```docker
@@ -209,31 +209,33 @@ RUN有2种形式:
     RUN ["/bin/bash", "-c", "echo hello"]
     ```
   
-  - 与 shell 形式不同，exec 形式不使用 shell 进行处理, 也就是不会使用常规的 shell 进行处理,如果想进行 shell 处理，那么*要么使用shell形式，要么直接执行一个 shell*
+  - 与 shell 形式不同,exec 形式不使用 shell 进行处理, 也就是不会使用常规的 shell 进行处理,如果想进行 shell 处理,那么*要么使用shell形式,要么直接执行一个 shell*
 
       ```docker
       # exec 形式下无法进行 $HOME 替换
       RUN [ "echo", "$HOME" ]
-      # 可以进行 $HOME 替换
+      # 执行一个shell, 可以进行 $HOME 替换
       RUN [ "sh", "-c", "echo $HOME" ]
       ```
 
 :::caution RUN 与 构建缓存
 
-1. **RUN 指令的缓存在下次构建时不会自动失效**。比如 RUN apt-get dist-upgrade -y 这样的指令的缓存会在下次构建时被重新使用
-2. RUN 指令的缓存可以通过使用 `--no-cache` 标志来失效,例如 docker build --no-cache
-3. [ADD 指令](DockerFile#add) 和 [COPY 指令](DockerFile#copy) 会导致 RUN 指令的缓存失效
+1. Dockerfile 中每一个指令都会建立一层,RUN 也不例外。每一个 RUN 的行为,都是新建立一层,在其上执行这些命令,执行结束后,commit 这一层的修改,构成新的镜像。
+    - 所以通常**用 && 将各个 RUN 指令后所需的命令串联起来, 避免层数过多, 导致镜像文件增大**
+2. **RUN 指令的缓存在下次构建时不会自动失效**。比如 RUN apt-get dist-upgrade -y 这样的指令的缓存会在下次构建时被重新使用
+3. RUN 指令的缓存可以通过使用 `--no-cache` 标志来失效,例如 docker build --no-cache
+4. [ADD 指令](DockerFile#add) 和 [COPY 指令](DockerFile#copy) 会导致 RUN 指令的缓存失效
 
 :::
 
 ### RUN --mount
 
-> BuildKit 是下一代的镜像构建组件，在 [GitHub](https://github.com/moby/buildkit) 开源,使用 BuildKit 之后，可以使用下面几个新的 Dockerfile 指令来加快镜像构建,比如这里的 *RUN --mount*
+> BuildKit 是下一代的镜像构建组件,在 [GitHub](https://github.com/moby/buildkit) 开源,使用 BuildKit 之后,可以使用下面几个新的 Dockerfile 指令来加快镜像构建,比如这里的 *RUN --mount*
 
 利用 `RUN --mount` 可以创建文件系统的挂载,以便在构建的时候可以访问。这可以用来:
 
-1. 创建 bind mount 到主机文件系统或其他构建阶段
-2. 访问构建 secrets 或ssh-agent套接字
+1. 创建绑定挂载到主机文件系统或其他构建阶段
+2. 访问 构建秘钥(secrets) 或ssh-agent套接字
 3. 使用持久的软件包管理缓存来加快构建速度
 
 - 基本命令
@@ -244,29 +246,72 @@ RUN有2种形式:
   -----------------------|-------------
   **bind [default]**    | 绑定-挂载上下文目录(默认只读)
   **cache**             | 挂载一个临时目录来缓存编译器和包管理器的目录  
-  **secret**            | 允许构建容器访问私钥之类的安全文件，且此类文件不会出现在构建好的镜像中，避免密钥外泄
-  **ssh**               | 允许构建容器通过SSH代理访问SSH密钥，并支持密码短语
+  **secret**            | 允许构建容器访问私钥之类的安全文件,且此类文件不会出现在构建好的镜像中,避免密钥外泄
+  **ssh**               | 允许构建容器通过SSH代理访问SSH密钥,并支持密码短语
 
-#### --mount=type=cache
+#### 缓存挂载
 
-> 
-
-#### --mount=type=bind
-
-通过 `RUN --mount=type=bind` 该指令可以将一个镜像(或上一构建阶段)的文件挂载到指定位置
-
-1. **由于 RUN指令 是容器构建阶段生效运行，所以挂载的目录也仅仅在构建阶段可以访问**
-2. **由于不同的 RUN指令 会创建新的层，所以只有同一个RUN指令中，才可以访问挂载的目录**
-3. **仅支持挂载上下文或者引用的镜像中存在的目录，不能挂载宿主机上的目录，或者上下文以及镜像中不存在的目录（就算挂载上也没有任何意义）**
+通过 `RUN --mount=type=cache` 可以**挂载一个临时目录来缓存 *编译器和包管理器* 的目录**
 
 - 基本参数
 
   | Option       | Description |
   ---------------|-------------
-  target        | 挂载路径
-  source        | from中的源路径。默认为from的根目录
-  from          | 构建阶段名称或者镜像名称,默认为镜像构建上下文
-  readwrite,rw  | 允许在挂载上写入。写入的数据将被丢弃
+  id            | 唯一标识,用于分缓存
+  from          | 缓存来源 (构建阶段), 不填写时为空文件夹
+  source        | from来源中的文件夹路径,默认是 from 的根目录
+  target        | 缓存的挂载目标文件夹
+  sharing       | 设置当一个缓存被多次使用时的表现,因为 BuildKit 支持并行构建,当多个步骤使用同一缓存时(同一 id)发生冲突
+  readonly,ro   | 只读,缓存文件夹不能被写入
+  mode          | 设置缓存目录的权限,默认`755`
+  uid           | 设置缓存目录的用户ID, 默认是`0`
+  gid           | 设置组ID,默认是`0`
+
+- 关于 sharing 参数,有如下的可选值:
+  - `shared`: 多个步骤可以同时读写 [**默认**]
+  - `private`: 当多个步骤使用同一缓存时,每个步骤使用不同的缓存
+  - `locked` : 当一个步骤完成释放缓存后,后一个步骤才能继续使用该缓存
+- 说明
+  - 由于 RUN 指令是容器构建阶段生效运行,所以**缓存目录仅仅在构建阶段可以访问**
+  - 由于不同的RUN指令会创建新的层,所以**只有同一个RUN指令中,才可以访问挂载过来的缓存目录**
+  - **缓存目录可能会被 Docker 的 GC 清理**
+  - cache类型的挂载方式是为了提高构建效率,但是如果多个镜像进行构建的时候,需要大量覆盖缓存中的文件,那么使用这种方式并不明智,这种缓存**主要用于多次构建都没有重大修改的情况**
+
+比如一个前端工程需要用到 npm
+
+```docker
+# 阶段1
+FROM node:alpine as builder
+WORKDIR /app
+COPY package.json /app/
+RUN npm i --registry=https://registry.npm.taobao.org \
+        && rm -rf ~/.npm
+COPY src /app/src
+RUN npm run build
+
+# 阶段2
+FROM nginx:alpine
+COPY --from=builder /app/dist /app/dist
+```
+
+#### 绑定挂载
+
+> 与数据卷的 bind mounts 不是一个概念
+
+通过 `RUN --mount=type=bind` 可以**将一个镜像(或上一构建阶段)的文件挂载到指定位置**
+
+1. 由于 RUN指令 是容器构建阶段生效运行,所以**挂载的目录也仅仅在构建阶段可以访问**
+2. 由于不同的 RUN 指令会创建新的层,所以**只有同一个RUN指令中,才可以访问挂载的目录**
+3. **仅支持挂载上下文或者引用的镜像中存在的目录,不能挂载宿主机上的目录,或者上下文以及镜像中不存在的目录（就算挂载上也没有任何意义）**
+
+- 基本参数
+
+  | Option       | Description |
+  ---------------|-------------
+  from          | 挂载的来源,可以是`构建阶段名称`或者`镜像名称`,默认是**镜像构建上下文**
+  source        | from来源中的文件夹路径,默认是 from 的根目录
+  target        | 文件/目录的挂载目标文件夹
+  readwrite,rw  | 允许在挂载上写入,写入的数据将被丢弃
 
 基本示例
 
