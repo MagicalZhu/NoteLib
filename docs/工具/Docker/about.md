@@ -26,7 +26,6 @@ title: Docker学习
 6. [大目老师的Docker开源书](http://www.itmuch.com/categories/Docker/)
 7. [Docker — 从入门到实践](https://docker-practice.github.io/zh-cn/)
 8. [dockerfile 之 VOLUME 指令](https://www.cnblogs.com/Json1208/p/8975403.html)
-9. [Dockerfile 最佳实践](https://blog.huakucha.top/posts/docker/dockerfile-best-practices)
 
 ## 不错的 Docker 博客
 
