@@ -31,6 +31,7 @@ Dockerfile定义了进程需要的一切东西,包括:
 - **构建缓存**
   - 在镜像的构建过程中,Docker 会遍历 Dockerfile 文件中的指令,然后按顺序执行
   - 在执行每条指令之前,Docker 都会在缓存中查找是否已经存在可重用的镜像,如果有就使用现存的镜像,不再重复创建
+  - 详细参看[这里](/工具/Docker/Manuals/docker-build/build-cache)
 
 ## 格式
 
