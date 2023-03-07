@@ -281,6 +281,9 @@ const dockerCliPart = new Category('Docker CLI')
 .setNoLabelItem('工具/Docker/Reference/command-line/docker-cli', [
   'docker-build'
 ])
+.setNoLabelItem('工具/Docker/Reference/command-line', [
+  'daemon-cli'
+])
 
 
 const dockerSideBar = [
