@@ -4,7 +4,7 @@
         "siblings_only": true
     },
     "no-inline-html": {
-        "allowed_elements": ["mark"]
+        "allowed_elements": ["mark", "property", "constructor-arg"]
     },
     "line-length": {
         "code_block_line_length": 200,

@@ -2,7 +2,7 @@
   "unversionedId": "Spring/Spring编程思想/依赖注入",
   "id": "Spring/Spring编程思想/依赖注入",
   "title": "依赖注入",
-  "description": "1. 依赖注入的模式与类型",
+  "description": "依赖注入的模式与类型",
   "source": "@site/docs/Spring/Spring编程思想/1.4依赖注入.md",
   "sourceDirName": "Spring/Spring编程思想",
   "slug": "/Spring/Spring编程思想/依赖注入",

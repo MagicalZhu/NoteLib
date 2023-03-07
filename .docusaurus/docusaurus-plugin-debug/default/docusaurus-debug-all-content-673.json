@@ -849,7 +849,7 @@
               "unversionedId": "工具/Docker/Docker入门/DockerFile",
               "id": "工具/Docker/Docker入门/DockerFile",
               "title": "DockerFile",
-              "description": "Docker可以通过读取Dockerfile中的指令自动构建镜像,Dockerfile是由一系列命令和参数构成的脚本文件,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像",
+              "description": "Docker可以通过读取 Dockerfile 中的指令自动构建镜像,Dockerfile是由一系列命令和参数构成的脚本文件,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像",
               "source": "@site/docs/工具/Docker/Docker入门/DockerFile.md",
               "sourceDirName": "工具/Docker/Docker入门",
               "slug": "/工具/Docker/Docker入门/DockerFile",
@@ -2582,7 +2582,7 @@
               "unversionedId": "Spring/Spring编程思想/依赖注入",
               "id": "Spring/Spring编程思想/依赖注入",
               "title": "依赖注入",
-              "description": "1. 依赖注入的模式与类型",
+              "description": "依赖注入的模式与类型",
               "source": "@site/docs/Spring/Spring编程思想/1.4依赖注入.md",
               "sourceDirName": "Spring/Spring编程思想",
               "slug": "/Spring/Spring编程思想/依赖注入",
@@ -4437,13 +4437,13 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/BE/",
-        "source": "@site/src/pages/website/BE/index.tsx"
+        "permalink": "/website/COM/",
+        "source": "@site/src/pages/website/COM/index.tsx"
       },
       {
         "type": "jsx",
-        "permalink": "/website/COM/",
-        "source": "@site/src/pages/website/COM/index.tsx"
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
       },
       {
         "type": "jsx",
