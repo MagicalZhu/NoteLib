@@ -11,8 +11,6 @@ title: Docker通用命令
 
 该命令提供了由 docker 控制的构造的详细信息,默认情况下，docker inspect 会以 JSON 数组的形式呈现结果
 
-1. **格式化输出**
-
 ### 命令
 
 - 命令格式

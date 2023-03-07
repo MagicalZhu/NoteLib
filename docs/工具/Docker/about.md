@@ -28,9 +28,9 @@ title: Docker学习
 8. [dockerfile 之 VOLUME 指令](https://www.cnblogs.com/Json1208/p/8975403.html)
 9. [Dockerfile 最佳实践](https://blog.huakucha.top/posts/docker/dockerfile-best-practices)
 
-## 不错的Docker 博客
+## 不错的 Docker 博客
 
-1. [https://blog.csdn.net/qq_38220908/category_11989778.html?spm=1001.2014.3001.5482](https://blog.csdn.net/qq_38220908/article/details/127609031)
+1. [Dockerfile命令详解](https://blog.csdn.net/qq_38220908/article/details/127609031)
 
 ## Kubernetes
 
