@@ -242,7 +242,7 @@ RUN 支持下面 2 种指令格式:
 3. 使用持久的软件包管理缓存来加快构建速度
 
 - 基本格式
-  - `--mount=[type=<type>] [,option1=value1,option2=value2, ...]`
+  - `RUN --mount=[type=<type>] [,option1=value1,option2=value2, ...]`
 - 挂载类型[type]
 
   | Type                 | Description |
@@ -260,7 +260,7 @@ RUN 支持下面 2 种指令格式:
 
   | Option       | Description |
   ---------------|-------------
-  id            | 唯一标识,用于分缓存
+  id            | 唯一标识,用于区分缓存
   from          | 缓存来源 (构建阶段), 不填写时为空文件夹
   source        | from来源中的文件夹路径,默认是 from 的根目录
   target        | 缓存的挂载目标文件夹
@@ -423,7 +423,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 > `LABEL 指令`用来给镜像**以键值对的形式添加一些元数据(metadata)**, 比如一些标签来申明镜像的作者、文档地址...
 
-- 指令格式
+- LABEL 指令的格式
   - `LABEL key1=value1 key2=value2 ...`
   - **如果 value 值中包含空格,需要使用引号"""或者 使用反斜线"\\" 进行转义**
 
@@ -441,7 +441,7 @@ CMD ["nginx", "-g", "daemon off;"]
 >
 > 要在运行容器时实际发布端口,可以在docker run 上使用 -p | -P 参数
 
-- 指令格式
+- EXPOSE 指令的格式
   - `EXPOSE port1[/protocol协议] port2[/protocol协议] ...`
   - **protocol协议** : 可以指定端口监听的是 `TCP` 还是 `UDP`。如果没有指定,**默认是 TCP**
 
@@ -501,7 +501,7 @@ EXPOSE 和 docker run  -p <宿主端口>:<容器端口> 不是一个概念
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ...
 ```
 
-还可以使用[ARG 指令](DockerFile#arg), 它不会保存在最终镜像中:
+除此之外,还可以使用[ARG 指令](DockerFile#arg), 它不会保存在最终镜像中:
 
 ```docker
 ARG DEBIAN_FRONTEND=noninteractive
@@ -510,9 +510,46 @@ RUN apt-get update && apt-get install -y ...
 
 ## COPY(复制文件)
 
+> 通过 `COPY` 指令可以将 **构建上下文目录**中的 *<源路径>* 复制到**新的一层镜像内的** *<目标路径>* 位置
+
+**COPY 支持下面的两种格式:**
+
+1. `COPY [--chown=<user>:<group>] <源路径1> <源路径2> ... <目标路径>`
+2. `COPY [--chown=<user>:<group>] ["<源路径1>","<源路径2>",... , "<目标路径>"]`
+
+COPY 指令的两种形式和 [RUN](DockerFile#run执行命令) 和 [CMD](DockerFile#cmd容器启动命令) 类似,一种是类 shell 的形式,一种是类函数调用的形式。**对于路径中包含空格的,需要使用 COPY 指令第二种格式**
+
+COPY指令的说明:
+
+- **支持传入多个源路径**, 也就是支持将多个文件/目录拷贝到指定的路径
+- **源路径支持通配符**, 但是通配符规则要满足 Go 的 [filepath.Match 规则](https://golang.org/pkg/path/filepath/#Match)
+
+  ```docker
+  # * 表示匹配多个字符, 这里指匹配构建上下文环境下以 hom 开头的文件/目录
+  COPY hom* /mydir/
+
+  # ? 表示匹配单个字符
+  COPY hom?.txt /mydir/
+  ```
+
+- **目标路径可以是 容器内的绝对领,也可以是相对于工作目录(用[WORKDIR](DockerFile#workdir)来指定)的相对路径**
+
+- **目标路径不需要事先创建，如果目录不存在会在复制文件前创建缺**
+
+- COPY指令还可以加上 `--chown=<user>:<group>` 参数**改变文件的所属用户及所属组**
+
+  ```docker
+  COPY --chown=55:mygroup files* /mydir/
+  COPY --chown=bin files* /mydir/
+  COPY --chown=1 files* /mydir/
+  COPY --chown=10:11 files* /mydir/
+  ```
+
 ## ADD
 
 ## ENTRYPOINT
+
+## WORKDIR
 
 ## ARG
 
