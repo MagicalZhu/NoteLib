@@ -42,7 +42,7 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --ifm-font-color-base: #525252;
+  --ifm-font-color-base: #757575;
   --ifm-color-primary: #486af4;
   --ifm-color-primary-dark: #2a52f2;
   --ifm-color-primary-darker: #1b46f1;
@@ -566,6 +566,7 @@ a.card-link:hover img {
   line-height: 1;
   font-size: 14px;
   padding-bottom: 5px;
+  color: var(--ifm-font-color-base)
 }
 
 

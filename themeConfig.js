@@ -1,5 +1,5 @@
-// const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
-const lightCodeTheme = require('./src/prismTheme/github');
+const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
+// const lightCodeTheme = require('./src/prismTheme/github');
 // const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // const lightCodeTheme = require('./src/prismTheme/nightOwlLight');
 const darkCodeTheme = require('./src/prismTheme/dracula');
