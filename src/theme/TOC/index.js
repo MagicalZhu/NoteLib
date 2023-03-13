@@ -10,7 +10,7 @@ export default function TOC({className, ...props}) {
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
       <p className={clsx(styles.content)}>
-        Contents
+        ON THIS PAGE
       </p>
       <TOCItems
         {...props}

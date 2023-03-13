@@ -169,7 +169,7 @@ FROM 支持下面 3 种指令格式:
 
 **FROM 指令用于初始化一个新的构建阶段,并为后续指令设置基础镜像**, 所以一个有效的 Dockerfile **必须以 FROM 指令开始**
 
-1. `ARG 指令` 是 Dockerfile 中唯一可以在FROM之前的指令, 参见了解ARG和FROM的交互方式
+1. `ARG 指令` 是 Dockerfile 中唯一可以在FROM之前的指令
 2. `FROM 指令` 可以在 Dockerfile 中出现多次, 以便 **创建多个镜像或将一个构建阶段作为另一个的依赖**。
     - 在每个新的 FROM 指令之前,只需记下提交所输出的最后一个镜像ID
     - 每条 FROM 指令都会清除之前指令所创建的任何状态
@@ -182,44 +182,11 @@ FROM 支持下面 3 种指令格式:
 
 RUN 支持下面 2 种指令格式:
 
-1. `RUN <Command命令>`
-    - shell 的形式, 命令是用 shell 的方式去执行的
-      - Linux中默认使用 **/bin/sh -c**
-      - Windows中默认使用 **cmd /s /c**
+1. `RUN <Command> 参数1 参数2 ...`
+    - shell 的形式, 调用 shell来执行命令
 2. `RUN ["可执行语句", "参数1", "参数2", ...]`
-    - exec 的形式,类似于函数调用。可以避免出现 shell 字符串混杂的问题,并且可以使用 不包含指定 shell 可执行文件的基础镜像来运行命令
+    - exec 的形式,类似于函数调用, 可以使用 不包含指定 shell 可执行文件的基础镜像来运行命令
     - 这种方式必须使用双引号 **"**,  而不能使用单引号 **'**,因为该方式会被转换成一个JSON 数组
-
-<mark>shell 形式 vs exec 形式</mark>
-
-- shell 形式
-  - **替换默认的shell : 除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](DockerFile#shell)来替换**
-  - 使用反斜杠 **\\** 可以将一条 RUN指令语句分割成多行
-
-    ```docker
-    # 用 /bin/bash 替换默认的 /bin/sh
-    RUN /bin/bash -c 'source $HOME/.bashrc && \
-                    echo $HOME'
-    # 上述的RUn 指令等价于下面的
-    RUN /bin/bash -c 'source $HOME/.bashrc && echo $HOME'
-    ```
-
-- exec 形式
-  - **替换默认的shell : 可以在数组的第一位中指定使用shell**
-
-    ```docker
-    # 使用 /bin/bash 替换默认的 /bin/sh
-    RUN ["/bin/bash", "-c", "echo hello"]
-    ```
-  
-  - 与 shell 形式不同,exec 形式不使用 shell 进行处理, 也就是不会使用常规的 shell 进行处理,如果想进行 shell 处理,那么*要么使用shell形式,要么直接执行一个 shell*
-
-      ```docker
-      # exec 形式下无法进行 $HOME 替换
-      RUN [ "echo", "$HOME" ]
-      # 执行一个shell, 可以进行 $HOME 替换
-      RUN [ "sh", "-c", "echo $HOME" ]
-      ```
 
 :::caution RUN 与 构建缓存
 
@@ -230,6 +197,42 @@ RUN 支持下面 2 种指令格式:
 4. [ADD 指令](DockerFile#add) 和 [COPY 指令](DockerFile#copy) 会导致 RUN 指令的缓存失效
 
 :::
+
+### shell 形式 与 exec 形式
+
+**shell 形式**
+
+1. 默认会以 **/bin/sh -c "task command"** 的方式执行命令,也就是说**容器中的 1 号进程不是任务进程而是 bash 进程**
+    - **除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](DockerFile#shell)来替换默认的shell**
+
+2. 使用反斜杠 **\\** 可以将一条 RUN指令语句分割成多行
+
+    ```docker
+    # 用 /bin/bash 替换默认的 /bin/sh
+    RUN /bin/bash -c 'source $HOME/.bashrc && \
+                    echo $HOME'
+    # 上述的RUn 指令等价于下面的
+    RUN /bin/bash -c 'source $HOME/.bashrc && echo $HOME'
+    ```
+
+**exec 形式**
+
+1. **exec 形式不会通过 shell 执行相关的命令**，所以像 $HOME 这样的环境变量是取不到的,也就是说**容器中的任务进程就是容器内的 1 号进程**
+    - 如果想进行 shell 处理,那么**要么使用shell形式,要么直接执行一个 shell**
+
+      ```docker
+      # exec 形式下无法进行 $HOME 替换
+      RUN [ "echo", "$HOME" ]
+      # 执行一个 shell, 可以进行 $HOME 替换
+      RUN [ "sh", "-c", "echo $HOME" ]
+      ```
+  
+2. **exec 也使用shell 执行相关的命令,只需要指定可执行文件为 shell**
+
+    ```docker
+    # 指定执行的 shell 为:  /bin/bash
+    RUN ["/bin/bash", "-c", "echo hello"]
+    ```
 
 ### RUN --mount
 
@@ -370,32 +373,34 @@ RUN --mount=type=bind,from=php:alpine, \
 
 ## CMD(容器启动命令)
 
-> CMD 指令的主要目的是: **为一个正在执行的容器提供默认值。这些默认值可以包括一个可执行文件,也可以省略可执行文件,在这种情况下,你必须同时指定一个 ENTRYPOINT 指令**
+> CMD 指令的主要目的是: **为一个启动一个容器提供默认值。这些默认值可以包括一个可执行文件,也可以省略可执行文件(在这种情况下,你必须同时指定一个 ENTRYPOINT 指令)**
 >
 > 因为 Docker 不是虚拟机,容器就是进程。既然是进程,那么在启动容器的时候,需要指定所运行的程序及参数, 所以简单来说, CMD指令就是 **用于指定默认的容器主进程的启动命令的**
 
-CMD 指令的格式和 RUN 相似,也是两种格式：
+CMD 指令的格式和 RUN 非常相似,也是两种格式：
 
 1. exec 格式
-    - `CMD ["可执行文件", "参数1", "参数2"...]` : **首选形式**
+    - `CMD ["可执行文件", "参数1", "参数2"...]` : **推荐使用**
     - `CMD ["参数1", "参数2"...]` : 作为 [ENTRYPOINT 指令](DockerFile#entrypoint)的**默认参数**
 2. shell 格式
-    - `CMD <命令>`
+    - `CMD <Command> 参数1  参数2 ...`
+
+CMD 指令还有下面的注意点:
 
 - 在 `Dockerfile` 中只能有一个 `CMD 指令`,如果有多个 CMD 指令的话,那么**只有最后一个 CMD 指令会生效**
 
-- 在运行容器的时候可以指定新的命令来替代镜像设置中的这个默认命令, 比如,ubuntu 镜像默认的 CMD 是 /bin/bash
+- **在运行容器的时候可以指定新的命令来替代镜像设置中的这个默认命令**, 比如,ubuntu 镜像默认的 CMD 是 `/bin/bash`
   - 如果直接执行 docker run -it ubuntu 的话,会直接进入 bash
   - 如果指定运行别的命令,如 docker run -it ubuntu cat /etc/os-release, 这就是用 cat /etc/os-release 命令替换了默认的 /bin/bash 命令了,输出了系统版本信息
 
-- 我们看到容器的 [docker run](Docker入门/Docker容器命令#命令)后面就跟着可选参数 Command
+- 我们看到容器的 [docker run](Docker入门/Docker容器命令#命令)后面就跟着可选参数 *COMMAND*
 
-- 如果使用 shell 格式的话,实际的命令会被包装为 sh -c 的参数的形式进行执行
+- 如果使用 shell 格式的话,实际的命令会被包装为 sh -c 的参数的形式进行执行,参见[shell vs exec](DockerFile#shell-形式-与-exec-形式)
 
   ```docker
   CMD echo $HOME
 
-  # 实际被变更为:
+  # 实际被执行为:
   CMD [ "sh", "-c", "echo $HOME" ]
   ```
 
@@ -425,7 +430,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 - LABEL 指令的格式
   - `LABEL key1=value1 key2=value2 ...`
-  - **如果 value 值中包含空格,需要使用引号"""或者 使用反斜线"\\" 进行转义**
+  - **如果 value 值中包含空格,需要使用引号"或者 使用反斜线 \ 进行转义**
 
   ```docker
   LABEL "com.example.vendor"="ACME Incorporated"
@@ -563,7 +568,7 @@ ADD 指令和COPY指令功能基本相同, 但是在 COPY 指令的基础上增�
     - 如果下载的是压缩包，需要解压缩，也一样还需要额外的一层 RUN 指令进行解压缩
     - **这个功能并不实用,不如直接使用 RUN 指令，然后使用 wget 或者 curl 工具下载，处理权限、解压缩、然后清理无用文件**
 
-2. **如果 <源路径> 为一个 tar 压缩文件,压缩格式为 gzip, bzip2 以及 xz 的情况下**, ADD 指令将会自动解压缩这个压缩文件到 <目标路径> 去。在某些情况下，自动解压缩的功能非常有用，比如官方镜像 busybox 中：
+2. **如果 <源路径> 为一个 tar 压缩文件,压缩格式为 gzip, bzip2 以及 xz 的情况下**, ADD 指令将会**自动解压缩**这个压缩文件到 <目标路径> 去。在某些情况下，自动解压缩的功能非常有用，比如官方镜像 busybox 中：
 
     ```docker
     FROM scratch
@@ -579,6 +584,17 @@ ADD 指令和COPY指令功能基本相同, 但是在 COPY 指令的基础上增�
 :::
 
 ## ENTRYPOINT(入口点)
+
+> `ENTRYPOINT 指令` 的目的和 CMD 指令一样, 都是**在指定容器启动程序及参数**
+>
+> ENTRYPOINT 指令 在运行时也可以替代，不过比 CMD 要略显繁琐，需要通过 docker run 的参数 `--entrypoint` 来指定
+
+ENTRYPOINT 指令的格式和 RUN 相似,也有两种格式：
+
+1. exec 格式
+    - `ENTRYPOINT ["可执行文件", "参数1", "参数2", ...]`
+2. shell 格式
+    - `ENTRYPOINT <Command> 参数1 参数2 ...`
 
 ## WORKDIR
 
