@@ -2,7 +2,7 @@
 /* @import url('m-plus-rounded-1c.css'); */
 
 /* Website font */
-@import url('poppins.css');
+@import "@fontsource/dm-mono";
 /* @import 'lxgw-wenkai-webfont/style.css'; */
 
 @import url('default.css');
@@ -165,7 +165,7 @@ code {
   padding: 0.2em;
   border-radius: 4px;
   border: 1px solid var(--custom-border-color);
-  font-family: dm, Monaco, Consolas, Courier New, monospace;
+  font-family: DM Mono, monospace, Monaco, Consolas, Courier New, monospace;
 }
 
 html[data-theme='light'] .markdown {
@@ -298,7 +298,7 @@ li::marker {
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
   font-size: 15px;
-  font-family: dm, Menlo, monaco, Consolas, "Courier New";
+  font-family: DM Mono, monospace, Menlo, monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
 }

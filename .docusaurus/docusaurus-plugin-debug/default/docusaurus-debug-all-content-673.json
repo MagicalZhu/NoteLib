@@ -785,7 +785,7 @@
                 "permalink": "/docs/工具/Docker/Docker入门/Docker容器命令"
               },
               "next": {
-                "title": "DockerFile",
+                "title": "Dockerfile",
                 "permalink": "/docs/工具/Docker/Docker入门/DockerFile"
               }
             },
@@ -811,15 +811,15 @@
               },
               "sidebar": "dockerSideBar",
               "previous": {
-                "title": "DockerFile",
+                "title": "Dockerfile",
                 "permalink": "/docs/工具/Docker/Docker入门/DockerFile"
               }
             },
             {
               "unversionedId": "工具/Docker/Docker入门/DockerFile",
               "id": "工具/Docker/Docker入门/DockerFile",
-              "title": "DockerFile",
-              "description": "Docker可以通过读取 Dockerfile 中的指令自动构建镜像,Dockerfile是由一系列命令和参数构成的脚本文件,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像",
+              "title": "Dockerfile",
+              "description": "Docker可以通过读取 Dockerfile 中的指令自动构建镜像,Dockerfile是由一系列命令和参数构成的脚本文件,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像。",
               "source": "@site/docs/工具/Docker/Docker入门/DockerFile.md",
               "sourceDirName": "工具/Docker/Docker入门",
               "slug": "/工具/Docker/Docker入门/DockerFile",
@@ -833,7 +833,7 @@
               "formattedLastUpdatedAt": "2018年10月14日",
               "frontMatter": {
                 "id": "DockerFile",
-                "title": "DockerFile"
+                "title": "Dockerfile"
               },
               "sidebar": "dockerSideBar",
               "previous": {
@@ -4585,13 +4585,13 @@
       },
       {
         "type": "jsx",
-        "permalink": "/website/FE/",
-        "source": "@site/src/pages/website/FE/index.tsx"
+        "permalink": "/website/BE/",
+        "source": "@site/src/pages/website/BE/index.tsx"
       },
       {
         "type": "jsx",
-        "permalink": "/website/BE/",
-        "source": "@site/src/pages/website/BE/index.tsx"
+        "permalink": "/website/FE/",
+        "source": "@site/src/pages/website/FE/index.tsx"
       }
     ]
   },

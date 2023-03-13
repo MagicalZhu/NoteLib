@@ -1,11 +1,10 @@
 ---
 id: DockerFile
-title: DockerFile
+title: Dockerfile
 ---
 
-> Docker可以通过读取 Dockerfile 中的指令自动构建镜像,Dockerfile是由一系列**命令和参数构成的脚本文件**,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像
->
-> 关于 Docker 的最佳实践,可参看[这里](https://blog.huakucha.top/posts/docker/dockerfile-best-practices)
+Docker可以通过读取 Dockerfile 中的指令自动构建镜像,Dockerfile是由一系列**命令和参数构成的脚本文件**,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像。
+关于 Docker 的最佳实践,可参看[这里](https://blog.huakucha.top/posts/docker/dockerfile-best-practices)
 
 ## 概述
 
