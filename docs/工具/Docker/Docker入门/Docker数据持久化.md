@@ -157,7 +157,7 @@ docker 支持通过 `--volume` 、 `--mount` 两种命令将实现 bind mounts
 :::caution 使用 --mount 进行挂载绑定的注意点
 
 1. **--mount 不支持 z 或 Z 选项!**
-2. 如果宿主机上的指定目录不存在, docker 不会自动创建,而是抛出一个错误
+2. **如果宿主机上的指定目录不存在, docker 不会自动创建,而是抛出一个错误**
 
 :::
 
@@ -403,14 +403,14 @@ dc30d6db8b86cde413667c0328f58f55675cbcfcdb8aa118b94ffa85d66d3b4f
   - 和 volumes 与 bind mounts 不同的是, tmpfs mounts 无法在多个容器之间共享
   - 只有在Linux上运行Docker时才可用
 
-## DockerFile 添加
+## Dockerfile 添加
 
 基本步骤:
 
-1. 创建一个文件夹,并在文件夹内部创建一个`DockerFile`的文件
-2. 通过 `Volume` 指令来**指定容器中文件、目录的挂载点路径**.类似于 --mount 的dst参数,设置尝试有下面几种:
-    - VOLUME ["Volume1","Volume2"...]
-    - VOLUME Volume1  Volume2  ...
+1. 创建一个文件夹,并在文件夹内部创建一个 `Dockerfile` 的文件
+2. 通过 `Volume` 指令来**指定容器中文件、目录的挂载点路径**.类似于 --mount 的 `dst` 参数,设置尝试有下面几种:
+    - `VOLUME ["Volume1","Volume2"...]`
+    - `VOLUME Volume1  Volume2  ...`
 3. 通过 `build` 命令构建 docker 镜像
 4. 启动容器
 

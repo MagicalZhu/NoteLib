@@ -272,7 +272,7 @@ const dockerPart = new Category('Docker入门')
   'Docker镜像命令',
   'Docker容器命令',
   'Docker数据持久化',
-  'DockerFile',
+  'Dockerfile',
   'Docker通用命令'
 ])
 

@@ -1,5 +1,5 @@
 ---
-id: DockerFile
+id: Dockerfile
 title: Dockerfile
 ---
 
@@ -46,10 +46,10 @@ Dockerfile定义了进程需要的一切东西,包括:
 - `INSTRUCTION` 表示一个 Docker 指令,它**不区分大小写**,但是习惯上它们是大写的,以便更容易地将它们与参数区分开来。
 
 - Docker 按顺序运行 Dockerfile 中的指令, **一个 Dockerfile 必须以FROM指令开始**
-  - 当然例外的是, `FROM 指令` 可能位于 **[解析器指令](DockerFile#解析器指令)、注释和全局范围的[ARG](DockerFile#arg)** 之后
+  - 当然例外的是, `FROM 指令` 可能位于 **[解析器指令](Dockerfile#解析器指令)、注释和全局范围的[ARG](Dockerfile#arg构建参数)** 之后
 - `FROM 指令`指定了你要构建的父镜像,**FROM 前面只能有一个或多个ARG指令,这些指令声明了 Dockerfile 中 FROM 行使用的参数**
 
-Docker 将以 **#** 开头的行视为注释,除非该行是一个有效的[解析器指令](DockerFile#解析器指令)(一行中其他地方的#标记被视为一个参数)。下面是一个注释的示例:
+Docker 将以 **#** 开头的行视为注释,除非该行是一个有效的[解析器指令](Dockerfile#解析器指令)(一行中其他地方的#标记被视为一个参数)。下面是一个注释的示例:
 
 ```docker
 # Comment
@@ -177,16 +177,16 @@ FROM 支持下面 3 种指令格式:
 
 ## RUN(执行命令)
 
-> `RUN 指令` 将**在当前镜像之上的新层中执行任何命令并提交结果**, 提交后的镜像将被用于 Dockerfile 的下一个步骤
+> `RUN 指令` 会**在当前镜像之上的建立新的一层,并且在新的一层中执行任何命令并提交[commit](Docker容器命令#提交镜像)结果**, 提交后的镜像将被用于 Dockerfile 的下一个步骤
 
 RUN 支持下面 2 种指令格式:
 
 1. shell形式
     - `RUN <Command> 参数1 参数2 ...`
-    - 具体参看[这里](DockerFile#shell-形式)
+    - 具体参看[这里](Dockerfile#shell-形式)
 2. exec形式
     - `RUN ["可执行语句", "参数1", "参数2", ...]`
-    - 具体参看[这里](DockerFile#exec-形式)
+    - 具体参看[这里](Dockerfile#exec-形式)
 
 :::caution RUN 与 构建缓存
 
@@ -194,7 +194,7 @@ RUN 支持下面 2 种指令格式:
     - 所以通常**用 && 将各个 RUN 指令后所需的命令串联起来, 避免层数过多, 导致镜像文件增大**
 2. **RUN 指令的缓存在下次构建时不会自动失效**。比如 RUN apt-get dist-upgrade -y 这样的指令的缓存会在下次构建时被重新使用
 3. RUN 指令的缓存可以通过使用 `--no-cache` 标志来失效,例如 docker build --no-cache
-4. [ADD 指令](DockerFile#add高级的复制文件) 和 [COPY 指令](DockerFile#copy复制文件) 会导致 RUN 指令的缓存失效
+4. [ADD 指令](Dockerfile#add高级的复制文件) 和 [COPY 指令](Dockerfile#copy复制文件) 会导致 RUN 指令的缓存失效
 
 :::
 
@@ -210,7 +210,7 @@ RUN 支持下面 2 种指令格式:
   1. 整个命令都被视为一个字符串,并且**docker将在容器内部执行默认shell来执行该命令**。这意味着:**可以使用shell内置的变量、通配符、管道符...**,而且还可以使用shell中的命令实现更复杂的任务。
 
   2. 由于默认以 **/bin/sh -c "task command"** 的方式执行命令,也就是说**容器中的 1 号进程不是任务进程而是 bash 进程**
-  3. **除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](DockerFile#shell)来替换默认的shell**
+  3. **除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](Dockerfile#shell)来替换默认的shell**
   4. 使用反斜杠 **\\** 可以将一条 RUN指令语句分割成多行
 
       ```docker
@@ -403,7 +403,7 @@ CMD 指令的格式和 RUN 非常相似,也是两种格式：
     - `CMD ["可执行文件", "参数1", "参数2"...]`
       - **推荐的格式**,指定容器默认运行的可执行文件及其参数
     - `CMD ["参数1", "参数2"...]`
-      - 必须同时指定一个 ENTRYPOINT 指令,且CMD指令的参数会作为 [ENTRYPOINT 指令](DockerFile#entrypoint入口点)的**默认参数**
+      - 必须同时指定一个 ENTRYPOINT 指令,且CMD指令的参数会作为 [ENTRYPOINT 指令](Dockerfile#entrypoint入口点)的**默认参数**
 2. shell 格式
     - `CMD <Command> 参数1  参数2 ...`
 
@@ -415,7 +415,7 @@ CMD 指令还有下面的注意点:
   - 如果直接执行 docker run -it ubuntu 的话,会直接进入 bash
   - 但如果指定运行别的命令,如 docker run -it ubuntu cat /etc/os-release, 这就是用 cat /etc/os-release 命令替换了默认的 /bin/bash 命令了,输出了系统版本信息
 
-- 如果使用 shell 格式的话,实际的命令会被包装为 *sh -c* 的参数的形式进行执行,参见[shell](DockerFile#shell-形式) 与 [vs](DockerFile#exec-形式)
+- 如果使用 shell 格式的话,实际的命令会被包装为 *sh -c* 的参数的形式进行执行,参见[shell](Dockerfile#shell-形式) 与 [vs](Dockerfile#exec-形式)
 
   ```docker
   CMD echo $HOME
@@ -526,7 +526,7 @@ EXPOSE 和 docker run  -p <宿主端口>:<容器端口> 不是一个概念
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ...
 ```
 
-除此之外,还可以使用[ARG 指令](DockerFile#arg), 它不会保存在最终镜像中:
+除此之外,还可以使用[ARG 指令](Dockerfile#arg构建参数), 它不会保存在最终镜像中:
 
 ```docker
 ARG DEBIAN_FRONTEND=noninteractive
@@ -542,7 +542,7 @@ RUN apt-get update && apt-get install -y ...
 1. `COPY [--chown=<user>:<group>] <源路径1> <源路径2> ... <目标路径>`
 2. `COPY [--chown=<user>:<group>] ["<源路径1>","<源路径2>",... , "<目标路径>"]`
 
-COPY 指令的两种形式和 [RUN](DockerFile#run执行命令) 和 [CMD](DockerFile#cmd容器启动命令) 类似,一种是类 shell 的形式,一种是类函数调用的形式。**对于路径中包含空格的,需要使用 COPY 指令第二种格式**
+COPY 指令的两种形式和 [RUN](Dockerfile#run执行命令) 和 [CMD](Dockerfile#cmd容器启动命令) 类似,一种是类 shell 的形式,一种是类函数调用的形式。**对于路径中包含空格的,需要使用 COPY 指令第二种格式**
 
 <mark>COPY指令的说明:</mark>
 
@@ -557,7 +557,7 @@ COPY 指令的两种形式和 [RUN](DockerFile#run执行命令) 和 [CMD](Docker
   COPY hom?.txt /mydir/
   ```
 
-- **<目标路径> 可以是 容器内的绝对路径,也可以是相对于工作目录(用[WORKDIR](DockerFile#workdir)来指定)的相对路径**
+- **<目标路径> 可以是 容器内的绝对路径,也可以是相对于工作目录(用[WORKDIR](Dockerfile#workdir)来指定)的相对路径**
 
 - **<目标路径> 不需要事先创建,如果目录不存在会在复制文件前创建缺**
 
@@ -625,6 +625,14 @@ ENTRYPOINT 指令的格式和 RUN 相似,也有两种格式：
 
   3. 在创建容器的时候,可以在 [run 命令](Docker容器命令#创建并启动容器)后面加上 命令Command 和参数ARGS,这些会替换默认的CMD指令,这意味着: **任何传递给 docker run的参数都将被添加到 ENTRYPOINT 指令后面作为参数传递给容器**
 
+下表显示了不同的 ENTRYPOINT、CMD 组合会执行什么命令
+
+|                                | 没有 ENTRYPOINT 指令        | ENTRYPOINT exec_entry p1_entry | ENTRYPOINT ["exec_entry", "p1_entry"]          |
+|:-------------------------------|:---------------------------|:-------------------------------|:-----------------------------------------------|
+| **没有CMD 指令**                | *error, not allowed*       | /bin/sh -c exec_entry p1_entry | exec_entry p1_entry                            |
+| **CMD ["exec_cmd", "p1_cmd"]** | exec_cmd p1_cmd            | /bin/sh -c exec_entry p1_entry | exec_entry p1_entry exec_cmd p1_cmd            |
+| **CMD exec_cmd p1_cmd**        | /bin/sh -c exec_cmd p1_cmd | /bin/sh -c exec_entry p1_entry | exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd |
+
 :::info 使用场景
 
 假设我们需要一个得知自己当前公网 IP 的镜像,那么可以先用 CMD 来实现:
@@ -640,22 +648,21 @@ CMD [ "curl", "-s", "http://myip.ipip.net" ]
 
 那么我们使用 `docker build -t myip .` 来构建镜像的话,如果我们需要查询当前公网 IP,只需要执行：
 
-```sh
+```shell
 ➜  docker run myip
 当前 IP：61.148.226.66 来自：北京市 联通
 ```
 
 但是命令总有参数,如果需要加参数呢？比如从上面的 CMD 中可以看到实质的命令是 curl,那么如果需要显示 HTTP 头信息,就需要加上 -i 参数。那么可以直接加 -i 参数给 `docker run myip` 么？
 
-```sh
+```shell
 ➜  docker run myip -i
 docker: Error response from daemon: invalid header field value "oci runtime error: container_linux.go:247: starting container process caused \"exec: \\\"-i\\\": executable file not found in $PATH\"\n".
-
 ```
 
 通过错误信息可以发现执行的命令是: `-i`,也就是说 run 命令后的参数覆盖了CMD指令。那么如果希望加入 -i 这参数,就必须重新完整的输入这个命令：
 
-```sh
+```shell
 ➜  docker run myip curl -s http://myip.ipip.net -i
 ```
 
@@ -671,8 +678,8 @@ ENTRYPOINT [ "curl", "-s", "http://myip.ipip.net" ]
 
 这次再来尝试直接使用 `docker run myip -i`：
 
-```sh
-$ docker run myip -i
+```shell
+➜  docker run myip -i
 HTTP/1.1 200 OK
 Server: nginx/1.8.0
 Date: Tue, 22 Nov 2016 05:12:40 GMT
@@ -689,12 +696,135 @@ Connection: keep-alive
 当前 IP：61.148.226.66 来自：北京市 联通
 ```
 
-这是因为当存在 ENTRYPOINT 后，CMD 的内容将会作为参数传给 ENTRYPOINT，而这里 -i 就是新的 CMD，因此会作为参数传给 curl
+这是因为当存在 ENTRYPOINT 后,CMD 的内容将会作为参数传给 ENTRYPOINT,而这里 -i 就是新的 CMD,因此会作为参数传给 curl
 
 :::
 
-## WORKDIR
+## VOLUME(定义匿名卷)
 
-## ARG
+> 详细可参照[数据持久化](Docker数据持久化#dockerfile-添加)
+
+## WORKDIR (指定工作目录)
+
+> WORKDIR 指令为 Dockerfile 中的 `RUN、CMD、ENTRYPOINT、COPY、ADD` 指令**指定工作目录(或者称为当前目录)**
+>
+> **如果 指定的目录 不存在,WORKDIR 会自动创建,即使它没有在任何后续的Dockerfile指令中使用**
+
+- WORKDIR 指令的基本格式: `WORKDIR <工作目录路径>`
+
+:::tip 重复使用 WORKDIR 指令
+WORKDIR 指令可以在一个Docker文件中多次使用。**如果提供了一个相对路径,它将是相对于前一个WORKDIR指令的路径**。比如说:
+
+```docker
+WORKDIR /a
+WORKDIR b
+WORKDIR c
+
+# 这里的 pwd 输出: /a/b/c
+RUN pwd
+```
+
+:::
+
+### 使用场景
+
+每一个 `RUN 指令` 都是**启动一个容器、执行命令、然后提交存储层文件变更**,看下下面的示例:
+
+```docker
+RUN cd /app
+RUN echo "hello" > world.txt
+```
+
+如果将这个 Dockerfile 进行构建镜像运行后,会发现找不到 /app/world.txt 文件,或者其内容不是 hello。因为:
+
+- 在 Shell 中,连续两行是同一个进程执行环境,因此前一个命令修改的内存状态,会直接影响后一个命令
+- 而在 Dockerfile 中, 这两行 RUN 命令的执行环境根本不同,是两个完全不同的容器层
+
+如果需要改变以后各层的工作目录的位置,那么应该使用 `WORKDIR 指令`:
+
+```docker
+WORKDIR /app
+
+RUN echo "hello" > world.txt
+```
+
+## USER(指定当前用户)
+
+USER 指令支持下面的两种格式:
+
+1. `USER <user>[:<group>]`
+
+2. `USER <UID>[:<GID>]`
+
+:::caution 注意点
+
+- `USER 指令`和 [WORKDIR](Dockerfile#workdir-指定工作目录) 相似,都是改变环境状态并影响以后的层。**WORKDIR 是改变工作目录,USER 则是改变之后层的执行 RUN, CMD 以及 ENTRYPOINT 这类命令的身份**
+
+- **USER 指令只是帮助切换到指定用户而已,这个用户必须是事先建立好的,否则无法切换**
+
+  ```docker
+  # 先创建用户 redis 以及 用户组 redis ,并且将用户添加到用户组
+  RUN groupadd -r redis && useradd -r -g redis redis
+  # 切换用户为 redis
+  USER redis
+  RUN [ "redis-server" ]
+  ```
+
+:::
+
+## ARG(构建参数)
+
+> 和 `ENV 指令`一样,都可以**设置环境变量**
+
+- 基本格式
+  - `ARG <参数名> [=<默认值>]`
+- 特点
+  - 和 `ENV 指令`不同的是, **ARG 指令 所设置的构建环境的环境变量不会保存在最终镜像**, 但是不要因此就使用 ARG 指令保存密码之类的信息,因为 `docker history` 还是可以看到所有值的
+
+  - ARG 指令定义的默认构建参数值, 可以在构建时通过docker build命令使用 `--build-arg <参数名>=<默认值>`覆盖
+  
+  - 如果指定了一个没有在 Dockerfile 中定义的构建参数,那么会输出一个警告
+
+### 作用范围
+
+1. ARG 变量定义**从 Dockerfile 中定义它的那一行开始生效,而不是从参数在命令行或其他地方的使用开始生效**
+
+    ```docker
+    FROM busybox
+    # 这里无法获取到 username 变量,所以值是 some_user
+    USER ${username:-some_user}
+    # 开始定义 username 变量
+    ARG username
+    # 可以获取到 username 变量了
+    USER $username
+    ```
+
+2. **如果在 FROM 指令之前指定,那么只能用于 FROM 指令中**,尤其是多构建阶段的 Dockerfile(多阶段之间定义的 ARG 变量是不能共享的)
+
+    ```docker
+    # 在 FROM 指令之前设置了 DOCKER_USERNAME 变量
+    ARG DOCKER_USERNAME=library
+
+    # FROM 指令中可以获取 DOCKER_USERNAME 变量
+    FROM ${DOCKER_USERNAME}/alpine
+    
+    # 无法获取到 DOCKER_USERNAME 变量
+    RUN set -x ; echo ${DOCKER_USERNAME}
+
+    # 要想在 FROM 之后使用,必须再次指定
+    ARG DOCKER_USERNAME=library
+    RUN set -x ; echo ${DOCKER_USERNAME}
+    ```
+
+### ENV & ARG
+
+```docker
+FROM ubuntu
+ARG CONT_IMG_VER
+ENV CONT_IMG_VER=v1.0.0
+RUN echo $CONT_IMG_VER
+```
+
+然后执行构建命令: `docker build --build-arg CONT_IMG_VER=v2.0.1 .`, 此时 RUN 指令输出的是 *v1.0.0*, **ENV 变量覆盖了 ARG变量**
 
 ## SHELL
