@@ -297,7 +297,7 @@ li::marker {
   display: list-item;
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
-  font-size: 15px;
+  /*font-size: 15px;*/
   font-family: DM Mono, monospace, Menlo, monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
@@ -564,7 +564,7 @@ a.card-link:hover img {
 .table-of-contents__link {
   display: block;
   line-height: 1;
-  font-size: 14px;
+  font-size: 13px;
   padding-bottom: 5px;
   color: var(--ifm-font-color-base)
 }

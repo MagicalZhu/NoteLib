@@ -283,7 +283,7 @@
   --ifm-toc-padding-horizontal: 0.5rem;
   --ifm-dropdown-background-color: var(--ifm-background-surface-color);
   --ifm-dropdown-font-weight: var(--ifm-font-weight-semibold);
-  --ifm-dropdown-link-color: var(--ifm-font-color-base);
+  --ifm-dropdown-link-color: #000000;
   --ifm-dropdown-hover-background-color: var(--ifm-hover-overlay);
   --ifm-footer-background-color: var(--ifm-color-emphasis-100);
   --ifm-footer-color: inherit;
@@ -295,7 +295,7 @@
   --ifm-footer-title-color: inherit;
   --ifm-hero-background-color: var(--ifm-background-surface-color);
   --ifm-hero-text-color: var(--ifm-color-emphasis-800);
-  --ifm-menu-color: var(--ifm-color-emphasis-700);
+  --ifm-menu-color: #000000;
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: var(--ifm-hover-overlay);
   --ifm-menu-color-background-hover: var(--ifm-hover-overlay);
@@ -307,7 +307,7 @@
   --ifm-navbar-height: 3.75rem;
   --ifm-navbar-item-padding-horizontal: 0.75rem;
   --ifm-navbar-item-padding-vertical: 0.25rem;
-  --ifm-navbar-link-color: var(--ifm-font-color-base);
+  --ifm-navbar-link-color: #000000;
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
   --ifm-navbar-link-active-color: var(--ifm-link-color);
   --ifm-navbar-padding-horizontal: var(--ifm-spacing-horizontal);
