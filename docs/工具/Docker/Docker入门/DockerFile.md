@@ -3,7 +3,7 @@ id: DockerFile
 title: Dockerfile
 ---
 
-Docker可以通过读取 Dockerfile 中的指令自动构建镜像,Dockerfile是由一系列**命令和参数构成的脚本文件**,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像。
+Docker可以通过读取 Dockerfile 中的指令自动构建镜像,Dockerfile 是由一系列**命令和参数构成的脚本文件**,它包含了用户可以在命令行上调用的所有命令,以组装一个镜像。
 关于 Docker 的最佳实践,可参看[这里](https://blog.huakucha.top/posts/docker/dockerfile-best-practices)
 
 ## 概述
@@ -21,7 +21,7 @@ Dockerfile定义了进程需要的一切东西,包括:
 9. …
 
 - 基本使用步骤
-  1. 编写 `Dockerfile` 文件
+  1. 编写 **Dockerfile** 文件
   2. 通过 `docker build` 命令执行,得到一个自定义的镜像
 
 - 基础概念
@@ -38,27 +38,27 @@ Dockerfile定义了进程需要的一切东西,包括:
 
 - Dockerfile 的基本格式如下:
 
-  ```dockerfile
+  ```docker
   # Comment
   INSTRUCTION arguments
   ```
 
-- `INSTRUCTION`表示一个 Docker 指令,它**不区分大小写**,但是习惯上它们是大写的,以便更容易地将它们与参数区分开来。
+- `INSTRUCTION` 表示一个 Docker 指令,它**不区分大小写**,但是习惯上它们是大写的,以便更容易地将它们与参数区分开来。
 
 - Docker 按顺序运行 Dockerfile 中的指令, **一个 Dockerfile 必须以FROM指令开始**
   - 当然例外的是, `FROM 指令` 可能位于 **[解析器指令](DockerFile#解析器指令)、注释和全局范围的[ARG](DockerFile#arg)** 之后
 - `FROM 指令`指定了你要构建的父镜像,**FROM 前面只能有一个或多个ARG指令,这些指令声明了 Dockerfile 中 FROM 行使用的参数**
 
-Docker 将以 `#` 开头的行视为注释,除非该行是一个有效的[解析器指令](DockerFile#解析器指令)(一行中其他地方的#标记被视为一个参数)。下面是一个注释的示例:
+Docker 将以 **#** 开头的行视为注释,除非该行是一个有效的[解析器指令](DockerFile#解析器指令)(一行中其他地方的#标记被视为一个参数)。下面是一个注释的示例:
 
-```dockerfile
+```docker
 # Comment
 RUN echo 'we are running some # of cool things'
 ```
 
-在执行Dockerfile指令之前,注释行会被删除,这意味着下面例子中的注释不会被执行echo命令的shell处理,下面例子中的两个RUN指令是等效的:
+在执行Dockerfile指令之前,注释行会被删除,这意味着下面例子中的注释不会被执行 echo 命令的 shell 处理,下面例子中的两个 `RUN指令` 是等效的:
 
-```dockerfile
+```docker
 RUN echo hello \
 # comment
 world
@@ -129,8 +129,8 @@ world
 
 ### 替换环境变量
 
-- 环境变量(用 `ENV` 指令声明)也可以在某些指令中作为变量使用, 一般通过`$variable_name或${variable_name}` 来使用。
-- 如果需要使用 `$` 字符,可以通过转义符 `\` 来处理。比如 \\$foo 或者 \\${foo} 会被解析为字符串: $foo 与 ${foo}
+- 环境变量(用 `ENV 指令` 声明)也可以在某些指令中作为变量使用, 一般通过`$variable_name或${variable_name}` 来使用。
+- 如果需要使用 **$** 字符,可以通过转义符 **\\** 来处理。比如 \\$foo 或者 \\${foo} 会被解析为字符串: $foo 与 ${foo}
 
 下面是一个示例:
 
@@ -172,7 +172,7 @@ FROM 支持下面 3 种指令格式:
 2. `FROM 指令` 可以在 Dockerfile 中出现多次, 以便 **创建多个镜像或将一个构建阶段作为另一个的依赖**。
     - 在每个新的 FROM 指令之前,只需记下提交所输出的最后一个镜像ID
     - 每条 FROM 指令都会清除之前指令所创建的任何状态
-3. 在 FROM 指令后面可以加入 `AS 阶段名称` 来给新的构建阶段一个名称,这个名称可以在随后的 `FROM` 和`COPY --from=阶段名称`指令中使用,以指代在这个阶段建立的镜像
+3. 在 FROM 指令后面可以加入 `AS 阶段名称` 来给新的构建阶段一个名称,这个名称可以在随后的 `FROM 指令` 和`COPY --from=阶段名称 指令`中使用,以表示在这个阶段建立的镜像
 4. `tag 标签或 DIGEST 摘要` 是可选的。如果省略了其中任何一个,构建的时候默认会使用最新的标签。如果找不到指定的标签值,就会返回一个错误
 
 ## RUN(执行命令)
@@ -181,11 +181,12 @@ FROM 支持下面 3 种指令格式:
 
 RUN 支持下面 2 种指令格式:
 
-1. `RUN <Command> 参数1 参数2 ...`
-    - shell 的形式, 调用 shell来执行命令
-2. `RUN ["可执行语句", "参数1", "参数2", ...]`
-    - exec 的形式,类似于函数调用, 可以使用 不包含指定 shell 可执行文件的基础镜像来运行命令
-    - 这种方式必须使用双引号 **"**,  而不能使用单引号 **'**,因为该方式会被转换成一个JSON 数组
+1. shell形式
+    - `RUN <Command> 参数1 参数2 ...`
+    - 具体参看[这里](DockerFile#shell-形式)
+2. exec形式
+    - `RUN ["可执行语句", "参数1", "参数2", ...]`
+    - 具体参看[这里](DockerFile#exec-形式)
 
 :::caution RUN 与 构建缓存
 
@@ -193,45 +194,65 @@ RUN 支持下面 2 种指令格式:
     - 所以通常**用 && 将各个 RUN 指令后所需的命令串联起来, 避免层数过多, 导致镜像文件增大**
 2. **RUN 指令的缓存在下次构建时不会自动失效**。比如 RUN apt-get dist-upgrade -y 这样的指令的缓存会在下次构建时被重新使用
 3. RUN 指令的缓存可以通过使用 `--no-cache` 标志来失效,例如 docker build --no-cache
-4. [ADD 指令](DockerFile#add) 和 [COPY 指令](DockerFile#copy) 会导致 RUN 指令的缓存失效
+4. [ADD 指令](DockerFile#add高级的复制文件) 和 [COPY 指令](DockerFile#copy复制文件) 会导致 RUN 指令的缓存失效
 
 :::
 
-### shell 形式 与 exec 形式
+### shell 形式
 
-**shell 形式**
+- 基本示例
 
-1. 默认会以 **/bin/sh -c "task command"** 的方式执行命令,也就是说**容器中的 1 号进程不是任务进程而是 bash 进程**
-    - **除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](DockerFile#shell)来替换默认的shell**
+  ```docker
+  RUN apt-get update && apt-get install -y nginx
+  ```
 
-2. 使用反斜杠 **\\** 可以将一条 RUN指令语句分割成多行
+- **特点**
+  1. 整个命令都被视为一个字符串,并且**docker将在容器内部执行默认shell来执行该命令**。这意味着:**可以使用shell内置的变量、通配符、管道符...**,而且还可以使用shell中的命令实现更复杂的任务。
 
-    ```docker
-    # 用 /bin/bash 替换默认的 /bin/sh
-    RUN /bin/bash -c 'source $HOME/.bashrc && \
-                    echo $HOME'
-    # 上述的RUn 指令等价于下面的
-    RUN /bin/bash -c 'source $HOME/.bashrc && echo $HOME'
-    ```
-
-**exec 形式**
-
-1. **exec 形式不会通过 shell 执行相关的命令**，所以像 $HOME 这样的环境变量是取不到的,也就是说**容器中的任务进程就是容器内的 1 号进程**
-    - 如果想进行 shell 处理,那么**要么使用shell形式,要么直接执行一个 shell**
+  2. 由于默认以 **/bin/sh -c "task command"** 的方式执行命令,也就是说**容器中的 1 号进程不是任务进程而是 bash 进程**
+  3. **除了在 RUN 指令中指定 shell, 也可以通过 [SHELL 指令](DockerFile#shell)来替换默认的shell**
+  4. 使用反斜杠 **\\** 可以将一条 RUN指令语句分割成多行
 
       ```docker
-      # exec 形式下无法进行 $HOME 替换
-      RUN [ "echo", "$HOME" ]
-      # 执行一个 shell, 可以进行 $HOME 替换
-      RUN [ "sh", "-c", "echo $HOME" ]
+      # 用 /bin/bash 替换默认的 /bin/sh
+      RUN /bin/bash -c 'source $HOME/.bashrc && \
+                      echo $HOME'
+      # 上述的RUn 指令等价于下面的
+      RUN /bin/bash -c 'source $HOME/.bashrc && echo $HOME'
       ```
-  
-2. **exec 也使用shell 执行相关的命令,只需要指定可执行文件为 shell**
+
+### exec 形式
+
+- 基本示例
 
     ```docker
-    # 指定执行的 shell 为:  /bin/bash
-    RUN ["/bin/bash", "-c", "echo hello"]
+    RUN ["apt-get", "update"]
+    RUN ["apt-get", "install", "-y", "nginx"]
     ```
+
+- **特点**
+  1. 类似于函数调用,每个参数都被视为一个独立的字符串,同时 docker 将**不会在容器内部执行shell命令(bash,sh等)**,也就是说**在执行命令时不需要考虑特殊字符的转义**
+  2. 必须使用双引号 **"**,  而不能使用单引号 **'**,因为该方式会被转换成一个JSON 数组
+  3. **由于 exec 形式不会通过 shell 执行相关的命令**,所以像 $HOME 这样的环境变量是取不到的,也就是说**容器中的任务进程就是容器内的 1 号进程**
+      - 如果想进行 shell 处理,那么**要么使用shell形式,要么直接执行一个 shell**
+
+        ```docker
+        # exec 形式下无法进行 $HOME 替换
+        RUN [ "echo", "$HOME" ]
+        # 执行一个 shell, 可以进行 $HOME 替换
+        RUN [ "sh", "-c", "echo $HOME" ]
+        ```
+
+  4. **exec 也使用shell 执行相关的命令,只需要指定可执行文件为 shell**
+
+      ```docker
+      # 指定执行的 shell 为:  /bin/bash
+      RUN ["/bin/bash", "-c", "echo hello"]
+      ```
+
+:::tip 提示
+使用exec形式执行命令是推荐的方式,因为其具有更好的可读性和可维护性
+:::
 
 ### RUN --mount
 
@@ -372,15 +393,17 @@ RUN --mount=type=bind,from=php:alpine, \
 
 ## CMD(容器启动命令)
 
-> CMD 指令的主要目的是: **为一个启动一个容器提供默认值。这些默认值可以包括一个可执行文件,也可以省略可执行文件(在这种情况下,你必须同时指定一个 ENTRYPOINT 指令)**
+> CMD 指令的主要目的是: **指定在容器启动时默认要运行的命令, 这些默认值可以包括一个可执行文件,也可以省略可执行文件(**
 >
 > 因为 Docker 不是虚拟机,容器就是进程。既然是进程,那么在启动容器的时候,需要指定所运行的程序及参数, 所以简单来说, CMD指令就是 **用于指定默认的容器主进程的启动命令的**
 
 CMD 指令的格式和 RUN 非常相似,也是两种格式：
 
 1. exec 格式
-    - `CMD ["可执行文件", "参数1", "参数2"...]` : **推荐使用**
-    - `CMD ["参数1", "参数2"...]` : 作为 [ENTRYPOINT 指令](DockerFile#entrypoint)的**默认参数**
+    - `CMD ["可执行文件", "参数1", "参数2"...]`
+      - **推荐的格式**,指定容器默认运行的可执行文件及其参数
+    - `CMD ["参数1", "参数2"...]`
+      - 必须同时指定一个 ENTRYPOINT 指令,且CMD指令的参数会作为 [ENTRYPOINT 指令](DockerFile#entrypoint入口点)的**默认参数**
 2. shell 格式
     - `CMD <Command> 参数1  参数2 ...`
 
@@ -388,13 +411,11 @@ CMD 指令还有下面的注意点:
 
 - 在 `Dockerfile` 中只能有一个 `CMD 指令`,如果有多个 CMD 指令的话,那么**只有最后一个 CMD 指令会生效**
 
-- **在运行容器的时候可以指定新的命令来替代镜像设置中的这个默认命令**, 比如,ubuntu 镜像默认的 CMD 是 `/bin/bash`
+- 我们看到容器的 [docker run](Docker入门/Docker容器命令#命令)后面就跟着可选参数 *COMMAND*, 这意味着**在运行容器的时候可以指定新的命令来替代镜像设置中的这个默认命令**, 比如,ubuntu 镜像默认的 CMD 是 `/bin/bash`
   - 如果直接执行 docker run -it ubuntu 的话,会直接进入 bash
-  - 如果指定运行别的命令,如 docker run -it ubuntu cat /etc/os-release, 这就是用 cat /etc/os-release 命令替换了默认的 /bin/bash 命令了,输出了系统版本信息
+  - 但如果指定运行别的命令,如 docker run -it ubuntu cat /etc/os-release, 这就是用 cat /etc/os-release 命令替换了默认的 /bin/bash 命令了,输出了系统版本信息
 
-- 我们看到容器的 [docker run](Docker入门/Docker容器命令#命令)后面就跟着可选参数 *COMMAND*
-
-- 如果使用 shell 格式的话,实际的命令会被包装为 sh -c 的参数的形式进行执行,参见[shell vs exec](DockerFile#shell-形式-与-exec-形式)
+- 如果使用 shell 格式的话,实际的命令会被包装为 *sh -c* 的参数的形式进行执行,参见[shell](DockerFile#shell-形式) 与 [vs](DockerFile#exec-形式)
 
   ```docker
   CMD echo $HOME
@@ -538,7 +559,7 @@ COPY 指令的两种形式和 [RUN](DockerFile#run执行命令) 和 [CMD](Docker
 
 - **<目标路径> 可以是 容器内的绝对路径,也可以是相对于工作目录(用[WORKDIR](DockerFile#workdir)来指定)的相对路径**
 
-- **<目标路径> 不需要事先创建，如果目录不存在会在复制文件前创建缺**
+- **<目标路径> 不需要事先创建,如果目录不存在会在复制文件前创建缺**
 
 - COPY指令还可以加上 `--chown=<user>:<group>` 参数**改变文件的所属用户及所属组**
 
@@ -549,7 +570,7 @@ COPY 指令的两种形式和 [RUN](DockerFile#run执行命令) 和 [CMD](Docker
   COPY --chown=10:11 files* /mydir/
   ```
 
-- 如果 <源路径> 为文件夹，复制的时候**不是直接复制该文件夹**，而是**复制文件夹中的内容**到 <目标路径>
+- 如果 <源路径> 为文件夹,复制的时候**不是直接复制该文件夹**,而是**复制文件夹中的内容**到 <目标路径>
 
 ## ADD(高级的复制文件)
 
@@ -563,11 +584,11 @@ COPY 指令的两种形式和 [RUN](DockerFile#run执行命令) 和 [CMD](Docker
 ADD 指令和COPY指令功能基本相同, 但是在 COPY 指令的基础上增加了额外的一些功能:
 
 1. 如果 **<源路径> 是一个 URL**, 那么 Docker 会下载这个链接的文件放到 <目标路径>
-    - 下载后的文件权限自动设置为 600，如果这并不是想要的权限，那么还需要增加额外的一层 RUN 进行权限调整
-    - 如果下载的是压缩包，需要解压缩，也一样还需要额外的一层 RUN 指令进行解压缩
-    - **这个功能并不实用,不如直接使用 RUN 指令，然后使用 wget 或者 curl 工具下载，处理权限、解压缩、然后清理无用文件**
+    - 下载后的文件权限自动设置为 600,如果这并不是想要的权限,那么还需要增加额外的一层 RUN 进行权限调整
+    - 如果下载的是压缩包,需要解压缩,也一样还需要额外的一层 RUN 指令进行解压缩
+    - **这个功能并不实用,不如直接使用 RUN 指令,然后使用 wget 或者 curl 工具下载,处理权限、解压缩、然后清理无用文件**
 
-2. **如果 <源路径> 为一个 tar 压缩文件,压缩格式为 gzip, bzip2 以及 xz 的情况下**, ADD 指令将会**自动解压缩**这个压缩文件到 <目标路径> 去。在某些情况下，自动解压缩的功能非常有用，比如官方镜像 busybox 中：
+2. **如果 <源路径> 为一个 tar 压缩文件,压缩格式为 gzip, bzip2 以及 xz 的情况下**, ADD 指令将会**自动解压缩**这个压缩文件到 <目标路径> 去。在某些情况下,自动解压缩的功能非常有用,比如官方镜像 busybox 中：
 
     ```docker
     FROM scratch
@@ -577,16 +598,14 @@ ADD 指令和COPY指令功能基本相同, 但是在 COPY 指令的基础上增�
 
 :::caution 注意
 
-- **如果真的是希望复制个压缩文件进去，而不是解压缩，那么不可以使用 ADD 指令了**,所以最适合使用 ADD 指令的场合，就是需要自动解压缩的场合
-- `ADD` 指令会让镜像构建缓存失效，从而可能会令镜像构建变得比较缓慢。
+- **如果真的是希望复制个压缩文件进去,而不是解压缩,那么不可以使用 ADD 指令了**,所以最适合使用 ADD 指令的场合,就是需要自动解压缩的场合
+- `ADD` 指令会让镜像构建缓存失效,从而可能会令镜像构建变得比较缓慢。
 
 :::
 
 ## ENTRYPOINT(入口点)
 
-> `ENTRYPOINT 指令` 的目的和 CMD 指令一样, 都是**在指定容器启动程序及参数**
->
-> ENTRYPOINT 指令 在运行时也可以替代，不过比 CMD 要略显繁琐，需要通过 docker run 的参数 `--entrypoint` 来指定
+> ENTRYPOINT 指令 **指定了当前镜像的入口点,也就是容器启动后要运行的默认命令**
 
 ENTRYPOINT 指令的格式和 RUN 相似,也有两种格式：
 
@@ -594,6 +613,85 @@ ENTRYPOINT 指令的格式和 RUN 相似,也有两种格式：
     - `ENTRYPOINT ["可执行文件", "参数1", "参数2", ...]`
 2. shell 格式
     - `ENTRYPOINT <Command> 参数1 参数2 ...`
+
+- 特点
+  1. ENTRYPOINT 指令 在运行时也可以替代,需要通过 docker run 的参数 `--entrypoint` 来指定
+
+  2. 当指定了 ENTRYPOINT 指令后,**CMD 指令就不再是直接运行其命令,而是将 CMD 的内容作为参数传给 ENTRYPOINT 指令。**,也就是实际执行时,将变为：
+
+      ```docker
+      <ENTRYPOINT> "<CMD>"
+      ```
+
+  3. 在创建容器的时候,可以在 [run 命令](Docker容器命令#创建并启动容器)后面加上 命令Command 和参数ARGS,这些会替换默认的CMD指令,这意味着: **任何传递给 docker run的参数都将被添加到 ENTRYPOINT 指令后面作为参数传递给容器**
+
+:::info 使用场景
+
+假设我们需要一个得知自己当前公网 IP 的镜像,那么可以先用 CMD 来实现:
+
+```docker
+FROM ubuntu:18.04
+RUN apt-get update \
+    && apt-get install -y curl \
+    && rm -rf /var/lib/apt/lists/*
+# 获取公网IP
+CMD [ "curl", "-s", "http://myip.ipip.net" ]
+```
+
+那么我们使用 `docker build -t myip .` 来构建镜像的话,如果我们需要查询当前公网 IP,只需要执行：
+
+```sh
+➜  docker run myip
+当前 IP：61.148.226.66 来自：北京市 联通
+```
+
+但是命令总有参数,如果需要加参数呢？比如从上面的 CMD 中可以看到实质的命令是 curl,那么如果需要显示 HTTP 头信息,就需要加上 -i 参数。那么可以直接加 -i 参数给 `docker run myip` 么？
+
+```sh
+➜  docker run myip -i
+docker: Error response from daemon: invalid header field value "oci runtime error: container_linux.go:247: starting container process caused \"exec: \\\"-i\\\": executable file not found in $PATH\"\n".
+
+```
+
+通过错误信息可以发现执行的命令是: `-i`,也就是说 run 命令后的参数覆盖了CMD指令。那么如果希望加入 -i 这参数,就必须重新完整的输入这个命令：
+
+```sh
+➜  docker run myip curl -s http://myip.ipip.net -i
+```
+
+这显然不是很好的解决方案,而使用 `ENTRYPOINT` 就可以解决这个问题。现在我们重新用 `ENTRYPOINT` 来实现这个镜像:
+
+```docker
+FROM ubuntu:18.04
+RUN apt-get update \
+    && apt-get install -y curl \
+    && rm -rf /var/lib/apt/lists/*
+ENTRYPOINT [ "curl", "-s", "http://myip.ipip.net" ]
+```
+
+这次再来尝试直接使用 `docker run myip -i`：
+
+```sh
+$ docker run myip -i
+HTTP/1.1 200 OK
+Server: nginx/1.8.0
+Date: Tue, 22 Nov 2016 05:12:40 GMT
+Content-Type: text/html; charset=UTF-8
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.24-1~dotdeb+7.1
+X-Cache: MISS from cache-2
+X-Cache-Lookup: MISS from cache-2:80
+X-Cache: MISS from proxy-2_6
+Transfer-Encoding: chunked
+Via: 1.1 cache-2:80, 1.1 proxy-2_6:8006
+Connection: keep-alive
+
+当前 IP：61.148.226.66 来自：北京市 联通
+```
+
+这是因为当存在 ENTRYPOINT 后，CMD 的内容将会作为参数传给 ENTRYPOINT，而这里 -i 就是新的 CMD，因此会作为参数传给 curl
+
+:::
 
 ## WORKDIR
 

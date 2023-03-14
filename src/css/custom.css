@@ -678,3 +678,7 @@ ul ::marker {
 ol ::marker {
   color: rgba(209, 213, 219, 1) !important;
 }
+
+ul ol {
+  list-style: lower-alpha;
+}
