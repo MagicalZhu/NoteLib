@@ -64,13 +64,37 @@
     ],
     "metadata": "metadata---blogb-2-b-df1"
   },
-  "/blog/aliSeata-5f1": {
+  "/blog/20220708-9a5": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
       "plugin": "plugin---blog-419-a8d"
     },
     "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-ali-seata-9-dc-7f6"
+    "content": "content---blog-20220708060-62e"
+  },
+  "/blog/20220720-6e6": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blog-419-a8d"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-202207205-f-3-f29"
+  },
+  "/blog/20220907-e54": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blog-419-a8d"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-202209079-dc-91a"
+  },
+  "/blog/20221206-475": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blog-419-a8d"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-20221206-f-2-c-9c9"
   },
   "/blog/archive-a54": {
     "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
@@ -78,111 +102,6 @@
       "plugin": "plugin---blog-419-a8d"
     },
     "archive": "archive---blog-archiveb-2-f-393"
-  },
-  "/blog/gotConcurrencyAli-941": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-got-concurrency-ali-060-080"
-  },
-  "/blog/internal-navigation-13b": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-internal-navigation-5-f-3-5ad"
-  },
-  "/blog/juejinPost-c6b": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-juejin-postf-2-c-eaa"
-  },
-  "/blog/tags-caa": {
-    "__comp": "__comp---theme-blog-tags-list-page-01-a-d0b",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "tags": "tags---blog-tagsa-70-da2"
-  },
-  "/blog/tags/alibaba-9c6": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blog-08-e-8cb"
-      },
-      {
-        "content": "content---blogf-1-f-466"
-      }
-    ],
-    "tag": "tag---blog-tags-alibaba-7-a-5-185",
-    "listMetadata": "listMetadata---blog-tags-alibaba-425-658"
-  },
-  "/blog/tags/分享-80a": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blog-87-e-167"
-      }
-    ],
-    "tag": "tag---blog-tags-分享-808-9cc",
-    "listMetadata": "listMetadata---blog-tags-分享ff-1-d86"
-  },
-  "/blog/tags/学习-105": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blogf-1-f-466"
-      }
-    ],
-    "tag": "tag---blog-tags-学习-66-a-be6",
-    "listMetadata": "listMetadata---blog-tags-学习-41-a-c87"
-  },
-  "/blog/tags/掘金-ecf": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blogfa-3-943"
-      }
-    ],
-    "tag": "tag---blog-tags-掘金d-59-a92",
-    "listMetadata": "listMetadata---blog-tags-掘金efe-327"
-  },
-  "/blog/tags/高并发-b3e": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-419-a8d"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blogf-1-f-466"
-      }
-    ],
-    "tag": "tag---blog-tags-高并发fd-8-351",
-    "listMetadata": "listMetadata---blog-tags-高并发-350-c77"
   },
   "/search-1fe": {
     "__comp": "__comp---theme-search-page-1-a-4-d6f",

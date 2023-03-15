@@ -1,4 +1,4 @@
-athuconst classicConfig = {
+const classicConfig = {
   /**
   * @type {import('@docusaurus/preset-classic').Options} 
   */

@@ -1,4 +1,4 @@
-athuconst lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
+const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
 // const lightCodeTheme = require('./src/prismTheme/github');
 // const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // const lightCodeTheme = require('./src/prismTheme/nightOwlLight');
@@ -30,7 +30,8 @@ const themeConfig = {
       autoCollapseCategories: true,
     }
   },
-  footer: footerConfig,
+  // footer: footerConfig,
+  footer: {},
   prism: {
     theme: lightCodeTheme,
     darkTheme: darkCodeTheme,

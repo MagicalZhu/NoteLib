@@ -43,58 +43,28 @@ export default [
     exact: true
   },
   {
-    path: '/blog/aliSeata',
-    component: ComponentCreator('/blog/aliSeata', '5f1'),
+    path: '/blog/20220708',
+    component: ComponentCreator('/blog/20220708', '9a5'),
+    exact: true
+  },
+  {
+    path: '/blog/20220720',
+    component: ComponentCreator('/blog/20220720', '6e6'),
+    exact: true
+  },
+  {
+    path: '/blog/20220907',
+    component: ComponentCreator('/blog/20220907', 'e54'),
+    exact: true
+  },
+  {
+    path: '/blog/20221206',
+    component: ComponentCreator('/blog/20221206', '475'),
     exact: true
   },
   {
     path: '/blog/archive',
     component: ComponentCreator('/blog/archive', 'a54'),
-    exact: true
-  },
-  {
-    path: '/blog/gotConcurrencyAli',
-    component: ComponentCreator('/blog/gotConcurrencyAli', '941'),
-    exact: true
-  },
-  {
-    path: '/blog/internal-navigation',
-    component: ComponentCreator('/blog/internal-navigation', '13b'),
-    exact: true
-  },
-  {
-    path: '/blog/juejinPost',
-    component: ComponentCreator('/blog/juejinPost', 'c6b'),
-    exact: true
-  },
-  {
-    path: '/blog/tags',
-    component: ComponentCreator('/blog/tags', 'caa'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/alibaba',
-    component: ComponentCreator('/blog/tags/alibaba', '9c6'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/分享',
-    component: ComponentCreator('/blog/tags/分享', '80a'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/学习',
-    component: ComponentCreator('/blog/tags/学习', '105'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/掘金',
-    component: ComponentCreator('/blog/tags/掘金', 'ecf'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/高并发',
-    component: ComponentCreator('/blog/tags/高并发', 'b3e'),
     exact: true
   },
   {

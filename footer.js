@@ -1,4 +1,4 @@
-athuconst footer = {
+const footer = {
   links: [
     {
       title: '前端链接',

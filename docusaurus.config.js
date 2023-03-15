@@ -1,4 +1,4 @@
-athu// @ts-check
+// @ts-check
 
 const themeConfigs = require("./themeConfig")
 const pluginConfigs = require("./plugin")
