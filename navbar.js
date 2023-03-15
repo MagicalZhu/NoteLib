@@ -12,7 +12,7 @@ const Type = {
 const nav = {
   title: 'athu',
   logo: {
-    alt: 'athu的知识库',
+    alt: 'athu',
     src: 'img/logo.svg',
   },
   // 自动隐藏的粘性导航条

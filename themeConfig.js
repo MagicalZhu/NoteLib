@@ -50,7 +50,7 @@ const themeConfig = {
   algolia: {
     appId: 'QZ9YPBGUYT',
     apiKey: '6fbdcfb4f791b5c14fe38c070c15fbfa',
-    indexName: 'athuDoc',
+    indexName: 'huakuchaDoc',
     contextualSearch: true,
     searchPagePath: 'search',
   },
