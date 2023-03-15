@@ -18,7 +18,7 @@
     "id": "Hystrix",
     "title": "服务熔断-Hystrix"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "服务接口调用-OpenFeign",
     "permalink": "/docs/SpringCloud/Netflix/OpenFeign"

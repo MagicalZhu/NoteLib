@@ -18,7 +18,7 @@
     "id": "Bus",
     "title": "消息总线-Bus"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "服务配置中心-Config",
     "permalink": "/docs/SpringCloud/Netflix/Config"

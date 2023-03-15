@@ -18,7 +18,7 @@
     "id": "Sentinel",
     "title": "服务容错-Sentinel"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "服务注册与配置中心-Nacos",
     "permalink": "/docs/SpringCloud/Alibaba/Nacos"

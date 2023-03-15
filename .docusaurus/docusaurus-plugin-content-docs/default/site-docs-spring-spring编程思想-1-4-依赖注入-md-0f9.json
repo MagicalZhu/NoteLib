@@ -18,7 +18,7 @@
     "id": "依赖注入",
     "title": "依赖注入"
   },
-  "sidebar": "springSideBar",
+  "sidebar": "spring",
   "previous": {
     "title": "依赖查找",
     "permalink": "/docs/Spring/Spring编程思想/依赖查找"

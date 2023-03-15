@@ -18,7 +18,7 @@
     "id": "IOC容器",
     "title": "IOC容器"
   },
-  "sidebar": "springSideBar",
+  "sidebar": "spring",
   "previous": {
     "title": "Spring基础知识",
     "permalink": "/docs/Spring/Spring编程思想/基础知识"

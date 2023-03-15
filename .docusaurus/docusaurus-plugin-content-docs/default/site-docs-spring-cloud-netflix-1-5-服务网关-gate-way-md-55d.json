@@ -18,7 +18,7 @@
     "id": "GateWay",
     "title": "服务网关-GateWay"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "服务熔断-Hystrix",
     "permalink": "/docs/SpringCloud/Netflix/Hystrix"

@@ -18,7 +18,7 @@
     "id": "MySQL基础查询",
     "title": "MySQL基础查询"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "previous": {
     "title": "基础知识",
     "permalink": "/docs/category/基础知识"

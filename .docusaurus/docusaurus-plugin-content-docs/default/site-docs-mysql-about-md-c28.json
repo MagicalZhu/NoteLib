@@ -19,7 +19,7 @@
     "slug": "/mysql",
     "title": "MySQL笔记概述"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "next": {
     "title": "MySQL基础与高级",
     "permalink": "/docs/category/mysql基础与高级"

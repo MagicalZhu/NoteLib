@@ -18,7 +18,7 @@
     "id": "MySQL逻辑架构",
     "title": "MySQL逻辑架构"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "previous": {
     "title": "架构与引擎",
     "permalink": "/docs/category/架构与引擎"

@@ -19,7 +19,7 @@
     "title": "Spring",
     "slug": "/spring"
   },
-  "sidebar": "springSideBar",
+  "sidebar": "spring",
   "next": {
     "title": "Spring基础",
     "permalink": "/docs/category/spring基础"

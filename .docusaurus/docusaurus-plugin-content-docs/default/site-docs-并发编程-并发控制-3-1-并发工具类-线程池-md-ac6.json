@@ -18,7 +18,7 @@
     "id": "线程池",
     "title": "线程池"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "并发控制",
     "permalink": "/docs/category/并发控制"

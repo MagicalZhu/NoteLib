@@ -18,7 +18,7 @@
     "id": "final",
     "title": "final"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "原子变量类&CAS",
     "permalink": "/docs/并发编程/并发控制/Atomic&CAS"

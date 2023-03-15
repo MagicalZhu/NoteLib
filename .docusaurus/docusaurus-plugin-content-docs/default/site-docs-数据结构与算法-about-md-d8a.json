@@ -19,7 +19,7 @@
     "title": "数据结构与算法",
     "slug": "/dataStructure"
   },
-  "sidebar": "dataStructureSidebar",
+  "sidebar": "dataStruct",
   "next": {
     "title": "数据结构与算法基础",
     "permalink": "/docs/category/数据结构与算法基础"

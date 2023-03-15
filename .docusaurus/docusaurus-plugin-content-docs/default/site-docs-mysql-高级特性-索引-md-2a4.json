@@ -18,7 +18,7 @@
     "id": "索引",
     "title": "索引"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "previous": {
     "title": "存储结构与索引",
     "permalink": "/docs/category/存储结构与索引"

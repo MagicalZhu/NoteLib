@@ -18,7 +18,7 @@
     "id": "Nacos",
     "title": "服务注册与配置中心-Nacos"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "SpringCloud-Alibaba",
     "permalink": "/docs/category/springcloud-alibaba"

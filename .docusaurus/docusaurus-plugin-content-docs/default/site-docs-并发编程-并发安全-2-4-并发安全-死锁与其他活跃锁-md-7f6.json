@@ -18,7 +18,7 @@
     "id": "dead_lock",
     "title": "死锁与其他活跃锁"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "volatile与锁",
     "permalink": "/docs/并发编程/并发安全/volatile"

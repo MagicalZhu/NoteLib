@@ -18,7 +18,7 @@
     "id": "OpenFeign",
     "title": "服务接口调用-OpenFeign"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "服务调用-Ribbon",
     "permalink": "/docs/SpringCloud/Netflix/Ribbon"

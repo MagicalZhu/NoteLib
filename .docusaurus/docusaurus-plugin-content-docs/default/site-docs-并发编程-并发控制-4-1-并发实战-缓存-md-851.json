@@ -18,7 +18,7 @@
     "id": "缓存实战",
     "title": "自定义缓存"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "FutureTask",
     "permalink": "/docs/并发编程/并发控制/FutureTask"

@@ -18,7 +18,7 @@
     "id": "依赖查找",
     "title": "依赖查找"
   },
-  "sidebar": "springSideBar",
+  "sidebar": "spring",
   "previous": {
     "title": "Bean",
     "permalink": "/docs/Spring/Spring编程思想/Bean"

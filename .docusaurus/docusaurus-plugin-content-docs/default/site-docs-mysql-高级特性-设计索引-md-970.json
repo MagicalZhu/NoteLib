@@ -18,7 +18,7 @@
     "id": "设计索引",
     "title": "设计索引"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "previous": {
     "title": "索引的应用",
     "permalink": "/docs/Mysql/高级特性/索引的应用"

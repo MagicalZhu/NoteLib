@@ -18,7 +18,7 @@
     "id": "MySQL函数与聚合",
     "title": "MySQL函数与聚合"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "previous": {
     "title": "MySQL基础查询",
     "permalink": "/docs/Mysql/基础/MySQL基础查询"

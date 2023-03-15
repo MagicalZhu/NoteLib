@@ -12,15 +12,45 @@ const dockerPart = [
   },
   {
     type: Type.CAT,
-    label: "Docker CLI",
+    label: "Docker 手册",
     items: [
-      "工具/Docker/Reference/command-line/docker-cli/docker-build",
+      {
+        type: Type.CAT,
+        label: "构建",
+        items: [
+          "工具/Docker/Manuals/docker-build/build-cache"
+        ],
+        collapsed: true,
+        link: {
+          type: "generated-index"
+        }
+      }
+    ],
+    collapsed: true,
+    link: {
+      type: "generated-index"
+    }
+  },
+  {
+    type: Type.CAT,
+    label: "Docker 指南",
+    items: [
+      {
+        type: Type.CAT,
+        label: "Docker Cli",
+        items: [
+          "工具/Docker/Reference/command-line/docker-cli/docker-build"
+        ],
+        collapsed: true,
+        link: {
+          type: "generated-index"
+        }
+      },
       "工具/Docker/Reference/command-line/daemon-cli"
     ],
     collapsed: true,
     link: {
-      type: "generated-index",
-      // description: 'description'
+      type: "generated-index"
     }
   },
   {
@@ -31,7 +61,7 @@ const dockerPart = [
       "工具/Docker/Docker入门/Docker镜像命令",
       "工具/Docker/Docker入门/Docker容器命令",
       "工具/Docker/Docker入门/Docker数据持久化",
-      "工具/Docker/Docker入门/DockerFile",
+      "工具/Docker/Docker入门/Dockerfile",
       "工具/Docker/Docker入门/Docker通用命令"
     ],
     collapsed: true,
@@ -40,7 +70,6 @@ const dockerPart = [
     }
   }
 ]
-
 
 
 module.exports = dockerPart;

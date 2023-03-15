@@ -19,7 +19,7 @@
     "slug": "/currency",
     "title": "并发笔记概述"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "next": {
     "title": "并发包基础",
     "permalink": "/docs/并发编程/juc基础"

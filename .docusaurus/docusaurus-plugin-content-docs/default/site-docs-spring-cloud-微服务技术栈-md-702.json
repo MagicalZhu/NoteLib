@@ -18,7 +18,7 @@
     "id": "微服务技术栈",
     "title": "微服务技术栈"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "微服务基础",
     "permalink": "/docs/category/微服务基础"

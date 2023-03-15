@@ -19,7 +19,7 @@
     "title": "LeetCode刷题笔记",
     "slug": "/leetCode"
   },
-  "sidebar": "leetCodeSidebar",
+  "sidebar": "leetCode",
   "next": {
     "title": "图解算法数据结构",
     "permalink": "/docs/LeetCode刷题笔记/illustrationOfAlgorithm"

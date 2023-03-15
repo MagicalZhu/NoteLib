@@ -18,7 +18,7 @@
     "id": "Eureka&Consul",
     "title": "服务注册-Eureka&Consul"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "SpringCloud-Netflix",
     "permalink": "/docs/category/springcloud-netflix"

@@ -18,7 +18,7 @@
     "id": "juc基础",
     "title": "并发包基础"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "并发笔记概述",
     "permalink": "/docs/currency"

@@ -18,7 +18,7 @@
     "id": "ThreadLocal",
     "title": "ThreadLocal"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "线程池",
     "permalink": "/docs/并发编程/并发控制/线程池"

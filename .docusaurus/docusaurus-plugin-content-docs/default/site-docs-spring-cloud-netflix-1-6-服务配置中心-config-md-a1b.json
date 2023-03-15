@@ -18,7 +18,7 @@
     "id": "Config",
     "title": "服务配置中心-Config"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "服务网关-GateWay",
     "permalink": "/docs/SpringCloud/Netflix/GateWay"

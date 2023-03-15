@@ -19,7 +19,7 @@
     "title": "springCloud",
     "slug": "/springCloud"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "next": {
     "title": "微服务基础",
     "permalink": "/docs/category/微服务基础"

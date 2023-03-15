@@ -18,7 +18,7 @@
     "id": "线程安全",
     "title": "线程安全"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "并发安全",
     "permalink": "/docs/category/并发安全"

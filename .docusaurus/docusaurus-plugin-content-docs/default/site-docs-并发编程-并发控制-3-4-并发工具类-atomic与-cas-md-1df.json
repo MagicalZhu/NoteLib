@@ -18,7 +18,7 @@
     "id": "Atomic&CAS",
     "title": "原子变量类&CAS"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "Lock锁",
     "permalink": "/docs/并发编程/并发控制/Lock锁"

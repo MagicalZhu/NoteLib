@@ -19,7 +19,7 @@
     "title": "资源分享",
     "slug": "/source/devSource"
   },
-  "sidebar": "sourceSideBar",
+  "sidebar": "share",
   "next": {
     "title": "动漫分享",
     "permalink": "/docs/category/动漫分享"

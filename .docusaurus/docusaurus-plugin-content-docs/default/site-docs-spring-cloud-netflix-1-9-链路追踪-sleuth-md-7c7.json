@@ -18,7 +18,7 @@
     "id": "Sleuth",
     "title": "链路追踪-Sleuth"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "消息驱动-Stream",
     "permalink": "/docs/SpringCloud/Netflix/Stream"

@@ -18,7 +18,7 @@
     "id": "MySQL库对象",
     "title": "MySQL库对象"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "previous": {
     "title": "MySQL子查询",
     "permalink": "/docs/Mysql/基础/MySQL子查询"

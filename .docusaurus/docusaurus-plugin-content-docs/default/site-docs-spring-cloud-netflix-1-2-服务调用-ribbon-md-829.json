@@ -18,7 +18,7 @@
     "id": "Ribbon",
     "title": "服务调用-Ribbon"
   },
-  "sidebar": "springCloudSideBar",
+  "sidebar": "springCloud",
   "previous": {
     "title": "服务注册-Eureka&Consul",
     "permalink": "/docs/SpringCloud/Netflix/Eureka&Consul"

@@ -18,7 +18,7 @@
     "id": "http-protocol",
     "title": "HTTP协议"
   },
-  "sidebar": "netWorkSidebar",
+  "sidebar": "netWork",
   "previous": {
     "title": "计算机网络概述",
     "permalink": "/docs/networrk-basic"

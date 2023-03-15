@@ -18,7 +18,7 @@
     "id": "并发集合与阻塞队列",
     "title": "并发容器"
   },
-  "sidebar": "basicSideBar",
+  "sidebar": "concurrency",
   "previous": {
     "title": "final",
     "permalink": "/docs/并发编程/并发控制/final"

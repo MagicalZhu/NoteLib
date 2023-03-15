@@ -18,7 +18,7 @@
     "id": "MySQL 部署",
     "title": "MySQL 部署"
   },
-  "sidebar": "mysqlSideBar",
+  "sidebar": "mysql",
   "previous": {
     "title": "数据库管理",
     "permalink": "/docs/category/数据库管理"

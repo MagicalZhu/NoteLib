@@ -18,9 +18,9 @@
     "id": "前提基础知识",
     "title": "前提基础知识"
   },
-  "sidebar": "dataStructureSidebar",
+  "sidebar": "dataStruct",
   "previous": {
     "title": "基础知识",
-    "permalink": "/docs/category/基础知识-1"
+    "permalink": "/docs/category/基础知识-2"
   }
 }
