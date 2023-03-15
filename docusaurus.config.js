@@ -1,4 +1,4 @@
-// @ts-check
+athu// @ts-check
 
 const themeConfigs = require("./themeConfig")
 const pluginConfigs = require("./plugin")
@@ -11,7 +11,7 @@ const customConfig = require("./configCustom")
 const config = {
   title: '花裤衩Wiki',
   tagline: '永远保持好奇',
-  url: 'https://huakucha.com',
+  url: 'https://athu.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',

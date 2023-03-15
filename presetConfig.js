@@ -1,4 +1,4 @@
-const classicConfig = {
+athuconst classicConfig = {
   /**
   * @type {import('@docusaurus/preset-classic').Options} 
   */
@@ -33,7 +33,7 @@ const classicConfig = {
     // 订阅源
     feedOptions: {
       type: 'all',
-      copyright: `Copyright © ${new Date().getFullYear()} Huakucha, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} athu, Inc.`,
     },
   },
   // 以下参数将被直接传递给 @docusaurus/plugin-content-pages （设置为 false 则表示禁用此插件）

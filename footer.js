@@ -1,4 +1,4 @@
-const footer = {
+athuconst footer = {
   links: [
     {
       title: '前端链接',
@@ -52,6 +52,6 @@ const footer = {
       ],
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} huakucha. Built With Docusaurus.`
+  copyright: `Copyright © ${new Date().getFullYear()} athu. Built With Docusaurus.`
 }
 module.exports = footer

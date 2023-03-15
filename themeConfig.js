@@ -1,4 +1,4 @@
-const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
+athuconst lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
 // const lightCodeTheme = require('./src/prismTheme/github');
 // const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // const lightCodeTheme = require('./src/prismTheme/nightOwlLight');
@@ -49,7 +49,7 @@ const themeConfig = {
   algolia: {
     appId: 'QZ9YPBGUYT',
     apiKey: '6fbdcfb4f791b5c14fe38c070c15fbfa',
-    indexName: 'huakuchaDoc',
+    indexName: 'athuDoc',
     contextualSearch: true,
     searchPagePath: 'search',
   },
