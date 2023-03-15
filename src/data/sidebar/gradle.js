@@ -13,11 +13,11 @@ const gradleSideBar = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "Gradle",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "基础",
               items: [
                   "工具/Gradle/基础/Gradle基础"

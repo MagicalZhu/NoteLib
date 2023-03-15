@@ -16,7 +16,7 @@ const netWorkSidebar = [
       label: "HTTP协议"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "TCP/IP",
       items: [
           "计算机网络/TCP-IP/net-basic"

@@ -11,11 +11,11 @@ const distributePart = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "分布式算法",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "一致性算法",
               items: [
                   "分布式/分布式理论/分布式一致性算法/paxos"

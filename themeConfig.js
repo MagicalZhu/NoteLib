@@ -1,7 +1,6 @@
-const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
 // const lightCodeTheme = require('./src/prismTheme/github');
 // const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-// const lightCodeTheme = require('./src/prismTheme/nightOwlLight');
+const lightCodeTheme = require('./src/prismTheme/nightOwlLight');
 const darkCodeTheme = require('./src/prismTheme/dracula');
 const footerConfig = require('./footer')
 const navConfig = require('./navbar')
@@ -11,14 +10,14 @@ const themeConfig = {
   // 色彩模式
   colorMode: {
     defaultMode: 'light',
-    disableSwitch: false,
+    disableSwitch: true,
     respectPrefersColorScheme: true,
   },
   image: 'img/fav.png',
   // 告示条
   announcementBar: {
     id: 'support_us',
-    content: '🌟欢迎来到花裤衩的博客🌟',
+    content: '🌟欢迎来到Athu的博客🌟',
     backgroundColor: '#fafbfc',
     textColor: '#091E42',
     isCloseable: true,

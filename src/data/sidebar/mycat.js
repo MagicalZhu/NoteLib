@@ -11,11 +11,11 @@ const myCatSideBar = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "MyCat",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "基础知识",
               items: [
                   "中间件/数据库/MyCat/基础/MyCat基础"

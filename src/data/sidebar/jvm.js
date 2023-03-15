@@ -11,11 +11,11 @@ const jvmSideBar = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "理解JVM",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "内存与垃圾回收",
               items: [
                   "JVM/内存与垃圾回收/JVM-Intro",
@@ -34,11 +34,11 @@ const jvmSideBar = [
       }
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "JVM优化",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "性能监控和调优入门",
               items: [
                   "JVM/性能监控和调优入门/基于JDK命令行工具的监控"

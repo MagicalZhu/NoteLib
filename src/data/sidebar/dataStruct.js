@@ -11,11 +11,11 @@ const dataStructureSidebar = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "数据结构与算法基础",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "基础知识",
               items: [
                   "数据结构与算法/基础/前提基础知识"

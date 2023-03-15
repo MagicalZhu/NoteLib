@@ -16,11 +16,11 @@ const concurrencyPart = [
       label: "并发包基础"
     },
     {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "并发基础",
       items: [
         {
-          type: Type.CAT,
+          type: Type.CATEGORY,
           label: "并发安全",
           items: [
             "并发编程/并发安全/线程安全",
@@ -34,7 +34,7 @@ const concurrencyPart = [
           }
         },
         {
-          type: Type.CAT,
+          type: Type.CATEGORY,
           label: "并发控制",
           items: [
             "并发编程/并发控制/线程池",

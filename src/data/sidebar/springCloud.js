@@ -13,12 +13,12 @@ const springCloudSideBar = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "微服务基础",
       items: [
           "SpringCloud/微服务技术栈",
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "SpringCloud-Netflix",
               items: [
                   "SpringCloud/Netflix/Eureka&Consul",
@@ -37,7 +37,7 @@ const springCloudSideBar = [
               }
           },
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "SpringCloud-Alibaba",
               items: [
                   "SpringCloud/Alibaba/Nacos",

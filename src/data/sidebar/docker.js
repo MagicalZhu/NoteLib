@@ -11,11 +11,11 @@ const dockerPart = [
     label: "简介"
   },
   {
-    type: Type.CAT,
+    type: Type.CATEGORY,
     label: "Docker 手册",
     items: [
       {
-        type: Type.CAT,
+        type: Type.CATEGORY,
         label: "构建",
         items: [
           "工具/Docker/Manuals/docker-build/build-cache"
@@ -32,11 +32,11 @@ const dockerPart = [
     }
   },
   {
-    type: Type.CAT,
+    type: Type.CATEGORY,
     label: "Docker 指南",
     items: [
       {
-        type: Type.CAT,
+        type: Type.CATEGORY,
         label: "Docker Cli",
         items: [
           "工具/Docker/Reference/command-line/docker-cli/docker-build"
@@ -54,7 +54,7 @@ const dockerPart = [
     }
   },
   {
-    type: Type.CAT,
+    type: Type.CATEGORY,
     label: "Docker入门",
     items: [
       "工具/Docker/Docker入门/Docker基础",

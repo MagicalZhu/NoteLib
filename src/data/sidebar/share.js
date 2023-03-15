@@ -11,7 +11,7 @@ const sourceSideBar = [
       label: "资源分享"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "动漫分享",
       items: [
           "source/acg/acgShare_2022"

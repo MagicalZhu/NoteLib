@@ -11,11 +11,11 @@ const vueSideBar = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "Vue学习笔记",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "Vue基础",
               items: [
                   "前端/Vue/基础特性"

@@ -12,11 +12,11 @@ const mysqlSideBar = [
       label: "简介"
   },
   {
-      type: Type.CAT,
+      type: Type.CATEGORY,
       label: "MySQL基础与高级",
       items: [
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "基础知识",
               items: [
                   "Mysql/基础/MySQL基础查询",
@@ -30,7 +30,7 @@ const mysqlSideBar = [
               }
           },
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "数据库管理",
               items: [
                   "Mysql/高级特性/MySQL 部署",
@@ -42,7 +42,7 @@ const mysqlSideBar = [
               }
           },
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "架构与引擎",
               items: [
                   "Mysql/高级特性/MySQL逻辑架构",
@@ -54,7 +54,7 @@ const mysqlSideBar = [
               }
           },
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "存储结构与索引",
               items: [
                   "Mysql/高级特性/索引",
@@ -69,11 +69,11 @@ const mysqlSideBar = [
               }
           },
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "性能优化",
               items: [
                   {
-                      type: Type.CAT,
+                      type: Type.CATEGORY,
                       label: "性能分析工具",
                       items: [
                           "Mysql/高级特性/基本分析工具",
@@ -95,7 +95,7 @@ const mysqlSideBar = [
               }
           },
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "事务与锁",
               items: [
                   "Mysql/高级特性/事务基础",
@@ -110,7 +110,7 @@ const mysqlSideBar = [
               }
           },
           {
-              type: Type.CAT,
+              type: Type.CATEGORY,
               label: "运维",
               items: [
                   "Mysql/高级特性/其他日志",
