@@ -1,4 +1,4 @@
-athu// navbar的类型定义
+// navbar的类型定义
 const Type = {
   dropdown: 'dropdown',
   doc: 'doc',
@@ -10,9 +10,9 @@ const Type = {
 }
 
 const nav = {
-  title: '花裤衩',
+  title: 'athu',
   logo: {
-    alt: '花裤衩的博客',
+    alt: 'athu的知识库',
     src: 'img/logo.svg',
   },
   // 自动隐藏的粘性导航条
