@@ -34,3 +34,4 @@ title: Docker学习
 ## Kubernetes
 
 1. [Kubernetes官方文档](https://kubernetes.io/zh-cn/docs)
+2. [Kubernetes 中文指南/云原生应用架构实战手册](https://lib.jimmysong.io/kubernetes-handbook/)
