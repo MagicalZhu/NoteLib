@@ -53,7 +53,7 @@ const nav = {
       ]
     },
     {
-      label: "后端框架👨",
+      label: "后端框架",
       position: "left",
       items: [
         {
@@ -124,7 +124,7 @@ const nav = {
       ]
     },
     {
-      label: "前端技术👩",
+      label: "前端技术",
       position: "left",
       items: [
         {
