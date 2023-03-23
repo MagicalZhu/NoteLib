@@ -2,20 +2,20 @@
   "title": "Recent posts",
   "items": [
     {
-      "title": "20221206",
-      "permalink": "/blog/20221206"
+      "title": "一颗彪悍的种子",
+      "permalink": "/blog/juejinPost"
     },
     {
-      "title": "20220907",
-      "permalink": "/blog/20220907"
+      "title": "阿里技术号",
+      "permalink": "/blog/aliSeata"
     },
     {
-      "title": "20220708",
-      "permalink": "/blog/20220708"
+      "title": "如何获得高并发的经验?",
+      "permalink": "/blog/gotConcurrencyAli"
     },
     {
-      "title": "20220720",
-      "permalink": "/blog/20220720"
+      "title": "网站导航",
+      "permalink": "/blog/internal-navigation"
     }
   ]
 }

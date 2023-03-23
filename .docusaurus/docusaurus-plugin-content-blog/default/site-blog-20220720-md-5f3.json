@@ -1,18 +1,43 @@
 {
-  "permalink": "/blog/20220720",
+  "permalink": "/blog/internal-navigation",
   "editUrl": "https://github.com/MagicalZhu/NoteLib/tree/main/blog/20220720.md",
   "source": "@site/blog/20220720.md",
-  "title": "20220720",
-  "description": "athuathu---",
-  "date": "2022-07-20T15:12:05.000Z",
+  "title": "网站导航",
+  "description": "常用的网址导航",
+  "date": "2022-07-20T00:00:00.000Z",
   "formattedDate": "2022年7月20日",
-  "tags": [],
-  "readingTime": 0.33,
+  "tags": [
+    {
+      "label": "分享",
+      "permalink": "/blog/tags/分享"
+    }
+  ],
+  "readingTime": 0.23333333333333334,
   "hasTruncateMarker": false,
-  "authors": [],
-  "frontMatter": {},
+  "authors": [
+    {
+      "name": "花裤衩",
+      "title": "码农一枚",
+      "url": "https://github.com/MagicalZhu",
+      "email": "18151271579@163.com",
+      "imageURL": "/img/logo.svg",
+      "key": "athu"
+    }
+  ],
+  "frontMatter": {
+    "title": "网站导航",
+    "description": "常用的网址导航",
+    "slug": "internal-navigation",
+    "authors": "athu",
+    "tags": [
+      "分享"
+    ],
+    "image": "https://i.imgur.com/mErPwqL.png",
+    "hide_table_of_contents": false,
+    "date": "2022-07-20T00:00:00.000Z"
+  },
   "prevItem": {
-    "title": "20220708",
-    "permalink": "/blog/20220708"
+    "title": "如何获得高并发的经验?",
+    "permalink": "/blog/gotConcurrencyAli"
   }
 }

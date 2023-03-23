@@ -10,9 +10,9 @@ const Type = {
 }
 
 const nav = {
-  title: 'athu',
+  title: 'Athu',
   logo: {
-    alt: 'athu',
+    alt: 'Athu',
     src: 'img/logo.svg',
   },
   // 自动隐藏的粘性导航条
@@ -23,7 +23,7 @@ const nav = {
   // 设置导航条上的元素
   items: [
     {
-      label: "基础知识🤖",
+      label: "基础知识",
       position: "left",
       items: [
         {
@@ -53,7 +53,7 @@ const nav = {
       ]
     },
     {
-      label: "后端框架👨‍💻",
+      label: "后端框架👨",
       position: "left",
       items: [
         {
@@ -67,7 +67,7 @@ const nav = {
       ]
     },
     {
-      label: "方法论🚧",
+      label: "方法论",
       position: "left",
       items: [
         {
@@ -81,7 +81,7 @@ const nav = {
       ]
     },
     {
-      label: "中间件🚀",
+      label: "中间件",
       position: "left",
       items: [
         {
@@ -110,7 +110,7 @@ const nav = {
       ]
     },
     {
-      label:"底层⛽️",
+      label:"底层",
       position: "left",
       items: [
         {
@@ -124,7 +124,7 @@ const nav = {
       ]
     },
     {
-      label: "前端技术👩‍💻",
+      label: "前端技术👩",
       position: "left",
       items: [
         {
@@ -134,7 +134,7 @@ const nav = {
       ]
     },
     {
-      label:"其他工具👹",
+      label:"其他工具",
       position: "left",
       items: [
         {
@@ -148,7 +148,7 @@ const nav = {
       ]
     },
     {
-      label: '物料中心👏',
+      label: '物料中心',
       position: "left",
       items: [
         { to: '/website/BE', label: '后端产品' },
@@ -157,28 +157,28 @@ const nav = {
       ]
     },
     {
-      label: "博客👋",
+      label: "博客",
       position: "left",
       to: '/blog', label: '博客'
     },
+    /*
     {
       label: "关于",
       position: "right",
       href: 'https://blog.huakucha.top'
     },
-    /*
       // i18n
       {
         type: Type.localeDropdown,
         position: 'right',
       },
-    */
-    // 社交账号
-    {
-      href: 'https://github.com/MagicalZhu',
-      position: 'right',
-      className: 'header-github-link','aria-label': 'GitHub repository',
-    }
+      // 社交账号
+      {
+        href: 'https://github.com/MagicalZhu',
+        position: 'right',
+        className: 'header-github-link','aria-label': 'GitHub repository',
+      }
+      */
   ]
 }
 
