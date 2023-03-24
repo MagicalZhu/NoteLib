@@ -54,7 +54,8 @@ const dockerPart = [
         ],
         collapsed: true,
         link: {
-          type: "generated-index"
+          type: 'doc',
+          id: '工具/Docker/Reference/command-line/docker-cli/docker-cli-intro',
         }
       },
       "工具/Docker/Reference/command-line/daemon-cli"
