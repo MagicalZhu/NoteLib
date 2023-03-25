@@ -6,7 +6,8 @@ const customConfig = {
   profileTagline: [
     '山海有归期,风雨自相逢',
     '永远保持好奇'
-  ]
+  ],
+  logo: 'img/logo.svg'
 }
 
 module.exports = customConfig

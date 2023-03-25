@@ -10,11 +10,11 @@ const Type = {
 }
 
 const nav = {
-  title: 'Athu',
-  logo: {
-    alt: 'Athu',
-    src: 'img/logo.svg',
-  },
+  // title: 'Athu',
+  // logo: {
+  //   alt: 'Athu',
+  //   src: 'img/logo.svg',
+  // },
   // 自动隐藏的粘性导航条
   // hideOnScroll: true,
   // 导航条的样式

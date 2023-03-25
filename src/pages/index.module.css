@@ -8,11 +8,16 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin-top: 12em
 }
 
 .img {
   height: 64px;
   margin: 1rem;
+}
+
+.avastar {
+  color: #FECACA
 }
 
 

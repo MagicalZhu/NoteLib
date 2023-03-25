@@ -1,31 +1,27 @@
 {
-  "title": {
-    "message": "athu",
-    "description": "The title in the navbar"
+  "item.label.基础知识": {
+    "message": "基础知识",
+    "description": "Navbar item with label 基础知识"
   },
-  "item.label.🤖基础知识": {
-    "message": "🤖基础知识",
-    "description": "Navbar item with label 🤖基础知识"
+  "item.label.后端框架": {
+    "message": "后端框架",
+    "description": "Navbar item with label 后端框架"
   },
-  "item.label.👨‍💻后端框架": {
-    "message": "👨‍💻后端框架",
-    "description": "Navbar item with label 👨‍💻后端框架"
+  "item.label.分布式系统": {
+    "message": "分布式系统",
+    "description": "Navbar item with label 分布式系统"
   },
-  "item.label.🚀分布式系统": {
-    "message": "🚀分布式系统",
-    "description": "Navbar item with label 🚀分布式系统"
+  "item.label.前端技术": {
+    "message": "前端技术",
+    "description": "Navbar item with label 前端技术"
   },
-  "item.label.👩‍💻前端技术": {
-    "message": "👩‍💻前端技术",
-    "description": "Navbar item with label 👩‍💻前端技术"
+  "item.label.底层": {
+    "message": "底层",
+    "description": "Navbar item with label 底层"
   },
-  "item.label.⛽️底层": {
-    "message": "⛽️底层",
-    "description": "Navbar item with label ⛽️底层"
-  },
-  "item.label.👋其他": {
-    "message": "👋其他",
-    "description": "Navbar item with label 👋其他"
+  "item.label.其他": {
+    "message": "其他",
+    "description": "Navbar item with label 其他"
   },
   "item.label.并发编程": {
     "message": "并发编程",

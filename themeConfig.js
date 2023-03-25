@@ -30,7 +30,6 @@ const themeConfig = {
     }
   },
   // footer: footerConfig,
-  footer: {},
   prism: {
     theme: lightCodeTheme,
     darkTheme: darkCodeTheme,

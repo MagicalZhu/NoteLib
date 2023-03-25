@@ -682,3 +682,7 @@ ol ::marker {
 ul ol {
   list-style: lower-alpha;
 }
+
+.DocSearch-Button {
+  display: none !important;
+}
