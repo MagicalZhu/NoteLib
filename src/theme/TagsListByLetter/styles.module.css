@@ -1,0 +1,42 @@
+
+.tagUl {
+  display: inline;
+}
+
+.tagCat {
+  margin: 0 0.4rem 0.5rem 0;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.tagItem {
+  border: 1px solid var(--docusaurus-tag-list-border);
+  transition: border var(--ifm-transition-fast);
+}
+
+.tagItem:hover {
+  --docusaurus-tag-list-border: var(--ifm-link-color);
+  text-decoration: none;
+}
+
+.tagItemRegular {
+  border-radius: 0.5rem;
+  padding-left: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 15px;
+}
+.tagCount {
+  background: #e4eeff;
+  background-color: #e4eeff;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0 6px;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid #fff;
+  transform: translateY(-5%) translateX(40%);
+} 

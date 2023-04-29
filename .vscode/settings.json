@@ -1,0 +1,25 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.docusaurus": true,
+    "**/LICENSE": true,
+    "**/build": true
+  },
+  "markdownlint.config": {
+    "no-duplicate-header": {
+      "allow_different_nesting": true,
+      "siblings_only": true
+    }
+  },
+  "markdown.preview.doubleClickToSwitchToEditor": true,
+  "markdown.preview.lineHeight": 1.2,
+  "tailwindCSS.rootFontSize": 15,
+  "cSpell.enabled": true,
+  "cSpell.words": ["javax", "springframework"]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "athu",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "dev": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle  --danger",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
+  },
+  "dependencies": {
+    "@docusaurus/core": "2.1.0",
+    "@docusaurus/plugin-client-redirects": "2.1.0",
+    "@docusaurus/plugin-content-blog": "2.1.0",
+    "@docusaurus/plugin-content-docs": "2.1.0",
+    "@docusaurus/plugin-content-pages": "2.1.0",
+    "@docusaurus/plugin-debug": "2.1.0",
+    "@docusaurus/plugin-pwa": "2.1.0",
+    "@docusaurus/plugin-sitemap": "2.1.0",
+    "@docusaurus/preset-classic": "2.1.0",
+    "@docusaurus/types": "2.1.0",
+    "@fontsource/dm-mono": "^4.5.10",
+    "@giscus/react": "^2.0.6",
+    "@saucelabs/theme-github-codeblock": "^0.1.1",
+    "ahooks": "^3.7.1",
+    "clsx": "^1.1.1",
+    "lxgw-wenkai-webfont": "^1.7.0",
+    "mdx-mermaid": "^1.2.2",
+    "mermaid": "^8.14.0",
+    "plugin-image-zoom": "^1.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.8.0",
+    "prism-react-renderer": "^1.2.1",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "tailwindcss": "^3.1.8",
+    "typed.js": "^2.0.12",
+    "url-loader": "^4.1.1"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

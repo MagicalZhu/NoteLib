@@ -1,0 +1,154 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.basicSideBar.category.并发基础": {
+    "message": "并发基础",
+    "description": "The label for category 并发基础 in sidebar basicSideBar"
+  },
+  "sidebar.basicSideBar.category.并发安全": {
+    "message": "并发安全",
+    "description": "The label for category 并发安全 in sidebar basicSideBar"
+  },
+  "sidebar.basicSideBar.category.并发控制": {
+    "message": "并发控制",
+    "description": "The label for category 并发控制 in sidebar basicSideBar"
+  },
+  "sidebar.basicSideBar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar basicSideBar, linking to the doc 并发编程/currency_about"
+  },
+  "sidebar.basicSideBar.doc.并发包基础": {
+    "message": "并发包基础",
+    "description": "The label for the doc item 并发包基础 in sidebar basicSideBar, linking to the doc 并发编程/juc基础"
+  },
+  "sidebar.linuxSideBar.doc.Linux命令": {
+    "message": "Linux命令",
+    "description": "The label for the doc item Linux命令 in sidebar linuxSideBar, linking to the doc Linux/linuxCommand"
+  },
+  "sidebar.sourceSideBar.category.动漫分享": {
+    "message": "动漫分享",
+    "description": "The label for category 动漫分享 in sidebar sourceSideBar"
+  },
+  "sidebar.sourceSideBar.doc.资源分享": {
+    "message": "资源分享",
+    "description": "The label for the doc item 资源分享 in sidebar sourceSideBar, linking to the doc source/devSource"
+  },
+  "sidebar.springSideBar.category.Spring基础": {
+    "message": "Spring基础",
+    "description": "The label for category Spring基础 in sidebar springSideBar"
+  },
+  "sidebar.springSideBar.category.Spring编程思想": {
+    "message": "Spring编程思想",
+    "description": "The label for category Spring编程思想 in sidebar springSideBar"
+  },
+  "sidebar.springSideBar.category.Spring注解": {
+    "message": "Spring注解",
+    "description": "The label for category Spring注解 in sidebar springSideBar"
+  },
+  "sidebar.springSideBar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar springSideBar, linking to the doc Spring/spring"
+  },
+  "sidebar.springCloudSideBar.category.微服务基础": {
+    "message": "微服务基础",
+    "description": "The label for category 微服务基础 in sidebar springCloudSideBar"
+  },
+  "sidebar.springCloudSideBar.category.SpringCloud-Netflix": {
+    "message": "SpringCloud-Netflix",
+    "description": "The label for category SpringCloud-Netflix in sidebar springCloudSideBar"
+  },
+  "sidebar.springCloudSideBar.category.SpringCloud-Alibaba": {
+    "message": "SpringCloud-Alibaba",
+    "description": "The label for category SpringCloud-Alibaba in sidebar springCloudSideBar"
+  },
+  "sidebar.springCloudSideBar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar springCloudSideBar, linking to the doc SpringCloud/springCloud"
+  },
+  "sidebar.netWorkSidebar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar netWorkSidebar, linking to the doc 计算机网络/networrk-basic"
+  },
+  "sidebar.netWorkSidebar.doc.HTTP协议": {
+    "message": "HTTP协议",
+    "description": "The label for the doc item HTTP协议 in sidebar netWorkSidebar, linking to the doc 计算机网络/HTTP/http-protocol"
+  },
+  "sidebar.mysqlSideBar.category.MySQL基础与高级": {
+    "message": "MySQL基础与高级",
+    "description": "The label for category MySQL基础与高级 in sidebar mysqlSideBar"
+  },
+  "sidebar.mysqlSideBar.category.基础知识": {
+    "message": "基础知识",
+    "description": "The label for category 基础知识 in sidebar mysqlSideBar"
+  },
+  "sidebar.mysqlSideBar.category.数据库管理": {
+    "message": "数据库管理",
+    "description": "The label for category 数据库管理 in sidebar mysqlSideBar"
+  },
+  "sidebar.mysqlSideBar.category.架构与引擎": {
+    "message": "架构与引擎",
+    "description": "The label for category 架构与引擎 in sidebar mysqlSideBar"
+  },
+  "sidebar.mysqlSideBar.category.存储结构与索引": {
+    "message": "存储结构与索引",
+    "description": "The label for category 存储结构与索引 in sidebar mysqlSideBar"
+  },
+  "sidebar.mysqlSideBar.category.性能优化": {
+    "message": "性能优化",
+    "description": "The label for category 性能优化 in sidebar mysqlSideBar"
+  },
+  "sidebar.mysqlSideBar.category.事务与锁": {
+    "message": "事务与锁",
+    "description": "The label for category 事务与锁 in sidebar mysqlSideBar"
+  },
+  "sidebar.mysqlSideBar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar mysqlSideBar, linking to the doc Mysql/mysql"
+  },
+  "sidebar.mysqlSideBar.doc.MySQL参数与命令": {
+    "message": "MySQL参数与命令",
+    "description": "The label for the doc item MySQL参数与命令 in sidebar mysqlSideBar, linking to the doc Mysql/MySQL参数与命令"
+  },
+  "sidebar.vueSideBar.category.Vue学习笔记": {
+    "message": "Vue学习笔记",
+    "description": "The label for category Vue学习笔记 in sidebar vueSideBar"
+  },
+  "sidebar.vueSideBar.category.Vue基础": {
+    "message": "Vue基础",
+    "description": "The label for category Vue基础 in sidebar vueSideBar"
+  },
+  "sidebar.vueSideBar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar vueSideBar, linking to the doc 前端/Vue/vueDesc"
+  },
+  "sidebar.dataStructureSidebar.category.数据结构与算法基础": {
+    "message": "数据结构与算法基础",
+    "description": "The label for category 数据结构与算法基础 in sidebar dataStructureSidebar"
+  },
+  "sidebar.dataStructureSidebar.category.基础知识": {
+    "message": "基础知识",
+    "description": "The label for category 基础知识 in sidebar dataStructureSidebar"
+  },
+  "sidebar.dataStructureSidebar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar dataStructureSidebar, linking to the doc 数据结构与算法/dataStructure"
+  },
+  "sidebar.leetCodeSidebar.doc.简介": {
+    "message": "简介",
+    "description": "The label for the doc item 简介 in sidebar leetCodeSidebar, linking to the doc LeetCode刷题笔记/leetCode"
+  },
+  "sidebar.leetCodeSidebar.doc.图解算法数据结构": {
+    "message": "图解算法数据结构",
+    "description": "The label for the doc item 图解算法数据结构 in sidebar leetCodeSidebar, linking to the doc LeetCode刷题笔记/illustrationOfAlgorithm"
+  },
+  "sidebar.jvmSideBar.category.JVM优化": {
+    "message": "JVM优化",
+    "description": "The label for category JVM优化 in sidebar jvmSideBar"
+  },
+  "sidebar.jvmSideBar.category.性能监控和调优入门": {
+    "message": "性能监控和调优入门",
+    "description": "The label for category 性能监控和调优入门 in sidebar jvmSideBar"
+  }
+}

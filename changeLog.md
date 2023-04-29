@@ -1,0 +1,5 @@
+- update to Version 2.1.0
+  - src/theme/TagsListByLetter/*
+  - src/theme/NotFound.js
+  - src/theme/DocItem/Footer/index.js
+  - src/theme/BlogPostPaginator/index.js

@@ -1,0 +1,110 @@
+{
+  "item.label.基础知识": {
+    "message": "基础知识",
+    "description": "Navbar item with label 基础知识"
+  },
+  "item.label.后端框架": {
+    "message": "后端框架",
+    "description": "Navbar item with label 后端框架"
+  },
+  "item.label.分布式系统": {
+    "message": "分布式系统",
+    "description": "Navbar item with label 分布式系统"
+  },
+  "item.label.前端技术": {
+    "message": "前端技术",
+    "description": "Navbar item with label 前端技术"
+  },
+  "item.label.底层": {
+    "message": "底层",
+    "description": "Navbar item with label 底层"
+  },
+  "item.label.其他": {
+    "message": "其他",
+    "description": "Navbar item with label 其他"
+  },
+  "item.label.并发编程": {
+    "message": "并发编程",
+    "description": "Navbar item with label 并发编程"
+  },
+  "item.label.计算机网络": {
+    "message": "计算机网络",
+    "description": "Navbar item with label 计算机网络"
+  },
+  "item.label.Linux": {
+    "message": "Linux",
+    "description": "Navbar item with label Linux"
+  },
+  "item.label.数据结构与算法": {
+    "message": "数据结构与算法",
+    "description": "Navbar item with label 数据结构与算法"
+  },
+  "item.label.LeetCode": {
+    "message": "LeetCode",
+    "description": "Navbar item with label LeetCode"
+  },
+  "item.label.MySQL": {
+    "message": "MySQL",
+    "description": "Navbar item with label MySQL"
+  },
+  "item.label.Spring": {
+    "message": "Spring",
+    "description": "Navbar item with label Spring"
+  },
+  "item.label.SpringCloud": {
+    "message": "SpringCloud",
+    "description": "Navbar item with label SpringCloud"
+  },
+  "item.label.理论与算法": {
+    "message": "理论与算法",
+    "description": "Navbar item with label 理论与算法"
+  },
+  "item.label.分布式基础技术": {
+    "message": "分布式基础技术",
+    "description": "Navbar item with label 分布式基础技术"
+  },
+  "item.label.基础中间件": {
+    "message": "基础中间件",
+    "description": "Navbar item with label 基础中间件"
+  },
+  "item.label.定时任务": {
+    "message": "定时任务",
+    "description": "Navbar item with label 定时任务"
+  },
+  "item.label.缓存": {
+    "message": "缓存",
+    "description": "Navbar item with label 缓存"
+  },
+  "item.label.搜索引擎": {
+    "message": "搜索引擎",
+    "description": "Navbar item with label 搜索引擎"
+  },
+  "item.label.消息队列": {
+    "message": "消息队列",
+    "description": "Navbar item with label 消息队列"
+  },
+  "item.label.数据库": {
+    "message": "数据库",
+    "description": "Navbar item with label 数据库"
+  },
+  "item.label.Vue": {
+    "message": "Vue",
+    "description": "Navbar item with label Vue"
+  },
+  "item.label.JVM": {
+    "message": "JVM",
+    "description": "Navbar item with label JVM"
+  },
+  "item.label.博客": {
+    "message": "博客",
+    "description": "Navbar item with label 博客"
+  },
+  "item.label.网址导航": {
+    "message": "网址导航",
+    "description": "Navbar item with label 网址导航"
+  },
+  "item.label.分享": {
+    "message": "分享",
+    "description": "Navbar item with label 分享"
+  }
+}

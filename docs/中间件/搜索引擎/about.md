@@ -1,0 +1,11 @@
+---
+id: searchEngine
+title: 搜索引擎概述
+slug: /middleware/searchEngine
+---
+
+搜索引擎文档概述
+
+> 包含了ElasticSearch/OpenSearch 等搜索引擎
+
+本文档在施工中...
