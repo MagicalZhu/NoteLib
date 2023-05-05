@@ -21,5 +21,8 @@
   "markdown.preview.lineHeight": 1.2,
   "tailwindCSS.rootFontSize": 15,
   "cSpell.enabled": true,
-  "cSpell.words": ["javax", "springframework"]
+  "cSpell.words": [
+    "javax",
+    "springframework"
+  ]
 }
