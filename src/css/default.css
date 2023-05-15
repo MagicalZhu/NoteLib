@@ -1,5 +1,5 @@
 /* Website font */
-@import "@fontsource/dm-mono";
+@import "@fontsource/open-sans";
 /* @import 'lxgw-wenkai-webfont/style.css'; */
 :root {
   --ifm-color-scheme: light;
@@ -301,7 +301,7 @@
   --ifm-menu-color-background-hover: var(--ifm-hover-overlay);
   --ifm-menu-link-padding-horizontal: 1rem;
   --ifm-menu-link-padding-vertical: 0.5rem;
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  class="expandIcon" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.6)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
   --ifm-menu-link-sublist-icon-filter: none;
   --ifm-navbar-background-color: var(--ifm-background-surface-color);
   --ifm-navbar-height: 3.75rem;
@@ -372,8 +372,9 @@
   /* --ifm-code-font-size: 90%;
   --ifm-font-size-base: 95%; */
   /*--ifm-font-family-base: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;*/
-  --ifm-font-family-base: DM Mono, monospace,-apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial;
+  --ifm-font-family-base: "Open Sans", sans-serif, monospace,-apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial;
 
 
   --ifm-color-info-contrast-background: #fefefe;
 }
+

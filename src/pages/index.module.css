@@ -8,7 +8,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin-top: 12em
+  margin-top: 5em
 }
 
 .img {
@@ -44,6 +44,31 @@
   overflow: hidden;
   font-size: 2em;
   white-space: nowrap;
+}
+
+.GoButton {
+  background-color: #040404;
+  border-radius: 8px;
+  color: var(--ifm-button-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: calc(0.875rem * var(--ifm-button-size-multiplier));
+  font-weight: var(--ifm-button-font-weight);
+  line-height: 1.5;
+  padding: calc( var(--ifm-button-padding-vertical) * var(--ifm-button-size-multiplier) ) calc( var(--ifm-button-padding-horizontal) * var(--ifm-button-size-multiplier) );
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition-property: color, background, border-color;
+  transition-duration: var(--ifm-button-transition-duration);
+  transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.GoButton:hover {
+  color: var(--ifm-button-color);
+  text-decoration: none;
 }
 
 

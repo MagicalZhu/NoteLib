@@ -16,7 +16,7 @@ const classicConfig = {
   },
   // 以下参数将被直接传递给 @docusaurus/theme-classic。
   theme: {
-    customCss: require.resolve("./src/css/custom.css"),
+    customCss: require.resolve("../css/custom.css"),
   },
   // 以下参数将被直接传递给 @docusaurus/plugin-content-blog （设置为 false 则表示禁用此插件）
   blog: {

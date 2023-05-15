@@ -12,20 +12,17 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const avastar = useBaseUrl(siteConfig.customFields.logo)
   return (
-    <div class="container margin-top--xl margin-bottom--xl " className={clsx(styles.heroBanner)}>
+    <div class="container" className={clsx(styles.heroBanner)}>
       <div class="avatar avatar--vertical">
-        {/* <img src={avastar} style={{width: 256, borderRadius: '50%', marginBottom: '15px'}}/> */}
         <CarbonFingerprintRecognition className={clsx(styles.avastar)}/>
-        {/* <h1 class="hero__title">{siteConfig.title}</h1> */}
         <div>
         <div className={clsx(styles.printContent)}>
           <Typer strings={siteConfig.customFields.profileTagline}/>
         </div>
-          {/* <p class="hero__subtitle">{siteConfig.tagline}</p> */}
-          <div  className={styles.buttons}>
-            <Link className="button margin-top--md  button--primary button--lg"
+          <div className={styles.buttons}>
+            <Link className={clsx(styles.GoButton, 'margin-top--md','button--primary','button--lg')}
                   to="/docs/about">
-              Wiki →
+              Read ↗
             </Link>
           </div>
         </div>

@@ -24,7 +24,7 @@
     "@docusaurus/plugin-sitemap": "2.1.0",
     "@docusaurus/preset-classic": "2.1.0",
     "@docusaurus/types": "2.1.0",
-    "@fontsource/dm-mono": "^4.5.10",
+    "@fontsource/open-sans": "^4.5.14",
     "@giscus/react": "^2.0.6",
     "@saucelabs/theme-github-codeblock": "^0.1.1",
     "ahooks": "^3.7.1",

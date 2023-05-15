@@ -1,9 +1,9 @@
 // @ts-check
 
-const themeConfigs = require("./themeConfig")
-const pluginConfigs = require("./plugin")
-const presetConfig = require("./presetConfig")
-const customConfig = require("./configCustom")
+const themeConfigs = require("./src/config/themeConfig")
+const pluginConfigs = require("./src/config/plugin")
+const presetConfig = require("./src/config/presetConfig")
+const customConfig = require("./src/config/configCustom")
 
 /** 
  * @type {import('@docusaurus/types').Config} 

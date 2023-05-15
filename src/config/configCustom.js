@@ -4,8 +4,7 @@ const customConfig = {
   home: '/',
   sidebarHiddenWhenLoad: true,
   profileTagline: [
-    '山海有归期,风雨自相逢',
-    '永远保持好奇'
+    'Its only a test,see what happens.'
   ],
   logo: 'img/logo.svg'
 }
