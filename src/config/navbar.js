@@ -10,16 +10,6 @@ const Type = {
 }
 
 const nav = {
-  // title: 'Athu',
-  // logo: {
-  //   alt: 'Athu',
-  //   src: 'img/logo.svg',
-  // },
-  // 自动隐藏的粘性导航条
-  // hideOnScroll: true,
-  // 导航条的样式
-  // style: 'primary',
-
   // 设置导航条上的元素
   items: [
     {
@@ -147,6 +137,7 @@ const nav = {
         }
       ]
     },
+    /*
     {
       label: '物料中心',
       position: "left",
@@ -156,6 +147,7 @@ const nav = {
         { to: '/website/FE', label: '前端产品' },
       ]
     },
+    */
     {
       label: "博客",
       position: "left",

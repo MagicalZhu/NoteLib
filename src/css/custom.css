@@ -75,6 +75,15 @@ html {
   backdrop-filter: saturate(180%) blur(16px);
 } */
 
+.navbar {
+  border-bottom-color: #eaeaea;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  box-shadow: unset !important;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .navbar__inner {
   background-image: radial-gradient(transparent 1px,var(--bg-color) 1px);
   backdrop-filter: saturate(50%) blur(4px);
@@ -139,7 +148,6 @@ div[class^=announcementBar_] {
   background-size: 56.57px 56.57px;
   font-weight: 550;
   height: 30px;
-  font-family: "黑体";
 }
 
 mark {
@@ -179,7 +187,7 @@ code {
 }
 
 html[data-theme='light'] .markdown {
-  line-height: 2;
+  line-height: 1.6;
 }
 
 
@@ -194,7 +202,7 @@ html[data-theme='dark'] .card{
 */
 
 html[data-theme='dark'] .markdown {
-  line-height: 2;
+  line-height: 1.6;
 }
 
 html[data-theme='light'] .docusaurus-highlight-code-line {
@@ -216,9 +224,11 @@ html[data-theme='light'] strong {
 
 blockquote {
   color: #6b7280;
-  border-left: 3px solid rgb(221 223 232);
-  border-radius: 2px;
+  border-left: 4px solid rgb(221 223 232);
+  border-radius: 3px;
   background-color: #f3f6f9;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 /*
 blockquote::before {
@@ -308,7 +318,7 @@ li::marker {
   display: list-item;
   padding-left: var(--ifm-pre-padding);
   margin-left: var(--ifm-global-spacing);
-  /*font-size: 15px;*/
+  font-size: 14px;
   font-family: "Open Sans", sans-serif, monospace, Menlo, monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
@@ -334,6 +344,13 @@ article p img {
   padding-top: 2rem !important;
   padding-bottom: 5rem !important;
   font-size: .875rem;
+}
+.theme-doc-sidebar-container {
+  border-right: none !important;
+}
+
+.menu__caret:before {
+  background: var(--ifm-menu-link-sublist-icon) 50%/1.2em 1.2em;
 }
 
 /* summary/details margin */
@@ -563,6 +580,10 @@ a.card-link:hover img {
   margin-top: 10px;
 }
 
+.table-of-contents {
+  border-left: none;
+}
+
 .table-of-contents__link:hover, .table-of-contents__link--active {
   color: var(--ifm-color-primary);
   /* 
@@ -706,4 +727,24 @@ ul ol {
 
 .table-of-contents__link--active {
   color: var(--ifm-color-primary)
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background: #cfd2d4;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #eee;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
 }

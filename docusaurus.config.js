@@ -9,9 +9,9 @@ const customConfig = require("./src/config/configCustom")
  * @type {import('@docusaurus/types').Config} 
  */
 const config = {
-  title: '花裤衩Wiki',
+  title: 'NoteBook',
   tagline: '永远保持好奇',
-  url: 'https://athu.com',
+  url: 'https://wiki.athu.top',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
