@@ -1,6 +1,6 @@
 // const lightCodeTheme = require('./src/prismTheme/github');
 // const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const lightCodeTheme = require('../prismTheme/nightOwlLight');
+const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('../prismTheme/dracula');
 const footerConfig = require('./footer')
 const navConfig = require('./navbar')

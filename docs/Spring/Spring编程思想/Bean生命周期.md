@@ -103,6 +103,9 @@ public class BeanMetaDataConfigurationDemoByProperties {
 1. **面向资源** BeanDefinition 解析
     - 顶级接口: `BeanDefinitionReader`
     - XML 解析器: `BeanDefinitionParser`
+      - *AnnotationConfigBeanDefinitionParser*
+      - *AbstractBeanDefinitionParser*
+      - ...
 2. **面向注解** BeanDefinition 解析
     - `AnnotatedBeanDefinitionReader`,并没有继承自*BeanDefinitionReader*
 
@@ -182,7 +185,7 @@ public class MergedBeanDefinitionDemo {
     XmlBeanDefinitionReader definitionReader = new XmlBeanDefinitionReader(beanFactory);
     // 读取 XML 配置文件
     int loadBeanDefinitions = definitionReader.loadBeanDefinitions("META-INF/MergedBeanDefinition.xml");
-    System.out.printf("加载了 %d 个BeanDefinition%n",loadBeanDefinitions);
+    System.out.printf("加载了 %d 个 BeanDefinition%n",loadBeanDefinitions);
 
     // 获取 user Bean
     User user = beanFactory.getBean("user", User.class);
@@ -199,7 +202,7 @@ public class MergedBeanDefinitionDemo {
 }
 ```
 
-那么 Spring 如何实现这个功能呢?Spring 的`AbstractBeanFactory#getMergedBeanDefinition` 就是它的入口,由于BeanDefinition 存在和层次性,那么合并的时候就需要考虑 **parent bean 是否在父容器中**
+那么 Spring 如何实现这个功能呢?Spring 的`AbstractBeanFactory#getMergedBeanDefinition` 就是它的入口(实现了 ConfigurableBeanFactory 接口),因为 BeanDefinition 存在和层次性,那么合并的时候就需要考虑 **parent bean 是否在父容器中**
 
 ```java title=AbstractBeanFactory#getMergedBeanDefinition
 /**
@@ -348,13 +351,164 @@ public void overrideFrom(BeanDefinition other) {
 
 ## Class 加载阶段
 
+> BeanDefinition 合并完成之后,在 Bean 被创建之前,需要将 Bean 所对应的 Class 类进行加载
+
 - ClassLoader 类加载
 
 - Java Security 安全控制
 
 - ConfigurableBeanFactory 临时 ClassLoader
 
+在 `AbstractBeanFactory#doGetBean` 方法中除了可以返回外部Bean、进行 BeanDefinition 的合并,还会进行`createBean`操作
+
+```java title=AbstractBeanFactory#doGetBean
+if (mbd.isSingleton()) {
+  sharedInstance = getSingleton(beanName, () -> {
+    try {
+      // highlight-start
+      // 创建 Bean
+      return createBean(beanName, mbd, args);
+      // highlight-end
+    }
+    catch (BeansException ex) {
+      destroySingleton(beanName);
+      throw ex;
+    }
+  });
+  bean = getObjectForBeanInstance(sharedInstance, name, beanName, mbd);
+}
+```
+
+在 createBean 的时候会通过 `doResolveBeanClass` 获取 **类加载器** 来加载 Bean Class,会将 BeanDefinition 中定义字符串的 class 文本信息变为 Class 对象
+
+```java
+@Nullable
+private Class<?> doResolveBeanClass(RootBeanDefinition mbd, Class<?>... typesToMatch)
+    throws ClassNotFoundException {
+  
+  // 获取类加载器
+  ClassLoader beanClassLoader = getBeanClassLoader();
+  ClassLoader dynamicLoader = beanClassLoader;
+  boolean freshResolve = false;
+
+  // ...
+
+  String className = mbd.getBeanClassName();
+  if (className != null) {
+    // 评估 BeanDefinition
+    Object evaluated = evaluateBeanDefinitionString(className, mbd);
+    if (!className.equals(evaluated)) {
+      if (evaluated instanceof Class) {
+        return (Class<?>) evaluated;
+      }
+      else if (evaluated instanceof String) {
+        className = (String) evaluated;
+        freshResolve = true;
+      }
+      else {
+        throw new IllegalStateException("Invalid class name expression result: " + evaluated);
+      }
+    }
+    if (freshResolve) {
+      if (dynamicLoader != null) {
+        try {
+          return dynamicLoader.loadClass(className);
+        }
+        catch (ClassNotFoundException ex) {
+          if (logger.isTraceEnabled()) {
+            logger.trace("Could not load class [" + className + "] from " + dynamicLoader + ": " + ex);
+          }
+        }
+      }
+      return ClassUtils.forName(className, dynamicLoader);
+    }
+  }
+  // 这里会将 BeanDefinition 中定义的 String 类型 转为 Bean Class 对应的类
+  return mbd.resolveBeanClass(beanClassLoader);
+}
+```
+
 ## 实例化前阶段
+
+> - InstantiationAwareBeanPostProcessor 会在 Bean 被实例化之前调用,它继承并拓展了 `BeanPostProcessor`
+>
+> - 利用这个 BeanPostProcessor 可以在实例化某个 Bean 之前,拦截这个 Bean 并且返回自定义的 Bean 对象,从而替换 Spring IOC 容器中默认的实现类
+
+非主流的生命周期
+
+- 入口点: InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+
+在 createBean 的 `doCreateBean` 之前,会调用 `resolveBeforeInstantiation`,这个返回一个 Bean,可以绕过 Bean 的实例化以及后续的初始化步骤
+
+```java title=AbstractAutowireCapableBeanFactory#resolveBeforeInstantiation
+protected Object createBean(String beanName,
+                            RootBeanDefinition mbd, 
+                            @Nullable Object[] args) throws BeanCreationException {
+
+  RootBeanDefinition mbdToUse = mbd;
+  // 解析处理 Bean Class
+  Class<?> resolvedClass = resolveBeanClass(mbd, beanName);
+  if (resolvedClass != null && !mbd.hasBeanClass() && mbd.getBeanClassName() != null) {
+    mbdToUse = new RootBeanDefinition(mbd);
+    mbdToUse.setBeanClass(resolvedClass);
+  }
+  // ...
+  try {
+    // 调用 InstantiationAwareBeanPostProcessor ,可以返回一个 Bean 对象
+    // 比如返回一个代理对象来代替目标 Bean
+    Object bean = resolveBeforeInstantiation(beanName, mbdToUse);
+    if (bean != null) {
+      return bean;
+    }
+  }
+  // 如果返回 null,再继续执行后续创建 Bean 的操作
+  try {
+    Object beanInstance = doCreateBean(beanName, mbdToUse, args);
+    return beanInstance;
+  }
+  // ...
+}
+```
+
+通过代码演示, `postProcessBeforeInstantiation` 发返回 null 的话,则会继续执行后续的 `doCreateBean` 操作
+
+```java
+/**
+ * 演示 Bean 实例化生命周期前阶段 {@link org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor}
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class BeanInstantiationLifestyleDemo {
+    public static void main(String[] args) {
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        PropertiesBeanDefinitionReader reader = new PropertiesBeanDefinitionReader(beanFactory);
+        beanFactory.addBeanPostProcessor(new CustomInstantiationAwareBeanPostProcessor());
+        // 加载了 BeanDefinition (id: 2, name: guest)
+        reader.loadBeanDefinitions("META-INF/BeanMetaConfiguration.properties");
+        User bean = beanFactory.getBean("guest", User.class);
+        System.out.println(bean);
+    }
+    static class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+        @Override
+        public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+            System.out.println("执行CustomInstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation");
+            if (ObjectUtils.nullSafeEquals(beanName, "guest")) {
+                User afterUser = new User();
+                afterUser.setId(3L);
+                afterUser.setName("after guest");
+                return afterUser;
+            }
+            // 返回 null 则执行后续的 doCreateBean 操作
+            return null;
+        }
+    }
+}
+/**
+ * out: 
+ *  执行CustomInstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+ *  User{id=3, name='after guest'}    
+ */
+```
 
 ## 实例化后阶段
 

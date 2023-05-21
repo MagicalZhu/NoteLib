@@ -21,10 +21,6 @@ const nav = {
           to: 'docs/currency',
         },
         {
-          label: "计算机网络",
-          to: 'docs/networrk-basic',
-        },
-        {
           label: "Linux",
           to: 'docs/linuxCommand',
         },
@@ -110,7 +106,11 @@ const nav = {
         {
           label: "操作系统",
           to: 'docs/OS',
-        }
+        },
+        {
+          label: "计算机网络",
+          to: 'docs/networrk-basic',
+        },
       ]
     },
     {
