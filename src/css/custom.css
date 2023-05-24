@@ -61,7 +61,8 @@ html[data-theme="light"] {
 
 html {
   word-break: break-all;
-  color: #4a526d;
+  color: #585b65;
+  font-size: 14px;
 }
 
 /* navbar */
