@@ -52,9 +52,9 @@ html[data-theme="light"] {
   --ifm-color-primary-lightest: #a1b3f9;
   --ifm-alert-border-color: #1f41ea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
-  --custom-code-color: #c0341d;
-  --custom-code-background: #fff4f2;
-  --custom-border-color: #fbe5e1;
+  --custom-code-color: #0036a4;
+  --custom-code-background: #c3e2ff;
+  --custom-border-color:#c3e2ff;
   --custom-toc_bgcolor: #e2e3e866;
   --custom-list-paragraph-margin: 5px;
 }
@@ -181,7 +181,7 @@ code {
   color: var(--custom-code-color);
   word-break: break-word;
   vertical-align: baseline;
-  margin: 1px 1px;
+  margin: 5px;
   background: var(--custom-code-background);
   padding: 0.2em;
   border-radius: 4px;
@@ -223,6 +223,15 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 html[data-theme='light'] strong {
   color: #000;
   font-weight: bolder;
+  margin: 3px;
+}
+
+html[data-theme='light'] strong::before {
+  content: "`";
+}
+
+html[data-theme='light'] strong::after {
+  content: "`";
 }
 
 blockquote {
@@ -622,7 +631,7 @@ img.avatar__photo.avatar__photo--xl:hover {
 } 
 
 ::selection {
-  background: #b3d7ff;
+  background: #f1f1f1;
 }
 
 /*giscus*/
