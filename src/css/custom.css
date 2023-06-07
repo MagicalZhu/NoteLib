@@ -300,12 +300,13 @@ html[data-theme='dark'] div[class^='codeBlockTitle'] {
 
 .prism-code,
 div[class^='codeBlockTitle'] {
-  background-color: #f6f8fa !important;
+  background-color: #fff !important;
   color: #575757 !important;
   font-size: 14px;
   line-height: 1.6;
   font-weight: bold;
-  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 }
 
 /* Disable Language Icon */
@@ -365,6 +366,10 @@ article p img {
 }
 
 .menu__caret:before {
+  background: var(--ifm-menu-link-sublist-icon) 50%/1.2em 1.2em;
+}
+
+.menu__link--sublist-caret:after {
   background: var(--ifm-menu-link-sublist-icon) 50%/1.2em 1.2em;
 }
 
@@ -771,4 +776,8 @@ ul ol {
 
 .docPage .container .row {
   justify-content: center;
+}
+
+code::selection {
+  background: #dee6fc;
 }

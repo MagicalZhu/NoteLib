@@ -101,17 +101,17 @@ public class BeanMetaDataConfigurationDemoByProperties {
 ## 元信息解析阶段
 
 1. **面向资源** BeanDefinition 解析
-    - 顶级接口: `BeanDefinitionReader`
+    - 顶级加载接口: `BeanDefinitionReader`
     - XML 解析器: `BeanDefinitionParser`
       - *AnnotationConfigBeanDefinitionParser*
       - *AbstractBeanDefinitionParser*
       - ...
 2. **面向注解** BeanDefinition 解析
-    - `AnnotatedBeanDefinitionReader`,并没有继承自*BeanDefinitionReader*
+    - 加载接口:`AnnotatedBeanDefinitionReader`,并没有继承自*BeanDefinitionReader*
 
-> 面向资源的解析,需要指定资源的路径,这个资源可以是本地的文件资源,也可以是网络资源
+> - 面向资源的解析,需要指定资源的路径,这个资源可以是本地的文件资源,也可以是网络资源
 >
-> 面向注解的解析,不再是解析文件资源或者网络资源等,而是解析 Class 类
+> - 面向注解的解析,不再是解析文件资源或者网络资源等,而是解析 Class 类
 
 下面是基于注解的元信息解析的特性:
 
@@ -142,14 +142,14 @@ public class AnnotatedBeanDefinitionParserDemo {
 
 ## 注册阶段
 
-BeanDefinition 注册接口: BeanDefinitionRegistry,具体可以参看[依赖来源中关于 BeanDefinition 的注册](依赖来源#spring-beandefinition)
+BeanDefinition 注册接口: BeanDefinitionRegistry,具体可以参看[Spring BeanDefinition 的注册](依赖来源#spring-beandefinition)
 
 ## BeanDefinition 合并阶段
 
-父子 BeanDefinition 合并
+父子 BeanDefinition 合并需要围绕下面两个处理:
 
-1. 当前 BeanFactory 查找
-2. 层次性 BeanFactory 查找
+1. 当前 BeanFactory 查找 BeanDefinition
+2. 层次性的 BeanFactory 查找 BeanDefinition
 
 在 Java 中,一个 Class 可以继承另一个 Class,并且会继承另一个 Class 的属性,在 Spring 中也存在类似的特性,以 XML 配置为例:
 
@@ -172,7 +172,7 @@ BeanDefinition 注册接口: BeanDefinitionRegistry,具体可以参看[依赖来
 </bean>
 ```
 
-通过 bean 标签的`parent` 属性可以指定这个 bean 继承自哪个 bean,比如这里的 superUser 就继承自 user,那么 superUser 就会继承 user bean 的 name、id 属性。我们通过测试代码就可以看出来
+通过 bean 标签的**parent** 属性可以指定这个 bean 继承自哪个 bean,比如这里的 superUser 就继承自 user,那么 superUser 就会继承 user bean 的 name、id 属性。我们通过测试代码就可以看出来
 
 ```java
 /**
@@ -202,7 +202,7 @@ public class MergedBeanDefinitionDemo {
 }
 ```
 
-那么 Spring 如何实现这个功能呢?Spring 的`AbstractBeanFactory#getMergedBeanDefinition` 就是它的入口(实现了 ConfigurableBeanFactory 接口),因为 BeanDefinition 存在和层次性,那么合并的时候就需要考虑 **parent bean 是否在父容器中**
+那么 Spring 如何实现这个功能呢?Spring 的`AbstractBeanFactory#getMergedBeanDefinition` 就是它的入口(实现了 ConfigurableBeanFactory 接口),因为 BeanFactory 存在着层次性(HierarchicalBeanFactory),那么合并的时候就需要考虑 **parent bean 是否在父容器中**
 
 ```java title=AbstractBeanFactory#getMergedBeanDefinition
 /**
@@ -249,7 +249,7 @@ protected RootBeanDefinition getMergedBeanDefinition(String beanName, BeanDefini
  * 对于给定的一个 bean,返回一个 RootBeanDefinition
  * 如果有父子关系,那么子 BeanDefinition 会复制父 BeanDefinition,并将自身成员复制到该 BeanDefinition 上
  * @param beanName  BeanDefinition 对应的 beanName
- * @param bd 原始的 BeanDefinition
+ * @param bd 当前的 BeanDefinition
  * @param containingBd  嵌套Bean 的 BeanDefinition
  */
 protected RootBeanDefinition getMergedBeanDefinition(
@@ -280,6 +280,7 @@ protected RootBeanDefinition getMergedBeanDefinition(
         // 处理子 BeanDefinition: 复制父 BeanDefinition 并进行合并
         BeanDefinition pbd;
         try {
+          // 利用当前的 BeanDefinition 获取 parent beanName
           String parentBeanName = transformedBeanName(bd.getParentName());
           if (!beanName.equals(parentBeanName)) {
             // 获取父 BeanDefinition
@@ -351,7 +352,7 @@ public void overrideFrom(BeanDefinition other) {
 
 ## Class 加载阶段
 
-> BeanDefinition 合并完成之后,在 Bean 被创建之前,需要将 Bean 所对应的 Class 类进行加载
+> BeanDefinition 合并完成之后,在 Bean 被创建之前,需要利用类加载器(ClassLoader) 将 Bean 所对应的 Class 类进行加载
 
 - ClassLoader 类加载
 
@@ -379,9 +380,9 @@ if (mbd.isSingleton()) {
 }
 ```
 
-在 createBean 的时候会通过 `doResolveBeanClass` 获取 **类加载器** 来加载 Bean Class,会将 BeanDefinition 中定义字符串的 class 文本信息变为 Class 对象
+在 createBean 的时候会通过`resolveBeanClass` 方法从而进一步调用 `doResolveBeanClass` 来获取 **类加载器** 去加载 Bean Class,从而将 BeanDefinition 中定义字符串的 class 字符串信息变为 Class 对象
 
-```java
+```java title=AbstractBeanFactory#doResolveBeanClass
 @Nullable
 private Class<?> doResolveBeanClass(RootBeanDefinition mbd, Class<?>... typesToMatch)
     throws ClassNotFoundException {
@@ -430,11 +431,13 @@ private Class<?> doResolveBeanClass(RootBeanDefinition mbd, Class<?>... typesToM
 
 ## 实例化前阶段
 
+### 绕开实例化
+
 > - InstantiationAwareBeanPostProcessor 会在 Bean 被实例化之前调用,它继承并拓展了 `BeanPostProcessor`
 >
 > - 利用这个 BeanPostProcessor 可以在实例化某个 Bean 之前,拦截这个 Bean 并且返回自定义的 Bean 对象,从而替换 Spring IOC 容器中默认的实现类
 
-非主流的生命周期
+**非主流的生命周期**
 
 - 入口点: InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
 
@@ -488,6 +491,7 @@ public class BeanInstantiationLifestyleDemo {
         User bean = beanFactory.getBean("guest", User.class);
         System.out.println(bean);
     }
+    // 自定义InstantiationAwareBeanPostProcessor,对指定的 BeanDefinition 返回特殊的 bean
     static class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
         @Override
         public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
@@ -509,6 +513,110 @@ public class BeanInstantiationLifestyleDemo {
  *  User{id=3, name='after guest'}    
  */
 ```
+
+:::tip 提示
+
+通过这个说明了, Bean 的实例化是可以被"绕开"的
+
+:::
+
+### 正常实例化方式
+
+> 在 `AbstractAutowireCapableBeanFactory#doCreateBean` 中,除了上面利用 InstantiationAwareBeanPostProcessor 绕开 Bean 的实例化,还有正常的初始化方式
+
+1. 传统实例化方式
+    - 实例化策略: `InstantiationStrategy`
+
+2. 构造器依赖注入
+
+正常实例化的入口在:`AbstractAutowireCapableBeanFactory#createBeanInstance`
+
+```java
+protected BeanWrapper createBeanInstance(String beanName,
+                                        RootBeanDefinition mbd,
+                                        @Nullable Object[] args) {
+  // Make sure bean class is actually resolved at this point.
+  Class<?> beanClass = resolveBeanClass(mbd, beanName);  
+  if (beanClass != null &&
+      !Modifier.isPublic(beanClass.getModifiers()) &&
+      !mbd.isNonPublicAccessAllowed()) {
+    throw new BeanCreationException(mbd.getResourceDescription(), beanName,
+        "Bean class isn't public, and non-public access not allowed: " + beanClass.getName());
+  }
+  // 从 BeanDefinition 中获取实例化的函数式接口
+  Supplier<?> instanceSupplier = mbd.getInstanceSupplier();
+  if (instanceSupplier != null) {
+    return obtainFromSupplier(instanceSupplier, beanName);
+  }
+  // 如果设置了 factory-method
+  if (mbd.getFactoryMethodName() != null) {
+    return instantiateUsingFactoryMethod(beanName, mbd, args);
+  }
+  // ...
+  // Candidate constructors for autowiring?
+  // highlight-start
+  // 利用 SmartInstantiationAwareBeanPostProcessor 来决定 bean 的构造器对象
+  Constructor<?>[] ctors = determineConstructorsFromBeanPostProcessors(beanClass, beanName);
+  /**
+   * 满足下面四种情况中的任意一种,就会采用构造器依赖注入
+   *    1. 如果有构造器对象 
+   *    2. 如果BeanDefinition 的 AutowireMode 是 AUTOWIRE_CONSTRUCTOR
+   *    3. 有构造参数
+   *    4. 传入的参数不为空,这个参数是 getBean 重载方法中的可变参数
+   */
+  if (ctors != null || mbd.getResolvedAutowireMode() == AUTOWIRE_CONSTRUCTOR ||
+      mbd.hasConstructorArgumentValues() || !ObjectUtils.isEmpty(args)) {
+    return autowireConstructor(beanName, mbd, ctors, args);
+  }
+  // highlight-end
+
+  // Preferred constructors for default construction?
+  ctors = mbd.getPreferredConstructors();
+  if (ctors != null) {
+    return autowireConstructor(beanName, mbd, ctors, null);
+  }
+
+  // No special handling: simply use no-arg constructor
+  // 没有特殊的处理: 简单的使用无参构造器
+  return instantiateBean(beanName, mbd);
+}
+```
+
+可以发现,传统实例化方式走 `instantiateBean` 的方式,如果设置了使用构造函数实例化,那么就走 `autowireConstructor` 的方式
+
+#### instantiateBean
+
+这是传统实例化方式,通过获取实例化策略并进行初始化 Bean,Spring 使用的初始化策略是`SimpleInstantiationStrategy`
+
+这种方式通过反射获取构造器 Class 对象 `Constructor`,然后利用 `Constructor.newInstance` 创建并返回一个Bean实例
+
+```java title=AbstractAutowireCapableBeanFactory#instantiateBean
+protected BeanWrapper instantiateBean(final String beanName,
+                                      final RootBeanDefinition mbd) {
+  try {
+    Object beanInstance;
+    final BeanFactory parent = this;
+    if (System.getSecurityManager() != null) {
+      // ...
+    }
+    else {
+      // 获取实例化策略并进行初始化
+      beanInstance = getInstantiationStrategy().instantiate(mbd, beanName, parent);
+    }
+    BeanWrapper bw = new BeanWrapperImpl(beanInstance);
+    initBeanWrapper(bw);
+    return bw;
+  }
+  catch (Throwable ex) {
+    throw new BeanCreationException(
+        mbd.getResourceDescription(), beanName, "Instantiation of bean failed", ex);
+  }
+}
+```
+
+#### autowireConstructor
+
+> 构造器的注入会优先按照构造器参数类型
 
 ## 实例化后阶段
 
