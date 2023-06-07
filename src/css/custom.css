@@ -53,8 +53,8 @@ html[data-theme="light"] {
   --ifm-alert-border-color: #1f41ea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
   --custom-code-color: #0036a4;
-  --custom-code-background: #c3e2ff;
-  --custom-border-color:#c3e2ff;
+  --custom-code-background: #d0e6fb;
+  --custom-border-color:#d0e6fb;
   --custom-toc_bgcolor: #e2e3e866;
   --custom-list-paragraph-margin: 5px;
 }
@@ -304,6 +304,8 @@ div[class^='codeBlockTitle'] {
   color: #575757 !important;
   font-size: 14px;
   line-height: 1.6;
+  font-weight: bold;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))
 }
 
 /* Disable Language Icon */
