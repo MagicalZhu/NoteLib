@@ -236,11 +236,10 @@ html[data-theme='light'] strong::after {
 
 blockquote {
   color: #6b7280;
-  border-left: 4px solid rgb(221 223 232);
-  border-radius: 3px;
+  border-left: 4px solid #000;
   background-color: #f3f6f9;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 12px;
+  border-radius: 5px;
 }
 /*
 blockquote::before {
