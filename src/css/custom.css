@@ -52,9 +52,9 @@ html[data-theme="light"] {
   --ifm-color-primary-lightest: #a1b3f9;
   --ifm-alert-border-color: #1f41ea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
-  --custom-code-color: #0036a4;
-  --custom-code-background: #d0e6fb;
-  --custom-border-color:#d0e6fb;
+  --custom-code-color: #be123c;
+  --custom-code-background: #ffe4e6;
+  --custom-border-color:#ffe4e6;
   --custom-toc_bgcolor: #e2e3e866;
   --custom-list-paragraph-margin: 5px;
 }

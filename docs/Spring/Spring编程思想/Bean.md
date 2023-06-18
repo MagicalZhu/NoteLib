@@ -3,17 +3,15 @@ id: Bean
 title: Bean
 ---
 
-
-
-## BeanDefinition
+## 元信息接口(BeanDefinition)
 
 - `BeanDefinition` 是 **Spring 中定义 Bean的 配置元信息接口,用于存储Bean的定义信息**,包含:
   1. Bean 的类名
-  2. Bean 的行为元素，比如<mark>作用域、自动绑定的模式、生命周期回调</mark> 
+  2. Bean 的行为元素，比如<mark>作用域、自动绑定的模式、生命周期回调</mark>
   3. 其他 Bean 的引用，也叫做依赖（Dependencies）
   4. 配置设置, 比如Bean的属性(Properties)
 
-### BeanDefinition 元信息
+### BeanDefinition 参数
 
 | 属性                         | 说明                                           |
 | ---------------------------- | ---------------------------------------------- |
@@ -42,8 +40,9 @@ title: Bean
 #### BeanDefinitionBuilder
 
 :::caution GenericBeanDefinition 和 RootBeanDefinition的区别？
+
 - GenericBeanDefinition 可以设置 **parent** 属性
-- RootBeanDefinition 是根部、顶层的 Bean 定义信息，无法设置 parent 属性	
+- RootBeanDefinition 是根部、顶层的 Bean 定义信息，无法设置 parent 属性
 
 :::
 
@@ -96,8 +95,6 @@ public class AbstractBeanDefinitionCreateDemo {
 }
 ```
 
-
-
 ## 命名 Spring Bean
 
 ### Bean的名称
@@ -109,8 +106,6 @@ public class AbstractBeanDefinitionCreateDemo {
   - 通常 Bean 的标识符由字符组成,允许出现*特殊字符*
 - Bean 的 id/name 不是必须指定的，**容器默认会为 Bean 生成一个唯一的名称**
   - 通过 `BeanNameGenerator` 的实现类来生成，比如注解注册使用 `AnnotationBeanNameGenerator`
-
-
 
 ### Bean的别名
 
@@ -164,8 +159,6 @@ public class AbstractBeanDefinitionCreateDemo {
 </beans>
 ```
 
-
-
 ②. 获取Bean
 
 可以看到通过 name/id 获取到的 Bean 组件和通过别名获取到的 Bean 组件是同一个
@@ -208,9 +201,9 @@ public class BeanAlias {
 
 ```
 
-## BeanDefinition 注册到IOC容器
+## 注册 BeanDefinition 到IOC容器
 
-> 也可以叫做 **Bean 的装配**, 在上面我们看到了可以采用 XML 的方式定义 BeanDefinition 并将其注册到 Spring 容器中,那么除了这种方式,Spring 还有其他的方式可以实现
+> 也可以叫做 **Bean 的装配**, 在上面我们看到了可以采用 XML 的方式定义 BeanDefinition 并将其注册到 Spring 容器中,那么除了这种配置文件的方式,Spring 还有其他的方式可以实现 :
 >
 > 1. Java 注解
 > 2. Java api
@@ -241,7 +234,7 @@ public class BeanAlias {
 
 ### 基于 XML
 
-> 这种方式就是前面一直使用的,只需要配置 XML 然后读取 XML 配置文件即可
+> 这种方式就是前面一直使用的,只需要配置 XML 然后读取 XML 配置文件即可。当然除了使用 XML 作为配置文件,还可以[使用 Properties 文件作为配置文件](Bean生命周期#properties-配置)
 
 ### 基于注解
 
@@ -251,54 +244,50 @@ public class BeanAlias {
 
 ```java
 public class AnnotationBeanDefinitionDemo {
-    public static void main(String[] args) {
-        // 1. 创建一个基于注解的 Spring 应用上下文
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+  public static void main(String[] args) {
+      // 1. 创建一个基于注解的 Spring 应用上下文
+      AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 
-        // 2. 注册组件类,比如= Configuration Class (配置类) => 相当于用 一个实体的 Class 对象代替  XML 配置信息
-        ctx.register(UserBeanConfig.class);
+      // 2. 注册组件类,比如= Configuration Class (配置类) => 相当于用 一个实体的 Class 对象代替  XML 配置信息
+      ctx.register(UserBeanConfig.class);
 
-        // 3. 刷新 Spring 应用上下文
-        ctx.refresh();
+      // 3. 刷新 Spring 应用上下文
+      ctx.refresh();
 
-        // 4. 获取 Bean 信息
-      	/*
-      		out: 
-      		UserBeanConfig 类型的所有Beans
-      			{
-      					annotationBeanDefinitionDemo.UserBeanConfig=
-      					bean.definition.AnnotationBeanDefinitionDemo$UserBeanConfig@687080dc
-      			}
-					User 类型的所有Beans{user=User{id=22, name='huakucha'}}
-      	*/
-        System.out.println("UserBeanConfig 类型的所有Beans"+ctx.getBeansOfType(UserBeanConfig.class));
-        System.out.println("User 类型的所有Beans"+ctx.getBeansOfType(User.class));
+      // 4. 获取 Bean 信息
+      /*
+        out: 
+        UserBeanConfig 类型的所有Beans
+          {
+              annotationBeanDefinitionDemo.UserBeanConfig=
+              bean.definition.AnnotationBeanDefinitionDemo$UserBeanConfig@687080dc
+          }
+        User 类型的所有Beans{user=User{id=22, name='huakucha'}}
+      */
+      System.out.println("UserBeanConfig 类型的所有Beans"+ctx.getBeansOfType(UserBeanConfig.class));
+      System.out.println("User 类型的所有Beans"+ctx.getBeansOfType(User.class));
 
-        // 5. 关闭Spring 应用上下文
-        ctx.close();
-    }
+      // 5. 关闭Spring 应用上下文
+      ctx.close();
+  }
 
-    public static class UserBeanConfig {
-        // 使用 @Bean 注解
-      	// 实际上也是 BeanDefinition 的一种呈现形式
-        @Bean(name = {"user", "athu"})
-        public User user() {
-           User user = new User();
-           user.setId(22L);
-           user.setName("huakucha");
-           return user;
-        }
-    }
+  public static class UserBeanConfig {
+      // 使用 @Bean 注解
+      // 实际上也是 BeanDefinition 的一种呈现形式
+      @Bean(name = {"user", "athu"})
+      public User user() {
+          User user = new User();
+          user.setId(22L);
+          user.setName("huakucha");
+          return user;
+      }
+  }
 }
 ```
-
-
 
 #### @Compoment + 配置类
 
 > 这种方式也需要一个配置类,但是采用组件扫描的方式将配置类扫描到 Spring 容器中,同时也会将配置类中定义的 Bean 组件一起注册到 Spring 容器中
-
-
 
 ```java
 public class AnnotationBeanDefinitionDemo2 {
@@ -342,8 +331,6 @@ public class AnnotationBeanDefinitionDemo2 {
     }
 }
 ```
-
-
 
 #### @Import + 配置类
 
@@ -394,7 +381,6 @@ public class AnnotationBeanDefinitionDemo3 {
 
 **注意: 同一个Bean不会被多次注册!!**
 
-
   ```java
   public class AnnotationBeanDefinitionDemo4 {
       public static void main(String[] args) {
@@ -439,50 +425,48 @@ public class AnnotationBeanDefinitionDemo3 {
   }
   ```
 
-
-
 :::
 
 ### 基于 API
 
+> 基于 Api 主要是采用 BeanDefinitionRegistry 接口的实现,Spring 本身的使用示例可以参看 [BeanDefinition 依赖来源](依赖来源#spring-容器管理游离对象的注册)
+
 ```java
 public class APIBeanDefinitionDemo {
-    public static void main(String[] args) {
-        // 创建IOC容器
-        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-      
-        // 通过api的方式注册Bean -> 当然这里也能传入Spring应用上下文对象
-        registryByName(beanFactory,"yoey1");
-        registryByType(beanFactory);
-        registryByType(beanFactory);
-        // 依赖查找
-        String[] names = beanFactory.getBeanNamesForType(Person.class);
-        System.err.println(Arrays.toString(names));
-    }
+  public static void main(String[] args) {
+      // 创建IOC容器
+      DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+    
+      // 通过api的方式注册Bean -> 当然这里也能传入Spring应用上下文对象
+      registryByName(beanFactory,"yoey1");
+      registryByType(beanFactory);
+      registryByType(beanFactory);
+      // 依赖查找
+      String[] names = beanFactory.getBeanNamesForType(Person.class);
+      System.err.println(Arrays.toString(names));
+  }
 
-  	// 命名的方式
-    public static void registryByName(BeanDefinitionRegistry registry,String name){
-       // 手动创建了 BeanDefinition
-        BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(Person.class);
-        builder.addPropertyValue("age",11);
-        builder.addPropertyValue("name","yoey1");
-        registry.registerBeanDefinition(name,builder.getBeanDefinition());
-    }
-		// 非命名的方式
-    public static void registryByType(BeanDefinitionRegistry registry){
-        BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(Person.class);
-        builder.addPropertyValue("age",22);
-        builder.addPropertyValue("name","yoey2");
-        BeanDefinitionReaderUtils.registerWithGeneratedName(builder.getBeanDefinition(),registry);
-    }
+  // 命名的方式
+  public static void registryByName(BeanDefinitionRegistry registry,String name){
+      // 手动创建了 BeanDefinition
+      BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(Person.class);
+      builder.addPropertyValue("age",11);
+      builder.addPropertyValue("name","yoey1");
+      registry.registerBeanDefinition(name,builder.getBeanDefinition());
+  }
+  // 非命名的方式
+  public static void registryByType(BeanDefinitionRegistry registry){
+      BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(Person.class);
+      builder.addPropertyValue("age",22);
+      builder.addPropertyValue("name","yoey2");
+      BeanDefinitionReaderUtils.registerWithGeneratedName(builder.getBeanDefinition(),registry);
+  }
 }
 
 /*
-	[yoey1, com.geekbang.demo.BeanInfo.Person#0, com.geekbang.demo.BeanInfo.Person#1]
+[yoey1, com.geekbang.demo.BeanInfo.Person#0, com.geekbang.demo.BeanInfo.Person#1]
 */ 
 ```
-
-
 
 ### 注册外部单体对象
 
@@ -509,9 +493,7 @@ public class OutBeanDemo {
 }
 ```
 
-
-
-##  Bean 的实例化方式
+## Bean 的实例化方式
 
 > 从上面可以看到,我们可以选择由框架来注册 BeanDefinition,也可以选择自己手动注册BeanDefinition。那么注册完成后,Spring 框架如何将BeanDefinition 实例化为对象呢?
 >
@@ -526,15 +508,15 @@ public class OutBeanDemo {
 :::
 
 - **常规方式:**
-  1. 通过**构造器** 	  	【 配置元信息:XML、java注解 和 java api 】
+  1. 通过**构造器**            【 配置元信息:XML、java注解 和 java api 】
   2. 通过**Bean 静态工厂方法**  【 配置元信息:XML 和 java api 】
   3. 通过 **Bean 实例工厂方法** 【 配置元信息:XML 和 java api  】
-  4. 通过 **FactoryBean** 【 配置元信息:XML、java注解 和 java api 】
+  4. 通过 **FactoryBean**    【 配置元信息:XML、java注解 和 java api 】
 - **特殊方式**
-  1. 通过<font color='#f535e8'>`ServiceLoaderFactoryBean`</font>  【 配置元信息:XML、java注解 和 java api 】
+  1. 通过`ServiceLoaderFactoryBean`  【 配置元信息:XML、java注解 和 java api 】
      - 也是FactoryBean 的一种方式
-  2. 通过 <font color='#f535e8'>`AutowireCapableBeanFactory#createBean（Class，int，bool）`</font>  
-  3. 通过<font color='#f535e8'>`BeanDefinitionRegistry#registryBeanDefinition(String,BeanDefinition)`</font> 向容器注册BeanDefinition，由容器实例化
+  2. 通过 `AutowireCapableBeanFactory#createBean（Class，int，bool）`  
+  3. 通过 `BeanDefinitionRegistry#registryBeanDefinition(String,BeanDefinition)` 向容器注册BeanDefinition，由容器实例化
 
 ### 通过构造器、Setter
 
@@ -564,22 +546,22 @@ public class OutBeanDemo {
 
 - 操作步骤
   1. 在Bean类中定义静态方法，用于返回一个Bean
-  2. 为Bean指定一个 <font color='#f535e8'>`factory-method`</font> 
+  2. 为Bean指定一个 `factory-method`
 
 ①、 Bean类中指定静态方法，返回Bean对象
 
 ```java
 public class Person {
-    String name;
-    Integer age;
-  
-  	// 静态方法
-    public static Person createUser(){
-        Person person = new Person();
-        person.setName("11");
-        person.setAge(22);
-        return person;
-    }
+  String name;
+  Integer age;
+
+  // 静态方法
+  public static Person createUser(){
+      Person person = new Person();
+      person.setName("11");
+      person.setAge(22);
+      return person;
+  }
 }
 ```
 
@@ -604,11 +586,9 @@ public class Person {
     </bean>
 ```
 
-
-
 :::
 
-####  Bean 实例工厂方法
+#### Bean 实例工厂方法
 
 > 除了可以在 Bean 的内部定义一个静态方法,Spring 还支持**将实例化方法定义为其他类中的实例方法,我们称这个类为 “工厂类”**
 >
@@ -620,7 +600,7 @@ public class Person {
 - 操作步骤
   1. 创建一个工厂类，其中定义返回Bean的方法
   2. 配置工厂类的Bean
-  3. 在Bean的 <font color='#f535e8'>`factory-bean` </font>指定工厂类的Bean，<font color='#f535e8'>`factory-method`</font> 指定工厂类中可以返回Bean的实例方法
+  3. 在Bean的 `factory-bean` 指定工厂类的Bean，`factory-method`指定工厂类中可以返回Bean的实例方法
 
 ①、 创建一个工厂类，其中定义返回 Bean 对象的实例方法
 
@@ -673,12 +653,13 @@ public class BeanCreationDemo2 {
 ```
 
 
-
 #### FactoryBean
 
 > 上面 Bean 实例工厂方法中,不仅需要注册一个工厂类的 Bean,还要在 Bean 中指定 **factory-bean、factory-method**, 而 FactoryBean 的方式则可以省略很大部分操作,仅仅需要实现FactoryBean接口的 getObject()方法即可
 >
 > 文章推荐:[FactoryBean——Spring的扩展点之一](https://juejin.cn/post/6844903954615107597)
+
+FactoryBean的特殊之处在于它可以向容器中注册两个Bean，一个是它本身，一个是FactoryBean.getObject()方法返回值所代表的Bean
 
 - 操作方式
   1. 创建一个类实现 `FactoryBean<T>` 接口,主要实现 **getObject()**
@@ -686,6 +667,7 @@ public class BeanCreationDemo2 {
   3. 如果需要通过类型获取Bean时，这个类型就是 `T`
 
 ①、 创建一个类实现`FactoryBean<T>`
+
 ```java
 /**
  * <b>User 的FactoryBean</b>
@@ -718,7 +700,7 @@ public class UserFactoryBean implements FactoryBean<User> {
 <bean id="userFactoryBean"  class="bean.factory.UserFactoryBean"/>
 ```
 
-③、 获取FactoryBean的实现(类型就是FactoryBean 的泛型类型)
+③、 获取FactoryBean的实现(类型就是 FactoryBean 的泛型类型)
 
 ```java
 /**
@@ -726,16 +708,16 @@ public class UserFactoryBean implements FactoryBean<User> {
  * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
  */
 public class BeanCreationDemo3 {
-    public static void main(String[] args) throws Exception {
-        BeanFactory factory = new ClassPathXmlApplicationContext("MATE-INF/bean-creation-context.xml");
-        User user = factory.getBean("userFactoryBean", User.class);
-      	/*
-      		out: 
-      		call UserFactoryBean#getObject
-					User{id=33, name='UserFactoryBean'}
-      	*/
-        System.out.println(user);
-    }
+  public static void main(String[] args) throws Exception {
+      BeanFactory factory = new ClassPathXmlApplicationContext("MATE-INF/bean-creation-context.xml");
+      User user = factory.getBean("userFactoryBean", User.class);
+      /*
+        out: 
+        call UserFactoryBean#getObject
+        User{id=33, name='UserFactoryBean'}
+      */
+      System.out.println(user);
+  }
 }
 ```
 
@@ -745,18 +727,16 @@ public class BeanCreationDemo3 {
 
 :::
 
-
-
 ### ServiceLoader
 
 #### SPI
 
 - SPI 可以参考这个[博文](https://blog.huakucha.top/posts/java-basic/spi)
 - 操作步骤
-  1. 在classpath下创建 <font color='#f535e8'>`/META-INF/services`</font> 目录
+  1. 在classpath下创建 `/META-INF/services` 目录
   2. 在上述的目录中定义没有后缀的文件，文件名是接口的全类名
   3. 在上述的文件中配置该接口的实现类(全类名)
-  4. 通过 <font color='#f535e8'>`ServiceLoader`</font>  加载类对象
+  4. 通过 `ServiceLoader`  加载类对象
 
 ①、 在`/META-INF/services` 中创建文件: MATE-INF/services/bean.factory.UserFactoryInterface
 
@@ -970,7 +950,6 @@ public class BeanInitializingDemo {
 ```
 
 
-
 ### 不同初始化方式执行顺序
 
 :::tip Bean各个初始化方法的执行顺序
@@ -979,42 +958,40 @@ public class BeanInitializingDemo {
 
 :::
 
-**1. Bean对象**
+**①、 定义Bean对象,实现 InitializingBean**
 
 ```java
 public class Person implements InitializingBean {
-    String name;
-    Integer age;
-    public static Person createUser(){
-        Person person = new Person();
-        person.setName("11");
-        person.setAge(22);
-        return person;
-    }
+  String name;
+  Integer age;
+  public static Person createUser(){
+      Person person = new Person();
+      person.setName("11");
+      person.setAge(22);
+      return person;
+  }
 
-    /**
-     * 使用 {@link @PostConstruct} 注解标识的Bean 初始化方法
-     */
-    @PostConstruct
-    public void init(){
-        System.err.println("使用@PostConstruct 注解...");
-    }
+  /**
+   * 使用 {@link @PostConstruct} 注解标识的Bean 初始化方法
+   */
+  @PostConstruct
+  public void init(){
+      System.err.println("使用@PostConstruct 注解...");
+  }
 
-    public void  beanPostCon(){
-        System.err.println("自定义初始化方法:@Bean initMethod...");
-    }
-	
- 	 // 实现 InitializingBean的 afterPropertiesSet方法
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.err.println("实现SpringInitializingBean ...");
-    }
+  public void  beanPostCon(){
+      System.err.println("自定义初始化方法:@Bean initMethod...");
+  }
+
+  // 实现 InitializingBean的 afterPropertiesSet方法
+  @Override
+  public void afterPropertiesSet() throws Exception {
+      System.err.println("实现SpringInitializingBean ...");
+  }
 }
 ```
 
-
-
-**2. 通过注解方式注入Bean对象**
+**②、 通过注解方式注入Bean对象**
 
 ```java
 public class BeanConstructDemo {
@@ -1046,8 +1023,6 @@ public class BeanConstructDemo {
 */
 ```
 
-
-
 ### 延迟初始化的Bean
 
 - <mark>Bean的延迟初始化（Lazy Initialization）</mark>
@@ -1065,8 +1040,6 @@ public class BeanConstructDemo {
   - 在Spring应用上下文启动完成后,就会调用初始化方法
 
 :::
-
-**延迟加载的Bean**
 
 可以看到，容器刷新的时候没有对Bean进行初始化,只是将Bean注册到容器，当尝试从容器中获取Bean的时候才会对Bean进行初始化
 
@@ -1116,7 +1089,7 @@ messageSource
 applicationEventMulticaster
 lifecycleProcessor
 -----
-// 这类可以看到使用了 @Lazy 对 Bean 的初始化进行延迟后,只有在进行依赖查找的时候才会进行 Bean 的实例化+初始化
+// 这里可以看到使用了 @Lazy 对 Bean 的初始化进行延迟后,只有在进行依赖查找的时候才会进行 Bean 的实例化 + 初始化
 User 有参构造器调用...
 初始化 User name 属性...
 初始化 User age 属性...
@@ -1124,8 +1097,6 @@ User 有参构造器调用...
 afterPropertiesSet ....
 */
 ```
-
-
 
 ## Bean的销毁方式
 
@@ -1141,7 +1112,6 @@ afterPropertiesSet ....
      - Java api: `AbstractBeanDefinition#setDestroyMethodName(String)`
 - Bean各个销毁方法的执行顺序
   - **@PreDestroy -> 实现DisposableBean -> 手动配置销毁方法**
-  
 
 :::caution IOC容器的Bean能够被垃圾回收吗？
 
@@ -1154,8 +1124,3 @@ afterPropertiesSet ....
 3. Spring Bean 覆盖 finalize 方法被回调
 
 :::
-
-
-
-
-

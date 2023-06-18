@@ -140,11 +140,11 @@ public class AnnotatedBeanDefinitionParserDemo {
 }
 ```
 
-## 注册阶段
+## 元信息注册阶段
 
 BeanDefinition 注册接口: BeanDefinitionRegistry,具体可以参看[Spring BeanDefinition 的注册](依赖来源#spring-beandefinition)
 
-## BeanDefinition 合并阶段
+## 元信息(BeanDefinition)合并阶段
 
 父子 BeanDefinition 合并需要围绕下面两个处理:
 
@@ -315,7 +315,7 @@ protected RootBeanDefinition getMergedBeanDefinition(
 可以看到上述的 getMergedBeanDefinition 操作需要注意:
 
 1. 一个 BeanDefinition 默认不是 RootBeanDefinition,但是经过 getMergedBeanDefinition 操作后,就是了
-2. 子 BeanDefinition 需要对父 BeanDefinition 进行拷贝,然后与自身定义的 BeanDefinition 合并,得到一个新的 `RootBeanDefinition`
+2. 子 BeanDefinition 需要对父 BeanDefinition 进行**拷贝**,然后与自身定义的 BeanDefinition **合并**,得到一个新的 `RootBeanDefinition`
 
 另外,上述操作中的`overrideFrom` 方法会依据付 BeanDefinition 进行一些重写
 
@@ -520,16 +520,18 @@ public class BeanInstantiationLifestyleDemo {
 
 :::
 
-### 正常实例化方式
+## 实例化阶段(正常方式)
 
-> 在 `AbstractAutowireCapableBeanFactory#doCreateBean` 中,除了上面利用 InstantiationAwareBeanPostProcessor 绕开 Bean 的实例化,还有正常的初始化方式
+> 在 `AbstractAutowireCapableBeanFactory#doCreateBean` 中,除了上面利用 InstantiationAwareBeanPostProcessor 绕开 Bean 的实例化,之后就准备 Bean 的正常实例化
+
+Bean 正常实例化的入口在:`AbstractAutowireCapableBeanFactory#createBeanInstance`,该入口中有两种实例化方法的分支:
 
 1. 传统实例化方式
     - 实例化策略: `InstantiationStrategy`
+    - 方法入口: **instantiateBean**
 
 2. 构造器依赖注入
-
-正常实例化的入口在:`AbstractAutowireCapableBeanFactory#createBeanInstance`
+    - 方法入口: **autowireConstructor**
 
 ```java
 protected BeanWrapper createBeanInstance(String beanName,
@@ -582,9 +584,9 @@ protected BeanWrapper createBeanInstance(String beanName,
 }
 ```
 
-可以发现,传统实例化方式走 `instantiateBean` 的方式,如果设置了使用构造函数实例化,那么就走 `autowireConstructor` 的方式
+可以发现,传统实例化方式走 [instantiateBean](Bean生命周期#instantiatebean) 的方式,如果设置了使用构造函数实例化,那么就走 [autowireConstructor](Bean生命周期#autowireconstructor) 的方式
 
-#### instantiateBean
+### instantiateBean
 
 这是传统实例化方式,通过获取实例化策略并进行初始化 Bean,Spring 使用的初始化策略是`SimpleInstantiationStrategy`
 
@@ -614,9 +616,124 @@ protected BeanWrapper instantiateBean(final String beanName,
 }
 ```
 
-#### autowireConstructor
+### autowireConstructor
 
-> 构造器的注入会优先按照构造器参数类型
+构造器的注入会优先按照构造器参数类型进行匹配,如果匹配的有多个 Bean ,那么就按照参数名进行匹配。也就是优先 byType,然后 byName
+
+#### 测试
+
+给定一个 UserHolder 的 Java Bean
+
+```java
+@ToString
+public class UserHolder {
+  final User user;
+
+  public UserHolder(User user) {
+      this.user = user;
+  }
+}
+```
+
+然后再 XML 中定义,开启 `autowire-mode`:
+
+```xml
+<!--注册UserHolder, 并且设置为自动注入-->
+<bean id="userHolder" class="Bean.UserHolder" autowire="constructor"/>
+```
+
+我们对**3种**情况进行测试:
+
+**1. 多个 User 类型,且设置了primary=true**
+
+在 XML 上下文配置文件中是这样配置定义的两个 User 对象的
+
+```xml
+<!--注册 User-->
+<bean id="user" class="ioc.overview.Domain.User">
+    <property name="id" value="11"/>
+    <property name="name" value="athu"/>
+</bean>
+
+<!--注册 SuperUser(Primary)-->
+  <bean  id="superUser" class="ioc.overview.Domain.SuperUser"
+          parent="user"
+          primary="true">
+      <property name="address" value="常州市"/>
+  </bean>
+```
+
+我们运行测试代码,查看 UserHolder 中存储的对象是啥:
+
+```java
+/**
+ * Bean 是如何实例化的 - 构造器的依赖注入
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class BeanInstantiationCtorDemo {
+    public static void main(String[] args) {
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions("META-INF/BeanLifecycleInstantiation.xml");
+
+        UserHolder userHolder = beanFactory.getBean("userHolder", UserHolder.class);
+        // UserHolder(user=SuperUser{address='常州市'} User{id=11, name='athu'})
+        System.out.println(userHolder);
+    }
+}
+```
+
+可以看到,UserHolder 构造器注入的是 User 类型,且 参数名为 user,但是这里是 SuperUser,所以可以很正常猜测到时通过 byType,然后由于 SuperUser 设置了 primary=true,所以就找到了 superUser,也就是与参数名无关
+
+**2. 多个 User 类型,但没有设置primary,但是参数名是 beanName**
+
+这里测试的时候,只需要修改 XML 上下文配置文件:
+
+```xml
+<!--注册 User-->
+<bean id="user" class="ioc.overview.Domain.User">
+    <property name="id" value="11"/>
+    <property name="name" value="athu"/>
+</bean>
+
+<!--注册 SuperUser-->
+<bean  id="superUser" class="ioc.overview.Domain.SuperUser"
+        parent="user">
+    <property name="address" value="常州市"/>
+</bean>
+```
+
+然后进行测试:
+
+```java
+public class BeanInstantiationCtorDemo {
+  public static void main(String[] args) {
+    DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+    XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+    reader.loadBeanDefinitions("META-INF/BeanLifecycleInstantiation.xml");
+
+    UserHolder userHolder = beanFactory.getBean("userHolder", UserHolder.class);
+    // UserHolder(user=User{id=11, name='athu'})
+    System.out.println(userHolder);
+  }
+}
+```
+
+从测试结果可以看到,找到了 beanName = user 的 bean,这意味着通过 byName 的方式注入了依赖
+
+**3. 多个 User 类型,但没有设置primary,且参数名也不等于 beanName**
+
+这种情况不举例子,它会报下面的异常信息:
+
+```txt
+No qualifying bean of type 'ioc.overview.Domain.User' available: 
+  expected single matching bean but found 2: user,superUser
+```
+
+通过这个可以更加确定如果存在多个类型一致的 bean,构造器依赖注入的时候不仅需要 byType, 还需要byName
+
+#### 源码分析
 
 ## 实例化后阶段
 
