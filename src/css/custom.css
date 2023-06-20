@@ -52,9 +52,9 @@ html[data-theme="light"] {
   --ifm-color-primary-lightest: #a1b3f9;
   --ifm-alert-border-color: #1f41ea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
-  --custom-code-color: #be123c;
-  --custom-code-background: #ffe4e6;
-  --custom-border-color:#ffe4e6;
+  --custom-code-color: #4d7c0f;
+  --custom-code-background: #ecfccb;
+  --custom-border-color: #ecfccb;
   --custom-toc_bgcolor: #e2e3e866;
   --custom-list-paragraph-margin: 5px;
 }
@@ -779,4 +779,17 @@ ul ol {
 
 code::selection {
   background: #dee6fc;
+}
+
+.alert a {
+  text-decoration: var(--ifm-link-decoration);
+  text-decoration-style: dashed;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--ifm-alert-border-color) !important;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.alert a:hover {
+  text-decoration-style: solid;
 }
