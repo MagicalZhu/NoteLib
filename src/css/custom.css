@@ -304,8 +304,7 @@ div[class^='codeBlockTitle'] {
   font-size: 14px;
   line-height: 1.6;
   font-weight: bold;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  border: 1px solid #ebebeb;
 }
 
 /* Disable Language Icon */
@@ -792,4 +791,14 @@ code::selection {
 
 .alert a:hover {
   text-decoration-style: solid;
+}
+
+div[class^='codeBlockTitle'] {
+  background-color: #fafafa !important;
+  color: #666666 !important;
+}
+
+div[class^=buttonGroup], 
+div[class*=codeBlockContainer] {
+  background-color: #ffffff;
 }
