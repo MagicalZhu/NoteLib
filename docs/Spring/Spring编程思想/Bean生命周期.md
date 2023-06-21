@@ -735,6 +735,221 @@ No qualifying bean of type 'ioc.overview.Domain.User' available:
 
 #### 源码分析
 
+> 源码较长,配合示例去除多余的代码
+
+可以看到 autowireConstructor 的大体思路为(依据示例):
+
+1. 首先获取候选构造器对象 Constructor
+2. 判断是否需要自动注入 autowire-mode == AUTOWIRE_CONSTRUCTOR
+3. 获取候选构造器的参数数量、类型、名称
+4. 调用 `createArgumentArray` 构建构造器参数数组
+
+```java title=ConstructorResolver#autowireConstructor
+/**
+ * @param beanName bean的名称,这里就是需要构造器依赖注入的 userHolder
+ */
+public BeanWrapper autowireConstructor(String beanName,
+             RootBeanDefinition mbd,
+             @Nullable Constructor<?>[] chosenCtors,
+             @Nullable Object[] explicitArgs) {
+
+  BeanWrapperImpl bw = new BeanWrapperImpl();
+  this.beanFactory.initBeanWrapper(bw);
+  Constructor<?> constructorToUse = null;
+  ArgumentsHolder argsHolderToUse = null;
+  Object[] argsToUse = null;
+
+  // 判断 BeanDefinition 是否定义了构造参数 constructor-arg
+  // ...
+  if (constructorToUse == null || argsToUse == null) {
+    Constructor<?>[] candidates = chosenCtors;
+    if (candidates == null) {
+      Class<?> beanClass = mbd.getBeanClass();
+      try {
+        // 获取候选构造器对象 Constructor
+        candidates = (mbd.isNonPublicAccessAllowed() ?
+            beanClass.getDeclaredConstructors() : beanClass.getConstructors());
+      }
+      catch (Throwable ex) {
+        // handle expcetion
+      }
+    }
+    if (candidates.length == 1 && explicitArgs == null && !mbd.hasConstructorArgumentValues()) {
+      Constructor<?> uniqueCandidate = candidates[0];
+      // 只有一个构造器函数,并且没有 constructor-arg 信息,但是构造器是无参构造器(parameterCount == 0)
+      if (uniqueCandidate.getParameterCount() == 0) {
+        // ...
+        bw.setBeanInstance(instantiate(beanName, mbd, uniqueCandidate, EMPTY_ARGS));
+        return bw;
+      }
+    }
+
+    // 判断是否需要自动注入(autowire-mode == 3 ?)
+    boolean autowiring = (chosenCtors != null ||
+        mbd.getResolvedAutowireMode() == AutowireCapableBeanFactory.AUTOWIRE_CONSTRUCTOR);
+    ConstructorArgumentValues resolvedValues = null;
+
+    AutowireUtils.sortConstructors(candidates);
+    int minTypeDiffWeight = Integer.MAX_VALUE;
+    Set<Constructor<?>> ambiguousConstructors = null;
+    Deque<UnsatisfiedDependencyException> causes = null;
+
+    for (Constructor<?> candidate : candidates) {
+      // 获取候选构造器的参数数量
+      int parameterCount = candidate.getParameterCount();
+      ArgumentsHolder argsHolder;
+      // 获取候选构造器的参数类型
+      Class<?>[] paramTypes = candidate.getParameterTypes();
+
+      // 获取候选构造器的参数名称
+      if (resolvedValues != null) {
+        try {
+          // 首先查看构造器上是否标注 @ConstructorProperties 注解
+          // 如果有的话, @ConstructorProperties 的 value 属性值作为候选构造器的参数名称
+          String[] paramNames = ConstructorPropertiesChecker.evaluate(candidate, parameterCount);
+          if (paramNames == null) {
+            // 利用 ParameterNameDiscoverer 获取候选构造器的参数名称
+            // ParameterNameDiscoverer 的 其中一个实现是 LocalVariableTableParameterNameDiscoverer
+            ParameterNameDiscoverer pnd = this.beanFactory.getParameterNameDiscoverer();
+            if (pnd != null) {
+              paramNames = pnd.getParameterNames(candidate);
+            }
+          }
+          // 创建构造参数值数组
+          argsHolder = createArgumentArray(beanName, mbd, resolvedValues, bw, paramTypes, paramNames,
+              getUserDeclaredConstructor(candidate), autowiring, candidates.length == 1);
+        }
+        catch (UnsatisfiedDependencyException ex) {
+          // exception
+        }
+      }
+      else {
+        // Explicit arguments given -> arguments length must match exactly.
+        if (parameterCount != explicitArgs.length) {
+          continue;
+        }
+        argsHolder = new ArgumentsHolder(explicitArgs);
+      }
+    }
+  }
+  // ...
+  // 调用 instantiate 实例化对象,并且会传入构造参数值
+  bw.setBeanInstance(instantiate(beanName, mbd, constructorToUse, argsToUse));
+  return bw;
+}
+```
+
+上面的关键点在于 **createArgumentArray** 方法,创建构造参数
+
+```java title=ConstructorResolver#createArgumentArray
+private ArgumentsHolder createArgumentArray(
+    String beanName, RootBeanDefinition mbd, 
+    @Nullable ConstructorArgumentValues resolvedValues,
+    BeanWrapper bw, Class<?>[] paramTypes,
+    @Nullable String[] paramNames, Executable executable,
+    boolean autowiring, boolean fallback) throws UnsatisfiedDependencyException {
+
+  TypeConverter customConverter = this.beanFactory.getCustomTypeConverter();
+  TypeConverter converter = (customConverter != null ? customConverter : bw);
+
+  ArgumentsHolder args = new ArgumentsHolder(paramTypes.length);
+  Set<ConstructorArgumentValues.ValueHolder> usedValueHolders = new HashSet<>(paramTypes.length);
+  Set<String> autowiredBeanNames = new LinkedHashSet<>(4);
+
+  // 遍历参数类型,参数类型数组元素与参数名称数组元素对应
+  for (int paramIndex = 0; paramIndex < paramTypes.length; paramIndex++) {
+    Class<?> paramType = paramTypes[paramIndex];
+    String paramName = (paramNames != null ? paramNames[paramIndex] : "");
+    ConstructorArgumentValues.ValueHolder valueHolder = null;
+    // ...
+    if (valueHolder != null) {
+      // ...
+    }
+    else {
+      MethodParameter methodParam = MethodParameter.forExecutable(executable, paramIndex);
+      // ...
+      try {
+        // 解析依赖注入的参数
+        Object autowiredArgument = resolveAutowiredArgument(
+            methodParam, beanName, autowiredBeanNames, converter, fallback);
+        args.rawArguments[paramIndex] = autowiredArgument;
+        args.arguments[paramIndex] = autowiredArgument;
+        args.preparedArguments[paramIndex] = autowiredArgumentMarker;
+        args.resolveNecessary = true;
+      }
+      catch (BeansException ex) {
+       // ...
+      }
+    }
+  }
+  // ...
+  return args;
+}
+```
+
+可以看到这个通过 `resolveAutowiredArgument` 来解析获取依赖注入的参数
+
+```java title=ConstructorResolver#resolveAutowiredArgument
+protected Object resolveAutowiredArgument(MethodParameter param, 
+            String beanName,
+           @Nullable Set<String> autowiredBeanNames,
+            TypeConverter typeConverter,
+            boolean fallback) {
+  // 获取构造参数类型
+  Class<?> paramType = param.getParameterType();
+  if (InjectionPoint.class.isAssignableFrom(paramType)) {
+    // 创建 InjectionPoint
+    InjectionPoint injectionPoint = currentInjectionPoint.get();
+    if (injectionPoint == null) {
+      throw new IllegalStateException("No current InjectionPoint available for " + param);
+    }
+    return injectionPoint;
+  }
+  try {
+     // 依赖的解析
+    return this.beanFactory.resolveDependency(
+        new DependencyDescriptor(param, true), beanName, autowiredBeanNames, typeConverter);
+  }
+  // ...
+}
+```
+
+可以看到,最底层调用的是 `resolveDependency`,这个是进行依赖的解析,可以参看[resolvedependency](依赖注入#resolvedependency)。但是这里,需要深入查看下`DefaultListableBeanFactory#determineAutowireCandidate`,这个会探测自动注入的参数
+
+```java title=DefaultListableBeanFactory#determineAutowireCandidate
+/**
+ * @param candidates
+ */
+protected String determineAutowireCandidate(Map<String, Object> candidates, 
+                  DependencyDescriptor descriptor) {
+  // 获取依赖类型,那这个示例中就是 User
+  Class<?> requiredType = descriptor.getDependencyType();
+  // 首先进行 BeanDefinition 的 primary 属性的处理
+  String primaryCandidate = determinePrimaryCandidate(candidates, requiredType);
+  if (primaryCandidate != null) {
+    return primaryCandidate;
+  }
+  // 然后进行 BeanDefinition 的 Order 属性的处理
+  String priorityCandidate = determineHighestPriorityCandidate(candidates, requiredType);
+  if (priorityCandidate != null) {
+    return priorityCandidate;
+  }
+  for (Map.Entry<String, Object> entry : candidates.entrySet()) {
+    String candidateName = entry.getKey();
+    Object beanInstance = entry.getValue();
+    // 没有 primary、Order,则按照构造器参数名称进行匹配(descriptor.getDependencyName)
+    // 这里的 descriptor.getDependencyName 依旧会使用 ParameterNameDiscoverer 获取构造器参数名称
+    if ((beanInstance != null && this.resolvableDependencies.containsValue(beanInstance)) ||
+        matchesBeanName(candidateName, descriptor.getDependencyName())) {
+      return candidateName;
+    }
+  }
+  return null;
+}
+```
+
+上面的处理就是首先 byType,如果有多个的话,优先取 设置了 primary 属性的 bean,如果还不满足则按照 byName 的方式匹配
+
 ## 实例化后阶段
 
 ## 属性赋值前阶段
