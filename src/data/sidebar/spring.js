@@ -58,6 +58,7 @@ const springSideBar = [
 								"Spring/Spring编程思想/依赖来源",
 								"Spring/Spring编程思想/作用域",
 								"Spring/Spring编程思想/Bean生命周期",
+								"Spring/Spring编程思想/配置元信息",
 						],
 						collapsed: true,
 						link: {

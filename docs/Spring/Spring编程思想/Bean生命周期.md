@@ -3,7 +3,7 @@ id: Bean生命周期
 title: Bean生命周期
 ---
 
-## 元信息配置阶段
+## 元信息配置
 
 配置 BeanDefinition
 
@@ -98,7 +98,7 @@ public class BeanMetaDataConfigurationDemoByProperties {
 }
 ```
 
-## 元信息解析阶段
+## 元信息解析
 
 1. **面向资源** BeanDefinition 解析
     - 顶级加载接口: `BeanDefinitionReader`
@@ -140,11 +140,11 @@ public class AnnotatedBeanDefinitionParserDemo {
 }
 ```
 
-## 元信息注册阶段
+## 元信息注册
 
 BeanDefinition 注册接口: BeanDefinitionRegistry,具体可以参看[Spring BeanDefinition 的注册](依赖来源#spring-beandefinition)
 
-## 元信息(BeanDefinition)合并阶段
+## 元信息(BeanDefinition)合并
 
 父子 BeanDefinition 合并需要围绕下面两个处理:
 
@@ -350,7 +350,7 @@ public void overrideFrom(BeanDefinition other) {
 
 :::
 
-## Class 加载阶段
+## Class 加载
 
 > BeanDefinition 合并完成之后,在 Bean 被创建之前,需要利用类加载器(ClassLoader) 将 Bean 所对应的 Class 类进行加载
 
@@ -429,21 +429,33 @@ private Class<?> doResolveBeanClass(RootBeanDefinition mbd, Class<?>... typesToM
 }
 ```
 
-## 实例化前阶段
-
-### 绕开实例化
+## 实例化前(阻断实例化过程)
 
 > - InstantiationAwareBeanPostProcessor 会在 Bean 被实例化之前调用,它继承并拓展了 `BeanPostProcessor`
 >
-> - 利用这个 BeanPostProcessor 可以在实例化某个 Bean 之前,拦截这个 Bean 并且返回自定义的 Bean 对象,从而替换 Spring IOC 容器中默认的实现类
+> - 利用这个 BeanPostProcessor 可以在实例化某个 Bean 之前,拦截这个 Bean 并且返回自定义的 Bean 对象,从而**替换 Spring IOC 容器中默认的实现类**
 
 **非主流的生命周期**
 
 - 入口点: InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
 
-在 createBean 的 `doCreateBean` 之前,会调用 `resolveBeforeInstantiation`,这个返回一个 Bean,可以绕过 Bean 的实例化以及后续的初始化步骤
+我们看下该接口默认方法的定义,可以看到 **如果此方法返回非空对象，则会短路掉目标 bean 的默认实例化,使用自定义的 bean 对象替换容器中的 bean,无需进行后续的 bean 实例化、初始化等操作**
 
-```java title=AbstractAutowireCapableBeanFactory#resolveBeforeInstantiation
+```java title=InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+/**
+ * 在目标bean实例化之前应用此BeanPostProcessor,返回的bean对象可以是代理，以代替目标bean
+ */
+@Nullable
+default Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+  return null;
+}
+```
+
+### 源码分析
+
+在 `createBean` 的 `doCreateBean` 方法执行之前,会调用 `resolveBeforeInstantiation`,这里可以返回一个 Bean 来绕过 Bean 的实例化以及后续的初始化步骤
+
+```java title=AbstractAutowireCapableBeanFactory#createBean
 protected Object createBean(String beanName,
                             RootBeanDefinition mbd, 
                             @Nullable Object[] args) throws BeanCreationException {
@@ -457,12 +469,14 @@ protected Object createBean(String beanName,
   }
   // ...
   try {
+    // highlight-start
     // 调用 InstantiationAwareBeanPostProcessor ,可以返回一个 Bean 对象
     // 比如返回一个代理对象来代替目标 Bean
     Object bean = resolveBeforeInstantiation(beanName, mbdToUse);
     if (bean != null) {
       return bean;
     }
+    // highlight-end
   }
   // 如果返回 null,再继续执行后续创建 Bean 的操作
   try {
@@ -473,7 +487,34 @@ protected Object createBean(String beanName,
 }
 ```
 
-通过代码演示, `postProcessBeforeInstantiation` 发返回 null 的话,则会继续执行后续的 `doCreateBean` 操作
+我们观察下 `resolveBeforeInstantiation` 的源码:
+
+```java title=AbstractAutowireCapableBeanFactory#resolveBeforeInstantiation
+protected Object resolveBeforeInstantiation(String beanName, RootBeanDefinition mbd) {
+  Object bean = null;
+  if (!Boolean.FALSE.equals(mbd.beforeInstantiationResolved)) {
+    if (!mbd.isSynthetic() && hasInstantiationAwareBeanPostProcessors()) {
+      Class<?> targetType = determineTargetType(beanName, mbd);
+      if (targetType != null) {
+        // highlight-start
+        // 应用 InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+        bean = applyBeanPostProcessorsBeforeInstantiation(targetType, beanName);
+        if (bean != null) {
+          // 应用 BeanPostProcessor#postProcessAfterInitialization
+          bean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
+        }
+        // highlight-end
+      }
+    }
+    mbd.beforeInstantiationResolved = (bean != null);
+  }
+  return bean;
+}
+```
+
+`postProcessBeforeInstantiation` 发返回 null 的话,则会继续执行后续的 `doCreateBean` 操作(实例化、初始化...),下面通过代码演示:
+
+### 示例代码
 
 ```java
 /**
@@ -516,11 +557,11 @@ public class BeanInstantiationLifestyleDemo {
 
 :::tip 提示
 
-通过这个说明了, Bean 的实例化是可以被"绕开"的
+通过这个说明了, Bean 的实例化是可以被"绕开"的,而且还是可以通过实现 `BeanPostProcessor#postProcessAfterInitialization` 自定义 Bean 初始化后的动作
 
 :::
 
-## 实例化阶段(正常方式)
+## 实例化中
 
 > 在 `AbstractAutowireCapableBeanFactory#doCreateBean` 中,除了上面利用 InstantiationAwareBeanPostProcessor 绕开 Bean 的实例化,之后就准备 Bean 的正常实例化
 
@@ -533,11 +574,10 @@ Bean 正常实例化的入口在:`AbstractAutowireCapableBeanFactory#createBeanI
 2. 构造器依赖注入
     - 方法入口: **autowireConstructor**
 
-```java
+```java title=AbstractAutowireCapableBeanFactory#createBeanInstance
 protected BeanWrapper createBeanInstance(String beanName,
                                         RootBeanDefinition mbd,
                                         @Nullable Object[] args) {
-  // Make sure bean class is actually resolved at this point.
   Class<?> beanClass = resolveBeanClass(mbd, beanName);  
   if (beanClass != null &&
       !Modifier.isPublic(beanClass.getModifiers()) &&
@@ -555,7 +595,6 @@ protected BeanWrapper createBeanInstance(String beanName,
     return instantiateUsingFactoryMethod(beanName, mbd, args);
   }
   // ...
-  // Candidate constructors for autowiring?
   // highlight-start
   // 利用 SmartInstantiationAwareBeanPostProcessor 来决定 bean 的构造器对象
   Constructor<?>[] ctors = determineConstructorsFromBeanPostProcessors(beanClass, beanName);
@@ -766,9 +805,11 @@ public BeanWrapper autowireConstructor(String beanName,
     if (candidates == null) {
       Class<?> beanClass = mbd.getBeanClass();
       try {
+        // highlight-start
         // 获取候选构造器对象 Constructor
         candidates = (mbd.isNonPublicAccessAllowed() ?
             beanClass.getDeclaredConstructors() : beanClass.getConstructors());
+        // highlight-end
       }
       catch (Throwable ex) {
         // handle expcetion
@@ -815,9 +856,11 @@ public BeanWrapper autowireConstructor(String beanName,
               paramNames = pnd.getParameterNames(candidate);
             }
           }
+          // highlight-start
           // 创建构造参数值数组
           argsHolder = createArgumentArray(beanName, mbd, resolvedValues, bw, paramTypes, paramNames,
               getUserDeclaredConstructor(candidate), autowiring, candidates.length == 1);
+          // highlight-end
         }
         catch (UnsatisfiedDependencyException ex) {
           // exception
@@ -833,8 +876,10 @@ public BeanWrapper autowireConstructor(String beanName,
     }
   }
   // ...
+  // highlight-start
   // 调用 instantiate 实例化对象,并且会传入构造参数值
   bw.setBeanInstance(instantiate(beanName, mbd, constructorToUse, argsToUse));
+  // highlight-end
   return bw;
 }
 ```
@@ -849,9 +894,7 @@ private ArgumentsHolder createArgumentArray(
     @Nullable String[] paramNames, Executable executable,
     boolean autowiring, boolean fallback) throws UnsatisfiedDependencyException {
 
-  TypeConverter customConverter = this.beanFactory.getCustomTypeConverter();
-  TypeConverter converter = (customConverter != null ? customConverter : bw);
-
+  // ...
   ArgumentsHolder args = new ArgumentsHolder(paramTypes.length);
   Set<ConstructorArgumentValues.ValueHolder> usedValueHolders = new HashSet<>(paramTypes.length);
   Set<String> autowiredBeanNames = new LinkedHashSet<>(4);
@@ -869,9 +912,11 @@ private ArgumentsHolder createArgumentArray(
       MethodParameter methodParam = MethodParameter.forExecutable(executable, paramIndex);
       // ...
       try {
+        // highlight-start
         // 解析依赖注入的参数
         Object autowiredArgument = resolveAutowiredArgument(
             methodParam, beanName, autowiredBeanNames, converter, fallback);
+        // highlight-end
         args.rawArguments[paramIndex] = autowiredArgument;
         args.arguments[paramIndex] = autowiredArgument;
         args.preparedArguments[paramIndex] = autowiredArgumentMarker;
@@ -906,9 +951,11 @@ protected Object resolveAutowiredArgument(MethodParameter param,
     return injectionPoint;
   }
   try {
+    // highlight-start
      // 依赖的解析
     return this.beanFactory.resolveDependency(
         new DependencyDescriptor(param, true), beanName, autowiredBeanNames, typeConverter);
+    // highlight-end
   }
   // ...
 }
@@ -937,10 +984,12 @@ protected String determineAutowireCandidate(Map<String, Object> candidates,
   for (Map.Entry<String, Object> entry : candidates.entrySet()) {
     String candidateName = entry.getKey();
     Object beanInstance = entry.getValue();
+    // highlight-start
     // 没有 primary、Order,则按照构造器参数名称进行匹配(descriptor.getDependencyName)
     // 这里的 descriptor.getDependencyName 依旧会使用 ParameterNameDiscoverer 获取构造器参数名称
     if ((beanInstance != null && this.resolvableDependencies.containsValue(beanInstance)) ||
         matchesBeanName(candidateName, descriptor.getDependencyName())) {
+    // highlight-end
       return candidateName;
     }
   }
@@ -950,22 +999,868 @@ protected String determineAutowireCandidate(Map<String, Object> candidates,
 
 上面的处理就是首先 byType,如果有多个的话,优先取 设置了 primary 属性的 bean,如果还不满足则按照 byName 的方式匹配
 
-## 实例化后阶段
+## 实例化后(阻断属性赋值)
 
-## 属性赋值前阶段
+> 问题: Bean 实例化之后一定会进行赋值操作吗?
 
-## Aware 接口回调阶段
+- Bean 属性赋值(Populate) 判断
+  - 入口点: `InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation`
+  - [实例化前相关-postProcessBeforeInstantiation](Bean生命周期#绕开实例化)
 
-## 初始化前阶段
+该方法会在 bean 通过`构造函数或工厂方法实例化之后`, 但在 bean 属性填充 (来自显式属性或自动装配) 发生之前执行:
 
-## 初始化阶段
+1. **如果返回 true, 则 bean 的属性填充操作会正常执行**
+2. **如果返回 false, 则会禁止 bean 的属性赋值(配置元信息 -> 属性值)**
 
-## 初始化后阶段
+查看默认的接口方法:
 
-## 初始化后完成阶段
+```java title=InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation
+/**
+ * 这是在 Spring的自动装配开始之前，在给定的bean实例上执行自定义字段注入的理想回调
+ */
+default boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
+  return true;
+}
+```
 
-## 销毁前阶段
+### 示例
 
-## 销毁阶段
+我们使用示例来描述这一个特点:
+
+定义一个 XMl 配置元信息
+
+```xml
+<!--定义一个 Bean-->
+<bean id="user"
+      class="ioc.overview.Domain.User">
+    <property name="id" value="22"/>
+    <property name="name" value="athu"/>
+</bean>
+```
+
+然后读取 配置元信息,并且配置 InstantiationAwareBeanPostProcessor:
+
+```java
+/**
+ * 演示 Bean 实例化后阶段 {@link InstantiationAwareBeanPostProcessor}
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class BeanInstantiationLifestyleAfterDemo {
+  public static void main(String[] args) {
+      DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+      XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+      // 添加 InstantiationAwareBeanPostProcessor
+      beanFactory.addBeanPostProcessor(new CustomInstantiationAwareBeanPostProcessor());
+      reader.loadBeanDefinitions("META-INF/AfterBeanInstantiation.xml");
+      // 默认 user {id=22,name='athu'}
+      User bean = beanFactory.getBean("user", User.class);
+      // OUT: User{id=33, name='CZ'}
+      System.out.println(bean);
+  }
+  static class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+      @Override
+      public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
+          // 对指定的 bean 使用自定义操作,比如替换默认的属性填充操作
+          if (beanName.equals("user")) {
+              User user = (User) bean;
+              user.setId(33L);
+              user.setName("CZ");
+              return false;
+          }
+          return true;
+      }
+
+  }
+}
+```
+
+### 源码
+
+Spring 在 `AbstractAutowireCapableBeanFactory#populateBean` 中对 bean 的属性进行赋值,所以我们查看这里的源码部分:
+
+```java
+protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable BeanWrapper bw) {
+
+  // 这里,如果有 InstantiationAwareBeanPostProcessor,那么就调用 postProcessAfterInstantiation
+  if (!mbd.isSynthetic() && hasInstantiationAwareBeanPostProcessors()) {
+    for (BeanPostProcessor bp : getBeanPostProcessors()) {
+      // highlight-start
+      if (bp instanceof InstantiationAwareBeanPostProcessor) {
+        InstantiationAwareBeanPostProcessor ibp = (InstantiationAwareBeanPostProcessor) bp;
+        //  如果 postProcessAfterInstantiation 返回 false,则阻断后的赋值操作
+        if (!ibp.postProcessAfterInstantiation(bw.getWrappedInstance(), beanName)) {
+          return;
+        }
+        // highlight-end
+      }
+    }
+  }
+
+  // 获取配置元信息(BeanDefinition) 中设置的 属性信息(propertyValues)
+  PropertyValues pvs = (mbd.hasPropertyValues() ? mbd.getPropertyValues() : null);
+
+  // 依赖自动注入 byType/byName
+  int resolvedAutowireMode = mbd.getResolvedAutowireMode();
+  if (resolvedAutowireMode == AUTOWIRE_BY_NAME || resolvedAutowireMode == AUTOWIRE_BY_TYPE) {
+    MutablePropertyValues newPvs = new MutablePropertyValues(pvs);
+    if (resolvedAutowireMode == AUTOWIRE_BY_NAME) {
+      autowireByName(beanName, mbd, bw, newPvs);
+    }
+    if (resolvedAutowireMode == AUTOWIRE_BY_TYPE) {
+      autowireByType(beanName, mbd, bw, newPvs);
+    }
+    pvs = newPvs;
+  }
+  // 一些 属性赋值的后置处理器的执行
+  // ...
+  if (pvs != null) {
+    // 属性赋值
+    applyPropertyValues(beanName, mbd, bw, pvs);
+  }
+}
+```
+
+:::caution 说明
+bean 在完成正常实例化之后一般会进行 bean 属性值的填充,但是也可以通过 InstantiationAwareBeanPostProcessor 来拦截,禁止属性值的填充
+:::
+
+## 属性赋值前(修改属性信息)
+
+> 问题: 配置后的 PropertyValues 还有修改的机会吗?
+
+- Bean 属性值元信息: PropertyValues
+- Bean 属性赋值前回调
+  - Spring 1.2 ~ 5.0 : `InstantiationAwareBeanPostProcessor#postProcessPropertyValues`
+  - Spring 5.1: `InstantiationAwareBeanPostProcessor#postProcessProperties`
+
+### 源码部分
+
+在前面的 Bean 实例化后的操作就是属性赋值,在`populateBean` 中会进行 bean 属性赋值操作,在赋值前会构造`PropertyValues` 对象,也就是存储属性值信息。默认情况下会使用配置元信息(BeanDefinition) 中的配置信息,但是**也可以通过后置处理器进行修改**
+
+我们查看源码部分:
+
+```java
+protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable BeanWrapper bw) {
+  // ...
+  // 获取属性值信息(默认)
+  PropertyValues pvs = (mbd.hasPropertyValues() ? mbd.getPropertyValues() : null);
+
+  // ...
+  boolean hasInstAwareBpps = hasInstantiationAwareBeanPostProcessors();
+  boolean needsDepCheck = (mbd.getDependencyCheck() != AbstractBeanDefinition.DEPENDENCY_CHECK_NONE);
+
+  PropertyDescriptor[] filteredPds = null;
+  if (hasInstAwareBpps) {
+    if (pvs == null) {
+      pvs = mbd.getPropertyValues();
+    }
+    for (BeanPostProcessor bp : getBeanPostProcessors()) {
+      if (bp instanceof InstantiationAwareBeanPostProcessor) {
+        InstantiationAwareBeanPostProcessor ibp = (InstantiationAwareBeanPostProcessor) bp;
+        // highlight-start
+        // Spring 5.1 及后续版本执行 `postProcessProperties`
+        PropertyValues pvsToUse = ibp.postProcessProperties(pvs, bw.getWrappedInstance(), beanName);
+        // highlight-end
+        if (pvsToUse == null) {
+          if (filteredPds == null) {
+            filteredPds = filterPropertyDescriptorsForDependencyCheck(bw, mbd.allowCaching);
+          }
+          // highlight-start
+          // 否则执行 `postProcessPropertyValues`
+          pvsToUse = ibp.postProcessPropertyValues(pvs, filteredPds, bw.getWrappedInstance(), beanName);
+          // highlight-end
+          if (pvsToUse == null) {
+            return;
+          }
+        }
+        pvs = pvsToUse;
+      }
+    }
+  }
+  // ...
+}
+```
+
+### 示例
+
+定义一个 XML 配置元信息:
+
+```xml
+<!--定义一个 Bean-->
+<bean id="user"
+      class="ioc.overview.Domain.User">
+    <!-- highlight-start -->
+    <!-- 这里就是 PropertyValues 相关信息 -->
+    <property name="id" value="22"/>
+    <property name="name" value="athu"/>
+    <!-- highlight-end -->
+</bean>
+```
+
+然后进行测试,并且定义 InstantiationAwareBeanPostProcesser 的实现类,实现 `postProcessProperties` 接口方法
+
+```java
+/**
+ * 演示 Bean 赋值前阶段 {@link InstantiationAwareBeanPostProcessor}
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class BeforePopulate {
+  public static void main(String[] args) {
+      DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+      XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+      // 添加 InstantiationAwareBeanPostProcessor
+      beanFactory.addBeanPostProcessor(new CustomInstantiationAwareBeanPostProcessor());
+      reader.loadBeanDefinitions("META-INF/BeforePopulate.xml");
+      // 默认 user {id=22,name='athu'}
+      User bean = beanFactory.getBean("user", User.class);
+      // OUT:User{id=33, name='after-update-athu'}
+      System.out.println(bean);
+  }
+  static class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+      @Override
+      public PropertyValues postProcessProperties(PropertyValues pvs,
+                                                  Object bean,
+                                                  String beanName)  throws BeansException {
+          if (beanName.equals("user") && pvs instanceof MutablePropertyValues) {
+              MutablePropertyValues mpvs =(MutablePropertyValues) pvs;
+              // 先删除后添加
+              mpvs.removePropertyValue("id");
+              mpvs.removePropertyValue("name");
+              mpvs.addPropertyValue("id", 33L);
+              mpvs.addPropertyValue("name", "after-update-athu");
+              return mpvs;
+          }
+          return null;
+      }
+  }
+}
+```
+
+## 初始化总览
+
+紧接着上面属性值赋值后的就是 bean 的初始化操作,入口点也在`AbstractAutowireCapableBeanFactory#doCreateBean`
+
+```java title=AbstractAutowireCapableBeanFactory#doCreateBean
+protected Object doCreateBean(final String beanName, 
+          final RootBeanDefinition mbd, 
+          final @Nullable Object[] args) throws BeanCreationException {
+
+  // ...
+
+  Object exposedObject = bean;
+  try {
+    populateBean(beanName, mbd, instanceWrapper);
+    // highlight-start
+    // bean 的初始化
+    exposedObject = initializeBean(beanName, exposedObject, mbd);
+    // highlight-end
+  }
+  // ...
+  return exposedObject;
+}
+```
+
+然后调用 `AbstractAutowireCapableBeanFactory#initializeBean`方法
+
+```java title=AbstractAutowireCapableBeanFactory#initializeBean
+protected Object initializeBean(final String beanName, final Object bean, @Nullable RootBeanDefinition mbd) {
+  // 执行 Aware 接口回调
+  invokeAwareMethods(beanName, bean);
+
+  Object wrappedBean = bean;
+  if (mbd == null || !mbd.isSynthetic()) {
+    // 应用 BeanPostProcessor#postProcessBeforeInitialization
+    wrappedBean = applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
+  }
+
+  try {
+    // 执行初始化方法
+    invokeInitMethods(beanName, wrappedBean, mbd);
+  }
+  catch (Throwable ex) {
+   //
+  }
+  if (mbd == null || !mbd.isSynthetic()) {
+    // 应用 BeanPostProcessor#postProcessAfterInitialization
+    wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
+  }
+
+  return wrappedBean;
+}
+```
+
+可以看到,初始化中会进行下面几个步骤:
+
+1. 执行 Aware 接口回调
+2. 执行 BeanPostProcessor#postProcessBeforeInitialization
+3. 执行初始化方法
+4. 执行 BeanPostProcessor#postProcessAfterInitialization
+
+### Aware 接口回调
+
+:::info Spring 内建的 Aware 接口的执行顺序
+
+1. BeanNameAware
+2. BeanClassLoaderAware
+3. BeanFactoryAware
+4. EnvironmentAware
+5. EmbeddedValueResolverAware
+6. ResourceLoaderAware
+7. ApplicationEventPublisherAware
+8. MessageSourceAware
+9. ApplicantContextAware
+
+:::
+
+#### 不依赖ApplicationContext
+
+位于 1~3 的 Aware 接口实现,会所在 bean 的初始化方法(initializeBean) 中实现,调用 `AbstractAutowireCapableBeanFactory#invokeAwareMethods` 方法
+
+```java title=AbstractAutowireCapableBeanFactory#invokeAwareMethods
+private void invokeAwareMethods(final String beanName, final Object bean) {
+  if (bean instanceof Aware) {
+    // highlight-start
+    if (bean instanceof BeanNameAware) {
+      ((BeanNameAware) bean).setBeanName(beanName);
+    }
+    if (bean instanceof BeanClassLoaderAware) {
+      ClassLoader bcl = getBeanClassLoader();
+      if (bcl != null) {
+        ((BeanClassLoaderAware) bean).setBeanClassLoader(bcl);
+      }
+    }
+    if (bean instanceof BeanFactoryAware) {
+      ((BeanFactoryAware) bean).setBeanFactory(AbstractAutowireCapableBeanFactory.this);
+    }
+    // highlight-end
+  }
+}
+```
+
+#### 依赖ApplicationContext
+
+而由于剩下的 4~9 的 Aware 接口实现依赖于 ApplicantContext,它只有在应用上下文初始化的时候才会被调用。
+
+首先在准备 BeanFactory 的时候,会添加一个 Bean 的后置处理器 `ApplicationContextAwareProcessor`
+
+```java title=ApplicationContextAwareProcessor#prepareBeanFactory
+protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
+  // ...
+  //highlight-start
+  beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
+  //highlight-end
+  // ...
+}
+
+//
+```
+
+注册的 `ApplicationContextAwareProcessor` 中,在 Bean 初始化前被调用(`postProcessBeforeInitialization`),在这段调用处理中,会调用剩下的 6 个 Aware 接口。
+
+```java title=ApplicationContextAwareProcessor#postProcessBeforeInitialization
+@Override
+@Nullable
+public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+  // ..
+  if (acc != null) {
+   // ...
+  }
+  else {
+    //highlight-start
+    invokeAwareInterfaces(bean);
+    //highlight-end
+  }
+  return bean;
+}
+
+private void invokeAwareInterfaces(Object bean) {
+  //highlight-start
+  if (bean instanceof EnvironmentAware) {
+    ((EnvironmentAware) bean).setEnvironment(this.applicationContext.getEnvironment());
+  }
+  if (bean instanceof EmbeddedValueResolverAware) {
+    ((EmbeddedValueResolverAware) bean).setEmbeddedValueResolver(this.embeddedValueResolver);
+  }
+  if (bean instanceof ResourceLoaderAware) {
+    ((ResourceLoaderAware) bean).setResourceLoader(this.applicationContext);
+  }
+  if (bean instanceof ApplicationEventPublisherAware) {
+    ((ApplicationEventPublisherAware) bean).setApplicationEventPublisher(this.applicationContext);
+  }
+  if (bean instanceof MessageSourceAware) {
+    ((MessageSourceAware) bean).setMessageSource(this.applicationContext);
+  }
+  if (bean instanceof ApplicationContextAware) {
+    ((ApplicationContextAware) bean).setApplicationContext(this.applicationContext);
+  }
+  //highlight-end
+}
+```
+
+:::caution 说明
+
+1. ApplicationContextAwareProcessor 也是 BeanPostProcessor 接口的实现,而 BeanPostProcessor 是在 [bean 的初始化前](Bean生命周期#源码分析-2)被调用的
+2. 这个后置处理器不是 public 的,所以无法手动添加到容器中
+
+:::
+
+### 初始化前
+
+#### 源码分析
+
+我们知道了 Aware 接口会在 bean 初始化之前调用,除此之外还会调用 Bean 的后置处理器方法:`AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization`
+
+```java title=AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization
+public Object applyBeanPostProcessorsBeforeInitialization(Object existingBean, String beanName)
+    throws BeansException {
+
+  Object result = existingBean;
+  for (BeanPostProcessor processor : getBeanPostProcessors()) {
+    // highlight-start
+    Object current = processor.postProcessBeforeInitialization(result, beanName);
+    // highlight-end
+    if (current == null) {
+      return result;
+    }
+    result = current;
+  }
+  return result;
+}
+```
+
+可以看到,初始化前还会调用所有 `BeanPostProcessor#postProcessBeforeInitialization` 方法:
+
+- **如果 *postProcessBeforeInitialization* 返回 null,则使用默认创建的 bean**
+- **如果 *postProcessBeforeInitialization* 返回不为 null,则使用该方法返回的对象**
+
+#### 示例
+
+首先还是定义一个 XML 配置元信息:
+
+```xml
+<!--定义一个 Bean-->
+<bean id="user"
+      class="ioc.overview.Domain.User">
+    <property name="id" value="22"/>
+    <property name="name" value="athu"/>
+</bean>
+```
+
+然后测试,在 beanFactory 中添加自定义的 BeanPostProcessor,并且实现 postProcessBeforeInitialization 方法
+
+```java
+/**
+ * Bean 初始化前的操作(postProcessBeforeInitialization)
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class BeforeInitialization {
+    public static void main(String[] args) {
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        // 默认 user {id=22,name='athu'}
+        reader.loadBeanDefinitions("META-INF/BeforeInitialization.xml");
+        // 添加一个自定义的 BeanPostProcessor 并且实现 postProcessBeforeInitialization 方法
+        beanFactory.addBeanPostProcessor(new BeanPostProcessor() {
+            @Override
+            public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+                if (beanName.equals("user")) {
+                    User user = (User) bean;
+                    user.setName("after-postProcessBeforeInitialization");
+                    return user;
+                }
+                // 返回 null 表示使用默认的 bean
+                return null;
+            }
+        });
+
+        User bean = beanFactory.getBean("user", User.class);
+        // out: User{id=22, name='after-postProcessBeforeInitializationu'}
+        System.out.println(bean);
+    }
+}
+```
+
+### 初始化中(初始化方法)
+
+Bean 的初始化(Initialization) 顺序:
+
+1. @PostConstruct 标注方法
+    - 该处理基于注解驱动,具体处理在`InitDestroyAnnotationBeanPostProcessor#postProcessBeforeInitialization` 中处理
+    - <mark>该方法严格意义上来说,属于初始化前阶段</mark>
+2. 实现 `InitializingBean` 接口的 afterPropertiesSet 方法
+3. 自定义初始化方法
+
+#### 源码分析
+
+在执行完初始化前的步骤后,就会开始执行初始化方法,入口点为: `AbstractAutowireCapableBeanFactory#invokeInitMethods`
+
+```java title=AbstractAutowireCapableBeanFactory#invokeInitMethods
+protected void invokeInitMethods(String beanName, 
+        final Object bean,
+        @Nullable RootBeanDefinition mbd) throws Throwable {
+
+  // 如果 bean 实现了 InitializingBean
+  boolean isInitializingBean = (bean instanceof InitializingBean);
+  if (isInitializingBean && (mbd == null || !mbd.isExternallyManagedInitMethod("afterPropertiesSet"))) {
+    // ...
+    // 执行 bean 的 afterPropertiesSet方法
+    ((InitializingBean) bean).afterPropertiesSet();
+  }
+
+  if (mbd != null && bean.getClass() != NullBean.class) {
+    // 获取 BeanDefinition 中的 init-method 属性值
+    String initMethodName = mbd.getInitMethodName();
+    if (StringUtils.hasLength(initMethodName) &&
+        !(isInitializingBean && "afterPropertiesSet".equals(initMethodName)) &&
+        !mbd.isExternallyManagedInitMethod(initMethodName)) {
+      // 执行自定义的初始化方法
+      invokeCustomInitMethod(beanName, bean, mbd);
+    }
+  }
+}
+```
+
+#### 示例
+
+首先定义一个类,为了测试三种初始化方法,这个 Bean 类需要:
+
+1. 实现 InitializingBean 接口
+2. 自定义一个初始化方法
+3. 自定义一个初始化方法,用 @PostConstruct 注解标注
+
+```java
+/**
+ * 实现了初始化生命周期的 Bean
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+@Data
+public class InInitialization implements InitializingBean {
+    private int age;
+    private String name;
+
+    /**
+     * 实现InitializingBean#afterPropertiesSet
+     * @throws Exception
+     */
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        this.name = "afterPropertiesSet";
+        System.out.println(this);
+    }
+    /**
+     * 使用自定义的初始化方法
+     */
+    public void cusInitMethod() {
+        this.name = "cusInitMethod";
+        System.out.println(this);
+    }
+
+    @PostConstruct
+    public void postConstructInit() {
+        this.name = "postConstructInit";
+        System.out.println(this);
+    }
+}
+```
+
+然后,我们需要将这个 Bean 注册到注册中心:
+
+```xml
+<!-- 注册一个 BeanDefinition,并且设置了init-method -->
+<bean id="inInitialization"
+      class="Bean.InInitialization"
+        init-method="cusInitMethod">
+    <property name="age" value="22"/>
+    <property name="name" value="Before Init"/>
+</bean>
+```
+
+最后进行测试,由于 @PostConstruct 注解依赖于 CommonAnnotationBeanPostProcessor,所以需要手动添加 CommonAnnotationBeanPostProcessor :
+
+```java
+/**
+ * Bean 初始化中的操作(初始化方法)
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class InInitialization {
+    public static void main(String[] args) {
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        // 默认 user {id=22,name='Before Init'}
+        reader.loadBeanDefinitions("META-INF/InInitialization.xml");
+        // @PostConstruct 注解依赖于 CommonAnnotationBeanPostProcessor
+        // 手动添加 CommonAnnotationBeanPostProcessor
+        beanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
+        Bean.InInitialization bean = beanFactory.getBean("inInitialization", Bean.InInitialization.class);
+        System.out.println("final bean =>"+bean);
+        /**
+         * out:
+         *      InInitialization(age=22, name=postConstructInit)
+         *      InInitialization(age=22, name=afterPropertiesSet)
+         *      InInitialization(age=22, name=cusInitMethod)
+         *      final bean =>InInitialization(age=22, name=cusInitMethod)
+         */
+    }
+}
+```
+
+可以看到初始化方法的顺序确实是上面所写的。
+
+### 初始化后
+
+类似于 Bean 的初始化前,Bean 的初始化后也是依赖于后置处理器: `BeanPostProcessor#postProcessAfterInitialization`。
+
+#### 源码分析
+
+方法的入口点: **AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsAfterInitialization**
+
+```java title=AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsAfterInitialization
+public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, String beanName)
+    throws BeansException {
+
+  Object result = existingBean;
+  for (BeanPostProcessor processor : getBeanPostProcessors()) {
+    // 执行 BeanPostProcessor#postProcessAfterInitialization
+    Object current = processor.postProcessAfterInitialization(result, beanName);
+    if (current == null) {
+      return result;
+    }
+    // highlight-end
+    result = current;
+  }
+  return result;
+}
+```
+
+#### 示例
+
+操作很简单,和初始化前操作类似,但是实现的接口方法不一样
+
+### 初始化完成后
+
+方法回调: `SmartInitializingSingleton#afterSingletonsInstantiated`(依赖于 Spring 4.1)
+
+SmartInitializingSingleton 通常在 ApplicationContext 场景下使用,它的触发点在`DefaultListableBeanFactory#preInstantiateSingletons`,通过它**可以将已经注册的 BeanDefinition 提前初始化成 Spring Bean**
+
+简单来说,<mark>如果需要对初始化完后的 Bean 进行一些额外的操作,就需要让 Bean 类实现 SmartInitializingSingleton</mark>
+
+下面进行测试,首先依旧是定义一个 Bean 类,它有以下要求:
+
+1. 实现 InitializingBean 接口
+2. 实现 SmartInitializingSingleton 接口
+3. 添加自定义初始化方法
+4. 使用 @PostConstruct 注解标注初始化方法
+
+```java
+@Data
+public class AfterSingletonInstantiatedBean implements InitializingBean, SmartInitializingSingleton {
+
+    private int age;
+    private String name;
+
+    /**
+     * 实现InitializingBean#afterPropertiesSet
+     * @throws Exception
+     */
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        this.name = "afterPropertiesSet";
+        System.out.println(this);
+    }
+    /**
+     * 使用自定义的初始化方法
+     */
+    public void cusInitMethod() {
+        this.name = "cusInitMethod";
+        System.out.println(this);
+    }
+
+    /**
+     * 使用 @PostConstruct 标注一个初始化方法
+     */
+    @PostConstruct
+    public void postConstructInit() {
+        this.name = "postConstructInit";
+        System.out.println(this);
+    }
+
+    @Override
+    public void afterSingletonsInstantiated() {
+        this.name = "afterSingletonsInstantiated";
+        System.out.println(this);
+    }
+}
+```
+
+然后再 XML 配置元信息文件中注册 Bean 信息
+
+```xml
+<bean id="afterInstantiated"
+      class="Bean.AfterSingletonInstantiatedBean"
+        init-method="cusInitMethod">
+    <property name="age" value="22"/>
+    <property name="name" value="athu"/>
+</bean>
+```
+
+最后测试,需要注意的是:
+
+1. 由于引入 @PostConstruct 注解,如果需要处理该注解,则需要添加 *CommonAnnotationBeanPostProcessor* 处理器的支持
+2. SmartInitializingSingleton 需要手动的去调用
+
+```java
+/**
+ * Bean 初始化完成后
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class AfterSingletonInstantiated {
+  public static void main(String[] args) {
+    DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+    XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+    reader.loadBeanDefinitions("META-INF/AfterSingletonInstantiated.xml");
+
+    // 添加 CommonAnnotationBeanPostProcessor 处理  @PostConstruct 注解
+    beanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
+
+    // afterSingletonInstantiated 通过 preInstantiateSingletons()方法调用
+    // preInstantiateSingletons 可以提前将注册的 BeanDefinition 初始化为 Spring Bean
+    // preInstantiateSingletons() 依赖于 ApplicantContext,所以这里需要手动调用
+    beanFactory.preInstantiateSingletons();
+
+    AfterSingletonInstantiatedBean instantiated = beanFactory.getBean("afterInstantiated", AfterSingletonInstantiatedBean.class);
+    System.out.println("finished==>"+instantiated);
+    /**
+     * out:
+     *      AfterSingletonInstantiatedBean(age=22, name=postConstructInit)
+     *      AfterSingletonInstantiatedBean(age=22, name=afterPropertiesSet)
+     *      AfterSingletonInstantiatedBean(age=22, name=cusInitMethod)
+     *      AfterSingletonInstantiatedBean(age=22, name=afterSingletonsInstantiated)
+     *      finished==>AfterSingletonInstantiatedBean(age=22, name=afterSingletonsInstantiated)
+     */
+  }
+}
+```
+
+## 销毁总览
+
+Bean 的销毁入口: `DisposableBeanAdapter#destroy`,可以看到有下面的几个步骤:
+
+1. 执行 DestructionAwareBeanPostProcessor#postProcessBeforeDestruction
+2. 执行 DisposableBean#destroy
+3. 执行 自定义销毁方法
+
+```java
+public void destroy() {
+  // 执行 DestructionAwareBeanPostProcessor#postProcessBeforeDestruction
+  if (!CollectionUtils.isEmpty(this.beanPostProcessors)) {
+    for (DestructionAwareBeanPostProcessor processor : this.beanPostProcessors) {
+      processor.postProcessBeforeDestruction(this.bean, this.beanName);
+    }
+  }
+
+  // 如果实现了 DisposableBean 接口,执行 DisposableBean#destroy
+  if (this.invokeDisposableBean) {
+    try {
+     ((DisposableBean) this.bean).destroy();
+    }
+    catch (Throwable ex) {
+      // ..
+    }
+  }
+
+  // 如果定义了自定义的 destroy-method,执行 destroy-method
+  if (this.destroyMethod != null) {
+    invokeCustomDestroyMethod(this.destroyMethod);
+  }
+  else if (this.destroyMethodName != null) {
+    Method methodToInvoke = determineDestroyMethod(this.destroyMethodName);
+    if (methodToInvoke != null) {
+      invokeCustomDestroyMethod(ClassUtils.getInterfaceMethodIfPossible(methodToInvoke));
+    }
+  }
+}
+```
+
+:::tip 提示
+这里 Bean 的销毁并不意味着 Bean 被 GC 了,而是在容器中被销毁,所以还是可以修改 Bean 的属性,然后返回
+:::
+
+### 销毁前
+
+方法回调: `DestructionAwareBeanPostProcessor#postProcessBeforeDestruction`
+
+- CommonAnnotationBeanPostProcessor 间接实现了 DestructionAwareBeanPostProcessor 接口,并且该后置处理器可以处理  @PreDestroy 注解
+- 所以这一步会执行标注 @PreDestroy 注解的方法,同样也是销毁方法
+
+我们直接使用示例进行展示:
+
+首先向 XML 配置元信息中注册配置信息
+
+```xml
+<bean id="destroy-user"
+      class="ioc.overview.Domain.User">
+    <property name="id" value="22"/>
+    <property name="name" value="athu"/>
+</bean>
+```
+
+然后就是测试,在测试的时候我们需要添加一个 **DestructionAwareBeanPostProcessor** 的实现类
+
+```java
+/**
+ * 展示 Bean 销毁前
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class BeforeDestroy {
+    public static void main(String[] args) {
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions("META-INF/BeforeDestroy.xml");
+
+        // 添加一个 DestructionAwareBeanPostProcessor 的实现
+        beanFactory.addBeanPostProcessor(new DestructionAwareBeanPostProcessor() {
+            @Override
+            public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
+                if (beanName.equals("destroy-user")) {
+                    ((User)bean).setName("after-destroy");
+                }
+            }
+        });
+        User user = beanFactory.getBean("destroy-user", User.class);
+        // out: 销毁前:User{id=22, name='athu'}
+        System.out.println("销毁前:" + user);
+        // 执行销毁方法,触发销毁前的后置处理器
+        // out: 销毁后:User{id=22, name='after-destroy'}
+        beanFactory.destroyBean("destroy-user",user);
+        System.out.println("销毁后:" + user);
+    }
+}
+```
+
+从输出结果可以看到,利用销毁前的回调也可以对 bean 做一些额外的操作
+
+### 销毁方法
+
+Bean 的销毁按顺序还有下面几种:
+
+1. 用@PreDestroy
+2. 实现 `DisposableBean` 接口的 destroy 方法
+3. 使用自定义的销毁方法
+
+> 与Bean 的初始化相对应的有 Bean 的销毁,在使用方式上与 Bean 的初始化基本类似
 
 ## 垃圾收集
+
+> 问题: 什么时候需要 GC ?
+
+Bean 垃圾回收(GC)
+
+- 关闭 Spring 容器(应用上下文)
+- 执行 GC
+- Spring Bean 覆盖的 finalize() 被回调

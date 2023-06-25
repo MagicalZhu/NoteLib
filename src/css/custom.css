@@ -52,9 +52,9 @@ html[data-theme="light"] {
   --ifm-color-primary-lightest: #a1b3f9;
   --ifm-alert-border-color: #1f41ea;
   --ifm-card-background-color: linear-gradient(to top right, #e1eaff, #f4e4f5);
-  --custom-code-color: #4d7c0f;
-  --custom-code-background: #ecfccb;
-  --custom-border-color: #ecfccb;
+  --custom-code-color: #15803d;
+  --custom-code-background: #dcfce7;
+  --custom-border-color: #dcfce7;
   --custom-toc_bgcolor: #e2e3e866;
   --custom-list-paragraph-margin: 5px;
 }
@@ -112,7 +112,7 @@ html[data-theme='dark'] .theme-code-block-highlighted-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 html[data-theme='light'] .theme-code-block-highlighted-line {
-  background-color: #ffdddd;
+  background-color: #ffecec;
 }
 
 
@@ -179,7 +179,7 @@ html[data-theme="dark"] mark {
 
 code {
   color: var(--custom-code-color);
-  word-break: break-word;
+  word-break: break-all;
   vertical-align: baseline;
   margin: 5px;
   background: var(--custom-code-background);
@@ -300,10 +300,9 @@ html[data-theme='dark'] div[class^='codeBlockTitle'] {
 .prism-code,
 div[class^='codeBlockTitle'] {
   background-color: #fff !important;
-  color: #575757 !important;
+  color: #16a34a !important;
   font-size: 14px;
   line-height: 1.6;
-  font-weight: bold;
   border: 1px solid #ebebeb;
 }
 
@@ -701,6 +700,7 @@ img.avatar__photo.avatar__photo--xl:hover {
 .markdown li>p {
   margin-top: var(--custom-list-paragraph-margin);
   margin-bottom: var(--custom-list-paragraph-margin);
+  line-height: 1.8;
 }
 
 
@@ -795,7 +795,7 @@ code::selection {
 
 div[class^='codeBlockTitle'] {
   background-color: #fafafa !important;
-  color: #666666 !important;
+  color: #3f5dee !important;
 }
 
 div[class^=buttonGroup], 
