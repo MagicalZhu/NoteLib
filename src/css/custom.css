@@ -785,7 +785,7 @@ ul ol {
 }
 
 code::selection {
-  background: #dee6fc;
+  background: #dcdcdc;
 }
 
 .prism-code .token-line ::selection {
