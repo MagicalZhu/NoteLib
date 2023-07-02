@@ -561,7 +561,7 @@ public class BeanInstantiationLifestyleDemo {
 
 :::
 
-## 实例化中
+## 实例化 Bean
 
 > 在 `AbstractAutowireCapableBeanFactory#doCreateBean` 中,除了上面利用 InstantiationAwareBeanPostProcessor 绕开 Bean 的实例化,之后就准备 Bean 的正常实例化
 
@@ -1133,6 +1133,7 @@ bean 在完成正常实例化之后一般会进行 bean 属性值的填充,但�
 - Bean 属性赋值前回调
   - Spring 1.2 ~ 5.0 : `InstantiationAwareBeanPostProcessor#postProcessPropertyValues`
   - Spring 5.1: `InstantiationAwareBeanPostProcessor#postProcessProperties`
+- 这一步会处理前面提到的 @Autowired 依赖注入原理,详细参看[这里](依赖注入#bean-的后置处理)
 
 ### 源码部分
 
@@ -1490,6 +1491,21 @@ Bean 的初始化(Initialization) 顺序:
 1. @PostConstruct 标注方法
     - 该处理基于注解驱动,具体处理在`InitDestroyAnnotationBeanPostProcessor#postProcessBeforeInitialization` 中处理
     - <mark>该方法严格意义上来说,属于初始化前阶段</mark>
+
+    -
+
+      ```java title=InitDestroyAnnotationBeanPostProcessor#postProcessBeforeDestruction
+        public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
+          // highlight-start
+          LifecycleMetadata metadata = findLifecycleMetadata(bean.getClass());
+          try {
+            metadata.invokeDestroyMethods(bean, beanName);
+          }
+          // highlight-end
+          // ...
+        }
+      ```
+
 2. 实现 `InitializingBean` 接口的 afterPropertiesSet 方法
 3. 自定义初始化方法
 

@@ -1,9 +1,6 @@
-const lightCodeTheme = require('../prismTheme/nightOwlLight');
-// const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-// const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
-const darkCodeTheme = require('../prismTheme/dracula');
-const footerConfig = require('./footer')
+const codeTheme = require('../prismTheme/dracula');
 const navConfig = require('./navbar')
+// const footerConfig = require('./footer')
 
 /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 const themeConfig = {
@@ -31,8 +28,8 @@ const themeConfig = {
   },
   // footer: footerConfig,
   prism: {
-    theme: lightCodeTheme,
-    darkTheme: darkCodeTheme,
+    theme: codeTheme,
+    darkTheme: codeTheme,
     defaultLanguage: 'java',
     additionalLanguages: ['java', 'ini', 'docker'],
     magicComments: [{
