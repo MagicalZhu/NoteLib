@@ -109,9 +109,9 @@ public class BeanMetaDataConfigurationDemoByProperties {
 2. **面向注解** BeanDefinition 解析
     - 加载接口:`AnnotatedBeanDefinitionReader`,并没有继承自*BeanDefinitionReader*
 
-> - 面向资源的解析,需要指定资源的路径,这个资源可以是本地的文件资源,也可以是网络资源
+> - 面向资源的解析,需要指定资源的路径,这个资源可以是本地的文件资源, 所以 BeanDefinitionReader 解析资源的方法会传入 Resource
 >
-> - 面向注解的解析,不再是解析文件资源或者网络资源等,而是解析 Class 类
+> - 面向注解的解析,不再是解析文件资源或者网络资源等,而是解析 Class 类,所以这个 Reader 没有继承 BeanDefinitionReader
 
 下面是基于注解的元信息解析的特性:
 

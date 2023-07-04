@@ -183,10 +183,11 @@ code {
   vertical-align: baseline;
   margin: 5px;
   background: var(--custom-code-background);
-  padding: 4px;
+  padding: 3px;
   border-radius: 4px;
   border: 1px solid var(--custom-border-color);
   font-family: "IBM Plex Mono", sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
+  font-size: unset;
 }
 
 html[data-theme='light'] .markdown {
@@ -695,6 +696,7 @@ img.avatar__photo.avatar__photo--xl:hover {
 
 .markdown li {
   padding-top: 4px;
+  line-height: 2;
 }
 
 .markdown li>p {
@@ -792,17 +794,22 @@ code::selection {
   background: #2c2c2c !important;
 }
 
-.alert a {
-  text-decoration: var(--ifm-link-decoration);
+html[data-theme="light"] .markdown a {
+  text-decoration: underline;
   text-decoration-style: dashed;
   text-underline-offset: 5px;
-  text-decoration-color: var(--ifm-alert-border-color) !important;
+  text-decoration-color: #c7c7c7 !important;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+html[data-theme="light"] .markdown a:hover {
+  text-decoration-color: #000 !important;
+  text-decoration-style: solid;
+  text-underline-offset: 5px;
 }
 
 a:hover {
   text-decoration-style: solid;
   text-underline-offset: 5px;
 }
-
