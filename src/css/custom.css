@@ -813,3 +813,12 @@ a:hover {
   text-decoration-style: solid;
   text-underline-offset: 5px;
 }
+
+
+hr {
+  background-color: var(--ifm-hr-background-color);
+  border: 0;
+  height: var(--ifm-hr-height);
+  width: 100px;
+  margin: 2em auto 1em!important;
+}
