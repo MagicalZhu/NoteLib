@@ -455,7 +455,7 @@ WHERE emp.department_id = dep.department_id;
     WHERE employees.department_id = departments.department_id;
     ```
   
-  - `表的别名`
+  - `使用表的别名`
   
     - 使用别名可以简化查询。
     - 列名前使用表名前缀可以提高查询效率
@@ -467,14 +467,14 @@ WHERE emp.department_id = dep.department_id;
     WHERE e.department_id = d.department_id;
     ```
   
-  - `连接多个表`
+  - `连接多个表的条件`
     - **连接 n个表,至少需要n-1个连接条件**, 比如连接三个表，至少需要两个连接条件
 
 #### 非等值连接
 
 - 相对于等值连接来说，**非等值连接在连接两张表的时候指定某个元素满足的范围的条件来过滤笛卡尔积的数据**
 
-**案例**：employees 的 salary 在 job_grades 的 lowest_sal 和 highest_sal 之间，并且对应一个 grade_level
+案例：employees 的 salary 在 job_grades 的 lowest_sal 和 highest_sal 之间，并且对应一个 grade_level
 
 ```sql
 SELECT e.last_name, e.salary, j.grade_level
@@ -486,7 +486,7 @@ WHERE e.salary BETWEEN j.lowest_sal AND j.highest_sal;
 
 - **表 A 和表 B 是同一张表,但是通过取别名的方式将表A和表B做笛卡尔积**
 
-**案例**：employees中的employee_id  对应的manager_id 就是employee_id
+案例：employees中的employee_id  对应的manager_id 就是employee_id
 
 ```sql
 -- a 和b 实际上都是  employees表，只不过是取了不同的别名
@@ -498,27 +498,25 @@ where a.employee_id = b.manager_id
 #### 内连接与外连接
 
 - `内连接`
-  - 合并具有同一列的两个以上的表的行, **结果集中不包含一个表与另一个表不匹配的行**
+  - 合并具有同一列的两个以上的表的行, **结果集是所有关联表中共有的数据**
 - `外连接`
-  - 两个表在连接过程中除了返回满足连接条件的行以外，还返回左(或右)表中不满足条件的行 。
+  - 外连接分为以下两种连接
+    - `左外连接` ：连接条件中左边的表也称为 **主表** ，右边的表称为 **从表**
+    - `右外连接` ：连接条件中右边的表也称为 **主表** ，左边的表称为 **从表**
+  - 两个表在连接过程中除了返回满足连接条件的行以外，还返回左(或右)表中不满足条件的行
   - 当没有匹配的行时, 结果表中相应的列为空(NULL)。
-- 外连接分为以下两种连接
-  - `左外连接`
-    - 连接条件中左边的表也称为 **主表** ，右边的表称为 **从表**
-  - `右外连接`
-    - 连接条件中右边的表也称为 **主表** ，左边的表称为 **从表**
 
 ### SQL99 实现多表查询
 
 #### 基础语法
 
-- 使用JOIN...ON子句创建连接的语法结构
+- 使用 JOIN...ON 子句创建连接的语法结构
 
   ```sql
   SELECT table1.column, table2.column,table3.column 
   FROM table1
-    JOIN table2 ON (table1 和 table2 的连接条件)
-    JOIN table3 ON (table2 和 table3 的连接条件)
+    [INNER | LEFT | RIGHT] JOIN table2 ON (table1 和 table2 的连接条件)
+    [INNER | LEFT | RIGHT] JOIN table3 ON (table2 和 table3 的连接条件)
   ```
 
 - <mark>语法说明</mark>
@@ -533,11 +531,12 @@ where a.employee_id = b.manager_id
 
   ```sql
   SELECT 字段列表
-  FROM A表 INNER JOIN B表 ON 关联条件
-  WHERE 等其他子句;
+  FROM A表 [INNER | CROSS] JOIN B表 ON 关联条件
+  WHERE 关联条件
+  ...
   ```
 
-:::info**案例:** 查询employees 和departments表中 部门Id相同的数据
+:::info 查询employees 和departments表中 部门 Id 相同的数据
 
 ```sql
 -- 内连接查询不会返回与查询条件不匹配的数据
@@ -567,10 +566,11 @@ ON emp.department_id = dep.department_id
   -- 实现查询结果是A
   SELECT 字段列表
   FROM A表 LEFT[OUTER] JOIN B表 ON 关联条件
-  WHERE 等其他子句;
+  WHERE 关联条件
+  ...
   ```
 
-:::info **案例** 查询employees 和departments表中 部门Id相同的数据
+:::info 案例 查询employees 和departments表中 部门Id相同的数据
 
 **从测试数据可以看到:  案例中employees 存在department_id=NULL获取其他department_id不在 departments中的，但是由于左连接的性质，这条数据从表部分字段会以NULL的形式展示**
 
@@ -598,7 +598,8 @@ ON (emp.department_id = dep.department_id) ;
   -- 实现查询结果是B
   SELECT 字段列表
   FROM A表 RIGHT[OUTER] JOIN B表 ON 关联条件
-  WHERE 等其他子句;
+  WHERE 关联条件
+  ...
   ```
 
 :::info**案例:** 查询employees 和departments表中 部门Id相同的数据
@@ -616,15 +617,13 @@ ON (emp.department_id = dep.department_id) ;
 
 :::
 
-
-
 ##### 满外连接
 
 - `满外连接的结果 = 左右表匹配的数据 + 左表没有匹配到的数据 + 右表没有匹配到的数据`
 - SQL99是支持满外连接的。使用 `FULL[OUTER] JOIN` 来实现
 - MySQL不支持FULL JOIN，**但是可以用  Left Join Union Right Join代替**
 
-####  UNION
+#### UNION
 
 - `UNOIN` 可以用于<mark>合并查询结果</mark>,将多条SELECT语句的结果组合成单个结果集
 
@@ -647,7 +646,7 @@ ON (emp.department_id = dep.department_id) ;
   - <font color='red'>执行UNION ALL 语句时所需要的资源比 UNION 语句少</font>
   - 如果明确知道合并数据后的结果数据 不存在重复数据，或者不需要去除重复的数据，则尽量使用 UNION  ALL 语句，以提高数据查询的效 率。
 
-:::info **案例**
+:::info 案例
 
 **case1: 查询部门编号>90或邮箱包含a的员工信息**
 
