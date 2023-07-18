@@ -1,4 +1,4 @@
-const codeTheme = require('../prismTheme/palenight');
+const codeTheme = require('../prismTheme/dracula.js');
 const navConfig = require('./navbar')
 // const footerConfig = require('./footer')
 

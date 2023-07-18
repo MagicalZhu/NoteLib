@@ -106,13 +106,9 @@ Create Table: CREATE TABLE `countries` (
 1 row in set (0.00 sec)
 ```
 
-
-
-
 ### 字符集问题的处理
 
 > 在MySQL5.7 的版本中存在着中文乱码的问题,默认的字符集是latin1。从MySQL 8.0 开始，数据库的默认编码改为 utf8mb4,避免了上述的乱码问题。
-
 
 步骤1. 查看字符编码
 
@@ -134,19 +130,15 @@ show variables like 'collation_%';
 
 步骤3. 重启MySQL服务
 
-
-
 ### MySQL目录结构(Win版本)
 
 | MySQL目录                                   | 说明                                 |
 | ------------------------------------------- | ------------------------------------ |
-| `bin`                                       | 所有MySQL的可执行文件。如:mysql.exe  |
-| `MySQLInstanceConfig.exe`                   | 数据库的配置向导，在安装时出现的内容 |
-| `data`                                      | 系统数据库所在的目录                 |
-| `my.ini`                                    | MySQL的主要配置文件                  |
+| bin                                         | 所有MySQL的可执行文件。如:mysql.exe  |
+| MySQLInstanceConfig.exe                     | 数据库的配置向导，在安装时出现的内容 |
+| data                                        | 系统数据库所在的目录                 |
+| my.ini                                      | MySQL的主要配置文件                  |
 | c:\ProgramData\MySQL\MySQL Server 8.0\data\ | 用户创建的数据库所在的目录           |
-
-
 
 ## SQL概述
 
@@ -170,7 +162,7 @@ SQL语言在功能上主要分为如下3大类:
 
 因为查询语句使用的非常的频繁，所以很多人把查询语句单拎出来一类:DQL(数据查询语言)。
 
-还有单独将 COMMIT 、 ROLLBACK 取出来称为TCL (Transaction Control Language:事务控制语 言)。
+还有单独将 COMMIT 、 ROLLBACK 取出来称为TCL (Transaction Control Language: 事务控制语言)。
 
 :::
 
@@ -191,32 +183,37 @@ SQL语言在功能上主要分为如下3大类:
    - 数据库、表名不得超过30个字符，变量名限制为29个
    - 必须只能包含 A–Z, a–z, 0–9, _共63个字符
    - 数据库名、表名、字段名等对象名中间不要包含空格
-   -  必须保证你的字段没有和保留字、数据库系统或常用方法冲突。如果坚持使用，请在SQL语句中使 用`(着重号)引起来
+   - 必须保证你的字段没有和保留字、数据库系统或常用方法冲突。如果坚持使用，请在SQL语句中使 用`(着重号)引起来
+
 3. 数据导入指令
    - `source d:\mysqldb.sql`
 
-**MySQL的数据window下不区分大小写**
+:::tip 提示
+
+MySQL的数据window下不区分大小写：
 
 ![image-20220321123619608](./image/MySQL基础/image-20220321123619608.png)
 
-## 基本Select语句
+:::
+
+## 基本 Select 语句
 
 - 查询所有、指定列的数据
-  - `Select *|查询的列 from 数据表名`
+  - `Select * | 查询的列 from 数据表名`
   
 - 去除重复行
   - `Select distinct 列名 from 数据表名`
-  - <mark>注意</mark>
+  - <mark>distinct 有下面几点需要注意</mark>
 
-    - distinct 需要放到所有列名的前面,如果写成 *SELECT salary, distinct id  from emp*会报错
-    - <font color='red'>distinct  其实是对后面所有列名的组合进行去重</font>
+    1. **distinct 需要放到所有列名的前面**, 比如写成 *select salary, distinct id  from emp* 会报错
+    2. **distinct  其实是对后面所有列名的组合进行去重**
   
-- 着重号
+- 着重号(**`**)
 
   - 我们需要保证表中的字段、表名等没有和保留字、数据库系统或常用方法冲突。如果真的相同，请在 SQL语句中使用一对``(着重号)引起来
 
   ```sql
-  -- 错误的，因为ORDER 是数据库的保留字
+  -- 错误的，因为 ORDER 是数据库的保留字
   SELECT * FROM ORDER;
   
   -- 正确的, 通过 使用一对着重符 ``避免报错
@@ -225,28 +222,26 @@ SQL语言在功能上主要分为如下3大类:
 
 - 显示表结构
 
-  - `descripe|desc 数据表名`
-  - 返回数据结构
+  - `descripe| desc 数据表名`
+  - 该 SQL 语句会返回以下的结构
     - `Field`
-      - 表示字段名称。
+      - 表示字段名称
     - `Type`
-      - 表示字段类型，这里 barcode、goodsname 是文本型的，price 是整数类型的。
+      - 表示字段类型
     - `Null`
-      - 表示该列是否可以存储NULL值。
+      - 表示该列是否可以存储 NULL 值
     - `Key`
-      - 表示该列是否已编制索引
+      - 表示该列是否被索引
       - **PRI** 表示该列是表主键的一部分
       - **UNI** 表示该列是UNIQUE索引的一 部分
       - **MUL** 表示在列中某个给定值允许出现多次
     - `Default`
       - 表示该列是否有默认值，如果有，那么值是多少。
     - `Extra`
-      - 表示可以获取的与给定列有关的附加信息，例如AUTO_INCREMENT等
+      - 表示可以获取的与给定列有关的附加信息，例如 AUTO_INCREMENT 等
   
 - 空值参与运算
-
-  - <font color='red'>所有运算符或列值遇到null值，运算的结果都为null</font>
-  
+  - 所有运算符或列值遇到null值，运算的结果都为null
 
 ## 运算符
 
@@ -254,13 +249,13 @@ SQL语言在功能上主要分为如下3大类:
 
 > 算术运算符主要用于数学运算，其可以连接运算符前后的两个数值或表达式，对数值或表达式进行运算
 
-| 运算符 | 名称             | 示例          |
-| ------ | ---------------- | ------------- |
-| `+`    | 加法运算符       | Select   A+B  |
-| `-`    | 减法运算符       | Select    A-B |
-| `*`    | 乘法运算符       | Select    A*B |
-| `/`    | 除法运算符       | Select   A/B  |
-| `%`    | 求模(求余)运算符 | Select   A%B  |
+| 运算符 | 名称           | 示例         |
+| ---- | -------------- | ----------- |
+| +    | 加法运算符       | Select   A+B  |
+| -    | 减法运算符       | Select   A-B  |
+| *    | 乘法运算符       | Select   A*B  |
+| /    | 除法运算符       | Select   A/B  |
+| %    | 求模(求余)运算符  | Select   A%B  |
 
 :::danger 运算符的注意点
 
@@ -270,9 +265,9 @@ SQL语言在功能上主要分为如下3大类:
 
 3. 加法和减法的优先级相同，进行先加后减操作与进行先减后加操作的结果是一样的;
 
-4. 在MySQL中+只表示数 值相加。如果遇到非数值类型，先尝试转成数值，如果转失败，就按0计算。
+4. 在MySQL中 **+ 只表示数值相加。如果遇到非数值类型，先尝试转成数值，如果转失败，就按0计算。**
 
-   - <font color='red'>MySQL 中字符串拼接要使用字符串函数CONCAT()实现</font>
+   - MySQL 中字符串拼接要使用字符串函数CONCAT()实现
 
    ```sql
    -- 非数值用+相加，转换失败
@@ -293,13 +288,11 @@ SQL语言在功能上主要分为如下3大类:
 | 运算符 | 名称           | 示例                                   |
 | ------ | -------------- | -------------------------------------- |
 | `=`    | 等于运算符     | Select  C from  table where  A=B       |
-| `  !=` | 不等于运算符   | Select  C from  table where  A!=B<br/> |
+| `!=` | 不等于运算符   | Select  C from  table where  A!=B<br/> |
 | `<`    | 小于运算符     | Select  C from  table where  A<B       |
 | `<=`   | 小于等于运算符 | Select  C from  table where  A<=B      |
 | `>`    | 大于运算符     | Select  C from  table where  A>B       |
 | `>=`   | 大于等于运算符 | Select  C from  table where  A>=B      |
-
-
 
 #### 等号运算符
 
@@ -320,8 +313,6 @@ mysql> Select '1'=1,'1a'=1,'a'=1,1=NULL,'NULL'=NULL;
 1 row in set (0.01 sec)
 ```
 
-
-
 #### 非符号运算符
 
 | 运算符              | 名称             | 作用                                                         | 示例                                         |
@@ -337,8 +328,6 @@ mysql> Select '1'=1,'1a'=1,'a'=1,1=NULL,'NULL'=NULL;
 | `regexp`            | 正则表达式运算符 | 判断一个值是否符合正则表达式的规则                           | Select B from table where A regexp C         |
 | `rlike`             | 正则表达式运算符 | 判断一个值是否符合正则表达式的规则                           | Select B from table where A rlike C          |
 
-
-
 #### 逻辑运算符
 
 | 运算符    | 作用 | 示例           |
@@ -347,8 +336,6 @@ mysql> Select '1'=1,'1a'=1,'a'=1,1=NULL,'NULL'=NULL;
 | `AND、&&` | 与   | Select A and B |
 | `OR`      | 或   | Select A  OR B |
 | `XOR`     | 异或 | Select A XOR B |
-
-
 
 ## 排序
 
@@ -361,31 +348,39 @@ mysql> Select '1'=1,'1a'=1,'a'=1,1=NULL,'NULL'=NULL;
   - 可以使用不在 SELECT 列表中的列排序
   - 如果对多列进行排序，但是有多条数据的第一列是相同的,那么就会按第二列的排序规则再次排序，也叫做多次排序。<font color='red'>但是如第一列数据中所有值都是唯一的、不同的，那么将不再对第二列进行排序</font>
 
-
 ```sql
 SELECT last_name, department_id, salary 
 FROM employees
-ORDER BY department_id, salary DESC;
+ORDER BY department_id, salary DESC
 ```
-
-
 
 ## 分页
 
-> 背景1:查询返回的记录太多了，查看起来很不方便，怎么样能够实现分页查询呢? 
+> 背景1:查询返回的记录太多了，查看起来很不方便，怎么样能够实现分页查询呢?
 >
 > 背景2:表里有 4 条数据，我们只想要显示第 2、3 条数据怎么办呢
 
-- 所谓分页显示，就是将数据库中的结果集，一段一段显示出来需要的条件，MySQL中使用 `LIMIT` 实现分页
-- <font color='red'>Limit 子句必须放在整个Select 语句的最后!</font>
-- **格式**：`LIMIT [位置偏移量,] 行数`
-  - <font color='red'>位置偏移量</font>
-    - 指示MySQL从哪一行开始显示，是一个可选参数
-    - 如果不指定“位置偏移量”,将会从表中的第一条记录开始(第一条记录的位置偏移量是0,第二条记录的位置偏移量是 1，以此类推)
-  - <font color='red'>行数</font>
-  
-    - 指示返回的记录条数
-- **分页公式**:  `Limit (当前页数-1)*每页条数，每页条数`
+所谓分页显示，就是将数据库中的结果集，一段一段显示出来需要的条件，MySQL 中使用 `LIMIT` 实现分页， 分页语句有下面的几个注意点:
+
+1. **Limit 子句必须放在整个Select 语句的最后!**
+
+2. **语句格式**：`LIMIT [位置偏移量,] 行数`
+    - `位置偏移量`
+      - 指示MySQL从哪一行开始显示，是一个可选参数
+      - 如果不指定“位置偏移量”,将会从表中的第一条记录开始(第一条记录的位置偏移量是0,第二条记录的位置偏移量是 1，以此类推)
+    - `行数`
+      - 指示返回的记录条数
+
+:::tip 分页公式
+假设当前页为 n(n>=1),且每页的数据为 k
+第 1 页的数据范围是: [0,k]
+第 2 页的数据范围是: [k,2k]
+第 3 页的数据范围是: [2k,3k]
+      .
+      .
+      .
+总的来说，分页公式可以总结为： `Limit (当前页数-1)*每页条数，每页条数`
+:::
 
 ```sql
 -- 查询前10条
@@ -397,7 +392,7 @@ Select * FROM employees LIMIT 11,5
 
 :::tip MySQL8.0 分页的新语法
 
-MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录开始后面的3条记录，和“LIMIT 4,3”返回的结果相同。
+MySQL 8.0中可以使用`LIMIT 3 OFFSET 4`，意思是获取从第5条记录开始后面的3条记录，和“LIMIT 4,3”返回的结果相同。
 
 :::
 
@@ -415,13 +410,11 @@ MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录
 
 :::
 
-
-
 ### 笛卡尔积
 
 > `笛卡尔乘积`是一个数学运算。假设我有两个集合 {X} 和{Y}，那么 {X} 和 {Y} 的笛卡尔积就是 {X} 和 {Y}的所有可能的组合，也就是第一个对象来自于 {X}，第二个对象来自于 {Y} 的所有可能。组合的个数即为两个集合中 元素个数 的乘积数。
 
-在SQL92中，笛卡尔积也称为 `交叉连接` ，英文是 `CROSS JOIN` 。在 SQL99 中也是使用 CROSS JOIN表示交 叉连接。它的作用就是可以把任意表进行连接，即使这两张表不相关。
+在SQL92中，笛卡尔积也称为 `交叉连接` ，英文是 `CROSS JOIN` 。在 SQL99 中也是使用 CROSS JOIN 表示交叉连接。它的作用就是可以把任意表进行连接，即使这两张表不相关。
 
 ![image-20220321124139412](./image/MySQL基础/image-20220321124139412.png)
 
@@ -431,7 +424,7 @@ MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录
   - 省略多个表的连接条件(或关联条件)
   - 连接条件(或关联条件)无效
   - 所有表中的所有行互相连接
-- 为了避免笛卡尔积， 可以在 <font color='red'>Where  加入有效的连接条件</font>
+- 为了避免笛卡尔积， 可以在 **通过 where 添加有效的连接条件**
 
 ```sql
 -- 案例:查询员工的姓名及其部门名称
@@ -440,57 +433,48 @@ FROM employees emp, departments dep
 WHERE emp.department_id = dep.department_id;
 ```
 
-
-
 ### 多表连接查询分类
 
 连接join 就是从两个关系的笛卡儿积中选取属性间满足一定条件的数据集合，连接里面有两个最常见的连接：`等值连接、外连接`
 
 #### 等值连接
 
-- <mark>通过在连接两张表的指定两个元素相等的条件过滤笛卡尔积的数据</mark>
+- **通过在连接两张表的指定两个元素相等的条件过滤笛卡尔积的数据**
 
-- 案例:  employees 表的department_id 与 departments 中的department_id 属于主外键的关系
+- 案例:  employees 表的 department_id 与 departments 中的department_id 属于主外键的关系
 
-- <mark>拓展</mark> 
+- <mark>拓展</mark>
 
-  - `区分重复的列名` 
+  - `区分重复的列名`
   
     - 多个表中有相同列名时，必须在列名之前加上表名前缀
   
     ```sql
-    SELECT 
-    	employees.last_name, departments.department_name,employees.department_id 
+    SELECT employees.last_name, departments.department_name,employees.department_id 
     FROM employees, departments
     WHERE employees.department_id = departments.department_id;
     ```
-  
-    
   
   - `表的别名`
   
     - 使用别名可以简化查询。
     - 列名前使用表名前缀可以提高查询效率
-    - <font color='red'>如果使用了表的别名，在查询字段中、过滤条件中就只能使用别名进行代替， 不能使用原有的表名，否则就会报错。</font>
+    - **如果使用了表的别名，在查询字段中、过滤条件中就只能使用别名进行代替， 不能使用原有的表名，否则就会报错。**
   
     ```sql
-    SELECT 
-    	e.employee_id, e.last_name, e.department_id, d.department_id, d.location_id
+    SELECT e.employee_id, e.last_name, e.department_id, d.department_id, d.location_id
     FROM employees e , departments d
     WHERE e.department_id = d.department_id;
     ```
   
-    
-  
   - `连接多个表`
-  
-    - <font color='red'>连接 n个表,至少需要n-1个连接条件</font>。比如连接三个表，至少需要两个连接条件。
+    - **连接 n个表,至少需要n-1个连接条件**, 比如连接三个表，至少需要两个连接条件
 
 #### 非等值连接
 
-- 相对于等值连接来说，<mark>非等值连接在连接两张表的时候指定某个元素满足的范围的条件来过滤笛卡尔积的数据</mark>
+- 相对于等值连接来说，**非等值连接在连接两张表的时候指定某个元素满足的范围的条件来过滤笛卡尔积的数据**
 
-**案例**：employees 的salary 在job_grades的lowest_sal 和 highest_sal 之间，并且对应一个grade_level
+**案例**：employees 的 salary 在 job_grades 的 lowest_sal 和 highest_sal 之间，并且对应一个 grade_level
 
 ```sql
 SELECT e.last_name, e.salary, j.grade_level
@@ -498,11 +482,9 @@ FROM employees e, job_grades j
 WHERE e.salary BETWEEN j.lowest_sal AND j.highest_sal;
 ```
 
-
-
 #### 自连接
 
-- <mark>表A和表B是同一张表,但是通过取别名的方式将表A和表B做笛卡尔积</mark>
+- **表 A 和表 B 是同一张表,但是通过取别名的方式将表A和表B做笛卡尔积**
 
 **案例**：employees中的employee_id  对应的manager_id 就是employee_id
 
@@ -513,12 +495,10 @@ from employees a,employees b
 where a.employee_id = b.manager_id
 ```
 
-
-
 #### 内连接与外连接
 
 - `内连接`
-  - 合并具有同一列的两个以上的表的行, <font color='red'>结果集中不包含一个表与另一个表不匹配的行</font>
+  - 合并具有同一列的两个以上的表的行, **结果集中不包含一个表与另一个表不匹配的行**
 - `外连接`
   - 两个表在连接过程中除了返回满足连接条件的行以外，还返回左(或右)表中不满足条件的行 。
   - 当没有匹配的行时, 结果表中相应的列为空(NULL)。
@@ -537,8 +517,8 @@ where a.employee_id = b.manager_id
   ```sql
   SELECT table1.column, table2.column,table3.column 
   FROM table1
-  	JOIN table2 ON (table1 和 table2 的连接条件)
-  	JOIN table3 ON (table2 和 table3 的连接条件)
+    JOIN table2 ON (table1 和 table2 的连接条件)
+    JOIN table3 ON (table2 和 table3 的连接条件)
   ```
 
 - <mark>语法说明</mark>
@@ -569,8 +549,6 @@ ON emp.department_id = dep.department_id
 ![image-20220324165416032](./image/MySQL基础/image-20220324165416032.png)
 
 :::
-
-
 
 #### 外连接的实现
 
