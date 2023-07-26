@@ -1005,7 +1005,7 @@ protected String determineAutowireCandidate(Map<String, Object> candidates,
 
 - Bean 属性赋值(Populate) 判断
   - 入口点: `InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation`
-  - [实例化前相关-postProcessBeforeInstantiation](Bean生命周期#绕开实例化)
+  - [实例化前相关-postProcessBeforeInstantiation](Bean生命周期#实例化前阻断实例化过程)
 
 该方法会在 bean 通过`构造函数或工厂方法实例化之后`, 但在 bean 属性填充 (来自显式属性或自动装配) 发生之前执行:
 

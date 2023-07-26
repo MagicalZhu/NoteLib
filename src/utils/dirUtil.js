@@ -106,5 +106,5 @@ module.exports = {
   createDoc,
   createRef,
   createLink,
-  createAuto
+  createAuto,
 }

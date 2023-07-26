@@ -23,6 +23,8 @@
   "cSpell.enabled": true,
   "cSpell.words": [
     "javax",
-    "springframework"
+    "springframework",
+    "ReloadableResourceBundleMessageSource",
+    "Servlet"
   ]
 }
