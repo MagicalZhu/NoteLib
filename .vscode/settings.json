@@ -20,11 +20,5 @@
   "markdown.preview.doubleClickToSwitchToEditor": true,
   "markdown.preview.lineHeight": 1.2,
   "tailwindCSS.rootFontSize": 15,
-  "cSpell.enabled": true,
-  "cSpell.words": [
-    "javax",
-    "springframework",
-    "ReloadableResourceBundleMessageSource",
-    "Servlet"
-  ]
+  "editor.tabSize": 2
 }

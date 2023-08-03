@@ -1,0 +1,19 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "javax",
+        "springframework",
+        "ReloadableResourceBundleMessageSource",
+        "Servlet",
+        "println",
+        "Configurer"
+    ],
+    "ignoreWords": [
+        "pacos"
+    ],
+    "import": [],
+    "enabled": true
+}

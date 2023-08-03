@@ -64,6 +64,11 @@ const springSideBar = [
 								"Spring/Spring编程思想/校验",
 								"Spring/Spring编程思想/数据绑定",
 								"Spring/Spring编程思想/类型转换",
+								"Spring/Spring编程思想/泛型处理",
+								"Spring/Spring编程思想/事件编程",
+								"Spring/Spring编程思想/注解处理",
+								"Spring/Spring编程思想/Environment抽象",
+								"Spring/Spring编程思想/上下文生命周期",
 						],
 						collapsed: true,
 						link: {

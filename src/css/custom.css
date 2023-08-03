@@ -184,8 +184,7 @@ code {
   vertical-align: baseline;
   margin: 5px;
   padding: 3px;
-  border-radius: 4px;
-  border: 1px solid var(--custom-border-color);
+  border: none;
   font-family: "IBM Plex Mono", sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
   font-size: unset;
 }
@@ -300,6 +299,8 @@ html[data-theme='dark'] div[class^='codeBlockTitle'] {
 div[class^='codeBlockTitle'] {
   font-size: 14px;
   line-height: 1.6;
+  color: #fff;
+  font-weight:600;
   border: 1px dashed #4a4a4a;
 }
 
@@ -746,6 +747,7 @@ ul ::marker {
 
 ol ::marker {
   color: rgba(209, 213, 219, 1) !important;
+  type: 1;
 }
 
 ul ol {
@@ -820,4 +822,8 @@ hr {
   height: var(--ifm-hr-height);
   width: 100px;
   margin: 2em auto 1em!important;
+}
+
+em {
+  color:#a7ab05
 }
