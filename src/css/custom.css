@@ -644,7 +644,7 @@ code[class^=codeBlockLines]::after {
 } 
 
 ::selection {
-  background: #f1f1f1;
+  background: #daeafe;
 }
 
 /*giscus*/
@@ -826,4 +826,8 @@ hr {
 
 em {
   color:#a7ab05
+}
+
+.hash-link {
+  text-decoration: none !important;
 }

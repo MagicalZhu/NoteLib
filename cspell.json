@@ -9,7 +9,9 @@
         "ReloadableResourceBundleMessageSource",
         "Servlet",
         "println",
-        "Configurer"
+        "Configurer",
+        "Refreshable",
+        "Multicaster"
     ],
     "ignoreWords": [
         "pacos"
