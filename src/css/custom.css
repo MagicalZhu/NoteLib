@@ -143,7 +143,6 @@ html[data-theme='dark'] .alert {
   max-width: var(--ifm-container-width-xl);
   padding: 0 var(--ifm-spacing-horizontal);
   width: 100%;
-  padding-top: 120px;
 }
 
 div[class^=announcementBar_] {

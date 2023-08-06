@@ -11,7 +11,7 @@ export default function NotFound() {
         id: 'theme.NotFound.title',
         message: 'Page Not Found',
       })}>
-      <main className="container margin-vert--xl">
+      <main className="container">
         <div className="row">
           <div className="col col--6 col--offset-3">
             <NotFoundPage  fill="none" />

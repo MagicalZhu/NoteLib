@@ -30,6 +30,8 @@ const share = require('./share')
 // Spring相关
 const spring = require('./spring')
 
+const springBoot = require('./springBoot')
+
 // SpringCloud
 const springCloud = require('./springCloud')
 
@@ -58,6 +60,7 @@ module.exports = {
   dataStruct,
   share,
   spring,
+  springBoot,
   springCloud,
   vue,
   jvm,

@@ -47,6 +47,10 @@ const nav = {
           to: 'docs/spring',
         },
         {
+          label: "SpringBoot",
+          to: 'docs/SpringBoot',
+        },
+        {
           label: "SpringCloud",
           to: 'docs/springCloud',
         }
