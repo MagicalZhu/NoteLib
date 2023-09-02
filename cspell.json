@@ -4,6 +4,7 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "yuliang",
         "javax",
         "springframework",
         "ReloadableResourceBundleMessageSource",
@@ -11,7 +12,10 @@
         "println",
         "Configurer",
         "Refreshable",
-        "Multicaster"
+        "Multicaster",
+        "Hystrix",
+        "pointcut",
+        "CGLIB"
     ],
     "ignoreWords": [
         "pacos"
