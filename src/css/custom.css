@@ -177,7 +177,7 @@ html[data-theme="dark"] mark {
 }
 
 code {
-  color: #ff00f9;
+  color: #e50c7d;
   background-color: unset;
   word-break: break-all;
   vertical-align: baseline;
@@ -741,16 +741,16 @@ code[class^=codeBlockLines]::after {
  * -------------------------------------------------------------------------- */
 
 ul ::marker {
-  color: rgba(209, 213, 219, 1) !important;
+  color: #4b4a4b !important;
 }
 
 ol ::marker {
-  color: rgba(209, 213, 219, 1) !important;
+  color: #4b4a4b !important;
   type: 1;
 }
 
 ul ol {
-  list-style: lower-alpha;
+  list-style: decimal;
 }
 
 .DocSearch-Button {

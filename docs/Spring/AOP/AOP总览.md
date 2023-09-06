@@ -242,6 +242,8 @@ public class StaticProxyDemo {
     - `args` : 正在被调用的方法的参数
   - **代理对象调用代理方法,会调用这个Invoke方法**
 
+##### 基本示例
+
 ```java
 // 用于创建 EchoService 的代理类
 public class EchoServiceProxy {
@@ -291,7 +293,7 @@ public class DynamicProxyDemo {
 
 ##### 基本原理
 
-我们在[上面](AOP总览#jdk-动态代理) 的测试示例中,加上设置环境变量: `sun.misc.ProxyGenerator.saveGeneratedFiles = true` 的处理,查看生成的代理类,会有以下的操作:
+我们在[上面](AOP总览#基本示例) 的测试示例中,加上设置环境变量: `sun.misc.ProxyGenerator.saveGeneratedFiles = true` 的处理,查看生成的代理类,会有以下的操作:
 
 1. 定义 Method 对象, 包含目标类本身以及实现的所有接口中的方法对象,并且在静态代码块中,对定义 的Method 对象进行赋值 (反射赋值)
 2. 定义代理类的构造函数,参数是 InvocationHandler 对象 ,这个对象是在调用 newProxyInstance 方法时传入
@@ -445,12 +447,11 @@ public class EchoServiceProxy {
 
 ```
 
-## Spring AOP
+## Spring AOP 概述
 
 核心特性:
 
-1. 纯 Java 实现,**无编译时的特殊处理、不修改和控制 ClassLoader**
-    - 像 CGLIB 和 JDK 的动态代理是在运行的时候动态生成的字节码
+1. 纯 Java 实现,**无编译时的特殊处理、不修改和控制 ClassLoader**, CGLIB 和 JDK 动态代理是在运行的时候动态生成字节码的
 2. **仅支持 方法级别 的 join points**
 3. 非完整 AOP 实现框架
 4. 与 Spring IOC 容器的整合
@@ -507,7 +508,7 @@ Spring 有如下的 Advice 类型:
     - finally 执行
 4. 异常(Exception)
 
-## AOP 代理实现
+## Spring AOP 代理实现
 
 Spring AOP 代理的实现主要有下面几种:
 
@@ -701,13 +702,13 @@ public class CGLIBDemo {
 
 ## 总结
 
-1. JDK 动态代理,CGLIB,Spring AOP和 AspectJ 关系
+1. JDK 动态代理、CGLIB、Spring AOP 和 AspectJ 关系?
     - Spring AOP和 AspectJ 是两种实现 AOP 的框架
     - Spring AOP采用的是动态代理,它有两种底层技术实现:
       - JDK 动态代理 (默认有接口的目标类使用jdk动态代理)
       - CGLIB (没有接口或有接口的目标类使用)
-    - Spring AOP 复用了 AspectJ 包提供的注解, 但是底层编译器和织入器并不是 AspectJ
-    - AspectJ 采用的是静态代理
+    - **Spring AOP 仅仅是使用 AspectJ 提供的库对注解进行解析和匹配, 从而"实现" 与 AspectJ 相同的注解, 但是 AOP 运行时依然是纯粹的 Spring AOP,不依赖于 AspectJ 的 编译器和织入器**
+    - AspectJ 采用的是静态代理(有单独的编译器)
 
 2. Spring Aop 和 AspectJ Aop 存在哪些区别?
     - AspectJ 是 Aop 完整的实现,而 Spring Aop 则是部分实现

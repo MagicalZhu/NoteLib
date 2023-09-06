@@ -44,7 +44,7 @@ title: IOC容器
 
 :::
 
-- <mark>JavaBean 作为 IOC 容器的特性？</mark>
+JavaBean 作为 IOC 容器的特性？
 
   1. 依赖查找
   2. 生命周期管理
@@ -53,21 +53,23 @@ title: IOC容器
   5. 自定义
   6. 资源管理
   7. 持久化
-- <mark>常见类</mark>
 
-  - **Introspector**:  内省, 用于操作Bean
-    - `BeanInfo Introspector.getBeanInfo(Class<?> beanClass, Class<?> stopClass)`
-  - **BeanInfo**: Java Beans 的API
-    - `getBeanDescriptor()`
-      - 获取Bean描述符: *BeanDescriptor*
-    - `getEventSetDescriptors()`
-      - 获取事件描述符: *EventSetDescriptor*
-    - `getPropertyDescriptors()`
-      - 获取属性描述符: *PropertyDescriptor*
-        - 比如可写、可读方法名
-      - <mark>PropertyDescriptor 允许添加属性编辑器: <strong>PropertyEditor</strong>,利用PropertyEditor 可以实现属性类型的转换 等属性的编辑操作</mark> 
-    - `getMethodDescriptors()`
-      - 获取方法描述符: *MethodDescriptor*
+常见类
+
+- **Introspector**:  内省, 用于操作Bean
+  - `BeanInfo Introspector.getBeanInfo(Class<?> beanClass, Class<?> stopClass)`
+- **BeanInfo**: Java Beans 的API
+  - `getBeanDescriptor()`
+    - 获取Bean描述符: *BeanDescriptor*
+  - `getEventSetDescriptors()`
+    - 获取事件描述符: *EventSetDescriptor*
+  - `getPropertyDescriptors()`
+    - 获取属性描述符: *PropertyDescriptor*
+      - 比如可写、可读方法名
+    - PropertyDescriptor 允许添加属性编辑器: `PropertyEditor`,利用PropertyEditor 可以实现属性类型的转换 等属性的编辑操作
+      - **Spring 就基于 PropertyEditor 进行拓展,以便于将 XML 配置文件中 String 转为 其他类型**,详细参见[这里](类型转换)
+  - `getMethodDescriptors()`
+    - 获取方法描述符: *MethodDescriptor*
 
 ```java
 // 一个简单的POJO,也叫做贫血模型(对象只有简单的get/set,没有复杂的业务操作)
@@ -144,27 +146,31 @@ public class BeanInfoDemo {
 
 /**
 
-java.beans.PropertyDescriptor[name=age; propertyType=class java.lang.Integer; readMethod=public java.lang.Integer ioc.java.beans.Person.getAge(); writeMethod=public void ioc.java.beans.Person.setAge(java.lang.Integer)]
+java.beans.PropertyDescriptor[
+  name=age;
+  propertyType=class java.lang.Integer;
+  readMethod=public java.lang.Integer ioc.java.beans.Person.getAge();
+  writeMethod=public void ioc.java.beans.Person.setAge(java.lang.Integer)]
 
-java.beans.PropertyDescriptor[name=name; propertyType=class java.lang.String; readMethod=public java.lang.String ioc.java.beans.Person.getName(); writeMethod=public void ioc.java.beans.Person.setName(java.lang.String)]
+java.beans.PropertyDescriptor[
+  name=name;
+  propertyType=class java.lang.String;
+  readMethod=public java.lang.String ioc.java.beans.Person.getName();
+  writeMethod=public void ioc.java.beans.Person.setName(java.lang.String)]
 
 class java.lang.Integer
 class java.lang.String
 */
 ```
 
-
-
 ## Spring IOC
 
 **依赖查找与依赖注入**
 
 | 类型     | 依赖处理 | 便利性   | 代码侵入性   | API 依赖性     | 可读性 |
-| -------- | -------- | -------- | ------------ | -------------- | ------ |
+| -------- | ----- | ------- | ---------- | ------------ | ------ |
 | 依赖查找 | 主动获取 | 相对繁琐 | 侵入业务逻辑 | 依赖容器 API   | 良好   |
 | 依赖注入 | 被动提供 | 相对便利 | 低侵入性     | 不依赖容器 API | 一般   |
-
-
 
 ### 依赖查找
 
