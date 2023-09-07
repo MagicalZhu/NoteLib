@@ -192,7 +192,7 @@ public class AspectJByProxyFactoryBeanDemo1 {
   }
 }
 /**
- * out: 
+ * out:
  *    [EchoServiceMethodBeforeAdvice] 进入方法:echo
  *    [Echo]:Hello,World
  */
@@ -253,7 +253,6 @@ pointcut 确定了一个或者多个连接点, 由于 SpringAOP 仅支持方法�
   }
   ```
 
-
 2. **注解配置**
     - 第一个参数(签名)由方法提供,并且该方法返回类型必须是 *void*
     - 第二个参数(pointcut 表达式)则通过使用 `@Pointcut` 注解来表示
@@ -268,47 +267,71 @@ pointcut 确定了一个或者多个连接点, 由于 SpringAOP 仅支持方法�
 
 ### 表达式类型
 
-- **属性**
-  1. `execution`
-  2. `within`
-  3. `this`
-  4. `target`
-- **注解**
-  1. `args`
-  2. `@target`
-  3. `@args`
-  4. `@within`
-  5. `@annotation`
+1. `execution`
+2. `within`
+3. `this`
+4. `target`
+5. `args`
+6. `@target`
+7. `@args`
+8. `@within`
+9. `@annotation`
 
 #### execution
 
 > 最通用的表达式类型
 
-- 用于匹配方法连接点, 根据表达式去匹配方法
+- **用于匹配方法连接点**
+
 - 格式: **execution([modifier] return-type [declaring-type]name-pattern(param-pattern) [throws-pattern])**
   - `modifier`
-    - 匹配修饰符(public、private...)
-    - 可选值,如果省略则匹配任意修饰符
+    - 修饰符匹配 [可选的]
+    - 匹配规则:
+      - 可以选择: public、private...
+      - 如果省略, 则匹配任意修饰符
+
   - `return-type`
-    - 匹配返回类型
-      - 使用 `*` 匹配任意类型
-  - `declaring-type`
-    - 匹配目标类
+    - 返回类型(包路径)匹配
+    - 匹配规则:
       - 使用 `..` 匹配包及其子包的所有类
-    - 可选值, 如果省略则匹配任意类型
+      - 使用 `*` 表示任意数量的字符
+
+  - `declaring-type`
+    - 类型(包路径)匹配 [可选的]
+    - 匹配规则:
+      - 使用 `..` 匹配包及其子包的所有类
+      - 使用 `*` 表示任意数量的字符
+      - 如果省略, 则匹配所有类路径
+
+    - **注意: 如果指定了包名匹配,那么需要在方法名匹配前加上 "."**
   - `name-pattern`
-    - 匹配方法名称, 使用 `*` 表示通配符
-      - *匹配任意方法
-      - set* 匹配名称以 set 开头的方法
+    - 方法名称匹配
+    - 匹配规则:
+      - 使用 `*` 表示任意数量的字符
+        - *匹配任意方法
+        - set* 匹配名称以 set 开头的方法
+
   - `param-pattern`
-    - 匹配参数类型和数量
-      - () 匹配没有参数的方法
-      - (..)匹配有任意数量参数的方法
-      - (*) 匹配有一个任意类型参数的方法
-      - (*,String) 匹配有两个参数的方法，并且第一个为任意类型，第二个为 String 类型
+    - 参数类型和数量匹配
+    - 匹配规则:
+      - `()` :   匹配没有参数的方法
+      - `(..)`:  匹配有任意数量参数的方法
+      - `(*)` :  匹配有一个任意类型参数的方法
+      - `(*,String)`:  匹配有两个参数的方法，并且第一个为任意类型，第二个为 String 类型
+
   - `throws-pattern`
-    - 匹配抛出异常类型
-    - 可选值, 省略时匹配任意类型
+    - 抛出异常类型匹配 [可选值]
+    - 匹配规则:
+      - 如果省略, 则匹配任意类型
+
+:::tip 类型匹配语法
+
+1. `*`: 匹配任意数量的字符
+2. `..`: 匹配任意数量的字符的重复
+3. `+` : 匹配指定类型及其子类型, 仅能作为后缀放在类型的后边
+4. 详细 [Spring AOP的基本使用](https://juejin.cn/post/7256964915134742584)
+
+:::
 
 ```java
 // 匹配所有的 public 方法
@@ -317,10 +340,15 @@ execution(public * *(..))
 // 匹配所有类中方法名以 set 开头的方法
 execution(* set*(..))
 
-// The execution of any method defined by the AccountService interface:
-// 匹配
-```
+// 匹配 com.xyz.service.AccountService 中的所有方法
+execution(* com.xyz.service.AccountService.*(..))
 
+// 匹配 com.xyz.service 包下面所有的方法
+execution(* com.xyz.service.*.*(..))
+
+// 匹配 com.xyz.service 包以及子孙包中的所有方法
+execution(* com.xyz.service..*.*(..))
+```
 
 ### 注解
 
