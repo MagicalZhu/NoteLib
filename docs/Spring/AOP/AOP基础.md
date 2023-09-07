@@ -330,6 +330,7 @@ pointcut 确定了一个或者多个连接点, 由于 SpringAOP 仅支持方法�
 2. `..`: 匹配任意数量的字符的重复
 3. `+` : 匹配指定类型及其子类型, 仅能作为后缀放在类型的后边
 4. 详细 [Spring AOP的基本使用](https://juejin.cn/post/7256964915134742584)
+5. [Pointcut 表达式](https://www.cnblogs.com/rain144576/p/14708717.html)
 
 :::
 
