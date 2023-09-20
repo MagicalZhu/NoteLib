@@ -10,5 +10,6 @@
         "code_block_line_length": 500,
         "line_length": 500
     },
-    "MD036":false
+    "MD036":false,
+    "MD010": false
 }

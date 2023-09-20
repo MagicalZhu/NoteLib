@@ -82,7 +82,13 @@ const springSideBar = [
 				items: [
 					"Spring/AOP/AOP总览",
 					"Spring/AOP/AOP基础",
-				]
+					"Spring/AOP/AOP设计与实现",
+				],
+				collapsed: true,
+				link: {
+					type: "generated-index",
+					description: '极客时间小马哥的 Spring AOP 学习笔记'
+				}
 			}
 		],
 		collapsed: true,

@@ -1,0 +1,11 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "cssTheme": "Things",
+  "textFontFamily": "Input Mono",
+  "enabledCssSnippets": [
+    "theme"
+  ],
+  "monospaceFontFamily": "Inter",
+  "baseFontSize": 14
+}

@@ -1,0 +1,15 @@
+{
+  "Appearance-light@@card-layout-open-light": false,
+  "custom-diegoeis-obsidianotion@@width-body-content": 1220,
+  "custom-diegoeis-obsidianotion@@eis-small-font": false,
+  "width-body-content": 1220,
+  "things-style@@default-font-color": true,
+  "things-style@@mobile-black-background": false,
+  "things-style@@active-line": true,
+  "things-style@@fancy-highlight": true,
+  "modular-css-layout-wv@@wide-callout-global": true,
+  "modular-css-layout-wv@@wide-table-global": true,
+  "modular-css-layout-wv@@wide-dataview-global": true,
+  "modular-css-layout-wv@@wide-backlinks-global": true,
+  "modular-css-layout-wv@@adj-rll-max-width": "1000px"
+}

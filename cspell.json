@@ -4,6 +4,9 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "aspectj",
+        "Joinpoint",
+        "autoproxy",
         "Introspector",
         "yuliang",
         "javax",
@@ -16,7 +19,8 @@
         "Multicaster",
         "Hystrix",
         "pointcut",
-        "CGLIB"
+        "CGLIB",
+        "instanceof"
     ],
     "ignoreWords": [
         "pacos"

@@ -1,0 +1,180 @@
+{
+  "main": {
+    "id": "54cffdd51f5b0b6c",
+    "type": "split",
+    "children": [
+      {
+        "id": "b08211420724aabd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "806668637d3ebb7f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring/AOP/3.AOP设计与实现.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2f7dbe0313f3ccda",
+    "type": "split",
+    "children": [
+      {
+        "id": "a26026f1dafd6c9d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ea3d70ccdd5ad653",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c22ad2ffb65c31de",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c41e761806da39e4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "822c1b43757fcb4e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Spring/AOP/3.AOP设计与实现.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 473.5
+  },
+  "right": {
+    "id": "38f34fc71d5aa79c",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa33650133d126d9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d54b390ba914126d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Spring/AOP/3.AOP设计与实现.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "38acf95f7681a24f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Spring/AOP/3.AOP设计与实现.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b7ef0e21db5a8413",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 294.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "806668637d3ebb7f",
+  "lastOpenFiles": [
+    "AOP设计与实现.md",
+    "Spring/AOP/3.AOP设计与实现.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_31.010Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_17.189Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_12.372Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_30_47.937Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_30_36.572Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_30_18.283Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_30_08.045Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_30_05.795Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_30_02.947Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_56.247Z.Desktop.md",
+    "AOP基础.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_20.658Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_03.761Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_00.627Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_26_05.121Z.Desktop.md",
+    "logseq/bak/Spring/AOP/3.AOP设计与实现",
+    "logseq/bak/Spring/AOP",
+    "logseq/bak/Spring",
+    "logseq/bak",
+    "logseq",
+    "logseq/custom.css",
+    "pages/contents.md",
+    "pages",
+    "journals",
+    "logseq/config.edn",
+    "Spring/AOP/image/AOP基础/Logseq-darwin-arm64-0.9.17-alpha+nightly.20230915.dmg"
+  ]
+}
