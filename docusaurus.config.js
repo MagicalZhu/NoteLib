@@ -22,8 +22,8 @@ const config = {
   presets: [
     [
       'classic',
-      presetConfig
-    ],
+      presetConfig,
+    ]
   ],
   customFields: customConfig,
   themeConfig: themeConfigs,

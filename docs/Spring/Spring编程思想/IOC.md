@@ -191,7 +191,7 @@ class java.lang.String
 
 进行依赖查找的时候,可以选择**实时查找和[延迟查找](依赖查找#bean-的延迟查找)(给 Bean 包上一层)**
 
-**1. 定义 XML**
+首先需要定义 XML:
 
 > 这里的 **org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean** 实现了**ObjectFactory**接口
 >
@@ -203,21 +203,87 @@ class java.lang.String
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <!-- 实时查找注入的 Bean 组件 -->
-    <bean class="ioc.overview.Dependency.Domain.User" id="user">
-        <property name="name" value="atu"/>
-        <property name="id" value="10000"/>
+    <!-- 实时查找注入的 Bean 组件,scope 设定为 prototype,每次获取都会实例化 -->
+    <bean name="user" class="Domain.User" scope="prototype">
+        <property name="name" value="pacos"/>
+        <property name="id" value="22"/>
     </bean>
-
     <!--通过 ObjectFactory 实现延迟查找-->
     <bean class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean"
-          id="objectFactory">
+            id="objectFactory">
         <property name="targetBeanName" value="user"/>
     </bean>
 </beans>
 ```
 
+然后进行测试,这里使用 ObjectProvider、ObjectFactory 实现延迟查找,可以看到只有在 getIfAvailable 和 getObject 的时候才会进行 Bean 的实例化、初始化…
+
+```java
+/**
+ * 依赖查找的示例
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class DependencyLookUpDemo {
+    private static final String path = "/META-INF/bean.xml";
+
+    public static void main(String[] args) {
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions(path);
+        get(beanFactory);
+        System.out.println("----------------------");
+        getByProvider(beanFactory);
+        System.out.println("----------------------");
+        getByObjectFactory(beanFactory);
+    }
+
+    // 实时查找
+    public static void get(ConfigurableListableBeanFactory beanFactory){
+        System.out.println("实时依赖查找...");
+        User bean = beanFactory.getBean("user", User.class);
+        System.out.println("获取到 bean 对象 ...");
+        System.out.println(bean);
+    }
+
+    // 延迟查找
+    public static void getByProvider(ConfigurableListableBeanFactory beanFactory){
+        System.out.println("延迟依赖查找...");
+        ObjectProvider<User> bean = beanFactory.getBeanProvider(User.class); // 此时没有对 Bean 进行实例化、初始化...
+        System.out.println("获取到 ObjectProvider ...");
+        System.out.println(bean.getIfAvailable());  // 这里才真正的对 Bean 进行实例化、初始化...
+    }
+
+    // 通过 ObjectFactory 实现延迟查找
+    public static void getByObjectFactory(ConfigurableListableBeanFactory beanFactory) {
+        System.out.println("通过 ObjectFactory 实现延迟查找");
+        ObjectFactory<User> objectFactory = beanFactory.getBean("objectFactory", ObjectFactory.class);
+        System.out.println("获取到 ObjectFactory ...");
+        System.out.println(objectFactory.getObject());
+    }
+}
+/**
+	out:
+		实时依赖查找...
+    Bean 初始化了....
+    获取到 bean 对象 ...
+    User(id=22, name=pacos)
+    ----------------------
+    延迟依赖查找...
+    获取到 ObjectProvider ...
+    Bean 初始化了....
+    User(id=22, name=pacos)
+    ----------------------
+    通过 ObjectFactory 实现延迟查找
+    获取到 ObjectFactory ...
+    Bean 初始化了....
+    User(id=22, name=pacos)
+*/
+```
+
 #### 单个&集合
+
+> DefaultListableBeanFactory 是一种具有罗列性的 BeanFactory,所以除了 getBean获取单个 Bean,还可以通过 getBeansOfType 获取 BeanDefinition 集合
 
 ```java
 private static void lookUpByCollectionType(BeanFactory beanFactory) {

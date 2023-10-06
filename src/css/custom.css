@@ -632,8 +632,11 @@ img.avatar__photo.avatar__photo--xl:hover {
 }
 
 .codeBlockLines {
-  min-width: -webkit-fill-available;
 } 
+
+code[class^=codeBlockLines] {
+  min-width: unset;
+}
 
 code[class^=codeBlockLines]::before {
   content: unset;
@@ -829,4 +832,8 @@ em {
 
 .hash-link {
   text-decoration: none !important;
+}
+
+div[class*=admonitionHeading] {
+  text-transform: none !important;
 }

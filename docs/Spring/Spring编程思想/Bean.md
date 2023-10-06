@@ -820,9 +820,9 @@ public class SpecialBeanInstantiationDemo {
 }
 ```
 
-
-
 ## Bean的初始化方式
+
+> Bean 的生命周期完整流程参看[这里](Bean生命周期)
 
 ### 基本说明
 
@@ -859,7 +859,7 @@ public class SpecialBeanInstantiationDemo {
 
 > @PostConstruct 注解是 java 提供的标准注解,不是 spring 提供的。
 
-**1. 定义 Bean 对象**
+首先需要定义 Bean 对象
 
 ```java
 public class UserFactoryImpl implements UserFactoryInterface{
@@ -880,7 +880,7 @@ public class UserFactoryImpl implements UserFactoryInterface{
 }
 ```
 
-**2.测试**
+然后进行测试,测试需要通过 refresh 方法让容器将 BeanDefinition "实例化"
 
 ```java
 public class PostConstructAnnotationDemo {
@@ -905,9 +905,9 @@ public class PostConstructAnnotationDemo {
 
 ### 实现InitializingBean
 
-> 这里主要使用的是基于 XML 的方式,如果是注解的话,和上面的 [@PostCostruct](Bean#postconstruct)操作是类似的,不过不需要加上 @PostConstruct 注解了
+> 这里主要使用的是基于 XML 的方式,如果是注解的话,和上面的 [@PostConstruct](Bean#postconstruct)操作是类似的,不过不需要加上 @PostConstruct 注解了
 
-**1、Bean 对象实现 InitializingBean**
+首先让 Bean 对象实现 InitializingBean#afterPropertiesSet
 
 ```java
 public class UserFactoryImpl implements UserFactoryInterface, InitializingBean {
@@ -928,7 +928,7 @@ public class UserFactoryImpl implements UserFactoryInterface, InitializingBean {
 }
 ```
 
-**2.配置 XML**
+然后在 XML 中配置 Bean 元信息
 
 ```xml
 <bean id="bean-initializing"
@@ -936,7 +936,7 @@ public class UserFactoryImpl implements UserFactoryInterface, InitializingBean {
 </bean>
 ```
 
-**3.测试**
+最后进行测试,测试使用 ClassPathXmlApplicationContext,它会执行 refresh 方法刷新容器
 
 ```java
 public class BeanInitializingDemo {
@@ -948,7 +948,6 @@ public class BeanInitializingDemo {
 }
 // 输出: InitializingBean UserFactoryImpl#afterPropertiesSet...
 ```
-
 
 ### 不同初始化方式执行顺序
 
@@ -1025,9 +1024,9 @@ public class BeanConstructDemo {
 
 ### 延迟初始化的Bean
 
-- <mark>Bean的延迟初始化（Lazy Initialization）</mark>
+- <mark>Bean的延迟初始化/懒加载（Lazy Initialization）</mark>
 
-  1. XML 配置: `<bean  lasy-init="true|false"/>`
+  1. XML 配置: `<bean  asy-init="true|false"/>`
   2. java 注解: `@Lazy(true)`
   3. java api
 
