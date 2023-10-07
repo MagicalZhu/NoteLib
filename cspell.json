@@ -20,7 +20,8 @@
         "Hystrix",
         "pointcut",
         "CGLIB",
-        "instanceof"
+        "instanceof",
+        "classpath"
     ],
     "ignoreWords": [
         "pacos"

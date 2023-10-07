@@ -631,12 +631,7 @@ img.avatar__photo.avatar__photo--xl:hover {
     transition-timing-function: cubic-bezier(.34,0,.84,1);
 }
 
-.codeBlockLines {
-} 
 
-code[class^=codeBlockLines] {
-  min-width: unset;
-}
 
 code[class^=codeBlockLines]::before {
   content: unset;
