@@ -802,7 +802,6 @@ html[data-theme="light"] .markdown a {
 }
 
 html[data-theme="light"] .markdown a:hover {
-  text-decoration-color: #000 !important;
   text-decoration-style: solid;
   text-underline-offset: 5px;
 }

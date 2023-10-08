@@ -61,7 +61,7 @@ const springSideBar = [
 							"Spring/Spring编程思想/配置元信息",
 							"Spring/Spring编程思想/资源管理",
 							"Spring/Spring编程思想/国际化",
-							"Spring/Spring编程思想/校验",
+							"Spring/Spring编程思想/数据校验",
 							"Spring/Spring编程思想/数据绑定",
 							"Spring/Spring编程思想/类型转换",
 							"Spring/Spring编程思想/泛型处理",
