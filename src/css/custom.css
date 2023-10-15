@@ -42,7 +42,7 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --ifm-font-color-base: #6b7280;
+  --ifm-font-color-base: #0F172A;
   --ifm-color-primary: #486af4;
   --ifm-color-primary-dark: #2a52f2;
   --ifm-color-primary-darker: #1b46f1;
@@ -61,7 +61,6 @@ html[data-theme="light"] {
 
 html {
   word-break: break-all;
-  color: #585b65;
   font-size: 14px;
 }
 
@@ -177,13 +176,14 @@ html[data-theme="dark"] mark {
 }
 
 code {
-  color: #e50c7d;
+  color: #64748b;
+  font-weight: 700;
   background-color: unset;
   word-break: break-all;
   vertical-align: baseline;
   margin: 5px;
   padding: 3px;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   font-family: "IBM Plex Mono", sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
   font-size: unset;
 }
@@ -227,16 +227,19 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 html[data-theme='light'] strong {
-  color: #3500ff;
+  color: #2761ec;
   font-weight: bolder;
-  margin: 3px;
 }
 
 
 blockquote {
-  color: #6b7280;
-  border-left: 4px solid #d3d3d3;
+  color: #676f7a;
+  border-left: 2px solid #d3d3d3;
   padding: 12px;
+  font-style: italic;
+  padding-left: 1.5rem;
+  margin-top: 1.5rem;
+  margin: 0;
 }
 /*
 blockquote::before {
@@ -618,7 +621,6 @@ a.card-link:hover img {
   line-height: 1;
   font-size: 13px;
   padding-bottom: 5px;
-  color: #6B7280
 }
 
 
@@ -681,7 +683,10 @@ code[class^=codeBlockLines]::after {
 .menu__link {
   user-select: none;
   font-weight: normal;
-  color:#6B7280
+}
+
+.menu__link--active {
+  color: inherit;
 }
 
 .menu__link--active:not(.menu__link--sublist) {
@@ -821,7 +826,7 @@ hr {
 }
 
 em {
-  color:#a7ab05
+  color:#ec4899
 }
 
 .hash-link {

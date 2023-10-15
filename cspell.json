@@ -21,7 +21,9 @@
         "pointcut",
         "CGLIB",
         "instanceof",
-        "classpath"
+        "classpath",
+        "HATEOS",
+        "Cros"
     ],
     "ignoreWords": [
         "pacos"

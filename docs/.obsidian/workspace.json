@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring/AOP/3.AOP设计与实现.md",
+                "file": "SpringBoot/基础入门/1.基础知识.md",
                 "mode": "source",
                 "source": false
               }
@@ -71,7 +71,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring/AOP/3.AOP设计与实现.md"
+                "file": "SpringBoot/基础入门/1.基础知识.md"
               }
             }
           }
@@ -79,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 473.5
+    "width": 286.5
   },
   "right": {
     "id": "38f34fc71d5aa79c",
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring/AOP/3.AOP设计与实现.md",
+                "file": "SpringBoot/基础入门/1.基础知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring/AOP/3.AOP设计与实现.md",
+                "file": "SpringBoot/基础入门/1.基础知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294.5
+    "width": 294.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,8 +149,9 @@
   },
   "active": "806668637d3ebb7f",
   "lastOpenFiles": [
-    "AOP设计与实现.md",
     "Spring/AOP/3.AOP设计与实现.md",
+    "SpringBoot/基础入门/1.基础知识.md",
+    "AOP设计与实现.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_31.010Z.Desktop.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_17.189Z.Desktop.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_12.372Z.Desktop.md",
