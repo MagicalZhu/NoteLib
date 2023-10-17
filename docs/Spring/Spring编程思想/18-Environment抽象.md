@@ -15,6 +15,41 @@ title: Environment抽象
 2. 条件化 Spring Bean 装配管理
     - 通过 Environment Profiles 信息,帮助 Spring 容器提供条件化地装配 Bean
 
+### PropertyResolver 接口
+
+PropertyResolver 接口用于解析 PropertyResource: 获取 Property 值、解析占位符 placeHolder
+
+```
+└── PropertyResolver
+    ├── Environment
+    │   └── ConfigurableEnvironment
+    |       └── AbstractEnvironment
+    |           └── StandardEnvironment
+    ├── ConfigurablePropertyResolver
+    |   ├── ConfigurableEnvironment
+    │   └── AbstractPropertyResolver
+    │       └── PropertySourcesPropertyResolver
+```
+
+下面是 PropertyResolver:
+
+```java
+public interface PropertyResolver {
+  boolean containsProperty(String key);
+  String getProperty(String key);
+  // 包含默认值
+  String getProperty(String key, String defaultValue);
+  // 涉及到类型转换
+  <T> T getProperty(String key, Class<T> targetType);
+  <T> T getProperty(String key, Class<T> targetType, T defaultValue);
+  <T> T getRequiredProperty(String key, Class<T> targetType) throws IllegalStateException;
+  String getRequiredProperty(String key) throws IllegalStateException;
+  // 处理占位符
+  String resolvePlaceholders(String text);
+  String resolveRequiredPlaceholders(String text) throws IllegalArgumentException;
+}
+```
+
 ### 使用场景
 
 Environment 的使用场景主要有:
@@ -43,21 +78,6 @@ public interface Environment extends PropertyResolver {
   boolean acceptsProfiles(Profiles profiles);
 }
 
-// PropertyResolver
-public interface PropertyResolver {
-  boolean containsProperty(String key);
-  String getProperty(String key);
-  // 设计默认值
-  String getProperty(String key, String defaultValue);
-  // 涉及到类型转换
-  <T> T getProperty(String key, Class<T> targetType);
-  <T> T getProperty(String key, Class<T> targetType, T defaultValue);
-  <T> T getRequiredProperty(String key, Class<T> targetType) throws IllegalStateException;
-  String getRequiredProperty(String key) throws IllegalStateException;
-  // 处理占位符
-  String resolvePlaceholders(String text);
-  String resolveRequiredPlaceholders(String text) throws IllegalArgumentException;
-}
 ```
 
 Environment 有一个*可写* 的子接口`ConfigurableEnvironment`,这个接口除了继承 Environment,还继承了一个可写(可配置)的接口: `ConfigurablePropertyResolver`
