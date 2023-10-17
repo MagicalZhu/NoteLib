@@ -15,41 +15,6 @@ title: Environment抽象
 2. 条件化 Spring Bean 装配管理
     - 通过 Environment Profiles 信息,帮助 Spring 容器提供条件化地装配 Bean
 
-### PropertyResolver 接口
-
-PropertyResolver 接口用于解析 PropertyResource: 获取 Property 值、解析占位符 placeHolder
-
-```
-└── PropertyResolver
-    ├── Environment
-    │   └── ConfigurableEnvironment
-    |       └── AbstractEnvironment
-    |           └── StandardEnvironment
-    ├── ConfigurablePropertyResolver
-    |   ├── ConfigurableEnvironment
-    │   └── AbstractPropertyResolver
-    │       └── PropertySourcesPropertyResolver
-```
-
-下面是 PropertyResolver:
-
-```java
-public interface PropertyResolver {
-  boolean containsProperty(String key);
-  String getProperty(String key);
-  // 包含默认值
-  String getProperty(String key, String defaultValue);
-  // 涉及到类型转换
-  <T> T getProperty(String key, Class<T> targetType);
-  <T> T getProperty(String key, Class<T> targetType, T defaultValue);
-  <T> T getRequiredProperty(String key, Class<T> targetType) throws IllegalStateException;
-  String getRequiredProperty(String key) throws IllegalStateException;
-  // 处理占位符
-  String resolvePlaceholders(String text);
-  String resolveRequiredPlaceholders(String text) throws IllegalArgumentException;
-}
-```
-
 ### 使用场景
 
 Environment 的使用场景主要有:
@@ -80,7 +45,7 @@ public interface Environment extends PropertyResolver {
 
 ```
 
-Environment 有一个*可写* 的子接口`ConfigurableEnvironment`,这个接口除了继承 Environment,还继承了一个可写(可配置)的接口: `ConfigurablePropertyResolver`
+Environment 有一个**可写** 的子接口`ConfigurableEnvironment`,这个接口除了继承 Environment,还继承了一个可写(可配置)的接口: `ConfigurablePropertyResolver`
 
 ```java
 // ConfigurableEnvironment
@@ -105,6 +70,31 @@ public interface ConfigurablePropertyResolver extends PropertyResolver {
   void setIgnoreUnresolvableNestedPlaceholders(boolean ignoreUnresolvableNestedPlaceholders);
   void setRequiredProperties(String... requiredProperties);
   void validateRequiredProperties() throws MissingRequiredPropertiesException;
+}
+```
+
+### PropertyResolver 接口
+
+PropertyResolver 接口用于解析 PropertyResource: 获取 Property 值、解析占位符 placeHolder
+
+![PropertyResolver接口](./image/Environment抽象/PropertyResolver.webp)
+
+下面是 PropertyResolver:
+
+```java
+public interface PropertyResolver {
+  boolean containsProperty(String key);
+  String getProperty(String key);
+  // 包含默认值
+  String getProperty(String key, String defaultValue);
+  // 涉及到类型转换
+  <T> T getProperty(String key, Class<T> targetType);
+  <T> T getProperty(String key, Class<T> targetType, T defaultValue);
+  <T> T getRequiredProperty(String key, Class<T> targetType) throws IllegalStateException;
+  String getRequiredProperty(String key) throws IllegalStateException;
+  // 处理占位符
+  String resolvePlaceholders(String text);
+  String resolveRequiredPlaceholders(String text) throws IllegalArgumentException;
 }
 ```
 
@@ -201,7 +191,49 @@ public class PropertySourcesPlaceholderConfigurerDemo {
 }
 ```
 
+:::tip 提示
+
+> PropertySourcesPlaceholderConfigurer 和 BeanFactoryPostProcessor 本质上都是一个 `BeanFactoryPostProcessor`,所以可以将其作为 BeanFactory 的后置处理器添加 到容器中
+
+除了上面那种将 PropertySourcesPlaceholderConfigurer 配置在 XML 文件中,还可以采用下面的方式:
+
+```java
+/**
+ * <!-- EnvironmentBean.xml -->
+ *  <bean id="user"  class="Domain.User">
+        <property name="name" value="${user.name}"/>
+        <property name="id" value="22"/>
+    </bean>
+ */
+public class EnvironmentDemo {
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
+        // highlight-start
+        PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
+        context.addBeanFactoryPostProcessor(configurer);
+        configurer.setEnvironment(context.getEnvironment());
+        context.setConfigLocation("META-INF/EnvironmentBean.xml");
+        context.refresh();
+        // highlight-end
+        User user = context.getBean("user", User.class);
+        // out: User(beanName=user, id=22, name=yoey)
+        // 可以看到 user.name 被解析为了系统环境变量
+        System.out.println(user);
+        context.close();
+    }
+}
+```
+
+这里有两个说明点:
+
+1. 创建 ClassPathXmlApplicationContext 没有指定 configLocation,因为指定了 location 会进行 refresh 操作
+2. PropertySourcesPlaceholderConfigurer 需要指定环境(Environment)
+
+:::
+
 ## 理解条件配置 Spring Profiles
+
+> **Spring 容器管理的所有 bean 都是和一个 profile 绑定在一起的**
 
 - 相关的 API
   - 接口: `ConfigurableEnvironment`
@@ -209,6 +241,20 @@ public class PropertySourcesPlaceholderConfigurerDemo {
   - 修改: `addActiveProfile` 、`setActiveProfiles`、`setDefaultProfiles`
   - 匹配: `acceptProfiles`
 - 相关的注解: `@Profile`
+
+如果使用 XML 来表达的话,可以是下面的形式:
+
+```xml
+<beans profile="develop">  
+    <context:property-placeholder location="classpath*:jdbc-develop.properties"/>  
+</beans>  
+<beans profile="production">  
+    <context:property-placeholder location="classpath*:jdbc-production.properties"/>  
+</beans>  
+<beans profile="test">  
+    <context:property-placeholder location="classpath*:jdbc-test.properties"/>  
+</beans>
+```
 
 ### 基本示例
 
