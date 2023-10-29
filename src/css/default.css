@@ -1,5 +1,5 @@
 /* Website font */
-@import "@fontsource/ibm-plex-mono";
+@import '@fontsource/roboto-mono';
 /* @import 'lxgw-wenkai-webfont/style.css'; */
 :root {
   --ifm-color-scheme: light;
@@ -121,7 +121,7 @@
   --ifm-font-color-base: var(--ifm-color-content);
   --ifm-font-color-base-inverse: var(--ifm-color-content-inverse);
   --ifm-font-color-secondary: var(--ifm-color-content-secondary);
-  --ifm-font-family-base: Source Code Pro Regular,system-ui, -apple-system, Segoe UI, IBM Plex Mono, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
+  --ifm-font-family-base: 'Roboto Mono',Source Code Pro Regular,system-ui, -apple-system, Segoe UI, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
     'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
   --ifm-font-family-monospace: Source Code Pro Regular,SFMono-Regular, Menlo, Monaco, Consolas,
@@ -372,7 +372,7 @@
   /* --ifm-code-font-size: 90%;
   --ifm-font-size-base: 95%; */
   /*--ifm-font-family-base: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, IBM Plex Mono, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;*/
-  --ifm-font-family-base: "IBM Plex Mono", sans-serif, monospace,-apple-system,system-ui,Segoe UI,IBM Plex Mono,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial;
+  --ifm-font-family-base: 'Roboto Mono', sans-serif, monospace,-apple-system,system-ui,Segoe UI,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial;
 
 
   --ifm-color-info-contrast-background: #fefefe;

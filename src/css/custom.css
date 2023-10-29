@@ -2,7 +2,7 @@
 /* @import url('m-plus-rounded-1c.css'); */
 
 /* Website font */
-@import "@fontsource/ibm-plex-mono";
+@import '@fontsource/roboto-mono';
 /* @import 'lxgw-wenkai-webfont/style.css'; */
 
 @import url('default.css');
@@ -176,15 +176,15 @@ html[data-theme="dark"] mark {
 }
 
 code {
-  color: #64748b;
+  color: #c0286c;
   font-weight: 700;
-  background-color: unset;
+  background-color: rgb(232 232 232 / 19%);
   word-break: break-all;
   vertical-align: baseline;
   margin: 5px;
   padding: 3px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  font-family: "IBM Plex Mono", sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
+  font-family: 'Roboto Mono', sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
   font-size: unset;
 }
 
@@ -336,7 +336,7 @@ li::marker {
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
   line-height: 1.85;
-  font-family: "IBM Plex Mono", sans-serif, monospace, Menlo, monaco, Consolas, "Courier New";
+  font-family: 'Roboto Mono', sans-serif, monospace, Menlo, monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
 }
@@ -702,6 +702,7 @@ code[class^=codeBlockLines]::after {
 .markdown>ul,
 .markdown>p {
   margin-bottom: 15px;
+  line-height:2;
 }
 
 .markdown li {

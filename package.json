@@ -25,7 +25,7 @@
     "@docusaurus/preset-classic": "^2.4.3",
     "@docusaurus/types": "^2.4.3",
     "@easyops-cn/docusaurus-search-local": "^0.36.0",
-    "@fontsource/ibm-plex-mono": "^4.5.13",
+    "@fontsource/roboto-mono": "^5.0.15",
     "@giscus/react": "^2.0.6",
     "@saucelabs/theme-github-codeblock": "^0.1.1",
     "ahooks": "^3.7.1",
