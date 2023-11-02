@@ -854,9 +854,6 @@ public void refresh() throws BeansException, IllegalStateException {
 }
 ```
 
-
-
 ### BeanFactory 依赖图
 
-![image-20210203210536682](./image/1.IOC/image-20210203210536682.png)
-
+![image-20210203210536682](./image/1.IOC/image-20210203210536682.webp)
