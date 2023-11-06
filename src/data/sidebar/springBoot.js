@@ -22,6 +22,7 @@ const springSideBar = [
 								"SpringBoot/基础入门/自动装配",
 								"SpringBoot/基础入门/理解 SpringApplication",
 								"SpringBoot/基础入门/Web MVC 核心",
+								"SpringBoot/基础入门/Web MVC 视图应用",
 						],
 						collapsed: true,
 						link: {

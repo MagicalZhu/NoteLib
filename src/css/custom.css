@@ -176,8 +176,7 @@ html[data-theme="dark"] mark {
 }
 
 code {
-  color: #c0286c;
-  font-weight: 700;
+  color: rgb(151 54 255);
   background-color: rgb(232 232 232 / 19%);
   word-break: break-all;
   vertical-align: baseline;
@@ -836,4 +835,9 @@ em {
 
 div[class*=admonitionHeading] {
   text-transform: none !important;
+}
+
+.mermaid {
+  max-width: 55%;
+  max-height: 55%;
 }
