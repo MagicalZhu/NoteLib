@@ -1,5 +1,6 @@
 {
   "spellcheck": false,
   "tabSize": 2,
-  "showLineNumber": false
+  "showLineNumber": false,
+  "useTab": false
 }

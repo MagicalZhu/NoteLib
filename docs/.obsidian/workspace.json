@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b08211420724aabd",
+        "id": "beacd11d6d05eca5",
         "type": "tabs",
         "children": [
           {
-            "id": "806668637d3ebb7f",
+            "id": "c574bb8cbecccaef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SpringBoot/基础入门/1.基础知识.md",
+                "file": "SpringBoot/基础入门/4.Web MVC 核心.md",
                 "mode": "source",
                 "source": false
               }
@@ -71,15 +71,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SpringBoot/基础入门/1.基础知识.md"
+                "file": "SpringBoot/基础入门/4.Web MVC 核心.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 286.5
+    "width": 306.5
   },
   "right": {
     "id": "38f34fc71d5aa79c",
@@ -95,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SpringBoot/基础入门/1.基础知识.md",
+                "file": "SpringBoot/基础入门/4.Web MVC 核心.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SpringBoot/基础入门/1.基础知识.md",
+                "file": "SpringBoot/基础入门/4.Web MVC 核心.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,10 +148,21 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "806668637d3ebb7f",
+  "active": "822c1b43757fcb4e",
   "lastOpenFiles": [
-    "Spring/AOP/3.AOP设计与实现.md",
+    "SpringBoot/基础入门/image/Mvc/交互流程.webp",
+    "SpringBoot/基础入门/image/Mvc/SpringMvc架构.webp",
+    "SpringBoot/基础入门/image/Mvc/SpringMvc 架构.webp",
+    "SpringBoot/基础入门/image/Mvc/前端控制器.webp",
+    "SpringBoot/基础入门/image/Mvc/Servlet架构.webp",
+    "SpringBoot/基础入门/image/Mvc",
+    "SpringBoot/基础入门/image",
+    "SpringBoot/基础入门/4.Web MVC 核心~.md",
+    "SpringBoot/基础入门/3.理解SpringApplication.md",
+    "SpringBoot/基础入门/4.Web MVC 核心.md",
+    "理解 SpringApplication.md",
     "SpringBoot/基础入门/1.基础知识.md",
+    "Spring/AOP/3.AOP设计与实现.md",
     "AOP设计与实现.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_31.010Z.Desktop.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_31_17.189Z.Desktop.md",
@@ -175,8 +187,6 @@
     "logseq/custom.css",
     "pages/contents.md",
     "pages",
-    "journals",
-    "logseq/config.edn",
-    "Spring/AOP/image/AOP基础/Logseq-darwin-arm64-0.9.17-alpha+nightly.20230915.dmg"
+    "journals"
   ]
 }
