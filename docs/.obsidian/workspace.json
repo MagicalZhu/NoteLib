@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SpringBoot/基础入门/4.Web MVC 核心.md",
+                "file": "Spring/Spring编程思想/18-Environment抽象.md",
                 "mode": "source",
                 "source": false
               }
@@ -43,12 +43,22 @@
             }
           },
           {
+            "id": "822c1b43757fcb4e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Spring/Spring编程思想/18-Environment抽象.md"
+              }
+            }
+          },
+          {
             "id": "c22ad2ffb65c31de",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "file:数据校验",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -64,19 +74,8 @@
               "type": "bookmarks",
               "state": {}
             }
-          },
-          {
-            "id": "822c1b43757fcb4e",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "SpringBoot/基础入门/4.Web MVC 核心.md"
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -96,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SpringBoot/基础入门/4.Web MVC 核心.md",
+                "file": "Spring/Spring编程思想/18-Environment抽象.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SpringBoot/基础入门/4.Web MVC 核心.md",
+                "file": "Spring/Spring编程思想/18-Environment抽象.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,11 +144,24 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "822c1b43757fcb4e",
+  "active": "c574bb8cbecccaef",
   "lastOpenFiles": [
+    "ORM/Mybatis基础/基础知识.md",
+    "ORM/Mybatis基础",
+    "ORM/about.mdx",
+    "ORM",
+    "Spring/Spring编程思想/16-事件编程.md",
+    "Spring/Spring编程思想/15-泛型处理.md",
+    "Spring/Spring编程思想/14-类型转换.md",
+    "Spring/Spring编程思想/image/类型转换/ConversionService结构.webp",
+    "Spring/Spring编程思想/image/类型转换",
+    "Spring/Spring编程思想/13-数据绑定.md",
+    "Spring/Spring编程思想/12-数据校验.md",
+    "SpringBoot/基础入门/4.Web MVC 核心.md",
     "SpringBoot/基础入门/image/Mvc/交互流程.webp",
     "SpringBoot/基础入门/image/Mvc/SpringMvc架构.webp",
     "SpringBoot/基础入门/image/Mvc/SpringMvc 架构.webp",
@@ -159,7 +171,6 @@
     "SpringBoot/基础入门/image",
     "SpringBoot/基础入门/4.Web MVC 核心~.md",
     "SpringBoot/基础入门/3.理解SpringApplication.md",
-    "SpringBoot/基础入门/4.Web MVC 核心.md",
     "理解 SpringApplication.md",
     "SpringBoot/基础入门/1.基础知识.md",
     "Spring/AOP/3.AOP设计与实现.md",
@@ -177,16 +188,9 @@
     "AOP基础.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_20.658Z.Desktop.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_03.761Z.Desktop.md",
-    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_00.627Z.Desktop.md",
-    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_26_05.121Z.Desktop.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现",
     "logseq/bak/Spring/AOP",
     "logseq/bak/Spring",
-    "logseq/bak",
-    "logseq",
-    "logseq/custom.css",
-    "pages/contents.md",
-    "pages",
-    "journals"
+    "logseq/bak"
   ]
 }

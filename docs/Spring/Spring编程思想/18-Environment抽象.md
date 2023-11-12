@@ -1,6 +1,8 @@
 ---
 id: Environment抽象
 title: Environment抽象
+cssclasses:
+  - wide-page
 ---
 
 ## 关于 Environment
@@ -406,7 +408,7 @@ public class LookUpEnvironmentDemo {
 
 @Value 注解的处理和 @Autowired 注解类似,都是在 *AutowiredAnnotationBeanPostProcessor* 中处理的,并且依赖注入的操作是在填充 Bean 属性(*populateBean*) 中进行操作的
 
-在 [使用 @Autowired 进行依赖注入中](依赖注入#resolvedependency), 会调用 dodoResolveDependency** 方法进行处理依赖,这里还会处理 @Value 注解
+在 [使用 @Autowired 进行依赖注入中](依赖注入#resolvedependency), 会调用 **doResolveDependency** 方法进行处理依赖,这里还会处理 @Value 注解
 
 ```java title="DefaultListableBeanFactory#doResolveDependency"
 public Object doResolveDependency(DependencyDescriptor descriptor, String beanName,
@@ -530,8 +532,8 @@ protected <T> T convertValueIfNecessary(Object value, @Nullable Class<T> targetT
 **PropertySource 是一个带有泛型的抽象类,这里抽取它内部的关键部分:**
 
 1. 每个 PropertySource 都会有一个 **name**
-2. PropertySource 通过 **source** 属性表达配置属性源的来源, 不同实现类的这个 source 来源的类型不相同,所以使用泛型类型代替
-    - 比如对于 **MapPropertySource** 来说,这个 source 就是 Map 类型
+2. PropertySource 通过 **source** 属性表达配置属性源, 不同实现类的这个 source 来源的类型不相同,所以使用泛型类型代替
+    - 比如对于 **MapPropertySource** 来说,这个 source 就是 Map 类型,即使用 Map 存储数据
 
 ```java
 // PropertySource
@@ -539,7 +541,7 @@ public abstract class PropertySource<T> {
   // PropertySource 的名称
   protected final String name;
   
-  // PropertySource 的来源
+  // PropertySource 源
   protected final T source;
 
   // 不同实现类会各自去实现 getProperty 方法
@@ -598,7 +600,7 @@ Spring 内建的 PropertySource:
 
 - 入口
   - 总入口: `ConfigurationClassParser#doProcessConfigurationClass`
-  - 处理 @PropertySource 注解的入口: `ConfigurationClassParser#`
+  - 处理 @PropertySource 注解的入口: `ConfigurationClassParser#processPropertySource`
 - Spring 4.3 新增
   - 可配置属性字符编码: encoding
   - 接口: `PropertySourceFactory`

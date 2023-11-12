@@ -30,6 +30,9 @@ const share = require('./share')
 // Spring相关
 const spring = require('./spring')
 
+// orm 相关
+const orm = require('./orm')
+
 const springBoot = require('./springBoot')
 
 // SpringCloud
@@ -62,6 +65,7 @@ module.exports = {
   spring,
   springBoot,
   springCloud,
+  orm,
   vue,
   jvm,
   gradle,

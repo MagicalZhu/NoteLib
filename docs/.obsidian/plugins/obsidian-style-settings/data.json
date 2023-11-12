@@ -11,7 +11,6 @@
   "modular-css-layout-wv@@wide-table-global": true,
   "modular-css-layout-wv@@wide-dataview-global": true,
   "modular-css-layout-wv@@wide-backlinks-global": true,
-  "modular-css-layout-wv@@adj-rll-max-width": "1000px",
   "anuppuccin-theme-settings@@anuppuccin-theme-light": "ctp-rosepine-light",
   "anuppuccin-theme-settings@@anuppuccin-theme-dark": "ctp-macchiato",
   "anuppuccin-theme-settings@@anuppuccin-light-theme-accents": "ctp-accent-light-red",

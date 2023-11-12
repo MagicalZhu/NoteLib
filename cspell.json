@@ -23,7 +23,8 @@
         "instanceof",
         "classpath",
         "HATEOS",
-        "Cros"
+        "Cros",
+        "Mybatis"
     ],
     "ignoreWords": [
         "pacos"
