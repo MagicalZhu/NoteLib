@@ -15,8 +15,20 @@ const springSideBar = [
 		label: "SpringBoot基础",
 		items: [
 				{
+					type: Type.CATEGORY,
+					label: "SpringBoot基础",
+					items: [
+							"SpringBoot/基础/基础知识",
+					],
+					collapsed: true,
+					link: {
+						type: "generated-index",
+						description: '尚硅谷 SpringBoot 的学习笔记'
+					}
+				},
+				{
 						type: Type.CATEGORY,
-						label: "SpringBoot3",
+						label: "理解 SpringBoot",
 						items: [
 								"SpringBoot/基础入门/基础知识",
 								"SpringBoot/基础入门/自动装配",
@@ -27,7 +39,7 @@ const springSideBar = [
 						collapsed: true,
 						link: {
 							type: "generated-index",
-							description: 'SpringBoot学习笔记'
+							description: '小马哥的 SpringBoot 学习笔记'
 						}
 				}
 		],

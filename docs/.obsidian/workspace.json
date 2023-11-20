@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring/Spring编程思想/18-Environment抽象.md",
+                "file": "SpringBoot/基础/1.基础知识.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring/Spring编程思想/18-Environment抽象.md"
+                "file": "SpringBoot/基础/1.基础知识.md"
               }
             }
           },
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring/Spring编程思想/18-Environment抽象.md",
+                "file": "SpringBoot/基础/1.基础知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring/Spring编程思想/18-Environment抽象.md",
+                "file": "SpringBoot/基础/1.基础知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,6 +150,7 @@
   },
   "active": "c574bb8cbecccaef",
   "lastOpenFiles": [
+    "Spring/Spring编程思想/18-Environment抽象.md",
     "ORM/Mybatis基础/基础知识.md",
     "ORM/Mybatis基础",
     "ORM/about.mdx",
@@ -187,7 +188,6 @@
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_56.247Z.Desktop.md",
     "AOP基础.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_20.658Z.Desktop.md",
-    "logseq/bak/Spring/AOP/3.AOP设计与实现/2023-09-18T13_29_03.761Z.Desktop.md",
     "logseq/bak/Spring/AOP/3.AOP设计与实现",
     "logseq/bak/Spring/AOP",
     "logseq/bak/Spring",
