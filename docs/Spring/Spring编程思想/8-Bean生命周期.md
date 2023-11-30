@@ -573,6 +573,11 @@ Bean 正常实例化的入口在:`AbstractAutowireCapableBeanFactory#createBeanI
 
 2. 构造器依赖注入
     - 方法入口: **autowireConstructor**
+    - 判断条件(满足一种即可):
+      - Bean Class 实现了 `SmartInstantiationAwareBeanPostProcessor#determineCandidateConstructors`方法，并返回构造器 Constructor 对象
+      - BeanDefinition 的 AutowireMode 是 AUTOWIRE_CONSTRUCTOR
+      - BeanDefinition 中设置了构造器参数 `ConstructorArgumentValues` 
+      - 执行 getBean 的时候，传入的参数不为空(getBean 重载方法中的可变参数)
 
 ```java title=AbstractAutowireCapableBeanFactory#createBeanInstance
 protected BeanWrapper createBeanInstance(String beanName,
