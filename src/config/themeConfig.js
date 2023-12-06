@@ -1,4 +1,4 @@
-const codeTheme = require('../prismTheme/dracula');
+const codeTheme = require('../prismTheme/nightOwlDark');
 const navConfig = require('./navbar')
 // const footerConfig = require('./footer')
 
@@ -31,7 +31,7 @@ const themeConfig = {
     theme: codeTheme,
     darkTheme: codeTheme,
     defaultLanguage: 'java',
-    additionalLanguages: ['java', 'ini', 'docker'],
+    additionalLanguages: ['java', 'ini', 'docker', 'yaml'],
     magicComments: [{
       className: 'theme-code-block-highlighted-line',
       line: 'highlight-next-line',

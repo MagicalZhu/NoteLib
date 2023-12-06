@@ -111,7 +111,7 @@ html[data-theme='dark'] .theme-code-block-highlighted-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 html[data-theme='light'] .theme-code-block-highlighted-line {
-  background-color: #000;
+  background-color: #334646;
 }
 
 

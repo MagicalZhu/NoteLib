@@ -38,9 +38,6 @@ const springBoot = require('./springBoot')
 // SpringCloud
 const springCloud = require('./springCloud')
 
-// Vue的学习笔记
-const vue = require('./vue')
-
 // JVM
 const jvm = require('./jvm')
 
@@ -66,7 +63,6 @@ module.exports = {
   springBoot,
   springCloud,
   orm,
-  vue,
   jvm,
   gradle,
   docker

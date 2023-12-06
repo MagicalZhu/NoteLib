@@ -19,6 +19,7 @@ const springSideBar = [
 					label: "SpringBoot基础",
 					items: [
 							"SpringBoot/基础/基础知识",
+							"SpringBoot/基础/核心功能",
 					],
 					collapsed: true,
 					link: {

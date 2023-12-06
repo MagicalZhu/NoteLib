@@ -122,16 +122,6 @@ const nav = {
       ]
     },
     {
-      label: "前端技术",
-      position: "left",
-      items: [
-        {
-          label: "Vue",
-          to: 'docs/front/Vue',
-        }
-      ]
-    },
-    {
       label:"其他工具",
       position: "left",
       items: [

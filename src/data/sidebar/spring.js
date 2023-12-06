@@ -44,6 +44,27 @@ const springSideBar = [
 	},
 	{
 		type: Type.CATEGORY,
+		label: "SpringMvc",
+		items: [
+			{
+				type: Type.CATEGORY,
+				label: "SpringMvc 基础",
+				items: [
+						"Spring/SpringMvc/基础/基础知识"
+				],
+				collapsed: true,
+				link: {
+						type: "generated-index"
+				}
+			},
+		],
+		collapsed: true,
+		link: {
+			type: "generated-index"
+		}
+	},
+	{
+		type: Type.CATEGORY,
 		label: "Spring进阶",
 		items: [
 			{
