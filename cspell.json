@@ -24,7 +24,8 @@
         "classpath",
         "HATEOS",
         "Cros",
-        "Mybatis"
+        "Mybatis",
+        "Thymeleaf"
     ],
     "ignoreWords": [
         "pacos"

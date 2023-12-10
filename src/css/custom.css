@@ -9,7 +9,7 @@
 
 
 html[data-theme="dark"] {
-  --ifm-font-color-base: #C8CCD0;
+  --ifm-font-color-base: #676f7a;
   --ifm-color-content-secondary: #bdbdbd;
   --ifm-background-color: rgba(27, 27, 27,1);
 
@@ -42,7 +42,7 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --ifm-font-color-base: #0F172A;
+  --ifm-font-color-base: #58606c;
   --ifm-color-primary: #486af4;
   --ifm-color-primary-dark: #2a52f2;
   --ifm-color-primary-darker: #1b46f1;
@@ -176,13 +176,14 @@ html[data-theme="dark"] mark {
 }
 
 code {
-  color: rgb(151 54 255);
-  background-color: rgb(232 232 232 / 19%);
+  color: #0f172A;
+  background-color: unset;
   word-break: break-all;
   vertical-align: baseline;
   margin: 5px;
   padding: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 0 solid #cccccc;
+  border-width: 1px;
   font-family: 'Roboto Mono', sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
   font-size: unset;
 }
@@ -232,10 +233,10 @@ html[data-theme='light'] strong {
 
 
 blockquote {
-  color: #676f7a;
+  color: #64748B;
   border-left: 2px solid #d3d3d3;
   padding: 12px;
-  font-style: italic;
+  font-style: normal;
   padding-left: 1.5rem;
   margin-top: 1.5rem;
   margin: 0;
