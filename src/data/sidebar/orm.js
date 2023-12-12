@@ -19,6 +19,7 @@ const springSideBar = [
 					label: "Mybatis基础",
 					items: [
 							"ORM/Mybatis基础/基础知识",
+							"ORM/Mybatis基础/SQL映射",
 					],
 					collapsed: true,
 					link: {
