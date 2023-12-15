@@ -180,8 +180,6 @@ code {
   background-color: unset;
   word-break: break-all;
   vertical-align: baseline;
-  margin: 5px;
-  padding: 3px;
   border: 0 solid #cccccc;
   border-width: 1px;
   font-family: 'Roboto Mono', sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
