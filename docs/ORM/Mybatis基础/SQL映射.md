@@ -329,20 +329,271 @@ MyBatis 有两种不同的方式加载关联：
 
 > 简言之,就是将关联数据的查询放在一个 sql 语句中,然后将关联数据集的映射放在 association 中
 
+假设 employee 表和 Account 表有关联 (employee.account_id = Account.id)
 
+```bash
+# employee 表的数据
+id|last_name|gender|email           |account_id|
+--+---------+------+----------------+----------+
+ 1|tomcat   |1     |tomcat@gmail.com|         1|
+ 2|spring   |0     |spring@gmail.com|         2|
+ 3|jetty    |1     |jetty@gmail.com |         3|
+ 
+# Account 表的数据
+id|name|
+--+----+
+ 1|基金  |
+ 2|存折  |
+ 3|股票  |
+ 4|黄金  |
+```
+
+对应的 java bean 就如下所示:
+
+```java
+// employee 表
+public class EmployeeNew {
+    private Integer id;
+    private String lastName;
+    private char gender;
+    private String email;
+    private Account account;
+}
+
+// Account 表
+public class Account {
+    private Integer id;
+    private String accountName;
+}
+```
+
+那么如果需要查询出 Employee 对应的 Account 信息,可以通过**联合查询**的方式。
+
+下面是 sql 映射文件,注意:
+
+1. 关联表 Account 的 resultMap 映射可以提取出来,也可以写在 association 中
+2. association 的 resultMap 属性既可以引用当前 sql 映射文件中定义的,还可以引用其他 sql 映射文件中定义的 resultMap
+
+```xml
+<!--定义映射 Account 的 resultMap-->
+<resultMap id="handleAccount" type="com.pacos.Domain.Account">
+    <id property="id" column="id" javaType="Integer"/>
+    <result property="accountName" column="name" javaType="String"/>
+</resultMap>
+<!--定义映射 EmployeeNew 的 resultMap-->
+<resultMap id="handleEmployeeNew" type="com.pacos.Domain.EmployeeNew">
+    <id column="id" property="id" javaType="int"/>
+    <result column="last_name" property="lastName" javaType="string"/>
+    <result column="gender" property="gender" javaType="char"/>
+    <result column="email" property="email" javaType="string"/>
+    <!--用 association 处理对象-->
+    <association property="account"
+                 javaType="com.pacos.Domain.Account"
+                 resultMap="handleAccount">
+    </association>
+</resultMap>
+<select id="getEmployeeNewList" resultMap="handleEmployeeNew">
+    Select
+        emp.id, emp.last_name,emp.gender,emp.email,acc.name
+    from employee emp left join  Account acc on emp.account_id=acc.id
+</select>
+```
+
+最后进行测试,可以看到 account 属性有数据了:
+
+```java
+/**
+ * 联合查询
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class ResultMapDemo2 {
+  private static final String resource = "META-INF/mybatis-config.xml";
+  public static void main(String[] args) throws IOException {
+      InputStream inputStream = Resources.getResourceAsStream(resource);
+      SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+      // 设置自动提交事务
+      try(SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+          EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+          // 返回 List 查询
+          List<EmployeeNew> employeeNews = employeeMapper.getEmployeeNewList();
+          // out: [EmployeeNew(id=1, lastName=tomcat, gender=1, email=tomcat@gmail.com, 
+          //                  account=Account(id=1, accountName=基金)),
+          //      EmployeeNew(id=2, lastName=spring, gender=0, email=spring@gmail.com,
+          //                  account=Account(id=2, accountName=存折)),
+          //      EmployeeNew(id=3, lastName=jetty, gender=1, email=jetty@gmail.com, 
+          //                  account=Account(id=3, accountName=股票))]
+          System.out.println(employeeNews);
+      }
+  }
+}
+```
 
 #### 分步查询
 
+> 除了联合查询之外, association 还支持分步查询
+
+还是上述的例子,但是采用分步查询。示例有如下的说明
+
+1. 分步查询 Account 的 sql 语句写在 Account 对应的 sql 映射文件中,而不是 Employee sql 映射文件中
+2. association 中的 column 采用 {propName: colName} 的格式,将指定的数据传给 select 属性指定的 sql 语句
+
+```xml
+<!-- AccountMapper.xml -->
+<resultMap id="handleAccount" type="com.pacos.Domain.Account">
+    <id property="id" column="id" javaType="Integer"/>
+    <result property="accountName" column="name" javaType="String"/>
+</resultMap>
+	<!-- 1.分步查询 Account 表的数据, -->
+<select id="getAccountById" resultMap="handleAccount">
+    select * from Account where id=#{id}
+</select>
+
+<!--EmployeeMapper.xml-->
+
+<resultMap id="handleEmployeeNewByStep" type="com.pacos.Domain.EmployeeNew">
+        <id column="id" property="id" javaType="int"/>
+        <result column="last_name" property="lastName" javaType="string"/>
+        <result column="gender" property="gender"/>
+        <result column="email" property="email" javaType="string"/>
+        <!--用 association 处理对象-->
+        <association property="account"
+                     javaType="com.pacos.Domain.Account"
+                     select="com.pacos.Dao.AccountMapper.getAccountById"
+                     column="{id=account_id}"
+                     >
+        </association>
+    </resultMap>
+
+    <select id="getEmployeeNewByStep" resultMap="handleEmployeeNewByStep">
+        Select * from employee
+    </select>
+```
+
+最后进行测试,结果和联合查询的一致!
+
+```java
+/**
+ * 分步查询
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class ResultMapDemo3 {
+  private static final String resource = "META-INF/mybatis-config.xml";
+  public static void main(String[] args) throws IOException {
+      InputStream inputStream = Resources.getResourceAsStream(resource);
+      SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+      // 设置自动提交事务
+      try(SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+          EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+          // 返回 List 查询
+          List<EmployeeNew> employeeNews = employeeMapper.getEmployeeNewByStep();
+          // out: [EmployeeNew(id=1, lastName=tomcat, gender=1, email=tomcat@gmail.com,
+          //                  account=Account(id=1, accountName=基金)),
+          //      EmployeeNew(id=2, lastName=spring, gender=0, email=spring@gmail.com,
+          //                  account=Account(id=2, accountName=存折)),
+          //      EmployeeNew(id=3, lastName=jetty, gender=1, email=jetty@gmail.com,
+          //                  account=Account(id=3, accountName=股票))]
+          System.out.println(employeeNews);
+      }
+  }
+}
+```
+
 ### collection
 
-它有如下的属性:
+> 查询的时候,除了一对一,还会出现一对多的情况,那么表现在 javaBean 上就是属性是一个集合
 
-- *property*
+Mybatis 通过 `<collection>` 标签处理结果集中有集合的情况, 它有如下的属性:
+
+- `property`
   - javaBean 的属性名
-- *ofType*
+- `ofType`
   - 指定集合中元素的类型
 
-它包含了子节点: `<id>`、`<result>`, 用法和上面一样
+- 子节点: `<id>`、`<result>`, 用法和上面一样
+
+#### 联合查询
+
+假设查询 Account 账户信息以及对应的 Employee 信息,如果使用联合查询的方式:
+
+首先定义 javaBean:
+
+```java
+public class AccountNew {
+    private Integer id;
+    private String accountName;
+    private List<Employee> employees;
+}
+
+public class Employee {
+    private Integer id;
+    private String lastName;
+    private char gender;
+    private String email;
+}
+```
+
+然后在 Account 的 sql 映射文件中编写 联合查询的 sql 语句:
+
+```xml
+<resultMap id="handleAccountByUnion" type="com.pacos.Domain.AccountNew">
+    <id property="id" column="id" javaType="Integer"/>
+    <result property="accountName" column="name" javaType="String"/>
+    <collection property="employees"
+                ofType="com.pacos.Domain.Employee">
+        <!--这里 column=emp_id 是因为联合查询中存在多个column 为 id  -->
+        <id column="emp_id" property="id" javaType="int"/>
+        <result column="last_name" property="lastName"/>
+        <result column="gender" property="gender"/>
+        <result column="email" property="email"/>
+    </collection>
+</resultMap>
+<select id="getAccountByUnion" resultMap="handleAccountByUnion">
+    Select emp.last_name ,emp.gender ,emp.email, acc.id, acc.name,emp.id emp_id
+    from Account acc ,employee emp
+    where acc.id =emp.account_id
+    order by acc.id
+</select>
+```
+
+最后进行测试:
+
+```java
+/**
+ * 联合查询-Collection
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class ResultMapDemo4 {
+    private static final String resource = "META-INF/mybatis-config.xml";
+    public static void main(String[] args) throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        // 设置自动提交事务
+        try(SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+            AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
+            // 返回 List 查询
+            List<AccountNew> accountNews = accountMapper.getAccountByUnion();
+            // out:[AccountNew(id=1, accountName=基金, employees=[
+            //          Employee(id=1, lastName=tomcat, gender=1, email=tomcat@gmail.com),
+            //          Employee(id=3, lastName=jetty, gender=1, email=jetty@gmail.com)]), 
+            //      AccountNew(id=2, accountName=存折, employees=[
+            //          Employee(id=2, lastName=spring, gender=0, email=spring@gmail.com)
+            //        ])
+            //   ]
+            System.out.println(accountNews);
+        }
+    }
+}
+```
+
+#### 分步查询
+
+> collection 也支持分步查询,使用步骤和 [associattion 的分步查询](SQL映射#分步查询)基本一致
 
 ## insert / update / delete
 
@@ -558,7 +809,520 @@ SelectKey 有如下的属性:
 
 ## 参数
 
+> 在上面的 sql 映射文件中,已经使用几种简单的参数传递方式
+
+### 基础使用
+
+Mybatis 提供了几种参数传递方式
+
+1. **`单个参数`**
+
+2. **`多个参数`**
+
+3. **`Pojo`**
+
+4. **`命名参数`**
+5. **`Map`**
+
+#### 单个参数
+
+> Mybatis 没有额外的处理, 可以接受基本类型 / 对象类型 / 集合类型
+
+- 传入的参数只有一个
+- 通过 **#{ 参数名 }** 的方式取出值
+
+假设需要通过 id 获取指定的 员工信息, 那么对应的 Mapper 接口的定义:
+
+```java
+public Employee getEmpById(Integer id);
+```
+
+然后对应的 sql 映射文件就可以:
+
+```xml
+<select id="getEmpById" resultType="com.pacos.Domain.Employee">
+    Select * from employee where id=#{id}
+</select>
+```
+
+#### 多个参数
+
+**Mybatis 会将多个参数封装成 Map 传入 (#{} 就是从 map 中获取指定 key 的值 )**
+
+- key : `param1,param2...` 或者 `arg0,arg1...`
+  - param 从 1 开始
+  - arg 从 0 开始
+- value : 传入的参数
+
+假设需要通过 id 和 lastName 获取员工信息,那么 Mapper 接口的定义:
+
+```java
+public Employee getEmpByIdAndName(Integer id,String name);
+```
+
+那么可以通过 paramxxxx 或者 argxxx 的方式获取参数
+
+```xml
+<select id="getEmpByIdAndName" resultType="com.pacos.Domain.Employee">
+    Select * from employee where id=#{arg0} and last_name=#{param2}
+</select>
+```
+
+#### Pojo
+
+当传入的参数名都属于某个 Pojo 的时候,可以将参数封装为 Pojo 传入
+
+- 通过 **#{Pojo 属性名}** 的方式取出值, 支持**级联属性**
+
+假设通过 email 和 gender 获取 员工信息,且参数都属于 Employee,那么 Mapper 接口定义可以:
+
+```java
+public Employee getEmpByEmailAndGender(Employee employee);
+```
+
+对应的 sql 映射文件就可以写成:
+
+```xml
+<select id="getEmpByEmailAndGender" resultType="com.pacos.Domain.Employee">
+    Select * from employee where email=#{email} and gender=#{gender}
+</select>
+```
+
+#### 命名参数
+
+> 在多个参数的情况下,如果使用 argxxx 或者 paramxxx 的方式会让 sql 映射文件极难维护和理解
+>
+> 而命名参数这种方式则可以解决这一问题,并且在开发中较为常见
+
+通过 @Param 注解为为参数起别名 ( 明确指定封装参数时 map 的 key )
+
+- 格式 : **`@Param("参数名")`**
+- 通过 **#{ Param 的参数名 }** 的方式取出值
+
+假设还是通过 id 和 lastName 获取员工信息,那么在接口命名参数的情况下, Mapper 接口的定义:
+
+```java
+public Employee getEmpByIdAndName(@Param("id") Integer id,@Param("lastName") String name);
+```
+
+对应的 sql 映射文件就可以写成:
+
+```xml
+<select id="getEmpByIdAndName" resultType="com.pacos.Domain.Employee">
+    Select * from employee where id=#{id} and last_name=#{lastName}
+</select>
+```
+
+#### Map
+
+> 我们还可以直接传入一个 Map,将参数名作为 Key,参数值作为 value
+
+假设通过 email 和 id 获取员工信息,那么 Mapper 接口可以这么写:
+
+```java
+public Employee getEmpByIdAndEmail(Map<String,Object> param);
+```
+
+在调用 Mapper 接口的时候,我们封装一个参数 Map 传入:
+
+```java
+private static final String resource = "META-INF/mybatis-config.xml";
+  public static void main(String[] args) throws IOException {
+      InputStream inputStream = Resources.getResourceAsStream(resource);
+      SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+      try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+          EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+        	// highlight-start
+          Map<String,Object> map = new HashMap<>();
+          map.put("id", 1);
+          map.put("email", "tomcat@gmail.com");
+        	// 将封装的参数传入
+          Employee emp = employeeMapper.getEmpByIdAndEmail(map);
+          // highlight-end
+          // out:generally unnecessary.
+          //Employee(id=1, lastName=tomcat, gender=1, email=tomcat@gmail.com)
+          System.out.println(emp);
+      }
+  }
+```
+
+那么 sql 映射文件就需要这么写( 参数名就是 map 的 key )
+
+```xml
+<select id="getEmpByIdAndEmail" resultType="com.pacos.Domain.Employee">
+    Select * from employee where id=#{id} and email=#{email}
+</select>
+```
+
+:::caution 注意点
+
+这种方式在实际开发中较少应用
+
+:::
+
+### 其他类型
+
+如果参数是 `Collection`（List、Set）或者是`数组`, MyBatis 也会把传入的集合或者数组封装在map中:
+
+| 参数类型       | key          |
+| -------------- | ------------ |
+| **Collection** | `collection` |
+| **List**       | `list`       |
+| **数组**       | `array`      |
+
+比如下面的 Mapper 接口,取出第一个id的值: `#{list[0]}`
+
+```java
+public Employee getEmpById(List<Integer> ids)
+```
+
+### 占位符 #{} 和 ${}
+
+> 我们一般使用 #{} 的方式获取参数值,但是 Mybatis 还支持使用 `${}` 的占位符
+
+- #{} 和 ${} 的区别
+
+  - **#{}** 采用预编译的方式,将参数设置到 sql 语句中
+  - **${}** 直接将值取出拼接到 sql 语句中,会有 Sql 注入的问题
+
+- 使用思路
+
+  - 大多情况下，我们去参数的值都应该去使用 #{}
+
+  - 原生 jdbc 不支持使用占位符的地方就需要使用 `${}` 进行取值(将取出的值直接拼装在 sql 语句中)
+
+    - 比如分表
+
+      ```sql
+      // 按照年份分表拆分
+      select * from ${year}_salary where xxx
+      ```
+
+    - 比如排序
+
+      ```sql
+      Select * from tb1_employee order by ${field_name} ${order}
+      ```
+
+### 源码分析
+
 ## 动态 SQL
 
-## 缓存
+> 在 JDBC 中,我们经常需要根据条件拼接 sql 语句,或者循环生成 sql 语句, Mybatis 利用 OGNL 表达式简化了这些操作
 
+OGNL(Object Graph Navigation Language) 对象图导航语言,是一种强大的 表达式语言, 通过它可以非常方便的来操作对象属性
+
+1. 访问对象属性
+   -  `对象.属性名.xxx`
+2. 调用方法:
+   - `对象.方法名`
+3. 调用静态属性/方法
+   - `@Class名.属性@方法名`
+4. …
+
+Mybatis 提供常见的标签
+
+1. `if`
+2. `choose`、`when`、`otherwise`
+3. `trim`、`where`、`set`
+4. `foreach`
+
+:::tip 说明
+
+可以在 标签中 直接使用“参数”值
+
+:::
+
+### if 和 where
+
+- `if`
+  - 通过 `test` 属性来配置判断表达式
+- `where`
+  - 用于封装查询条件, 对应 sql 语句中的 where 语句
+  - 只有在会在子标签返回内容时才插入 where 语句, 并且如果 where 子句的开头为 `AND` 或 `OR`，where 标签也会将它们去除
+
+:::caution 强烈建议
+在使用 where 标签的时候,将 and  或者 or 放在 子标签的开头,这样可以避免**最后一个条件不满足时,sql 语句末尾多出 and 或者 or**
+:::
+
+> 假设有如下的查询需求: 如果提供 id,就根据 id 查询,如果提供 email,就根据 email 查询
+
+首先在 Mapper 接口定义方面:
+
+```java
+// 采用 Pojo 的方式
+public Employee getEmpByIdOrEmail(Employee employee);
+```
+
+然后在 sql 映射文件中,利用 if 标签对参数进行判断:
+
+```xml
+<select id="getEmpByIdOrEmail" resultType="com.pacos.Domain.Employee">
+    Select * from employee
+    <where>
+        <if test="id != null">
+            id=#{id}
+        </if>
+        <if test="email != null and email != ''">
+            and email=#{email}
+        </if>
+    </where>
+</select>
+```
+
+### if 和 set
+
+- `set`
+  - 用于封装update 中的 set 修改语句
+  - **set 标签会去除额外的逗号**
+
+> 假设有需求: 根据传入的对象值修改数据库指定行的数据
+
+首先在 Mapper 接口中有以下的定义:
+
+```java
+// 将更新的参数封装为 Employee Pojo
+public int updateEmp(Employee emp);
+```
+
+然后在 sql 映射文件中,使用 set 标签拼接：
+
+```xml
+<update id="updateEmp">
+  update employee
+  <set>
+      <if test="email != null and email != ''">
+          email=#{email},
+      </if>
+      <if test="lastName != null and lastName != ''">
+          last_name=#{lastName}
+      </if>
+  </set>
+  <where>
+      <if test="id !=null">
+          id=#{id}
+      </if>
+  </where>
+</update>
+```
+
+### trim
+
+> 1. trim 是一个很强大标签,它可以实现 where 和 set 标签的功能
+> 2. 在 where 标签中,无法去除 where 语句末尾的 and 或者 or,但是通过 trim 标签则可以
+
+- 包含的属性:
+  - `prefix`
+    - 前缀, 为拼接的字符串加一个前缀
+    - 比如 where、set
+  - `prefixOverrides`
+    - 去掉整个字符串前面多余的指定字符
+    - 多个字符用 `|` 分隔
+  - `suffix`
+    - 后缀,为拼接的字符串末尾加上一个后缀
+  - `suffixOverrides`
+    - 去掉整个字符串末尾多余的指定字符
+    - 多个字符用 `|` 分隔
+
+#### trim 与 where 和 set
+
+trim 可以实现 where 标签的功能:
+
+```xml
+<trim prefix="WHERE" prefixOverrides="AND |OR ">
+  <!--sql 语句-->
+</trim>
+```
+
+除此之外, trim 还可以实现 set 标签的功能:
+
+```xml
+<trim prefix="SET" suffixOverrides=",">
+  <!--sql 语句-->
+</trim>
+```
+
+#### 基础示例
+
+> 在前面的 where 标签中,我们说明过把 and 放在 sql 语句的开头,从而保证末尾不会出现 and。
+>
+> 那么如何利用 trim 实现去除末尾的 and 呢?
+
+这里直接给出 sql 映射文件中的使用:
+
+```xml
+<select id="getEmpByIdOrEmail" resultType="com.pacos.Domain.Employee">
+    Select * from employee
+    <where>
+      	<!--highlight-start-->
+        <trim suffixOverrides="AND">
+            <if test="id != null">
+                id=#{id} and
+            </if>
+            <if test="email != null and email != ''">
+                email=#{email}
+            </if>
+        </trim>
+        <!--highlight-end--> 
+    </where>
+</select>
+```
+
+### choose、when、otherwise
+
+> 我们可以通过 if 标签表达 if 判断语句的功能,有时候我们需要表达 if-else 语义,那么该如何处理?
+
+Mybatis 提供了 `choose、when、other` 来表达 if-else 语义
+
+假设有查询需求: 如果传入了 id,就用 id 查询,否则就用 lastName 查询员工信息,那么在 sql 映射文件中需要:
+
+```xml
+<select id="getEmpByIdOrEmail" resultType="com.pacos.Domain.Employee">
+    Select * from employee
+    <trim prefix="where" prefixOverrides="and">
+      <choose>
+        	<when test="id !=null">
+            	id=#{id}
+        	</when>
+        	<otherwise>
+            	last_name=#{lastName}
+        	</otherwise>
+      </choose>
+		</trim>
+</select>
+```
+
+### foreach
+
+> 顾名思义,就是遍历的意思,尤其是在构建 in 条件语句的时候
+
+foreach 有如下的属性:
+
+1. `collection`
+   - 需要遍历的集合
+   - 关于集合参数的参数名,参见[其他类型](SQL映射#其他类型)
+2. `item`
+   - 遍历过程中的集合项
+3. `index`
+   - 遍历 list 的时候是index就是索引，item就是当前值
+   - 遍历 map 的时候 index 表示的就是 map 的 key，item就是 map 的值
+4. `separator`
+   - 表示每次循环的结果,用什么拼接
+5. `open`
+   - 循环开始前, 拼接语句最开始的字符
+6. `close`
+   - 循环结束后, 拼接语句结束的字符
+
+> 假设有查询需求: 给定 id 的集合,查询出对应的员工信息集合
+
+首先, Mapper 接口中有如下的定义:
+
+```java
+public List<Employee> getEmpsById(List<Integer> id);
+```
+
+然后再 sql 映射文件中需要定义为:
+
+```xml
+<select id="getEmpsById" resultType="com.pacos.Domain.Employee">
+    Select * from employee
+    <foreach collection="list" item="emp_id" separator=","
+             open="where id in (" close=")">
+        #{emp_id}
+    </foreach>
+</select>
+```
+
+最后进行测试:
+
+```java
+/**
+ * 动态 sql - foreach
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class DynamicSqlDemo3 {
+    private static final String resource = "META-INF/mybatis-config.xml";
+    public static void main(String[] args) throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        try(SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+            EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+            List<Employee> emps = employeeMapper.getEmpsById(Arrays.asList(1,2));
+            // out:[Employee(id=1, lastName=tomcat3, gender=1, email=tomcat3@gmail.com), 
+            //      Employee(id=2, lastName=spring, gender=0, email=spring@gmail.com)
+            //     ]
+            System.out.println(emps);
+        }
+    }
+}
+```
+
+### bind 
+
+- `bind` 元素可以在 OGNL 表达式以外创建一个变量, 并将其绑定到当前的上下文
+
+假设有查询需求: 根据传入的字符串对 lastName 进行模糊查询
+
+```xml
+<select id="getEmpsByLike" resultType="com.pacos.Domain.Employee">
+  <bind name="lastName" value="'%' + name + '%'" />
+    Select * from employee
+  	where last_name like #{lastName}
+</select>
+```
+
+最后进行测试:
+
+```java
+/**
+ * 动态 sql - bind
+ *
+ * @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
+ */
+public class DynamicSqlDemo4 {
+    private static final String resource = "META-INF/mybatis-config.xml";
+    public static void main(String[] args) throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        try(SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+            EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+            List<Employee> emps = employeeMapper.getEmpsByLike("a");
+            // out:[Employee(id=1, lastName=tomcat3, gender=1, email=tomcat3@gmail.com),
+            //      Employee(id=3, lastName=jetty, gender=1, email=jetty@gmail.com)
+            //     ]
+            System.out.println(emps);
+        }
+    }
+}
+```
+
+:::tip 提示
+
+我们可以利用 bind 标签对传入的参数进行额外的处理后赋给新的参数,然后在后面的 sql 语句中使用新的参数
+
+:::
+
+### sql 和 include
+
+Mybatis 提供 sql 和 include 标签,将重复的 sql 片段抽取出来,也可以使用动态标签
+
+- `sql`
+  - 用于定义查询抽取的 sql 片段
+- `include`
+  - 通过 `refid` 引用已经已经定义的 sql 片段
+
+比如将查询的列名抽取出来:
+
+```xml
+<sql id="empCol">
+  id,last_name as lastName, gender,email
+</sql>
+<select id="getEmpBySqlTag" resultType="com.pacos.Domain.Employee">
+  Select
+  <include refid="empCol"/>
+  from employee
+</select>
+```
+
+## 缓存
