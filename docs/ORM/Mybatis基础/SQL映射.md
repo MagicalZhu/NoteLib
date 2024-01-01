@@ -614,7 +614,7 @@ public class ResultMapDemo4 {
 | `keyProperty`      | 指定能够唯一识别对象的属性 ( **仅适用于 insert 和 update** )<br/>MyBatis 使用 `getGeneratedKeys` 的返回值或 insert 语句的 [selectKey](SQL映射#selectkey-标签) 子元素设置它的值<br/>如果生成列不止一个，可以用逗号分隔多个属性名称 |
 | `keyColumn`        | 设置生成键值在表中的列名 ( **仅适用于 insert 和 update** )<br/>在某些数据库中，当主键列不是表中的第一列的时候，是必须设置的。<br/>如果生成列不止一个，可以用逗号分隔多个属性名称。 |
 
-#### 示例 1
+#### 基本示例
 
 > 基本的 增删改语句
 
@@ -703,7 +703,7 @@ public class CUDDemo {
 }
 ```
 
-#### 示例 2
+#### 获取自增值
 
 > 关于 ***获取自增主键的值?***
 
@@ -1005,8 +1005,6 @@ public Employee getEmpById(List<Integer> ids)
       Select * from tb1_employee order by ${field_name} ${order}
       ```
 
-### 源码分析
-
 ## 动态 SQL
 
 > 在 JDBC 中,我们经常需要根据条件拼接 sql 语句,或者循环生成 sql 语句, Mybatis 利用 OGNL 表达式简化了这些操作
@@ -1014,7 +1012,7 @@ public Employee getEmpById(List<Integer> ids)
 OGNL(Object Graph Navigation Language) 对象图导航语言,是一种强大的 表达式语言, 通过它可以非常方便的来操作对象属性
 
 1. 访问对象属性
-   -  `对象.属性名.xxx`
+   - `对象.属性名.xxx`
 2. 调用方法:
    - `对象.方法名`
 3. 调用静态属性/方法
