@@ -1,0 +1,665 @@
+---
+id: Mapping
+title: Mapping
+---
+
+## Mapping
+
+- Mapping 类似于数据库的表结构,主要有如下的作用:
+  - 定义Index下面的字段名
+  - 定义字段的类型， 比如数值型、字符串型、布尔型
+  - 定义倒排索引相关的配置， 比如 是否索引、记录position 等
+- ES提供了 `_mapping` 的 api 对Mapping进行操作
+
+### 查看索引 mapping 信息
+
+- api: `GET /索引名/_mapping`
+
+#### 测试示例
+
+```json
+# 测试 api
+GET /test_index/_mapping
+
+#返回结果
+{
+  "test_index": {
+    "mappings": {
+      "doc": {
+        "properties": {
+          "age": {
+            "type": "long"
+          },
+          "username": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## Mapping 中字段类型
+
+- 核心字段类型
+  - 字符串
+    - text,keyword
+    - ==注意: keyword类型的字段不会被分词,而text会==
+  - 数值型
+    - long,integer,short,byte,double,float,half_float,scaled_float
+  - 布尔
+    - boolean
+  - 日期
+    - date
+    - 支持类似yyyy-MM-dd这种格式的日期 以及 时间戳的日期
+    - 可以指定日期格式化模板 `yyyy-MM-dd HH:mm:ss | yyyy-MM-dd | epoch_millis(时间戳)`
+  - 二进制
+    - binary
+  - 范围类型
+    - integer_range,float_range,long_range,double_range,date_range
+- 复杂字段类型
+  - array : 数组
+  - object : 对象
+  - nested object : 嵌套对象
+- 地理位置类型
+  - geo_point : 一组经纬度
+    - 实现按距离对文档进行排序
+    - 实现一个中心点在指定边框内,所有的地理点数据 ->附近的人
+    - 实现按地理位置或距中心点的距离聚合文档
+    - 实现将距离整合到文档的相关性评分中
+- 专用类型
+  - ip : 记录IP
+  - token_count: 记录分次数
+
+### 基本示例
+
+```json
+PUT /my_index
+{
+  "mappings": {
+    "my_type": {
+      "properties": {
+        "cookie": { 
+          "type": "text",
+          "fields": {
+            "english": { 
+              "type":     "text",
+              "analyzer": "english"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+### Mapping 中字段常见参数
+
+1. `properties`
+    - 指定索引的字段属性
+2. `dynamic`
+   - 控制索引新增字段的策略
+3. `copy_to`
+    - 将字段值复制到目标字段
+    - 针对于字段属性
+4. `index`
+    - 控制是否索引(能被搜索),默认可以被搜索 => 可选值 `true` | `false`
+    - 针对于字段属性
+5. `index_options`
+    - 控制倒排索引的内容
+    - 针对于字段属性
+6. `filed`
+    - 控制同一个字段采用不同的配置
+7. `null_value`
+    - 当字段值为null 时的处理策略
+    - 针对于字段属性
+8. ......
+
+#### 自定义Mapping(dynamic+properties)
+
+- Mapping中的字段一旦声明后,禁止直接修改字段,**因为Lucene实现的倒排索引生成后不允许修改**
+  - 可以重新建立索引,通过`reindex`操作将之前的索引中所有的文档导入到新的索引中
+
+- `properties`: 指定索引的字段属性
+- `dynamic`
+  - 控制索引新增字段的策略,包含以下的几个选项
+    - `true`
+      - **默认值，允许新增字段**
+    - `false`
+      - **不允许有新增字段，但是文档可以正常写入** (√)
+      - 新增的字段不会被添加到文档结构中,且无法用未出现在mapping中定义的字段进行查询(DSL/query查询)
+    - `strict`
+      - **不允许有新增字段**
+      - 如果新增的文档中出现了mapping中未定义的字段,写入时就会报错
+  
+- 基本格式
+
+  ```json
+  PUT  /索引名   
+  {
+      "mappings" : 
+      {
+      "type名称":
+          {
+          	"dynamic":true|false|"strict",
+          	"properties":
+              {
+          		"字段1" : {"type":"字段类型1",...},
+          		"字段2" : {"type":"字段类型2",...} 
+          		.....
+          	}
+  		}
+  	}
+  }
+  ```
+
+下面是基本示例:
+
+```json
+# 测试api ->包含 manager 和 employees两个属性,其中manager包含name和age两个属性
+PUT my_index
+{
+  "mappings": {
+    "my_type": { 
+      "properties": {
+        "manager": { 
+          "properties": {
+            "age":  { "type": "integer" },
+            "name": { "type": "text"  }
+          }
+        },
+        "employees": { 
+          "type": "nested",
+          "properties": {
+            "age":  { "type": "integer" },
+            "name": { "type": "text"  }
+          }
+        }
+      }
+    }
+  }
+}
+
+# 添加文档数据
+PUT my_index/my_type/1 
+{
+  "region": "US",
+  "manager": {
+    "name": "Alice White",
+    "age": 30
+  },
+  "employees": [
+    {
+      "name": "John Smith",
+      "age": 34
+    },
+    {
+      "name": "Peter Brown",
+      "age": 26
+    }
+  ]
+}
+```
+
+#### copy_to
+
+- 将字段值复制到目标字段,**目标字段不会出现在_source中**
+- 注意:
+  1. 复制的是字段值,而不是被分析器处理后的token
+  2. 一个字段可以复制到多个字段上
+     - "copy_to":["field_1","field_2"]
+  3. 复制不具有传递性
+     - field_1 copy_to field_2、field_2 copy_to field_3, 这样的 field_1  无法传递到 field_3
+
+下面是基本示例:
+
+```json
+
+# 测试api
+PUT /testmapping
+{
+  "mappings": {
+    "my_type":{
+      "dynamic":false,
+      "properties": {
+        "firstName":{ "type": "text",  "copy_to": ["fullName1","fullName2"] },
+        "lastName": { "type": "text",  "copy_to": ["fullName1","fullName2"] },
+        "fullName1":{ "type": "text" },
+        "fullName2":{ "type": "text" }
+      }
+    }
+  }
+}
+
+# 添加数据
+PUT /testmapping/my_type/1
+{
+  "firstName":"Zhu",
+  "lastName":"YuLiang"
+}
+
+# 使用 _search api查询匹配的数据
+GET /testmapping/_search
+{
+  "query": {
+    "match": {  "fullName2": { "query": "Zhu YuLiang" }  }
+  }
+}
+
+# _search api 返回结果 -> 可以看到 fullName1 和 fullName2 都没有在 _source中显示
+{
+  "took": 2,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.5753642,
+    "hits": [
+      {
+        "_index": "testmapping",
+        "_type": "my_type",
+        "_id": "1",
+        "_score": 0.5753642,
+        "_source": {
+          "firstName": "Zhu",
+          "lastName": "YuLiang"
+        }
+      }
+    ]
+  }
+}
+```
+
+#### index
+
+- 控制当前字段是否可以会建立倒排索引,可选值,`true[默认] | false`
+  - `false` : 表示不建立倒排索引,即**不可以被搜索**
+    - 如果对 index为false的字段进行查询,就会报错
+    - 从某种程度上说,设置index=false 可以减少存储占用
+- 使用推荐: 将一些敏感的隐私信息设置为 index=false
+
+下面是基本示例:
+
+```json
+# 测试 api
+PUT /mymapping
+{
+  "mappings": {
+    "my_type":{
+      "dynamic":false,
+      "properties": {
+        "cookie":
+          { "properties": {
+            "username":{  "type":"text" },
+            "password":{  "type":"text", "index": false }
+          }
+        }
+      }
+    }
+  }
+}
+# 添加数据
+PUT /mymapping/my_type/1
+{
+  "cookie":[
+    {"username":"yoey","password":"123"},
+    {"username":"yoey2","password":"456"}
+  ]
+}
+
+# 使用 _search api查询匹配的数据 -> 查询index=false 的password字段
+GET /mymapping/_search
+{
+  "query": {
+    "match": {  "cookie.password": "123" }
+  }
+}
+# 查询返回结果 ->  Cannot search on field [cookie.password] since it is not indexed
+```
+
+#### index_options
+
+- **控制该字段的倒排索引所记录的内容**,有如下的参数配置:
+  - `docs`  : 只记录文档Id
+  - `freqs` : 记录文档Id 和 单词频率
+  - `positions` : 记录文档Id、单词频率和单词位置
+  - `offsets` : 记录文档Id、单词频率、单词位置、单词偏移量
+- 字段类型为text 的，默认配置为 `positions`,其他默认为 `docs`
+- **记录的内容越多,占用空间越大**
+
+#### fields
+
+- 多字段特性:
+  - 允许同一个字段采用多种不同的配置
+  - 允许设置不同的分析器
+- 注意: **多字段不会改变索引的_source 属性!!!**
+
+下面是基本示例:
+
+```json
+# 测试 api
+PUT my_index
+{
+  "mappings": {
+    "my_type": {
+      "properties": {
+        "text": { 
+            "type": "text", 
+            "fields": {  "english": { "type":     "text", "analyzer": "english"  } }
+        }
+      }
+    }
+  }
+}
+
+# 向索引中插入数据
+PUT my_index/my_type/1
+{ "text": "quick brown fox" }
+PUT my_index/my_type/2
+{ "text": "quick brown foxes" }
+
+# 通过 _search api 进行查询
+GET my_index/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "quick brown foxes",
+      "fields": [
+        "text.english"
+      ],
+      "type": "most_fields"
+    }
+  }
+}
+
+# 可以看到同样可以查询到数据 -> 但是_source中只有 text 字段
+{
+  "took": 2,
+  "timed_out": false,
+  "_shards": {  "total": 5,  "successful": 5, "skipped": 0,  "failed": 0
+  },
+  "hits": {  "total": 2, "max_score": 0.8630463,
+    "hits": [
+      {
+        "_index": "my_index",
+        "_type": "my_type",
+        "_id": "2",
+        "_score": 0.8630463,
+        "_source": {
+          "text": "quick brown foxes"
+        }
+      },
+      {
+        "_index": "my_index",
+        "_type": "my_type",
+        "_id": "1",
+        "_score": 0.8630463,
+        "_source": {
+          "text": "quick brown fox"
+        }
+      }
+    ]
+  }
+}
+```
+
+### 动态Mapping
+
+> ES 可以自动识别文档字段类型,所以写入文档的时候,如果没有创建创建索引,Es可以自动创建
+
+- 动态Mapping: 自动检测和添加新字段
+  - 动态字段
+  - 动态模板
+
+#### 动态字段
+
+##### 日期的动态识别
+
+- ES**可以自动识别日期,还可以手动配置日期格式**
+
+- <font color=red>ES默认的日期格式 : *YYYY-MM-DDThh:mm:ssTZD*</font> -> 比如:1997-07-16T19:20:30+01:00
+- <font color=red>两个Mapping参数</font>
+  1. <font color=red>*dynamic_date_format*</font> => 自定义日期格式
+  2. <font color=red>*date_detection*</font> => 是否关闭日期自动识别机制,默认是true
+
+###### 1.5.1.1.1 **测试示例**
+
+```json
+# 创建索引时,指定日期的格式,并且开启日期的自动识别
+PUT /mymapping
+{
+  "mappings": {
+    "my_type":{
+      "date_detection":true,
+      "dynamic_date_formats": ["MM/dd/yyyy"]
+    }
+  }
+}
+# 插入数据
+PUT /mymapping/my_type/1
+{
+  "createTime":"03/04/2020"
+}
+# 查询数据
+GET /mymapping/my_type/1
+# 返回结果
+{
+  "_index": "mymapping",
+  "_type": "my_type",
+  "_id": "1",
+  "_version": 1,
+  "found": true,
+  "_source": {
+    "createTime": "03/04/2020"
+  }
+}
+```
+
+##### 1.5.1.2 数字的自动识别
+
+- 字符串是数字时,ES默认不会识别为整型
+- <font color=red>Mapping参数</font>
+  - <font color=red>*numberic_detection*</font> => 是否关闭数字自动识别机制,默认是false
+
+###### 1.5.1.2.1 **测试示例**
+
+```json
+# 测试api -> 开启数字的自动识别
+PUT /mymapping
+{
+  "mappings": {
+    "my_type":{
+      "numberic_detection":true
+    }
+  }
+}
+```
+
+#### 1.5.2 动态模板 [dynamic_templates]
+
+- <font color=red>允许根据Es 自动识别的数据类型和字段名等来动态的设置字段类型</font>,可以实现以下效果
+
+  - 所有字符串都设置为 keyword ,即默认不分词
+  - 所有以message 开头的字段都设置为text类型
+  - 所有以long开头的字段都设置为long类型
+  - 所有自动匹配为 double类型的都设定为 float ,以节省空间
+  - ....
+
+- <font color=red>dynamic_templates 中包含以下的属性</font>
+
+  1. <font color=red>match_mapping_type</font> -> 匹配类型
+  2. <font color=red>match</font> -> 匹配类型
+  3. <font color=red>unmatch</font> -> 不匹配类型
+  4. <font color=red>patch_match</font> ->匹配路径
+  5. <font color=red>patch_unmatch</font> -> 不匹配路径
+  6. <font color=red>mapping</font> -> 设置mapping信息
+
+- 格式 -> <font color=red>**可以有多个dynamic_templates,执行顺序从上到下**</font>
+
+  ```json
+  PUT  /索引名 
+  {
+      "mappings":{
+  		"文档类型":{
+  			"dynamic_templates":[
+                 	{
+                      "模板名称":
+                      {
+                          "match_mapping_type":"匹配类型(比如string,boolean....)",
+                          "match":"匹配字段名",
+                          "unmatch":"不匹配字段名",
+                          "patch_match":"匹配路径",
+                          "patch_unmatch":"不匹配路径",                        
+                          "mapping":{设置mapping信息},
+                                      .....
+                      }
+  				},
+                  {模板2},
+                  .....
+              ]
+      	}
+  	}
+  } 
+  ```
+
+##### 1.5.2.1 示例: 字符串默认使用keyword类型
+
+```json
+# 测试api -> 如果添加字段的类型是string,则该文档的该属性为 keyword
+PUT /mymapping
+{
+  "mappings": {
+    "my_type":{
+      "dynamic_templates":[
+        {
+          "string_as_keyword":
+          {
+            "match_mapping_type":"string",
+            "mapping":{"type":"keyword"}
+          }
+        }
+      ]
+    }
+  }
+}
+# 添加文档数据
+PUT /mymapping/my_type/1
+{
+  "user":"yoey"
+}
+
+# 获取文档的 mapping结构
+GET /mymapping/_mapping
+# 返回结果
+{
+  "mymapping": {
+    "mappings": {
+      "my_type": {
+        "dynamic_templates": [
+          {
+            "string_as_keyword": { "match_mapping_type": "string",  "mapping": { "type": "keyword" } }
+          }
+        ],
+        "properties": {  "user": { "type": "keyword" } }
+      }
+    }
+  }
+}
+```
+
+##### 1.5.2.2 以message开头的字段都设置为 text
+
+```json
+# 测试api -> 如果添加字段的类型是string,则该文档的该属性为 keyword
+PUT /mymapping
+{
+  "mappings": {
+    "my_type":{
+      "dynamic_templates":[
+        {
+          "messgae_as_text":{
+            "match_mapping_type":"string",
+            "match":"message*",
+            "mapping":{"type":"text"}
+          }
+        },{
+          "string_as_keyword":
+          {
+            "match_mapping_type":"string",
+            "mapping":{"type":"keyword"}
+          }
+        }
+      ]
+    }
+  }
+}
+# 添加文档数据
+PUT /mymapping/my_type/1
+{
+  "user":"yoey",
+  "messageA":"errormsg"
+}
+
+# 获取文档的 mapping结构
+GET /mymapping/_mapping
+
+#返回结果
+{
+  "mymapping": {
+    "mappings": {
+      "my_type": {
+        "dynamic_templates": [
+          {
+              "messgae_as_text":  {
+              	"match": "message*",  "match_mapping_type": "string", "mapping": { "type": "text" }  
+              }
+          },
+          {
+            "string_as_keyword": {  
+                "match_mapping_type": "string", "mapping": { "type": "keyword" } 
+            }
+          }
+        ],
+        "properties": { "messageA": {  "type": "text" },  "user": {  "type": "keyword" }  }
+      }
+    }
+  }
+}
+```
+
+## 索引模板
+
+- 主要用于**新建索引的时候 自动应用预先设置的配置,简化索引创建的操作步骤**
+  - 可以设定索引的配置 和 mapping
+  - 可以有多个模板,**根据 order 设置,order大的覆盖小的**
+- 自定义索引模板 api `_template`
+
+- 基本格式
+
+  ```json
+  PUT	/_template/索引模板名称
+  {	
+      "index_patterns":["匹配的索引名称,比如test*",""],
+      "order": "order的顺序配置",
+      "settings":{"索引的配置"},
+      "mappings":{"mapping配置"}
+  }
+  ```
+
+- 获取和删除索引模板
+  - `GET  /_template` : 获取所有的模板
+  - `GET  /_template/模板名称`
+  - `DELETE / _template/模板名称`

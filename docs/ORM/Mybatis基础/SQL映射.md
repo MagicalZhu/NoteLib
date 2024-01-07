@@ -100,7 +100,7 @@ public class ResultTypeDemo {
 
 > 如果只有一条数据,并且以 Map 的形式返回,即 key 是数据库字段名,value 数据值
 
-- **只需要将 resultMap 设置为 `map` 即可**
+- 这种**只需要将 resultMap 设置为 `map` 即可**
 
 首先定义 Mapper 接口:
 
@@ -113,7 +113,7 @@ public Map<String,Object> getMap();
 
 ```xml
 <!--只有一条数据,并且返回 Map-->
-<select id="getMap" resultType="java.util.Map">
+<select id="getMap" resultType="map">
 	select * from employee where id=1
 </select>
 ```
@@ -126,21 +126,29 @@ public Map<String,Object> getMap();
 *  @author <a href="mailto:zhuyuliangm@gmail.com">yuliang zhu</a>
 */
 public class ResultTypeByMapDemo1 {
-  private static final String resource = "META-INF/mybatis-config.xml";
-  public static void main(String[] args) throws IOException {
-      InputStream inputStream = Resources.getResourceAsStream(resource);
-      SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder()
-        																				.build(inputStream);
+    private static final String resource = "META-INF/mybatis-config.xml";
+    public static void main(String[] args) throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
-      // 设置自动提交事务
-      try(SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
-          EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
-          // 返回 List 查询
-          Map<String, Object> map = employeeMapper.getMap();
-          // out: {gender=1, last_name=tomcat, id=1, email=tomcat@gmail.com}
-          System.out.println(map);
-      }
-  }
+        // 设置自动提交事务
+        try(SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+            EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+            // 返回 Map 查询
+            Map<String, Object> map = employeeMapper.getMap();
+            for(Map.Entry<String, Object> entry :map.entrySet()) {
+                /**
+                 * out:
+                 *    account_id:account_id
+                 *    gender:gender
+                 *    last_name:last_name
+                 *    id:id
+                 *    email:email
+                 */
+                System.out.println(entry.getKey() + ":"+ entry.getKey());
+            }
+        }
+    }
 }
 ```
 
@@ -148,7 +156,7 @@ public class ResultTypeByMapDemo1 {
 
 > 返回多条数据,数据以 Map 的形式展示,即 key 是指定字段的值,value 是该条数据
 
-我们需要使用 `@MapKey` 注解来指定 key 使用哪个字段的值
+我们需要使用 `@MapKey` 注解来指定 key 使用哪个字段作为 Map 的键
 
 ```java
 // 有多条数据,返回Map 的 key 是指定字段的值
@@ -300,11 +308,13 @@ public class ResultMapDemo1 {
   - 指定这个属性对象的类型, 这个不可以省略
 - `jdbcType`
 - `select`
-  - 设置获取关联数据的 sql 映射语句标识 (namespace+id)
+  - 指定获取关联数据的 sql 映射语句标识 (namespace+id)
   - 它会从 column 属性指定的列中检索数据，作为参数传递给目标 select 语句
 - `column`
   - 调用 select 设置的方法,需要传入 **已经得到的数据集的哪一列作为其入参**
   - 如果需要传入多个字段,可以使用 `column="{prop1=col1,prop2=col2}"` 的方式
+    - `prop`: 后面 select 属性指定的 sql 语句中使用的参数名
+    - `col` :  当前 sql 语句返回结果集的字段名
 - `<id>`、`<result>` : 用法和上面一样
 - `<resultMap>`
   - 结果映射的 id, 可以将此关联的嵌套结果集映射到对象中
@@ -327,7 +337,7 @@ MyBatis 有两种不同的方式加载关联：
 
 #### 联合查询
 
-> 简言之,就是将关联数据的查询放在一个 sql 语句中,然后将关联数据集的映射放在 association 中
+> 简言之,就是将关联数据的查询放在一个 sql 语句中(关联查询),然后将关联数据集的映射放在 association 中
 
 假设 employee 表和 Account 表有关联 (employee.account_id = Account.id)
 
@@ -433,11 +443,13 @@ public class ResultMapDemo2 {
 #### 分步查询
 
 > 除了联合查询之外, association 还支持分步查询
+>
+> 分步查询就是将一个关联查询 sql 语句拆分为多条 sql 语句“分步执行”
 
-还是上述的例子,但是采用分步查询。示例有如下的说明
+还是上述的例子,但是采用分步查询。示例有如下的说明:
 
 1. 分步查询 Account 的 sql 语句写在 Account 对应的 sql 映射文件中,而不是 Employee sql 映射文件中
-2. association 中的 column 采用 {propName: colName} 的格式,将指定的数据传给 select 属性指定的 sql 语句
+2. association 中的 column 采用 `{propName: colName}` 的格式,将指定的数据作为参数传给 select 属性指定的 sql 语句
 
 ```xml
 <!-- AccountMapper.xml -->
@@ -445,7 +457,7 @@ public class ResultMapDemo2 {
     <id property="id" column="id" javaType="Integer"/>
     <result property="accountName" column="name" javaType="String"/>
 </resultMap>
-	<!-- 1.分步查询 Account 表的数据, -->
+	<!-- 2.分步查询 Account 表的数据,其中参数 id 是上一步 sql 结果集中的字段 -->
 <select id="getAccountById" resultMap="handleAccount">
     select * from Account where id=#{id}
 </select>
@@ -461,11 +473,10 @@ public class ResultMapDemo2 {
         <association property="account"
                      javaType="com.pacos.Domain.Account"
                      select="com.pacos.Dao.AccountMapper.getAccountById"
-                     column="{id=account_id}"
-                     >
+                     column="{id=account_id}">
         </association>
     </resultMap>
-
+		<!-- 1.首先查询员工信息,通过 resultMap#column 属性封装一个参数给 select 属性指定的 sql 语句-->
     <select id="getEmployeeNewByStep" resultMap="handleEmployeeNewByStep">
         Select * from employee
     </select>
@@ -513,6 +524,15 @@ Mybatis 通过 `<collection>` 标签处理结果集中有集合的情况, 它有
 - `ofType`
   - 指定集合中元素的类型
 
+- `select`
+  - 指定获取关联数据的 sql 映射语句标识 (namespace+id)
+  - 它会从 column 属性指定的列中检索数据，作为参数传递给目标 select 语句
+  
+- `column`
+  - 调用 select 设置的方法,需要传入 **已经得到的数据集的哪一列作为其入参**
+  - 如果需要传入多个字段,可以使用 `column="{prop1=col1,prop2=col2}"` 的方式
+    - `prop`: 后面 select 属性指定的 sql 语句中使用的参数名
+    - `col` :  当前 sql 语句返回结果集的字段名
 - 子节点: `<id>`、`<result>`, 用法和上面一样
 
 #### 联合查询
@@ -988,14 +1008,14 @@ public Employee getEmpById(List<Integer> ids)
 
 - 使用思路
 
-  - 大多情况下，我们去参数的值都应该去使用 #{}
+  - 大多情况下，我们取参数的值都应该使用 #{}
 
-  - 原生 jdbc 不支持使用占位符的地方就需要使用 `${}` 进行取值(将取出的值直接拼装在 sql 语句中)
+  - 对于原生 jdbc 不支持使用占位符的地方就需要使用 `${}` 进行取值(将取出的值直接拼装在 sql 语句中)
 
     - 比如分表
 
       ```sql
-      // 按照年份分表拆分
+      -- 按照年份分表拆分
       select * from ${year}_salary where xxx
       ```
 
@@ -1265,8 +1285,8 @@ public class DynamicSqlDemo3 {
 ```xml
 <select id="getEmpsByLike" resultType="com.pacos.Domain.Employee">
   <bind name="lastName" value="'%' + name + '%'" />
-    Select * from employee
-  	where last_name like #{lastName}
+  Select * from employee
+  where last_name like #{lastName}
 </select>
 ```
 
