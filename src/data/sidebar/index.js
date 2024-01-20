@@ -48,12 +48,19 @@ const gradle =  require('./gradle')
 // Docker
 const docker = require('./docker')
 
+// 基础中间件
+const basicMiddleware =  require('./basicMiddleware')
+
+// java 新特性
+const javaFeature =  require('./javaFeature')
+
 module.exports = {
   concurrency,
   os,
   mysql,
   mycat,
   distribute,
+  basicMiddleware,
   netWork,
   linux ,
   leetCode,
@@ -65,5 +72,6 @@ module.exports = {
   orm,
   jvm,
   gradle,
-  docker
+  docker,
+  javaFeature
 }

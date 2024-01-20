@@ -7,24 +7,24 @@ const  {
 const distributePart = [
     {
         type: Type.DOC,
-        id: "分布式/分布式理论/distribute",
+        id: "中间件/基础中间件/basicMiddleware",
         label: "简介"
     },
     {
         type: Type.CATEGORY,
-        label: "分布式算法",
+        label: "Nginx",
         items: [
             {
                 type: Type.CATEGORY,
-                label: "一致性算法",
+                label: "Nginx基础知识",
                 items: [
-                    "分布式/分布式理论/分布式一致性算法/paxos"
+                    "中间件/基础中间件/负载均衡/Nginx/基础/nginx-basic",
                 ],
                 collapsed: true,
                 link: {
                     type: "generated-index"
                 }
-            }
+            },
         ],
         collapsed: true,
         link: {

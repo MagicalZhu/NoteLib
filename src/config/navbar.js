@@ -21,6 +21,10 @@ const nav = {
           to: 'docs/currency',
         },
         {
+          label: "Java新特性",
+          to: 'docs/java-feature',
+        },
+        {
           label: "Linux",
           to: 'docs/linuxCommand',
         },
