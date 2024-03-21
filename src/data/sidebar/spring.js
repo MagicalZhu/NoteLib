@@ -15,17 +15,6 @@ const springSideBar = [
 		label: "Spring基础",
 		items: [
 			{
-				type: Type.CATEGORY,
-				label: "Spring5",
-				items: [
-						"Spring/Spring5/IOC容器"
-				],
-				collapsed: true,
-				link: {
-						type: "generated-index"
-				}
-			},
-			{
 					type: Type.CATEGORY,
 					label: "Spring注解",
 					items: [

@@ -234,7 +234,7 @@ public class BeanAlias {
 
 ### 基于 XML
 
-> 这种方式就是前面一直使用的,只需要配置 XML 然后读取 XML 配置文件即可。当然除了使用 XML 作为配置文件,还可以[使用 Properties 文件作为配置文件](Bean生命周期#properties-配置)
+> 这种方式就是前面一直使用的,只需要配置 XML 然后读取 XML 配置文件即可。当然除了使用 XML 作为配置文件,还可以[使用 Properties 文件作为配置文件](Bean生命周期#properties-配置),但是可用性较差
 
 ### 基于注解
 

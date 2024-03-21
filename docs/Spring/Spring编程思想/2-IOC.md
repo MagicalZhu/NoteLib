@@ -193,7 +193,7 @@ class java.lang.String
 
 首先需要定义 XML:
 
-> 这里的 **org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean** 实现了**ObjectFactory**接口
+> 这里的 **org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean** 实现了`AbstractFactoryBean<ObjectFactory<Object>>`接口
 >
 > ObjectFactory  定义一个工厂，该工厂在调用时可以返回 Object 实例(可能是共享的或独立的)
 
@@ -217,6 +217,8 @@ class java.lang.String
 ```
 
 然后进行测试,这里使用 ObjectProvider、ObjectFactory 实现延迟查找,可以看到只有在 getIfAvailable 和 getObject 的时候才会进行 Bean 的实例化、初始化…
+
+- 关于通过 ObjectFactory 实现延迟查找的示例代码, 因为 ObjectFactoryCreatingFactoryBean 是 FactoryBean,所以 getBean 返回的是 ObjectFactory,还需要再通过 getObject 方法获取最终对象
 
 ```java
 /**

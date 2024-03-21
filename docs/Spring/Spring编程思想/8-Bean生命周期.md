@@ -1,6 +1,7 @@
 ---
 id: Bean生命周期
 title: Bean生命周期
+
 ---
 
 ## 元信息配置
@@ -8,16 +9,16 @@ title: Bean生命周期
 配置 BeanDefinition
 
 1. 面向资源
-    - XML 配置
-    - Properties 资源配置
+   - XML 配置
+   - Properties 资源配置
 2. 面向注解
-    - @Bean
-    - @Component
-    - @Configuration
-    - ...
+   - @Bean
+   - @Component
+   - @Configuration
+   - ...
 3. 面向 API
-    - BeanDefinitionBuilder
-    - ...
+   - BeanDefinitionBuilder
+   - ...
 
 ### XML 配置
 
@@ -101,13 +102,13 @@ public class BeanMetaDataConfigurationDemoByProperties {
 ## 元信息解析
 
 1. **面向资源** BeanDefinition 解析
-    - 顶级加载接口: `BeanDefinitionReader`
-    - XML 解析器: `BeanDefinitionParser`
-      - *AnnotationConfigBeanDefinitionParser*
-      - *AbstractBeanDefinitionParser*
-      - ...
+   - 顶级加载接口: `BeanDefinitionReader`
+   - XML 解析器: `BeanDefinitionParser`
+     - *AnnotationConfigBeanDefinitionParser*
+     - *AbstractBeanDefinitionParser*
+     - ...
 2. **面向注解** BeanDefinition 解析
-    - 加载接口:`AnnotatedBeanDefinitionReader`,并没有继承自*BeanDefinitionReader*
+   - 加载接口:`AnnotatedBeanDefinitionReader`,并没有继承自*BeanDefinitionReader*
 
 > - 面向资源的解析,需要指定资源的路径,这个资源可以是本地的文件资源, 所以 BeanDefinitionReader 解析资源的方法会传入 Resource (详细参看[配置元信息](./配置元信息#ioc-容器配置元信息))
 >
@@ -568,16 +569,16 @@ public class BeanInstantiationLifestyleDemo {
 Bean 正常实例化的入口在:`AbstractAutowireCapableBeanFactory#createBeanInstance`,该入口中有两种实例化方法的分支:
 
 1. 传统实例化方式
-    - 实例化策略: `InstantiationStrategy`
-    - 方法入口: **instantiateBean**
+   - 实例化策略: `InstantiationStrategy`
+   - 方法入口: **instantiateBean**
 
 2. 构造器依赖注入
-    - 方法入口: **autowireConstructor**
-    - 判断条件(满足一种即可):
-      - Bean Class 实现了 `SmartInstantiationAwareBeanPostProcessor#determineCandidateConstructors`方法，并返回构造器 Constructor 对象
-      - BeanDefinition 的 AutowireMode 是 AUTOWIRE_CONSTRUCTOR
-      - BeanDefinition 中设置了构造器参数 `ConstructorArgumentValues` 
-      - 执行 getBean 的时候，传入的参数不为空(getBean 重载方法中的可变参数)
+   - 方法入口: **autowireConstructor**
+   - 判断条件(满足一种即可):
+     - Bean Class 实现了 `SmartInstantiationAwareBeanPostProcessor#determineCandidateConstructors`方法，并返回构造器 Constructor 对象
+     - BeanDefinition 的 AutowireMode 是 AUTOWIRE_CONSTRUCTOR
+     - BeanDefinition 中设置了构造器参数 `ConstructorArgumentValues` 
+     - 执行 getBean 的时候，传入的参数不为空(getBean 重载方法中的可变参数)
 
 ```java title=AbstractAutowireCapableBeanFactory#createBeanInstance
 protected BeanWrapper createBeanInstance(String beanName,
@@ -661,6 +662,8 @@ protected BeanWrapper instantiateBean(final String beanName,
 ```
 
 ### autowireConstructor
+
+> 构造器注入就是在这处理的
 
 构造器的注入会优先按照构造器参数类型进行匹配,如果匹配的有多个 Bean ,那么就按照参数名进行匹配。也就是优先 byType,然后 byName
 
@@ -1138,7 +1141,7 @@ bean 在完成正常实例化之后一般会进行 bean 属性值的填充,但�
 - Bean 属性赋值前回调
   - Spring 1.2 ~ 5.0 : `InstantiationAwareBeanPostProcessor#postProcessPropertyValues`
   - Spring 5.1: `InstantiationAwareBeanPostProcessor#postProcessProperties`
-- 这一步会处理前面提到的 @Autowired 依赖注入原理,详细参看[这里](依赖注入#bean-的后置处理)
+- 这一步会处理前面提到的 @Autowired、@Resource 等注解的依赖注入原理,详细参看[这里](依赖注入#bean-的后置处理)
 
 ### 源码部分
 
@@ -1494,24 +1497,26 @@ public class BeforeInitialization {
 Bean 的初始化(Initialization) 顺序:
 
 1. @PostConstruct 标注方法
-    - 该处理基于注解驱动,具体处理在`InitDestroyAnnotationBeanPostProcessor#postProcessBeforeInitialization` 中处理
-    - <mark>该方法严格意义上来说,属于初始化前阶段</mark>
 
-    -
+   - 该处理基于注解驱动,具体处理在`InitDestroyAnnotationBeanPostProcessor#postProcessBeforeInitialization` 中处理
+   - <mark>该方法严格意义上来说,属于初始化前阶段</mark>
 
-      ```java title=InitDestroyAnnotationBeanPostProcessor#postProcessBeforeDestruction
-        public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
-          // highlight-start
-          LifecycleMetadata metadata = findLifecycleMetadata(bean.getClass());
-          try {
-            metadata.invokeDestroyMethods(bean, beanName);
-          }
-          // highlight-end
-          // ...
-        }
-      ```
+   -
+
+     ```java title=InitDestroyAnnotationBeanPostProcessor#postProcessBeforeDestruction
+     public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
+       // highlight-start
+       LifecycleMetadata metadata = findLifecycleMetadata(bean.getClass());
+       try {
+         metadata.invokeDestroyMethods(bean, beanName);
+       }
+       // highlight-end
+       // ...
+     }
+     ```
 
 2. 实现 `InitializingBean` 接口的 afterPropertiesSet 方法
+
 3. 自定义初始化方法
 
 #### 源码分析
@@ -1665,7 +1670,7 @@ public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, St
 
 方法回调: `SmartInitializingSingleton#afterSingletonsInstantiated`(依赖于 Spring 4.1)
 
-SmartInitializingSingleton 通常在 ApplicationContext 场景下使用,它的触发点在`DefaultListableBeanFactory#preInstantiateSingletons`,通过它**可以将已经注册的 BeanDefinition 提前初始化成 Spring Bean**
+SmartInitializingSingleton 通常在 ApplicationContext 场景下使用,它的触发点在`DefaultListableBeanFactory#preInstantiateSingletons`,通过它**可以在容器初始化完 BeanDefinition 对应的 Spring Bean后,进行额外的处理**
 
 简单来说,<mark>如果需要对初始化完后的 Bean 进行一些额外的操作,就需要让 Bean 类实现 SmartInitializingSingleton</mark>
 

@@ -2,7 +2,7 @@
 /* @import url('m-plus-rounded-1c.css'); */
 
 /* Website font */
-@import '@fontsource/roboto-mono';
+@import '@fontsource-variable/inter';
 /* @import 'lxgw-wenkai-webfont/style.css'; */
 
 @import url('default.css');
@@ -42,7 +42,7 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --ifm-font-color-base: #58606c;
+  --ifm-font-color-base: #454545;
   --ifm-color-primary: #486af4;
   --ifm-color-primary-dark: #2a52f2;
   --ifm-color-primary-darker: #1b46f1;
@@ -176,14 +176,14 @@ html[data-theme="dark"] mark {
 }
 
 code {
-  color: #0f172A;
+  color: #000;
   background-color: unset;
   word-break: break-all;
   vertical-align: baseline;
   border: 0 solid #cccccc;
-  border-width: 1px;
-  font-family: 'Roboto Mono', sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
+  font-family: 'Inter', sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
   font-size: unset;
+  font-weight: 500;
 }
 
 code::before {
@@ -335,7 +335,7 @@ li::marker {
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
   line-height: 1.85;
-  font-family: 'Roboto Mono', sans-serif, monospace, Menlo, monaco, Consolas, "Courier New";
+  font-family: 'Inter', sans-serif, monospace, Menlo, monaco, Consolas, "Courier New";
   font-style: normal;
   font-weight: 500;
 }
