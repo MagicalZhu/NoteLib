@@ -54,6 +54,11 @@ const basicMiddleware =  require('./basicMiddleware')
 // java 新特性
 const javaFeature =  require('./javaFeature')
 
+// 缓存中间件
+
+
+const cacheSideBar  =  require('./cache')
+
 module.exports = {
   concurrency,
   os,
@@ -73,5 +78,6 @@ module.exports = {
   jvm,
   gradle,
   docker,
-  javaFeature
+  javaFeature,
+  cacheSideBar
 }
