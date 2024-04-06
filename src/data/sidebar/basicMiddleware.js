@@ -16,7 +16,7 @@ const distributePart = [
         items: [
             {
                 type: Type.CATEGORY,
-                label: "Nginx基础知识",
+                label: "基础",
                 items: [
                     "中间件/基础中间件/负载均衡/Nginx/基础/nginx-basic",
                 ],

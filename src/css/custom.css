@@ -2,7 +2,15 @@
 /* @import url('m-plus-rounded-1c.css'); */
 
 /* Website font */
-@import '@fontsource-variable/inter';
+@import '@fontsource/geist-sans/100.css';
+@import '@fontsource/geist-sans/200.css';
+@import '@fontsource/geist-sans/300.css';
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/600.css';
+@import '@fontsource/geist-sans/700.css';
+@import '@fontsource/geist-sans/800.css';
+@import '@fontsource/geist-sans/900.css';
 /* @import 'lxgw-wenkai-webfont/style.css'; */
 
 @import url('default.css');
@@ -42,7 +50,7 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --ifm-font-color-base: #454545;
+  --ifm-font-color-base: #353535;
   --ifm-color-primary: #486af4;
   --ifm-color-primary-dark: #2a52f2;
   --ifm-color-primary-darker: #1b46f1;
@@ -176,12 +184,12 @@ html[data-theme="dark"] mark {
 }
 
 code {
-  color: #000;
+  color: #c6327a;
   background-color: unset;
   word-break: break-all;
   vertical-align: baseline;
   border: 0 solid #cccccc;
-  font-family: 'Inter', sans-serif, monospace, Monaco, Consolas, Courier New, monospace;
+  font-family: 'Geist Sans', sans-serif;
   font-size: unset;
   font-weight: 500;
 }
@@ -225,7 +233,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 html[data-theme='light'] strong {
-  color: #2761ec;
+  color: #000;
   font-weight: bolder;
 }
 
@@ -335,7 +343,7 @@ li::marker {
   margin-left: var(--ifm-global-spacing);
   font-size: 14px;
   line-height: 1.85;
-  font-family: 'Inter', sans-serif, monospace, Menlo, monaco, Consolas, "Courier New";
+  font-family: 'Geist Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
 }
@@ -826,7 +834,11 @@ hr {
 }
 
 em {
-  color:#ec4899
+  color: #009790;
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: #f0fffb;
 }
 
 .hash-link {
@@ -840,4 +852,8 @@ div[class*=admonitionHeading] {
 .mermaid {
   max-width: 55%;
   max-height: 55%;
+}
+
+.breadcrumbs {
+  display: none;
 }
